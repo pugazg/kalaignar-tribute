@@ -16,7 +16,7 @@ The native mobile app work is **on hold by owner decision** while this web-libra
 - **Production site:** `https://nenjukkuneethi.org`
 - **Current Reading Room:** `https://nenjukkuneethi.org/read`
 
-The implementation repository remains authoritative for the deployed Next.js site and any vendored/derived reader data.
+The implementation repository remains authoritative for the deployed Next.js site and intentionally imported reader data.
 
 ### Cross-chat control repository
 
@@ -25,7 +25,7 @@ The implementation repository remains authoritative for the deployed Next.js sit
 
 ### Source/archive repositories to integrate
 
-The source repositories remain authoritative for their own archival Tamil, translations, verification state and provenance. The website must consume or vendor **released/verified derivatives**; it must never silently rewrite archival source text.
+The source repositories remain authoritative for their own archival Tamil, translations, verification state and provenance. The website must consume or vendor **released/verified derivatives from those source repositories**; it must never silently rewrite archival source text.
 
 1. `pugazg/kalaignar-novels`
 2. `pugazg/kalaignar-short-stories`
@@ -76,17 +76,29 @@ New catalog/navigation layers may link to these existing destinations first. Rou
 
 ---
 
-## 3. Important live-code caution: Manohara vendoring already exists
+## 3. Critical correction — accidental Manohara files in the website repository are NOT an integration source
 
-The implementation repository already contains work toward cinema integration.
-
-Live `main` includes commits titled `Vendor Manohara reader part 001` through at least `Vendor Manohara reader part 020`, with files under:
+The implementation repository currently contains files under:
 
 `public/data/cinema/manohara/parts/`
 
-Do not duplicate, delete or restart this work simply because the public Reading Room does not yet expose Manohara.
+and live history includes commits titled `Vendor Manohara reader part 001` through at least `Vendor Manohara reader part 020`.
 
-Before cinema integration, inspect the actual current tree, determine what has already been vendored, compare it with the authoritative `kalaignar-cinema-works` release package, and continue from the real boundary.
+**Owner correction:** these files were accidentally added while work was being carried out in the separate `pugazg/kalaignar-cinema-works` source/archive repository. They are **not an approved Digital Library integration, not a continuation boundary, and not a source of truth for Manohara**.
+
+For every future Manohara Reading Room activity:
+
+- **ignore those website-repository Manohara files as input/reference;**
+- do not continue from them;
+- do not compare source-repository output against them as though they were an accepted prior import;
+- do not derive counts, scene text, translations, provenance, metadata or reader structure from them;
+- do not use their commit sequence to decide where integration should resume;
+- obtain Manohara only from the live authoritative `pugazg/kalaignar-cinema-works` repository, after inspecting its current release/reader-export state;
+- record the exact source-repository commit/integrity state used for the real Digital Library import.
+
+During Phase 1, the accidental files may simply remain untouched because cinema integration is out of scope. Their later deletion/replacement/cleanup must be deliberate and must not be mistaken for archival-source editing.
+
+This correction overrides all older notes saying to “protect”, “continue”, or “resume from” the website's Manohara vendor boundary.
 
 ---
 
@@ -199,6 +211,8 @@ Do not edit a typo, translation, speaker label, scene boundary, poem lineation o
 
 Corrections belong in the authoritative source repository first, through that repository's archival workflow.
 
+For Manohara specifically, `pugazg/kalaignar-cinema-works` is the only approved archival/reader-export source. Accidental files already present in `kalaignar-autobiography/public/data/cinema/manohara/` have no source-authority status.
+
 ## 8.2 Website uses derived/vendored reader artifacts
 
 Preferred model:
@@ -210,6 +224,8 @@ Preferred model:
 5. site build validates the imported structure.
 
 Do **not** make the production site depend on live GitHub API calls at reader runtime.
+
+Do **not** treat previously accidental website files as a substitute for step 1 or step 2.
 
 ## 8.3 No single forced schema for prose content
 
@@ -296,7 +312,9 @@ Current major completed works include:
 
 Cinema should normally be read **by scene**, preserving speaker labels, stage directions and provenance. Scene IDs derived by the archive must not be misrepresented as printed source scene numbers when the source has none.
 
-Because Manohara data is already partially vendored into the website repository, **Cinema / Manohara is the recommended first new-category integration after the library foundation is built.**
+**Manohara remains the recommended first new Cinema integration because the authoritative cinema source repository has mature verified reader/export output — not because of the accidental files already present in the website repository.**
+
+When Manohara integration begins, start from the live `pugazg/kalaignar-cinema-works` release/reader-export artifacts and their exact commit/integrity state. Do not continue from `kalaignar-autobiography/public/data/cinema/manohara/parts/`.
 
 ## 9.7 Literary commentary — `pugazg/kalaignar-literary-commentary`
 
@@ -348,7 +366,7 @@ Do not attempt to integrate all repositories in one giant PR.
 - Digital Library becomes active priority.
 - Source repository inventory established.
 - Public taxonomy decided.
-- Existing Manohara vendoring identified and protected.
+- Accidental website-repository Manohara files identified as **non-authoritative and excluded from future integration inputs**.
 
 ## Phase 1 — Library Foundation
 
@@ -356,14 +374,15 @@ Do not attempt to integrate all repositories in one giant PR.
 
 Goals:
 
-1. inspect current live `/read`, `/murasoli`, `/tholkappiyam`, current data paths and any cinema vendoring;
-2. create the normalized catalog model;
-3. reorganize `/read` into the Kalaignar Digital Library landing page;
-4. preserve all current reader routes and functionality;
-5. move memoir-specific search/filters/resume/bookmark UI into a memoir-focused surface/component rather than presenting it as global-library behavior;
-6. render the current three public collections from catalog data rather than a hard-coded three-card array;
-7. build the nine-shelf taxonomy into the model, but do not publicly render empty shelves by default;
-8. add no new source work in this phase unless a tiny amount of integration metadata is necessary to validate the architecture.
+1. inspect current live `/read`, `/murasoli`, `/tholkappiyam`, current data/catalog conventions and current open PRs;
+2. note that accidental Manohara files exist in the website tree, but do not use, extend, normalize or integrate them;
+3. create the normalized catalog model;
+4. reorganize `/read` into the Kalaignar Digital Library landing page;
+5. preserve all current reader routes and functionality;
+6. move memoir-specific search/filters/resume/bookmark UI into a memoir-focused surface/component rather than presenting it as global-library behavior;
+7. render the current three public collections from catalog data rather than a hard-coded three-card array;
+8. build the nine-shelf taxonomy into the model, but do not publicly render empty shelves by default;
+9. add no new source work in this phase unless a tiny amount of integration metadata is necessary to validate the architecture.
 
 Phase 1 is an **information-architecture/refactor activity**, not a mass content import.
 
@@ -371,20 +390,23 @@ Phase 1 is an **information-architecture/refactor activity**, not a mass content
 
 Reason for first priority:
 
-- cinema source repository has mature reader/export packages;
+- the authoritative `pugazg/kalaignar-cinema-works` repository has mature verified reader/export packages;
 - it explicitly targets the Digital Library;
-- Manohara data is already partially vendored in implementation `main`;
-- continuing existing work is safer than starting a different import and leaving Manohara in an ambiguous half-vendored state.
+- Manohara provides a strong first test of the scene/dialogue reader type.
+
+**The accidental `kalaignar-autobiography/public/data/cinema/manohara/parts/` files must not be used as source material or as a resume point.**
 
 Activity sequence:
 
-1. audit existing Manohara vendor boundary;
-2. complete deterministic vendor/import against current source-repo release output;
-3. create Cinema shelf entry;
-4. create scene-based Tamil/English reader;
-5. verify provenance, all scene/unit counts and navigation;
-6. publish Manohara only after end-to-end QA;
-7. then integrate Parasakthi and Tirumbippaar one work at a time.
+1. inspect live `pugazg/kalaignar-cinema-works` Manohara source/release state and identify the exact approved Tamil/English reader/export artifacts;
+2. record the exact source-repository commit and integrity/provenance information;
+3. design/import the website reader data directly from those authoritative source-repository artifacts;
+4. if the accidental website Manohara files conflict with the intended canonical import path, deliberately replace/remove/quarantine them as an implementation cleanup — never by treating their content as evidence;
+5. create the Cinema shelf entry;
+6. create the scene-based Tamil/English reader;
+7. verify provenance, all scene/unit counts and navigation against the source repository;
+8. publish Manohara only after end-to-end QA;
+9. then integrate Parasakthi and Tirumbippaar one work at a time, each from its source-repository release output.
 
 ## Phase 3 — Speeches
 
@@ -514,7 +536,8 @@ Do not:
 - expose unfinished/uncertain work as complete;
 - fabricate dates, genres, speaker identities, source numbering or translation status;
 - break legacy URLs merely to create a cleaner route taxonomy;
-- integrate all works in one PR.
+- integrate all works in one PR;
+- use accidental website-repository Manohara files as archival evidence, import authority, translation authority, provenance authority or an integration resume point.
 
 ---
 
@@ -527,7 +550,7 @@ Before every implementation prompt:
 1. read this handover;
 2. inspect live `pugazg/kalaignar-autobiography` main and open PRs;
 3. inspect the relevant source repository main/readme/handover/release reports;
-4. identify already-started integration work and continue it rather than duplicating it;
+4. identify already-started integration work and continue it rather than duplicating it **except for explicitly documented accidental/non-authoritative artifacts such as the existing website Manohara parts, which must be ignored as integration inputs**;
 5. write an explicit staged Claude prompt;
 6. require source/release/provenance validation;
 7. require build/typecheck and live-route checks;
@@ -542,7 +565,8 @@ When Claude returns a report, independently verify:
 - source-repo commit/integrity reference;
 - counts and availability claims;
 - no silent source edits;
-- no mobile scope drift.
+- no mobile scope drift;
+- for Manohara, evidence that all imported reader content came from `pugazg/kalaignar-cinema-works`, not the accidental website files.
 
 ---
 
@@ -561,11 +585,12 @@ Mandatory Phase-1 principles:
 - create catalog-driven shelves/work cards;
 - build the nine-shelf taxonomy in data/model form;
 - hide empty shelves by default;
-- inspect and protect existing Manohara vendor data without finishing cinema integration in this phase;
+- recognize that accidental Manohara files exist under the website repository but **do not use, extend, validate, normalize or derive from them**;
+- do not integrate Manohara or any other new source work during Phase 1;
 - no mobile changes;
 - no source text changes;
 - no source PDFs;
 - no mass import;
 - stop with a green PR and a Phase-2 handover.
 
-After Phase 1 is merged and deployed, **Phase 2 begins with Cinema / Manohara** because that integration has already been started at the data-vendoring level.
+After Phase 1 is merged and deployed, **Phase 2 begins with Cinema / Manohara imported afresh from the authoritative `pugazg/kalaignar-cinema-works` release/reader-export artifacts. The accidental website-repository Manohara parts are not a continuation boundary and must not be used.**
