@@ -66,15 +66,34 @@ The public library model is:
 
 Repository boundaries are not the same as public-library shelves.
 
-## Critical live-code warning
+## Critical Manohara correction
 
-The implementation repository already contains Manohara vendoring work under:
+The implementation repository contains accidental Manohara files under:
 
 `public/data/cinema/manohara/parts/`
 
-Recent main history included `Vendor Manohara reader part 001` through at least `part 020`.
+and historical commits named `Vendor Manohara reader part 001` through at least `part 020`.
 
-Do not duplicate, reset or delete this work. Inspect the current boundary before any cinema integration.
+**Do not use those files.** They were accidentally added while the separate cinema source/archive repository was being worked on.
+
+They are:
+
+- not an approved Digital Library import;
+- not an integration continuation boundary;
+- not an authority for Tamil text;
+- not an authority for English translation;
+- not an authority for scene/unit counts;
+- not an authority for provenance or metadata.
+
+For Manohara, the only approved source is the live authoritative repository:
+
+`pugazg/kalaignar-cinema-works`
+
+When Manohara integration eventually begins, inspect that repository's current Manohara README/handover/release/reader-export artifacts and import directly from those verified source-repository outputs. Record the exact source commit/integrity state used.
+
+During Digital Library Phase 1, simply recognize the accidental website files and leave them unused. Do not extend, validate, normalize, derive from, or continue them.
+
+This instruction overrides any older context saying to “continue existing Manohara vendoring.”
 
 ## Current owner priorities
 
@@ -111,8 +130,8 @@ Before drafting that Claude prompt, independently inspect:
 - `/murasoli`
 - `/tholkappiyam`
 - relevant data/catalog conventions
-- `public/data/cinema/manohara/` and recent vendor commits
 - current open PRs in `pugazg/kalaignar-autobiography`
+- the accidental `public/data/cinema/manohara/` tree only to recognize its presence and ensure Phase 1 does not accidentally depend on it
 
 Phase 1 must:
 
@@ -123,14 +142,14 @@ Phase 1 must:
 - preserve memoir search/resume/bookmarks but move memoir-specific identity/UI away from the global library landing;
 - encode the nine-shelf taxonomy;
 - hide empty shelves by default;
-- protect existing Manohara vendor data;
+- make no use of the accidental Manohara website files;
 - make **no mobile changes**;
 - make **no archival source-text changes**;
 - import **no source PDFs**;
 - avoid a mass integration of all repositories;
 - stop with a green Phase-1 PR and a clear Phase-2 handover.
 
-After Phase 1 is merged/deployed, the planned Phase 2 is **Cinema / Manohara integration**, continuing the already-started vendor work, not restarting it.
+After Phase 1 is merged/deployed, the planned Phase 2 is **Cinema / Manohara integration**, but it must start afresh from the authoritative `pugazg/kalaignar-cinema-works` release/reader-export artifacts — **not** from the accidental files already present in `kalaignar-autobiography`.
 
 ## Important source-readiness cautions
 
@@ -165,6 +184,8 @@ Every Claude prompt should contain:
 - stop condition;
 - structured final report;
 - explicit instruction not to begin the next phase automatically.
+
+For any Manohara-related prompt, explicitly state that `pugazg/kalaignar-cinema-works` is the source of truth and the accidental website Manohara files must not be used as source/reference/continuation input.
 
 ## Start now
 
