@@ -2,6 +2,11 @@
 
 **Last updated:** 2026-08-17
 
+> **Status:** **Phase 1 — Library Foundation is COMPLETE** (merged to `kalaignar-autobiography`
+> `main` and live in production, verified 2026-08-17). `/read` is now the Kalaignar Digital
+> Library landing. See **§10 → Phase 1** for the completion record. **Phase 2 (Cinema / Manohara)
+> has NOT started.**
+
 This is the durable cross-chat handover for the **web Reading Room / Kalaignar Digital Library** at `https://nenjukkuneethi.org/read`.
 
 The native mobile app work is **on hold by owner decision** while this web-library expansion is prioritised. Mobile history remains preserved separately under `projects/kalaignar-autobiography/`.
@@ -42,6 +47,10 @@ Future Kalaignar source repositories may be added without redesigning the librar
 ---
 
 ## 2. Current public Reading Room baseline
+
+> **Superseded by Phase 1 (see §10):** `/read` is no longer memoir-centric — it is now the
+> catalog-driven Digital Library landing, and the memoir's own library/search UI moved to
+> `/read/nenjukku-neethi`. The description below is the pre-Phase-1 baseline, kept for history.
 
 At the time of this handover, the public Reading Room presents three peer collections:
 
@@ -368,25 +377,56 @@ Do not attempt to integrate all repositories in one giant PR.
 - Public taxonomy decided.
 - Accidental website-repository Manohara files identified as **non-authoritative and excluded from future integration inputs**.
 
-## Phase 1 — Library Foundation
+## Phase 1 — Library Foundation — ✅ COMPLETE
 
-**This is the next implementation activity.**
+**Merged and live in production, verified 2026-08-17.**
 
-Goals:
+- **Implementation repository:** `pugazg/kalaignar-autobiography`
+- **Phase-1 PR:** #16 — _Digital Library Phase 1 — library foundation and catalog architecture_
+  (squash-merged; feature branch `digital-library/phase-1-foundation` deleted)
+- **Merged implementation `main` SHA:** `645cbbe67e6efa2fcd8870140f03267b1a56cfeb`
+- **Production verification date:** 2026-08-17 (checked on `https://nenjukkuneethi.org`, not a
+  PR preview)
+- **Implementation-repo Phase-1 handover:** `docs/digital-library/PHASE1_HANDOVER.md`
 
-1. inspect current live `/read`, `/murasoli`, `/tholkappiyam`, current data/catalog conventions and current open PRs;
-2. note that accidental Manohara files exist in the website tree, but do not use, extend, normalize or integrate them;
-3. create the normalized catalog model;
-4. reorganize `/read` into the Kalaignar Digital Library landing page;
-5. preserve all current reader routes and functionality;
-6. move memoir-specific search/filters/resume/bookmark UI into a memoir-focused surface/component rather than presenting it as global-library behavior;
-7. render the current three public collections from catalog data rather than a hard-coded three-card array;
-8. build the nine-shelf taxonomy into the model, but do not publicly render empty shelves by default;
-9. add no new source work in this phase unless a tiny amount of integration metadata is necessary to validate the architecture.
+What shipped:
 
-Phase 1 is an **information-architecture/refactor activity**, not a mass content import.
+- **`/read` = the global Kalaignar Digital Library landing** (கலைஞர் மின்னூலகம்), catalog-driven,
+  no memoir-specific global identity.
+- **`/read/nenjukku-neethi` = the memoir collection surface** — the relocated memoir library:
+  title + full-text search, volume filters, progress / continue / bookmarks.
+- **`/read/[id]` memoir chapter deep links preserved** (e.g. `/read/v1-ch01`), along with `nn-*`
+  localStorage state, `?find=` deep links, share/citation URLs. Memoir "Contents" backlinks now
+  target `/read/nenjukku-neethi`.
+- **`/murasoli` and `/tholkappiyam` (and their readers/deep links) preserved unchanged.**
+- **Nine-shelf taxonomy encoded** in `data/library.ts` (`SHELVES`); **only non-empty shelves
+  render** (`visibleShelves()`), so the live landing shows exactly Life Writing, Letters, and
+  Literary Commentary. No "coming soon" placeholders.
+- **Three currently-published works:** Nenjukku Neethi (Life Writing), Murasoli — The Letters
+  (Letters), Tholkappiya Poonga (Literary Commentary). Rendered from catalog data, not a
+  hard-coded array. Public rendering is driven only by `state: "published"`; there is **no
+  filesystem auto-discovery**.
+- **Murasoli coverage correction:** Murasoli Tamil availability is **`partial`** at the intended
+  collection boundary (only volumes 48–54 of the full letters collection are integrated) — it is
+  no longer falsely `complete`.
+- **English coverage vs English provenance modeled separately:** `Availability`
+  (`complete|partial|none`) for coverage, and a distinct optional `EnglishKind`
+  (`project-created | separately-published | published-source-witness`) for provenance/kind
+  (left unset for all three legacy works — not guessed).
+- **Manohara:** no catalog entry, no Cinema Writing shelf, no dependency on the accidental
+  `public/data/cinema/manohara/parts/` files (left untouched and non-authoritative).
+- **No mobile changes** (mobile PR #15 untouched) and **no archival/source-text or PDF changes**.
 
-## Phase 2 — Cinema shelf, beginning with Manohara
+Phase 1 was an information-architecture/refactor activity, not a mass content import.
+
+## Phase 2 — Cinema shelf, beginning with Manohara — NOT STARTED
+
+**Phase 2 may begin only as a NEW activity now that Phase 1 closeout is complete.** Its
+authoritative source is exclusively the live `pugazg/kalaignar-cinema-works` release/reader-export
+state at the exact source commit selected at Phase-2 startup. The accidental
+`kalaignar-autobiography/public/data/cinema/manohara/parts/` files must never be treated as
+source, continuation boundary, comparison baseline, provenance evidence, Tamil authority, English
+authority, or scene/unit-count authority.
 
 Reason for first priority:
 
