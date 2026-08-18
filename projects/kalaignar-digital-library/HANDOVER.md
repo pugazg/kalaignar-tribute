@@ -1,11 +1,12 @@
 # Kalaignar Digital Library / Reading Room — Master Handover
 
-**Last updated:** 2026-08-17
+**Last updated:** 2026-08-18
 
-> **Status:** **Phase 1 — Library Foundation is COMPLETE** (merged to `kalaignar-autobiography`
-> `main` and live in production, verified 2026-08-17). `/read` is now the Kalaignar Digital
-> Library landing. See **§10 → Phase 1** for the completion record. **Phase 2 (Cinema / Manohara)
-> has NOT started.**
+> **Status:** **Phase 2 — Cinema / Manohara is COMPLETE** (merged to `kalaignar-autobiography`
+> `main` and live in production, verified 2026-08-18) — building on the completed Phase 1
+> foundation. `/read` is the Kalaignar Digital Library landing, now showing four works across four
+> shelves (Life Writing, Letters, Cinema Writing, Literary Commentary). See **§10 → Phase 2** for
+> the completion record. **The next planned phase is Phase 3 — Speeches, which has NOT started.**
 
 This is the durable cross-chat handover for the **web Reading Room / Kalaignar Digital Library** at `https://nenjukkuneethi.org/read`.
 
@@ -419,36 +420,69 @@ What shipped:
 
 Phase 1 was an information-architecture/refactor activity, not a mass content import.
 
-## Phase 2 — Cinema shelf, beginning with Manohara — NOT STARTED
+## Phase 2 — Cinema / Manohara — ✅ COMPLETE
 
-**Phase 2 may begin only as a NEW activity now that Phase 1 closeout is complete.** Its
-authoritative source is exclusively the live `pugazg/kalaignar-cinema-works` release/reader-export
-state at the exact source commit selected at Phase-2 startup. The accidental
-`kalaignar-autobiography/public/data/cinema/manohara/parts/` files must never be treated as
-source, continuation boundary, comparison baseline, provenance evidence, Tamil authority, English
-authority, or scene/unit-count authority.
+**Merged and live in production, verified 2026-08-18.** First **Cinema Writing** work onboarded;
+`/read` now shows four works across four shelves.
 
-Reason for first priority:
+- **Implementation repository:** `pugazg/kalaignar-autobiography`
+- **Phase-2 PR:** #17 — _Digital Library Phase 2 — Manohara cinema reader_ (squash-merged)
+- **Final pre-merge PR head:** `ea0b01399cbb1df9c9fe932b54c9f039cbc04602`
+- **Implementation `main` merge SHA:** `ae2f2a6d5c2f8293a0f9a2b2c4fc0c0124f44119`
+- **Production deployment verification date:** 2026-08-18 (Vercel Production deployment for the
+  merge SHA = success; checked on `https://nenjukkuneethi.org`, not a PR preview)
+- **Implementation-repo Phase-2 handover:** `docs/digital-library/PHASE2_MANOHARA_HANDOVER.md`
 
-- the authoritative `pugazg/kalaignar-cinema-works` repository has mature verified reader/export packages;
-- it explicitly targets the Digital Library;
-- Manohara provides a strong first test of the scene/dialogue reader type.
+**Source (authoritative, unmodified):**
 
-**The accidental `kalaignar-autobiography/public/data/cinema/manohara/parts/` files must not be used as source material or as a resume point.**
+- Source repo/path: `pugazg/kalaignar-cinema-works` @ `works/manohara`
+- Source commit: `4b5f3238bd1e5983e995ddd85cd8a81ae27de21d`
+- Source scan SHA-256: `87518fd8c290d7880aa2ddd9f2b5999c9d421d48fe1f02d61cf8e254393236a9`
+- No source-repository modification was part of this phase.
 
-Activity sequence:
+**Segmentation:**
 
-1. inspect live `pugazg/kalaignar-cinema-works` Manohara source/release state and identify the exact approved Tamil/English reader/export artifacts;
-2. record the exact source-repository commit and integrity/provenance information;
-3. design/import the website reader data directly from those authoritative source-repository artifacts;
-4. if the accidental website Manohara files conflict with the intended canonical import path, deliberately replace/remove/quarantine them as an implementation cleanup — never by treating their content as evidence;
-5. create the Cinema shelf entry;
-6. create the scene-based Tamil/English reader;
-7. verify provenance, all scene/unit counts and navigation against the source repository;
-8. publish Manohara only after end-to-end QA;
-9. then integrate Parasakthi and Tirumbippaar one work at a time, each from its source-repository release output.
+- **57 archive-created navigation segments.** The 1954 booklet **prints no numbered scenes**
+  (`sourceSceneNumber = null`, `sourceSceneNumbering: none-printed`). These are never described
+  publicly as source/printed scenes — the reader and source page say "archive segment N of 57".
 
-## Phase 3 — Speeches
+**Tamil:** complete-verified source derivative — no normalization / modernization / rewriting.
+
+**English:** complete-verified, **project-created** source-linked derivative — 1190 units; exact
+speaker labels; **null speakers preserved**; per-unit source record / occurrence / page provenance
+preserved, including **17 exact cross-page English-page-segment records**; no invented song lyrics.
+(Counts kept distinct: **27** source-unlabelled **spoken** units, vs the broader null-speaker /
+non-dialogue provenance population — the latter is *not* labelled "source-unlabelled spoken units".)
+
+**Accidental data:** the old `public/data/cinema/manohara/parts/` tree was removed as
+non-authoritative implementation cleanup — **never** used as source, reference, baseline, or
+validation.
+
+**Rights (nationalisation model established):**
+
+- Kalaignar-authored underlying work: **nationalised by the Government of Tamil Nadu** (Tamil:
+  **நாட்டுடைமை / நாட்டுடைமையாக்கப்பட்டது**).
+- Announcement: **2024-08-22** (without royalty).
+- Government Order **public handover to Rajathi Ammal: 2024-12-22** — recorded strictly as the
+  handover date, **not** the GO issue date.
+- GO **number: null / unverified**; GO **formal issue date: null / unverified** — awaiting direct
+  verification from the order itself; never inferred.
+- The historical **1954 printed rights notice** (`உரிமை : ஆசிரியருக்கே.`) remains a **separate
+  source witness**, not the present status.
+- The **project-created English translation** has separate provenance; **third-party material** is
+  treated separately.
+- A reusable `WorkRights` catalog model was introduced. **A dedicated future rights audit** should
+  bring the other existing Kalaignar Digital Library works onto this same model and record the GO
+  number/issue date once verified. **No rights migration of existing works was performed here.**
+
+**Scope:** web-only. **No mobile changes** (mobile PR #15 remains separate and untouched — still
+open) and **no archival/source-repo or PDF changes**. No generalized ingestion framework.
+
+**Not started (deliberately out of scope for this phase):** Parasakthi, Tirumbippaar, or any other
+cinema work — each future cinema work is integrated one at a time from its source-repository
+release output, on the same source-faithful terms.
+
+## Phase 3 — Speeches — NEXT (NOT STARTED)
 
 Integrate as two subcollections under the **Speeches** shelf:
 
