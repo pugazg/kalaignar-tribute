@@ -2,13 +2,15 @@
 
 **Last updated:** 2026-08-18
 
-> **Status:** **Phase 3 — Speeches is ACTIVE** (first benchmark speech — Udhaya Kathir — in
-> reviewer-gated PR #18, **not merged**), building on the **COMPLETE** Phase 1 foundation and
-> **COMPLETE** Phase 2 (Cinema / Manohara, merged + live in production, verified 2026-08-18).
-> `/read` is the Kalaignar Digital Library landing; on `main` it shows four works across four
-> shelves (Life Writing, Letters, Cinema Writing, Literary Commentary), and PR #18 adds a fifth
-> (Speeches). See **§10 → Phase 3** for the active record and **§10 → Phase 2** for the completion
-> record. Mobile remains **ON HOLD** (Activity 6 / PR #15 merged for preservation — see §4).
+> **Status:** **Phase 3 — Speeches is ACTIVE**; its **first benchmark — Udhaya Kathir — is
+> COMPLETE, MERGED and PRODUCTION-VERIFIED** (PR #18 squash-merged, verified live 2026-08-18).
+> Phase 3 is **not complete** — it holds many more released speeches — but the speech
+> architecture is now proven. This builds on the **COMPLETE** Phase 1 foundation and **COMPLETE**
+> Phase 2 (Cinema / Manohara, merged + live in production, verified 2026-08-18). `/read` is the
+> Kalaignar Digital Library landing; on `main` it now shows **five works across five shelves**
+> (Life Writing, Letters, Cinema Writing, Speeches, Literary Commentary), with Udhaya Kathir under
+> **Speeches**. See **§10 → Phase 3** for the active record and **§10 → Phase 2** for the Phase-2
+> completion record. Mobile remains **ON HOLD** (Activity 6 / PR #15 merged for preservation — see §4).
 
 This is the durable cross-chat handover for the **web Reading Room / Kalaignar Digital Library** at `https://nenjukkuneethi.org/read`.
 
@@ -492,36 +494,58 @@ changes**. No generalized ingestion framework.
 cinema work — each future cinema work is integrated one at a time from its source-repository
 release output, on the same source-faithful terms.
 
-## Phase 3 — Speeches — 🚧 ACTIVE (first benchmark in review)
+## Phase 3 — Speeches — 🚧 ACTIVE (benchmark 1 COMPLETE / MERGED / PRODUCTION-VERIFIED)
 
-**Implementation has begun** from the post-mobile-merge `main`
-(`36d1325e9dc04084ed84cb50a2d0c3f6a665b795`). The first benchmark speech is integrated and open
-for review; **it is not merged, and Phase 3 is not complete.**
+**Phase 3 is ACTIVE.** Its **first benchmark — Udhaya Kathir — is COMPLETE, MERGED and
+PRODUCTION-VERIFIED**, opening the public **Speeches** shelf. Phase 3 itself is **not complete** —
+many more released speeches remain — but the speech architecture is now proven end-to-end.
+
+Implementation began from the post-mobile-merge `main`
+(`36d1325e9dc04084ed84cb50a2d0c3f6a665b795`) and was merged back on **2026-08-18**.
 
 - **Phase-3 branch:** `digital-library/phase-3-speeches`
-- **Phase-3 PR:** #18 — _Digital Library Phase 3 — Speeches: Udhaya Kathir_ (**open, reviewer-gated,
-  not merged**)
+- **Phase-3 PR:** #18 — _Digital Library Phase 3 — Speeches: Udhaya Kathir_ (**squash-merged**)
+  - **Final pre-merge head:** `a3f6c43d28ecccebf250d8596e35767c7be782f9`
+  - **Squash-merge SHA (implementation `main`):** `13ddf04f01b6a75024985b6df172deace9d26e80`
+  - **Production-verified:** 2026-08-18 at `https://nenjukkuneethi.org` on the exact merge SHA
+    (Vercel production deployment succeeded; reader + source pages confirmed live).
 - **Implementation-repo Phase-3 handover:** `docs/digital-library/PHASE3_SPEECHES_HANDOVER.md`
 - **First benchmark:** `udhaya-kathir` — உதயக் கதிர் / Udhaya Kathir (Tamil Nadu Legislative
   Assembly, 1970-09-09; reply to the no-confidence-motion debate). Chosen on **source readiness** as
   the strongest fully-released assembly speech (standalone 1970 booklet `TVA_BOK_0065650`; verified
-  Tamil + verified faithful English; 29 printed section headings; speech pp. 5–46).
+  Tamil + verified faithful English; 29 printed section headings; speech pp. 5–46 of 48).
 - **Source (pinned, unmodified):** `pugazg/kalaignar-assembly-speeches`
   @ `b1b82402642d8f2cf36927d4752c8e7d28142fdd`. Both speech repos were inspected
   (`kalaignar-assembly-speeches` @ `b1b8240`, `kalaignar-public-speeches` @ `c8abf95`); both hold
-  fully-released verified works. Deterministic importer, fail-closed on source-HEAD mismatch.
+  fully-released verified works. Deterministic importer, fail-closed on source-HEAD mismatch; no PDF
+  vendoring; no runtime GitHub access. **Assembly inventory is now 11 indexed speeches** (10
+  industrial-anthology + the separately archived Udhaya Kathir).
 - **Public model:** the single **Speeches** shelf (`உரைகள்`); `assembly` / `public` are **subtypes**
   (`subtype: "assembly-speech"` / `"public-speech"`), **not** separate public shelves. Routes are
   flat `/speeches/<slug>` (+ `/source`); repository names are not exposed as route taxonomy. New
   `readerStructure: "speech"` reader (long-form prose with printed headings — not scene
   segmentation); source provenance preserved in the vendored data; nationalisation rights model
   reused (GO number/issue date still unverified).
+- **Honest boundary model (proven here):** page boundaries are audited explicitly, never inferred
+  from punctuation. Tamil carries a full **41-transition** boundary audit (relation + lexical join
+  per page break); English classifies all **42** `Source page N` anchors. Two classes of source
+  fact remain **unresolved and are shown as unresolved, not guessed**:
+  - **7 unresolved printed-paragraph relationships** — grouped as `unresolved-break` (`role="group"`),
+    not asserted as clean logical paragraphs;
+  - **5 unresolved lexical joins** (sandhi cross-page) — encoded `joinToNext: "unknown"`, both
+    verbatim source fragments preserved with a neutral inline source-page marker (neither space nor
+    concatenation asserted).
+  Both classes are **scan-dependent evidence limitations**, not implementation defects: only the
+  controlling scan (`TVA_BOK_0065650`) can settle them, and it is **not accessible read-only in this
+  integration environment**. A future read-only scan review may resolve them **without changing
+  source authority**. Both remain visible at `/speeches/udhaya-kathir/source` and in
+  `provenance.json`.
 - **Done in this activity:** readiness inventory across both repos; benchmark selected; Phase-3
-  data/reader/importer architecture; ONE benchmark integrated + published on the Speeches shelf; its
-  source/provenance page; validation; PR opened. **Not done (deliberate):** any second speech, bulk
-  assembly/public import, a `/speeches` collection landing, Essays/Fiction/Poetry, another cinema
-  work, mobile features, a generalized ingestion framework, or the project-wide existing-works rights
-  audit.
+  data/reader/importer architecture; ONE benchmark integrated, validated, published, **squash-merged
+  and production-verified** on the Speeches shelf; its source/provenance page with both blocker
+  classes. **Not done (deliberate):** any second speech, bulk assembly/public import, a `/speeches`
+  collection landing, Essays/Fiction/Poetry, another cinema work, mobile features, a generalized
+  ingestion framework, or the project-wide existing-works rights audit.
 
 **Remaining Phase-3 direction** — integrate additional released speeches one at a time under the
 same **Speeches** shelf (both Legislative Assembly and Public speeches are subtypes of it, not
