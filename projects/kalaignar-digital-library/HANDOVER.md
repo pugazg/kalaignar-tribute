@@ -118,7 +118,14 @@ The owner has explicitly chosen to **put mobile app development on hold** for no
 
 Do not start new mobile production-readiness work unless the owner reactivates it.
 
-Mobile PR #15 (`mobile/offline-network-readiness`) was open/green at the prior handover and had not yet been merged. Its state must be inspected live if mobile work is ever resumed. Do not merge or close it merely as a side effect of Digital Library work.
+Mobile **Activity 6 / PR #15** (`mobile/offline-network-readiness`) has now been **merged into
+implementation `main` for durable preservation** (squash merge SHA
+`36d1325e9dc04084ed84cb50a2d0c3f6a665b795`, 2026-08-18) — offline/network status, launch/cache
+reliability, and retry on all content-failure surfaces, with **no privacy-model change**. This was
+a preservation merge only: **mobile development remains ON HOLD**, no new mobile activity is active,
+and the active next workstream is the **Phase 3 web Digital Library** work. Do not treat PR #15 as
+open/unmerged after this point, and do not start new mobile features unless the owner reactivates
+mobile development.
 
 ---
 
@@ -475,8 +482,9 @@ validation.
   bring the other existing Kalaignar Digital Library works onto this same model and record the GO
   number/issue date once verified. **No rights migration of existing works was performed here.**
 
-**Scope:** web-only. **No mobile changes** (mobile PR #15 remains separate and untouched — still
-open) and **no archival/source-repo or PDF changes**. No generalized ingestion framework.
+**Scope:** web-only. **No mobile changes** (Phase 2 did not touch mobile; mobile PR #15 was
+separate and has since been merged on its own — see §4) and **no archival/source-repo or PDF
+changes**. No generalized ingestion framework.
 
 **Not started (deliberately out of scope for this phase):** Parasakthi, Tirumbippaar, or any other
 cinema work — each future cinema work is integrated one at a time from its source-repository
