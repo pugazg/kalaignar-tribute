@@ -2,11 +2,13 @@
 
 **Last updated:** 2026-08-18
 
-> **Status:** **Phase 2 — Cinema / Manohara is COMPLETE** (merged to `kalaignar-autobiography`
-> `main` and live in production, verified 2026-08-18) — building on the completed Phase 1
-> foundation. `/read` is the Kalaignar Digital Library landing, now showing four works across four
-> shelves (Life Writing, Letters, Cinema Writing, Literary Commentary). See **§10 → Phase 2** for
-> the completion record. **The next planned phase is Phase 3 — Speeches, which has NOT started.**
+> **Status:** **Phase 3 — Speeches is ACTIVE** (first benchmark speech — Udhaya Kathir — in
+> reviewer-gated PR #18, **not merged**), building on the **COMPLETE** Phase 1 foundation and
+> **COMPLETE** Phase 2 (Cinema / Manohara, merged + live in production, verified 2026-08-18).
+> `/read` is the Kalaignar Digital Library landing; on `main` it shows four works across four
+> shelves (Life Writing, Letters, Cinema Writing, Literary Commentary), and PR #18 adds a fifth
+> (Speeches). See **§10 → Phase 3** for the active record and **§10 → Phase 2** for the completion
+> record. Mobile remains **ON HOLD** (Activity 6 / PR #15 merged for preservation — see §4).
 
 This is the durable cross-chat handover for the **web Reading Room / Kalaignar Digital Library** at `https://nenjukkuneethi.org/read`.
 
@@ -490,14 +492,41 @@ changes**. No generalized ingestion framework.
 cinema work — each future cinema work is integrated one at a time from its source-repository
 release output, on the same source-faithful terms.
 
-## Phase 3 — Speeches — NEXT (NOT STARTED)
+## Phase 3 — Speeches — 🚧 ACTIVE (first benchmark in review)
 
-Integrate as two subcollections under the **Speeches** shelf:
+**Implementation has begun** from the post-mobile-merge `main`
+(`36d1325e9dc04084ed84cb50a2d0c3f6a665b795`). The first benchmark speech is integrated and open
+for review; **it is not merged, and Phase 3 is not complete.**
 
-- Public Speeches
-- Legislative Assembly Speeches
+- **Phase-3 branch:** `digital-library/phase-3-speeches`
+- **Phase-3 PR:** #18 — _Digital Library Phase 3 — Speeches: Udhaya Kathir_ (**open, reviewer-gated,
+  not merged**)
+- **Implementation-repo Phase-3 handover:** `docs/digital-library/PHASE3_SPEECHES_HANDOVER.md`
+- **First benchmark:** `udhaya-kathir` — உதயக் கதிர் / Udhaya Kathir (Tamil Nadu Legislative
+  Assembly, 1970-09-09; reply to the no-confidence-motion debate). Chosen on **source readiness** as
+  the strongest fully-released assembly speech (standalone 1970 booklet `TVA_BOK_0065650`; verified
+  Tamil + verified faithful English; 29 printed section headings; speech pp. 5–46).
+- **Source (pinned, unmodified):** `pugazg/kalaignar-assembly-speeches`
+  @ `b1b82402642d8f2cf36927d4752c8e7d28142fdd`. Both speech repos were inspected
+  (`kalaignar-assembly-speeches` @ `b1b8240`, `kalaignar-public-speeches` @ `c8abf95`); both hold
+  fully-released verified works. Deterministic importer, fail-closed on source-HEAD mismatch.
+- **Public model:** the single **Speeches** shelf (`உரைகள்`); `assembly` / `public` are **subtypes**
+  (`subtype: "assembly-speech"` / `"public-speech"`), **not** separate public shelves. Routes are
+  flat `/speeches/<slug>` (+ `/source`); repository names are not exposed as route taxonomy. New
+  `readerStructure: "speech"` reader (long-form prose with printed headings — not scene
+  segmentation); source provenance preserved in the vendored data; nationalisation rights model
+  reused (GO number/issue date still unverified).
+- **Done in this activity:** readiness inventory across both repos; benchmark selected; Phase-3
+  data/reader/importer architecture; ONE benchmark integrated + published on the Speeches shelf; its
+  source/provenance page; validation; PR opened. **Not done (deliberate):** any second speech, bulk
+  assembly/public import, a `/speeches` collection landing, Essays/Fiction/Poetry, another cinema
+  work, mobile features, a generalized ingestion framework, or the project-wide existing-works rights
+  audit.
 
-Prefer machine-readable indexes where present, but verify every reader-facing work against source-repository release state.
+**Remaining Phase-3 direction** — integrate additional released speeches one at a time under the
+same **Speeches** shelf (both Legislative Assembly and Public speeches are subtypes of it, not
+separate shelves), reusing this reader/importer pattern. Prefer machine-readable indexes where
+present, but verify every reader-facing work against source-repository release state.
 
 Do not collapse public speeches and Assembly proceedings into one reader model if that loses parliamentary structure.
 
