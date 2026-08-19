@@ -542,7 +542,12 @@ Implementation began from the post-mobile-merge `main`
   reused (GO number/issue date still unverified).
 - **Honest boundary model (proven here):** page boundaries are audited explicitly, never inferred
   from punctuation. Tamil carries a full **41-transition** boundary audit (relation + lexical join
-  per page break); English classifies all **42** `Source page N` anchors. Two classes of source
+  per page break); English classifies all **42** `Source page N` anchors. The audited Tamil result is
+  **41 transitions = 31 source-established same-paragraph continuations + 3 source-established
+  paragraph boundaries + 7 unresolved printed-paragraph relationships** (0 heading boundaries), with
+  lexical joins **none 10 / space 16 / unknown 5**. ("Speaker turn" is the per-transition *evidence*
+  for those three boundaries — not the generic meaning of the `paragraphBoundary` field, which counts
+  source-established paragraph boundaries for any subtype.) Two classes of source
   fact remain **unresolved and are shown as unresolved, not guessed**:
   - **7 unresolved printed-paragraph relationships** — grouped as `unresolved-break` (`role="group"`),
     not asserted as clean logical paragraphs;
