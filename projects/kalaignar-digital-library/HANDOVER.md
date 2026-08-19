@@ -16,7 +16,14 @@
 >   `acb9721127de72c7575c035ccccf877deeb6421e`, verified live 2026-08-19.
 > - **Benchmark #3: NOT STARTED** — and deliberately **not selected** by this handover.
 >
-> **Current implementation `main`: `acb9721127de72c7575c035ccccf877deeb6421e`.**
+> **Last production application-code checkpoint:
+> `acb9721127de72c7575c035ccccf877deeb6421e`** (the PR #21 squash merge).
+>
+> **Current repository `main` must always be read live from GitHub.** Documentation-only closeout
+> commits — including the handover PRs that accompany this update — may move repository `main` beyond
+> the application-code checkpoint **without changing deployed application behaviour**, so treat
+> `acb97211…` as the production application-code state, not as the newest commit on `main`.
+>
 > `/read` publishes **6 works across 5 non-empty shelves** — Life Writing, Letters, Cinema Writing,
 > **Speeches**, Literary Commentary — with **both** Udhaya Kathir and Poonthottam on the **single**
 > Speeches / உரைகள் shelf. See **§10 → Phase 3** for the full record.
@@ -604,7 +611,8 @@ Production verification of PR #20 surfaced a **presentation/provenance defect on
 content change**.
 
 - **PR #21** — reviewed head `4135c29ed3a2ad1322397a68d1f4d4b09c840d45`, squash merge
-  **`acb9721127de72c7575c035ccccf877deeb6421e`** (now current implementation `main`),
+  **`acb9721127de72c7575c035ccccf877deeb6421e`** (the last production application-code checkpoint —
+  repository `main` may since carry documentation-only commits),
   **production-verified 2026-08-19**.
 - Durable blocker **`resolution`** is now actually **rendered** (it existed but was never shown);
   temporary **environment-availability wording** is gone from the Tamil presentation; the generic label
@@ -805,5 +813,7 @@ Constraints for that activity:
 - **no** mobile work (mobile remains ON HOLD);
 - **stop before Benchmark #4.**
 
-Current implementation checkpoint at this handover:
-**`acb9721127de72c7575c035ccccf877deeb6421e`** — live GitHub state overrides this SHA if it later moves.
+Last production application-code checkpoint at this handover:
+**`acb9721127de72c7575c035ccccf877deeb6421e`** — live GitHub `main` is authoritative and overrides this
+SHA if it later moves; documentation-only commits may advance `main` past it without changing the
+deployed application.

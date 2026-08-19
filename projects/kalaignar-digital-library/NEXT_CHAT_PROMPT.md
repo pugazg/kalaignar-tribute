@@ -34,11 +34,11 @@ Then inspect the live implementation repository:
   - **Post-production provenance hotfix:** COMPLETE, merged, production-verified (PR #21).
   - **Benchmark #3: NOT STARTED and NOT selected.**
 
-**Implementation checkpoint at this handover:**
+**Last production application-code checkpoint at this handover:**
 
 `acb9721127de72c7575c035ccccf877deeb6421e`
 
-If live `main` has moved past that SHA, **live state wins** — inspect it and reconcile before advising anything.
+That SHA identifies the last **production application-code** state. Repository `main` may contain later **documentation-only** commits that do not change deployed application behaviour. If live `main` has moved past that SHA, **live state wins** — inspect it and reconcile before advising anything.
 
 `/read` currently publishes **6 works across 5 non-empty shelves** (Life Writing, Letters, Cinema Writing, Speeches, Literary Commentary), with **both** speeches on the **single** Speeches / உரைகள் shelf. Verify this live rather than trusting the number.
 
