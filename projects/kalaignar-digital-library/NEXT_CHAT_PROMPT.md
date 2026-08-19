@@ -30,24 +30,25 @@ Then inspect the live implementation repository:
 - **Phase 2 — Cinema / Manohara:** COMPLETE, merged, production-verified.
 - **Phase 3 — Speeches: ACTIVE, NOT complete.**
   - **Benchmark #1 — உதயக் கதிர் / Udhaya Kathir** (assembly speech): COMPLETE, merged, production-verified (PR #18).
-  - **Benchmark #2 — பூந்தோட்டம் / Poonthottam** (public speech): COMPLETE, merged, production-verified (PR #20).
-  - **Post-production provenance hotfix:** COMPLETE, merged, production-verified (PR #21).
-  - **Benchmark #3: NOT STARTED and NOT selected.**
+  - **Benchmark #2 — பூந்தோட்டம் / Poonthottam** (public speech): COMPLETE, merged, production-verified (PR #20), plus the PR #21 presentation/provenance hotfix.
+  - **Benchmark #3 — அறப்போர் / Arappor** (public speech): COMPLETE, merged, production-verified (PR #23).
+  - **Benchmark #4: NOT STARTED and NOT SELECTED.**
 
 **Last production application-code checkpoint at this handover:**
 
-`acb9721127de72c7575c035ccccf877deeb6421e`
+`ecf73cc8146cd9a9578c4aeaf73518b122ce569c`
 
-That SHA identifies the last **production application-code** state. Repository `main` may contain later **documentation-only** commits that do not change deployed application behaviour. If live `main` has moved past that SHA, **live state wins** — inspect it and reconcile before advising anything.
+That is the Phase-3 Benchmark #3 / PR #23 squash merge, and it identifies the last **production application-code** state. Repository `main` may contain later **documentation-only** commits that do not change deployed application behaviour, and such a docs-only SHA is **never** a newer application-code checkpoint. If live `main` has moved past that SHA, **live state wins** — inspect it and reconcile before advising anything.
 
-`/read` currently publishes **6 works across 5 non-empty shelves** (Life Writing, Letters, Cinema Writing, Speeches, Literary Commentary), with **both** speeches on the **single** Speeches / உரைகள் shelf. Verify this live rather than trusting the number.
+`/read` currently publishes **7 works across 5 non-empty shelves** (Life Writing, Letters, Cinema Writing, Speeches, Literary Commentary), with **all three** speeches — Udhaya Kathir, Poonthottam and Arappor — on the **single** Speeches / உரைகள் shelf. Verify this live rather than trusting the number.
 
-**Do NOT restart:** Phase 1, Phase 2 / Manohara, Benchmark #1 (Udhaya), Benchmark #2 (Poonthottam), the PR #21 hotfix, or mobile.
+**Do NOT restart:** Phase 1, Phase 2 / Manohara, Benchmark #1 (Udhaya), Benchmark #2 (Poonthottam), the PR #21 hotfix, Benchmark #3 (Arappor), or mobile.
 
 ## Current speech source pins
 
 - **Udhaya Kathir:** `pugazg/kalaignar-assembly-speeches` @ `b1b82402642d8f2cf36927d4752c8e7d28142fdd`
 - **Poonthottam:** `pugazg/kalaignar-public-speeches` @ `1ef73a709a343390befe55dcdfb029427f527bf4`
+- **Arappor:** `pugazg/kalaignar-public-speeches` @ `1ef73a709a343390befe55dcdfb029427f527bf4`
 
 ## Source repositories
 
@@ -100,14 +101,14 @@ Your job is to:
 
 ## Immediate next activity
 
-**Phase 3 — Benchmark #3: integrate ONE additional released speech.**
+**Phase 3 — Benchmark #4 candidate selection**, then integrating **ONE** additional released speech.
 
-**Benchmark #3 is NOT selected.** Before drafting any prompt, independently inspect the **LIVE** `main` of **both** speech source repositories and choose one work on current release/provenance strength:
+**Benchmark #4 is NOT started and NOT selected.** Before drafting any prompt, independently inspect the **LIVE** `main` of **both** speech source repositories and choose one work on current release/provenance strength:
 
 - `pugazg/kalaignar-assembly-speeches`
 - `pugazg/kalaignar-public-speeches`
 
-Do **not** assume a candidate from older handover prose — no work is pre-selected, and neither repository has priority by default. Confirm at the live commit that the chosen work's Tamil and English layers are genuinely released/verified, and that its provenance (scan identity, page map, dates) is strong enough to integrate honestly.
+Do **not** assume a candidate from older handover prose — no work is pre-selected, and **neither repository has priority by default**. Confirm at the live commit that the chosen work's Tamil and English layers are genuinely released/verified, and that its provenance (scan identity, page map, dates) is strong enough to integrate honestly.
 
 The activity must:
 
@@ -118,7 +119,7 @@ The activity must:
 - build **no** generalized ingestion framework;
 - make **no** source-archive edits, vendor **no** PDFs, use **no** runtime GitHub;
 - make **no** mobile changes;
-- **stop before Benchmark #4.**
+- **stop before Benchmark #5.**
 
 ## Source-faithful constraints (non-negotiable)
 
@@ -168,8 +169,8 @@ Every Claude prompt should contain:
 
 ## Start now
 
-Read the current Digital Library handover, inspect the live implementation repository (current `main`, open PRs, production `/read` and the two speech routes), and verify the Phase-3 checkpoint above. Then tell me the verified current state.
+Read the current Digital Library handover completely, inspect the live implementation repository (current `main`, open PRs, production `/read` and the three speech routes), and verify the Phase-3 checkpoint above. Then tell me the verified current state.
 
-When I ask for it, recommend the next **reviewer-gated Phase-3 Benchmark #3 Claude prompt**, including which single speech you recommend and why, based on live source-repository state. Do not start implementation yourself unless I explicitly ask you to.
+When I ask for it, independently inspect **both** live speech source repositories and recommend the next **reviewer-gated Phase-3 Benchmark #4** work — naming the single speech you recommend and why, based on live source state — together with a complete ready-to-paste Claude prompt. Do not implement the work yourself, and do not start Benchmark #5 automatically.
 
 ---
