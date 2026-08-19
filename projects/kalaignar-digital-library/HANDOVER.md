@@ -10,23 +10,29 @@
 >   2026-08-18.
 > - **Benchmark #2 — பூந்தோட்டம் / Poonthottam** (the first **public** speech): **COMPLETE / MERGED /
 >   PRODUCTION-VERIFIED** — PR #20, reviewed head `0906919e21066ab9e917985d51f60086823ad8ce`, squash
->   `2777064490910c02f5aa6938b9b6872b15e21e7c`, verified live 2026-08-19.
-> - **Post-production provenance hotfix:** PR #21, reviewed head
->   `4135c29ed3a2ad1322397a68d1f4d4b09c840d45`, squash
->   `acb9721127de72c7575c035ccccf877deeb6421e`, verified live 2026-08-19.
-> - **Benchmark #3: NOT STARTED** — and deliberately **not selected** by this handover.
+>   `2777064490910c02f5aa6938b9b6872b15e21e7c`, verified live 2026-08-19. A follow-up
+>   presentation/provenance hotfix (PR #21, squash `acb9721127de72c7575c035ccccf877deeb6421e`) is part
+>   of that history but is **no longer** the latest application-code checkpoint.
+> - **Benchmark #3 — அறப்போர் / Arappor** (`public-speech`): **COMPLETE / MERGED /
+>   PRODUCTION-VERIFIED** — PR #23, final reviewed head
+>   `06b42db399e1e97762ff9a9d522b63a83995bc03`, squash
+>   `ecf73cc8146cd9a9578c4aeaf73518b122ce569c` (2026-08-19T11:51:46Z), production Vercel **success**
+>   on that exact squash SHA.
+> - **Benchmark #4: NOT STARTED** — and deliberately **NOT SELECTED** by this handover.
 >
 > **Last production application-code checkpoint:
-> `acb9721127de72c7575c035ccccf877deeb6421e`** (the PR #21 squash merge).
+> `ecf73cc8146cd9a9578c4aeaf73518b122ce569c`** (the Phase-3 Benchmark #3 / PR #23 squash merge).
 >
 > **Current repository `main` must always be read live from GitHub.** Documentation-only closeout
 > commits — including the handover PRs that accompany this update — may move repository `main` beyond
 > the application-code checkpoint **without changing deployed application behaviour**, so treat
-> `acb97211…` as the production application-code state, not as the newest commit on `main`.
+> `ecf73cc8…` as the production application-code state, not as the newest commit on `main`, and never
+> record a docs-only SHA as a newer application-code checkpoint.
 >
-> `/read` publishes **6 works across 5 non-empty shelves** — Life Writing, Letters, Cinema Writing,
-> **Speeches**, Literary Commentary — with **both** Udhaya Kathir and Poonthottam on the **single**
-> Speeches / உரைகள் shelf. See **§10 → Phase 3** for the full record.
+> `/read` publishes **7 works across 5 non-empty shelves** — Life Writing, Letters, Cinema Writing,
+> **Speeches**, Literary Commentary — with **all three** speeches (Udhaya Kathir · Poonthottam ·
+> Arappor) on the **single** Speeches / உரைகள் shelf. No separate Public Speeches shelf exists and no
+> `/speeches` collection landing was added. See **§10 → Phase 3** for the full record.
 >
 > Mobile remains **ON HOLD** (Activity 6 / PR #15 merged for preservation — see §4).
 
@@ -512,12 +518,13 @@ changes**. No generalized ingestion framework.
 cinema work — each future cinema work is integrated one at a time from its source-repository
 release output, on the same source-faithful terms.
 
-## Phase 3 — Speeches — 🚧 ACTIVE (benchmarks 1 and 2 COMPLETE / MERGED / PRODUCTION-VERIFIED)
+## Phase 3 — Speeches — 🚧 ACTIVE (benchmarks 1, 2 and 3 COMPLETE / MERGED / PRODUCTION-VERIFIED)
 
-**Phase 3 is ACTIVE and NOT complete.** Two benchmarks are done — one per subtype — and the shared
-speech architecture is now proven end-to-end across **both** `assembly-speech` and `public-speech`,
-on one shelf, one reader and one provenance page. Many more released speeches remain.
-**Benchmark #3 has NOT been started and is not selected by this handover.**
+**Phase 3 is ACTIVE and NOT complete.** Three benchmarks are done — one assembly speech and two
+public speeches — and the shared speech architecture is proven end-to-end across **both**
+`assembly-speech` and `public-speech`, on one shelf, one reader and one provenance page, now
+including a source that establishes **no** date, venue or event. Many more released speeches remain.
+**Benchmark #4 has NOT been started and is NOT selected by this handover.**
 
 Implementation began from the post-mobile-merge `main`
 (`36d1325e9dc04084ed84cb50a2d0c3f6a665b795`) and was merged back on **2026-08-18**.
@@ -611,9 +618,8 @@ Production verification of PR #20 surfaced a **presentation/provenance defect on
 content change**.
 
 - **PR #21** — reviewed head `4135c29ed3a2ad1322397a68d1f4d4b09c840d45`, squash merge
-  **`acb9721127de72c7575c035ccccf877deeb6421e`** (the last production application-code checkpoint —
-  repository `main` may since carry documentation-only commits),
-  **production-verified 2026-08-19**.
+  **`acb9721127de72c7575c035ccccf877deeb6421e`** (**superseded** as the application-code checkpoint by
+  Benchmark #3 / PR #23 — see below), **production-verified 2026-08-19**.
 - Durable blocker **`resolution`** is now actually **rendered** (it existed but was never shown);
   temporary **environment-availability wording** is gone from the Tamil presentation; the generic label
   is now **"Source-established paragraph boundaries" / "மூலத்தால் உறுதிசெய்யப்பட்ட பத்தி எல்லைகள்"**
@@ -622,6 +628,60 @@ content change**.
 - **Both `speech.json` files stayed byte-identical.** Verified live afterwards: **Poonthottam
   source-established paragraph boundaries = 0**; **Udhaya = 3**, with its blocker classes **7 + 5**
   intact.
+
+### Benchmark #3 — அறப்போர் / Arappor (public speech) — ✅ COMPLETE
+
+The third benchmark, and the first whose examined source establishes **no speech date, no venue and
+no event** — proving the model can represent source absence honestly.
+
+- **Implementation PR:** #23 — final reviewed head `06b42db399e1e97762ff9a9d522b63a83995bc03`, squash
+  merge **`ecf73cc8146cd9a9578c4aeaf73518b122ce569c`** (2026-08-19T11:51:46Z), **production-verified
+  2026-08-19** with Vercel success on that exact squash SHA. This is now the **last production
+  application-code checkpoint**.
+- **Source (pinned, unmodified):** `pugazg/kalaignar-public-speeches` @
+  **`1ef73a709a343390befe55dcdfb029427f527bf4`**, `speeches/arappor`. Controlling scan
+  `TVA_BOK_0064122_அறப்போர்.pdf`, SHA-256
+  `8172cf4f04e804ebbcfe1b1e236c9d41bda2e07377952c162be4e4bb098ce01c`, 31,769,752 bytes, 22 PDF pages.
+  Body **PDF 4–20 / printed 3–19 (17 pages)**; front matter PDF 1–3; advertisements/back matter PDF
+  21–22. Edition: **second edition, April 1949, அறிவுப்பண்ணை** — **publication/edition context, NOT the
+  speech date**.
+- **Source-absence contract (source facts, not defects):** the examined source states no **date**, no
+  **venue**, no **event**. The model now supports `date: null`, `year: null` and an optional
+  public-speech `venue`, with the discriminated union preserved. Reader, SEO and provenance omit or
+  explicitly document the absences without fabricating substitutes; nothing is described as
+  "the 1949 speech".
+- **Tamil: 17 pages, 16 transitions = 5 source-established same-paragraph continuations + 0
+  source-established clean paragraph boundaries + 11 unresolved printed-paragraph relationships**;
+  lexical joins **none 0 / space 5 / unknown 0**; **64** paragraphs and runs (42 resolved + 22
+  unresolved-group) over **69** segments; **5** cross-page paragraphs.
+  - The five continuations rest on the archive's documented cross-page word splits — `மௌனம்`,
+    `நடராஜன்`, `அதற்காக`, `சுப்பராயன்`, `கடைசியாக`. **Reviewer-approved correction preserved:** the
+    original brief expected these downstream joins to be `none`; that was rejected because the source
+    archive had **already consolidated** each split word into the preceding page. Printed p.4 ends
+    with the complete `மௌனம்` and p.5 begins `சாதித்தனர்`, so the surviving boundary is an ordinary
+    word boundary — **`join: "space"`**. `none` would have produced `மௌனம்சாதித்தனர்`.
+- **English: 17 anchors = 15 same-paragraph continuations + 1 clean page-transition paragraph
+  boundary (printed p.10 → p.11) + 1 heading boundary (printed p.3)**; **54** paragraphs over **69**
+  segments; **15** cross-page paragraphs. A page anchor is provenance — never a paragraph boundary in
+  itself. _(First independent review defect: the first revision treated nearly every anchor as a
+  paragraph boundary; the explicit `EN_BOUNDARY` audit now drives paragraph assembly.)_
+- **Hard-line-break source fidelity** _(second independent review defect)_: both source layers contain
+  exactly **one** Markdown hard-break group — the printed **p.9** language-policy quotation, **8 lines
+  / 7 intentional breaks** in each language. It is generated as **ONE paragraph with one same-page
+  segment preserving all 7 breaks**, rendered with a narrowly scoped `whitespace-pre-line` — never as
+  eight semantic paragraphs. **Lesson:** trailing whitespace must be inspected *before* trimming,
+  because Markdown's "two spaces + newline" carries source structure. Also established: body-section
+  preamble before the first page marker is excluded from speech prose, and cross-page paragraphs mean
+  **more than one DISTINCT source page**, not merely `segments.length > 1`.
+- **Blockers:** exactly **one** class — the **11** unresolved Tamil printed-paragraph relationships,
+  rendered neutrally. **Durable rule:** resolution requires an **upstream source-archive visual
+  review** of the controlling scan that explicitly records the missing printed paragraph relationship;
+  this Digital Library does not establish those typographic facts independently. The absent
+  date/venue/event are **not** blockers.
+- **Validation:** Arappor validator **ALL PASS (68 assertions)**; deterministic second import **no
+  diff**; wrong-source-HEAD **fails closed, no writes**; Udhaya and Poonthottam validators **ALL PASS**
+  with their `speech.json` **and** `provenance.json` byte-identical across the benchmark; `tsc` clean;
+  build success (**1262** static pages); `git diff --check` clean.
 
 **Remaining Phase-3 direction** — integrate additional released speeches one at a time under the
 same **Speeches** shelf (both Legislative Assembly and Public speeches are subtypes of it, not
@@ -783,21 +843,24 @@ When Claude returns a report, independently verify:
 
 # 15. Immediate next activity
 
-**Phase 1 and Phase 2 are COMPLETE and Phase-3 Benchmarks #1 and #2 are complete, merged and
-production-verified. Do NOT start Phase 1, Phase 2, or either completed benchmark again.**
-_(This section previously instructed a fresh chat to begin Phase 1. That instruction was stale and is
+**Phase 1 and Phase 2 are COMPLETE, and Phase-3 Benchmarks #1, #2 and #3 are complete, merged and
+production-verified. Do NOT start Phase 1, Phase 2, or any completed benchmark again.**
+_(This section once instructed a fresh chat to begin Phase 1. That instruction was stale and is
 superseded; the Phase-1 principles are preserved as history in §10 → Phase 1.)_
 
-The next Digital Library implementation activity is:
+The next Digital Library activity is:
 
-**Phase 3 — Benchmark #3: integrate ONE additional released speech.**
+**Phase 3 — Benchmark #4 CANDIDATE SELECTION**, followed by integrating **ONE** additional released
+speech.
 
-**Benchmark #3 is NOT selected by this handover.** Before any prompt is written, a fresh reviewer must:
+**Benchmark #4 is NOT started and NOT selected by this handover.** Before any prompt is written, a
+fresh reviewer must:
 
 - inspect the **LIVE** `main` of **both** speech source repositories
   (`pugazg/kalaignar-assembly-speeches`, `pugazg/kalaignar-public-speeches`);
-- choose **one** source-ready work on current release/provenance strength — **not** from candidate names
-  in old handover prose;
+- choose **one** source-ready work on current release/provenance strength — **not** from candidate
+  names in old handover prose. **Neither repository has priority by default**, and no candidate is
+  named anywhere in this handover;
 - confirm its Tamil and English layers are genuinely released/verified at that live commit.
 
 Constraints for that activity:
@@ -810,10 +873,13 @@ Constraints for that activity:
 - deterministic, commit-pinned importer that fails closed on a source-HEAD mismatch;
 - **no** source-archive edits, **no** PDF vendoring, **no** runtime GitHub;
 - unresolved source facts stay **unresolved** — no punctuation, speaker-count or layout inference;
+- absent source metadata (date/venue/event) is represented honestly, never fabricated, and a
+  publication/edition date is never used as a speech date;
 - **no** mobile work (mobile remains ON HOLD);
-- **stop before Benchmark #4.**
+- **stop before Benchmark #5.**
 
 Last production application-code checkpoint at this handover:
-**`acb9721127de72c7575c035ccccf877deeb6421e`** — live GitHub `main` is authoritative and overrides this
-SHA if it later moves; documentation-only commits may advance `main` past it without changing the
-deployed application.
+**`ecf73cc8146cd9a9578c4aeaf73518b122ce569c`** (the Phase-3 Benchmark #3 / PR #23 squash merge) — live
+GitHub `main` is authoritative and overrides this SHA if it later moves; documentation-only commits may
+advance `main` past it without changing the deployed application, and such a docs-only SHA must never
+be recorded as a newer application-code checkpoint.
