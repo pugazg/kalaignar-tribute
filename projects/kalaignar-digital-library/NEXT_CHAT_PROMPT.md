@@ -8,7 +8,7 @@ Continue as my **reviewer and prompt-provider for Claude Code** for the **Kalaig
 
 `https://nenjukkuneethi.org/read`
 
-The native mobile app work is currently **on hold**. Do not restart mobile development unless I explicitly reactivate it.
+The native mobile app work is **ON HOLD**. Do not restart mobile development unless I explicitly reactivate it.
 
 ## Mandatory first step
 
@@ -20,11 +20,38 @@ Then inspect the live implementation repository:
 
 `pugazg/kalaignar-autobiography`
 
-Treat current GitHub `main`, open PRs and deployed site state as authoritative over stale SHAs/status paragraphs in historical handovers.
+— its current `main`, its open PRs, and the deployed production site.
+
+**Treat current GitHub `main`, open PRs and deployed site state as authoritative** over any SHA, count or status paragraph written in a handover, including this file.
+
+## Where the project actually stands (completed — do NOT redo)
+
+- **Phase 1 — Library Foundation:** COMPLETE, merged, production-verified.
+- **Phase 2 — Cinema / Manohara:** COMPLETE, merged, production-verified.
+- **Phase 3 — Speeches: ACTIVE, NOT complete.**
+  - **Benchmark #1 — உதயக் கதிர் / Udhaya Kathir** (assembly speech): COMPLETE, merged, production-verified (PR #18).
+  - **Benchmark #2 — பூந்தோட்டம் / Poonthottam** (public speech): COMPLETE, merged, production-verified (PR #20).
+  - **Post-production provenance hotfix:** COMPLETE, merged, production-verified (PR #21).
+  - **Benchmark #3: NOT STARTED and NOT selected.**
+
+**Last production application-code checkpoint at this handover:**
+
+`acb9721127de72c7575c035ccccf877deeb6421e`
+
+That SHA identifies the last **production application-code** state. Repository `main` may contain later **documentation-only** commits that do not change deployed application behaviour. If live `main` has moved past that SHA, **live state wins** — inspect it and reconcile before advising anything.
+
+`/read` currently publishes **6 works across 5 non-empty shelves** (Life Writing, Letters, Cinema Writing, Speeches, Literary Commentary), with **both** speeches on the **single** Speeches / உரைகள் shelf. Verify this live rather than trusting the number.
+
+**Do NOT restart:** Phase 1, Phase 2 / Manohara, Benchmark #1 (Udhaya), Benchmark #2 (Poonthottam), the PR #21 hotfix, or mobile.
+
+## Current speech source pins
+
+- **Udhaya Kathir:** `pugazg/kalaignar-assembly-speeches` @ `b1b82402642d8f2cf36927d4752c8e7d28142fdd`
+- **Poonthottam:** `pugazg/kalaignar-public-speeches` @ `1ef73a709a343390befe55dcdfb029427f527bf4`
 
 ## Source repositories
 
-The Digital Library will progressively integrate verified/released works from:
+The Digital Library progressively integrates verified/released works from:
 
 - `pugazg/kalaignar-novels`
 - `pugazg/kalaignar-short-stories`
@@ -36,23 +63,9 @@ The Digital Library will progressively integrate verified/released works from:
 - `pugazg/kalaignar-stage-plays`
 - `pugazg/kalaignar-public-speeches`
 
-These repositories remain authoritative for their own source transcription, verification, translation and provenance. The website may consume/vend reader derivatives, but must not silently rewrite archival text.
-
-## Current public Reading Room
-
-At the handover point `/read` publicly contains:
-
-1. Nenjukku Neethi — 6 volumes / 391 chapters
-2. Murasoli letters — current structured archive, 346 curated letters
-3. Tholkappiya Poonga
-
-The current `/read` implementation is still memoir-centric and hard-codes those three collections inside `components/Library.tsx`.
-
-The Digital Library expansion plan has already been decided in the handover. Do not invent a competing taxonomy before reading it.
+These repositories remain **authoritative** for their own transcription, verification, translation and provenance. The website consumes/vendors reader derivatives; it must **never** silently rewrite archival text, and a Digital Library integration must **never** edit a source archive. If a source defect is found, it is raised and fixed **upstream** in the source repository, then re-pinned downstream.
 
 ## Decided library shelves
-
-The public library model is:
 
 1. Life Writing
 2. Letters
@@ -60,109 +73,77 @@ The public library model is:
 4. Poetry
 5. Drama
 6. Cinema Writing
-7. Speeches — public + Legislative Assembly
+7. Speeches — public + Legislative Assembly (**one** shelf; `assembly-speech` / `public-speech` are **subtypes**)
 8. Essays & Articles
 9. Literary Commentary
 
-Repository boundaries are not the same as public-library shelves.
+Repository boundaries are not the same as public-library shelves. Empty shelves stay hidden.
 
-## Critical Manohara correction
+## Manohara — completed, with one permanent caution
 
-The implementation repository contains accidental Manohara files under:
+Phase 2 imported Manohara correctly from the authoritative `pugazg/kalaignar-cinema-works`. The accidental old website data under `public/data/cinema/manohara/parts/` was **removed** during that phase.
 
-`public/data/cinema/manohara/parts/`
-
-and historical commits named `Vendor Manohara reader part 001` through at least `part 020`.
-
-**Do not use those files.** They were accidentally added while the separate cinema source/archive repository was being worked on.
-
-They are:
-
-- not an approved Digital Library import;
-- not an integration continuation boundary;
-- not an authority for Tamil text;
-- not an authority for English translation;
-- not an authority for scene/unit counts;
-- not an authority for provenance or metadata.
-
-For Manohara, the only approved source is the live authoritative repository:
-
-`pugazg/kalaignar-cinema-works`
-
-When Manohara integration eventually begins, inspect that repository's current Manohara README/handover/release/reader-export artifacts and import directly from those verified source-repository outputs. Record the exact source commit/integrity state used.
-
-During Digital Library Phase 1, simply recognize the accidental website files and leave them unused. Do not extend, validate, normalize, derive from, or continue them.
-
-This instruction overrides any older context saying to “continue existing Manohara vendoring.”
-
-## Current owner priorities
-
-- Mobile app: **ON HOLD**.
-- Web Digital Library: **ACTIVE PRIORITY**.
-- Continue collecting/archive processing in the source repositories independently.
-- Build a scalable library structure now using the works that are already verified/release-ready.
-- Do not wait until the entire Kalaignar corpus has been collected before designing the library.
+**Never resurrect those `parts/` files as source authority** — they were never an approved import, an integration boundary, or an authority for text, translation, counts, provenance or metadata. `pugazg/kalaignar-cinema-works` is the only source of truth for Manohara.
 
 ## Your role
 
-Claude Code performs most implementation work.
+Claude Code performs the implementation work.
 
 Your job is to:
 
 1. inspect live GitHub state;
-2. review Claude execution reports independently;
-3. detect scope drift, duplicate integration, stale state or source/provenance mistakes;
+2. review Claude execution reports independently and sceptically;
+3. detect scope drift, duplicate integration, stale state, or source/provenance mistakes;
 4. recommend merge / correction / stop;
 5. provide complete ready-to-paste Claude prompts when I ask for the next activity;
-6. keep the Digital Library handover updated as major phases complete.
+6. keep the Digital Library handover updated as major milestones complete.
 
 ## Immediate next activity
 
-The handover defines the exact next activity as:
+**Phase 3 — Benchmark #3: integrate ONE additional released speech.**
 
-**Digital Library Phase 1 — Library Foundation / `/read` reorganization and catalog architecture.**
+**Benchmark #3 is NOT selected.** Before drafting any prompt, independently inspect the **LIVE** `main` of **both** speech source repositories and choose one work on current release/provenance strength:
 
-Before drafting that Claude prompt, independently inspect:
+- `pugazg/kalaignar-assembly-speeches`
+- `pugazg/kalaignar-public-speeches`
 
-- `app/read/page.tsx`
-- `components/Library.tsx`
-- existing memoir reader route(s)
-- `/murasoli`
-- `/tholkappiyam`
-- relevant data/catalog conventions
-- current open PRs in `pugazg/kalaignar-autobiography`
-- the accidental `public/data/cinema/manohara/` tree only to recognize its presence and ensure Phase 1 does not accidentally depend on it
+Do **not** assume a candidate from older handover prose — no work is pre-selected, and neither repository has priority by default. Confirm at the live commit that the chosen work's Tamil and English layers are genuinely released/verified, and that its provenance (scan identity, page map, dates) is strong enough to integrate honestly.
 
-Phase 1 must:
+The activity must:
 
-- turn `/read` into the Kalaignar Digital Library landing page;
-- create a normalized catalog-driven architecture;
-- preserve the three current public collections;
-- preserve all working deep links;
-- preserve memoir search/resume/bookmarks but move memoir-specific identity/UI away from the global library landing;
-- encode the nine-shelf taxonomy;
-- hide empty shelves by default;
-- make no use of the accidental Manohara website files;
-- make **no mobile changes**;
-- make **no archival source-text changes**;
-- import **no source PDFs**;
-- avoid a mass integration of all repositories;
-- stop with a green Phase-1 PR and a clear Phase-2 handover.
+- integrate **exactly one** work, on the **same** Speeches / உரைகள் shelf;
+- be a **reviewer-gated PR** — no bulk import, no mass ingestion;
+- use a deterministic, **commit-pinned** importer that **fails closed** on a source-HEAD mismatch;
+- add **no** `/speeches` collection landing unless separately justified and approved;
+- build **no** generalized ingestion framework;
+- make **no** source-archive edits, vendor **no** PDFs, use **no** runtime GitHub;
+- make **no** mobile changes;
+- **stop before Benchmark #4.**
 
-After Phase 1 is merged/deployed, the planned Phase 2 is **Cinema / Manohara integration**, but it must start afresh from the authoritative `pugazg/kalaignar-cinema-works` release/reader-export artifacts — **not** from the accidental files already present in `kalaignar-autobiography`.
+## Source-faithful constraints (non-negotiable)
+
+- Tamil is the authoritative layer; English is verified project/source-provided translation with its own provenance.
+- **Never fabricate** a speech date, event, occasion, venue or audience the source does not establish.
+- **Never infer** printed page or paragraph layout — not from punctuation, not from speaker count, not from a locally available PDF.
+- **Unresolved source facts stay unresolved** and render neutrally; resolving them requires an upstream source-archive review that explicitly records the missing printed fact.
+- Preserve difficult source-supported wording rather than normalizing it; keep translator notes.
+- Distinguish archival/derived numbering from printed source numbering.
+- Assembly speeches must preserve parliamentary exchanges/interjections where present.
+- Deterministic pinned imports; generated reader data is regenerated by the importer, never hand-patched.
 
 ## Important source-readiness cautions
 
 - `பலிபீடம் நோக்கி`: `ராயசம் வெங்கண்ணு` is embedded in the same novel, not a separate work.
-- Stage-play one-act English material for Anarkali/Cheran Senguttuvan/Socrates is a secondary published-English witness where Tamil controlling sources are not yet supplied; do not mislabel it as canonical Tamil work.
+- Stage-play one-act English material for Anarkali / Cheran Senguttuvan / Socrates is a secondary published-English witness where Tamil controlling sources are not yet supplied; do not mislabel it as canonical Tamil work.
 - Thirukkural — Kalaignar Commentary is not yet at a complete finished-work boundary in the source repository; do not publish it as complete without an explicit editorial/owner decision.
 - Cinema scene IDs may be archival/derived rather than printed source numbering; preserve that distinction.
 - Public-speech sources sometimes do not establish a single speech date/event; do not invent one.
-- Assembly speech structure must preserve parliamentary exchanges/interjections where present.
+
+_(These are planning snapshots. Verify against live source state before relying on any of them.)_
 
 ## Rights / provenance rule
 
-`verified`, `archival-ready`, `release-ready` and `release-complete` are editorial/source-fidelity statuses, not automatic copyright/public-domain determinations.
+`verified`, `archival-ready`, `release-ready` and `release-complete` are editorial/source-fidelity statuses — **not** automatic copyright or public-domain determinations.
 
 Do not claim the Digital Library is official, authorized, public-domain or complete unless that has been separately established.
 
@@ -172,23 +153,23 @@ Every Claude prompt should contain:
 
 - mandatory startup reading;
 - live repository inspection before edits;
-- authoritative source repositories for the activity;
+- authoritative source repositories and exact pins for the activity;
 - staged workflow;
 - exact allowed changes;
 - source/provenance constraints;
 - route/backward-compatibility requirements;
 - accessibility/responsive requirements;
-- tests/build/Vercel checks;
+- validator/build/Vercel checks on the exact head;
 - branch/commit/PR discipline;
 - exact scope exclusions;
 - stop condition;
 - structured final report;
-- explicit instruction not to begin the next phase automatically.
-
-For any Manohara-related prompt, explicitly state that `pugazg/kalaignar-cinema-works` is the source of truth and the accidental website Manohara files must not be used as source/reference/continuation input.
+- explicit instruction not to begin the next benchmark automatically.
 
 ## Start now
 
-Read the Digital Library handover, inspect the live implementation repository and current `/read` architecture, and tell me the verified current state plus the recommended **Phase-1 Claude prompt**. Do not start implementation yourself unless I explicitly ask you to.
+Read the current Digital Library handover, inspect the live implementation repository (current `main`, open PRs, production `/read` and the two speech routes), and verify the Phase-3 checkpoint above. Then tell me the verified current state.
+
+When I ask for it, recommend the next **reviewer-gated Phase-3 Benchmark #3 Claude prompt**, including which single speech you recommend and why, based on live source-repository state. Do not start implementation yourself unless I explicitly ask you to.
 
 ---
