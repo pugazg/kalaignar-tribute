@@ -36,22 +36,29 @@ Then inspect the live implementation repository:
 - **Phase 4 — Poetry: ACTIVE.**
   - **Benchmark #1 — இதயத்தைத் தந்திடு அண்ணா / Lend Me Your Heart, Anna:** COMPLETE, merged, production-verified (PR #25, reviewed head `3653023d…`, squash `c2d1c46d…`, 2026-08-20T01:58:07Z, merge-SHA deployment `92kdGyRiKucdUPSywP2XqnZMx1g9`).
   - **Poetry Benchmark #2: NOT STARTED / NOT SELECTED / PENDING SOURCE AVAILABILITY.** At the recorded poetry source pin, `pugazg/kalaignar-poems` contains **only one** archived work — `poems/idhayathai-thanthidu-anna` — so no second released poem is available to select today. Not cancelled; Phase 4 is not complete either. Verify live.
+- **Phase 5 — Essays & Articles: ACTIVE.**
+  - **Benchmark #1 — சக்கரவர்த்தியின் திருமகன் / Chakravarthi's Son:** COMPLETE, merged, production-verified (PR #27, reviewed head `929bb545…`, squash `bcb11396…`, 2026-08-20T10:15:15Z, merge-SHA deployment `AwU8uyXYHxthgez8ZGQWP1rTS3PF`). Source pin `pugazg/kalaignar-essays @ bff35320b668cb5beeaafc5faa58260c4f4473f8`. ONE publication holding 14 source-numbered articles.
+  - **Phase-5 Benchmark #2: NOT STARTED / NOT SELECTED.**
 
 **Last production application-code checkpoint at this handover:**
 
-`c2d1c46d1c2d4e1f11722360848226208867789f`
+`bcb11396b2215bc2cc1e81873c0ce278ef98598a`
 
-That is the Phase-4 Poetry Benchmark #1 / PR #25 squash merge, and it identifies the last **production application-code** state. It supersedes `ecf73cc8146cd9a9578c4aeaf73518b122ce569c`, which is now a **historical** Phase-3 checkpoint only. Repository `main` may contain later **documentation-only** commits that do not change deployed application behaviour, and such a docs-only SHA is **never** a newer application-code checkpoint. If live `main` has moved past that SHA, **live state wins** — inspect it and reconcile before advising anything.
+That is the Phase-5 Essays & Articles Benchmark #1 / PR #27 squash merge, and it identifies the last **production application-code** state. It supersedes `c2d1c46d1c2d4e1f11722360848226208867789f` (Phase 4) and `ecf73cc8146cd9a9578c4aeaf73518b122ce569c` (Phase 3), which are now **historical** checkpoints only. Repository `main` may contain later **documentation-only** commits that do not change deployed application behaviour, and such a docs-only SHA is **never** a newer application-code checkpoint. If live `main` has moved past that SHA, **live state wins** — inspect it and reconcile before advising anything.
 
-`/read` currently publishes **8 works across 6 non-empty shelves** (Life Writing, Letters, **Poetry**, Cinema Writing, Speeches, Literary Commentary). **Poetry / கவிதைகள்** holds exactly **1** work; the **single** Speeches / உரைகள் shelf holds exactly **3** — Udhaya Kathir, Poonthottam and Arappor. Verify this live rather than trusting the numbers.
+`/read` currently publishes **9 works across 7 non-empty shelves** (Life Writing, Letters, **Poetry**, Cinema Writing, Speeches, **Essays & Articles**, Literary Commentary). **கட்டுரைகள் / Essays & Articles** holds exactly **1** publication (14 articles inside it); **Poetry / கவிதைகள்** holds exactly **1** work; the **single** Speeches / உரைகள் shelf holds exactly **3** — Udhaya Kathir, Poonthottam and Arappor. Verify this live rather than trusting the numbers.
 
-**Do NOT restart:** Phase 1, Phase 2 / Manohara, Speech Benchmarks #1–#3, the PR #21 hotfix, Poetry Benchmark #1 (Idhayathai Thanthidu Anna), or mobile.
+**Do NOT restart:** Phase 1, Phase 2 / Manohara, Speech Benchmarks #1–#3, the PR #21 hotfix, Poetry Benchmark #1 (Idhayathai Thanthidu Anna), Phase-5 Essays Benchmark #1 (Sakkaravarththiyin Thirumagan), or mobile.
 
 ## Current poetry source pin
 
 - **இதயத்தைத் தந்திடு அண்ணா:** `pugazg/kalaignar-poems` @ `42c156d7242fa799ea80adbb0c5f2b9eba078fe9`
 
 At that source state, `poems/` contains **exactly one** work directory — `idhayathai-thanthidu-anna` — and the repository README says a *next* poem must begin again from its own startup/source-inspection workflow. **Do not pretend another released Poetry candidate is currently available.** Re-check live source state before advising.
+
+## Current essays source pin
+
+- **சக்கரவர்த்தியின் திருமகன்:** `pugazg/kalaignar-essays` @ `bff35320b668cb5beeaafc5faa58260c4f4473f8`
 
 ## Current speech source pins
 
@@ -110,10 +117,12 @@ Your job is to:
 
 ## Immediate next activity
 
-**Documentation synchronization for Poetry Benchmark #1 has completed. No next implementation benchmark has been started, and no next work or category has been selected.**
+**Phase-5 Essays & Articles Benchmark #1 is merged, production-verified and documented. No next implementation benchmark has been started, and no next work or category has been selected.**
 
 - **Poetry Benchmark #1:** COMPLETE / MERGED / PRODUCTION-VERIFIED.
+- **Phase-5 Essays Benchmark #1:** COMPLETE / MERGED / PRODUCTION-VERIFIED.
 - **Poetry Benchmark #2:** NOT STARTED / NOT SELECTED / **PENDING SOURCE AVAILABILITY** — at pin `42c156d7242fa799ea80adbb0c5f2b9eba078fe9` only `idhayathai-thanthidu-anna` exists under `poems/`.
+- **Phase-5 Benchmark #2 (a second Essays work):** NOT STARTED / NOT SELECTED.
 - **Speech Benchmark #4:** NOT STARTED / NOT SELECTED / **PAUSED** by owner direction.
 
 ### Default for "Proceed with next activity"
