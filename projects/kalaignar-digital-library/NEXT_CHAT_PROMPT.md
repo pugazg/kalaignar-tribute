@@ -28,21 +28,28 @@ Then inspect the live implementation repository:
 
 - **Phase 1 — Library Foundation:** COMPLETE, merged, production-verified.
 - **Phase 2 — Cinema / Manohara:** COMPLETE, merged, production-verified.
-- **Phase 3 — Speeches: ACTIVE, NOT complete.**
+- **Phase 3 — Speeches: ACTIVE but PAUSED by owner direction, NOT complete.** I asked for the next work to come from a category **other than speeches**, which produced Phase 4 — Poetry. Do not resume speech expansion unless I explicitly ask to return to speeches.
   - **Benchmark #1 — உதயக் கதிர் / Udhaya Kathir** (assembly speech): COMPLETE, merged, production-verified (PR #18).
   - **Benchmark #2 — பூந்தோட்டம் / Poonthottam** (public speech): COMPLETE, merged, production-verified (PR #20), plus the PR #21 presentation/provenance hotfix.
   - **Benchmark #3 — அறப்போர் / Arappor** (public speech): COMPLETE, merged, production-verified (PR #23).
-  - **Benchmark #4: NOT STARTED and NOT SELECTED.**
+  - **Speech Benchmark #4: NOT STARTED and NOT SELECTED.**
+- **Phase 4 — Poetry: ACTIVE.**
+  - **Benchmark #1 — இதயத்தைத் தந்திடு அண்ணா / Lend Me Your Heart, Anna:** COMPLETE, merged, production-verified (PR #25, reviewed head `3653023d…`, squash `c2d1c46d…`, 2026-08-20T01:58:07Z, merge-SHA deployment `92kdGyRiKucdUPSywP2XqnZMx1g9`).
+  - **Poetry Benchmark #2: NOT STARTED and NOT SELECTED.**
 
 **Last production application-code checkpoint at this handover:**
 
-`ecf73cc8146cd9a9578c4aeaf73518b122ce569c`
+`c2d1c46d1c2d4e1f11722360848226208867789f`
 
-That is the Phase-3 Benchmark #3 / PR #23 squash merge, and it identifies the last **production application-code** state. Repository `main` may contain later **documentation-only** commits that do not change deployed application behaviour, and such a docs-only SHA is **never** a newer application-code checkpoint. If live `main` has moved past that SHA, **live state wins** — inspect it and reconcile before advising anything.
+That is the Phase-4 Poetry Benchmark #1 / PR #25 squash merge, and it identifies the last **production application-code** state. It supersedes `ecf73cc8146cd9a9578c4aeaf73518b122ce569c`, which is now a **historical** Phase-3 checkpoint only. Repository `main` may contain later **documentation-only** commits that do not change deployed application behaviour, and such a docs-only SHA is **never** a newer application-code checkpoint. If live `main` has moved past that SHA, **live state wins** — inspect it and reconcile before advising anything.
 
-`/read` currently publishes **7 works across 5 non-empty shelves** (Life Writing, Letters, Cinema Writing, Speeches, Literary Commentary), with **all three** speeches — Udhaya Kathir, Poonthottam and Arappor — on the **single** Speeches / உரைகள் shelf. Verify this live rather than trusting the number.
+`/read` currently publishes **8 works across 6 non-empty shelves** (Life Writing, Letters, **Poetry**, Cinema Writing, Speeches, Literary Commentary). **Poetry / கவிதைகள்** holds exactly **1** work; the **single** Speeches / உரைகள் shelf holds exactly **3** — Udhaya Kathir, Poonthottam and Arappor. Verify this live rather than trusting the numbers.
 
-**Do NOT restart:** Phase 1, Phase 2 / Manohara, Benchmark #1 (Udhaya), Benchmark #2 (Poonthottam), the PR #21 hotfix, Benchmark #3 (Arappor), or mobile.
+**Do NOT restart:** Phase 1, Phase 2 / Manohara, Speech Benchmarks #1–#3, the PR #21 hotfix, Poetry Benchmark #1 (Idhayathai Thanthidu Anna), or mobile.
+
+## Current poetry source pin
+
+- **இதயத்தைத் தந்திடு அண்ணா:** `pugazg/kalaignar-poems` @ `42c156d7242fa799ea80adbb0c5f2b9eba078fe9`
 
 ## Current speech source pins
 
@@ -101,25 +108,37 @@ Your job is to:
 
 ## Immediate next activity
 
-**Phase 3 — Benchmark #4 candidate selection**, then integrating **ONE** additional released speech.
+**Documentation synchronization for Poetry Benchmark #1 has completed. No next implementation benchmark has been started.**
 
-**Benchmark #4 is NOT started and NOT selected.** Before drafting any prompt, independently inspect the **LIVE** `main` of **both** speech source repositories and choose one work on current release/provenance strength:
+If I simply say **"Proceed with next activity"**, the default continuation is:
 
-- `pugazg/kalaignar-assembly-speeches`
-- `pugazg/kalaignar-public-speeches`
+**Phase 4 — Poetry Benchmark #2 candidate selection**, then integrating **ONE** additional released poem.
 
-Do **not** assume a candidate from older handover prose — no work is pre-selected, and **neither repository has priority by default**. Confirm at the live commit that the chosen work's Tamil and English layers are genuinely released/verified, and that its provenance (scan identity, page map, dates) is strong enough to integrate honestly.
+**Poetry Benchmark #2 is NOT started and NOT selected.** Before drafting any prompt, independently:
+
+- inspect the **LIVE** `main` of `pugazg/kalaignar-poems`;
+- inspect the currently released/verified poems there;
+- choose **exactly one** source-ready poem on current release/provenance strength — do **not** preselect from stale handover prose;
+- require **verified Tamil**; require a **released English** layer if publishing bilingual;
+- inspect the actual provenance and source-completeness records at that live commit.
 
 The activity must:
 
-- integrate **exactly one** work, on the **same** Speeches / உரைகள் shelf;
+- integrate **exactly one** work, on the **same** Poetry / கவிதைகள் shelf;
 - be a **reviewer-gated PR** — no bulk import, no mass ingestion;
 - use a deterministic, **commit-pinned** importer that **fails closed** on a source-HEAD mismatch;
-- add **no** `/speeches` collection landing unless separately justified and approved;
+- add **no** `/poems` collection landing unless separately justified and approved;
 - build **no** generalized ingestion framework;
+- preserve the line/boundary reader model **only where the next poem's source actually supports it** — **do not assume** இதயத்தைத் தந்திடு அண்ணா's unresolved cross-page stanza pattern applies to every poem; another poem's archive may establish those relations explicitly, or may need a different boundary vocabulary;
 - make **no** source-archive edits, vendor **no** PDFs, use **no** runtime GitHub;
 - make **no** mobile changes;
-- **stop before Benchmark #5.**
+- **stop before Poetry Benchmark #3.**
+
+**Speech Benchmark #4 must remain PAUSED / NOT STARTED / NOT SELECTED.** Do not resume speech expansion unless I explicitly ask to return to speeches.
+
+**If I instead name another non-speech category** (essays, novels, short stories, stage plays …), follow that direction rather than forcing Poetry Benchmark #2.
+
+Do **not** automatically start Poetry Benchmark #2 on your own.
 
 ## Source-faithful constraints (non-negotiable)
 
@@ -169,8 +188,8 @@ Every Claude prompt should contain:
 
 ## Start now
 
-Read the current Digital Library handover completely, inspect the live implementation repository (current `main`, open PRs, production `/read` and the three speech routes), and verify the Phase-3 checkpoint above. Then tell me the verified current state.
+Read the current Digital Library handover completely, inspect the live implementation repository (current `main`, open PRs, production `/read`, the three speech routes and the poem routes `/poems/idhayathai-thanthidu-anna` and `…/source`), and verify the Phase-4 checkpoint above. Then tell me the verified current state.
 
-When I ask for it, independently inspect **both** live speech source repositories and recommend the next **reviewer-gated Phase-3 Benchmark #4** work — naming the single speech you recommend and why, based on live source state — together with a complete ready-to-paste Claude prompt. Do not implement the work yourself, and do not start Benchmark #5 automatically.
+When I ask for it, independently inspect the live `pugazg/kalaignar-poems` repository and recommend the next **reviewer-gated Phase-4 Poetry Benchmark #2** work — naming the single poem you recommend and why, based on live source state — together with a complete ready-to-paste Claude prompt. Do not implement the work yourself, do not start Poetry Benchmark #3 automatically, and do not resume speeches unless I ask.
 
 ---
