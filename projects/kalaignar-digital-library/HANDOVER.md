@@ -1,9 +1,15 @@
 # Kalaignar Digital Library / Reading Room — Master Handover
 
-**Last updated:** 2026-08-19
+**Last updated:** 2026-08-20
 
 > **Status:** **Phase 1 COMPLETE** · **Phase 2 (Cinema / Manohara) COMPLETE** · **Phase 3 — Speeches
-> is ACTIVE (not complete)**.
+> is ACTIVE but PAUSED by owner direction (not complete)** · **Phase 4 — Poetry is ACTIVE**.
+>
+> **Owner direction.** The owner explicitly asked for the next Digital Library work to come from a
+> category **other than speeches** ("I want from another category other than speech"). That produced
+> **Phase 4 — Poetry**. Speech expansion must **not** resume unless the owner explicitly reactivates it.
+>
+> **Phase 3 — Speeches (ACTIVE but PAUSED):**
 >
 > - **Benchmark #1 — உதயக் கதிர் / Udhaya Kathir** (assembly speech): **COMPLETE / MERGED /
 >   PRODUCTION-VERIFIED** — PR #18, squash `13ddf04f01b6a75024985b6df172deace9d26e80`, verified live
@@ -18,21 +24,37 @@
 >   `06b42db399e1e97762ff9a9d522b63a83995bc03`, squash
 >   `ecf73cc8146cd9a9578c4aeaf73518b122ce569c` (2026-08-19T11:51:46Z), production Vercel **success**
 >   on that exact squash SHA.
-> - **Benchmark #4: NOT STARTED** — and deliberately **NOT SELECTED** by this handover.
+> - **Speech Benchmark #4: NOT STARTED** and **NOT SELECTED**.
+>
+> **Phase 4 — Poetry (ACTIVE):**
+>
+> - **Benchmark #1 — இதயத்தைத் தந்திடு அண்ணா / Lend Me Your Heart, Anna:** **COMPLETE / MERGED /
+>   PRODUCTION-VERIFIED** — PR #25, final reviewed head
+>   `3653023db60cb51ee1df4d970d621494c095791c`, squash
+>   `c2d1c46d1c2d4e1f11722360848226208867789f` (2026-08-20T01:58:07Z), production Vercel **success**
+>   on that exact merge SHA (deployment `92kdGyRiKucdUPSywP2XqnZMx1g9`).
+> - **Poetry Benchmark #2: NOT STARTED, NOT SELECTED and PENDING SOURCE AVAILABILITY.** At the
+>   recorded poetry source state (`42c156d7…`), `pugazg/kalaignar-poems` contains **only one** archived
+>   work — `poems/idhayathai-thanthidu-anna` — so no second released poem is available to select today.
+>   This is **not** a cancellation, and Phase 4 is **not** complete; future live source state may add
+>   more poems, and **live source state always wins**.
 >
 > **Last production application-code checkpoint:
-> `ecf73cc8146cd9a9578c4aeaf73518b122ce569c`** (the Phase-3 Benchmark #3 / PR #23 squash merge).
+> `c2d1c46d1c2d4e1f11722360848226208867789f`** (the Phase-4 Poetry Benchmark #1 / PR #25 squash
+> merge). It **supersedes** `ecf73cc8146cd9a9578c4aeaf73518b122ce569c`, which remains an important
+> **historical** Phase-3 checkpoint but is no longer current.
 >
 > **Current repository `main` must always be read live from GitHub.** Documentation-only closeout
 > commits — including the handover PRs that accompany this update — may move repository `main` beyond
 > the application-code checkpoint **without changing deployed application behaviour**, so treat
-> `ecf73cc8…` as the production application-code state, not as the newest commit on `main`, and never
+> `c2d1c46d…` as the production application-code state, not as the newest commit on `main`, and never
 > record a docs-only SHA as a newer application-code checkpoint.
 >
-> `/read` publishes **7 works across 5 non-empty shelves** — Life Writing, Letters, Cinema Writing,
-> **Speeches**, Literary Commentary — with **all three** speeches (Udhaya Kathir · Poonthottam ·
-> Arappor) on the **single** Speeches / உரைகள் shelf. No separate Public Speeches shelf exists and no
-> `/speeches` collection landing was added. See **§10 → Phase 3** for the full record.
+> `/read` publishes **8 works across 6 non-empty shelves** — Life Writing, Letters, **Poetry**, Cinema
+> Writing, **Speeches**, Literary Commentary. **Poetry / கவிதைகள்** holds exactly **1** work; the
+> **single** Speeches / உரைகள் shelf still holds exactly **3** (Udhaya Kathir · Poonthottam · Arappor).
+> No separate Public Speeches shelf exists, and neither a `/speeches` nor a `/poems` collection landing
+> was added. See **§10 → Phase 3** and **§10 → Phase 4** for the full records.
 >
 > Mobile remains **ON HOLD** (Activity 6 / PR #15 merged for preservation — see §4).
 
@@ -325,6 +347,9 @@ Current completed work:
 - Tamil source complete
 - English translation release-complete
 - lineation/cadence/voice must be preserved
+- **INTEGRATED** as Phase-4 Poetry Benchmark #1 at pin
+  `42c156d7242fa799ea80adbb0c5f2b9eba078fe9` — see **§10 → Phase 4**. A Benchmark #2 candidate must be
+  chosen from **live** repository state, not from this snapshot.
 
 ## 9.4 Assembly speeches — `pugazg/kalaignar-assembly-speeches`
 
@@ -518,7 +543,7 @@ changes**. No generalized ingestion framework.
 cinema work — each future cinema work is integrated one at a time from its source-repository
 release output, on the same source-faithful terms.
 
-## Phase 3 — Speeches — 🚧 ACTIVE (benchmarks 1, 2 and 3 COMPLETE / MERGED / PRODUCTION-VERIFIED)
+## Phase 3 — Speeches — ⏸️ ACTIVE but PAUSED by owner direction (benchmarks 1, 2 and 3 COMPLETE / MERGED / PRODUCTION-VERIFIED)
 
 **Phase 3 is ACTIVE and NOT complete.** Three benchmarks are done — one assembly speech and two
 public speeches — and the shared speech architecture is proven end-to-end across **both**
@@ -683,21 +708,117 @@ no event** — proving the model can represent source absence honestly.
   with their `speech.json` **and** `provenance.json` byte-identical across the benchmark; `tsc` clean;
   build success (**1262** static pages); `git diff --check` clean.
 
-**Remaining Phase-3 direction** — integrate additional released speeches one at a time under the
-same **Speeches** shelf (both Legislative Assembly and Public speeches are subtypes of it, not
-separate shelves), reusing this reader/importer pattern. Prefer machine-readable indexes where
+**Remaining Phase-3 direction — PAUSED.** Phase 3 is not complete, but it is **paused by owner
+direction**: the owner asked for the next work to come from a category other than speeches, which
+produced Phase 4 — Poetry. **Speech Benchmark #4 is NOT STARTED and NOT SELECTED**, and speech
+expansion must not resume unless the owner explicitly reactivates it.
+
+When it is reactivated, the guidance stands: integrate additional released speeches one at a time
+under the same **Speeches** shelf (both Legislative Assembly and Public speeches are subtypes of it,
+not separate shelves), reusing this reader/importer pattern. Prefer machine-readable indexes where
 present, but verify every reader-facing work against source-repository release state.
 
 Do not collapse public speeches and Assembly proceedings into one reader model if that loses parliamentary structure.
 
-## Phase 4 — Essays + Fiction + Poetry
+## Phase 4 — Poetry — 🚧 ACTIVE (benchmark 1 COMPLETE / MERGED / PRODUCTION-VERIFIED)
 
-Integrate one released work per activity:
+**Owner-directed move away from speeches.** The owner asked for the next Digital Library work to come
+from a category **other than speeches**; Phase 4 opened the **Poetry / கவிதைகள்** shelf with exactly
+one work. Implementation-level detail lives in
+`pugazg/kalaignar-autobiography/docs/digital-library/PHASE4_POETRY_HANDOVER.md`.
+
+### Benchmark #1 — இதயத்தைத் தந்திடு அண்ணா / Lend Me Your Heart, Anna — ✅ COMPLETE
+
+- **Implementation PR:** #25 — final reviewed head `3653023db60cb51ee1df4d970d621494c095791c`, squash
+  merge **`c2d1c46d1c2d4e1f11722360848226208867789f`** (2026-08-20T01:58:07Z), **production-verified
+  2026-08-20** with Vercel success on that exact merge SHA (deployment
+  `92kdGyRiKucdUPSywP2XqnZMx1g9`). This is now the **last production application-code checkpoint**,
+  superseding the historical Phase-3 checkpoint `ecf73cc8…`.
+- **Library:** 7 works / 5 non-empty shelves → **8 works / 6 non-empty shelves**. **Poetry / கவிதைகள்**
+  is live with exactly **1** work; **Speeches** remains exactly **3** on ONE shelf. Routes
+  `/poems/idhayathai-thanthidu-anna` and `…/source`; **no `/poems` collection landing**. Build: 1264
+  static pages.
+- **Source (pinned, unmodified):** `pugazg/kalaignar-poems` @
+  **`42c156d7242fa799ea80adbb0c5f2b9eba078fe9`**, `poems/idhayathai-thanthidu-anna`. Controlling scan
+  `TVA_BOK_0064132_இதயத்தைத்_தந்திடு_அண்ணா.pdf`, SHA-256
+  `152cfb251a2049662102a2296487220f6f227f243657c9456df34105520676fe`, 26,816,066 bytes, **28 scans,
+  28/28 verified**; poem body **scans 13–26, 14/14 verified**; printed pages 11–23 on scans 13–25;
+  **scan 26 carries no visible printed page number and is never labelled 24**. The source PDF is
+  **not vendored**.
+- **Source context, not verse:** the note above the poem establishes **9.2.1969**, **சென்னை வானொலி /
+  Chennai Radio**, **கலைஞர் மு. கருணாநிதி**, a **கண்ணீர்க் கவிதாஞ்சலி** to **பேரறிஞர் அண்ணா**. It is
+  metadata; not one word enters the poem body.
+- **Publication absence:** the scan establishes **no publication year and no edition statement**, so
+  both stay null. The **15.9.2008** foreword date is a **foreword/internal source date only** and is
+  never promoted to "publication year 2008", "edition year 2008" or a "2008 poem"; the work is
+  likewise never described as "published in 1969".
+- **Reader architecture:** a poem is **not** speech prose — the authoritative reading unit is the
+  **source line**, with ordered boundary events distinguishing **in-page source-established stanza
+  breaks** from **physical page transitions**. Cross-page relations carry **two independent
+  dimensions** — textual/rhetorical and typographic stanza — and neither may be inferred from the
+  other. Page-spanning derived groups are called **verse runs**, never stanzas.
+- **Final counts** — Tamil: **339** source lines, **58** indented, **23** in-page stanza breaks,
+  **37** verse runs, **11** source-established complete stanzas. English: **345** / **47** / **20** /
+  **34** / **8**.
+- **Cross-page provenance (13 physical transitions):** typographic stanza relation **0 same-stanza /
+  0 stanza-boundary / 13 unresolved**; textual relation **10 source-established continuations / 1
+  explicit non-continuation / 2 not specifically recorded**. The explicit non-continuation is scan
+  **25→26**, where the source records the text continues *"thematically, but not textually"* — that is
+  **textual evidence only** and gives **zero** typographic stanza evidence.
+- **Blocker:** one class — **`cross-page-stanza-relationship`, count 13**. Durable resolution requires
+  an **upstream source-archive visual/source review** of the controlling scan; the Digital Library must
+  not resolve that typographic fact independently.
+- **Two independent reviewer corrections (do not regress):**
+  1. **Structural** — the initial implementation conflated textual/rhetorical continuity with
+     typographic stanza continuity and asserted all 13 transitions were same-stanza; the initial
+     English validator also stripped blank lines, so it could not prove stanza structure. Corrected:
+     dimensions separated, only explicit source typographic evidence may resolve a stanza relation,
+     validator derives evidence independently, and the 24/21-stanza and 13/13 same-stanza claims were
+     **withdrawn**.
+  2. **Print fidelity** — the neutral unresolved marker carried `data-print="hide"`, so Print → Save as
+     PDF deleted it and silently presented the lines as continuous. Corrected: the marker is
+     provenance, not chrome; it survives screen **and** print, with border-drawn hairlines and an
+     explicit language-correct label.
+- **Screen + print provenance contract:** source-established stanza gap **28 px**; unresolved page
+  transition an **8 px** restrained marker asserting neither same-stanza nor a new stanza. **13/13
+  markers retained per language on screen and in Print → Save as PDF** — printed English `source scan
+  14 · stanza relation unresolved`, Tamil `மூல ஸ்கேன் 14 · அச்சுப் பத்தித் தொடர்பு
+  தீர்மானிக்கப்படவில்லை`. The print marker is not verse and must never again be hidden as chrome.
+- **English release:** *Lend Me Your Heart, Anna* — **project-created**, **RELEASE-COMPLETE**, 345
+  lines, 0 omissions / 0 duplications, Markdown emphasis retained verbatim in data and rendered as
+  `<em>`. Tamil remains authoritative; do not retranslate downstream.
+- **Validation:** Poetry validator **310 assertions ALL PASS** (exact Tamil and English line
+  reconstruction, in-page stanza structure checked, cross-page evidence independently derived, unknown
+  relations cannot silently resolve, same-stanza negative test fails multiple checks, print-regression
+  guard); deterministic importer **second run NO DIFF**; **wrong source HEAD fails closed with no
+  writes**; Udhaya Kathir, Poonthottam and Arappor validators **ALL PASS**.
+- **Rights unchanged:** the existing nationalisation model, with GO number and formal issue date still
+  **null**, not broadened to third-party foreword, photographs, publisher/donor matter, printer
+  imprint, design or the project-created English translation.
+- **No source repository, mobile or PDF changes.**
+
+**Poetry Benchmark #2: NOT STARTED / NOT SELECTED / PENDING SOURCE AVAILABILITY.** At the pinned
+source state above, `poems/` holds **exactly one** work directory (`poems/idhayathai-thanthidu-anna`),
+and the repository README states that a *next* poem must begin again from its own
+startup/source-inspection workflow. Poetry remains an **open** Digital Library form; it is neither
+complete nor cancelled.
+
+**Phase 4 records the Poetry work that actually happened.** It does **not** mean every subsequent
+non-speech integration must remain under Poetry, and Essays/Fiction/Drama are not to be forced into
+it. Category and phase naming for the next benchmark is decided when that benchmark is selected.
+
+## Future non-speech categories — Essays + Fiction (planning only)
+
+_Historical planning context: this grouping was once written as "Phase 4 — Essays + Fiction +
+Poetry". **Poetry** has since become the actual, owner-directed Phase 4 and its first benchmark has
+shipped (above). Essays, novels and short stories remain **future** non-speech categories — they have
+**NOT** been started or integrated by this milestone._
+
+Candidate first works recorded during planning (not selected, not started):
 
 - Essays: Sakkaravarththiyin Thirumagan
 - Novels: Balipeedam Nokki
 - Short Stories: Kizhavan Kanavu
-- Poetry: Idhayathai Thanthidu Anna
 
 After one work of each form is proven, extract reusable adapters rather than prematurely inventing abstraction.
 
@@ -843,43 +964,72 @@ When Claude returns a report, independently verify:
 
 # 15. Immediate next activity
 
-**Phase 1 and Phase 2 are COMPLETE, and Phase-3 Benchmarks #1, #2 and #3 are complete, merged and
-production-verified. Do NOT start Phase 1, Phase 2, or any completed benchmark again.**
-_(This section once instructed a fresh chat to begin Phase 1. That instruction was stale and is
-superseded; the Phase-1 principles are preserved as history in §10 → Phase 1.)_
+**Phase 1 and Phase 2 are COMPLETE. Phase-3 Speech Benchmarks #1, #2 and #3 are complete, merged and
+production-verified, and Phase 3 is now PAUSED by owner direction. Phase-4 Poetry Benchmark #1 is
+complete, merged and production-verified. Do NOT start any completed phase or benchmark again.**
+_(This section once instructed a fresh chat to begin Phase 1, and later to begin Phase-3 Benchmark #4
+candidate selection. Both instructions are stale and superseded; the Phase-1 principles are preserved
+as history in §10 → Phase 1, and the paused Phase-3 guidance in §10 → Phase 3.)_
 
-The next Digital Library activity is:
+**Documentation synchronization for Poetry Benchmark #1 has completed. No next implementation
+benchmark has been started.**
 
-**Phase 3 — Benchmark #4 CANDIDATE SELECTION**, followed by integrating **ONE** additional released
-speech.
+If the owner simply says **"Proceed with next activity"**, the reviewer performs:
 
-**Benchmark #4 is NOT started and NOT selected by this handover.** Before any prompt is written, a
-fresh reviewer must:
+**NEXT NON-SPEECH CATEGORY CANDIDATE SELECTION.**
 
-- inspect the **LIVE** `main` of **both** speech source repositories
-  (`pugazg/kalaignar-assembly-speeches`, `pugazg/kalaignar-public-speeches`);
-- choose **one** source-ready work on current release/provenance strength — **not** from candidate
-  names in old handover prose. **Neither repository has priority by default**, and no candidate is
-  named anywhere in this handover;
-- confirm its Tamil and English layers are genuinely released/verified at that live commit.
+**No next work or category has been selected.** In particular, **Poetry Benchmark #2 is NOT the
+automatic default**: at the recorded poetry source state `42c156d7242fa799ea80adbb0c5f2b9eba078fe9`,
+`pugazg/kalaignar-poems` holds **only one** archived work (`poems/idhayathai-thanthidu-anna`), so
+Poetry Benchmark #2 is **PENDING SOURCE AVAILABILITY** and cannot be selected today.
 
-Constraints for that activity:
+The reviewer must inspect **live** source readiness across the relevant **non-speech** repositories
+and recommend **exactly ONE** next work. At minimum consider live state from repositories such as:
+
+- `pugazg/kalaignar-poems`
+- `pugazg/kalaignar-essays`
+- `pugazg/kalaignar-novels`
+- `pugazg/kalaignar-short-stories`
+- `pugazg/kalaignar-stage-plays`
+- `pugazg/kalaignar-cinema-works`
+- `pugazg/kalaignar-literary-commentary`
+
+**Do not assume every repository above has an eligible work.** Inspect live source/release state, and
+**do not preselect from historical planning candidate names** anywhere in this handover.
+
+Select the single strongest next benchmark on:
+
+- released/verified source readiness;
+- released English where bilingual publication is intended;
+- provenance completeness;
+- architectural value as the next Digital Library **form** benchmark;
+- source authority.
+
+**Speech repositories are excluded from the default selection** because Phase 3 is paused by owner
+direction. If the owner explicitly asks to resume speeches, that overrides the pause. If the owner
+explicitly names a non-speech category, follow that category instead of running broad selection. If by
+then another source-ready poem has appeared in `kalaignar-poems`, Poetry Benchmark #2 may legitimately
+compete in this selection — but **Poetry is not privileged merely because Benchmark #1 was Poetry**.
+
+Constraints for whichever work is selected:
 
 - integrate **exactly one** work;
-- same single **Speeches / உரைகள்** shelf — `assembly-speech` / `public-speech` remain **subtypes**;
 - reviewer-gated PR; **no bulk import**, no mass ingestion;
-- **no** `/speeches` collection landing unless separately justified and approved;
-- **no** generalized ingestion framework;
-- deterministic, commit-pinned importer that fails closed on a source-HEAD mismatch;
+- deterministic, **commit-pinned** importer that **fails closed** on a source-HEAD mismatch;
+- build **no** generalized ingestion framework, and add no collection landing without separate
+  justification and approval;
+- preserve a form-specific reader model **only where that work's source actually supports it** — **do
+  not assume** இதயத்தைத் தந்திடு அண்ணா's unresolved cross-page pattern generalizes;
+- unresolved source facts stay **unresolved** — no punctuation, indentation, semantic or grammatical
+  inference;
+- absent source metadata is represented honestly and never fabricated;
 - **no** source-archive edits, **no** PDF vendoring, **no** runtime GitHub;
-- unresolved source facts stay **unresolved** — no punctuation, speaker-count or layout inference;
-- absent source metadata (date/venue/event) is represented honestly, never fabricated, and a
-  publication/edition date is never used as a speech date;
 - **no** mobile work (mobile remains ON HOLD);
-- **stop before Benchmark #5.**
+- **stop after that one benchmark.**
 
 Last production application-code checkpoint at this handover:
-**`ecf73cc8146cd9a9578c4aeaf73518b122ce569c`** (the Phase-3 Benchmark #3 / PR #23 squash merge) — live
-GitHub `main` is authoritative and overrides this SHA if it later moves; documentation-only commits may
-advance `main` past it without changing the deployed application, and such a docs-only SHA must never
-be recorded as a newer application-code checkpoint.
+**`c2d1c46d1c2d4e1f11722360848226208867789f`** (the Phase-4 Poetry Benchmark #1 / PR #25 squash merge)
+— live GitHub `main` is authoritative and overrides this SHA if it later moves; documentation-only
+commits may advance `main` past it without changing the deployed application, and such a docs-only SHA
+must never be recorded as a newer application-code checkpoint. The earlier
+`ecf73cc8146cd9a9578c4aeaf73518b122ce569c` is a **historical** Phase-3 checkpoint only.
