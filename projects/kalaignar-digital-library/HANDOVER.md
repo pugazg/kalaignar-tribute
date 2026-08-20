@@ -340,13 +340,22 @@ This inventory is a planning snapshot. **Always inspect live `main` before integ
 
 Current completed reference work:
 
-- **பலிபீடம் நோக்கி**
+- **பலிபீடம் நோக்கி** — **INTEGRATED** as Phase-6 Fiction Benchmark #1 (see §10 → Phase 6)
 - Tamil 34/34 verified
 - assembled Tamil passed
 - English verified
 - repository status: archival package **RELEASE-READY**
+- integrated source pin: `9e80c567d4a2165178c5374a02210240140685bf`
 
-Important structural rule: `ராயசம் வெங்கண்ணு` is an embedded sequence inside the same work, not a separate novel/work.
+Important structural rule: `ராயசம் வெங்கண்ணா` is an embedded sequence inside the same work, not a
+separate novel/work.
+
+**Spelling — source-backed correction.** The name of that embedded sequence is
+**`ராயசம் வெங்கண்ணா` / Rayasam Venganna**. The reading was taken from the **controlling scanned
+source edition** — the printed title card and the body text of the 1947 first edition — and the
+archive was corrected at `pugazg/kalaignar-novels` `9e80c56` before the work was integrated. The
+earlier form `ராயசம் வெங்கண்ணு` / Rayasam Vengannu is **superseded**; it is recorded here only so
+older notes can be recognised, and it is **not** an alternative reading.
 
 ## 9.2 Short stories — `pugazg/kalaignar-short-stories`
 
@@ -926,17 +935,56 @@ excluded, so the promotional Article-12 excerpt never extends canonical body; `A
 
 **Phase-5 Benchmark #2: NOT STARTED and NOT SELECTED.**
 
-## Future non-speech categories — Fiction (planning only)
+## Phase 6 — Fiction — ✅ COMPLETE (benchmark 1 COMPLETE / MERGED / PRODUCTION-VERIFIED)
+
+**Read this qualifier before quoting the status.** "COMPLETE" here means **Phase-6 Benchmark #1** is
+complete, merged and production-verified. It does **NOT** mean the Fiction shelf is finished:
+**Fiction Benchmark #2 is NOT STARTED and NOT SELECTED**, and the remaining novels and short stories
+listed under *Remaining Fiction roadmap* below are still **future** items.
 
 _Historical planning context: this grouping was once written as "Phase 4 — Essays + Fiction +
-Poetry". **Poetry** became the actual, owner-directed **Phase 4** and **Essays & Articles** became
-**Phase 5**; both have shipped their first benchmark (above). **Novels and short stories remain
-future non-speech categories — they have NOT been started or integrated.**_
+Poetry", and was then carried as "Future non-speech categories — Fiction (planning only)". **Poetry**
+became the actual, owner-directed **Phase 4** and **Essays & Articles** became **Phase 5**; Fiction
+has now shipped its first benchmark as **Phase 6**. Completed Phase 1–5 history is not renumbered._
 
-Candidate first works recorded during planning (not selected, not started):
+### Benchmark #1 — பலிபீடம் நோக்கி / Towards the Sacrificial Altar (novel) — ✅ COMPLETE
 
-- Novels: Balipeedam Nokki
-- Short Stories: Kizhavan Kanavu
+- **Source repository:** `pugazg/kalaignar-novels`
+- **Source merge / pin:** `9e80c567d4a2165178c5374a02210240140685bf`
+- **Application repository:** `pugazg/kalaignar-autobiography`
+- **Application merge:** `992fd8d6cd7bfd89a2689574d0e2ef2728774a1a` (PR #28 squash merge)
+- **Edition:** முதற்பதிப்பு ஏப்ரல் 1947 — எரிமலைப் பதிப்பகம், துறையூர்
+- **Shape:** ONE novel in THREE assembled reading sections; Fiction becomes the eighth non-empty
+  shelf and the catalog reaches ten published works.
+- **Routes (live):** `/novels/balipeedam-nokki`, its three section routes and
+  `/novels/balipeedam-nokki/source`.
+
+Decisions worth carrying forward:
+
+- **Embedded-sequence rule.** `ராயசம் வெங்கண்ணா — தஞ்சை சரித்திரக் கதை` is **section 2 of this
+  novel**, never a separate work: no catalog entry, route, work-level metadata, translation project
+  or release identity of its own. The importer refuses to run if the source stops saying so.
+- **Section titles are the archive's labels, not printed headings.** A heading enters the reading
+  body only where an audited page record prints it verbatim (scan 4; scan 8), cited to the scan that
+  prints it. Section 3's label is printed nowhere, so it stays out of the body and claims **no** page
+  provenance; the reader says so where a reader meets it.
+- **Join evidence is classified by kind.** Six joins carry page-edge fragments; the scans 12→13
+  dying-speech quotation is a **narrative continuity** the audit established by reading. A semantic
+  continuity is never displayed as printed paragraph structure.
+- **Uncertainty preserved.** Printed page numbers are carried only where the scan shows one; the
+  Government Order's number and issue date remain `null`.
+- **Spelling correction.** The `ராயசம் வெங்கண்ணா` / Rayasam Venganna reading was derived from the
+  **controlling scanned source edition**, corrected in the archive first and then re-pinned here —
+  see **§9.1**. The earlier `வெங்கண்ணு` / Vengannu form is **superseded**, not an alternative.
+
+**Fiction Benchmark #2: NOT STARTED and NOT SELECTED.**
+
+### Remaining Fiction roadmap (planning only — NOT started, NOT selected)
+
+- **Novels:** works in `pugazg/kalaignar-novels` other than the integrated `பலிபீடம் நோக்கி`, subject
+  to live source readiness at selection time.
+- **Short Stories:** `Kizhavan Kanavu` was recorded as a planning candidate only — not selected, not
+  started, and not privileged over a live readiness inspection.
 
 _(Essays: `Sakkaravarththiyin Thirumagan` was the planning candidate and is now **integrated** as
 Phase-5 Benchmark #1 — see **§10 → Phase 5**.)_
@@ -954,7 +1002,11 @@ renumbered, and the phase name for the next benchmark is decided when that bench
 - further literary commentary only when source work has reached its publication gate
 - Thirukkural commentary waits for an explicit complete/partial-publication decision based on live archival state
 
-## Phase 6 — Cross-library discovery
+## Phase 7 — Cross-library discovery
+
+_Historical planning context: this section was once numbered "Phase 6". That number is now taken by
+the shipped **Phase 6 — Fiction** (above). Nothing here has been started, and completed Phase 1–6
+history is not renumbered._
 
 Only after several shelves contain real public works:
 
@@ -967,7 +1019,10 @@ Only after several shelves contain real public works:
 
 Do not label the existing memoir-only full-text search as a global library search.
 
-## Phase 7 — ingestion automation
+## Phase 8 — ingestion automation
+
+_Historical planning context: this section was once numbered "Phase 7", which is now taken by
+Cross-library discovery (above). Nothing here has been started._
 
 Once multiple integration adapters are proven:
 
@@ -1091,16 +1146,16 @@ When Claude returns a report, independently verify:
 # 15. Immediate next activity
 
 **Phase 1 and Phase 2 are COMPLETE. Phase-3 Speech Benchmarks #1–#3 are complete, merged and
-production-verified, and Phase 3 is PAUSED by owner direction. Phase-4 Poetry Benchmark #1 and
-Phase-5 Essays & Articles Benchmark #1 are complete, merged and production-verified. Do NOT start any
-completed phase or benchmark again.**
+production-verified, and Phase 3 is PAUSED by owner direction. Phase-4 Poetry Benchmark #1,
+Phase-5 Essays & Articles Benchmark #1 and Phase-6 Fiction Benchmark #1 are complete, merged and
+production-verified. Do NOT start any completed phase or benchmark again.**
 _(This section once instructed a fresh chat to begin Phase 1, and later Phase-3 Benchmark #4
 candidate selection. Both are stale and superseded; the Phase-1 principles are preserved as history
 in §10 → Phase 1, and the paused Phase-3 guidance in §10 → Phase 3.)_
 
-**Phase-5 Essays & Articles Benchmark #1 is merged and production-verified, and this documentation
-synchronization records it. No next implementation benchmark has been started, and no next candidate
-or category has been selected.**
+**Phase-6 Fiction Benchmark #1 (பலிபீடம் நோக்கி) is merged and production-verified, and this
+documentation synchronization records it. No next implementation benchmark has been started, and no
+next candidate or category has been selected.**
 
 Current standing state:
 
@@ -1108,6 +1163,8 @@ Current standing state:
 - **Poetry Benchmark #2:** NOT STARTED / NOT SELECTED / **PENDING SOURCE AVAILABILITY** — at the
   recorded poetry pin `kalaignar-poems` holds only one archived work.
 - **Phase-5 Benchmark #2 (a second Essays work):** NOT STARTED / NOT SELECTED.
+- **Phase-6 Benchmark #2 (a second Fiction work):** NOT STARTED / NOT SELECTED. Fiction shipping its
+  first benchmark does **not** privilege Fiction in the next selection.
 
 If the owner simply says **"Proceed with next activity"**, the reviewer performs:
 
@@ -1163,9 +1220,12 @@ Constraints for whichever work is selected:
 - **stop after that one benchmark.**
 
 Last production application-code checkpoint at this handover:
-**`bcb11396b2215bc2cc1e81873c0ce278ef98598a`** (the Phase-5 Essays Benchmark #1 / PR #27 squash merge)
-— live GitHub `main` is authoritative and overrides this SHA if it later moves; documentation-only
-commits may advance `main` past it without changing the deployed application, and such a docs-only SHA
-must never be recorded as a newer application-code checkpoint. The earlier
-`c2d1c46d1c2d4e1f11722360848226208867789f` (Phase 4) and `ecf73cc8146cd9a9578c4aeaf73518b122ce569c`
-(Phase 3) are **historical** checkpoints only.
+**`992fd8d6cd7bfd89a2689574d0e2ef2728774a1a`** (the Phase-6 Fiction Benchmark #1 / PR #28 squash
+merge) — live GitHub `main` is authoritative and overrides this SHA if it later moves;
+documentation-only commits may advance `main` past it without changing the deployed application, and
+such a docs-only SHA must never be recorded as a newer application-code checkpoint. The earlier
+`bcb11396b2215bc2cc1e81873c0ce278ef98598a` (Phase 5), `c2d1c46d1c2d4e1f11722360848226208867789f`
+(Phase 4) and `ecf73cc8146cd9a9578c4aeaf73518b122ce569c` (Phase 3) are **historical** checkpoints
+only.
+
+Current novels source pin: `pugazg/kalaignar-novels` `9e80c567d4a2165178c5374a02210240140685bf`.
