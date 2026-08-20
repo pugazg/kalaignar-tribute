@@ -3,7 +3,8 @@
 **Last updated:** 2026-08-20
 
 > **Status:** **Phase 1 COMPLETE** · **Phase 2 (Cinema / Manohara) COMPLETE** · **Phase 3 — Speeches
-> is ACTIVE but PAUSED by owner direction (not complete)** · **Phase 4 — Poetry is ACTIVE**.
+> is ACTIVE but PAUSED by owner direction (not complete)** · **Phase 4 — Poetry is ACTIVE** ·
+> **Phase 5 — Essays & Articles is ACTIVE**.
 >
 > **Owner direction.** The owner explicitly asked for the next Digital Library work to come from a
 > category **other than speeches** ("I want from another category other than speech"). That produced
@@ -39,10 +40,30 @@
 >   This is **not** a cancellation, and Phase 4 is **not** complete; future live source state may add
 >   more poems, and **live source state always wins**.
 >
+> **Phase 5 — Essays & Articles (ACTIVE):**
+>
+> - **Benchmark #1 — சக்கரவர்த்தியின் திருமகன் / Chakravarthi's Son:** **COMPLETE / MERGED /
+>   PRODUCTION-VERIFIED**. PR #27, final reviewed head
+>   `929bb545e5358056ea0e0a671d157d7f97bede6a`, squash merge
+>   `bcb11396b2215bc2cc1e81873c0ce278ef98598a` (2026-08-20T10:15:15Z), production Vercel **success**
+>   on that exact merge SHA (deployment `AwU8uyXYHxthgez8ZGQWP1rTS3PF`). Source pin
+>   `pugazg/kalaignar-essays @ bff35320b668cb5beeaafc5faa58260c4f4473f8`.
+> - **Phase-5 Benchmark #2: NOT STARTED and NOT SELECTED.**
+>
 > **Last production application-code checkpoint:
-> `c2d1c46d1c2d4e1f11722360848226208867789f`** (the Phase-4 Poetry Benchmark #1 / PR #25 squash
-> merge). It **supersedes** `ecf73cc8146cd9a9578c4aeaf73518b122ce569c`, which remains an important
-> **historical** Phase-3 checkpoint but is no longer current.
+> `bcb11396b2215bc2cc1e81873c0ce278ef98598a`** (the Phase-5 Essays Benchmark #1 / PR #27 squash
+> merge). It **supersedes** `c2d1c46d1c2d4e1f11722360848226208867789f`, which remains an important
+> **historical** Phase-4 checkpoint but is no longer current.
+>
+> `/read` publishes **9 works across 7 non-empty shelves**. **கட்டுரைகள் / Essays & Articles** is now
+> visible with **exactly one** publication; **Poetry** remains **1** and the single **Speeches**
+> shelf remains **3** (Udhaya Kathir · Poonthottam · Arappor). No `/essays` collection landing.
+>
+>
+> _(Historical: `c2d1c46d1c2d4e1f11722360848226208867789f` was the application-code checkpoint at the
+> close of Phase-4 Poetry Benchmark #1, superseding the Phase-3 checkpoint
+> `ecf73cc8146cd9a9578c4aeaf73518b122ce569c`. Both are historical; the current checkpoint is stated
+> above.)_
 >
 > **Current repository `main` must always be read live from GitHub.** Documentation-only closeout
 > commits — including the handover PRs that accompany this update — may move repository `main` beyond
@@ -50,11 +71,9 @@
 > `c2d1c46d…` as the production application-code state, not as the newest commit on `main`, and never
 > record a docs-only SHA as a newer application-code checkpoint.
 >
-> `/read` publishes **8 works across 6 non-empty shelves** — Life Writing, Letters, **Poetry**, Cinema
-> Writing, **Speeches**, Literary Commentary. **Poetry / கவிதைகள்** holds exactly **1** work; the
-> **single** Speeches / உரைகள் shelf still holds exactly **3** (Udhaya Kathir · Poonthottam · Arappor).
-> No separate Public Speeches shelf exists, and neither a `/speeches` nor a `/poems` collection landing
-> was added. See **§10 → Phase 3** and **§10 → Phase 4** for the full records.
+> _(At the close of Phase 4 the library published 8 works across 6 shelves.)_ No separate Public
+> Speeches shelf exists, and no `/speeches`, `/poems` or `/essays` collection landing was added. See
+> **§10 → Phase 3**, **§10 → Phase 4** and **§10 → Phase 5** for the full records.
 >
 > Mobile remains **ON HOLD** (Activity 6 / PR #15 merged for preservation — see §4).
 
@@ -369,6 +388,10 @@ Current completed publication:
 - English translation/release complete
 
 Contents-heading variants and other source-witness distinctions must remain preserved.
+
+**INTEGRATED** as Phase-5 Essays & Articles Benchmark #1 at pin
+`bff35320b668cb5beeaafc5faa58260c4f4473f8` — see **§10 → Phase 5**. Any further Essays work must be
+chosen from **live** repository state, not from this snapshot.
 
 ## 9.6 Cinema — `pugazg/kalaignar-cinema-works`
 
@@ -807,22 +830,125 @@ complete nor cancelled.
 non-speech integration must remain under Poetry, and Essays/Fiction/Drama are not to be forced into
 it. Category and phase naming for the next benchmark is decided when that benchmark is selected.
 
-## Future non-speech categories — Essays + Fiction (planning only)
+## Phase 5 — Essays & Articles — 🚧 ACTIVE (benchmark 1 COMPLETE / MERGED / PRODUCTION-VERIFIED)
+
+Opened the **கட்டுரைகள் / Essays & Articles** shelf, selected by a live non-speech source-readiness
+review. Implementation-level detail lives in
+`pugazg/kalaignar-autobiography/docs/digital-library/PHASE5_ESSAYS_HANDOVER.md` when it is written;
+until then this section plus PR #27 is the durable record.
+
+### Benchmark #1 — சக்கரவர்த்தியின் திருமகன் / Chakravarthi's Son — ✅ COMPLETE
+
+- **Implementation PR:** #27 — final reviewed head `929bb545e5358056ea0e0a671d157d7f97bede6a`,
+  squash merge **`bcb11396b2215bc2cc1e81873c0ce278ef98598a`** (2026-08-20T10:15:15Z),
+  **production-verified 2026-08-20** with Vercel success on that exact merge SHA (deployment
+  `AwU8uyXYHxthgez8ZGQWP1rTS3PF`). This is now the **last production application-code checkpoint**.
+- **Source (pinned, unmodified):** `pugazg/kalaignar-essays` @
+  **`bff35320b668cb5beeaafc5faa58260c4f4473f8`**, `publications/sakkaravarththiyin-thirumagan`.
+  Controlling scan `TVA_BOK_0065662_சக்கரவர்த்தியின்_திருமகன்.pdf`, SHA-256
+  `5d7f8404a53c0766df896ddedf9978a3fd31f97b8e98625b70a93366412eb90d`, 201,858,823 bytes, **83
+  scans — 83/83 verified and 83/83 strict visual-text-fidelity PASS**, 80 printed pages. The source
+  PDF is **not vendored**.
+- **Edition distinction:** first published **மே 1956 (வேலூர் திராவிடன் பதிப்பகம்)**; the CONTROLLING
+  source integrated here is the **2018 reprint** (title-page line `திராவிடர் கழக (இயக்க) வெளியீடு`).
+  The scan is never described as a 1956 scan, and the 1956 history is never erased.
+- **Scope:** ONE catalog publication holding **14 source-numbered articles** — never 14 catalog
+  works. Numbers 1–14 come from the printed contents page with every boundary verified against its
+  heading page. Tamil **14/14** assemblies frozen with **0** unresolved fidelity items; English
+  **14/14** verified, **E6 PASS**, **E7 PASS**, release gate **CLOSED**, 0 unresolved questions,
+  0 blockers, `englishKind: project-created`.
+- **Library:** 8 works / 6 shelves → **9 works / 7 non-empty shelves**. Poetry stays **1**; the
+  single Speeches shelf stays **3**. Routes `/essays/<slug>`, 14 `/essays/<slug>/articles/<article>`
+  and `/essays/<slug>/source`; **no `/essays` collection landing**. Build: 1280 static pages.
+
+**Final archival model — two independent dimensions.** An article is neither speech prose, verse nor
+a scene, so Essays has its own reader and its own narrow model:
+
+```
+ArticleBlock
+ ├── kind        paragraph | subheading | attribution      (SOURCE structure)
+ ├── segments    [ authored-text | quoted-text ]           (VOICE inside the block)
+ └── sourcePages [ { scan, printed } … ]                   (block-level provenance)
+```
+
+A source paragraph regularly closes a quotation and then continues in Kalaignar's own voice, so
+**only an all-quoted paragraph may render as a full quotation**; a mixed paragraph stays a paragraph
+with its quoted runs marked inline. Kalaignar's framing is never attributed to the person he quotes.
+Source quotation punctuation is preserved and never repaired — the archive's source-irregular
+unclosed quotations simply leave a block ending in quoted voice.
+
+**Final counts** — Tamil **349** blocks: **213** authored-only · **54** quotation-only · **74**
+mixed. English **358** blocks: **208** authored-only · **61** quotation-only · **81** mixed. Plus 1
+attribution and 7 source-printed subheadings per layer, **14** translator notes held outside the
+authored body, and **90** page-spanning blocks.
+
+**Cross-page evidence model — positive evidence only.**
+
+```
+positive continuation evidence → same-block
+positive boundary evidence     → block-boundary
+absence of evidence            → unknown
+```
+
+**60** in-article page transitions: **45 same-block · 0 block-boundary · 15 unknown**. A relation is
+never inferred from blank lines, marker formatting, marker removal, punctuation, semantic flow or
+the absence of a note. The 15 unresolved edges are never joined and never shown as a clean paragraph
+break: a restrained prose marker states the relation is unresolved, is weaker than a paragraph gap,
+and **survives Print → Save as PDF** with a border-drawn rule and a language-correct label. One
+blocker class, `cross-page-block-relationship` (15), resolvable only by an upstream source-archive
+review.
+
+**Two independent reviewer corrections (do not regress):**
+
+1. **Mixed voice.** The initial model gave a whole source paragraph one semantic kind, decided
+   largely by whether it opened with a quotation mark, so Kalaignar's post-quotation framing rendered
+   inside `<blockquote>`. Corrected by separating block structure from voice segments; explicit
+   Tamil **and** English Article-1 regression tests now guard it.
+2. **Cross-page evidence.** The initial 45 / 15 / 0 taxonomy treated the absence of a continuation
+   note as positive block-boundary evidence. Corrected to the positive-evidence model above; the
+   result is 45 / 0 / 15.
+
+**Validation:** Essays validator **185 assertions ALL PASS** (both layers reconstructed exactly,
+voice re-segmented independently, cross-page relations re-derived independently of the importer);
+deterministic importer **second run NO DIFF**; **wrong source HEAD fails closed with no writes**;
+Udhaya Kathir, Poonthottam, Arappor and Idhayathai Thanthidu Anna validators **ALL PASS** with their
+generated data byte-identical; `tsc` clean; `git diff --check` clean.
+
+**Rights unchanged:** the existing nationalisation model, GO number and formal issue date still
+**null**, not broadened to publisher matter, cover/design, advertisements, library marks, the
+project-created translation, or the third-party texts quoted inside the essays.
+
+**Preserved source distinctions:** heading-page vs contents-page title witnesses kept separate for
+articles **5** and **14** (never normalized); article 10's differing body phrase never promoted to a
+title; scan-82 material below the printed article-ending ornament and the whole scan-83 back cover
+excluded, so the promotional Article-12 excerpt never extends canonical body; `Achariyar` /
+`Rajaji` (article 7) / `the Achariyars` (article 11) carried exactly as released.
+
+**Phase-5 Benchmark #2: NOT STARTED and NOT SELECTED.**
+
+## Future non-speech categories — Fiction (planning only)
 
 _Historical planning context: this grouping was once written as "Phase 4 — Essays + Fiction +
-Poetry". **Poetry** has since become the actual, owner-directed Phase 4 and its first benchmark has
-shipped (above). Essays, novels and short stories remain **future** non-speech categories — they have
-**NOT** been started or integrated by this milestone._
+Poetry". **Poetry** became the actual, owner-directed **Phase 4** and **Essays & Articles** became
+**Phase 5**; both have shipped their first benchmark (above). **Novels and short stories remain
+future non-speech categories — they have NOT been started or integrated.**_
 
 Candidate first works recorded during planning (not selected, not started):
 
-- Essays: Sakkaravarththiyin Thirumagan
 - Novels: Balipeedam Nokki
 - Short Stories: Kizhavan Kanavu
 
+_(Essays: `Sakkaravarththiyin Thirumagan` was the planning candidate and is now **integrated** as
+Phase-5 Benchmark #1 — see **§10 → Phase 5**.)_
+
 After one work of each form is proven, extract reusable adapters rather than prematurely inventing abstraction.
 
-## Phase 5 — Stage Plays + broader Literary Commentary
+## Future — Stage Plays + broader Literary Commentary (planning only)
+
+_Historical planning context: this section was once numbered "Phase 5". That number is now taken by
+the shipped **Phase 5 — Essays & Articles** (above). Stage plays and broader literary commentary
+remain **future** categories; nothing here has been started. Completed Phase 1–5 history is not
+renumbered, and the phase name for the next benchmark is decided when that benchmark is selected._
 
 - Silappathikaram — Nadaga Kappiyam
 - further literary commentary only when source work has reached its publication gate
@@ -964,15 +1090,24 @@ When Claude returns a report, independently verify:
 
 # 15. Immediate next activity
 
-**Phase 1 and Phase 2 are COMPLETE. Phase-3 Speech Benchmarks #1, #2 and #3 are complete, merged and
-production-verified, and Phase 3 is now PAUSED by owner direction. Phase-4 Poetry Benchmark #1 is
-complete, merged and production-verified. Do NOT start any completed phase or benchmark again.**
-_(This section once instructed a fresh chat to begin Phase 1, and later to begin Phase-3 Benchmark #4
-candidate selection. Both instructions are stale and superseded; the Phase-1 principles are preserved
-as history in §10 → Phase 1, and the paused Phase-3 guidance in §10 → Phase 3.)_
+**Phase 1 and Phase 2 are COMPLETE. Phase-3 Speech Benchmarks #1–#3 are complete, merged and
+production-verified, and Phase 3 is PAUSED by owner direction. Phase-4 Poetry Benchmark #1 and
+Phase-5 Essays & Articles Benchmark #1 are complete, merged and production-verified. Do NOT start any
+completed phase or benchmark again.**
+_(This section once instructed a fresh chat to begin Phase 1, and later Phase-3 Benchmark #4
+candidate selection. Both are stale and superseded; the Phase-1 principles are preserved as history
+in §10 → Phase 1, and the paused Phase-3 guidance in §10 → Phase 3.)_
 
-**Documentation synchronization for Poetry Benchmark #1 has completed. No next implementation
-benchmark has been started.**
+**Phase-5 Essays & Articles Benchmark #1 is merged and production-verified, and this documentation
+synchronization records it. No next implementation benchmark has been started, and no next candidate
+or category has been selected.**
+
+Current standing state:
+
+- **Speech Benchmark #4:** NOT STARTED / NOT SELECTED / **PAUSED** by owner direction.
+- **Poetry Benchmark #2:** NOT STARTED / NOT SELECTED / **PENDING SOURCE AVAILABILITY** — at the
+  recorded poetry pin `kalaignar-poems` holds only one archived work.
+- **Phase-5 Benchmark #2 (a second Essays work):** NOT STARTED / NOT SELECTED.
 
 If the owner simply says **"Proceed with next activity"**, the reviewer performs:
 
@@ -1028,8 +1163,9 @@ Constraints for whichever work is selected:
 - **stop after that one benchmark.**
 
 Last production application-code checkpoint at this handover:
-**`c2d1c46d1c2d4e1f11722360848226208867789f`** (the Phase-4 Poetry Benchmark #1 / PR #25 squash merge)
+**`bcb11396b2215bc2cc1e81873c0ce278ef98598a`** (the Phase-5 Essays Benchmark #1 / PR #27 squash merge)
 — live GitHub `main` is authoritative and overrides this SHA if it later moves; documentation-only
 commits may advance `main` past it without changing the deployed application, and such a docs-only SHA
 must never be recorded as a newer application-code checkpoint. The earlier
-`ecf73cc8146cd9a9578c4aeaf73518b122ce569c` is a **historical** Phase-3 checkpoint only.
+`c2d1c46d1c2d4e1f11722360848226208867789f` (Phase 4) and `ecf73cc8146cd9a9578c4aeaf73518b122ce569c`
+(Phase 3) are **historical** checkpoints only.
