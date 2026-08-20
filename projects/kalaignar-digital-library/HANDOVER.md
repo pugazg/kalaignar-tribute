@@ -33,7 +33,11 @@
 >   `3653023db60cb51ee1df4d970d621494c095791c`, squash
 >   `c2d1c46d1c2d4e1f11722360848226208867789f` (2026-08-20T01:58:07Z), production Vercel **success**
 >   on that exact merge SHA (deployment `92kdGyRiKucdUPSywP2XqnZMx1g9`).
-> - **Poetry Benchmark #2: NOT STARTED** and **NOT SELECTED**.
+> - **Poetry Benchmark #2: NOT STARTED, NOT SELECTED and PENDING SOURCE AVAILABILITY.** At the
+>   recorded poetry source state (`42c156d7…`), `pugazg/kalaignar-poems` contains **only one** archived
+>   work — `poems/idhayathai-thanthidu-anna` — so no second released poem is available to select today.
+>   This is **not** a cancellation, and Phase 4 is **not** complete; future live source state may add
+>   more poems, and **live source state always wins**.
 >
 > **Last production application-code checkpoint:
 > `c2d1c46d1c2d4e1f11722360848226208867789f`** (the Phase-4 Poetry Benchmark #1 / PR #25 squash
@@ -793,7 +797,15 @@ one work. Implementation-level detail lives in
   imprint, design or the project-created English translation.
 - **No source repository, mobile or PDF changes.**
 
-**Poetry Benchmark #2: NOT STARTED and NOT SELECTED.**
+**Poetry Benchmark #2: NOT STARTED / NOT SELECTED / PENDING SOURCE AVAILABILITY.** At the pinned
+source state above, `poems/` holds **exactly one** work directory (`poems/idhayathai-thanthidu-anna`),
+and the repository README states that a *next* poem must begin again from its own
+startup/source-inspection workflow. Poetry remains an **open** Digital Library form; it is neither
+complete nor cancelled.
+
+**Phase 4 records the Poetry work that actually happened.** It does **not** mean every subsequent
+non-speech integration must remain under Poetry, and Essays/Fiction/Drama are not to be forced into
+it. Category and phase naming for the next benchmark is decided when that benchmark is selected.
 
 ## Future non-speech categories — Essays + Fiction (planning only)
 
@@ -962,44 +974,58 @@ as history in §10 → Phase 1, and the paused Phase-3 guidance in §10 → Phas
 **Documentation synchronization for Poetry Benchmark #1 has completed. No next implementation
 benchmark has been started.**
 
-If the owner simply says **"Proceed with next activity"**, the default continuation is:
+If the owner simply says **"Proceed with next activity"**, the reviewer performs:
 
-**Phase 4 — Poetry Benchmark #2 CANDIDATE SELECTION**, followed by integrating **ONE** additional
-released poem.
+**NEXT NON-SPEECH CATEGORY CANDIDATE SELECTION.**
 
-**Poetry Benchmark #2 is NOT started and NOT selected by this handover.** Before any prompt is
-written, a fresh reviewer must:
+**No next work or category has been selected.** In particular, **Poetry Benchmark #2 is NOT the
+automatic default**: at the recorded poetry source state `42c156d7242fa799ea80adbb0c5f2b9eba078fe9`,
+`pugazg/kalaignar-poems` holds **only one** archived work (`poems/idhayathai-thanthidu-anna`), so
+Poetry Benchmark #2 is **PENDING SOURCE AVAILABILITY** and cannot be selected today.
 
-- inspect the **LIVE** `main` of `pugazg/kalaignar-poems`;
-- inspect the currently released/verified poems there;
-- choose **exactly one** source-ready poem on current release/provenance strength — **not** from
-  candidate names in old handover prose;
-- require **verified Tamil**; require a **released English** layer if publishing bilingual;
-- inspect the actual provenance and source-completeness records at that live commit.
+The reviewer must inspect **live** source readiness across the relevant **non-speech** repositories
+and recommend **exactly ONE** next work. At minimum consider live state from repositories such as:
 
-Constraints for that activity:
+- `pugazg/kalaignar-poems`
+- `pugazg/kalaignar-essays`
+- `pugazg/kalaignar-novels`
+- `pugazg/kalaignar-short-stories`
+- `pugazg/kalaignar-stage-plays`
+- `pugazg/kalaignar-cinema-works`
+- `pugazg/kalaignar-literary-commentary`
+
+**Do not assume every repository above has an eligible work.** Inspect live source/release state, and
+**do not preselect from historical planning candidate names** anywhere in this handover.
+
+Select the single strongest next benchmark on:
+
+- released/verified source readiness;
+- released English where bilingual publication is intended;
+- provenance completeness;
+- architectural value as the next Digital Library **form** benchmark;
+- source authority.
+
+**Speech repositories are excluded from the default selection** because Phase 3 is paused by owner
+direction. If the owner explicitly asks to resume speeches, that overrides the pause. If the owner
+explicitly names a non-speech category, follow that category instead of running broad selection. If by
+then another source-ready poem has appeared in `kalaignar-poems`, Poetry Benchmark #2 may legitimately
+compete in this selection — but **Poetry is not privileged merely because Benchmark #1 was Poetry**.
+
+Constraints for whichever work is selected:
 
 - integrate **exactly one** work;
-- keep the same **Poetry / கவிதைகள்** shelf;
 - reviewer-gated PR; **no bulk import**, no mass ingestion;
-- **no** `/poems` collection landing unless separately justified and approved;
-- **no** generalized ingestion framework;
-- deterministic, commit-pinned importer that fails closed on a source-HEAD mismatch;
-- **no** source-archive edits, **no** PDF vendoring, **no** runtime GitHub;
-- preserve the line/boundary reader model **only where the next poem's source actually supports it** —
-  **do not assume** இதயத்தைத் தந்திடு அண்ணா's unresolved cross-page pattern applies to every poem;
-  another poem's archive may establish stanza relations explicitly, or need different vocabulary;
+- deterministic, **commit-pinned** importer that **fails closed** on a source-HEAD mismatch;
+- build **no** generalized ingestion framework, and add no collection landing without separate
+  justification and approval;
+- preserve a form-specific reader model **only where that work's source actually supports it** — **do
+  not assume** இதயத்தைத் தந்திடு அண்ணா's unresolved cross-page pattern generalizes;
 - unresolved source facts stay **unresolved** — no punctuation, indentation, semantic or grammatical
-  inference may fill a typographic relation;
-- absent source metadata (publication year, edition) is represented honestly and never fabricated;
+  inference;
+- absent source metadata is represented honestly and never fabricated;
+- **no** source-archive edits, **no** PDF vendoring, **no** runtime GitHub;
 - **no** mobile work (mobile remains ON HOLD);
-- **stop before Poetry Benchmark #3.**
-
-**Speech Benchmark #4 must remain PAUSED / NOT STARTED / NOT SELECTED.** Do not resume speech
-expansion unless the owner explicitly asks to return to speeches.
-
-**If the owner instead names another non-speech category** (essays, novels, short stories, stage
-plays …), follow that owner direction rather than forcing Poetry Benchmark #2.
+- **stop after that one benchmark.**
 
 Last production application-code checkpoint at this handover:
 **`c2d1c46d1c2d4e1f11722360848226208867789f`** (the Phase-4 Poetry Benchmark #1 / PR #25 squash merge)

@@ -35,7 +35,7 @@ Then inspect the live implementation repository:
   - **Speech Benchmark #4: NOT STARTED and NOT SELECTED.**
 - **Phase 4 — Poetry: ACTIVE.**
   - **Benchmark #1 — இதயத்தைத் தந்திடு அண்ணா / Lend Me Your Heart, Anna:** COMPLETE, merged, production-verified (PR #25, reviewed head `3653023d…`, squash `c2d1c46d…`, 2026-08-20T01:58:07Z, merge-SHA deployment `92kdGyRiKucdUPSywP2XqnZMx1g9`).
-  - **Poetry Benchmark #2: NOT STARTED and NOT SELECTED.**
+  - **Poetry Benchmark #2: NOT STARTED / NOT SELECTED / PENDING SOURCE AVAILABILITY.** At the recorded poetry source pin, `pugazg/kalaignar-poems` contains **only one** archived work — `poems/idhayathai-thanthidu-anna` — so no second released poem is available to select today. Not cancelled; Phase 4 is not complete either. Verify live.
 
 **Last production application-code checkpoint at this handover:**
 
@@ -50,6 +50,8 @@ That is the Phase-4 Poetry Benchmark #1 / PR #25 squash merge, and it identifies
 ## Current poetry source pin
 
 - **இதயத்தைத் தந்திடு அண்ணா:** `pugazg/kalaignar-poems` @ `42c156d7242fa799ea80adbb0c5f2b9eba078fe9`
+
+At that source state, `poems/` contains **exactly one** work directory — `idhayathai-thanthidu-anna` — and the repository README says a *next* poem must begin again from its own startup/source-inspection workflow. **Do not pretend another released Poetry candidate is currently available.** Re-check live source state before advising.
 
 ## Current speech source pins
 
@@ -108,37 +110,42 @@ Your job is to:
 
 ## Immediate next activity
 
-**Documentation synchronization for Poetry Benchmark #1 has completed. No next implementation benchmark has been started.**
+**Documentation synchronization for Poetry Benchmark #1 has completed. No next implementation benchmark has been started, and no next work or category has been selected.**
 
-If I simply say **"Proceed with next activity"**, the default continuation is:
+- **Poetry Benchmark #1:** COMPLETE / MERGED / PRODUCTION-VERIFIED.
+- **Poetry Benchmark #2:** NOT STARTED / NOT SELECTED / **PENDING SOURCE AVAILABILITY** — at pin `42c156d7242fa799ea80adbb0c5f2b9eba078fe9` only `idhayathai-thanthidu-anna` exists under `poems/`.
+- **Speech Benchmark #4:** NOT STARTED / NOT SELECTED / **PAUSED** by owner direction.
 
-**Phase 4 — Poetry Benchmark #2 candidate selection**, then integrating **ONE** additional released poem.
+### Default for "Proceed with next activity"
 
-**Poetry Benchmark #2 is NOT started and NOT selected.** Before drafting any prompt, independently:
+Inspect the **live** non-speech source repositories and recommend **ONE** next source-ready Digital Library benchmark from a **non-speech** category. Do **not** implement it yourself.
 
-- inspect the **LIVE** `main` of `pugazg/kalaignar-poems`;
-- inspect the currently released/verified poems there;
-- choose **exactly one** source-ready poem on current release/provenance strength — do **not** preselect from stale handover prose;
-- require **verified Tamil**; require a **released English** layer if publishing bilingual;
-- inspect the actual provenance and source-completeness records at that live commit.
+At minimum consider live state from repositories such as `pugazg/kalaignar-poems`, `pugazg/kalaignar-essays`, `pugazg/kalaignar-novels`, `pugazg/kalaignar-short-stories`, `pugazg/kalaignar-stage-plays`, `pugazg/kalaignar-cinema-works` and `pugazg/kalaignar-literary-commentary`. **Do not assume every one of them has an eligible work**, and do not preselect from historical planning candidate names.
 
-The activity must:
+Judge candidates on released/verified source readiness, released English where bilingual publication is intended, provenance completeness, architectural value as the next Digital Library **form** benchmark, and source authority.
 
-- integrate **exactly one** work, on the **same** Poetry / கவிதைகள் shelf;
+Return:
+
+- the selected **category**;
+- the selected **single work**;
+- **why** it is the strongest next form/provenance benchmark, from live source state;
+- a complete ready-to-paste Claude Code prompt.
+
+**If, by that future date, another source-ready poem has appeared in `kalaignar-poems`, Poetry Benchmark #2 may legitimately compete in this selection — but do not privilege Poetry merely because Benchmark #1 was Poetry.**
+
+Speech repositories are excluded from this default because Phase 3 is paused; if I explicitly ask to resume speeches, that overrides the pause. If I explicitly name a non-speech category, follow that category instead of running broad selection.
+
+Whichever work is selected, the activity must:
+
+- integrate **exactly one** work;
 - be a **reviewer-gated PR** — no bulk import, no mass ingestion;
 - use a deterministic, **commit-pinned** importer that **fails closed** on a source-HEAD mismatch;
-- add **no** `/poems` collection landing unless separately justified and approved;
+- add **no** collection landing unless separately justified and approved;
 - build **no** generalized ingestion framework;
-- preserve the line/boundary reader model **only where the next poem's source actually supports it** — **do not assume** இதயத்தைத் தந்திடு அண்ணா's unresolved cross-page stanza pattern applies to every poem; another poem's archive may establish those relations explicitly, or may need a different boundary vocabulary;
+- preserve a form-specific reader model **only where that work's source actually supports it** — **do not assume** இதயத்தைத் தந்திடு அண்ணா's unresolved cross-page stanza pattern generalizes;
 - make **no** source-archive edits, vendor **no** PDFs, use **no** runtime GitHub;
 - make **no** mobile changes;
-- **stop before Poetry Benchmark #3.**
-
-**Speech Benchmark #4 must remain PAUSED / NOT STARTED / NOT SELECTED.** Do not resume speech expansion unless I explicitly ask to return to speeches.
-
-**If I instead name another non-speech category** (essays, novels, short stories, stage plays …), follow that direction rather than forcing Poetry Benchmark #2.
-
-Do **not** automatically start Poetry Benchmark #2 on your own.
+- **stop after that one benchmark.**
 
 ## Source-faithful constraints (non-negotiable)
 
@@ -190,6 +197,6 @@ Every Claude prompt should contain:
 
 Read the current Digital Library handover completely, inspect the live implementation repository (current `main`, open PRs, production `/read`, the three speech routes and the poem routes `/poems/idhayathai-thanthidu-anna` and `…/source`), and verify the Phase-4 checkpoint above. Then tell me the verified current state.
 
-When I ask for it, independently inspect the live `pugazg/kalaignar-poems` repository and recommend the next **reviewer-gated Phase-4 Poetry Benchmark #2** work — naming the single poem you recommend and why, based on live source state — together with a complete ready-to-paste Claude prompt. Do not implement the work yourself, do not start Poetry Benchmark #3 automatically, and do not resume speeches unless I ask.
+When I ask for it, inspect the **live non-speech source repositories** and recommend the single strongest next source-ready benchmark — naming the category and the one work, and why — together with a complete ready-to-paste Claude prompt. Do not implement the work yourself, do not assume Poetry is the next category, and do not resume speeches unless I ask.
 
 ---
