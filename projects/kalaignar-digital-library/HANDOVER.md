@@ -1,10 +1,14 @@
 # Kalaignar Digital Library / Reading Room — Master Handover
 
-**Last updated:** 2026-08-20
+**Last updated:** 2026-08-21
 
 > **Status:** **Phase 1 COMPLETE** · **Phase 2 (Cinema / Manohara) COMPLETE** · **Phase 3 — Speeches
 > is ACTIVE but PAUSED by owner direction (not complete)** · **Phase 4 — Poetry is ACTIVE** ·
-> **Phase 5 — Essays & Articles is ACTIVE**.
+> **Phase 5 — Essays & Articles is ACTIVE** · **Phase 6 — Fiction COMPLETE** · **Phase 7 — Drama /
+> Stage Plays is ACTIVE (benchmark 1 COMPLETE / MERGED / PRODUCTION-VERIFIED)**.
+>
+> **Phase 8 — Consolidation & Provenance Parity has NOT started.** No consolidation work, validator,
+> CI or component extraction exists yet.
 >
 > **Owner direction.** The owner explicitly asked for the next Digital Library work to come from a
 > category **other than speeches** ("I want from another category other than speech"). That produced
@@ -34,11 +38,15 @@
 >   `3653023db60cb51ee1df4d970d621494c095791c`, squash
 >   `c2d1c46d1c2d4e1f11722360848226208867789f` (2026-08-20T01:58:07Z), production Vercel **success**
 >   on that exact merge SHA (deployment `92kdGyRiKucdUPSywP2XqnZMx1g9`).
-> - **Poetry Benchmark #2: NOT STARTED, NOT SELECTED and PENDING SOURCE AVAILABILITY.** At the
->   recorded poetry source state (`42c156d7…`), `pugazg/kalaignar-poems` contains **only one** archived
->   work — `poems/idhayathai-thanthidu-anna` — so no second released poem is available to select today.
->   This is **not** a cancellation, and Phase 4 is **not** complete; future live source state may add
->   more poems, and **live source state always wins**.
+> - **Poetry Benchmark #2: NOT STARTED, NOT SELECTED and NOT APPROVED FOR IMPLEMENTATION.** A second
+>   work now EXISTS in the source repository — this is a change from the earlier record, which said no
+>   second work was available. At live `pugazg/kalaignar-poems` `2230a8d`, `poems/` holds
+>   `idhayathai-thanthidu-anna` (released) **and** `anaiya-vilakku-anna` (அணையா விளக்கு அண்ணா).
+>   `anaiya-vilakku-anna` is **NOT READY**: of 19 source pages only **1** page record exists, Tamil
+>   assembly is **pending**, English translation is **pending**, and the work records **no SHA-256 and
+>   no byte size** — so it does not yet meet the repository's own source-identity step. A candidate
+>   source therefore exists, but it is **not approved for implementation**. Phase 4 is **not**
+>   complete, and **live source state always wins**.
 >
 > **Phase 5 — Essays & Articles (ACTIVE):**
 >
@@ -50,14 +58,41 @@
 >   `pugazg/kalaignar-essays @ bff35320b668cb5beeaafc5faa58260c4f4473f8`.
 > - **Phase-5 Benchmark #2: NOT STARTED and NOT SELECTED.**
 >
-> **Last production application-code checkpoint:
-> `bcb11396b2215bc2cc1e81873c0ce278ef98598a`** (the Phase-5 Essays Benchmark #1 / PR #27 squash
-> merge). It **supersedes** `c2d1c46d1c2d4e1f11722360848226208867789f`, which remains an important
-> **historical** Phase-4 checkpoint but is no longer current.
+> **Phase 6 — Fiction (COMPLETE):**
 >
-> `/read` publishes **9 works across 7 non-empty shelves**. **கட்டுரைகள் / Essays & Articles** is now
-> visible with **exactly one** publication; **Poetry** remains **1** and the single **Speeches**
-> shelf remains **3** (Udhaya Kathir · Poonthottam · Arappor). No `/essays` collection landing.
+> - **Benchmark #1 — பலிபீடம் நோக்கி / Towards the Sacrificial Altar:** **COMPLETE / MERGED /
+>   PRODUCTION-VERIFIED** — PR #28, squash `992fd8d6cd7bfd89a2689574d0e2ef2728774a1a`. Source pin
+>   `pugazg/kalaignar-novels @ 9e80c567d4a2165178c5374a02210240140685bf`. ONE novel in three assembled
+>   sections; `ராயசம் வெங்கண்ணா` is an internal sequence of that novel, never a separate work.
+> - **Phase-6 Benchmark #2: NOT STARTED and NOT SELECTED.**
+>
+> **Phase 7 — Drama / Stage Plays (ACTIVE):**
+>
+> - **Benchmark #1 — சிலப்பதிகாரம் நாடகக் காப்பியம்:** **COMPLETE / MERGED / PRODUCTION-VERIFIED** —
+>   PR #29, squash `9aade1d441bb314b5ab62f97b87b373d33db08c5` (2026-08-21T01:09:13Z), production
+>   verified 2026-08-21. Source pin
+>   `pugazg/kalaignar-stage-plays @ a66e62bbecaf63825b3db09a1d421401e1ab2e8e`. 38 numbered scenes plus
+>   a separate **unnumbered** closing tableau, which is never Scene 39.
+> - **Phase-7 Benchmark #2: NOT STARTED and NOT SELECTED.** `Anarkali`, `Cheran Senguttuvan` and
+>   `Socrates` have **no controlling Tamil source** and remain blocked.
+>
+> **Last production application-code checkpoint:
+> `9aade1d441bb314b5ab62f97b87b373d33db08c5`** (the Phase-7 Drama Benchmark #1 / PR #29 squash merge,
+> production-verified 2026-08-21). It **supersedes**
+> `992fd8d6cd7bfd89a2689574d0e2ef2728774a1a` (Phase 6),
+> `bcb11396b2215bc2cc1e81873c0ce278ef98598a` (Phase 5),
+> `c2d1c46d1c2d4e1f11722360848226208867789f` (Phase 4) and
+> `ecf73cc8146cd9a9578c4aeaf73518b122ce569c` (Phase 3), all of which remain important **historical**
+> checkpoints but are no longer current.
+>
+> `/read` publishes **11 works across 9 non-empty shelves** — every shelf is now non-empty. The
+> published works are: Nenjukku Neethi · Murasoli Letters · Tholkappiya Poonga · Manohara ·
+> Udhaya Kathir · Poonthottam · Arappor · Idhayathai Thanthidu Anna · Sakkaravarththiyin Thirumagan ·
+> Balipeedam Nokki · Silappathikaram Nadaka Kappiyam. **புனைவு / Fiction**, **நாடகங்கள் / Drama**,
+> **கட்டுரைகள் / Essays & Articles** and **கவிதைகள் / Poetry** each hold **exactly one** work; the
+> single **Speeches** shelf holds **3** (Udhaya Kathir · Poonthottam · Arappor). No `/essays`,
+> `/novels`, `/plays` or other collection landing exists. **Verify this live rather than trusting the
+> numbers.**
 >
 >
 > _(Historical: `c2d1c46d1c2d4e1f11722360848226208867789f` was the application-code checkpoint at the
@@ -68,12 +103,13 @@
 > **Current repository `main` must always be read live from GitHub.** Documentation-only closeout
 > commits — including the handover PRs that accompany this update — may move repository `main` beyond
 > the application-code checkpoint **without changing deployed application behaviour**, so treat
-> `c2d1c46d…` as the production application-code state, not as the newest commit on `main`, and never
+> `9aade1d4…` as the production application-code state, not as the newest commit on `main`, and never
 > record a docs-only SHA as a newer application-code checkpoint.
 >
 > _(At the close of Phase 4 the library published 8 works across 6 shelves.)_ No separate Public
 > Speeches shelf exists, and no `/speeches`, `/poems` or `/essays` collection landing was added. See
-> **§10 → Phase 3**, **§10 → Phase 4** and **§10 → Phase 5** for the full records.
+> **§10 → Phase 3**, **§10 → Phase 4**, **§10 → Phase 5**, **§10 → Phase 6** and **§10 → Phase 7**
+> for the full records.
 >
 > Mobile remains **ON HOLD** (Activity 6 / PR #15 merged for preservation — see §4).
 
@@ -376,7 +412,9 @@ Current completed work:
 - English translation release-complete
 - lineation/cadence/voice must be preserved
 - **INTEGRATED** as Phase-4 Poetry Benchmark #1 at pin
-  `42c156d7242fa799ea80adbb0c5f2b9eba078fe9` — see **§10 → Phase 4**. A Benchmark #2 candidate must be
+  `42c156d7242fa799ea80adbb0c5f2b9eba078fe9` — see **§10 → Phase 4**. Live `main` has since moved to
+  `2230a8d`, which adds a SECOND work directory, `poems/anaiya-vilakku-anna`. `anaiya-vilakku-anna` (அணையா விளக்கு அண்ணா) is **NOT READY**: of 19 source pages only **1** page record exists, Tamil assembly is **pending**, English translation is **pending**, and the work records **no SHA-256 and no byte size**. A candidate source exists, but it is **not approved for implementation**.
+  A Benchmark #2 candidate must be
   chosen from **live** repository state, not from this snapshot.
 
 ## 9.4 Assembly speeches — `pugazg/kalaignar-assembly-speeches`
@@ -829,8 +867,10 @@ one work. Implementation-level detail lives in
   imprint, design or the project-created English translation.
 - **No source repository, mobile or PDF changes.**
 
-**Poetry Benchmark #2: NOT STARTED / NOT SELECTED / PENDING SOURCE AVAILABILITY.** At the pinned
-source state above, `poems/` holds **exactly one** work directory (`poems/idhayathai-thanthidu-anna`),
+**Poetry Benchmark #2: NOT STARTED / NOT SELECTED / NOT APPROVED FOR IMPLEMENTATION.** At the pinned
+source state above, `poems/` held **exactly one** work directory (`poems/idhayathai-thanthidu-anna`);
+at live `main` `2230a8d` it holds a **second**, `poems/anaiya-vilakku-anna`. `anaiya-vilakku-anna` (அணையா விளக்கு அண்ணா) is **NOT READY**: of 19 source pages only **1** page record exists, Tamil assembly is **pending**, English translation is **pending**, and the work records **no SHA-256 and no byte size**. A candidate source exists, but it is **not approved for implementation**.
+At the pinned state,
 and the repository README states that a *next* poem must begin again from its own
 startup/source-inspection workflow. Poetry remains an **open** Digital Library form; it is neither
 complete nor cancelled.
@@ -1206,8 +1246,8 @@ no next candidate or category has been selected.**
 Current standing state:
 
 - **Speech Benchmark #4:** NOT STARTED / NOT SELECTED / **PAUSED** by owner direction.
-- **Poetry Benchmark #2:** NOT STARTED / NOT SELECTED / **PENDING SOURCE AVAILABILITY** — at the
-  recorded poetry pin `kalaignar-poems` holds only one archived work.
+- **Poetry Benchmark #2:** NOT STARTED / NOT SELECTED / **NOT APPROVED FOR IMPLEMENTATION** — a
+  second work now exists at live `kalaignar-poems` `2230a8d`, but `anaiya-vilakku-anna` (அணையா விளக்கு அண்ணா) is **NOT READY**: of 19 source pages only **1** page record exists, Tamil assembly is **pending**, English translation is **pending**, and the work records **no SHA-256 and no byte size**. A candidate source exists, but it is **not approved for implementation**.
 - **Phase-5 Benchmark #2 (a second Essays work):** NOT STARTED / NOT SELECTED.
 - **Phase-6 Benchmark #2 (a second Fiction work):** NOT STARTED / NOT SELECTED. Fiction shipping its
   first benchmark does **not** privilege Fiction in the next selection.
@@ -1222,9 +1262,9 @@ If the owner simply says **"Proceed with next activity"**, the reviewer performs
 **NEXT NON-SPEECH CATEGORY CANDIDATE SELECTION.**
 
 **No next work or category has been selected.** In particular, **Poetry Benchmark #2 is NOT the
-automatic default**: at the recorded poetry source state `42c156d7242fa799ea80adbb0c5f2b9eba078fe9`,
-`pugazg/kalaignar-poems` holds **only one** archived work (`poems/idhayathai-thanthidu-anna`), so
-Poetry Benchmark #2 is **PENDING SOURCE AVAILABILITY** and cannot be selected today.
+automatic default**: at live `pugazg/kalaignar-poems` `2230a8d` a second work directory
+(`poems/anaiya-vilakku-anna`) now exists, but `anaiya-vilakku-anna` (அணையா விளக்கு அண்ணா) is **NOT READY**: of 19 source pages only **1** page record exists, Tamil assembly is **pending**, English translation is **pending**, and the work records **no SHA-256 and no byte size**. A candidate source exists, but it is **not approved for implementation**. Poetry Benchmark #2 therefore cannot be
+selected today.
 
 The reviewer must inspect **live** source readiness across the relevant **non-speech** repositories
 and recommend **exactly ONE** next work. At minimum consider live state from repositories such as:

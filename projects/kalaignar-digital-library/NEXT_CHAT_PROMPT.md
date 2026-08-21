@@ -35,7 +35,7 @@ Then inspect the live implementation repository:
   - **Speech Benchmark #4: NOT STARTED and NOT SELECTED.**
 - **Phase 4 — Poetry: ACTIVE.**
   - **Benchmark #1 — இதயத்தைத் தந்திடு அண்ணா / Lend Me Your Heart, Anna:** COMPLETE, merged, production-verified (PR #25, reviewed head `3653023d…`, squash `c2d1c46d…`, 2026-08-20T01:58:07Z, merge-SHA deployment `92kdGyRiKucdUPSywP2XqnZMx1g9`).
-  - **Poetry Benchmark #2: NOT STARTED / NOT SELECTED / PENDING SOURCE AVAILABILITY.** At the recorded poetry source pin, `pugazg/kalaignar-poems` contains **only one** archived work — `poems/idhayathai-thanthidu-anna` — so no second released poem is available to select today. Not cancelled; Phase 4 is not complete either. Verify live.
+  - **Poetry Benchmark #2: NOT STARTED / NOT SELECTED / NOT APPROVED FOR IMPLEMENTATION.** A second work now EXISTS — at live `pugazg/kalaignar-poems` `2230a8d`, `poems/` holds `idhayathai-thanthidu-anna` (released) **and** `anaiya-vilakku-anna`. `anaiya-vilakku-anna` (அணையா விளக்கு அண்ணா) is **NOT READY**: of 19 source pages only **1** page record exists, Tamil assembly is **pending**, English translation is **pending**, and the work records **no SHA-256 and no byte size**. A candidate source exists, but it is **not approved for implementation**. Not cancelled; Phase 4 is not complete either. Verify live.
 - **Phase 5 — Essays & Articles: ACTIVE.**
   - **Benchmark #1 — சக்கரவர்த்தியின் திருமகன் / Chakravarthi's Son:** COMPLETE, merged, production-verified (PR #27, reviewed head `929bb545…`, squash `bcb11396…`, 2026-08-20T10:15:15Z, merge-SHA deployment `AwU8uyXYHxthgez8ZGQWP1rTS3PF`). Source pin `pugazg/kalaignar-essays @ bff35320b668cb5beeaafc5faa58260c4f4473f8`. ONE publication holding 14 source-numbered articles.
   - **Phase-5 Benchmark #2: NOT STARTED / NOT SELECTED.**
@@ -130,7 +130,7 @@ Your job is to:
 - **Phase-6 Fiction Benchmark #1:** COMPLETE / MERGED / PRODUCTION-VERIFIED.
 - **Phase-7 Drama Benchmark #1:** COMPLETE / MERGED / PRODUCTION-VERIFIED.
 - **Phase-6 Benchmark #2 (a second Fiction work):** NOT STARTED / NOT SELECTED.
-- **Poetry Benchmark #2:** NOT STARTED / NOT SELECTED / **PENDING SOURCE AVAILABILITY** — at pin `42c156d7242fa799ea80adbb0c5f2b9eba078fe9` only `idhayathai-thanthidu-anna` exists under `poems/`.
+- **Poetry Benchmark #2:** NOT STARTED / NOT SELECTED / **NOT APPROVED FOR IMPLEMENTATION** — at live `kalaignar-poems` `2230a8d` a second work `anaiya-vilakku-anna` exists, but `anaiya-vilakku-anna` (அணையா விளக்கு அண்ணா) is **NOT READY**: of 19 source pages only **1** page record exists, Tamil assembly is **pending**, English translation is **pending**, and the work records **no SHA-256 and no byte size**. A candidate source exists, but it is **not approved for implementation**.
 - **Phase-5 Benchmark #2 (a second Essays work):** NOT STARTED / NOT SELECTED.
 - **Speech Benchmark #4:** NOT STARTED / NOT SELECTED / **PAUSED** by owner direction.
 
