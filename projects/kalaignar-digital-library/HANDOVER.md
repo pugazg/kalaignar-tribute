@@ -991,7 +991,53 @@ Phase-5 Benchmark #1 — see **§10 → Phase 5**.)_
 
 After one work of each form is proven, extract reusable adapters rather than prematurely inventing abstraction.
 
-## Future — Stage Plays + broader Literary Commentary (planning only)
+## Phase 7 — Drama / Stage Plays — 🚧 ACTIVE (benchmark 1 COMPLETE / MERGED / PRODUCTION-VERIFIED)
+
+**Read this qualifier before quoting the status.** Benchmark #1 is complete, merged and
+production-verified. The PHASE remains **ACTIVE**: Drama Benchmark #2 is NOT STARTED and NOT
+SELECTED, and the remaining stage plays have no controlling Tamil source.
+
+### Benchmark #1 — சிலப்பதிகாரம் நாடகக் காப்பியம் — ✅ COMPLETE
+
+- **Source repository:** `pugazg/kalaignar-stage-plays`
+- **Source pin:** `a66e62bbecaf63825b3db09a1d421401e1ab2e8e`
+- **Application PR:** [#29](https://github.com/pugazg/kalaignar-autobiography/pull/29) — **MERGED** 2026-08-21
+- **Application merge SHA:** `9aade1d441bb314b5ab62f97b87b373d33db08c5` (squash)
+- **Application base:** `992fd8d6cd7bfd89a2689574d0e2ef2728774a1a`
+- **Production verified:** 2026-08-21 — all six routes 200; `/plays`, `/drama` and `…/39` 404; Drama
+  shelf populated and the other eight shelves unchanged; the scan-88 obstruction marker present in
+  both layers with no reconstruction and **surviving print** (no print rule hides it or any
+  ancestor); printed speaker abbreviations and both printed separators (`" : "` and `": "`)
+  rendered as set; unlabelled two-column continuations rendered with no injected label; scene 06's
+  unmatched-bracket direction intact with the following speech not swallowed; no 2009 witness
+  wording in any reader content; provenance page showing the identity-basis disclaimer, the
+  49,459,844-byte size, no publication year, and G.O. number/date as not verified.
+- **Edition:** அஞ்சுகம் வெளியீடு, சென்னை-6 — **no publication year is printed**, and none is inferred
+- **Shape:** 38 numbered scenes **plus a separate unnumbered closing tableau**
+
+Decisions carried by this benchmark:
+
+- **A stage-play reader model, not the cinema one.** `readerStructure: "stage-play"`; Manohara's
+  `"scene"` screenplay model is untouched and unreused. Dialogue, stage directions (both printed
+  delimiters), quoted verse and ornaments are never reclassified into one another.
+- **The closing tableau is NOT Scene 39.** `கண்ணகி சிலை நாட்டு விழா` is printed after காட்சி-38
+  without a number; it is excluded from the scene count (38, never 39) and the importer refuses to
+  run if a Scene 39 appears.
+- **Two-column continuations stay unattributed.** The edition does not re-label a speech resuming
+  after the column break, so those units carry `speakerAsPrinted: null` rather than an invented
+  attribution.
+- **Speaker labels are printed authority.** The edition's inconsistent abbreviations and its varying
+  separator are carried verbatim — never expanded, unified or regularised.
+- **The scan-88 obstruction is evidence.** The library-stamp marker is carried into both layers,
+  rendered visibly and never hidden from print; the covered characters are not reconstructed.
+- **The 2009 published English witness is evidence only** — a third party's separately copyrighted
+  translation, never imported and never reader content.
+
+**Drama Benchmark #2: NOT STARTED and NOT SELECTED.** `Anarkali`, `Cheran Senguttuvan` and
+`Socrates` remain registry stubs with **no controlling Tamil source**; only a published English
+secondary witness exists for them, and it must never be reverse-translated into canonical Tamil.
+
+## Future — broader Literary Commentary (planning only)
 
 _Historical planning context: this section was once numbered "Phase 5". That number is now taken by
 the shipped **Phase 5 — Essays & Articles** (above). Stage plays and broader literary commentary
@@ -1002,11 +1048,11 @@ renumbered, and the phase name for the next benchmark is decided when that bench
 - further literary commentary only when source work has reached its publication gate
 - Thirukkural commentary waits for an explicit complete/partial-publication decision based on live archival state
 
-## Phase 7 — Cross-library discovery
+## Phase 8 — Cross-library discovery
 
-_Historical planning context: this section was once numbered "Phase 6". That number is now taken by
-the shipped **Phase 6 — Fiction** (above). Nothing here has been started, and completed Phase 1–6
-history is not renumbered._
+_Historical planning context: this section was numbered "Phase 6", then "Phase 7". Those numbers are
+now taken by the shipped **Phase 6 — Fiction** and the active **Phase 7 — Drama / Stage Plays**
+(above). Nothing here has been started, and completed phase history is not renumbered._
 
 Only after several shelves contain real public works:
 
@@ -1019,10 +1065,10 @@ Only after several shelves contain real public works:
 
 Do not label the existing memoir-only full-text search as a global library search.
 
-## Phase 8 — ingestion automation
+## Phase 9 — ingestion automation
 
-_Historical planning context: this section was once numbered "Phase 7", which is now taken by
-Cross-library discovery (above). Nothing here has been started._
+_Historical planning context: this section was numbered "Phase 7", then "Phase 8". Nothing here has
+been started._
 
 Once multiple integration adapters are proven:
 
@@ -1147,15 +1193,15 @@ When Claude returns a report, independently verify:
 
 **Phase 1 and Phase 2 are COMPLETE. Phase-3 Speech Benchmarks #1–#3 are complete, merged and
 production-verified, and Phase 3 is PAUSED by owner direction. Phase-4 Poetry Benchmark #1,
-Phase-5 Essays & Articles Benchmark #1 and Phase-6 Fiction Benchmark #1 are complete, merged and
-production-verified. Do NOT start any completed phase or benchmark again.**
+Phase-5 Essays & Articles Benchmark #1, Phase-6 Fiction Benchmark #1 and Phase-7 Drama Benchmark #1
+are complete, merged and production-verified. Do NOT start any completed phase or benchmark again.**
 _(This section once instructed a fresh chat to begin Phase 1, and later Phase-3 Benchmark #4
 candidate selection. Both are stale and superseded; the Phase-1 principles are preserved as history
 in §10 → Phase 1, and the paused Phase-3 guidance in §10 → Phase 3.)_
 
-**Phase-6 Fiction Benchmark #1 (பலிபீடம் நோக்கி) is merged and production-verified, and this
-documentation synchronization records it. No next implementation benchmark has been started, and no
-next candidate or category has been selected.**
+**Phase-7 Drama Benchmark #1 (சிலப்பதிகாரம் நாடகக் காப்பியம்) is merged and production-verified, and
+this documentation synchronization records it. No next implementation benchmark has been started, and
+no next candidate or category has been selected.**
 
 Current standing state:
 
@@ -1165,6 +1211,11 @@ Current standing state:
 - **Phase-5 Benchmark #2 (a second Essays work):** NOT STARTED / NOT SELECTED.
 - **Phase-6 Benchmark #2 (a second Fiction work):** NOT STARTED / NOT SELECTED. Fiction shipping its
   first benchmark does **not** privilege Fiction in the next selection.
+- **Phase-7 Drama Benchmark #1 (சிலப்பதிகாரம் நாடகக் காப்பியம்):** **COMPLETE / MERGED /
+  PRODUCTION-VERIFIED** — PR [#29](https://github.com/pugazg/kalaignar-autobiography/pull/29),
+  squash `9aade1d441bb314b5ab62f97b87b373d33db08c5`, production-verified 2026-08-21.
+- **Phase-7 Drama Benchmark #2:** NOT STARTED / NOT SELECTED — `Anarkali`, `Cheran Senguttuvan` and
+  `Socrates` have no controlling Tamil source.
 
 If the owner simply says **"Proceed with next activity"**, the reviewer performs:
 
@@ -1220,12 +1271,11 @@ Constraints for whichever work is selected:
 - **stop after that one benchmark.**
 
 Last production application-code checkpoint at this handover:
-**`992fd8d6cd7bfd89a2689574d0e2ef2728774a1a`** (the Phase-6 Fiction Benchmark #1 / PR #28 squash
-merge) — live GitHub `main` is authoritative and overrides this SHA if it later moves;
+**`9aade1d441bb314b5ab62f97b87b373d33db08c5`** (the Phase-7 Drama Benchmark #1 / PR #29 squash merge) — live GitHub `main` is authoritative and overrides this SHA if it later moves;
 documentation-only commits may advance `main` past it without changing the deployed application, and
 such a docs-only SHA must never be recorded as a newer application-code checkpoint. The earlier
-`bcb11396b2215bc2cc1e81873c0ce278ef98598a` (Phase 5), `c2d1c46d1c2d4e1f11722360848226208867789f`
-(Phase 4) and `ecf73cc8146cd9a9578c4aeaf73518b122ce569c` (Phase 3) are **historical** checkpoints
-only.
+`992fd8d6cd7bfd89a2689574d0e2ef2728774a1a` (Phase 6), `bcb11396b2215bc2cc1e81873c0ce278ef98598a`
+(Phase 5), `c2d1c46d1c2d4e1f11722360848226208867789f` (Phase 4) and
+`ecf73cc8146cd9a9578c4aeaf73518b122ce569c` (Phase 3) are **historical** checkpoints only.
 
 Current novels source pin: `pugazg/kalaignar-novels` `9e80c567d4a2165178c5374a02210240140685bf`.
