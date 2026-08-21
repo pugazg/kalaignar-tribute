@@ -42,19 +42,19 @@ Then inspect the live implementation repository:
 - **Phase 6 — Fiction: benchmark 1 COMPLETE.**
   - **Benchmark #1 — பலிபீடம் நோக்கி / Towards the Sacrificial Altar** (novel): COMPLETE, merged, production-verified (PR #28, squash `992fd8d6…`). Source pin `pugazg/kalaignar-novels @ 9e80c567d4a2165178c5374a02210240140685bf`. ONE novel in THREE assembled reading sections. `ராயசம் வெங்கண்ணா` is section 2 of that novel, never a separate work.
   - **Fiction Benchmark #2: NOT STARTED / NOT SELECTED.** Fiction shipping first does not privilege Fiction next.
-- **Phase 7 — Drama / Stage Plays: ACTIVE, benchmark 1 NOT complete.**
-  - **Benchmark #1 — சிலப்பதிகாரம் நாடகக் காப்பியம்** (stage play): **IMPLEMENTATION IN PROGRESS** — PR #29 is open and reviewer-gated, **not merged, not production-verified**. Source pin `pugazg/kalaignar-stage-plays @ a66e62bbecaf63825b3db09a1d421401e1ab2e8e`. 38 numbered scenes plus a separate unnumbered closing tableau; that tableau is never Scene 39. Do NOT record it as COMPLETE, and do NOT move the application-code checkpoint, until it merges and production is verified.
+- **Phase 7 — Drama / Stage Plays: ACTIVE.**
+  - **Benchmark #1 — சிலப்பதிகாரம் நாடகக் காப்பியம்** (stage play): **COMPLETE, merged, production-verified** (PR #29, squash `9aade1d4…`, verified 2026-08-21). Source pin `pugazg/kalaignar-stage-plays @ a66e62bbecaf63825b3db09a1d421401e1ab2e8e`. 38 numbered scenes plus a separate unnumbered closing tableau; that tableau is never Scene 39.
   - **Drama Benchmark #2: NOT STARTED / NOT SELECTED** — `Anarkali`, `Cheran Senguttuvan` and `Socrates` have no controlling Tamil source, only a published English secondary witness that must never be reverse-translated into Tamil.
 
 **Last production application-code checkpoint at this handover:**
 
-`992fd8d6cd7bfd89a2689574d0e2ef2728774a1a`
+`9aade1d441bb314b5ab62f97b87b373d33db08c5`
 
-That is the Phase-6 Fiction Benchmark #1 / PR #28 squash merge, and it identifies the last **production application-code** state. It supersedes `bcb11396b2215bc2cc1e81873c0ce278ef98598a` (Phase 5), `c2d1c46d1c2d4e1f11722360848226208867789f` (Phase 4) and `ecf73cc8146cd9a9578c4aeaf73518b122ce569c` (Phase 3), which are now **historical** checkpoints only. Repository `main` may contain later **documentation-only** commits that do not change deployed application behaviour, and such a docs-only SHA is **never** a newer application-code checkpoint. If live `main` has moved past that SHA, **live state wins** — inspect it and reconcile before advising anything.
+That is the Phase-7 Drama Benchmark #1 / PR #29 squash merge, and it identifies the last **production application-code** state. It supersedes `992fd8d6cd7bfd89a2689574d0e2ef2728774a1a` (Phase 6), `bcb11396b2215bc2cc1e81873c0ce278ef98598a` (Phase 5), `c2d1c46d1c2d4e1f11722360848226208867789f` (Phase 4) and `ecf73cc8146cd9a9578c4aeaf73518b122ce569c` (Phase 3), which are now **historical** checkpoints only. Repository `main` may contain later **documentation-only** commits that do not change deployed application behaviour, and such a docs-only SHA is **never** a newer application-code checkpoint. If live `main` has moved past that SHA, **live state wins** — inspect it and reconcile before advising anything.
 
-`/read` currently publishes **10 works across 8 non-empty shelves** (Life Writing, Letters, **Poetry**, Cinema Writing, Speeches, **Essays & Articles**, Literary Commentary, **Fiction**). **புனைவு / Fiction** holds exactly **1** work (`பலிபீடம் நோக்கி`, three sections); **கட்டுரைகள் / Essays & Articles** holds exactly **1** publication (14 articles inside it); **Poetry / கவிதைகள்** holds exactly **1** work; the **single** Speeches / உரைகள் shelf holds exactly **3** — Udhaya Kathir, Poonthottam and Arappor. Verify this live rather than trusting the numbers.
+`/read` currently publishes **11 works across 9 non-empty shelves** (Life Writing, Letters, **Poetry**, Cinema Writing, Speeches, **Essays & Articles**, Literary Commentary, **Fiction**, **Drama**). **நாடகங்கள் / Drama** holds exactly **1** work (`சிலப்பதிகாரம் நாடகக் காப்பியம்`, 38 scenes plus a separate closing tableau). **புனைவு / Fiction** holds exactly **1** work (`பலிபீடம் நோக்கி`, three sections); **கட்டுரைகள் / Essays & Articles** holds exactly **1** publication (14 articles inside it); **Poetry / கவிதைகள்** holds exactly **1** work; the **single** Speeches / உரைகள் shelf holds exactly **3** — Udhaya Kathir, Poonthottam and Arappor. Verify this live rather than trusting the numbers.
 
-**Do NOT restart:** Phase 1, Phase 2 / Manohara, Speech Benchmarks #1–#3, the PR #21 hotfix, Poetry Benchmark #1 (Idhayathai Thanthidu Anna), Phase-5 Essays Benchmark #1 (Sakkaravarththiyin Thirumagan), Phase-6 Fiction Benchmark #1 (Balipeedam Nokki), or mobile.
+**Do NOT restart:** Phase 1, Phase 2 / Manohara, Speech Benchmarks #1–#3, the PR #21 hotfix, Poetry Benchmark #1 (Idhayathai Thanthidu Anna), Phase-5 Essays Benchmark #1 (Sakkaravarththiyin Thirumagan), Phase-6 Fiction Benchmark #1 (Balipeedam Nokki), Phase-7 Drama Benchmark #1 (Silappathikaram Nataka Kappiyam), or mobile.
 
 ## Current poetry source pin
 
@@ -123,11 +123,12 @@ Your job is to:
 
 ## Immediate next activity
 
-**Phase-6 Fiction Benchmark #1 is merged, production-verified and documented. No next implementation benchmark has been started, and no next work or category has been selected.**
+**Phase-7 Drama Benchmark #1 is merged, production-verified and documented. No next implementation benchmark has been started, and no next work or category has been selected.**
 
 - **Poetry Benchmark #1:** COMPLETE / MERGED / PRODUCTION-VERIFIED.
 - **Phase-5 Essays Benchmark #1:** COMPLETE / MERGED / PRODUCTION-VERIFIED.
 - **Phase-6 Fiction Benchmark #1:** COMPLETE / MERGED / PRODUCTION-VERIFIED.
+- **Phase-7 Drama Benchmark #1:** COMPLETE / MERGED / PRODUCTION-VERIFIED.
 - **Phase-6 Benchmark #2 (a second Fiction work):** NOT STARTED / NOT SELECTED.
 - **Poetry Benchmark #2:** NOT STARTED / NOT SELECTED / **PENDING SOURCE AVAILABILITY** — at pin `42c156d7242fa799ea80adbb0c5f2b9eba078fe9` only `idhayathai-thanthidu-anna` exists under `poems/`.
 - **Phase-5 Benchmark #2 (a second Essays work):** NOT STARTED / NOT SELECTED.
