@@ -2,7 +2,7 @@
 
 ## Scope
 
-This timeline is a navigation and interpretation layer over the raw chronological transcript. The source archive currently reviewed consists of ten files covering Turns 0001–0250. The raw files remain authoritative.
+This timeline is a navigation and interpretation layer over the raw chronological transcript. The currently reviewed source archive consists of fifteen files covering Turns 0001–0371. The raw files remain authoritative.
 
 ## Phase 1 — Birthday tribute series and personal recollections
 
@@ -92,16 +92,60 @@ This is a significant maturation point: the pipeline is being tested against act
 
 The conversation reaches a point where adding another engine is questioned in favor of understanding and stabilizing the existing pipeline. This reflects a shift from rapid feature addition toward controlled archival engineering.
 
+## Phase 11 — Clarifying downloader versus extractor responsibilities
+
+**Source:** `../chronological/part-11.md` — Turns 0251–0275  
+**Begins:** 2026-07-05
+
+A rollback becomes an architectural correction rather than a failure. HTML interpretation is kept in the extractor while the downloader remains focused on archival acquisition. The separation reinforces the principle that source capture and source understanding should not be entangled unnecessarily.
+
+## Phase 12 — Recovering embedded visual material
+
+**Source:** `../chronological/part-12.md` — Turns 0276–0300  
+**Begins:** 2026-07-05
+
+The archive expands beyond full-page scans toward extracting individual photographs embedded within scanned pages. HTML thumbnail metadata, crop offsets, dimensions and captions are recognized as enough information to reconstruct page-level image assets while retaining the original page scan.
+
+This broadens the archive from text-plus-page-image preservation into structured visual preservation.
+
+## Phase 13 — PDF-backed rendering and robust volume handling
+
+**Source:** `../chronological/part-13.md` — Turns 0301–0325  
+**Begins:** 2026-07-06
+
+The pipeline incorporates known local PDF filenames and derives paths from existing volume configuration instead of adding unnecessary configuration fields. PDF page rendering becomes another controlled source path alongside downloaded HTML/page imagery.
+
+This phase continues the move toward resilient, reproducible source handling rather than one-off scripts.
+
+## Phase 14 — Native/mobile delivery enters the project history
+
+**Source:** `../chronological/part-14.md` — Turns 0326–0350  
+**Begins:** 2026-08-01
+
+The project history expands from archive construction into native/mobile consumption. Expo and iOS simulator troubleshooting show the digital library beginning to move toward an application experience, while the conversation distinguishes environment/connectivity failures from application-code failures.
+
+This represents a new delivery layer: the preserved and structured material is being prepared for use outside the web/archive pipeline itself.
+
+## Phase 15 — Structured handoff and staged feature delivery
+
+**Source:** `../chronological/part-15.md` — Turns 0351–0371  
+**Begins:** 2026-08-14
+
+The conversation develops explicit handoff prompts for Claude and tightly scoped mobile increments. Completed data-export work is frozen before the next UI activity begins; branches, checks, generated datasets and exclusions are recorded in the handoff itself.
+
+This phase adds operational discipline to the project: state is transferred between tools and sessions through explicit repository-grounded prompts rather than informal recollection.
+
 ## Overall evolution
 
-Across Turns 0001–0250, the project moves through four broad layers:
+Across Turns 0001–0371, the project moves through five broad layers:
 
 1. **Remembrance** — preserve personal tributes and memories.
 2. **Research** — verify public claims through documentary and primary sources.
 3. **Archive** — organize sources and derived interpretation with provenance.
-4. **Infrastructure** — build reproducible acquisition and extraction tooling.
+4. **Infrastructure** — build reproducible acquisition, extraction and rendering tooling.
+5. **Delivery** — expose structured archival material through web/mobile experiences with explicit handoffs and scoped implementation increments.
 
-The result is substantially broader than the original birthday tribute series: it becomes the foundation for a source-driven Kalaignar digital archive.
+The result is substantially broader than the original birthday tribute series: it becomes the foundation for a source-driven Kalaignar digital archive and reading/application ecosystem.
 
 ## Source-of-record rule
 
