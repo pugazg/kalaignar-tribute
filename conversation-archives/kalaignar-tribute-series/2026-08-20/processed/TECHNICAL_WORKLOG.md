@@ -2,84 +2,73 @@
 
 ## Purpose
 
-This document summarizes the technical evolution visible in the chronological conversation archive. It is not a replacement for command history or source code; it records the major engineering directions, recurring issues and architectural lessons.
+This document summarizes the technical evolution visible in `../chronological/part-01.md` through `part-15.md` (Turns 0001–0371). It is not a replacement for command history or source code; it records major engineering directions, recurring issues and architectural lessons.
 
 ## 1. From Content Collection to Archive Construction
 
-The early conversations were primarily editorial and research-oriented. By late June 2026, the work had shifted toward building a durable archive capable of storing and processing source material at scale.
-
-The technical objective became broader than downloading files. The emerging system needed to preserve provenance, support repeatable extraction and remain usable for future digital-library work.
+The early conversations were primarily editorial and research-oriented. By late June 2026, the work had shifted toward building a durable archive capable of storing and processing source material at scale. The technical objective became broader than downloading files: preserve provenance, support repeatable extraction and make source material usable by future reading products.
 
 ## 2. Configuration-Driven Acquisition
 
-The archive discussions introduced a configuration-driven approach to downloading source material.
+The archive discussions introduced a configuration-driven approach. Source definitions belong in configuration, downloader behavior should follow a stable schema, and changing configuration without updating the downloader contract is unsafe.
 
-Key idea:
-
-- source definitions belong in configuration;
-- downloader behavior should follow a stable schema;
-- changing configuration without updating the downloader contract is unsafe.
-
-A notable discussion explicitly cautioned against running `download.py` immediately after changing `config.yaml`, because the existing downloader still expected the older configuration shape.
-
-### Lesson
-
-Configuration and implementation must evolve together. A configuration file is an interface, not merely a collection of parameters.
+**Lesson:** configuration is an interface, not merely a collection of parameters.
 
 ## 3. Downloader Engine Refactoring
 
-Later conversations moved into modifying the downloader engine itself.
-
-The intended direction was to make acquisition reusable across different Kalaignar source collections rather than hard-code behavior for a single book or site.
-
-Important concerns included:
-
-- deterministic output locations;
-- repeatability;
-- retaining the original fetched material;
-- avoiding silent overwrites;
-- making later extraction independent of network access where possible.
+The downloader was progressively generalized for different Kalaignar source collections. Important concerns included deterministic output locations, repeatability, retention of original fetched material, avoiding silent overwrites and allowing later extraction without renewed network access.
 
 ## 4. Raw HTML Preservation
 
-The archive captured raw page HTML before extraction.
+Raw page HTML was retained before extraction. This preserved structural information such as ProofreadPage containers, parser output, page-quality metadata, headers and MediaWiki markup.
 
-This was technically important because the source pages contained structure such as:
-
-- `prp-page-content`;
-- `mw-parser-output`;
-- page-quality metadata;
-- running headers;
-- MediaWiki/ProofreadPage markup.
-
-Keeping the HTML allowed later inspection when extraction behavior was uncertain.
-
-### Lesson
-
-The raw acquisition layer should survive even if parsing logic changes later.
+**Lesson:** the raw acquisition layer should survive even if parsing logic changes later.
 
 ## 5. Extraction Pipeline Investigation
 
-The conversations show hands-on debugging of `scripts/extract.py` using shell inspection and HTML structure checks.
+The conversations show hands-on debugging of extraction using shell inspection and actual HTML structure. Instead of assuming a simplified DOM, the workflow located real content containers and distinguished body content from quality/header markup.
 
-Examples of the debugging pattern included:
+This marked the transition from speculative parsing to evidence-driven parser development.
 
-- stopping a long-running extraction process;
-- grepping downloaded HTML for structural markers;
-- locating the actual page-content container;
-- distinguishing page-quality/header markup from textual body content.
+## 6. Downloader and Extractor Responsibility Boundary
 
-This marked a transition from speculative parsing to evidence-driven parser development.
+At Turn 0251 the user reported rolling back a downloader change. The resulting architectural decision was explicit: the downloader should remain an archival acquisition engine; HTML understanding belongs in the extractor.
 
-## 6. Avoiding Premature Engine Expansion
+This separation reduces coupling. Acquisition can preserve source material even when extraction logic changes, while extractor revisions do not require reacquiring the source.
 
-At one point, after a request for more code, the response explicitly questioned whether another engine should be added immediately.
+## 7. Embedded Image Extraction
 
-This reflects an important architectural principle: adding new processing stages is not automatically progress. Existing acquisition and extraction layers should first be understood and stabilized.
+The next range examined photographs embedded within scanned pages. The source HTML exposed thumbnail containers, image elements, crop offsets, dimensions and captions.
 
-## 7. Layered Technical Model
+The resulting conceptual pipeline was:
 
-The conversations collectively point toward the following architecture:
+```text
+full page scan
+      ↓
+thumbnail/crop metadata
+      ↓
+coordinate-aware crop
+      ↓
+individual image derivative
+      ↓
+caption/page provenance
+```
+
+This extended the archive beyond plain text and full-page scans toward structured visual assets.
+
+## 8. PDF-Backed Rendering
+
+Local volume PDFs became an additional source for page rendering. Rather than add redundant configuration, PDF paths could be derived from the established output hierarchy (`volume1.pdf`, `volume2.pdf`, etc.).
+
+This introduced useful source redundancy: derivatives can be regenerated from preserved PDFs even when remote source behavior changes.
+
+## 9. Avoiding Premature Engine Expansion
+
+Across the downloader/extractor work, the archive repeatedly favors stabilizing existing stages before adding another engine. New layers are justified by a distinct responsibility, not simply because another feature is possible.
+
+## 10. Layered Technical Model
+
+By the end of the extraction work, the architecture can be summarized as:
 
 ```text
 Source discovery
@@ -88,68 +77,70 @@ Configuration
       ↓
 Downloader / acquisition
       ↓
-Raw preserved source
+Raw HTML / scans / PDFs
       ↓
-Extraction
+Extraction (text + visual metadata)
       ↓
 Validation / fidelity checks
       ↓
 Structured canonical data
       ↓
-Reader / publication layer
+Web / native reader
 ```
 
-Each layer should be independently inspectable.
+Each layer should remain independently inspectable.
 
-## 8. Failure Modes Identified
+## 11. Native Mobile Development
 
-The archive surfaces several recurring technical risks:
+Part 14 records the transition into Expo/iOS development for the Kalaignar Digital Library. Simulator/Expo connectivity problems were treated separately from application-code failures: a timed-out `simctl openurl` meant the native app had not necessarily executed yet.
 
-### Configuration drift
+This is consistent with the earlier layered debugging approach: identify which layer failed before changing downstream code.
 
-A new config schema can break an old downloader even when the YAML itself is valid.
+## 12. Feature Data Contracts
 
-### Parser assumptions
+By Part 15, mobile work is consuming generated feature datasets such as timeline, governance, people, themes and quotes through an application data layer. The handoff records manifest integration, deterministic reruns and validation/typecheck/export checks.
 
-A parser that looks for the wrong HTML container can return incomplete or misleading text.
+This demonstrates the payoff of keeping canonical/archive data separate from presentation: the native application can consume generated data without becoming the authority for the archival source.
 
-### Long-running scripts
+## 13. Branch, PR and Verification Discipline
 
-Extraction routines may appear stalled or require targeted debugging rather than blind reruns.
+The later workflow is deliberately staged:
 
-### Source-cleaning loss
+1. complete a narrowly scoped activity;
+2. verify generated datasets and checks;
+3. inspect the PR for unrelated changes;
+4. merge to clean `main`;
+5. verify post-merge state;
+6. create a fresh branch for the next activity.
 
-Removing markup too early can destroy information needed for later validation.
+Scope exclusions are written into the handoff itself—for example, not exporting an adjacent `places` dataset merely because the source exists, and not starting unrelated UI work during the Timeline activity.
 
-### Over-engineering
+## 14. Multi-Agent Handoff as Engineering Infrastructure
 
-Introducing new engines before stabilizing existing stages makes debugging harder and obscures the source of errors.
+The project begins using detailed prompts to transfer state to Claude. These prompts carry branch/commit/PR identifiers, completed artifacts, checks, exclusions and the exact next activity.
 
-## 9. Engineering Practices Emerging from the Conversations
+For a long-running project, this is effectively part of the technical infrastructure. It reduces state loss and prevents a new agent from redoing completed work or widening scope based on incomplete context.
 
-The technical discussions support the following reusable practices:
+## 15. Failure Modes Identified
 
-1. download once, preserve raw source;
+Recurring risks across the reviewed range include configuration drift, parser assumptions, long-running scripts, source-cleaning loss, over-engineering, confusing simulator/tooling failure with application failure, derivative data drifting from canonical data, and handoff state becoming stale.
+
+## 16. Engineering Practices Emerging from the Conversations
+
+1. download once and preserve raw source;
 2. make extraction rerunnable offline;
 3. inspect actual source structure before changing parser logic;
 4. keep configuration contracts explicit;
-5. separate acquisition errors from extraction errors;
-6. validate output before treating it as canonical;
-7. document architecture decisions as the system evolves;
-8. prefer incremental stabilization over adding unnecessary layers.
-
-## 10. Relationship to Later Digital Library Work
-
-These archive-engineering conversations are significant because they form the technical precursor to the later Kalaignar Digital Library / Reading Room approach.
-
-The same principles recur there:
-
-- source-first processing;
-- canonical data separated from presentation;
-- reproducible import pipelines;
-- preservation of archival evidence;
-- validation before public release.
+5. separate downloader and extractor responsibilities;
+6. retain crop/caption metadata for visual derivatives;
+7. keep preserved PDFs usable as regeneration sources;
+8. validate output before treating it as canonical;
+9. separate canonical data from reader applications;
+10. debug the failing layer rather than changing downstream code blindly;
+11. use deterministic generation and validation checks;
+12. merge completed scope before beginning adjacent scope;
+13. encode state and exclusions in cross-agent handovers.
 
 ## Relationship to the Raw Archive
 
-This worklog summarizes themes and lessons from the chronological transcripts. Exact commands, code fragments, errors and conversation context remain in `../chronological/` and should be consulted whenever precise reconstruction is required.
+Exact commands, code fragments, errors and conversation context remain in `../chronological/`. Consult the relevant source part whenever precise reconstruction is required.
