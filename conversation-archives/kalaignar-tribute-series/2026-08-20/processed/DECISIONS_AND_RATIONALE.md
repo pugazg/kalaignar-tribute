@@ -2,120 +2,124 @@
 
 ## Purpose
 
-This document records the important methodological and project decisions visible in the chronological conversation archive, together with the reasoning behind them.
+This document records important methodological and project decisions visible in `../chronological/part-01.md` through `part-15.md` (Turns 0001–0371), together with the reasoning behind them.
 
 ## 1. Preserve the raw conversation archive unchanged
 
-### Decision
+**Decision:** treat `../chronological/` as the source-of-record and do not rewrite it into cleaner prose.
 
-The files under `../chronological/` are treated as the source-of-record conversation archive and are not rewritten into cleaner prose.
-
-### Rationale
-
-Conversation history contains context, failed approaches, corrections, uncertainties and changes in direction that would disappear in a polished summary. Preserving it protects the provenance of later project decisions.
+**Rationale:** conversation history preserves context, failed approaches, corrections, uncertainty and changes in direction that a polished summary would erase.
 
 ## 2. Create a separate processed layer
 
-### Decision
+**Decision:** summaries, timelines, decisions and workflows live under `processed/`.
 
-Human-readable summaries, timelines, decisions and workflows live under `processed/` instead of replacing the chronological files.
-
-### Rationale
-
-Raw preservation and interpretation serve different purposes. Keeping them separate allows the archive to retain historical fidelity while still becoming understandable and useful.
+**Rationale:** raw preservation and interpretation serve different purposes and should remain independently inspectable.
 
 ## 3. Move beyond tribute rhetoric toward evidence
 
-### Decision
+**Decision:** claims about achievements, institutions, policies or historical significance require evidence rather than acceptance because they appear in commemorative or political material.
 
-Claims about Kalaignar's achievements, institutions, policies or historical significance should not be accepted merely because they appear in commemorative or political material.
-
-### Rationale
-
-The project increasingly encountered infographics, institutional claims and policy narratives. Reliable archival work requires distinguishing a claim from its evidence.
+**Rationale:** a reliable archive must distinguish a claim from its documentary support.
 
 ## 4. Prefer primary and contemporaneous sources
 
-### Decision
+**Decision:** prefer Assembly records, government documents, policy texts and original publications where available.
 
-Assembly records, government documents, policy texts and original publications should be preferred where available.
-
-### Rationale
-
-Contemporaneous evidence reduces dependence on later retellings and makes it possible to verify dates, wording, institutional context and policy intent.
+**Rationale:** contemporaneous evidence makes dates, wording, institutional context and policy intent independently checkable.
 
 ## 5. Preserve unresolved questions
 
-### Decision
+**Decision:** when a source cannot support a definite conclusion, retain the uncertainty.
 
-When a source cannot support a definite conclusion, record the uncertainty rather than forcing a clean answer.
-
-### Rationale
-
-An archive becomes less trustworthy if uncertainty is silently converted into certainty. Unresolved items are themselves useful research metadata.
+**Rationale:** silently converting uncertainty into certainty weakens the archive.
 
 ## 6. Separate acquisition, extraction and publication
 
-### Decision
+**Decision:** obtaining a source, interpreting/extracting it, validating it and presenting it are different stages.
 
-The technical archive should distinguish between obtaining a source, extracting its content, validating it and publishing a readable representation.
+**Rationale:** each stage has different failure modes and should be independently repeatable.
 
-### Rationale
+## 7. Keep HTML interpretation out of the downloader
 
-Each stage introduces different failure modes. A downloader can succeed while an extractor fails; extraction can succeed while text fidelity remains poor. Layering makes errors easier to locate and correct.
+**Decision:** after an attempted change was rolled back, keep the downloader focused on archival acquisition and place HTML understanding in the extractor.
 
-## 7. Do not run modified pipelines before code and configuration agree
+**Rationale:** source acquisition should not depend on current parser assumptions. The same preserved source may need to be reinterpreted later with improved extraction logic.
 
-### Decision
+## 8. Do not run modified pipelines before code and configuration agree
 
-Configuration changes alone are not sufficient reason to run an existing downloader or extraction engine.
+**Decision:** configuration changes alone are not sufficient reason to execute an old downloader/extractor.
 
-### Rationale
+**Rationale:** configuration is an interface contract; implementation must understand the changed schema first.
 
-The archived technical discussions explicitly show caution around running `download.py` after changing `config.yaml`. The implementation must actually understand the new configuration contract before execution.
+## 9. Preserve visual evidence, not only text
 
-## 8. Treat source preservation as more important than convenience
+**Decision:** where source pages expose embedded photographs, crop coordinates and captions, treat them as archival information rather than discard them after text extraction.
 
-### Decision
+**Rationale:** visual content can carry historical evidence that is not represented in OCR/transcription. Derived crops should remain traceable to the full page scan.
 
-Raw HTML, scans, transcripts or page-level source material should be retained even when cleaned text is easier to work with.
+## 10. Keep preserved PDFs usable as regeneration sources
 
-### Rationale
+**Decision:** use locally preserved PDFs as stable page-rendering inputs where useful, deriving their paths from existing structure rather than proliferating redundant configuration.
 
-Later verification may require returning to the original representation. A cleaned derivative cannot always reconstruct what was removed.
+**Rationale:** this reduces dependence on live websites and makes derivative regeneration reproducible.
 
-## 9. Build reusable workflows rather than one-off fixes
+## 11. Build reusable workflows rather than one-off fixes
 
-### Decision
+**Decision:** recurring source/archive patterns should become scripts, structure and documentation.
 
-When a recurring source or archive pattern appears, generalize the process into scripts, structure and documentation.
+**Rationale:** the project spans many works and formats; repeatable processes create consistency and reduce manual drift.
 
-### Rationale
+## 12. Keep canonical data independent from presentation clients
 
-The project expanded beyond one tribute or one book. A reusable workflow reduces repeated manual work and creates consistency across the larger Kalaignar digital archive.
+**Decision:** generated/validated archive data should feed web or native readers rather than letting those clients become the canonical source.
 
-## 10. Keep the public narrative downstream of verification
+**Rationale:** presentation technology will change faster than archival evidence. A stable data layer allows multiple reading experiences without rewriting source truth.
 
-### Decision
+## 13. Diagnose infrastructure failure before application failure
 
-Public-facing summaries, reading experiences or tribute material should be generated after source verification, not before it.
+**Decision:** when Expo/iOS failed to open a simulator URL, treat the connection/tooling layer as the first problem rather than immediately changing app code.
 
-### Rationale
+**Rationale:** layered debugging avoids introducing code changes for failures that occur before the application is reached.
 
-The archive is intended to preserve historical and cultural material. Presentation should not outrun evidence.
+## 14. Complete and verify one feature scope before starting another
+
+**Decision:** later mobile work is divided into narrow activities. A completed activity is checked, merged and post-merge verified before a fresh branch begins the next feature.
+
+**Rationale:** this keeps diffs reviewable, makes regressions easier to locate and prevents roadmap scope from expanding opportunistically.
+
+## 15. Explicitly record exclusions
+
+**Decision:** handoffs state what must *not* be done as well as what should be done—for example, not adding `places` merely because a source file exists, and not starting unrelated UI work during the Timeline activity.
+
+**Rationale:** in long-running projects, adjacent possibilities are a major source of scope drift. Explicit exclusions preserve the intended phase boundary.
+
+## 16. Treat cross-agent handovers as project records
+
+**Decision:** when work moves to Claude or another fresh context, provide repository state, branch/commit/PR identifiers, completed artifacts, checks, exclusions and the exact next activity.
+
+**Rationale:** a precise handover reduces rework and prevents stale conversational memory from overriding live repository state.
+
+## 17. Keep the public narrative downstream of verification
+
+**Decision:** public summaries and reading experiences should follow source verification rather than outrun it.
+
+**Rationale:** presentation convenience must not become more authoritative than evidence.
 
 ## Decision Hierarchy
 
-When two project goals conflict, the conversations imply the following priority order:
+When goals conflict, the reviewed conversations support this priority order:
 
 1. source fidelity;
 2. provenance and traceability;
 3. factual verification;
 4. preservation of uncertainty;
-5. reusable structure;
-6. publication convenience;
-7. presentation polish.
+5. stable canonical data;
+6. reproducible processing;
+7. controlled scope and handoff state;
+8. publication convenience;
+9. presentation polish.
 
 ## Relationship to the Raw Archive
 
-This document is a curated interpretation of the conversations. The chronological transcript remains authoritative for the exact wording, sequence and context of individual decisions.
+This document is a curated interpretation. The chronological transcript remains authoritative for exact wording, sequence and context.
