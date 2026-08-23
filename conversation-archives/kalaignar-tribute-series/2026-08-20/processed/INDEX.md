@@ -20,8 +20,13 @@ The chronological transcript is preserved as the source of record. Files here ar
 | `../chronological/part-08.md` | 0176–0200 | 2026-06-27 | Downloader implementation and acquisition layers |
 | `../chronological/part-09.md` | 0201–0225 | 2026-07-04 | Tamil source extraction and HTML debugging |
 | `../chronological/part-10.md` | 0226–0250 | 2026-07-04 | Pipeline consolidation |
+| `../chronological/part-11.md` | 0251–0275 | 2026-07-05 | Downloader/extractor separation and archival boundaries |
+| `../chronological/part-12.md` | 0276–0300 | 2026-07-05 | Embedded image extraction from scanned-page metadata |
+| `../chronological/part-13.md` | 0301–0325 | 2026-07-06 | PDF-backed rendering and robust volume path handling |
+| `../chronological/part-14.md` | 0326–0350 | 2026-08-01 | Native/mobile app development and Expo/iOS troubleshooting |
+| `../chronological/part-15.md` | 0351–0371 | 2026-08-14 | Claude handoff prompts and staged mobile feature delivery |
 
-**Reviewed coverage:** Turns 0001–0250.
+**Reviewed coverage:** Turns 0001–0371.
 
 ## Curated documents
 
@@ -30,7 +35,7 @@ The chronological transcript is preserved as the source of record. Files here ar
 | `PROJECT_EVOLUTION_SUMMARY.md` | Understanding how the original tribute activity evolved into a digital archival project |
 | `TIMELINE.md` | Following the project chronologically and locating the corresponding raw turn ranges |
 | `DECISIONS_AND_RATIONALE.md` | Understanding major archival/research decisions and why they were made |
-| `TECHNICAL_WORKLOG.md` | Following the engineering evolution of acquisition, storage and extraction |
+| `TECHNICAL_WORKLOG.md` | Following the engineering evolution of acquisition, storage, extraction and application delivery |
 | `ARCHIVAL_WORKFLOW.md` | Reusing the source-first archival methodology in later work |
 | `INDEX.md` | Entering and navigating this processed archive |
 
@@ -46,7 +51,7 @@ For archival/research work:
 
 For engineering work:
 
-`TECHNICAL_WORKLOG.md` → `TIMELINE.md` Phases 6–10 → relevant chronological part
+`TECHNICAL_WORKLOG.md` → `TIMELINE.md` Phases 6–15 → relevant chronological part
 
 ## Provenance model
 
@@ -65,7 +70,8 @@ Do not rewrite the chronological files merely to make the history cleaner. Error
 
 ## Processing status
 
-- Raw source files reviewed: `part-01.md` through `part-10.md`
-- Turn coverage reviewed: 0001–0250
-- Curated document set: complete for this reviewed range
-- Next quality step: cross-document consistency and duplication audit before merge/PR review
+- Raw source files reviewed: `part-01.md` through `part-15.md`
+- Turn coverage reviewed: 0001–0371
+- Curated navigation coverage: extended through the complete currently present chronological set
+- Raw chronological files modified: none
+- Next quality step: extend the narrative and technical synthesis documents for Parts 11–15, then run another cross-document consistency pass
