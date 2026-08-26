@@ -54,15 +54,82 @@ archive-created navigation); headings **23 and 34 are never printed** and get no
 occurrences his and both on anthology evidence, which is **not** an original-film credit. No blanket
 rights block: Parasakthi is composite. **Do NOT reopen Parasakthi.**
 
-### Next activity — Phase D1: திரும்பிப்பார் / Tirumbippaar readiness audit
+## Phase D1 — திரும்பிப்பார் / Tirumbippaar readiness audit — COMPLETE
 
-Tirumbippaar has previously been regarded as partial/blocked over an unresolved crop. The next
-activity is a **source-readiness audit ONLY** — no import, no reader routes, no catalogue, no sitemap
-URLs, no guessed text.
+Audited at `pugazg/kalaignar-cinema-works` @ `ca7431f3de8f8b2367a65206b8a9739d87788413`; re-confirmed
+unchanged at `03c89cd2bb3019c5f75c2bfbca14077a8d1f643b` (intervening commits are Raja Rani only).
 
-**Explicit rule:** if the crop still prevents a source-faithful canonical reading, Tirumbippaar stays
-**blocked** and the project moves to **printed public-speech booklets** instead of reconstructing
-uncertain text.
+### The original premise was wrong: the crop is NON-BLOCKING
+
+Tirumbippaar was carried as partial/blocked over "an unresolved crop". The crop is real but sits in
+**front matter**, not reading text:
+
+- location: PDF **2**, lower printer/imprint line
+- visible partial: `சிட்டி பிரஸ், மதுரை ரோ…`
+- canonical screenplay begins at PDF **9** — seven pages later
+- canonical range: PDF **9–112** / printed pp. **1–104**, **104/104 verified**, 0 draft, 0 review
+- `additional_main_text_crop_or_duplicate_findings: []`; zero crop/illegible markers in any of the
+  five canonical transcription parts
+
+It is a printer's imprint — a bibliographic detail, not a word of the screenplay. It stays **partial
+and unreconstructed** (no `மதுரை ரோடு`, no address or printer-name continuation), and is classified
+**documented / unresolved / front matter / non-blocking**.
+
+### Measured census — recomputed from files, not read from metadata
+
+104 canonical pages (0 missing, 0 duplicate, `printed = pdf − 8` with 0 violations) · 93 scenes ·
+1,040 dialogue records · 1,321 English units, all verified · **1,040/1,040 dialogue links, 0 dupes,
+0 orphans, 0 unlinked** · 39 entities / 45 labels · EPUB byte-exact and SHA-256 exact.
+
+Songs: 8 occurrences — **3 verified, 5 unresolved, 0 attributed to Kalaignar**. The three verified are
+`external-source` only (பாரதிதாசன் ×1, கண்ணதாசன் ×2). No anthology tier, no full lyric body printed,
+no Tamil song derivative invented from absent text. Work authorship is a direct printed cover credit:
+`கதை - வசனம் — கலைஞர் மு. கருணாநிதி`. Rights: `உரிமையுடையது.` and `விலை ரூ. 0-10-0` are recorded as
+printed 1953 statements, not a present-day determination — no blanket rights block.
+
+---
+
+## Phase D1.1 — punctuation reconciliation — Tirumbippaar is BLOCKED
+
+The D1 audit reported **four** canonical↔scene punctuation divergences. A page-aware re-run has
+reduced that to **one**.
+
+**Three of the four were an audit artifact, not data defects.** The original check keyed canonical
+lines in a dict by punctuation-stripped text, so a scene line was compared against the *first*
+occurrence of that text anywhere in the book rather than the occurrence on its own page. These lines
+recur many times across the work. Compared within each scene's own page span, all three match the
+canonical transcription **exactly**:
+
+| Case | Scene span | Canonical | Result |
+|---|---|---|---|
+| `பாண்டியன்: ஆமாம்...` | scene 57, PDF 71–76 | PDF **72** / printed 64 — identical | **no divergence** |
+| `பூமால்: குமுதா!....` | scene 57, PDF 71–76 | PDF **76** / printed 68 — identical | **no divergence** |
+| `குமுதா: பாண்டியன்!....` | scene 86, PDF 103–105 | PDF **103** / printed 95 — identical | **no divergence** |
+
+**One genuine divergence remains**, in scene 45 (spans PDF 58–60), at the PDF **59 → 60** continuation:
+
+- canonical, PDF **59** / printed **51**: `…லஞ்சத்திலே சிக்கவடி...`
+- scene derivative: `…லஞ்சத்திலே சிக்கவடி-`
+- both layers continue on PDF 60 with `கும் பரந்தாமனல்ல நான்.`
+
+Both layers claim `verified`, so neither may be assumed correct; only the controlling scan decides.
+**No correction was made and no source PR was opened** — the reconciliation could not be performed
+because the controlling scan was not readable in the working environment, and the repository holds
+**no page images and no vendored PDF** (only acceptable evidence would be the PDF itself or a lossless
+rendering tied to its SHA-256). Correcting from grammar, continuation logic, the dialogue index or the
+derivative itself is explicitly disallowed.
+
+**Formal status: BLOCKED.** Exact blocker: one scan-unverified punctuation reading at PDF 59 /
+printed 51 (scene 45). Required to unblock: a high-resolution image of **PDF page 59** (printed 51),
+with **PDF page 60** for the continuation boundary.
+
+The full 93-scene canonical↔scene equality gate currently reports **1 mismatch**; READY requires 0.
+
+### Next activity
+
+**Phase D1.1 — resolve the single scene-45 reading from the scan.** D2 has not started. Tirumbippaar
+is not being deferred: one punctuation location is not grounds to move to printed public-speech
+booklets unless the user explicitly decides to defer.
 
 ---
 
