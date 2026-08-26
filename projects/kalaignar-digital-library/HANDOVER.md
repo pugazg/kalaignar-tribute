@@ -1,6 +1,101 @@
 # Kalaignar Digital Library / Reading Room — Master Handover
 
-**Last updated:** 2026-08-21
+**Last updated:** 2026-08-26
+
+---
+
+## ⚠️ CURRENT STATE — read this before anything below
+
+**The Phase 1–9 narrative in this document stops at Phase 7 (2026-08-21) and is now HISTORICAL.**
+Several phases have shipped since it was written, and its work counts, shelf counts and
+"last production application-code checkpoint" are stale. It is kept as history and has **not** been
+retro-edited. Where it disagrees with this section or with live GitHub, **live GitHub wins**.
+
+### Verified live state — 2026-08-26
+
+| | |
+|---|---|
+| Implementation `main` | `15405c7ff252ad98250a2ad50b4d718598300ded` |
+| Open PRs | 0 |
+| Published works | **24** |
+| Non-empty shelves | **9** |
+| Prerendered pages | **2853** |
+| Sitemap URLs | **2849** |
+
+Shelf census: Life Writing 1 · Letters 1 · Fiction 2 · Poetry 1 · Drama 1 ·
+**Cinema Writing 2** · Speeches 13 · Essays & Articles 1 · Literary Commentary 2.
+
+### Phases shipped after this document's Phase-7 narrative
+
+These are recorded here as completed fact. Their detail lives in the implementation repository's
+merged PRs, not in this file:
+
+- **Thirukkural — கலைஞர் உரை** (Literary Commentary), including the Daily Kural surface.
+- **Assembly-speech anthology** — the remaining 10 dated sittings, taking Speeches to 13.
+- **Phase B — கிழவன் கனவு** (Fiction short story), taking Fiction to 2.
+- **Phase C — பராசக்தி** (Cinema Writing), taking Cinema Writing to 2.
+
+---
+
+## Phase C — பராசக்தி / Parasakthi — ✅ COMPLETE and CLOSED
+
+Cinema Writing benchmark #2. Verified in production 2026-08-26.
+
+**Final implementation `main` after C5: `15405c7ff252ad98250a2ad50b4d718598300ded`.**
+
+Stages, all merged:
+
+| Stage | PR | Squash |
+|---|---|---|
+| C1 source/readiness audit | — | (audit only, no PR) |
+| C2 deterministic data import | #48 | `1b46dbe` |
+| C2.1 attribution provenance correction | #50 | `fd5ffe5` |
+| C3 reader + source/provenance routes | #49 | `5349f1d` |
+| C4 catalogue | #51 | `017f0b5` |
+| C5 sitemap | #52 | `15405c7` |
+| C6 final production audit | — | (audit only, no defects, no PR) |
+
+**Source pin:** `pugazg/kalaignar-cinema-works` @ `789b003b6c0dfcf0bc38b906037f92953fd8146f` —
+work-specific, not source `main`. It supersedes `a593db5079e76887abeb41d9c2abfd978a7fe9a5`, which
+predates the archive's song-attribution correction.
+
+**Public footprint:** 48 Parasakthi sitemap URLs — 1 landing, 1 source page, 46 scenes.
+
+### The three source facts Phase C exists to protect
+
+1. **The booklet prints its own scene headings**, unlike Manohara's archive-created navigation
+   segments. Parasakthi's 46 are the booklet's; Manohara's 57 are not. That distinction is encoded in
+   `unitCount` labels and must not be collapsed if a third cinema work arrives.
+2. **Headings 23 and 34 are never printed.** No scene file, no route, no sitemap URL, no placeholder.
+   The absence is recorded as absence.
+3. **The songs are not all Kalaignar's.** The booklet credits six poets collectively and pairs none
+   with a song. Item-level attribution rests on three tiers — 11 `external-source`,
+   2 `anthology-attributed`, 1 `canonical-context-explicit` — and exactly **two** of the fourteen
+   occurrences are his, both on **anthology** evidence, which is **not** an original-film credit. The
+   superseded பாரதிதாசன் tracklist witness for scene 4 is preserved, not deleted or called wrong.
+
+**No blanket rights block.** Parasakthi is a composite publication; the nationalisation model that
+applies to Manohara cannot be applied to a booklet containing five other poets' work. A scoped
+`WorkAttribution` model remains future work.
+
+**Do NOT reopen Parasakthi.**
+
+---
+
+## Next activity — Phase D1: திரும்பிப்பார் / Tirumbippaar readiness audit
+
+The next roadmap candidate is **Tirumbippaar** (`pugazg/kalaignar-cinema-works`). It has previously
+been regarded as partial or blocked because of an unresolved crop/source problem.
+
+**The next activity is a SOURCE-READINESS AUDIT ONLY — not implementation.** No import, no reader
+routes, no catalogue entry, no sitemap URLs, no guessed text.
+
+**Explicit rule:** if the unresolved crop still prevents a source-faithful canonical reading,
+Tirumbippaar remains **blocked**, and the project moves to **printed public-speech booklets** rather
+than reconstructing uncertain text. Source uncertainty stays uncertainty; there is no invented
+canonical Tamil.
+
+---
 
 > **Status:** **Phase 1 COMPLETE** · **Phase 2 (Cinema / Manohara) COMPLETE** · **Phase 3 — Speeches
 > is ACTIVE but PAUSED by owner direction (not complete)** · **Phase 4 — Poetry is ACTIVE** ·

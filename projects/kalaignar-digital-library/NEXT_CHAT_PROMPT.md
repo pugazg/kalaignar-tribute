@@ -24,6 +24,48 @@ Then inspect the live implementation repository:
 
 **Treat current GitHub `main`, open PRs and deployed site state as authoritative** over any SHA, count or status paragraph written in a handover, including this file.
 
+## ⚠️ CURRENT STATE — 2026-08-26 (supersedes the phase list below)
+
+**The "Where the project actually stands" list below stops at Phase 7 and is HISTORICAL.** Its work
+and shelf counts are stale. It is kept for the completed-phase detail it records, and has not been
+retro-edited. **Live GitHub wins over anything in it.**
+
+Verified live: implementation `main` **`15405c7ff252ad98250a2ad50b4d718598300ded`**, **0 open PRs**,
+**24 published works**, **9 non-empty shelves**, **2853 prerendered pages**, **2849 sitemap URLs**.
+
+Shelf census: Life Writing 1 · Letters 1 · Fiction 2 · Poetry 1 · Drama 1 · **Cinema Writing 2** ·
+Speeches 13 · Essays & Articles 1 · Literary Commentary 2.
+
+Shipped after the Phase-7 narrative below: **Thirukkural — கலைஞர் உரை** (with Daily Kural), the
+**Assembly-speech anthology** (Speeches → 13), **Phase B — கிழவன் கனவு** (Fiction → 2), and
+**Phase C — பராசக்தி** (Cinema Writing → 2).
+
+### Phase C — பராசக்தி: COMPLETE and CLOSED
+
+C1 audit · C2 import (#48) · C2.1 attribution correction (#50) · C3 reader + source routes (#49) ·
+C4 catalogue (#51) · C5 sitemap (#52) · C6 production audit. Source pin
+`pugazg/kalaignar-cinema-works` @ `789b003b6c0dfcf0bc38b906037f92953fd8146f` (work-specific, and it
+supersedes `a593db50…`). 48 Parasakthi sitemap URLs: 1 landing, 1 source, 46 scenes.
+
+Three facts not to collapse: the booklet **prints** its 46 scene headings (Manohara's 57 are
+archive-created navigation); headings **23 and 34 are never printed** and get no page or URL; and the
+**songs are not all Kalaignar's** — six poets credited collectively, three evidence tiers (11
+`external-source` / 2 `anthology-attributed` / 1 `canonical-context-explicit`), exactly two
+occurrences his and both on anthology evidence, which is **not** an original-film credit. No blanket
+rights block: Parasakthi is composite. **Do NOT reopen Parasakthi.**
+
+### Next activity — Phase D1: திரும்பிப்பார் / Tirumbippaar readiness audit
+
+Tirumbippaar has previously been regarded as partial/blocked over an unresolved crop. The next
+activity is a **source-readiness audit ONLY** — no import, no reader routes, no catalogue, no sitemap
+URLs, no guessed text.
+
+**Explicit rule:** if the crop still prevents a source-faithful canonical reading, Tirumbippaar stays
+**blocked** and the project moves to **printed public-speech booklets** instead of reconstructing
+uncertain text.
+
+---
+
 ## Where the project actually stands (completed — do NOT redo)
 
 - **Phase 1 — Library Foundation:** COMPLETE, merged, production-verified.
