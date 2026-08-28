@@ -167,35 +167,53 @@ canonical exactly once at the head of the PDF 14 block, in `scene-05` after the 
 duplicated, and carried by `tirumbippaar-s005-d007`; census 104 pages / 93 scenes / 1042 dialogue
 records / 1330 translation units / 1042 links exactly once, 0 duplicates, 0 orphans, 0 unlinked.
 
-## Phase D1.2 — strict derivative-fidelity audit — IN PROGRESS, method blocker found
+## Phase D1.2 — strict derivative-fidelity audit — CONTENT PASS on PR #3 head
 
-D1.2 examines the 169 strict canonical↔scene differences that survive D1.1. **A critical finding
-changes the prescribed method.**
+**Source PR #2 is merged** at `d4b394a7b4582935792df4cf2840fbd466dd41c5`, which is current source `main`.
+D1.1 is complete.
 
-The default fix policy is "fix the scene derivative to match canonical". Against the controlling scan
-that would **actively corrupt the reader text**, because canonical carries systematic OCR punctuation
-artifacts that the scene derivatives do not. Of 9 differences adjudicated directly against the scan,
-**canonical is wrong in 6 and the scene is wrong in 2**:
+**D1.2 lives on source PR #3** (`fix/tirumbippaar-strict-derivative-fidelity`), validated on the clean
+committed head **`61b1d16d81b3d3c9e61f2644f9a292c514205605`**.
 
-| scene | PDF/printed | scan prints | canonical | scene | wrong layer |
-|---|---|---|---|---|---|
-| 9 | 18/10 | `[…]` | `(…]` | `[…]` | canonical |
-| 10 | 18/10 | `[…]` | `(` | `[` | canonical |
-| 11 | 19/11 | `[…]` | `(…)` | `[` | canonical |
-| 30 | 36/28 | `[…]` | `(…]` | `[…]` | canonical |
-| 8 | 18/10 | `—` em-dash | ` - ` | `—` | canonical |
-| 21 | 29/21 | `அம்மா !` | `அம்மா /` | `அம்மா!` | canonical |
-| 5 | 13/5 | `[…]` | `[` | `(` | scene |
-| 5 | 13/5 | `(ஆபீஸ் பையனிடம்)` | `)` present | `)` missing | scene |
+The method finding stands and is why the work took two rounds: canonical could not serve as the
+punctuation authority. It carried OCR artifacts the scene layer did not — `/` for `!`, `(` for `[`,
+spaced hyphens for em-dashes, impossible pairs like `(…]` — while elsewhere the scene was the faulty
+layer. Every difference was adjudicated against the controlling scan and whichever layer disagreed with
+it was corrected. Page attribution was repaired too: `பூமாலை: அதைக் கேட்க…` belongs to PDF 44 / printed 36.
 
-`/` for `!` and `(` for `[` are classic OCR misreads, and canonical also shows internally impossible
-pairs such as `(…]`. Separately, canonical misattributes one line's page anchor: `பூமாலை: அதைக் கேட்க
-நான் இருக்கிறேனே!…` is the **last line of printed 36 (PDF 44)** in the scan, but canonical anchors it
-to PDF 45; the scene derivative is correct.
+PR #3's first head changed only canonical and scene while its audit note described downstream work that
+was never committed. That is now fixed: **51 dialogue records across 18 scene files** were synchronized
+(recomputed — an earlier draft said 55/20), with **no ID changes**, and **two English units** were
+materially revised where the adjudicated Tamil changed completeness and grammatical person. The note and
+the tree now describe the same state.
 
-**Consequence:** canonical cannot serve as the punctuation authority for D1.2. Each remaining
-difference needs individual scan adjudication — 161 still to do (138 whitespace, 11 quote/dash,
-~6 ellipsis, ~6 other punctuation). No D1.2 PR has been opened; nothing is fixed on a guess.
+### Gates on PR #3 head `61b1d16d`
+
+| gate | result |
+|---|---|
+| canonical↔scene source-visible | **0 mismatches** (1348/1348 exact text and page) |
+| page attribution | **0 mismatches** |
+| scene↔dialogue exact text | **0 unexplained** (2 documented structural exceptions) |
+| dialogue links | 1042 exactly once, 0 duplicate, 0 orphan, 0 unlinked |
+| translation/reader preflight | PASS |
+
+Census: **104** canonical pages (0 draft, 0 review) · **93** scenes · **1042** dialogue records ·
+**1330** translation units. `ஊஹும்` is user-verified and preserved, with `ஊஹூம்` absent from the work.
+The **PDF-2 printer-imprint crop remains partial, documented and NON-BLOCKING**.
+
+Reader and EPUB artifacts are **not** committed on the PR: the English-edition workflow runs only on push
+to `main`, so CI regenerates them after merge.
+
+Reported but deliberately not changed: 18 scene-location markers where the heading audit records `[` while
+both canonical and scene print `(` — the layers agree, so the gate cannot see them, and resolving them
+needs a separate scan pass.
+
+### Status
+
+**D1.2 content reconciliation: PASS on the PR #3 head.** PR #3 remains **open and unmerged** pending
+independent review, so **source `main` is NOT yet ready for D2** — it still lacks the D1.2 repairs.
+**D2 has not started.**
+
 
 ## Status
 
