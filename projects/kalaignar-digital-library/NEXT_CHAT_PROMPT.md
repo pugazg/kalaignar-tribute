@@ -159,11 +159,49 @@ already carries the corrected `புண்யகோடி`.
 
 ### Status
 
-**D1.1 CONTENT RECONCILIATION: PASS.**
+**D1.1 CONTENT RECONCILIATION: PASS — and source PR #2 is now MERGED**, squash
+`d4b394a7b4582935792df4cf2840fbd466dd41c5`, which is current source `main`; branch deleted, 0 open
+source PRs. Post-merge verification on that main: `ஊஹும்` 5/5/5 in transcription, scenes and
+dialogues with **zero `ஊஹூம்` anywhere in the work**; the restored `கருடன் : இல்லை பரந்தாமன்.` is
+canonical exactly once at the head of the PDF 14 block, in `scene-05` after the `pdf=14` anchor, not
+duplicated, and carried by `tirumbippaar-s005-d007`; census 104 pages / 93 scenes / 1042 dialogue
+records / 1330 translation units / 1042 links exactly once, 0 duplicates, 0 orphans, 0 unlinked.
 
-**Source `main` is NOT yet eligible for D2.** PR #2 is open and unmerged; the reconciliation exists
-only on its branch, so `main` still carries the unreconciled derived layers. Tirumbippaar becomes
-**READY FOR D2** only once PR #2 has been independently reviewed and merged.
+## Phase D1.2 — strict derivative-fidelity audit — IN PROGRESS, method blocker found
+
+D1.2 examines the 169 strict canonical↔scene differences that survive D1.1. **A critical finding
+changes the prescribed method.**
+
+The default fix policy is "fix the scene derivative to match canonical". Against the controlling scan
+that would **actively corrupt the reader text**, because canonical carries systematic OCR punctuation
+artifacts that the scene derivatives do not. Of 9 differences adjudicated directly against the scan,
+**canonical is wrong in 6 and the scene is wrong in 2**:
+
+| scene | PDF/printed | scan prints | canonical | scene | wrong layer |
+|---|---|---|---|---|---|
+| 9 | 18/10 | `[…]` | `(…]` | `[…]` | canonical |
+| 10 | 18/10 | `[…]` | `(` | `[` | canonical |
+| 11 | 19/11 | `[…]` | `(…)` | `[` | canonical |
+| 30 | 36/28 | `[…]` | `(…]` | `[…]` | canonical |
+| 8 | 18/10 | `—` em-dash | ` - ` | `—` | canonical |
+| 21 | 29/21 | `அம்மா !` | `அம்மா /` | `அம்மா!` | canonical |
+| 5 | 13/5 | `[…]` | `[` | `(` | scene |
+| 5 | 13/5 | `(ஆபீஸ் பையனிடம்)` | `)` present | `)` missing | scene |
+
+`/` for `!` and `(` for `[` are classic OCR misreads, and canonical also shows internally impossible
+pairs such as `(…]`. Separately, canonical misattributes one line's page anchor: `பூமாலை: அதைக் கேட்க
+நான் இருக்கிறேனே!…` is the **last line of printed 36 (PDF 44)** in the scan, but canonical anchors it
+to PDF 45; the scene derivative is correct.
+
+**Consequence:** canonical cannot serve as the punctuation authority for D1.2. Each remaining
+difference needs individual scan adjudication — 161 still to do (138 whitespace, 11 quote/dash,
+~6 ellipsis, ~6 other punctuation). No D1.2 PR has been opened; nothing is fixed on a guess.
+
+## Status
+
+**Source `main` now carries the D1.1 reconciliation**, but Tirumbippaar is **NOT yet READY FOR D2**:
+the D1.2 gate has not reached 0 unexplained source-visible differences, and the audit has shown the
+derivative layers still disagree with the scan in both directions.
 
 ### Next activity
 
