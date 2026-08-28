@@ -75,11 +75,14 @@ It is a printer's imprint — a bibliographic detail, not a word of the screenpl
 and unreconstructed** (no `மதுரை ரோடு`, no address or printer-name continuation), and is classified
 **documented / unresolved / front matter / non-blocking**.
 
-### Measured census — recomputed from files, not read from metadata
+### Measured census at D1 — ⚠️ PRE-CORRECTION, SUPERSEDED
+
+These were the figures at the D1 audit pin, **before** the user's textual-correction pass. They are
+recorded for history only. **Do not reuse them** — the current verified census is in the D1.1 section
+below (1042 dialogue records, 1330 translation units).
 
 104 canonical pages (0 missing, 0 duplicate, `printed = pdf − 8` with 0 violations) · 93 scenes ·
-1,040 dialogue records · 1,321 English units, all verified · **1,040/1,040 dialogue links, 0 dupes,
-0 orphans, 0 unlinked** · 39 entities / 45 labels · EPUB byte-exact and SHA-256 exact.
+~~1,040 dialogue records · 1,321 English units~~ · 39 entities / 45 labels.
 
 Songs: 8 occurrences — **3 verified, 5 unresolved, 0 attributed to Kalaignar**. The three verified are
 `external-source` only (பாரதிதாசன் ×1, கண்ணதாசன் ×2). No anthology tier, no full lyric body printed,
@@ -89,47 +92,83 @@ printed 1953 statements, not a present-day determination — no blanket rights b
 
 ---
 
-## Phase D1.1 — punctuation reconciliation — Tirumbippaar is BLOCKED
+## Phase D1.1 — canonical/derivative reconciliation — CONTENT PASS
 
-The D1 audit reported **four** canonical↔scene punctuation divergences. A page-aware re-run has
-reduced that to **one**.
+The earlier D1.1 framing — "one remaining PDF-59 punctuation blocker" — is **superseded and no longer
+the state**. That question was overtaken by a full textual-correction pass the user ran against the
+controlling scan, which corrected the canonical Tamil across the work.
 
-**Three of the four were an audit artifact, not data defects.** The original check keyed canonical
-lines in a dict by punctuation-stripped text, so a scene line was compared against the *first*
-occurrence of that text anywhere in the book rather than the occurrence on its own page. These lines
-recur many times across the work. Compared within each scene's own page span, all three match the
-canonical transcription **exactly**:
+### Source authority
 
-| Case | Scene span | Canonical | Result |
-|---|---|---|---|
-| `பாண்டியன்: ஆமாம்...` | scene 57, PDF 71–76 | PDF **72** / printed 64 — identical | **no divergence** |
-| `பூமால்: குமுதா!....` | scene 57, PDF 71–76 | PDF **76** / printed 68 — identical | **no divergence** |
-| `குமுதா: பாண்டியன்!....` | scene 86, PDF 103–105 | PDF **103** / printed 95 — identical | **no divergence** |
+The controlling scan decides every reading. Readings are **not** judged by grammar, gender agreement,
+expected syntax, character identity or modern usage. As-printed forms that look unusual are preserved
+— `அறிமுகமானான்`, `விளையாடுகிறான்`, `மாடிக்குப் போகிறாள்`, `பெருமூச்ச`, `பரந்தாமான்`.
 
-**One genuine divergence remains**, in scene 45 (spans PDF 58–60), at the PDF **59 → 60** continuation:
+**`ஊஹும்` was verified directly by the user against the controlling PDF.** That reading is settled,
+is preserved in every reading layer, and is not to be reopened or reverted to `ஊஹூம்`.
 
-- canonical, PDF **59** / printed **51**: `…லஞ்சத்திலே சிக்கவடி...`
-- scene derivative: `…லஞ்சத்திலே சிக்கவடி-`
-- both layers continue on PDF 60 with `கும் பரந்தாமனல்ல நான்.`
+### What source PR #2 does
 
-Both layers claim `verified`, so neither may be assumed correct; only the controlling scan decides.
-**No correction was made and no source PR was opened** — the reconciliation could not be performed
-because the controlling scan was not readable in the working environment, and the repository holds
-**no page images and no vendored PDF** (only acceptable evidence would be the PDF itself or a lossless
-rendering tied to its SHA-256). Correcting from grammar, continuation logic, the dialogue index or the
-derivative itself is explicitly disallowed.
+The correction pass updated canonical but did not consistently re-derive the dependent layers, so
+`pugazg/kalaignar-cinema-works` **PR #2** reconciles them:
 
-**Formal status: BLOCKED.** Exact blocker: one scan-unverified punctuation reading at PDF 59 /
-printed 51 (scene 45). Required to unblock: a high-resolution image of **PDF page 59** (printed 51),
-with **PDF page 60** for the continuation boundary.
+- 16 scene lines brought into line with corrected canonical (scenes 6, 7, 8, 16, 28, 41);
+- one **canonical omission restored from the scan** — `கருடன் : இல்லை பரந்தாமன்.` is the first line of
+  printed page 6 / PDF 14; canonical had dropped it and `scene-05` had it in the PDF 13 block. It is
+  now in canonical once at the head of the PDF 14 block, in `scene-05` after the `pdf=14` anchor, not
+  duplicated, and carried by dialogue record `tirumbippaar-s005-d007`;
+- two dialogue records (`tirumbippaar-s006-d012`, `tirumbippaar-s028-d011`) whose live `text` still
+  held the superseded `ஊஹூம்` corrected to `ஊஹும்`. No reading layer now contains `ஊஹூம்`.
 
-The full 93-scene canonical↔scene equality gate currently reports **1 mismatch**; READY requires 0.
+### Validation — two distinct gates, reported separately
+
+Earlier wording conflated these and wrongly called a normalized result "exact reconstruction".
+
+**A. Strict textual equality** (exact trimmed-line identity; punctuation, ellipses, spacing, quote
+glyphs all significant): **1173 of 1342 exact, 169 mismatches** (base was 1156 / 186).
+
+**B. Normalized word-level alignment** (Tamil letters only): **1342 of 1342 aligned, 0 unaligned**
+(base was 1325 / 17). This is *alignment*, not exact reconstruction.
+
+Every Tamil-letter reading now matches canonical. The 169 strict mismatches are presentation-layer
+only — 140 whitespace, 11 quote/dash glyph, 18 other punctuation (bracket type, ellipsis count). The
+previously reported "29" is the whitespace-folded subset (11 + 18) and **still exists**; it is
+deliberately untouched, since changing punctuation is outside a reading reconciliation.
+
+### Census — recomputed, not carried over
+
+The old **1040 dialogue / 1321 English unit** baselines are **obsolete and must not be reused**.
+
+| | |
+|---|---|
+| canonical pages | **104** (PDF 9–112) — 83 `verified` + 21 `verified-reconciled`, 0 draft, 0 review |
+| scenes | **93** |
+| dialogue records | **1042** |
+| translation units | **1330**, all verified |
+| dialogue links | **1042 exactly once, 0 duplicates, 0 orphans, 0 unlinked** |
+| character entities / labels | 39 / 45 |
+| song occurrences | 8 — 3 verified, 5 unresolved, **0 attributed to Kalaignar** |
+
+The **PDF-2 printer-imprint crop remains partial, documented and NON-BLOCKING** — it is front matter,
+seven pages before canonical text begins, and is never reconstructed.
+
+Ten `புண்ணகோடி` occurrences remain, all correction-history quotations or audit records and none in
+live reading text; they are preserved as evidence. The entity ID `tirumbippaar-char-punnakodi` is
+**not renamed** — an internal identifier referenced only within `characters/`, whose display label
+already carries the corrected `புண்யகோடி`.
+
+### Status
+
+**D1.1 CONTENT RECONCILIATION: PASS.**
+
+**Source `main` is NOT yet eligible for D2.** PR #2 is open and unmerged; the reconciliation exists
+only on its branch, so `main` still carries the unreconciled derived layers. Tirumbippaar becomes
+**READY FOR D2** only once PR #2 has been independently reviewed and merged.
 
 ### Next activity
 
-**Phase D1.1 — resolve the single scene-45 reading from the scan.** D2 has not started. Tirumbippaar
-is not being deferred: one punctuation location is not grounds to move to printed public-speech
-booklets unless the user explicitly decides to defer.
+Independent review of source PR #2. **D2 has not started** — no importer, reader, catalogue, sitemap,
+source page or rights model, and `pugazg/kalaignar-autobiography` is unmodified.
 
 ---
 
