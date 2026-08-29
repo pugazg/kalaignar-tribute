@@ -197,44 +197,53 @@ records / 1330 translation units / 1042 links exactly once, 0 duplicates, 0 orph
 
 ## Phase D1.2 — strict derivative-fidelity audit — CONTENT PASS on PR #3 head
 
-**Source PR #2 is merged** at `d4b394a7b4582935792df4cf2840fbd466dd41c5`, which is current source `main`.
-D1.1 is complete.
+**Source PR #2 is merged** at `d4b394a7b4582935792df4cf2840fbd466dd41c5`, which is current source
+`main`. D1.1 is complete.
 
 **D1.2 lives on source PR #3** (`fix/tirumbippaar-strict-derivative-fidelity`), validated on the clean
-committed head **`61b1d16d81b3d3c9e61f2644f9a292c514205605`**.
+committed head **`711dee10b42c32fe041916b9c9a38e9b36a18263`**.
 
-The method finding stands and is why the work took two rounds: canonical could not serve as the
-punctuation authority. It carried OCR artifacts the scene layer did not — `/` for `!`, `(` for `[`,
-spaced hyphens for em-dashes, impossible pairs like `(…]` — while elsewhere the scene was the faulty
-layer. Every difference was adjudicated against the controlling scan and whichever layer disagreed with
-it was corrected. Page attribution was repaired too: `பூமாலை: அதைக் கேட்க…` belongs to PDF 44 / printed 36.
+The method finding stands: canonical could not serve as the punctuation authority, because it carried
+OCR artifacts the scene layer did not — `/` for `!`, `(` for `[`, spaced hyphens for em-dashes,
+impossible pairs like `(…]` — while elsewhere the scene was the faulty layer. The controlling scan
+decided every case.
 
-PR #3's first head changed only canonical and scene while its audit note described downstream work that
-was never committed. That is now fixed: **51 dialogue records across 18 scene files** were synchronized
-(recomputed — an earlier draft said 55/20), with **no ID changes**, and **two English units** were
-materially revised where the adjudicated Tamil changed completeness and grammatical person. The note and
-the tree now describe the same state.
+### What the final round fixed
 
-### Gates on PR #3 head `61b1d16d`
+**Scene-5 provenance chain.** `கருடன் : இல்லை பரந்தாமன்.` sits under PDF 14 / printed 6, but
+`tirumbippaar-s005-d007` and `tirumbippaar-en-s005-u010` still pointed at PDF 13 / printed 5. Both
+corrected. `tirumbippaar-s005-d004` had also truncated the printed `உண்மையான ஆசிரியர்......`, and the
+note on `en-s005-u007` wrongly claimed the source had no ellipsis there; both fixed against the scan.
+
+**18 scene-location markers adjudicated, not deferred.** These were invisible to the canonical↔scene
+gate because both layers agreed on `(`. Each was inspected individually on the scan at 400dpi:
+**18 checked · 18 corrected · 0 unresolved**, every reading `[`. A second surface surfaced while doing
+it — 22 headings close the scene number with `)` — of which the three with scan evidence (scenes 32,
+44, 56) are corrected and the other **19 are deliberately left unadjudicated** rather than changed on
+pattern.
+
+### Gates on PR #3 head `711dee10`
 
 | gate | result |
 |---|---|
 | canonical↔scene source-visible | **0 mismatches** (1348/1348 exact text and page) |
-| page attribution | **0 mismatches** |
-| scene↔dialogue exact text | **0 unexplained** (2 documented structural exceptions) |
+| page attribution | **0** |
+| scene↔dialogue text | **0 unexplained** (2 documented scene-72 structural records) |
+| scene↔dialogue provenance | **0 mismatches** (943 label/page pairs) |
+| dialogue↔translation provenance | **0 mismatches** |
 | dialogue links | 1042 exactly once, 0 duplicate, 0 orphan, 0 unlinked |
 | translation/reader preflight | PASS |
 
 Census: **104** canonical pages (0 draft, 0 review) · **93** scenes · **1042** dialogue records ·
-**1330** translation units. `ஊஹும்` is user-verified and preserved, with `ஊஹூம்` absent from the work.
+**1330** translation units. `ஊஹும்` is user-verified and preserved with **0 `ஊஹூம்` in live reading
+layers**. The scene-63 `d020`/`d021` split is retained with its concatenation verbatim in the scene.
 The **PDF-2 printer-imprint crop remains partial, documented and NON-BLOCKING**.
 
-Reader and EPUB artifacts are **not** committed on the PR: the English-edition workflow runs only on push
-to `main`, so CI regenerates them after merge.
+Reader and EPUB artifacts are **not** committed: the English-edition workflow runs only on push to
+`main`, so CI regenerates them after merge. No EPUB hash is asserted.
 
-Reported but deliberately not changed: 18 scene-location markers where the heading audit records `[` while
-both canonical and scene print `(` — the layers agree, so the gate cannot see them, and resolving them
-needs a separate scan pass.
+Recorded but not changed: `s045-d013` carries the label `பாண்டியன்` where the scene prints
+`பாண்டியன்.`; it predates D1.2 and changing it would alter the 45-label character inventory.
 
 ### Status
 
