@@ -1,6 +1,324 @@
 # Kalaignar Digital Library / Reading Room — Master Handover
 
-**Last updated:** 2026-08-21
+**Last updated:** 2026-08-26
+
+---
+
+## ⚠️ CURRENT STATE — read this before anything below
+
+**The Phase 1–9 narrative in this document stops at Phase 7 (2026-08-21) and is now HISTORICAL.**
+Several phases have shipped since it was written, and its work counts, shelf counts and
+"last production application-code checkpoint" are stale. It is kept as history and has **not** been
+retro-edited. Where it disagrees with this section or with live GitHub, **live GitHub wins**.
+
+### Verified live state — 2026-08-26
+
+| | |
+|---|---|
+| Implementation `main` | `15405c7ff252ad98250a2ad50b4d718598300ded` |
+| Open PRs | 0 |
+| Published works | **24** |
+| Non-empty shelves | **9** |
+| Prerendered pages | **2853** |
+| Sitemap URLs | **2849** |
+
+Shelf census: Life Writing 1 · Letters 1 · Fiction 2 · Poetry 1 · Drama 1 ·
+**Cinema Writing 2** · Speeches 13 · Essays & Articles 1 · Literary Commentary 2.
+
+### Phases shipped after this document's Phase-7 narrative
+
+These are recorded here as completed fact. Their detail lives in the implementation repository's
+merged PRs, not in this file:
+
+- **Thirukkural — கலைஞர் உரை** (Literary Commentary), including the Daily Kural surface.
+- **Assembly-speech anthology** — the remaining 10 dated sittings, taking Speeches to 13.
+- **Phase B — கிழவன் கனவு** (Fiction short story), taking Fiction to 2.
+- **Phase C — பராசக்தி** (Cinema Writing), taking Cinema Writing to 2.
+
+---
+
+## Phase C — பராசக்தி / Parasakthi — ✅ COMPLETE and CLOSED
+
+Cinema Writing benchmark #2. Verified in production 2026-08-26.
+
+**Final implementation `main` after C5: `15405c7ff252ad98250a2ad50b4d718598300ded`.**
+
+Stages, all merged:
+
+| Stage | PR | Squash |
+|---|---|---|
+| C1 source/readiness audit | — | (audit only, no PR) |
+| C2 deterministic data import | #48 | `1b46dbe` |
+| C2.1 attribution provenance correction | #50 | `fd5ffe5` |
+| C3 reader + source/provenance routes | #49 | `5349f1d` |
+| C4 catalogue | #51 | `017f0b5` |
+| C5 sitemap | #52 | `15405c7` |
+| C6 final production audit | — | (audit only, no defects, no PR) |
+
+**Source pin:** `pugazg/kalaignar-cinema-works` @ `789b003b6c0dfcf0bc38b906037f92953fd8146f` —
+work-specific, not source `main`. It supersedes `a593db5079e76887abeb41d9c2abfd978a7fe9a5`, which
+predates the archive's song-attribution correction.
+
+**Public footprint:** 48 Parasakthi sitemap URLs — 1 landing, 1 source page, 46 scenes.
+
+### The three source facts Phase C exists to protect
+
+1. **The booklet prints its own scene headings**, unlike Manohara's archive-created navigation
+   segments. Parasakthi's 46 are the booklet's; Manohara's 57 are not. That distinction is encoded in
+   `unitCount` labels and must not be collapsed if a third cinema work arrives.
+2. **Headings 23 and 34 are never printed.** No scene file, no route, no sitemap URL, no placeholder.
+   The absence is recorded as absence.
+3. **The songs are not all Kalaignar's.** The booklet credits six poets collectively and pairs none
+   with a song. Item-level attribution rests on three tiers — 11 `external-source`,
+   2 `anthology-attributed`, 1 `canonical-context-explicit` — and exactly **two** of the fourteen
+   occurrences are his, both on **anthology** evidence, which is **not** an original-film credit. The
+   superseded பாரதிதாசன் tracklist witness for scene 4 is preserved, not deleted or called wrong.
+
+**No blanket rights block.** Parasakthi is a composite publication; the nationalisation model that
+applies to Manohara cannot be applied to a booklet containing five other poets' work. A scoped
+`WorkAttribution` model remains future work.
+
+**Do NOT reopen Parasakthi.**
+
+---
+
+## Phase D1 — திரும்பிப்பார் / Tirumbippaar readiness audit — COMPLETE
+
+Audited at `pugazg/kalaignar-cinema-works` @ `ca7431f3de8f8b2367a65206b8a9739d87788413`; re-confirmed
+unchanged at `03c89cd2bb3019c5f75c2bfbca14077a8d1f643b` (intervening commits are Raja Rani only).
+
+### The original premise was wrong: the crop is NON-BLOCKING
+
+Tirumbippaar was carried as partial/blocked over "an unresolved crop". The crop is real but sits in
+**front matter**, not reading text:
+
+- location: PDF **2**, lower printer/imprint line
+- visible partial: `சிட்டி பிரஸ், மதுரை ரோ…`
+- canonical screenplay begins at PDF **9** — seven pages later
+- canonical range: PDF **9–112** / printed pp. **1–104**, **104/104 verified**, 0 draft, 0 review
+- `additional_main_text_crop_or_duplicate_findings: []`; zero crop/illegible markers in any of the
+  five canonical transcription parts
+
+It is a printer's imprint — a bibliographic detail, not a word of the screenplay. It stays **partial
+and unreconstructed** (no `மதுரை ரோடு`, no address or printer-name continuation), and is classified
+**documented / unresolved / front matter / non-blocking**.
+
+### Measured census at D1 — ⚠️ PRE-CORRECTION, SUPERSEDED
+
+These were the figures at the D1 audit pin, **before** the user's textual-correction pass. They are
+recorded for history only. **Do not reuse them** — the current verified census is in the D1.1 section
+below (1042 dialogue records, 1330 translation units).
+
+104 canonical pages (0 missing, 0 duplicate, `printed = pdf − 8` with 0 violations) · 93 scenes ·
+~~1,040 dialogue records · 1,321 English units~~ · 39 entities / 45 labels.
+
+Songs: 8 occurrences — **3 verified, 5 unresolved, 0 attributed to Kalaignar**. The three verified are
+`external-source` only (பாரதிதாசன் ×1, கண்ணதாசன் ×2). No anthology tier, no full lyric body printed,
+no Tamil song derivative invented from absent text. Work authorship is a direct printed cover credit:
+`கதை - வசனம் — கலைஞர் மு. கருணாநிதி`. Rights: `உரிமையுடையது.` and `விலை ரூ. 0-10-0` are recorded as
+printed 1953 statements, not a present-day determination — no blanket rights block.
+
+---
+
+## Phase D1.1 — canonical/derivative reconciliation — CONTENT PASS
+
+The earlier D1.1 framing — "one remaining PDF-59 punctuation blocker" — is **superseded and no longer
+the state**. That question was overtaken by a full textual-correction pass the user ran against the
+controlling scan, which corrected the canonical Tamil across the work.
+
+### Source authority
+
+The controlling scan decides every reading. Readings are **not** judged by grammar, gender agreement,
+expected syntax, character identity or modern usage. As-printed forms that look unusual are preserved
+— `அறிமுகமானான்`, `விளையாடுகிறான்`, `மாடிக்குப் போகிறாள்`, `பெருமூச்ச`, `பரந்தாமான்`.
+
+**`ஊஹும்` was verified directly by the user against the controlling PDF.** That reading is settled,
+is preserved in every reading layer, and is not to be reopened or reverted to `ஊஹூம்`.
+
+### What source PR #2 does
+
+The correction pass updated canonical but did not consistently re-derive the dependent layers, so
+`pugazg/kalaignar-cinema-works` **PR #2** reconciles them:
+
+- 16 scene lines brought into line with corrected canonical (scenes 6, 7, 8, 16, 28, 41);
+- one **canonical omission restored from the scan** — `கருடன் : இல்லை பரந்தாமன்.` is the first line of
+  printed page 6 / PDF 14; canonical had dropped it and `scene-05` had it in the PDF 13 block. It is
+  now in canonical once at the head of the PDF 14 block, in `scene-05` after the `pdf=14` anchor, not
+  duplicated, and carried by dialogue record `tirumbippaar-s005-d007`;
+- two dialogue records (`tirumbippaar-s006-d012`, `tirumbippaar-s028-d011`) whose live `text` still
+  held the superseded `ஊஹூம்` corrected to `ஊஹும்`. No reading layer now contains `ஊஹூம்`.
+
+### Validation — two distinct gates, reported separately
+
+Earlier wording conflated these and wrongly called a normalized result "exact reconstruction".
+
+**A. Strict textual equality** (exact trimmed-line identity; punctuation, ellipses, spacing, quote
+glyphs all significant): **1173 of 1342 exact, 169 mismatches** (base was 1156 / 186).
+
+**B. Normalized word-level alignment** (Tamil letters only): **1342 of 1342 aligned, 0 unaligned**
+(base was 1325 / 17). This is *alignment*, not exact reconstruction.
+
+Every Tamil-letter reading now matches canonical. The 169 strict mismatches are presentation-layer
+only — 140 whitespace, 11 quote/dash glyph, 18 other punctuation (bracket type, ellipsis count). The
+previously reported "29" is the whitespace-folded subset (11 + 18) and **still exists**; it is
+deliberately untouched, since changing punctuation is outside a reading reconciliation.
+
+### Census — recomputed, not carried over
+
+The old **1040 dialogue / 1321 English unit** baselines are **obsolete and must not be reused**.
+
+| | |
+|---|---|
+| canonical pages | **104** (PDF 9–112) — 83 `verified` + 21 `verified-reconciled`, 0 draft, 0 review |
+| scenes | **93** |
+| dialogue records | **1042** |
+| translation units | **1330**, all verified |
+| dialogue links | **1042 exactly once, 0 duplicates, 0 orphans, 0 unlinked** |
+| character entities / labels | 39 / 45 |
+| song occurrences | 8 — 3 verified, 5 unresolved, **0 attributed to Kalaignar** |
+
+The **PDF-2 printer-imprint crop remains partial, documented and NON-BLOCKING** — it is front matter,
+seven pages before canonical text begins, and is never reconstructed.
+
+Ten `புண்ணகோடி` occurrences remain, all correction-history quotations or audit records and none in
+live reading text; they are preserved as evidence. The entity ID `tirumbippaar-char-punnakodi` is
+**not renamed** — an internal identifier referenced only within `characters/`, whose display label
+already carries the corrected `புண்யகோடி`.
+
+### Status
+
+**D1.1 CONTENT RECONCILIATION: PASS — and source PR #2 is now MERGED**, squash
+`d4b394a7b4582935792df4cf2840fbd466dd41c5` (the source `main` at that time; **now superseded by the
+D1.2 merge `505b1ea7`**); branch deleted. Post-merge verification on that main: `ஊஹும்` 5/5/5 in transcription, scenes and
+dialogues with **zero `ஊஹூம்` anywhere in the work**; the restored `கருடன் : இல்லை பரந்தாமன்.` is
+canonical exactly once at the head of the PDF 14 block, in `scene-05` after the `pdf=14` anchor, not
+duplicated, and carried by `tirumbippaar-s005-d007`; census 104 pages / 93 scenes / 1042 dialogue
+records / 1330 translation units / 1042 links exactly once, 0 duplicates, 0 orphans, 0 unlinked.
+
+## Phase D1.2 — strict derivative-fidelity audit — CONTENT PASS on PR #3 head
+
+**Source PR #2 is merged** at `d4b394a7b4582935792df4cf2840fbd466dd41c5` — the source `main` at that
+time, **now superseded by the D1.2 merge `505b1ea7`**. D1.1 is complete.
+
+**D1.2 lives on source PR #3** (`fix/tirumbippaar-strict-derivative-fidelity`), validated on the clean
+committed head **`49e1b2c4387190e4fe0aea822f8e68b338dccb9d`**.
+
+The method finding stands: canonical could not serve as the punctuation authority, because it carried
+OCR artifacts the scene layer did not, while elsewhere the scene was the faulty layer. Only the
+controlling scan decided.
+
+### Closure round
+
+**Scene 45.** The user verified the PDF directly: the source prints `பாண்டியன் : தொழிலாளர்கள்` with no
+full stop after the speaker name. Canonical and scene both carried `பாண்டியன். :`; both corrected. The
+dialogue record `tirumbippaar-s045-d013` already held `பாண்டியன்` and is unchanged — it was correct and
+the defect was above it. **No `பாண்டியன்.` variant created; the inventory stays at 45 exact labels.**
+
+**Heading markers fully closed.** 18 location-opening markers (previous round) and now **22 of 22
+scene-number closing markers**, each inspected individually on the scan: 19 that printed `)` and 3 that
+had no glyph at all, all corrected to `]`. **0 unresolved.** Source anomalies preserved: scene 5
+`காட்சி 5[`, scene 36 with no closing glyph, scene 43 `காட்சி 43].`.
+
+### Gates on `49e1b2c4`
+
+| gate | result |
+|---|---|
+| canonical↔scene source-visible | **0 mismatches** (1348/1348 exact text and page) |
+| page attribution | **0** |
+| scene↔dialogue text | **0 unexplained** (2 documented scene-72 records) |
+| scene↔dialogue provenance | **0** |
+| dialogue↔translation provenance | **0** |
+| dialogue links | 1042 exactly once, 0 duplicate, 0 orphan, 0 unlinked |
+| character source labels | **45** |
+| translation/reader preflight | PASS |
+| heading markers | **0 unresolved** |
+
+Census: **104** canonical pages (0 draft, 0 review) · **93** scenes · **1042** dialogue records ·
+**1330** translation units. `ஊஹும்` is user-verified and preserved at 5/5/5 with **0 `ஊஹூம்` in live
+reading layers**. The **PDF-2 printer-imprint crop remains partial, documented and NON-BLOCKING**.
+
+Reader and EPUB artifacts are **not** committed — CI regenerates them on push to `main`.
+
+### Source PR #3 — MERGED · CI-fix PR #4 — MERGED · publication package COMPLETE
+
+| stage | SHA |
+|---|---|
+| D1.2 source fidelity, PR #3 reviewed head | `49e1b2c4387190e4fe0aea822f8e68b338dccb9d` |
+| PR #3 squash merge | `505b1ea7382bacb39c82d9f314668a67a38219bd` |
+| CI-fix PR #4 reviewed head | `9bd4b1f370c7f6602648e5e3e1e7cfced4edd34e` |
+| PR #4 squash merge | `b4ab599d8726f45780a72e5d4531d52583b7f220` |
+| **CI publication commit — authoritative source pin** | **`6a8c59c445890e568dfe65cc36c2900dd2a8a0b3`** |
+
+Both branches deleted; 0 open source PRs. **The authoritative Tirumbippaar source pin is
+`6a8c59c445890e568dfe65cc36c2900dd2a8a0b3`.**
+
+### Official publication CI — PASSED
+
+`Tirumbippaar English reader QA`, run **`33247433975`** (#288) on `b4ab599d`, event `push`:
+**completed / success**, all 11 steps of `qa-and-build` succeeded with **nothing skipped**. The
+previously failing migration step now reports *"Reader gates already index-authoritative; nothing to
+migrate."* and continues.
+
+| step | result |
+|---|---|
+| reader preflight | **PASS** |
+| whole-work QA | **PASS** — 93 scenes · 1330 units · 1042 dialogue links · 12 cross-page |
+| deterministic EPUB 3 package | **PASS** — 93 scenes · 1330 units |
+| metadata synchronization | **PASS** |
+| generated-package commit | **PASS** — pushed `6a8c59c4`, 8 files |
+
+**Official EPUB:** `works/tirumbippaar/editions/en/tirumbippaar-en.epub`, **370,204 bytes**, SHA-256
+**`955ce8adffe318ccbb5f77cb65afebb6951b7c7ac3091343adf2fd3dcb996ae0`** — recomputed from final main and
+identical to the CI-reported value, confirming the build is genuinely deterministic. `QA_REPORT.md`
+**PASS** (1,330 verified / 0 review / 0 draft); `EPUB_QA_REPORT.md` **PASS**; `manifest.json` and
+`package-manifest.json` both `complete-verified`, pinning `source_scan_sha256`
+`973b9c3f7b84d6a1902a4a472af8799c783bf1ec2d6cd015796fc1df1ce59682` — the controlling scan.
+
+### Final validation on `6a8c59c4`
+
+| gate | result |
+|---|---|
+| canonical↔scene | **1348/1348 exact text; 1348/1348 exact text + page; 0 mismatches** |
+| page attribution | **0** |
+| scene↔dialogue text | **0 unexplained** (2 documented scene-72 structural records) |
+| scene↔dialogue provenance | **0** |
+| dialogue↔translation provenance | **0** |
+| dialogue links | **1042 exactly once**, 0 duplicate, 0 orphan, 0 unlinked |
+| translation QA / reader preflight | **PASS** |
+| heading surfaces | 18 opening + 22 closing · **0 unresolved** |
+
+Census: **104** canonical pages (83 `verified` + 21 `verified-reconciled`, **0 draft, 0 review**,
+`printed = pdf − 8` with 0 violations) · **93** scenes · **1042** dialogue records · **1330**
+translation units · **39** character entities / **45** exact source labels · **8** song occurrences
+(3 verified, 5 unresolved, **0 attributed to Kalaignar**).
+
+`ஊஹும்` is user-confirmed and preserved at **5/5/5** with **0 `ஊஹூம்` in live reading layers**.
+Scene 45 reads **`பாண்டியன் : தொழிலாளர்கள்`** in canonical and scene; `tirumbippaar-s045-d013` holds
+`speaker_label` `பாண்டியன்`, text `தொழிலாளர்கள்`, provenance PDF 59 / printed 51, and **no
+`பாண்டியன்.` source-label variant exists**. Heading anomalies retained exactly as printed:
+**`காட்சி 5[`**, **`காட்சி 36`** (no closing glyph), **`காட்சி 43].`**. The **PDF-2 printer-imprint
+crop remains partial, front matter, documented, NON-BLOCKING and never reconstructed**.
+
+### Status
+
+**D1.1 COMPLETE · D1.2 COMPLETE · PUBLICATION PACKAGE COMPLETE.**
+
+**Tirumbippaar SOURCE MAIN IS READY FOR D2**, pinned at
+`6a8c59c445890e568dfe65cc36c2900dd2a8a0b3`.
+
+*(Historical note, superseded: the earlier publication-CI failure on `505b1ea7` — run `33246879335` —
+was a non-idempotent workflow migration step, not a source-content defect. It is fixed and resolved.)*
+
+### Next activity
+
+**Phase D2 — Tirumbippaar Digital Library integration.**
+
+**D2 has NOT started.** No importer, vendored data, reader route, source route, catalogue entry,
+sitemap entry, rights metadata or components exist, and `pugazg/kalaignar-autobiography` is unmodified
+at `15405c7ff252ad98250a2ad50b4d718598300ded`. **Do not begin D2 until the owner gives an explicit
+"proceed" instruction in a later task.**
+
+---
 
 > **Status:** **Phase 1 COMPLETE** · **Phase 2 (Cinema / Manohara) COMPLETE** · **Phase 3 — Speeches
 > is ACTIVE but PAUSED by owner direction (not complete)** · **Phase 4 — Poetry is ACTIVE** ·
