@@ -188,8 +188,8 @@ already carries the corrected `புண்யகோடி`.
 ### Status
 
 **D1.1 CONTENT RECONCILIATION: PASS — and source PR #2 is now MERGED**, squash
-`d4b394a7b4582935792df4cf2840fbd466dd41c5`, which is current source `main`; branch deleted, 0 open
-source PRs. Post-merge verification on that main: `ஊஹும்` 5/5/5 in transcription, scenes and
+`d4b394a7b4582935792df4cf2840fbd466dd41c5` (the source `main` at that time; **now superseded by the
+D1.2 merge `505b1ea7`**); branch deleted. Post-merge verification on that main: `ஊஹும்` 5/5/5 in transcription, scenes and
 dialogues with **zero `ஊஹூம்` anywhere in the work**; the restored `கருடன் : இல்லை பரந்தாமன்.` is
 canonical exactly once at the head of the PDF 14 block, in `scene-05` after the `pdf=14` anchor, not
 duplicated, and carried by `tirumbippaar-s005-d007`; census 104 pages / 93 scenes / 1042 dialogue
@@ -197,8 +197,8 @@ records / 1330 translation units / 1042 links exactly once, 0 duplicates, 0 orph
 
 ## Phase D1.2 — strict derivative-fidelity audit — CONTENT PASS on PR #3 head
 
-**Source PR #2 is merged** at `d4b394a7b4582935792df4cf2840fbd466dd41c5`, current source `main`.
-D1.1 is complete.
+**Source PR #2 is merged** at `d4b394a7b4582935792df4cf2840fbd466dd41c5` — the source `main` at that
+time, **now superseded by the D1.2 merge `505b1ea7`**. D1.1 is complete.
 
 **D1.2 lives on source PR #3** (`fix/tirumbippaar-strict-derivative-fidelity`), validated on the clean
 committed head **`49e1b2c4387190e4fe0aea822f8e68b338dccb9d`**.
@@ -239,23 +239,73 @@ reading layers**. The **PDF-2 printer-imprint crop remains partial, documented a
 
 Reader and EPUB artifacts are **not** committed — CI regenerates them on push to `main`.
 
+### Source PR #3 — MERGED
+
+Reviewed head `49e1b2c4387190e4fe0aea822f8e68b338dccb9d`, squash-merged as
+**`505b1ea7382bacb39c82d9f314668a67a38219bd`**, which is current source `main`. Branch deleted.
+**D1.2 source-fidelity closure is complete.**
+
+### Post-merge validation on `505b1ea7` — all content gates PASS
+
+| gate | result |
+|---|---|
+| canonical↔scene | **1348/1348 exact text; 1348/1348 exact text + page; 0 mismatches** |
+| page attribution | **0** |
+| scene↔dialogue text | **0 unexplained** (2 documented scene-72 structural records) |
+| scene↔dialogue provenance | **0** |
+| dialogue↔translation provenance | **0** |
+| dialogue links | **1042 exactly once**, 0 duplicate, 0 orphan, 0 unlinked |
+| translation QA / reader preflight | **PASS** |
+| heading surfaces | 18 location-opening + 22 scene-number closing · **0 unresolved** |
+
+Census on merged main: **104** canonical pages (83 `verified` + 21 `verified-reconciled`, **0 draft,
+0 review**, `printed = pdf − 8` with 0 violations) · **93** scenes · **1042** dialogue records ·
+**1330** translation units · **39** character entities / **45** exact source labels · **8** song
+occurrences (3 verified, 5 unresolved, **0 attributed to Kalaignar**).
+
+`ஊஹும்` is user-confirmed and preserved at **5/5/5** with **0 `ஊஹூம்` in live reading layers**.
+Scene 45 reads **`பாண்டியன் : தொழிலாளர்கள்`** in canonical and scene, with `tirumbippaar-s045-d013`
+holding `speaker_label` `பாண்டியன்`, text `தொழிலாளர்கள்`, provenance PDF 59 / printed 51 — and **no
+`பாண்டியன்.` label variant exists**. Heading anomalies retained as printed: `காட்சி 5[`,
+`காட்சி 36` (no closing glyph), `காட்சி 43].`. The **PDF-2 printer-imprint crop remains partial,
+front matter, documented, NON-BLOCKING and never reconstructed**.
+
+### ⚠️ Post-merge CI FAILS — this is the D2 blocker
+
+`tirumbippaar-english-edition.yml` run **`33246879335`** on `505b1ea7`: **completed / failure**.
+Job `qa-and-build` aborted at step 6, *Migrate reader gates to index-authoritative reconciliation
+status*, with `Expected legacy per-file scene-status gate was not found`. Steps 7–11 — reader
+preflight, whole-work QA, EPUB packaging, metadata sync and the generated-package commit — were all
+**skipped**, so **no reader or EPUB artifacts exist for merged main**.
+
+**This is not caused by D1.2.** The step is a one-shot in-place patcher of `editions/en/build.py` that
+raises `SystemExit` when its legacy target strings are absent. The migration already ran and was
+committed (run `33144094024`, sha `39ab5aec`); `build.py` now holds the migrated form and neither
+legacy string, so the step can never succeed again. The same step failed on **`d4b394a7`** — the PR #2
+merge that was PR #3's base — and on every later push to `main`.
+
+**Fix is open as source PR #4** (`fix/tirumbippaar-english-edition-idempotent-migration`), one file,
+making the step no-op when already migrated while keeping its guard. Verified locally against
+`505b1ea7`: migration no-ops, preflight passes, whole-work QA passes (93 scenes / 1330 units / 1042
+links / 12 cross-page) and deterministic EPUB packaging passes. Those are local results only; the
+official artifacts come from CI after PR #4 merges. **PR #4 is unmerged, awaiting independent review.**
+
 ### Status
 
-**D1.2 content reconciliation: PASS on the PR #3 head.** PR #3 remains **open and unmerged** pending
-independent review, so **source `main` is NOT yet ready for D2** — it still lacks the D1.2 repairs.
-**D2 has not started.**
-
-
-## Status
-
-**Source `main` now carries the D1.1 reconciliation**, but Tirumbippaar is **NOT yet READY FOR D2**:
-the D1.2 gate has not reached 0 unexplained source-visible differences, and the audit has shown the
-derivative layers still disagree with the scan in both directions.
+**D1.2 source-fidelity closure: COMPLETE and merged.** But **Tirumbippaar source `main` is NOT READY
+FOR D2**, for exactly one reason: the reader/EPUB publication CI does not pass on `505b1ea7`, so the
+normal reader and EPUB artifacts have never been generated. Every content gate passes; the blocker is
+the pipeline.
 
 ### Next activity
 
-Independent review of source PR #2. **D2 has not started** — no importer, reader, catalogue, sitemap,
-source page or rights model, and `pugazg/kalaignar-autobiography` is unmodified.
+Independent review of **source PR #4**, then merge it and confirm the reader/EPUB CI passes on `main`.
+Once that is green, Tirumbippaar becomes **READY FOR D2** and the activity after it is
+**Phase D2 — Tirumbippaar Digital Library integration planning / importer**.
+
+**Do not start D2 until the owner gives an explicit "proceed" instruction in a later task.**
+**D2 has not started** — no importer, reader, catalogue, sitemap, source page or rights model, and
+`pugazg/kalaignar-autobiography` is unmodified.
 
 ---
 
