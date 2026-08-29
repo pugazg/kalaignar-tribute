@@ -211,13 +211,42 @@ reading layers**. The **PDF-2 printer-imprint crop remains partial, documented a
 
 Reader and EPUB artifacts are **not** committed — CI regenerates them on push to `main`.
 
-### Source PR #3 — MERGED
+### Source PR #3 — MERGED · CI-fix PR #4 — MERGED · publication package COMPLETE
 
-Reviewed head `49e1b2c4387190e4fe0aea822f8e68b338dccb9d`, squash-merged as
-**`505b1ea7382bacb39c82d9f314668a67a38219bd`**, which is current source `main`. Branch deleted.
-**D1.2 source-fidelity closure is complete.**
+| stage | SHA |
+|---|---|
+| D1.2 source fidelity, PR #3 reviewed head | `49e1b2c4387190e4fe0aea822f8e68b338dccb9d` |
+| PR #3 squash merge | `505b1ea7382bacb39c82d9f314668a67a38219bd` |
+| CI-fix PR #4 reviewed head | `9bd4b1f370c7f6602648e5e3e1e7cfced4edd34e` |
+| PR #4 squash merge | `b4ab599d8726f45780a72e5d4531d52583b7f220` |
+| **CI publication commit — authoritative source pin** | **`6a8c59c445890e568dfe65cc36c2900dd2a8a0b3`** |
 
-### Post-merge validation on `505b1ea7` — all content gates PASS
+Both branches deleted; 0 open source PRs. **The authoritative Tirumbippaar source pin is
+`6a8c59c445890e568dfe65cc36c2900dd2a8a0b3`.**
+
+### Official publication CI — PASSED
+
+`Tirumbippaar English reader QA`, run **`33247433975`** (#288) on `b4ab599d`, event `push`:
+**completed / success**, all 11 steps of `qa-and-build` succeeded with **nothing skipped**. The
+previously failing migration step now reports *"Reader gates already index-authoritative; nothing to
+migrate."* and continues.
+
+| step | result |
+|---|---|
+| reader preflight | **PASS** |
+| whole-work QA | **PASS** — 93 scenes · 1330 units · 1042 dialogue links · 12 cross-page |
+| deterministic EPUB 3 package | **PASS** — 93 scenes · 1330 units |
+| metadata synchronization | **PASS** |
+| generated-package commit | **PASS** — pushed `6a8c59c4`, 8 files |
+
+**Official EPUB:** `works/tirumbippaar/editions/en/tirumbippaar-en.epub`, **370,204 bytes**, SHA-256
+**`955ce8adffe318ccbb5f77cb65afebb6951b7c7ac3091343adf2fd3dcb996ae0`** — recomputed from final main and
+identical to the CI-reported value, confirming the build is genuinely deterministic. `QA_REPORT.md`
+**PASS** (1,330 verified / 0 review / 0 draft); `EPUB_QA_REPORT.md` **PASS**; `manifest.json` and
+`package-manifest.json` both `complete-verified`, pinning `source_scan_sha256`
+`973b9c3f7b84d6a1902a4a472af8799c783bf1ec2d6cd015796fc1df1ce59682` — the controlling scan.
+
+### Final validation on `6a8c59c4`
 
 | gate | result |
 |---|---|
@@ -228,56 +257,38 @@ Reviewed head `49e1b2c4387190e4fe0aea822f8e68b338dccb9d`, squash-merged as
 | dialogue↔translation provenance | **0** |
 | dialogue links | **1042 exactly once**, 0 duplicate, 0 orphan, 0 unlinked |
 | translation QA / reader preflight | **PASS** |
-| heading surfaces | 18 location-opening + 22 scene-number closing · **0 unresolved** |
+| heading surfaces | 18 opening + 22 closing · **0 unresolved** |
 
-Census on merged main: **104** canonical pages (83 `verified` + 21 `verified-reconciled`, **0 draft,
-0 review**, `printed = pdf − 8` with 0 violations) · **93** scenes · **1042** dialogue records ·
-**1330** translation units · **39** character entities / **45** exact source labels · **8** song
-occurrences (3 verified, 5 unresolved, **0 attributed to Kalaignar**).
+Census: **104** canonical pages (83 `verified` + 21 `verified-reconciled`, **0 draft, 0 review**,
+`printed = pdf − 8` with 0 violations) · **93** scenes · **1042** dialogue records · **1330**
+translation units · **39** character entities / **45** exact source labels · **8** song occurrences
+(3 verified, 5 unresolved, **0 attributed to Kalaignar**).
 
 `ஊஹும்` is user-confirmed and preserved at **5/5/5** with **0 `ஊஹூம்` in live reading layers**.
-Scene 45 reads **`பாண்டியன் : தொழிலாளர்கள்`** in canonical and scene, with `tirumbippaar-s045-d013`
-holding `speaker_label` `பாண்டியன்`, text `தொழிலாளர்கள்`, provenance PDF 59 / printed 51 — and **no
-`பாண்டியன்.` label variant exists**. Heading anomalies retained as printed: `காட்சி 5[`,
-`காட்சி 36` (no closing glyph), `காட்சி 43].`. The **PDF-2 printer-imprint crop remains partial,
-front matter, documented, NON-BLOCKING and never reconstructed**.
-
-### ⚠️ Post-merge CI FAILS — this is the D2 blocker
-
-`tirumbippaar-english-edition.yml` run **`33246879335`** on `505b1ea7`: **completed / failure**.
-Job `qa-and-build` aborted at step 6, *Migrate reader gates to index-authoritative reconciliation
-status*, with `Expected legacy per-file scene-status gate was not found`. Steps 7–11 — reader
-preflight, whole-work QA, EPUB packaging, metadata sync and the generated-package commit — were all
-**skipped**, so **no reader or EPUB artifacts exist for merged main**.
-
-**This is not caused by D1.2.** The step is a one-shot in-place patcher of `editions/en/build.py` that
-raises `SystemExit` when its legacy target strings are absent. The migration already ran and was
-committed (run `33144094024`, sha `39ab5aec`); `build.py` now holds the migrated form and neither
-legacy string, so the step can never succeed again. The same step failed on **`d4b394a7`** — the PR #2
-merge that was PR #3's base — and on every later push to `main`.
-
-**Fix is open as source PR #4** (`fix/tirumbippaar-english-edition-idempotent-migration`), one file,
-making the step no-op when already migrated while keeping its guard. Verified locally against
-`505b1ea7`: migration no-ops, preflight passes, whole-work QA passes (93 scenes / 1330 units / 1042
-links / 12 cross-page) and deterministic EPUB packaging passes. Those are local results only; the
-official artifacts come from CI after PR #4 merges. **PR #4 is unmerged, awaiting independent review.**
+Scene 45 reads **`பாண்டியன் : தொழிலாளர்கள்`** in canonical and scene; `tirumbippaar-s045-d013` holds
+`speaker_label` `பாண்டியன்`, text `தொழிலாளர்கள்`, provenance PDF 59 / printed 51, and **no
+`பாண்டியன்.` source-label variant exists**. Heading anomalies retained exactly as printed:
+**`காட்சி 5[`**, **`காட்சி 36`** (no closing glyph), **`காட்சி 43].`**. The **PDF-2 printer-imprint
+crop remains partial, front matter, documented, NON-BLOCKING and never reconstructed**.
 
 ### Status
 
-**D1.2 source-fidelity closure: COMPLETE and merged.** But **Tirumbippaar source `main` is NOT READY
-FOR D2**, for exactly one reason: the reader/EPUB publication CI does not pass on `505b1ea7`, so the
-normal reader and EPUB artifacts have never been generated. Every content gate passes; the blocker is
-the pipeline.
+**D1.1 COMPLETE · D1.2 COMPLETE · PUBLICATION PACKAGE COMPLETE.**
+
+**Tirumbippaar SOURCE MAIN IS READY FOR D2**, pinned at
+`6a8c59c445890e568dfe65cc36c2900dd2a8a0b3`.
+
+*(Historical note, superseded: the earlier publication-CI failure on `505b1ea7` — run `33246879335` —
+was a non-idempotent workflow migration step, not a source-content defect. It is fixed and resolved.)*
 
 ### Next activity
 
-Independent review of **source PR #4**, then merge it and confirm the reader/EPUB CI passes on `main`.
-Once that is green, Tirumbippaar becomes **READY FOR D2** and the activity after it is
-**Phase D2 — Tirumbippaar Digital Library integration planning / importer**.
+**Phase D2 — Tirumbippaar Digital Library integration.**
 
-**Do not start D2 until the owner gives an explicit "proceed" instruction in a later task.**
-**D2 has not started** — no importer, reader, catalogue, sitemap, source page or rights model, and
-`pugazg/kalaignar-autobiography` is unmodified.
+**D2 has NOT started.** No importer, vendored data, reader route, source route, catalogue entry,
+sitemap entry, rights metadata or components exist, and `pugazg/kalaignar-autobiography` is unmodified
+at `15405c7ff252ad98250a2ad50b4d718598300ded`. **Do not begin D2 until the owner gives an explicit
+"proceed" instruction in a later task.**
 
 ---
 
