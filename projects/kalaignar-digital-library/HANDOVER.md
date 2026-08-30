@@ -378,7 +378,11 @@ catalogue card says "Kalaignar's story and dialogue", never that he wrote the so
 ### Settled source-fidelity decisions — do not reopen
 
 - **`ஊஹும்`** — 5 in live production; **`ஊஹூம்`** — 0. The latter is superseded, not an alternative.
-- Scene 45 reads **`பாண்டியன் : தொழிலாளர்கள்`**. No `பாண்டியன்.` variant exists.
+- Scene 45 reads **`பாண்டியன் : தொழிலாளர்கள்`**. No `பாண்டியன்.` **source-label** variant exists for
+  scene 45. (Stated precisely: the settled finding is about the source-label inventory, which stays at
+  45 exact labels — not a broader claim that the string never appeared anywhere in the derivative
+  layers. A `பாண்டியன். :` form did occur in canonical and scene text and was corrected upstream in
+  D1.2.)
 - Headings retained exactly as printed: **`காட்சி 5[`**, **`காட்சி 36`** (no closing glyph),
   **`காட்சி 43].`**.
 - The PDF-2 printer-imprint crop stays partial, front matter, documented and never reconstructed.
@@ -420,9 +424,15 @@ QA language throughout is **archive-recorded**, **automated QA** and **scan-adju
 1. **Manohara source-drift audit** — future work, not started.
 2. **Validator migration** — **PAUSED** after the Manohara migration; resume only on explicit owner
    instruction.
-3. **`components/ManoharaReader.tsx`** carries the phrase "Kalaignar's original Tamil text" over a
-   composite booklet — the same wording corrected for Tirumbippaar in D2.2. Review it separately
-   if/when Manohara is next touched. Not a Tirumbippaar blocker.
+3. **`components/ManoharaReader.tsx`** carries the phrase "Kalaignar's original Tamil text". This
+   was surfaced during Tirumbippaar review as a separate wording **question**, and was deliberately
+   **not adjudicated** there. It is **not** established that it is wrong: `data/library.ts` records
+   Manohara's booklet as Kalaignar's work throughout — which is exactly why the nationalisation
+   rights model applies to Manohara and not to Parasakthi or Tirumbippaar — so the phrase may well be
+   correct for that work. Tirumbippaar needed different wording because Tirumbippaar is composite,
+   not because Manohara was found to be. Do not change it without re-checking Manohara's own
+   source/attribution model, preferably during the future Manohara source-drift audit. Not a
+   Tirumbippaar blocker.
 4. **`components/StorySource.tsx`** carries a universal "stored in no archive" scan-storage claim —
    the same wording narrowed for Tirumbippaar in D2.2. Separate question.
 5. **Tirumbippaar internal catalogue comment** in `data/library.ts` says song/performance material

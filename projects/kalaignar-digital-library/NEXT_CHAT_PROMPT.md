@@ -321,7 +321,7 @@ error from expected Tamil or punctuation convention.
 
 - **Phase 1 — Library Foundation:** COMPLETE, merged, production-verified.
 - **Phase 2 — Cinema / Manohara:** COMPLETE, merged, production-verified.
-- **Phase 3 — Speeches: ACTIVE but PAUSED by owner direction, NOT complete.** I asked for the next work to come from a category **other than speeches**, which produced Phase 4 — Poetry. Do not resume speech expansion unless I explicitly ask to return to speeches.
+- **Phase 3 — Speeches: ACTIVE, NOT complete.** *(Historical context: I asked at the time for the next work to come from a category **other than speeches**, which produced Phase 4 — Poetry. That pause is **historical and superseded** — see the current post-Tirumbippaar rule above; it does not exclude speeches from consideration now. No speech work is authorized.)*
   - **Benchmark #1 — உதயக் கதிர் / Udhaya Kathir** (assembly speech): COMPLETE, merged, production-verified (PR #18).
   - **Benchmark #2 — பூந்தோட்டம் / Poonthottam** (public speech): COMPLETE, merged, production-verified (PR #20), plus the PR #21 presentation/provenance hotfix.
   - **Benchmark #3 — அறப்போர் / Arappor** (public speech): COMPLETE, merged, production-verified (PR #23).
@@ -457,11 +457,23 @@ or begin a work automatically.
 - **Phase-6 Benchmark #2 (a second Fiction work):** NOT STARTED / NOT SELECTED.
 - **Poetry Benchmark #2:** NOT STARTED / NOT SELECTED / **NOT APPROVED FOR IMPLEMENTATION** — at live `kalaignar-poems` `2230a8d` a second work `anaiya-vilakku-anna` exists, but `anaiya-vilakku-anna` (அணையா விளக்கு அண்ணா) is **NOT READY**: of 19 source pages only **1** page record exists, Tamil assembly is **pending**, English translation is **pending**, and the work records **no SHA-256 and no byte size**. A candidate source exists, but it is **not approved for implementation**.
 - **Phase-5 Benchmark #2 (a second Essays work):** NOT STARTED / NOT SELECTED.
-- **Speech Benchmark #4:** NOT STARTED / NOT SELECTED / **PAUSED** by owner direction.
+- **Speech Benchmark #4:** NOT STARTED / NOT SELECTED / NOT AUTHORIZED. *(The earlier owner
+  direction that paused speech expansion is historical context; after Tirumbippaar it no longer
+  excludes speeches from consideration. Eligible to be compared again — not authorized.)*
 
 ### Default for "Proceed with next activity"
 
-Inspect the **live** non-speech source repositories and recommend **ONE** next source-ready Digital Library benchmark from a **non-speech** category. Do **not** implement it yourself.
+**Category-neutral, and superseding the older non-speech-only default.** Fetch live control,
+implementation and relevant source state, and read `HANDOVER.md` completely. Inspect the currently
+recorded roadmap candidates **without excluding a category because of an older historical rule** —
+printed public-speech booklets and audio/public speeches are eligible for consideration again, and so
+are non-speech categories. Being eligible for consideration is **not** authorization.
+
+**Do NOT implement or select a new benchmark unless the owner has explicitly authorized that roadmap
+step.** Do not automatically resume any held or paused stream. If the owner asks for a
+recommendation, compare live source-ready candidates and return one recommended category, one
+recommended work, why it is the strongest next source-ready/form/provenance benchmark, and a complete
+ready-to-paste Claude Code prompt. Do **not** implement it yourself.
 
 At minimum consider live state from repositories such as `pugazg/kalaignar-poems`, `pugazg/kalaignar-essays`, `pugazg/kalaignar-novels`, `pugazg/kalaignar-short-stories`, `pugazg/kalaignar-stage-plays`, `pugazg/kalaignar-cinema-works` and `pugazg/kalaignar-literary-commentary`. **Do not assume every one of them has an eligible work**, and do not preselect from historical planning candidate names.
 
@@ -476,7 +488,10 @@ Return:
 
 **If, by that future date, another source-ready poem has appeared in `kalaignar-poems`, Poetry Benchmark #2 may legitimately compete in this selection — but do not privilege Poetry merely because Benchmark #1 was Poetry.**
 
-Speech repositories are excluded from this default because Phase 3 is paused; if I explicitly ask to resume speeches, that overrides the pause. If I explicitly name a non-speech category, follow that category instead of running broad selection.
+*(Superseded: this default previously excluded speech repositories because Phase 3 was paused. After
+Tirumbippaar, no category is excluded by that historical rule — speech and non-speech candidates may
+be compared when I ask. Nothing about that makes any speech work authorized.)* If I explicitly name a
+category, follow that category instead of running broad selection.
 
 Whichever work is selected, the activity must:
 
@@ -542,6 +557,6 @@ Read the current Digital Library handover completely, inspect the live implement
 
 **Do not resume Tirumbippaar** — Phase D is closed through D2.5.
 
-When I ask for it, inspect the **live source repositories** and recommend the single strongest next source-ready benchmark — naming the category and the one work, and why — together with a complete ready-to-paste Claude prompt. Do not implement the work yourself, do not assume a category, do not resume speeches or validator migration, and do not restart mobile unless I ask.
+When I ask for it, inspect the **live source repositories** and recommend the single strongest next source-ready benchmark — naming the category and the one work, and why — together with a complete ready-to-paste Claude prompt. Do not implement the work yourself and do not assume a category: speech and non-speech candidates are both eligible for comparison, and none is authorized until I say so. Validator migration stays **PAUSED** and mobile stays **ON HOLD** unless I explicitly resume them.
 
 ---
