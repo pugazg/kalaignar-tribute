@@ -24,21 +24,26 @@ Then inspect the live implementation repository:
 
 **Treat current GitHub `main`, open PRs and deployed site state as authoritative** over any SHA, count or status paragraph written in a handover, including this file.
 
-## ⚠️ CURRENT STATE — 2026-08-26 (supersedes the phase list below)
+## ⚠️ CURRENT STATE — 2026-08-30 (supersedes the phase list below)
 
 **The "Where the project actually stands" list below stops at Phase 7 and is HISTORICAL.** Its work
 and shelf counts are stale. It is kept for the completed-phase detail it records, and has not been
 retro-edited. **Live GitHub wins over anything in it.**
 
-Verified live: implementation `main` **`15405c7ff252ad98250a2ad50b4d718598300ded`**, **0 open PRs**,
-**24 published works**, **9 non-empty shelves**, **2853 prerendered pages**, **2849 sitemap URLs**.
+Verified live 2026-08-30: implementation `main` **`766d68680cecca549d4d752e32561834f7dde0f5`**,
+**0 open PRs**, **25 published works**, **9 non-empty shelves**, **2948 prerendered pages**,
+**2944 sitemap URLs**.
 
-Shelf census: Life Writing 1 · Letters 1 · Fiction 2 · Poetry 1 · Drama 1 · **Cinema Writing 2** ·
+Shelf census: Life Writing 1 · Letters 1 · Fiction 2 · Poetry 1 · Drama 1 · **Cinema Writing 3** ·
 Speeches 13 · Essays & Articles 1 · Literary Commentary 2.
 
+*(The previous 2026-08-26 line — `15405c7f…`, 24 works, 2853 pages, 2849 sitemap URLs, Cinema
+Writing 2 — was the pre-Tirumbippaar state and is superseded.)*
+
 Shipped after the Phase-7 narrative below: **Thirukkural — கலைஞர் உரை** (with Daily Kural), the
-**Assembly-speech anthology** (Speeches → 13), **Phase B — கிழவன் கனவு** (Fiction → 2), and
-**Phase C — பராசக்தி** (Cinema Writing → 2).
+**Assembly-speech anthology** (Speeches → 13), **Phase B — கிழவன் கனவு** (Fiction → 2),
+**Phase C — பராசக்தி** (Cinema Writing → 2), and **Phase D — திரும்பிப்பார்**
+(Cinema Writing → 3, catalogue → 25).
 
 ### Phase C — பராசக்தி: COMPLETE and CLOSED
 
@@ -275,20 +280,40 @@ crop remains partial, front matter, documented, NON-BLOCKING and never reconstru
 
 **D1.1 COMPLETE · D1.2 COMPLETE · PUBLICATION PACKAGE COMPLETE.**
 
-**Tirumbippaar SOURCE MAIN IS READY FOR D2**, pinned at
-`6a8c59c445890e568dfe65cc36c2900dd2a8a0b3`.
+**Tirumbippaar source main was released for D2** at
+`6a8c59c445890e568dfe65cc36c2900dd2a8a0b3`, now the published provenance authority.
 
 *(Historical note, superseded: the earlier publication-CI failure on `505b1ea7` — run `33246879335` —
 was a non-idempotent workflow migration step, not a source-content defect. It is fixed and resolved.)*
 
-### Next activity
+## Phase D2 — திரும்பிப்பார் / Tirumbippaar integration — ✅ COMPLETE and CLOSED
 
-**Phase D2 — Tirumbippaar Digital Library integration.**
+**TIRUMBIPPAAR PHASE D COMPLETE** — D1.1 · D1.2 · SOURCE PUBLICATION PACKAGE · D2.1 · D2.2 · D2.3 ·
+D2.4 · D2.5 all COMPLETE. *(The not-yet-started note previously here is superseded and removed.)*
 
-**D2 has NOT started.** No importer, vendored data, reader route, source route, catalogue entry,
-sitemap entry, rights metadata or components exist, and `pugazg/kalaignar-autobiography` is unmodified
-at `15405c7ff252ad98250a2ad50b4d718598300ded`. **Do not begin D2 until the owner gives an explicit
-"proceed" instruction in a later task.**
+Source pin `6a8c59c445890e568dfe65cc36c2900dd2a8a0b3` · implementation `main` after D2.4
+`766d68680cecca549d4d752e32561834f7dde0f5` · post-merge Library CI `33292800096` success · GitHub
+Production deployment `6163236518` success for that SHA.
+
+PR chain: **#53** D2.1 data · **#54** D2.2 reader/source routes · **#55** D2.3 catalogue ·
+**#56** D2.4 sitemap.
+
+Live: 25 catalogue works · Cinema Writing 3 (`manohara → parasakthi → tirumbippaar`) · 2944 sitemap
+URLs with **95** Tirumbippaar (1 landing + 93 registry scenes + 1 source) · 2948 build pages. All 95
+production URLs 200; sitemap scene set equals the registry exactly; off-registry slugs 404.
+
+Census at the pin: 104 pages · 93 scenes · 1042 dialogue records · 1330 English units · 39 entities ·
+45 labels · 8 song/performance occurrences (3 verified to others, 5 unresolved, **0 Kalaignar**).
+
+**Rights deliberately unset** for the whole publication — composite work, same posture as Parasakthi.
+The 1953 `உரிமையுடையது.` notice is printed source evidence only. Credit is role-scoped to the printed
+`கதை - வசனம்`.
+
+**Settled, do not reopen:** `ஊஹும்` (5 live) not `ஊஹூம்` (0) · scene 45 `பாண்டியன் : தொழிலாளர்கள்` ·
+headings `காட்சி 5[`, `காட்சி 36`, `காட்சி 43].`. Source-visible irregularity is **not** inferred to be
+error from expected Tamil or punctuation convention.
+
+**Do NOT reopen Tirumbippaar** absent an explicit new issue or a new source release.
 
 ---
 
@@ -391,7 +416,39 @@ Your job is to:
 
 ## Immediate next activity
 
-**Phase-7 Drama Benchmark #1 is merged, production-verified and documented. No next implementation benchmark has been started, and no next work or category has been selected.**
+**Tirumbippaar Phase D is CLOSED through D2.5 (see above). No next implementation benchmark has been started, and no next work or category has been selected.**
+
+**Do not continue Tirumbippaar D2 work.** It is complete and production-verified.
+
+Before proposing anything, the next chat must: fetch live control and implementation state, read
+`HANDOVER.md` completely, and **confirm owner authorization** for the next roadmap work. Do not select
+or begin a work automatically.
+
+**Known roadmap candidates after Tirumbippaar — none selected, none authorized:**
+
+- printed public-speech booklets;
+- audio / public speeches;
+- the cinema song-lyrics taxonomy decision;
+- **Mandhiri Kumari — NOT ready**;
+- **Anaiyaa Vilakku Anna — NOT ready**;
+- blocked stage-play stubs.
+
+**Standing paused / held work — do not fold any of these into the next benchmark automatically:**
+
+- **Validator migration remains PAUSED** after the Manohara migration, unless the owner explicitly
+  resumes it.
+- **Mobile remains ON HOLD.**
+- **Manohara source-drift audit remains separate future work.**
+- `ManoharaReader` "Kalaignar's original Tamil text" wording and `StorySource` universal
+  scan-storage wording are **separate pre-existing questions**, to be reviewed only if/when those
+  components are next touched.
+- **Tirumbippaar internal catalogue comment** in `data/library.ts` says song/performance material
+  "is not his" while five occurrences are unresolved — strictly, unresolved authorship does not
+  establish that those five are someone else's. Safer future wording: *"song/performance material with
+  mixed or unresolved authorship — three attributed to others, five unresolved, none attributed to
+  Kalaignar."* Reviewed as **NON-BLOCKING**; fold it into a future PR that legitimately edits that
+  comment, and do **not** open an implementation change for it on its own.
+- A scoped **`WorkAttribution`** rights model for composite works remains a separate future issue.
 
 - **Poetry Benchmark #1:** COMPLETE / MERGED / PRODUCTION-VERIFIED.
 - **Phase-5 Essays Benchmark #1:** COMPLETE / MERGED / PRODUCTION-VERIFIED.
@@ -481,8 +538,10 @@ Every Claude prompt should contain:
 
 ## Start now
 
-Read the current Digital Library handover completely, inspect the live implementation repository (current `main`, open PRs, production `/read`, the three speech routes and the poem routes `/poems/idhayathai-thanthidu-anna` and `…/source`), and verify the Phase-4 checkpoint above. Then tell me the verified current state.
+Read the current Digital Library handover completely, inspect the live implementation repository (current `main`, open PRs, production `/read`, and the Tirumbippaar route family `/cinema/tirumbippaar`, a representative scene and `/cinema/tirumbippaar/source`), and verify the 2026-08-30 checkpoint above. Then tell me the verified current state.
 
-When I ask for it, inspect the **live non-speech source repositories** and recommend the single strongest next source-ready benchmark — naming the category and the one work, and why — together with a complete ready-to-paste Claude prompt. Do not implement the work yourself, do not assume Poetry is the next category, and do not resume speeches unless I ask.
+**Do not resume Tirumbippaar** — Phase D is closed through D2.5.
+
+When I ask for it, inspect the **live source repositories** and recommend the single strongest next source-ready benchmark — naming the category and the one work, and why — together with a complete ready-to-paste Claude prompt. Do not implement the work yourself, do not assume a category, do not resume speeches or validator migration, and do not restart mobile unless I ask.
 
 ---
