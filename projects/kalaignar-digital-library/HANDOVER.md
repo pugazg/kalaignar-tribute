@@ -1,6 +1,6 @@
 # Kalaignar Digital Library / Reading Room — Master Handover
 
-**Last updated:** 2026-08-26
+**Last updated:** 2026-08-30
 
 ---
 
@@ -11,19 +11,23 @@ Several phases have shipped since it was written, and its work counts, shelf cou
 "last production application-code checkpoint" are stale. It is kept as history and has **not** been
 retro-edited. Where it disagrees with this section or with live GitHub, **live GitHub wins**.
 
-### Verified live state — 2026-08-26
+### Verified live state — 2026-08-30
 
 | | |
 |---|---|
-| Implementation `main` | `15405c7ff252ad98250a2ad50b4d718598300ded` |
+| Implementation `main` | `766d68680cecca549d4d752e32561834f7dde0f5` |
 | Open PRs | 0 |
-| Published works | **24** |
+| Published works | **25** |
 | Non-empty shelves | **9** |
-| Prerendered pages | **2853** |
-| Sitemap URLs | **2849** |
+| Prerendered pages | **2948** |
+| Sitemap URLs | **2944** |
 
 Shelf census: Life Writing 1 · Letters 1 · Fiction 2 · Poetry 1 · Drama 1 ·
-**Cinema Writing 2** · Speeches 13 · Essays & Articles 1 · Literary Commentary 2.
+**Cinema Writing 3** · Speeches 13 · Essays & Articles 1 · Literary Commentary 2.
+
+Verified against live production on 2026-08-30, not carried over from the previous checkpoint. The
+previous 2026-08-26 line — `15405c7f…`, 24 works, 2853 pages, 2849 sitemap URLs, Cinema Writing 2 —
+was the pre-Tirumbippaar state and is superseded.
 
 ### Phases shipped after this document's Phase-7 narrative
 
@@ -34,6 +38,7 @@ merged PRs, not in this file:
 - **Assembly-speech anthology** — the remaining 10 dated sittings, taking Speeches to 13.
 - **Phase B — கிழவன் கனவு** (Fiction short story), taking Fiction to 2.
 - **Phase C — பராசக்தி** (Cinema Writing), taking Cinema Writing to 2.
+- **Phase D — திரும்பிப்பார்** (Cinema Writing), taking Cinema Writing to 3 and the catalogue to 25.
 
 ---
 
@@ -303,20 +308,142 @@ crop remains partial, front matter, documented, NON-BLOCKING and never reconstru
 
 **D1.1 COMPLETE · D1.2 COMPLETE · PUBLICATION PACKAGE COMPLETE.**
 
-**Tirumbippaar SOURCE MAIN IS READY FOR D2**, pinned at
-`6a8c59c445890e568dfe65cc36c2900dd2a8a0b3`.
+**Tirumbippaar source main was released for D2** at
+`6a8c59c445890e568dfe65cc36c2900dd2a8a0b3`, and that pin is now the published provenance authority
+(see Phase D2 below).
 
 *(Historical note, superseded: the earlier publication-CI failure on `505b1ea7` — run `33246879335` —
 was a non-idempotent workflow migration step, not a source-content defect. It is fixed and resolved.)*
 
-### Next activity
+---
 
-**Phase D2 — Tirumbippaar Digital Library integration.**
+## Phase D2 — திரும்பிப்பார் / Tirumbippaar Digital Library integration — ✅ COMPLETE and CLOSED
 
-**D2 has NOT started.** No importer, vendored data, reader route, source route, catalogue entry,
-sitemap entry, rights metadata or components exist, and `pugazg/kalaignar-autobiography` is unmodified
-at `15405c7ff252ad98250a2ad50b4d718598300ded`. **Do not begin D2 until the owner gives an explicit
-"proceed" instruction in a later task.**
+**TIRUMBIPPAAR PHASE D COMPLETE.** D1.1 COMPLETE · D1.2 COMPLETE · SOURCE PUBLICATION PACKAGE
+COMPLETE · D2.1 COMPLETE · D2.2 COMPLETE · D2.3 COMPLETE · D2.4 COMPLETE · D2.5 COMPLETE.
+
+*(This section previously carried a not-yet-started note for D2. That note was accurate when written
+on 2026-08-26, is now superseded, and has been removed rather than left to be misread as current.)*
+
+| | |
+|---|---|
+| Source pin | `6a8c59c445890e568dfe65cc36c2900dd2a8a0b3` |
+| Implementation `main` after D2.4 | `766d68680cecca549d4d752e32561834f7dde0f5` |
+| Post-merge Library CI | `33292800096` — success |
+| Production deployment | GitHub deployment `6163236518`, environment **Production**, state `success`, for that exact SHA |
+
+**PR chain.** #53 — D2.1 deterministic importer and generated data · #54 — D2.2 reader, scene and
+source routes · #55 — D2.3 catalogue entry · #56 — D2.4 sitemap publication.
+
+### Final public state — verified live on 2026-08-30
+
+25 catalogue works · 3 Cinema Writing works (`manohara → parasakthi → tirumbippaar`, onboarding
+order, not year) · 2944 sitemap URLs · **95** of them Tirumbippaar · 2948 clean-build pages.
+
+Route family: `/cinema/tirumbippaar`, `/cinema/tirumbippaar/<93 registry scene slugs>`,
+`/cinema/tirumbippaar/source`. All **95** published URLs returned 200 in production; the live sitemap
+scene set equals the generated registry exactly — 0 missing, 0 extra, 0 duplicates — and off-registry
+slugs (`scene-94`, `scene-00`, `scene-1`, `94`, `caatci-5`) are absent from the sitemap and 404 live.
+
+### Source census — as recorded by the archive at the pin
+
+104 canonical pages · 93 scenes · 1042 dialogue records · 1330 English units · 39 character entities ·
+45 exact printed labels · 8 song/performance occurrences (**3 verified to other people, 5 unresolved,
+0 attributed to Kalaignar**).
+
+Stored Tamil reading layer: 1320 blocks — 923 dialogue, 273 stage-direction, 30 prose, 94 separator;
+1226 non-separator literary blocks. English layer: 1330 units — 1049 dialogue, 262 stage-direction,
+7 song-reference, 2 chant, 10 written-text, **0 full song** — with 12 cross-page units.
+
+**The 923 speaker-labelled Tamil blocks and the 1042 immutable dialogue records are deliberately
+different granularities, not a mismatch:** ten scenes print one speech across several paragraphs.
+
+### Rights posture — deliberately unset
+
+Catalogue-level present-day rights for the whole publication are **deliberately unset**, following
+Parasakthi rather than Manohara. Tirumbippaar is a **composite cinema publication**: Kalaignar's story
+and dialogue alongside song/performance material with mixed or unresolved authorship — three
+occurrences attributed to others, five unresolved, none attributed to Kalaignar. Asserting
+`nationalised-by-tamil-nadu-government` over the whole booklet would claim other people's work as his.
+The schema documents absence as equivalent to `unclassified`, so omission is an honest value.
+
+The printed 1953 notice **`உரிமையுடையது.`** is preserved on `/cinema/tirumbippaar/source` as printed
+source evidence only, labelled `அச்சிட்ட உரிமை அறிவிப்பு`, and is **not** a present-day determination.
+A scoped `WorkAttribution` model for composite works remains separate future project-level work.
+
+Attribution is role-scoped to the printed cover credit **`கதை - வசனம்`** — story and dialogue. The
+catalogue card says "Kalaignar's story and dialogue", never that he wrote the songs; the
+`LibraryWork` schema has no generic `author` field.
+
+### Settled source-fidelity decisions — do not reopen
+
+- **`ஊஹும்`** — 5 in live production; **`ஊஹூம்`** — 0. The latter is superseded, not an alternative.
+- Scene 45 reads **`பாண்டியன் : தொழிலாளர்கள்`**. No `பாண்டியன்.` **source-label** variant exists for
+  scene 45. (Stated precisely: the settled finding is about the source-label inventory, which stays at
+  45 exact labels — not a broader claim that the string never appeared anywhere in the derivative
+  layers. A `பாண்டியன். :` form did occur in canonical and scene text and was corrected upstream in
+  D1.2.)
+- Headings retained exactly as printed: **`காட்சி 5[`**, **`காட்சி 36`** (no closing glyph),
+  **`காட்சி 43].`**.
+- The PDF-2 printer-imprint crop stays partial, front matter, documented and never reconstructed.
+
+**Source-visible irregularity is not inferred to be error** merely because expected Tamil spelling,
+grammar, gender agreement or punctuation convention would suggest another form. The source page
+labels these `அச்சிடப்பட்ட தலைப்பு வேறுபாடுகள்` — differences, not `வழுக்கள்`.
+
+### Reader principles as shipped
+
+Tamil is the default. English **replaces** Tamil on toggle — never two full reading streams at once —
+and is labelled a project-created, source-linked reading translation with the Tamil left
+authoritative. Speaker labels stay in exact printed Tamil in both modes. Stored Tamil `block.text` is
+rendered verbatim and never rebuilt from `speakerLabel + text`. Separators are structural ornament,
+`aria-hidden`, never prose, and the archive kind name `separator` never reaches the reading body.
+Static params and previous/next come from the generated registry, never numeric arithmetic.
+
+### D2.5 production verification — 2026-08-30
+
+Live `/read` shows Tirumbippaar exactly once, on Cinema Writing, third, linking `/cinema/tirumbippaar`.
+The Tamil card description renders by default; switching the global library language (the Navbar
+control, persisted as `nn-lang`) renders the English `descEn` in its place — both descriptions have a
+real display surface. Landing, scenes 01/05/36/43/45/93 and `/source` all 200; `scene-94` 404. The
+Tamil→English→Tamil toggle behaves correctly on scene 45 with 7 Tamil speaker labels retained in
+English mode. Separator renders as an `aria-hidden` ★. The source page carries the identifier
+`TVA_BOK_0014652`, the pin, the scan SHA-256
+`973b9c3f7b84d6a1902a4a472af8799c783bf1ec2d6cd015796fc1df1ce59682`, the edition
+`முதல் பதிப்பு: 1953`, the full census and the historical rights notice, with no stale D2.1
+route-status note, no universal "stored in no archive" claim, no `உரிமம்`, and no blanket present-day
+rights determination. No horizontal overflow at 375px on landing, Tamil scene, English scene or source
+page; the scan hash wraps in full rather than truncating. Print emits exactly one reading stream per
+mode with navigation and controls hidden.
+
+QA language throughout is **archive-recorded**, **automated QA** and **scan-adjudicated upstream**.
+**No human, editorial or expert review of the text is claimed**, because the project has no such layer.
+
+### Outstanding items — separate future work, NOT Tirumbippaar blockers
+
+1. **Manohara source-drift audit** — future work, not started.
+2. **Validator migration** — **PAUSED** after the Manohara migration; resume only on explicit owner
+   instruction.
+3. **`components/ManoharaReader.tsx`** carries the phrase "Kalaignar's original Tamil text". This
+   was surfaced during Tirumbippaar review as a separate wording **question**, and was deliberately
+   **not adjudicated** there. It is **not** established that it is wrong: `data/library.ts` records
+   Manohara's booklet as Kalaignar's work throughout — which is exactly why the nationalisation
+   rights model applies to Manohara and not to Parasakthi or Tirumbippaar — so the phrase may well be
+   correct for that work. Tirumbippaar needed different wording because Tirumbippaar is composite,
+   not because Manohara was found to be. Do not change it without re-checking Manohara's own
+   source/attribution model, preferably during the future Manohara source-drift audit. Not a
+   Tirumbippaar blocker.
+4. **`components/StorySource.tsx`** carries a universal "stored in no archive" scan-storage claim —
+   the same wording narrowed for Tirumbippaar in D2.2. Separate question.
+5. **Tirumbippaar internal catalogue comment** in `data/library.ts` says song/performance material
+   "is not his" while five occurrences are unresolved. Strictly, unresolved authorship does not
+   establish that those five are someone else's. Safer future wording: *"song/performance material
+   with mixed or unresolved authorship — three attributed to others, five unresolved, none attributed
+   to Kalaignar."* Reviewed as **NON-BLOCKING**; it did not trigger an implementation change in D2.5
+   and should be folded into a future PR that legitimately edits that comment.
+6. **Scoped `WorkAttribution`** rights model for composite works — future project-level issue.
+
+**Do NOT reopen Tirumbippaar** absent an explicit new issue or a new source release.
 
 ---
 
