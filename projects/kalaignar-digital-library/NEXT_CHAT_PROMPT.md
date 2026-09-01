@@ -125,9 +125,13 @@ the "no bulk import, no mass ingestion" constraint repeated in the historical li
 8. preserve per-work provenance, rights and structural distinctions;
 9. publish the coherent batch in one implementation PR where architecture allows;
 10. use one independent ChatGPT review gate for the batch;
-11. **exact-head independent ChatGPT review, and merge only after APPROVED FOR MERGE**;
-12. production verification, then one batch control close-out;
+11. **ChatGPT reviews the EXACT current PR head and gives APPROVED FOR MERGE; merge only after that
+    approval; if the head changes, STOP and re-review**;
+12. **after merge, production verification, then one batch control close-out** — in that order;
 13. **do not flatten source differences merely because the work is batched.**
+
+Approval precedes merge, merge precedes production verification, and production verification precedes
+the control close-out. `HANDOVER.md` carries this identical sequence.
 
 **A batch validator must report per work and fail the whole batch on any one work's failure.**
 Source-tree drift guards are **per work**, and a source repository pinned at multiple historical

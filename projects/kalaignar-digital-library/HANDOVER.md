@@ -459,8 +459,10 @@ Merged-main Library CI run **`33537622127`** on `0dc92fa0…`:
 **Validator-contract migration remains PAUSED.** The batch validator is deliberately **not**
 registered. Do not resume the migration.
 
-Production, measured against `https://nenjukkuneethi.org`: all **22** batch URLs return 200, plus the
-four `/source` routes and the Silappathikaram family. `/plays/socrates/01` renders the verified Tamil
+Production, measured against `https://nenjukkuneethi.org`: **all 22 Wave-1 public URLs return 200** —
+that is the complete Wave-1 set, already inclusive of the four `/source` routes; it is not 22 plus
+anything. The **Silappathikaram route family was regression-checked separately** and is not part of
+the Wave-1 22. `/plays/socrates/01` renders the verified Tamil
 introductory note **before** Scene 1, labelled `அச்சிடப்பட்ட முன்னுரைக் குறிப்பு`, with every
 protected reading, the bracketed setup and the closing `*` present, still reading "Scene 1 of 5" and
 **never** presented as a sixth scene. `/plays/socrates/00-introduction`, `/plays/socrates/06`,
@@ -566,17 +568,23 @@ how earlier benchmarks were run; **they are no longer the default for new work.*
 
 1. **identify a coherent batch** by source release / source repository / public shelf;
 2. **perform a readiness census over the whole candidate set** before selecting anything;
-3. **exclude incomplete or blocked works explicitly**, and record why;
-4. **freeze each included work** against source commit and tree identity;
+3. **explicitly exclude incomplete or blocked works**, and record why;
+4. **freeze each included work** by source commit and tree identity;
 5. use **one coherent deterministic importer** where appropriate;
 6. use **one coherent source-linked batch validator**;
-7. the validator **MUST still report and fail per work** — a batch result may never hide a single
-   work's failure;
+7. the validator **reports and fails per work** — a batch result may never hide a single work's
+   failure;
 8. **preserve per-work provenance, rights and structural distinctions**;
 9. publish the coherent batch in **one implementation PR** where the architecture allows;
 10. use **one independent ChatGPT review gate** for the batch;
-11. **close the completed batch in the control documents**;
-12. **do not flatten source differences merely because the work is batched.**
+11. **ChatGPT reviews the EXACT current PR head and gives APPROVED FOR MERGE; merge only after that
+    approval; if the head changes, STOP and re-review**;
+12. **after merge, perform production verification, then perform one batch control close-out**;
+13. **do not flatten source differences merely because the work is batched.**
+
+Steps 11 and 12 are ordering commitments, not formalities: **approval precedes merge, merge precedes
+production verification, and production verification precedes the control close-out.** This sequence
+is identical in `NEXT_CHAT_PROMPT.md`, and the two documents must never disagree about it.
 
 ### Bulk is the default, not permission to mix
 
