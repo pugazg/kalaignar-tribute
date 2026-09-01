@@ -32,7 +32,7 @@ retro-edited. **Live GitHub wins over anything in it.**
 
 Measured live 2026-09-01: implementation `main` **`0dc92fa0fd832b5932b8df75606ef049c9f261ea`**,
 **0 open PRs**, **31 published works**, **5 Drama works**, **9 non-empty shelves**,
-**3035 Next build static-route entries**, **3023 sitemap URLs**.
+**3035 Next build static-route count**, **3023 sitemap URLs**.
 
 Shelf census: Life Writing 1 · Letters 1 · Fiction 2 · Poetry 1 · **Drama 5** · **Cinema Writing 4** ·
 **Speeches 14** · Essays & Articles 1 · Literary Commentary 2. Total **31**.
@@ -43,16 +43,22 @@ forward.
 
 ### ⚠️ Three different page metrics — never use them interchangeably
 
+**A site-wide TOTAL is not a wave's DELTA.** Wave 1's public contribution is **+22 URLs**
+(4 landings + 4 source pages + 14 reading routes). The build's static-route count is a *site-wide
+census* of every prerendered route in the whole library. Never present the two as the same kind of
+number.
+
 | metric | how it is measured | pre-Wave-1 | post-Wave-1 | delta |
 |---|---|---|---|---|
-| **Next build static-route count** *(authoritative)* | the `Generating static pages (N/N)` figure | 3013 | **3035** | **+22** |
+| **Next build static-route count** | the `Generating static pages (N/N)` figure | 3013 | **3035** | **+22** |
 | **Sitemap URLs** | `<loc>` entries in the deployed `sitemap.xml` | 3001 | **3023** | **+22** |
-| Prerendered `.html` files *(older, non-equivalent metric)* | prerendered `.html` files under `.next/server/app` | 3005 | 3027 | +22 |
 
-⚠️ **`3027` is NOT the Next static-route count** and must never be quoted as one. It belongs to the
-older "Prerendered pages" convention, which was re-measured for continuity (pre-Wave-1 rebuild returns
-exactly 3005) but measures a different thing. **The authoritative route metric is 3013 → 3035.** All
-three move +22 because the same 22 URLs are involved — not because they measure the same thing.
+The two differ because the build count includes non-HTML route outputs and four non-indexed pages
+(`/_not-found`, `/about`, `/privacy`, `/support`).
+
+⚠️ **`3027` is NOT the Next static-route count** and must never be quoted as one. It is the older
+"Prerendered pages" convention, re-measured for continuity (a pre-Wave-1 rebuild returns exactly
+3005) but measuring a different thing, and it is **deliberately not carried as a current metric**.
 
 *(The previous **2026-09-01 pre-Wave-1** line — `56ca0c97…`, 27 works, 3005 prerendered pages, 3001
 sitemap URLs, Drama 1 — is **superseded** and kept only as history.)*
@@ -86,8 +92,10 @@ Final batch validator: **385 assertions, 7 groups, 0 failed, BATCH RESULT: ALL P
 355 is historical only)*.
 
 **மணிமகுடம் / Manimagudam was excluded** because its source processing was incomplete at the freeze.
-Its upstream movement does **not** add it to Wave 1, repin Wave 1, make it eligible for Wave 2, or
-authorize publication.
+Its upstream movement does **not** add it to Wave 1, repin Wave 1, make it *automatically* eligible
+for Wave 2, or authorize publication. **It is not permanently ineligible** — it remains source-active
+and may become a legitimate candidate once it passes its own release/readiness gate and the owner
+authorizes a wave including it.
 
 Full detail is in `HANDOVER.md`.
 

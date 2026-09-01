@@ -22,7 +22,6 @@ retro-edited. Where it disagrees with this section or with live GitHub, **live G
 | Non-empty shelves | **9** |
 | **Next build static-route count** | **3035** |
 | **Sitemap URLs** | **3023** |
-| Prerendered `.html` files *(older, non-equivalent metric)* | 3027 |
 
 Shelf census: Life Writing 1 · Letters 1 · Fiction 2 · Poetry 1 · **Drama 5** ·
 **Cinema Writing 4** · **Speeches 14** · Essays & Articles 1 · Literary Commentary 2. Total **31**.
@@ -31,29 +30,43 @@ Shelf census: Life Writing 1 · Letters 1 · Fiction 2 · Poetry 1 · **Drama 5*
 census from `data/library.ts` at that SHA; the page and static-route counts from a production build of
 it; the sitemap count from the deployed site. All 22 Wave-1 URLs return 200 in production.
 
-#### ⚠️ Three different page metrics — never use them interchangeably
+#### ⚠️ Site-wide TOTALS vs a wave's DELTA — never mix them
 
-The earlier checkpoints carried a single row called "Prerendered pages". That row's method has been
-**reproduced, not replaced**, and two further metrics are now named explicitly because they were
-previously conflated:
+Two independent mistakes are possible here, and earlier checkpoints made both.
 
-| metric | how it is measured | pre-Wave-1 | post-Wave-1 | delta |
-|---|---|---|---|---|
-| **Next build static-route count** *(authoritative route metric)* | the `Generating static pages (N/N)` figure | 3013 | **3035** | **+22** |
-| **Sitemap URLs** | `<loc>` entries in the deployed `sitemap.xml` | 3001 | **3023** | **+22** |
-| Prerendered `.html` files *(older, non-equivalent metric)* | count of prerendered `.html` files under `.next/server/app` | 3005 | 3027 | +22 |
+**First: a total is not a delta.** Wave 1's public contribution is **+22 URLs**. The build's
+static-route count (**3035**) is a *site-wide total* covering every prerendered route in the whole
+Digital Library — 391 memoir chapters, 1330 Kurals, every speech, every play, and so on. The 22 is a
+*change*; 3035 is a *census*. They answer different questions and must never be presented as the same
+kind of number.
 
-**The authoritative route metric is the Next build static-route count: 3013 → 3035.** The sitemap
-count is a separate, genuinely different measurement: 3001 → 3023.
+**Second: the totals themselves are three different measurements**, nested rather than equal, as
+measured at the Wave-1 merge boundary:
 
-⚠️ **`3027` is NOT the Next static-route count and must never be quoted as one.** It belongs to the
-older "Prerendered pages" convention used by earlier checkpoints, which counts prerendered `.html`
-files. That convention was re-measured for continuity — rebuilding pre-Wave-1 `main`
-(`56ca0c978e34afddde52595f2ce825872bd6aeef`) and counting those files returns exactly **3005**, so the
-historical row is honest — but it is a **different metric from the build's route count**, and the two
-were once conflated. `3027` is retained here only to keep the older row meaningful. **Do not mix the
-older page-count method with the build static-route metric.** All three happen to move **+22** for
-Wave 1, which is a consequence of the same 22 URLs, not evidence that they measure the same thing.
+| measurement | value | what it counts |
+|---|---|---|
+| **Next build static-route count** | **3035** | every route the build prerenders, including route outputs that are not HTML pages |
+| Prerendered `.html` files | 3027 | the subset written as actual HTML pages |
+| **Sitemap URLs** | **3023** | the public, indexable subset — the 4 HTML pages excluded are `/_not-found`, `/about`, `/privacy` and `/support` |
+
+**The two metrics this document uses going forward are the Next build static-route count and the
+sitemap URL count:**
+
+| metric | pre-Wave-1 | post-Wave-1 | delta |
+|---|---|---|---|
+| **Next build static-route count** | 3013 | **3035** | **+22** |
+| **Sitemap URLs** | 3001 | **3023** | **+22** |
+
+⚠️ **`3027` is NOT the Next static-route count and must never be quoted as one.** It is the older
+"Prerendered pages" convention used by checkpoints up to and including the pre-Wave-1 one. That
+convention was re-measured for continuity — rebuilding pre-Wave-1 `main`
+(`56ca0c978e34afddde52595f2ce825872bd6aeef`) and counting prerendered `.html` files returns exactly
+**3005**, so the historical rows are honest — but it is **not** the build's route count, and it is
+**deliberately no longer carried in the CURRENT STATE table**. Historical checkpoints keep their own
+`3005` / `3001` rows unchanged.
+
+All three totals happen to move **+22** for Wave 1 because the same 22 URLs are involved. That is a
+consequence, not evidence that they measure the same thing.
 
 Shipped since the pre-Wave-1 2026-09-01 checkpoint:
 
@@ -402,11 +415,16 @@ are **not** hard-coded into the sitemap:
 
 | metric | before | after | delta |
 |---|---|---|---|
-| **Next build static-route count** | 3013 | **3035** | **+22** |
-| **Sitemap URLs** | 3001 | **3023** | **+22** |
-| Prerendered `.html` files *(older, non-equivalent metric)* | 3005 | 3027 | +22 |
+| **Next build static-route count** *(site-wide total)* | 3013 | **3035** | **+22** |
+| **Sitemap URLs** *(site-wide total)* | 3001 | **3023** | **+22** |
 
-The 22 URLs break down as **4 landings + 4 source pages + 14 reading routes**.
+**Wave-1 public URL contribution: +22**, broken down as **4 landings + 4 source pages + 14 reading
+routes**. The 14 reading routes are Bharathayanam 1 (`continuous-play`) + Anarkali 4 + Socrates 5 +
+Cheran Senguttuvan 4.
+
+The **+22 is a delta**; the 3035 and 3023 figures are **site-wide totals** at the Wave-1 boundary. The
+older "Prerendered pages" convention (3005 → 3027) is **not** carried here — see the metric note in
+the CURRENT STATE section.
 
 0 duplicate sitemap URLs. These are the deltas **at this wave's boundary**; if the site advances later
 for unrelated reasons, refresh the CURRENT STATE checkpoint — **do not rewrite these figures**.
@@ -463,6 +481,11 @@ That movement does **NOT**:
 
 **Do not inspect or adjudicate Manimagudam** beyond the source-separation check Wave 1 requires, and
 **do not treat it as the next candidate.**
+
+**It is not permanently ineligible.** Manimagudam remains **source-active** upstream and may become a
+legitimate candidate later, once it passes **its own release/readiness gate** and the owner authorizes
+a wave that includes it. What is excluded is *automatic* selection: eligibility, whenever it arrives,
+is still not authorization.
 
 ### ⚠️ Process lesson — the exact-head review gate
 
