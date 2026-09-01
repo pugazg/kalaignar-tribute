@@ -24,21 +24,107 @@ Then inspect the live implementation repository:
 
 **Treat current GitHub `main`, open PRs and deployed site state as authoritative** over any SHA, count or status paragraph written in a handover, including this file.
 
-## ⚠️ CURRENT STATE — 2026-09-01 (supersedes the phase list below)
+## ⚠️ CURRENT STATE — 2026-09-01, post-Wave-1 (supersedes the phase list below)
 
 **The "Where the project actually stands" list below stops at Phase 7 and is HISTORICAL.** Its work
 and shelf counts are stale. It is kept for the completed-phase detail it records, and has not been
 retro-edited. **Live GitHub wins over anything in it.**
 
-Measured live 2026-09-01: implementation `main` **`56ca0c978e34afddde52595f2ce825872bd6aeef`**,
-**0 open PRs**, **27 published works**, **9 non-empty shelves**, **3005 prerendered pages**,
-**3001 sitemap URLs**.
+Measured live 2026-09-01: implementation `main` **`0dc92fa0fd832b5932b8df75606ef049c9f261ea`**,
+**0 open PRs**, **31 published works**, **9 non-empty shelves**, **3027 prerendered pages**,
+**3035 Next build static-route entries**, **3023 sitemap URLs**.
 
-Shelf census: Life Writing 1 · Letters 1 · Fiction 2 · Poetry 1 · Drama 1 · **Cinema Writing 4** ·
-**Speeches 14** · Essays & Articles 1 · Literary Commentary 2. Total **27**.
+Shelf census: Life Writing 1 · Letters 1 · Fiction 2 · Poetry 1 · **Drama 5** · **Cinema Writing 4** ·
+**Speeches 14** · Essays & Articles 1 · Literary Commentary 2. Total **31**.
 
 These were measured now — SHA and open PRs from live GitHub, the census from `data/library.ts` at
-that SHA, pages from a production build, sitemap from the deployed site — not copied forward.
+that SHA, pages and static routes from a production build, sitemap from the deployed site — not copied
+forward.
+
+### ⚠️ Three different page metrics — never use them interchangeably
+
+| metric | how it is measured | pre-Wave-1 | post-Wave-1 | delta |
+|---|---|---|---|---|
+| **Prerendered pages** | prerendered `.html` files under `.next/server/app` | 3005 | **3027** | **+22** |
+| **Next build static-route entries** | the `Generating static pages (N/N)` figure | 3013 | **3035** | **+22** |
+| **Sitemap URLs** | `<loc>` entries in the deployed `sitemap.xml` | 3001 | **3023** | **+22** |
+
+The historical **3005** row was re-measured by rebuilding pre-Wave-1 `main` and reproduces exactly, so
+the metric is continuous. **3027 and 3035 are two different metrics, not one number measured twice.**
+
+*(The previous **2026-09-01 pre-Wave-1** line — `56ca0c97…`, 27 works, 3005 prerendered pages, 3001
+sitemap URLs, Drama 1 — is **superseded** and kept only as history.)*
+
+### Bulk Onboarding Wave 1 — Drama — ✅ COMPLETE and CLOSED
+
+**கலைஞரின் நான்மணி மாலை four-play batch** — பரதாயணம் / Bharathayanam · அனார்கலி / Anarkali ·
+சாக்ரடீஸ் / Socrates · சேரன் செங்குட்டுவன் / Cheran Senguttuvan. **The first bulk-onboarding activity
+in the Digital Library.** PR **#64**, squash **`0dc92fa0fd832b5932b8df75606ef049c9f261ea`**, reviewed
+head `74c7f6dc…`, 24 files. Source pin `pugazg/kalaignar-stage-plays` @
+**`145e52e88dbd009286f749a7f0e3520386e63244`** — one composite scan
+(`TVA_BOK_0065576_நான்மணி_மாலை.pdf`, 54 scans), four frozen work trees, re-confirmed unchanged at
+close-out while source `main` advances for **மணிமகுடம் only**.
+
+Drama **1 → 5**, catalogue **27 → 31**, **+22 public URLs** (Bharathayanam 3 · Anarkali 6 ·
+Socrates 7 · Cheran 6).
+
+The architecture: `structureKind` (`scene-sequence` / `continuous-play`) and reading-unit `kind`
+(`scene` / `closing-tableau` / `continuous-body`) are **source-structure** distinctions. The public
+shelf and type are unchanged, and **there is no `continuous-play` catalogue subtype**.
+**Bharathayanam prints no scenes** — one continuous reading unit, route slug `continuous-play`
+(navigation only), catalogue `unitCount` **absent**, and it is never "Scene 1" or a "one-scene play".
+**Socrates** publishes **13** verified Tamil introductory units from scans **27–28** before its **5**
+source scenes — the intro is not a scene, has **no route**, and `/plays/socrates/00-introduction` is
+**404**. Anarkali and Cheran hold **4** scenes each. Silappathikaram was carried through the model
+rename with **byte-equivalent reading text** and its closing tableau is still **not Scene 39**.
+
+Two durable engineering lessons came out of it — the **`empty == empty` validation trap** and the
+**buffered CI-output trap**. Both are recorded in `HANDOVER.md` and both are now standing rules.
+Final batch validator: **385 assertions, 7 groups, 0 failed, BATCH RESULT: ALL PASS** *(the pre-repair
+355 is historical only)*.
+
+**மணிமகுடம் / Manimagudam was excluded** because its source processing was incomplete at the freeze.
+Its upstream movement does **not** add it to Wave 1, repin Wave 1, make it eligible for Wave 2, or
+authorize publication.
+
+Full detail is in `HANDOVER.md`.
+
+### ⚙️ Bulk onboarding is the STANDING DEFAULT workflow
+
+**Owner decision, recorded 2026-09-01.** This supersedes the older one-work-per-benchmark default and
+the "no bulk import, no mass ingestion" constraint repeated in the historical lists further down.
+
+1. identify a coherent batch by source release / source repository / public shelf;
+2. perform a readiness census over the whole candidate set;
+3. exclude incomplete or blocked works explicitly;
+4. freeze each included work against source commit/tree identity;
+5. use one coherent deterministic importer where appropriate;
+6. use one coherent source-linked batch validator;
+7. the validator **MUST still report and fail per work**;
+8. preserve per-work provenance, rights and structural distinctions;
+9. publish the coherent batch in one implementation PR where architecture allows;
+10. use one independent ChatGPT review gate for the batch;
+11. close the completed batch in the control documents;
+12. **do not flatten source differences merely because the work is batched.**
+
+**Bulk is the default, not permission to mix.** It never authorizes combining incompatible or
+incomplete sources, and it is not a claim that every future work must be bulked regardless of source
+state. A work that is not source-ready is excluded explicitly.
+
+**One-work benchmark cycles are now the EXCEPTION**, appropriate only where a work introduces a
+genuinely new source form, reader architecture, unresolved rights/attribution boundary, unusual
+structure, source-fidelity blocker, or implementation risk that should not be coupled to a batch.
+
+**Two standing validator rules from Wave 1:**
+
+- **Never let `empty == empty` certify completeness.** An importer and a validator may share a
+  contract but must not share a defect that makes both derive the same empty value. For a source
+  section known to exist, assert **NON-EMPTY source extraction before equality**:
+  **prove presence → then prove structure → then prove equality.**
+- **Validator success is not enough if the evidence cannot be read.** Avoid a final `process.exit()`
+  when stdout may be buffered (Node discards buffered stdout on a pipe, which is what CI provides);
+  prefer `process.exitCode`; keep deliberate fail-closed early exits; ensure failure paths report
+  assertions rather than crash; test through a pipe as well as direct stdout.
 
 ### Speech Benchmark #4 — ✅ COMPLETE and CLOSED
 
@@ -382,7 +468,8 @@ error from expected Tamil or punctuation convention.
   - **Fiction Benchmark #2: NOT STARTED / NOT SELECTED.** Fiction shipping first does not privilege Fiction next.
 - **Phase 7 — Drama / Stage Plays: ACTIVE.**
   - **Benchmark #1 — சிலப்பதிகாரம் நாடகக் காப்பியம்** (stage play): **COMPLETE, merged, production-verified** (PR #29, squash `9aade1d4…`, verified 2026-08-21). Source pin `pugazg/kalaignar-stage-plays @ a66e62bbecaf63825b3db09a1d421401e1ab2e8e`. 38 numbered scenes plus a separate unnumbered closing tableau; that tableau is never Scene 39.
-  - **Drama Benchmark #2: NOT STARTED / NOT SELECTED** — `Anarkali`, `Cheran Senguttuvan` and `Socrates` have no controlling Tamil source, only a published English secondary witness that must never be reverse-translated into Tamil.
+  - **Bulk Onboarding Wave 1 — Drama:** ✅ **COMPLETE, merged, production-verified and CLOSED** — பரதாயணம், அனார்கலி, சாக்ரடீஸ் and சேரன் செங்குட்டுவன், PR #64, squash `0dc92fa0…`, source pin `pugazg/kalaignar-stage-plays @ 145e52e88dbd009286f749a7f0e3520386e63244`. Drama 1 → **5**. *(This line replaces the earlier "Drama Benchmark #2: NOT STARTED / NOT SELECTED — `Anarkali`, `Cheran Senguttuvan` and `Socrates` have no controlling Tamil source", which is **historical**: controlling Tamil sources were released and those works are published. The 2009 published English witness remains **secondary comparison evidence only** and must never be reverse-translated into Tamil — that constraint is unchanged.)*
+  - **Any further Drama work / Bulk Wave 2: NOT STARTED / NOT SELECTED / NOT AUTHORIZED.** **மணிமகுடம் / Manimagudam is NOT published** and is **not** automatically eligible.
 
 **Last production application-code checkpoint at this handover:**
 
@@ -472,9 +559,17 @@ Your job is to:
 
 ## Immediate next activity
 
-**Speech Benchmark #4 is CLOSED** (A1 #62 / `492b26dd…`, A2 #63 / `56ca0c97…`; control close-out
-recorded in `HANDOVER.md`). **No next implementation benchmark has been started, and no next work or
+**Bulk Onboarding Wave 1 — Drama is COMPLETE and CLOSED** (PR #64 / `0dc92fa0…`; control close-out
+recorded in `HANDOVER.md`), and **Speech Benchmark #4 is CLOSED** (A1 #62 / `492b26dd…`,
+A2 #63 / `56ca0c97…`). **No next implementation activity has been started, and no next work, batch or
 category has been selected.**
+
+**Bulk onboarding is now the default workflow. Before starting Wave 2, fetch live state and perform a
+read-only readiness census for a coherent candidate batch. Eligibility is not authorization. Do not
+begin implementation until the owner authorizes the selected Wave 2 batch.**
+
+**Wave 2 is NOT SELECTED.** Do not automatically choose மணிமகுடம் / Manimagudam,
+`kalaivanar-nsk-memorial-day-audio-06`, the Film Songs close-out, any speech batch or any poem batch.
 
 Before any new implementation, fetch live state and **obtain owner authorization for the next bounded
 activity**. Legitimate possibilities include any still-pending control close-out the owner explicitly
@@ -580,7 +675,10 @@ Tirumbippaar, no category is excluded by that historical rule — speech and non
 be compared when I ask. Nothing about that makes any speech work authorized.)* If I explicitly name a
 category, follow that category instead of running broad selection.
 
-Whichever work is selected, the activity must:
+Whichever work or batch is selected, the activity must — ⚠️ **the first two bullets are HISTORICAL
+(2026-09-01):** bulk onboarding is now the standing default, so "exactly one work" and "no bulk
+import" no longer describe it. Everything below them still applies, and applies **per work** inside a
+batch:
 
 - integrate **exactly one** work;
 - be a **reviewer-gated PR** — no bulk import, no mass ingestion;
@@ -606,7 +704,7 @@ Whichever work is selected, the activity must:
 ## Important source-readiness cautions
 
 - `பலிபீடம் நோக்கி`: **INTEGRATED** as Phase-6 Benchmark #1. `ராயசம் வெங்கண்ணா` is embedded in the same novel, not a separate work. The spelling `ராயசம் வெங்கண்ணா` / Rayasam Venganna was taken from the controlling scanned source edition and corrected in the archive at `9e80c56`; the earlier `ராயசம் வெங்கண்ணு` / Rayasam Vengannu is **superseded**, not an alternative reading.
-- Stage-play one-act English material for Anarkali / Cheran Senguttuvan / Socrates is a secondary published-English witness where Tamil controlling sources are not yet supplied; do not mislabel it as canonical Tamil work.
+- Stage-play one-act English material for Anarkali / Cheran Senguttuvan / Socrates is a **secondary published-English witness** and must never be mislabelled as canonical Tamil work or reverse-translated. ⚠️ **Updated 2026-09-01:** controlling Tamil sources **have since been supplied** and all three are published by Bulk Onboarding Wave 1 — the "not yet supplied" half of this caution is historical. **The secondary-witness rule itself still stands**, and for **Bharathayanam no 2009 witness exists at all** — that is *not applicable*, not pending.
 - Thirukkural — Kalaignar Commentary is not yet at a complete finished-work boundary in the source repository; do not publish it as complete without an explicit editorial/owner decision.
 - Cinema scene IDs may be archival/derived rather than printed source numbering; preserve that distinction.
 - Public-speech sources sometimes do not establish a single speech date/event; do not invent one.
@@ -640,10 +738,10 @@ Every Claude prompt should contain:
 
 ## Start now
 
-Read the current Digital Library handover completely, inspect the live implementation repository (current `main`, open PRs, production `/read`, and the Tirumbippaar route family `/cinema/tirumbippaar`, a representative scene and `/cinema/tirumbippaar/source`), and verify the 2026-08-30 checkpoint above. Then tell me the verified current state.
+Read the current Digital Library handover completely, inspect the live implementation repository (current `main`, open PRs, production `/read`, and the Drama route family `/plays/socrates`, `/plays/socrates/01`, `/plays/bharathayanam/continuous-play` and a `/source` route), and verify the post-Wave-1 checkpoint above. Then tell me the verified current state.
 
 **Do not resume Tirumbippaar** — Phase D is closed through D2.5.
 
-When I ask for it, inspect the **live source repositories** and recommend the single strongest next source-ready benchmark — naming the category and the one work, and why — together with a complete ready-to-paste Claude prompt. Do not implement the work yourself and do not assume a category: speech and non-speech candidates are both eligible for comparison, and none is authorized until I say so. Validator migration stays **PAUSED** and mobile stays **ON HOLD** unless I explicitly resume them.
+When I ask for it, inspect the **live source repositories** and perform a read-only readiness census for a **coherent candidate batch** — naming the source release, the shelf, the works that qualify and the works that must be excluded and why — together with a complete ready-to-paste Claude prompt. Bulk onboarding is the default; recommend a single work only where it meets the one-work exception. **Do not select or begin Wave 2 yourself.** Do not implement the work yourself and do not assume a category: speech and non-speech candidates are both eligible for comparison, and none is authorized until I say so. Validator migration stays **PAUSED** and mobile stays **ON HOLD** unless I explicitly resume them.
 
 ---

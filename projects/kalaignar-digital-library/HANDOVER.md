@@ -11,7 +11,51 @@ Several phases have shipped since it was written, and its work counts, shelf cou
 "last production application-code checkpoint" are stale. It is kept as history and has **not** been
 retro-edited. Where it disagrees with this section or with live GitHub, **live GitHub wins**.
 
-### Verified live state — 2026-09-01 ✅ CURRENT
+### Verified live state — 2026-09-01, post-Wave-1 ✅ CURRENT
+
+| | |
+|---|---|
+| Implementation `main` | `0dc92fa0fd832b5932b8df75606ef049c9f261ea` |
+| Open PRs (implementation) | 0 |
+| Published works | **31** |
+| Non-empty shelves | **9** |
+| Prerendered pages | **3027** |
+| Next build static-route entries | **3035** |
+| Sitemap URLs | **3023** |
+
+Shelf census: Life Writing 1 · Letters 1 · Fiction 2 · Poetry 1 · **Drama 5** ·
+**Cinema Writing 4** · **Speeches 14** · Essays & Articles 1 · Literary Commentary 2. Total **31**.
+
+**Measured now**, not copied forward: the SHA and open-PR count from live GitHub; the work/shelf
+census from `data/library.ts` at that SHA; the page and static-route counts from a production build of
+it; the sitemap count from the deployed site. All 22 Wave-1 URLs return 200 in production.
+
+#### ⚠️ Three different page metrics — never use them interchangeably
+
+The earlier checkpoints carried a single row called "Prerendered pages". That row's method has been
+**reproduced, not replaced**, and two further metrics are now named explicitly because they were
+previously conflated:
+
+| metric | how it is measured | pre-Wave-1 | post-Wave-1 | delta |
+|---|---|---|---|---|
+| **Prerendered pages** | count of prerendered `.html` files under `.next/server/app` | 3005 | **3027** | **+22** |
+| **Next build static-route entries** | the `Generating static pages (N/N)` figure | 3013 | **3035** | **+22** |
+| **Sitemap URLs** | `<loc>` entries in the deployed `sitemap.xml` | 3001 | **3023** | **+22** |
+
+The historical **3005** was re-measured by rebuilding pre-Wave-1 `main`
+(`56ca0c978e34afddde52595f2ce825872bd6aeef`) and counting prerendered `.html` files: it reproduces
+exactly, so the row is continuous with earlier checkpoints. **3027 and 3035 are NOT the same number
+measured two ways — they are two different metrics**, and the older single-row convention is why they
+were once confused. All three move **+22** for Wave 1.
+
+Shipped since the pre-Wave-1 2026-09-01 checkpoint:
+
+- **Bulk Onboarding Wave 1 — Drama / கலைஞரின் நான்மணி மாலை four-play batch** — பரதாயணம், அனார்கலி,
+  சாக்ரடீஸ் and சேரன் செங்குட்டுவன் published together from one frozen source release, taking Drama
+  from 1 to 5 and the catalogue from 27 to 31. **The first bulk-onboarding activity**, and the reason
+  bulk onboarding is now the standing default. **Closed by this document**; see its section below.
+
+### Verified live state — 2026-09-01, pre-Wave-1 ⚠️ SUPERSEDED (kept as history)
 
 | | |
 |---|---|
@@ -25,13 +69,15 @@ retro-edited. Where it disagrees with this section or with live GitHub, **live G
 Shelf census: Life Writing 1 · Letters 1 · Fiction 2 · Poetry 1 · Drama 1 ·
 **Cinema Writing 4** · **Speeches 14** · Essays & Articles 1 · Literary Commentary 2. Total **27**.
 
-**Measured now**, not copied from the previous checkpoint: the SHA and open-PR count from live
+**This line is superseded by the post-Wave-1 checkpoint above** and is retained only as history.
+
+Measured at that checkpoint, not copied from the one before it: the SHA and open-PR count from live
 GitHub; the work/shelf census from `data/library.ts` at that SHA; the page count from a production
 build of it; and the sitemap count from the deployed site. `https://nenjukkuneethi.org/read`,
 `/speeches/kalaivanar-nsk-memorial-day` and `/speeches/kalaivanar-nsk-memorial-day/source` all
-return 200 in production.
+returned 200 in production.
 
-Shipped since the 2026-08-30 checkpoint:
+Shipped between the 2026-08-30 checkpoint and that one:
 
 - **கலைஞர் திரை இசைப் பாடல்கள் / Kalaignar Film Songs** — implementation and publication are **live**
   in Cinema Writing, which is why that shelf is now 4 rather than 3. Its **separate formal
@@ -73,6 +119,426 @@ merged PRs, not in this file:
   and the catalogue to 26. Implementation live; **formal control close-out still pending**.
 - **Speech Benchmark #4 — the first audio-sourced speech**, taking Speeches to 14 and the catalogue
   to 27. **Closed by this document.**
+- **Bulk Onboarding Wave 1 — Drama**, taking Drama to 5 and the catalogue to 31. The first
+  bulk-onboarding activity. **Closed by this document.**
+
+---
+
+## Bulk Onboarding Wave 1 — Drama / கலைஞரின் நான்மணி மாலை four-play batch — ✅ COMPLETE and CLOSED
+
+**The first bulk-onboarding activity in the Digital Library.** Four stage plays published together
+from one frozen composite source release. Implementation PR
+[#64](https://github.com/pugazg/kalaignar-autobiography/pull/64), squash merge
+**`0dc92fa0fd832b5932b8df75606ef049c9f261ea`**, reviewed head
+`74c7f6dc692571a8a3abcee77d929b76084ab9db`, 24 files. Verified in production on 2026-09-01.
+
+**Do NOT reopen this wave.**
+
+### Batch selection and rationale
+
+The four works share **one controlling scan, one source release pin and one public shelf**, and each
+had reached the same verified state upstream. That coherence — not convenience — is what made them a
+batch. They were onboarded through **one importer, one validator and one review gate** rather than
+four benchmark lifecycles, because nothing about them needed four separate architectural decisions.
+
+**மணிமகுடம் / Manimagudam was excluded**, deliberately and explicitly: its source processing was
+still active upstream at the freeze. See its subsection below.
+
+### Source freeze
+
+| | |
+|---|---|
+| Source repository | `pugazg/kalaignar-stage-plays` |
+| Release pin | **`145e52e88dbd009286f749a7f0e3520386e63244`** |
+| Controlling scan | `TVA_BOK_0065576_நான்மணி_மாலை.pdf` |
+| SHA-256 | `18d2b1405544b03507e9f92067d287cb28f5a92eaf02bed7054e6e78e5e38c89` |
+| Size | 146,754,449 bytes |
+| Physical scans | 54 |
+| Coverage audit | PASS / COMPLETE — 0 gaps, 0 overlaps |
+
+Per-work target trees, guarded at every check including this close-out:
+
+| work | source path | tree SHA | scans |
+|---|---|---|---|
+| பரதாயணம் / Bharathayanam | `works/bharathayanam` | `9923484dc94c7913581c0a87f99c8b017dddd2e7` | 6–17 |
+| அனார்கலி / Anarkali | `works/anarkali` | `a1bc47bdda1abf9ba77cf04190f5b493d1443290` | 18–26 |
+| சாக்ரடீஸ் / Socrates | `works/socrates` | `b09ab882ad7421b2cba4d61abbd0ae7185572552` | 27–43 |
+| சேரன் செங்குட்டுவன் / Cheran Senguttuvan | `works/cheran-senguttuvan` | `d5a88f1288fb0e902e2dee6077399aa651a8db16` | 44–53 |
+
+**Scans 1–5 are the composite's shared front matter and scan 54 its shared back matter.** Neither
+belongs to any individual work, and neither may be attributed to one.
+
+The pin is a **historical immutable release state**, not source `main`. Source `main` has advanced
+since — entirely for `works/manimagudam/` — and all four target trees were re-confirmed byte-identical
+at this close-out. **A released work stays pinned to the state that was reviewed; source `main` moving
+is not drift.**
+
+### Architectural generalization — structure kind vs reading unit
+
+The public shelf and type are **unchanged**: `shelf: Drama`, `subtype: stage-play`,
+`readerStructure: stage-play`. What Wave 1 added is a **source-structure** distinction inside the play
+model:
+
+- `structureKind: "scene-sequence" | "continuous-play"`
+- reading-unit `kind: "scene" | "closing-tableau" | "continuous-body"`
+
+**There is no `continuous-play` catalogue subtype and none may be created.** A play printed as one
+continuous text is not a different *kind of work*; it is the same kind of work with a different
+printed structure. Splitting the public category along that axis would be the wrong cut — the same
+principle Speech Benchmark #4 established for source form.
+
+### Bharathayanam — the continuous-play rule
+
+| | |
+|---|---|
+| Source structure | `continuous-play` |
+| Source scenes | **0** |
+| Public reading body | one continuous reading unit |
+| Editorial route slug | `continuous-play` |
+| Catalogue `unitCount` | **ABSENT** |
+
+The edition prints no scene division. **Do NOT describe it as "Scene 1", a "one-scene play", or
+"1 of 1 scenes".** The route slug `continuous-play` is **navigation only** and is not a scene name;
+the importer and validator both refuse a scene-shaped slug or a fabricated scene count. The catalogue
+carries no unit badge because the source establishes no unit to count.
+
+### The opening-note model
+
+Printed pre-dramatic material is carried as a `PlayOpeningNote`: it is **source text, but never a
+scene, never routed and never counted**. It attaches to the reading unit it precedes. Three of the
+four works carry one — Bharathayanam (2 units, scan 6), Socrates (13 units, scans 27–28) and Cheran
+Senguttuvan (5 units, scan 44). Anarkali prints none, and none was invented for it.
+
+### Socrates — the source-fidelity repair
+
+**This is the most important lesson of Wave 1 and is recorded in full because it nearly shipped.**
+
+At the first PR head, Socrates published:
+
+```
+openingNote.tamil.units = []
+```
+
+while source scans 27–28 demonstrably contain verified Tamil introductory material, and the English
+side carried 13 units. Independent review caught it.
+
+**Root cause.** Both the importer and the validator bounded a page record's `## Printed text` section
+with a pattern equivalent to:
+
+```
+/^## Printed text\n([\s\S]*?)(?=^## |\s*$)/m
+```
+
+Under the `m` flag the `\s*$` alternative matches at the **blank line directly beneath the heading**,
+so the reluctant capture terminated there and returned an empty section. Because importer and
+validator **shared the same defect**, the validator's "verbatim" check reduced to `[] === []` and
+certified as complete a section the source fills. The assertion was **vacuous, not wrong-answered** —
+the most dangerous failure mode a validator has.
+
+**The repair** replaced both with H2-boundary extraction — from the heading to the next `^## ` or EOF
+— gave the validator an **independent** implementation, and made an empty extraction an error rather
+than an answer:
+
+| | |
+|---|---|
+| source scan 27 | **7** introductory paragraphs |
+| source scan 28 | **6** |
+| combined source intro | **13** |
+| generated Tamil intro | **13** — 11 prose/unlabelled · 1 square-bracket stage direction · 1 final ornament `*` |
+| provenance `tamilUnits` | 108 → **121** (stage directions 24 → 25, ornaments 9 → 10) |
+| English | unchanged — 13 intro units, 120 total |
+| scene count | remains **5** |
+| intro route | **none** |
+
+Printed line structure is preserved exactly: **no print-line wrap is joined**, because that assembly
+decision belongs to the source archive, not to a downstream integration.
+
+**Protected Tamil readings — carried verbatim, never normalized:**
+
+```
+மார்க்சும், எஞ்சல்சும்
+ஹெகல்
+‘ஜாடை’ காட்டினான்
+தூசு நிகர் காரணங்களைக்கொண்டு
+‘சோக்ரதர்’
+ஆஸ்திகப்பழமாக்கியிருக்கிறார்
+நானோ
+சபைன்
+```
+
+The intro opens with `ஃ சாக்ரடீஸ் கிரேக்கம் தந்த தத்துவாசிரியன்`, carries the bracketed scan-28
+`முதற்காட்சி` setup as one square stage-direction, and ends with the printed `*`.
+
+### The validator-output repair
+
+A second, independent defect: after the source repair the validator was **correct but unreadable in
+CI**. Its assertions all ran and all passed, yet the CI log stopped 64 lines in, so the new Socrates
+gates could not be seen. Two causes, both of which destroy the report while leaving the exit code
+looking right:
+
+1. **`process.exit()` discards buffered stdout when stdout is a pipe** — which is exactly what GitHub
+   Actions provides. Reproduced: **411 lines to a file, 59 to a pipe, exit 0 both times.**
+2. **Direct array indexing in failure-only spot checks** threw a `TypeError` before the final report,
+   so an induced failure exited 1 for the wrong reason and printed no summary.
+
+The repair uses `process.exitCode` for the normal final exit, keeps the deliberate fail-closed early
+exits, and makes failure-sensitive assertions read defensively. Verified through a pipe:
+
+| path | result |
+|---|---|
+| success | exit **0**, complete report, empty stderr |
+| induced failure | exit **1**, all 385 assertions still run, **17** clean failures, empty stderr, complete report |
+| source-pin mismatch | exit **2**, prints `BATCH RESULT: CANNOT VALIDATE` |
+
+### Deterministic importer
+
+One importer, `scripts/import-naanmani-malai-plays.mjs`, pinned to the release commit and fail-closed
+on source-HEAD mismatch, on an empty printed-text extraction, on a missing protected reading, and on
+a missing bracketed setup or ornament. Two clean runs at the pin produced **byte-identical** output,
+identical to the committed data, with **no clock or timestamp values** in any generated file. Generated
+JSON is never hand-patched.
+
+### Batch validator
+
+One source-linked validator, `scripts/validate-naanmani-malai-plays.mjs`, re-deriving expectations
+from the pinned source tree and reporting **per work**:
+
+| group | assertions |
+|---|---|
+| BATCH PRECONDITIONS | 17 |
+| BHARATHAYANAM | 82 |
+| ANARKALI | 81 |
+| SOCRATES | 109 |
+| CHERAN SENGUTTUVAN | 83 |
+| BATCH OPENING NOTES | 10 |
+| BATCH ROUTE CONTRACT | 3 |
+| **total** | **385 · 0 failed · BATCH RESULT: ALL PASS** |
+
+**The final validator contract is 385 assertions.** The pre-repair figure of 355 is **historical
+only** and must never be quoted as the contract.
+
+### English authority
+
+All four English layers are **project-created** and source-linked to the verified Tamil. Tamil remains
+the authoritative layer.
+
+For **Anarkali, Socrates and Cheran Senguttuvan**, M. D. Jayabalan's separately copyrighted **2009
+published English translation is SECONDARY COMPARISON EVIDENCE ONLY**. It is **not** the public
+English reading layer, **not** Tamil authority and **not** translation authority, and it is never
+imported or reverse-translated.
+
+For **Bharathayanam there is no corresponding 2009 witness** — the 2009 collection contains no
+Bharathayanam. That is **NOT APPLICABLE**, not pending.
+
+### Rights
+
+Nationalisation applies to **Kalaignar's underlying Tamil dramatic works**. It does **NOT** extend to:
+
+- the project-created English;
+- the third-party 2009 published English witness;
+- publisher / imprint matter;
+- the printed price;
+- cover artwork or design;
+- library, accession or other copy-specific markings on the physical volume.
+
+GO number and formal issue date remain `null` and **must not be invented**; `2024-12-22` is the public
+handover date only. A scoped **`WorkAttribution`** model remains future work and was **not** created.
+
+### Edition / year
+
+**`edition` is absent on all four**, deliberately. The source establishes publisher, place and price
+but **no defensible standalone publication year or edition statement** for the individual works.
+**Do NOT promote 2009 into a Tamil edition year** — 2009 belongs only to the third-party English
+witness.
+
+### Catalogue and public footprint
+
+| | before | after |
+|---|---|---|
+| Published works | 27 | **31** |
+| Drama shelf | 1 | **5** |
+| Non-empty shelves | 9 | **9** |
+
+Catalogue order on the Drama shelf: `silappathikaram-nataka-kappiyam` → `bharathayanam` → `anarkali`
+→ `socrates` → `cheran-senguttuvan`, following the composite's own printed order.
+
+Unit badges: Bharathayanam **absent** · Anarkali **4 scenes** · Socrates **5 scenes** ·
+Cheran Senguttuvan **4 scenes**. All four carry the exact pin and **no `edition`**.
+
+### Route and sitemap deltas — Wave-1 facts, not to be rewritten later
+
+**22 public URLs**, contributed through `PLAY_SLUGS` and the generated `readingUnits` — the four works
+are **not** hard-coded into the sitemap:
+
+| work | routes | breakdown |
+|---|---|---|
+| Bharathayanam | 3 | landing + `continuous-play` + source |
+| Anarkali | 6 | landing + 4 scenes + source |
+| Socrates | 7 | landing + 5 scenes + source |
+| Cheran Senguttuvan | 6 | landing + 4 scenes + source |
+
+| metric | before | after | delta |
+|---|---|---|---|
+| Sitemap URLs | 3001 | **3023** | **+22** |
+| Prerendered pages | 3005 | **3027** | **+22** |
+| Next static-route entries | 3013 | **3035** | **+22** |
+
+0 duplicate sitemap URLs. These are the deltas **at this wave's boundary**; if the site advances later
+for unrelated reasons, refresh the CURRENT STATE checkpoint — **do not rewrite these figures**.
+
+### Silappathikaram regression
+
+The existing Drama benchmark was carried through the shared model generalization **without any
+textual or source change**. The rename `PlayScene` → `PlayReadingUnit` and `isClosingTableau` → `kind`
+is a **model rename, not a content change**:
+
+- **38** source-numbered scenes, unchanged;
+- the closing tableau remains **separate and is NOT Scene 39** — it carries `order: null`, slug
+  `closing-tableau` and no scene number;
+- reading text **byte-equivalent across the migration** — 2409 units on both sides;
+- catalogue entry **unchanged**;
+- public behaviour and routes **unchanged**;
+- validator **157 assertions, ALL PASS**.
+
+### CI and production verification — 2026-09-01
+
+Merged-main Library CI run **`33537622127`** on `0dc92fa0…`:
+
+| job / step | result |
+|---|---|
+| typecheck • build | **SUCCESS** |
+| archival validators | **SUCCESS** |
+| Naanmani Malai Plays — 4-work Drama batch | **SUCCESS** — 385 assertions, 0 failed across 7 groups, `BATCH RESULT: ALL PASS` |
+| Silappathikaram Nataka Kappiyam | **SUCCESS** — 157 assertions passed, 0 failed |
+| Validator contract | **SUCCESS** — **3 registered / 10 pending** |
+| Vercel | **SUCCESS** |
+
+**Validator-contract migration remains PAUSED.** The batch validator is deliberately **not**
+registered. Do not resume the migration.
+
+Production, measured against `https://nenjukkuneethi.org`: all **22** batch URLs return 200, plus the
+four `/source` routes and the Silappathikaram family. `/plays/socrates/01` renders the verified Tamil
+introductory note **before** Scene 1, labelled `அச்சிடப்பட்ட முன்னுரைக் குறிப்பு`, with every
+protected reading, the bracketed setup and the closing `*` present, still reading "Scene 1 of 5" and
+**never** presented as a sixth scene. `/plays/socrates/00-introduction`, `/plays/socrates/06`,
+`/plays/anarkali/05`, `/plays/cheran-senguttuvan/05`, `/plays/bharathayanam/scene-01` and
+`/plays/manimagudam` all return **404**.
+
+### மணிமகுடம் / Manimagudam — excluded, and still excluded
+
+Manimagudam was excluded from Wave 1 because **its source processing was incomplete at the Wave-1
+freeze**. Its source directory has advanced substantially since and continues to move independently.
+
+That movement does **NOT**:
+
+- retroactively add it to Wave 1;
+- repin Wave 1;
+- make it automatically eligible for Wave 2;
+- authorize its publication.
+
+**Do not inspect or adjudicate Manimagudam** beyond the source-separation check Wave 1 requires, and
+**do not treat it as the next candidate.**
+
+### Lessons for future bulk waves
+
+1. **Coherence, not convenience, defines a batch** — one source release, one shelf, one comparable
+   verified state.
+2. **Batching must not flatten source differences.** Wave 1's four works kept different structures,
+   different opening notes and different witness situations; the shared importer accommodated that
+   rather than normalizing it.
+3. **A validator must never be able to certify `[] === []`.** Prove presence, then structure, then
+   equality — see the standing rule recorded below.
+4. **Importer and validator may share a contract but must not share an implementation defect.** The
+   validator's extraction is now independent by design.
+5. **Validator success is not enough if the evidence cannot be read** — see the CI-output rule below.
+6. **A route slug is not a structural claim.** `continuous-play` is navigation; it never became a
+   scene name or a unit count.
+7. **Printed pre-dramatic material is source text without being a scene** — carry it, attach it, and
+   neither route nor count it.
+8. **Absent metadata stays absent.** No `edition`, no year, no unit badge where the source establishes
+   none.
+9. **A secondary published translation stays secondary** in a batch exactly as it does for one work,
+   and "no witness exists" is *not applicable*, never *pending*.
+10. **One review gate for a coherent batch is sufficient** — four separate benchmark lifecycles would
+    have added ceremony, not assurance.
+
+---
+
+## Bulk onboarding is the STANDING DEFAULT workflow
+
+**Owner decision, recorded 2026-09-01 after Bulk Onboarding Wave 1 — Drama.** This supersedes the
+older one-work-per-benchmark default and the "no bulk import, no mass ingestion" constraint that
+appears in the historical per-benchmark constraint lists below. Those lists are kept as the record of
+how earlier benchmarks were run; **they are no longer the default for new work.**
+
+### The default procedure
+
+1. **identify a coherent batch** by source release / source repository / public shelf;
+2. **perform a readiness census over the whole candidate set** before selecting anything;
+3. **exclude incomplete or blocked works explicitly**, and record why;
+4. **freeze each included work** against source commit and tree identity;
+5. use **one coherent deterministic importer** where appropriate;
+6. use **one coherent source-linked batch validator**;
+7. the validator **MUST still report and fail per work** — a batch result may never hide a single
+   work's failure;
+8. **preserve per-work provenance, rights and structural distinctions**;
+9. publish the coherent batch in **one implementation PR** where the architecture allows;
+10. use **one independent ChatGPT review gate** for the batch;
+11. **close the completed batch in the control documents**;
+12. **do not flatten source differences merely because the work is batched.**
+
+### Bulk is the default, not permission to mix
+
+**Bulk does not mean "publish whatever is nearby".** It is not a claim that every future work must be
+bulked regardless of source state, and it never authorizes mixing incompatible or incomplete sources.
+A work that is not source-ready is excluded from the batch and said so explicitly — exactly as
+மணிமகுடம் was in Wave 1.
+
+### One-work benchmark cycles are now the EXCEPTION
+
+Use single-work treatment only where a work introduces a genuinely new:
+
+- **source form** (as the first audio speech did);
+- **reader architecture**;
+- **unresolved rights or attribution boundary**;
+- **unusual structure**;
+- **source-fidelity blocker**;
+- **implementation risk that should not be coupled to a batch.**
+
+Eligibility for a batch is **not** authorization to start one. **Owner authorization is still required
+before any wave begins.**
+
+### Standing rule — batch validation must avoid SHARED FALSE POSITIVES
+
+An importer and a validator may implement the same source contract, but they **must not share a defect
+that makes both derive the same empty or wrong expected value.** Wave 1 shipped a work whose verified
+Tamil introductory note was missing precisely because both sides computed `[]` and the equality check
+then "passed".
+
+For any source section known to exist, a validator **MUST explicitly assert NON-EMPTY source
+extraction before asserting equality.**
+
+The general rule:
+
+> **prove presence → then prove structure → then prove equality.**
+
+**Never allow `empty == empty` to certify completeness.** Where practical, give the validator an
+implementation of the source contract that is independent of the importer's, and negative-test both
+gates to confirm they actually bite.
+
+### Standing rule — validator success is not enough if the evidence cannot be read
+
+A green check with an unreadable log is not evidence. For verbose validators running in CI:
+
+- **avoid a final `process.exit()`** when stdout may still be buffered — Node discards buffered stdout
+  writes when `process.exit()` is called while stdout is a pipe, which is what CI provides;
+- **prefer `process.exitCode`** for normal completion, and let the process end on its own;
+- keep deliberate fail-closed early exits where they are intentional;
+- **ensure failure paths report their assertions rather than crash** — an assertion that throws while
+  dereferencing missing data exits non-zero for the wrong reason and destroys the report;
+- **test validators through a pipe as well as direct stdout** wherever log completeness matters.
+
+This is a reusable validator-engineering rule, not a Socrates-specific note.
 
 ---
 
@@ -740,11 +1206,12 @@ QA language throughout is **archive-recorded**, **automated QA** and **scan-adju
 
 ---
 
-> ⚠️ **SUPERSEDED (2026-09-01) — kept as the status snapshot it was.** Two lines below are no longer
-> current: **Phase 3 is ACTIVE, not paused** (the owner-directed pause was lifted), and **Speech
-> Benchmark #4 is COMPLETE and CLOSED**, not "NOT STARTED and NOT SELECTED". See the CURRENT STATE
-> checkpoint and the Speech Benchmark #4 close-out near the top of this document. Everything else in
-> this snapshot stands as written.
+> ⚠️ **SUPERSEDED (2026-09-01) — kept as the status snapshot it was.** Three lines below are no longer
+> current: **Phase 3 is ACTIVE, not paused** (the owner-directed pause was lifted); **Speech
+> Benchmark #4 is COMPLETE and CLOSED**, not "NOT STARTED and NOT SELECTED"; and **the three blocked
+> stage plays have since been published by Bulk Onboarding Wave 1**, taking Drama to 5. See the
+> CURRENT STATE checkpoint, the Wave-1 close-out and the Speech Benchmark #4 close-out near the top of
+> this document. Everything else in this snapshot stands as written.
 >
 > **Status:** **Phase 1 COMPLETE** · **Phase 2 (Cinema / Manohara) COMPLETE** · **Phase 3 — Speeches
 > is ACTIVE but PAUSED by owner direction (not complete)** · **Phase 4 — Poetry is ACTIVE** ·
@@ -820,7 +1287,9 @@ QA language throughout is **archive-recorded**, **automated QA** and **scan-adju
 >   `pugazg/kalaignar-stage-plays @ a66e62bbecaf63825b3db09a1d421401e1ab2e8e`. 38 numbered scenes plus
 >   a separate **unnumbered** closing tableau, which is never Scene 39.
 > - **Phase-7 Benchmark #2: NOT STARTED and NOT SELECTED.** `Anarkali`, `Cheran Senguttuvan` and
->   `Socrates` have **no controlling Tamil source** and remain blocked.
+>   `Socrates` have **no controlling Tamil source** and remain blocked. — ⚠️ **SUPERSEDED
+>   (2026-09-01):** controlling Tamil sources were released, and those three plus `Bharathayanam`
+>   were published by **Bulk Onboarding Wave 1**. Drama is now **5**.
 >
 > **Last production application-code checkpoint:
 > `9aade1d441bb314b5ab62f97b87b373d33db08c5`** (the Phase-7 Drama Benchmark #1 / PR #29 squash merge,
@@ -1790,11 +2259,19 @@ Phase-5 Benchmark #1 — see **§10 → Phase 5**.)_
 
 After one work of each form is proven, extract reusable adapters rather than prematurely inventing abstraction.
 
-## Phase 7 — Drama / Stage Plays — 🚧 ACTIVE (benchmark 1 COMPLETE / MERGED / PRODUCTION-VERIFIED)
+## Phase 7 — Drama / Stage Plays — 🚧 ACTIVE (benchmark 1 COMPLETE · Bulk Wave 1 COMPLETE)
 
-**Read this qualifier before quoting the status.** Benchmark #1 is complete, merged and
-production-verified. The PHASE remains **ACTIVE**: Drama Benchmark #2 is NOT STARTED and NOT
-SELECTED, and the remaining stage plays have no controlling Tamil source.
+**Read this qualifier before quoting the status.** Benchmark #1 (சிலப்பதிகாரம்) is complete, merged
+and production-verified, and **Bulk Onboarding Wave 1 has since published four more plays**, taking
+the Drama shelf to **5**. The PHASE remains **ACTIVE**: no further Drama work is started, selected or
+authorized.
+
+> ⚠️ **SUPERSEDED (2026-09-01).** This section previously said Drama Benchmark #2 was blocked because
+> `Anarkali`, `Cheran Senguttuvan` and `Socrates` had **no controlling Tamil source**. That is no
+> longer true: controlling Tamil sources were released in `pugazg/kalaignar-stage-plays` at
+> `145e52e88dbd009286f749a7f0e3520386e63244`, and all three — with பரதாயணம் — were published by
+> **Bulk Onboarding Wave 1**. See the Wave-1 close-out near the top of this document. **மணிமகுடம் /
+> Manimagudam remains unpublished and excluded.**
 
 ### Benchmark #1 — சிலப்பதிகாரம் நாடகக் காப்பியம் — ✅ COMPLETE
 
@@ -1832,9 +2309,20 @@ Decisions carried by this benchmark:
 - **The 2009 published English witness is evidence only** — a third party's separately copyrighted
   translation, never imported and never reader content.
 
-**Drama Benchmark #2: NOT STARTED and NOT SELECTED.** `Anarkali`, `Cheran Senguttuvan` and
-`Socrates` remain registry stubs with **no controlling Tamil source**; only a published English
-secondary witness exists for them, and it must never be reverse-translated into canonical Tamil.
+### Bulk Onboarding Wave 1 — ✅ COMPLETE
+
+`Anarkali`, `Cheran Senguttuvan`, `Socrates` and `Bharathayanam` are **published**, from the frozen
+source pin `145e52e88dbd009286f749a7f0e3520386e63244` — PR #64, squash
+`0dc92fa0fd832b5932b8df75606ef049c9f261ea`. Full detail is in the Wave-1 close-out section near the
+top of this document.
+
+*(Historical: this paragraph previously recorded those three as registry stubs with no controlling
+Tamil source. Controlling Tamil sources have since been released. The **2009 published English
+witness remains secondary comparison evidence only** and must never be reverse-translated into
+canonical Tamil — that constraint is unchanged and was honoured by Wave 1.)*
+
+**No further Drama work is started, selected or authorized.** மணிமகுடம் / Manimagudam is **not**
+published and is **not** automatically a Wave-2 candidate.
 
 ## Future — broader Literary Commentary (planning only)
 
@@ -1974,6 +2462,11 @@ Before every implementation prompt:
 7. require build/typecheck and live-route checks;
 8. require a clean branch/PR and stop after the requested activity.
 
+**Bulk onboarding is the standing default** for selecting and shipping new work — see the
+standing-policy section near the top of this document. A batch still needs a readiness census, an
+explicit exclusion list, per-work freezing, per-work validator reporting and one independent review
+gate; and it still needs **owner authorization** before it starts.
+
 When Claude returns a report, independently verify:
 
 - actual PR head/base;
@@ -1990,13 +2483,27 @@ When Claude returns a report, independently verify:
 
 # 15. Immediate next activity
 
-> ⚠️ **SUPERSEDED IN PART (2026-09-01).** The paragraph below was written at the Drama Benchmark #1
-> synchronization. Two of its statements are no longer current: **Phase 3 is ACTIVE, not paused**,
-> and **Speech Benchmark #4 is COMPLETE and CLOSED** rather than not started. The current
-> immediate-next-activity position is: **Speech Benchmark #4 is closed; no next benchmark is started,
-> selected or authorized; the Kalaignar Film Songs formal control close-out remains pending
-> housekeeping; and `kalaivanar-nsk-memorial-day-audio-06` is a SEPARATE source archive that is NOT
-> selected.** Owner authorization is required before any new implementation.
+> ⚠️ **SUPERSEDED IN PART (2026-09-01, post-Wave-1).** The paragraphs below were written at the Drama
+> Benchmark #1 synchronization. Three of their statements are no longer current: **Phase 3 is ACTIVE,
+> not paused**; **Speech Benchmark #4 is COMPLETE and CLOSED** rather than not started; and **Drama
+> Benchmark #2's "no controlling Tamil source" blocker is gone** — those plays were published by Bulk
+> Onboarding Wave 1.
+>
+> **The current immediate-next-activity position is:**
+>
+> - **Bulk Onboarding Wave 1 — Drama is COMPLETE and CLOSED** (PR #64, squash `0dc92fa0…`).
+> - **Bulk onboarding is now the STANDING DEFAULT workflow** — see the standing-policy section near
+>   the top of this document. The per-benchmark "integrate exactly one work / no bulk import"
+>   constraint lists that appear below and in §10 are **historical**, not the current default.
+> - **Wave 2 is NOT SELECTED and NOT AUTHORIZED.** Before any Wave 2, fetch live state and perform a
+>   read-only readiness census for a coherent candidate batch. **Eligibility is not authorization.**
+> - **மணிமகுடம் / Manimagudam is NOT selected** merely because its upstream source is advancing.
+> - The **Kalaignar Film Songs formal control close-out remains pending** housekeeping and was
+>   deliberately not performed by this close-out.
+> - `kalaivanar-nsk-memorial-day-audio-06` remains a **SEPARATE** source archive that is **NOT**
+>   selected.
+>
+> Owner authorization is required before any new implementation.
 
 **Phase 1 and Phase 2 are COMPLETE. Phase-3 Speech Benchmarks #1–#3 are complete, merged and
 production-verified, and Phase 3 is PAUSED by owner direction. Phase-4 Poetry Benchmark #1,
@@ -2025,8 +2532,21 @@ Current standing state:
 - **Phase-7 Drama Benchmark #1 (சிலப்பதிகாரம் நாடகக் காப்பியம்):** **COMPLETE / MERGED /
   PRODUCTION-VERIFIED** — PR [#29](https://github.com/pugazg/kalaignar-autobiography/pull/29),
   squash `9aade1d441bb314b5ab62f97b87b373d33db08c5`, production-verified 2026-08-21.
-- **Phase-7 Drama Benchmark #2:** NOT STARTED / NOT SELECTED — `Anarkali`, `Cheran Senguttuvan` and
-  `Socrates` have no controlling Tamil source.
+- **Phase-7 Drama — Bulk Onboarding Wave 1:** ✅ **COMPLETE / MERGED / PRODUCTION-VERIFIED and
+  CLOSED** — பரதாயணம், அனார்கலி, சாக்ரடீஸ் and சேரன் செங்குட்டுவன், PR
+  [#64](https://github.com/pugazg/kalaignar-autobiography/pull/64), squash
+  `0dc92fa0fd832b5932b8df75606ef049c9f261ea`, source pin
+  `145e52e88dbd009286f749a7f0e3520386e63244`. Drama 1 → **5**, catalogue 27 → **31**, **+22** public
+  URLs. *(This line replaces the earlier "Phase-7 Drama Benchmark #2: NOT STARTED / NOT SELECTED —
+  `Anarkali`, `Cheran Senguttuvan` and `Socrates` have no controlling Tamil source", which is
+  historical: controlling Tamil sources were released and those works are now published.)*
+- **Drama Bulk Wave 2 / any further Drama work:** NOT STARTED / NOT SELECTED / NOT AUTHORIZED.
+  **மணிமகுடம் / Manimagudam is NOT published and NOT automatically eligible** — its exclusion from
+  Wave 1 was deliberate and its upstream movement does not change that.
+- **Bulk onboarding is the standing default workflow** for new work; one-work benchmark cycles are now
+  the exception, reserved for genuinely new source forms, reader architecture, unresolved rights
+  boundaries, unusual structure, source-fidelity blockers or risk that should not be coupled to a
+  batch.
 
 If the owner simply says **"Proceed with next activity"**, the reviewer performs:
 
@@ -2065,7 +2585,10 @@ explicitly names a non-speech category, follow that category instead of running 
 then another source-ready poem has appeared in `kalaignar-poems`, Poetry Benchmark #2 may legitimately
 compete in this selection — but **Poetry is not privileged merely because Benchmark #1 was Poetry**.
 
-Constraints for whichever work is selected:
+Constraints for whichever work is selected — ⚠️ **HISTORICAL (2026-09-01).** These were the
+one-work-per-benchmark constraints. **Bulk onboarding is now the standing default**, so "integrate
+exactly one work" and "no bulk import" no longer describe the default; see the standing-policy section
+near the top of this document. Everything else in this list still applies to a batch, per work:
 
 - integrate **exactly one** work;
 - reviewer-gated PR; **no bulk import**, no mass ingestion;
@@ -2082,7 +2605,10 @@ Constraints for whichever work is selected:
 - **stop after that one benchmark.**
 
 Last production application-code checkpoint at this handover:
-**`9aade1d441bb314b5ab62f97b87b373d33db08c5`** (the Phase-7 Drama Benchmark #1 / PR #29 squash merge) — live GitHub `main` is authoritative and overrides this SHA if it later moves;
+**`0dc92fa0fd832b5932b8df75606ef049c9f261ea`** (the Bulk Onboarding Wave 1 / PR #64 squash merge).
+*(It supersedes `9aade1d441bb314b5ab62f97b87b373d33db08c5`, the Phase-7 Drama Benchmark #1 / PR #29
+squash merge, and `56ca0c978e34afddde52595f2ce825872bd6aeef`, the Speech Benchmark #4 A2 merge — both
+now historical.)* Live GitHub `main` is authoritative and overrides this SHA if it later moves;
 documentation-only commits may advance `main` past it without changing the deployed application, and
 such a docs-only SHA must never be recorded as a newer application-code checkpoint. The earlier
 `992fd8d6cd7bfd89a2689574d0e2ef2728774a1a` (Phase 6), `bcb11396b2215bc2cc1e81873c0ce278ef98598a`
