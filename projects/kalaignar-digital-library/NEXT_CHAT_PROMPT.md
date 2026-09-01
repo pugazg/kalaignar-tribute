@@ -24,26 +24,66 @@ Then inspect the live implementation repository:
 
 **Treat current GitHub `main`, open PRs and deployed site state as authoritative** over any SHA, count or status paragraph written in a handover, including this file.
 
-## ⚠️ CURRENT STATE — 2026-08-30 (supersedes the phase list below)
+## ⚠️ CURRENT STATE — 2026-09-01 (supersedes the phase list below)
 
 **The "Where the project actually stands" list below stops at Phase 7 and is HISTORICAL.** Its work
 and shelf counts are stale. It is kept for the completed-phase detail it records, and has not been
 retro-edited. **Live GitHub wins over anything in it.**
 
-Verified live 2026-08-30: implementation `main` **`766d68680cecca549d4d752e32561834f7dde0f5`**,
-**0 open PRs**, **25 published works**, **9 non-empty shelves**, **2948 prerendered pages**,
-**2944 sitemap URLs**.
+Measured live 2026-09-01: implementation `main` **`56ca0c978e34afddde52595f2ce825872bd6aeef`**,
+**0 open PRs**, **27 published works**, **9 non-empty shelves**, **3005 prerendered pages**,
+**3001 sitemap URLs**.
 
-Shelf census: Life Writing 1 · Letters 1 · Fiction 2 · Poetry 1 · Drama 1 · **Cinema Writing 3** ·
-Speeches 13 · Essays & Articles 1 · Literary Commentary 2.
+Shelf census: Life Writing 1 · Letters 1 · Fiction 2 · Poetry 1 · Drama 1 · **Cinema Writing 4** ·
+**Speeches 14** · Essays & Articles 1 · Literary Commentary 2. Total **27**.
 
-*(The previous 2026-08-26 line — `15405c7f…`, 24 works, 2853 pages, 2849 sitemap URLs, Cinema
-Writing 2 — was the pre-Tirumbippaar state and is superseded.)*
+These were measured now — SHA and open PRs from live GitHub, the census from `data/library.ts` at
+that SHA, pages from a production build, sitemap from the deployed site — not copied forward.
+
+### Speech Benchmark #4 — ✅ COMPLETE and CLOSED
+
+**கலைவாணர் என். எஸ். கிருஷ்ணன் நினைவு நாள் விழாவில் கலைஞர் உரை** / *Kalaivanar N. S. Krishnan
+Memorial-Day Speech* (`kalaivanar-nsk-memorial-day`) — the **first audio-sourced speech** in the
+Digital Library. Both stages are merged and independently verified:
+
+- **A1** (audio-source model, import, validator, reader, provenance page, routes, sitemap, CI):
+  PR **#62**, squash **`492b26ddd5681f085726ac802681c3fcbc7162f0`**
+- **A2** (Reading Room catalogue onboarding): PR **#63**, squash
+  **`56ca0c978e34afddde52595f2ce825872bd6aeef`**
+
+Source pin `pugazg/kalaignar-public-speeches` @ **`1ef73a709a343390befe55dcdfb029427f527bf4`**, path
+`speeches/kalaivanar-nsk-memorial-day`, tree **`256cbe2adc8dbc9c245be57196652ed79da48eeb`** — a
+historical release state, re-confirmed unchanged even though source `main` keeps advancing.
+
+The architecture: **an audio recording is a SOURCE FORM for an existing `public-speech`, not a new
+public subtype.** No `audio-speech` subtype, no printed-page provenance, no media binary, no player,
+no runtime media fetch. The **exact speech date is NOT established and no year is inferred**. The 12
+timestamps are **approximate navigation markers**, never source-authored sections or catalogue units.
+Nationalisation is scoped to Kalaignar's underlying Tamil speech and **excludes the source recording,
+the recording master, third-party recording production and the project-created English**. The
+source-linked validator is **102/102**.
+
+⚠️ **`speeches/kalaivanar-nsk-memorial-day-audio-06/` is a SEPARATE archive** — a different
+recording, under active upstream development, and the reason public-speeches `main` keeps moving. It
+is **not** a revision of this benchmark, **not** a new pin, and **not** selected for publication.
+Never conflate the two.
+
+Full detail, including the durable lessons and the rights boundary, is in `HANDOVER.md`.
+
+*(The previous **2026-08-30** line — `766d6868…`, 25 works, 2948 pages, 2944 sitemap URLs, Cinema
+Writing 3, Speeches 13 — is **superseded** and kept only as history, as is the 2026-08-26 line before
+it: `15405c7f…`, 24 works, 2853 pages, 2849 sitemap URLs, Cinema Writing 2.)*
 
 Shipped after the Phase-7 narrative below: **Thirukkural — கலைஞர் உரை** (with Daily Kural), the
 **Assembly-speech anthology** (Speeches → 13), **Phase B — கிழவன் கனவு** (Fiction → 2),
-**Phase C — பராசக்தி** (Cinema Writing → 2), and **Phase D — திரும்பிப்பார்**
-(Cinema Writing → 3, catalogue → 25).
+**Phase C — பராசக்தி** (Cinema Writing → 2), **Phase D — திரும்பிப்பார்**
+(Cinema Writing → 3, catalogue → 25), **கலைஞர் திரை இசைப் பாடல்கள் / Kalaignar Film Songs**
+(Cinema Writing → 4, catalogue → 26) and **Speech Benchmark #4** (Speeches → 14, catalogue → 27).
+
+**Film Songs:** implementation and publication are **live** — that is why Cinema Writing is 4 — but
+its **separate formal control-document close-out is still pending** and was deliberately not
+performed by the Speech Benchmark #4 close-out. Treat it as pending housekeeping, **not** as
+authorized execution.
 
 ### Phase C — பராசக்தி: COMPLETE and CLOSED
 
@@ -298,9 +338,13 @@ Production deployment `6163236518` success for that SHA.
 PR chain: **#53** D2.1 data · **#54** D2.2 reader/source routes · **#55** D2.3 catalogue ·
 **#56** D2.4 sitemap.
 
-Live: 25 catalogue works · Cinema Writing 3 (`manohara → parasakthi → tirumbippaar`) · 2944 sitemap
-URLs with **95** Tirumbippaar (1 landing + 93 registry scenes + 1 source) · 2948 build pages. All 95
-production URLs 200; sitemap scene set equals the registry exactly; off-registry slugs 404.
+Measured at the D2.5 boundary on **2026-08-30** — ⚠️ **site-wide totals since superseded**, see the
+CURRENT STATE section above: 25 catalogue works · Cinema Writing 3
+(`manohara → parasakthi → tirumbippaar`) · 2944 sitemap URLs with **95** Tirumbippaar (1 landing +
+93 registry scenes + 1 source) · 2948 build pages. All 95 production URLs 200; sitemap scene set
+equals the registry exactly; off-registry slugs 404. *(The **95 Tirumbippaar URLs** and the route
+family are the durable Tirumbippaar facts; the catalogue/sitemap/page totals around them have moved
+on.)*
 
 Census at the pin: 104 pages · 93 scenes · 1042 dialogue records · 1330 English units · 39 entities ·
 45 labels · 8 song/performance occurrences (3 verified to others, 5 unresolved, **0 Kalaignar**).
@@ -321,11 +365,12 @@ error from expected Tamil or punctuation convention.
 
 - **Phase 1 — Library Foundation:** COMPLETE, merged, production-verified.
 - **Phase 2 — Cinema / Manohara:** COMPLETE, merged, production-verified.
-- **Phase 3 — Speeches: ACTIVE, NOT complete.** *(Historical context: I asked at the time for the next work to come from a category **other than speeches**, which produced Phase 4 — Poetry. That pause is **historical and superseded** — see the current post-Tirumbippaar rule above; it does not exclude speeches from consideration now. No speech work is authorized.)*
+- **Phase 3 — Speeches: ACTIVE, NOT complete.** Four benchmarks are done. *(Historical context: I asked at the time for the next work to come from a category **other than speeches**, which produced Phase 4 — Poetry. That pause is **historical and superseded**; Benchmark #4 has since run and closed. No FURTHER speech work is authorized.)*
   - **Benchmark #1 — உதயக் கதிர் / Udhaya Kathir** (assembly speech): COMPLETE, merged, production-verified (PR #18).
   - **Benchmark #2 — பூந்தோட்டம் / Poonthottam** (public speech): COMPLETE, merged, production-verified (PR #20), plus the PR #21 presentation/provenance hotfix.
   - **Benchmark #3 — அறப்போர் / Arappor** (public speech): COMPLETE, merged, production-verified (PR #23).
-  - **Speech Benchmark #4: NOT STARTED and NOT SELECTED.**
+  - **Benchmark #4 — கலைவாணர் என். எஸ். கிருஷ்ணன் நினைவு நாள் விழாவில் கலைஞர் உரை** (public speech, **audio source**): **COMPLETE, merged, production-verified** — A1 PR #62 squash `492b26dd…`, A2 PR #63 squash `56ca0c97…`. Source pin `pugazg/kalaignar-public-speeches @ 1ef73a709a343390befe55dcdfb029427f527bf4`, tree `256cbe2a…`. First audio-sourced speech; `public-speech` retained, audio carried as source form. *(This line replaces the earlier "Speech Benchmark #4: NOT STARTED and NOT SELECTED", which is historical.)*
+  - **Speech Benchmark #5: NOT STARTED / NOT SELECTED / NOT AUTHORIZED.**
 - **Phase 4 — Poetry: ACTIVE.**
   - **Benchmark #1 — இதயத்தைத் தந்திடு அண்ணா / Lend Me Your Heart, Anna:** COMPLETE, merged, production-verified (PR #25, reviewed head `3653023d…`, squash `c2d1c46d…`, 2026-08-20T01:58:07Z, merge-SHA deployment `92kdGyRiKucdUPSywP2XqnZMx1g9`).
   - **Poetry Benchmark #2: NOT STARTED / NOT SELECTED / NOT APPROVED FOR IMPLEMENTATION.** A second work now EXISTS — at live `pugazg/kalaignar-poems` `2230a8d`, `poems/` holds `idhayathai-thanthidu-anna` (released) **and** `anaiya-vilakku-anna`. `anaiya-vilakku-anna` (அணையா விளக்கு அண்ணா) is **NOT READY**: of 19 source pages only **1** page record exists, Tamil assembly is **pending**, English translation is **pending**, and the work records **no SHA-256 and no byte size**. A candidate source exists, but it is **not approved for implementation**. Not cancelled; Phase 4 is not complete either. Verify live.
@@ -345,9 +390,15 @@ error from expected Tamil or punctuation convention.
 
 That is the Phase-7 Drama Benchmark #1 / PR #29 squash merge, and it identifies the last **production application-code** state. It supersedes `992fd8d6cd7bfd89a2689574d0e2ef2728774a1a` (Phase 6), `bcb11396b2215bc2cc1e81873c0ce278ef98598a` (Phase 5), `c2d1c46d1c2d4e1f11722360848226208867789f` (Phase 4) and `ecf73cc8146cd9a9578c4aeaf73518b122ce569c` (Phase 3), which are now **historical** checkpoints only. Repository `main` may contain later **documentation-only** commits that do not change deployed application behaviour, and such a docs-only SHA is **never** a newer application-code checkpoint. If live `main` has moved past that SHA, **live state wins** — inspect it and reconcile before advising anything.
 
+⚠️ **SUPERSEDED COUNTS (2026-09-01) — the per-shelf structural facts below still stand, the totals
+do not.** The current census is **27 works across 9 non-empty shelves** with **Speeches 14** and
+**Cinema Writing 4** (see CURRENT STATE at the top). The paragraph below is the Phase-7-era snapshot,
+kept for the per-work structure it records.
+
 `/read` currently publishes **11 works across 9 non-empty shelves** (Life Writing, Letters, **Poetry**, Cinema Writing, Speeches, **Essays & Articles**, Literary Commentary, **Fiction**, **Drama**). **நாடகங்கள் / Drama** holds exactly **1** work (`சிலப்பதிகாரம் நாடகக் காப்பியம்`, 38 scenes plus a separate closing tableau). **புனைவு / Fiction** holds exactly **1** work (`பலிபீடம் நோக்கி`, three sections); **கட்டுரைகள் / Essays & Articles** holds exactly **1** publication (14 articles inside it); **Poetry / கவிதைகள்** holds exactly **1** work; the **single** Speeches / உரைகள் shelf holds exactly **3** — Udhaya Kathir, Poonthottam and Arappor. Verify this live rather than trusting the numbers.
 
-**Do NOT restart:** Phase 1, Phase 2 / Manohara, Speech Benchmarks #1–#3, the PR #21 hotfix, Poetry Benchmark #1 (Idhayathai Thanthidu Anna), Phase-5 Essays Benchmark #1 (Sakkaravarththiyin Thirumagan), Phase-6 Fiction Benchmark #1 (Balipeedam Nokki), Phase-7 Drama Benchmark #1 (Silappathikaram Nataka Kappiyam), or mobile.
+**Do NOT restart:** Phase 1, Phase 2 / Manohara, Speech Benchmarks #1–#3, **Speech Benchmark #4
+(கலைவாணர் memorial-day audio speech — CLOSED)**, the PR #21 hotfix, Poetry Benchmark #1 (Idhayathai Thanthidu Anna), Phase-5 Essays Benchmark #1 (Sakkaravarththiyin Thirumagan), Phase-6 Fiction Benchmark #1 (Balipeedam Nokki), Phase-7 Drama Benchmark #1 (Silappathikaram Nataka Kappiyam), or mobile.
 
 ## Current poetry source pin
 
@@ -364,6 +415,7 @@ At that source state, `poems/` contains **exactly one** work directory — `idha
 - **Udhaya Kathir:** `pugazg/kalaignar-assembly-speeches` @ `b1b82402642d8f2cf36927d4752c8e7d28142fdd`
 - **Poonthottam:** `pugazg/kalaignar-public-speeches` @ `1ef73a709a343390befe55dcdfb029427f527bf4`
 - **Arappor:** `pugazg/kalaignar-public-speeches` @ `1ef73a709a343390befe55dcdfb029427f527bf4`
+- **Kalaivanar N. S. Krishnan Memorial-Day Speech:** `pugazg/kalaignar-public-speeches` @ `1ef73a709a343390befe55dcdfb029427f527bf4` (path `speeches/kalaivanar-nsk-memorial-day`, tree `256cbe2adc8dbc9c245be57196652ed79da48eeb`). Source `main` has advanced well past this pin for the **separate** `kalaivanar-nsk-memorial-day-audio-06` archive; the released work stays pinned here.
 
 ## Source repositories
 
@@ -403,7 +455,11 @@ Phase 2 imported Manohara correctly from the authoritative `pugazg/kalaignar-cin
 
 ## Your role
 
-Claude Code performs the implementation work.
+**You are the reviewer and prompt provider. Claude Code performs every repository write.** You do not
+commit and you do not merge — you review, you recommend, and you supply prompts. **Live GitHub state
+wins over any SHA, count or status paragraph copied into a handover, including this file.** **Owner
+authorization is required before a new benchmark starts**; being eligible for consideration is not
+authorization.
 
 Your job is to:
 
@@ -416,9 +472,25 @@ Your job is to:
 
 ## Immediate next activity
 
-**Tirumbippaar Phase D is CLOSED through D2.5 (see above). No next implementation benchmark has been started, and no next work or category has been selected.**
+**Speech Benchmark #4 is CLOSED** (A1 #62 / `492b26dd…`, A2 #63 / `56ca0c97…`; control close-out
+recorded in `HANDOVER.md`). **No next implementation benchmark has been started, and no next work or
+category has been selected.**
 
-**Do not continue Tirumbippaar D2 work.** It is complete and production-verified.
+Before any new implementation, fetch live state and **obtain owner authorization for the next bounded
+activity**. Legitimate possibilities include any still-pending control close-out the owner explicitly
+authorizes, or a new candidate readiness/selection activity. **Eligibility is not authorization.**
+
+**Pending housekeeping — not authorized execution:** the **Kalaignar Film Songs formal control
+close-out** has not been performed. Its implementation is live (Cinema Writing = 4), but its
+control-document close-out section does not exist yet. Mention it if the owner asks what is
+outstanding; do not perform it unprompted.
+
+**Do NOT** select `kalaivanar-nsk-memorial-day-audio-06` as the next candidate. It is a **separate
+recording and a separate source work**, still under upstream development — not a revision of the
+closed Benchmark #4, not a new pin for it, and not established as ready for publication.
+
+**Do not continue Tirumbippaar D2 work.** It is complete and production-verified. **Do not reopen
+Speech Benchmark #4.**
 
 Before proposing anything, the next chat must: fetch live control and implementation state, read
 `HANDOVER.md` completely, and **confirm owner authorization** for the next roadmap work. Do not select
@@ -427,8 +499,10 @@ or begin a work automatically.
 **Known roadmap candidates after Tirumbippaar — none selected, none authorized:**
 
 - printed public-speech booklets;
-- audio / public speeches;
-- the cinema song-lyrics taxonomy decision;
+- audio / public speeches — *(the first audio speech has since shipped as Benchmark #4; further audio
+  speeches remain candidates, none selected)*;
+- the cinema song-lyrics taxonomy decision — *(Film Songs has since shipped; its formal control
+  close-out remains pending)*;
 - **Mandhiri Kumari — NOT ready**;
 - **Anaiyaa Vilakku Anna — NOT ready**;
 - blocked stage-play stubs.
@@ -449,6 +523,16 @@ or begin a work automatically.
   Kalaignar."* Reviewed as **NON-BLOCKING**; fold it into a future PR that legitimately edits that
   comment, and do **not** open an implementation change for it on its own.
 - A scoped **`WorkAttribution`** rights model for composite works remains a separate future issue.
+- **Speech-model comment debt (from Speech Benchmark #4):** the top-level comment in
+  `data/speeches.ts` and a nearby `SpeechReader` internal comment still describe the block stream in
+  print-only terms ("printed section headings", "source-page boundaries"). Non-runtime, non-public
+  explanatory debt. Fold into a future PR that legitimately edits those comments; do **not** open a
+  change for it on its own.
+- **Film Songs follow-ups:** the nullable section-label type mismatch, and the E3 catalogue-comment
+  wording precision — both separate future work.
+- **Stale `/read` metadata description** — the page-level description still names only the memoir,
+  the letters and the commentary. Separate future work.
+- **Film Songs formal control close-out** — still pending; see the Immediate-next-activity note.
 
 - **Poetry Benchmark #1:** COMPLETE / MERGED / PRODUCTION-VERIFIED.
 - **Phase-5 Essays Benchmark #1:** COMPLETE / MERGED / PRODUCTION-VERIFIED.
@@ -457,9 +541,12 @@ or begin a work automatically.
 - **Phase-6 Benchmark #2 (a second Fiction work):** NOT STARTED / NOT SELECTED.
 - **Poetry Benchmark #2:** NOT STARTED / NOT SELECTED / **NOT APPROVED FOR IMPLEMENTATION** — at live `kalaignar-poems` `2230a8d` a second work `anaiya-vilakku-anna` exists, but `anaiya-vilakku-anna` (அணையா விளக்கு அண்ணா) is **NOT READY**: of 19 source pages only **1** page record exists, Tamil assembly is **pending**, English translation is **pending**, and the work records **no SHA-256 and no byte size**. A candidate source exists, but it is **not approved for implementation**.
 - **Phase-5 Benchmark #2 (a second Essays work):** NOT STARTED / NOT SELECTED.
-- **Speech Benchmark #4:** NOT STARTED / NOT SELECTED / NOT AUTHORIZED. *(The earlier owner
-  direction that paused speech expansion is historical context; after Tirumbippaar it no longer
-  excludes speeches from consideration. Eligible to be compared again — not authorized.)*
+- **Speech Benchmark #4:** ✅ **COMPLETE / MERGED / PRODUCTION-VERIFIED** — the first audio-sourced
+  speech (A1 #62 `492b26dd…`, A2 #63 `56ca0c97…`). Closed; do not reopen. *(This line previously read
+  "NOT STARTED / NOT SELECTED / NOT AUTHORIZED"; that is now historical.)*
+- **Speech Benchmark #5:** NOT STARTED / NOT SELECTED / NOT AUTHORIZED. A fifth speech is eligible to
+  be compared, but **`kalaivanar-nsk-memorial-day-audio-06` is not selected** and is not established
+  as ready.
 
 ### Default for "Proceed with next activity"
 
