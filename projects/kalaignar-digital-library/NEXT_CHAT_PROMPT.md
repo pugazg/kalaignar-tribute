@@ -31,7 +31,7 @@ and shelf counts are stale. It is kept for the completed-phase detail it records
 retro-edited. **Live GitHub wins over anything in it.**
 
 Measured live 2026-09-01: implementation `main` **`0dc92fa0fd832b5932b8df75606ef049c9f261ea`**,
-**0 open PRs**, **31 published works**, **9 non-empty shelves**, **3027 prerendered pages**,
+**0 open PRs**, **31 published works**, **5 Drama works**, **9 non-empty shelves**,
 **3035 Next build static-route entries**, **3023 sitemap URLs**.
 
 Shelf census: Life Writing 1 · Letters 1 · Fiction 2 · Poetry 1 · **Drama 5** · **Cinema Writing 4** ·
@@ -45,12 +45,14 @@ forward.
 
 | metric | how it is measured | pre-Wave-1 | post-Wave-1 | delta |
 |---|---|---|---|---|
-| **Prerendered pages** | prerendered `.html` files under `.next/server/app` | 3005 | **3027** | **+22** |
-| **Next build static-route entries** | the `Generating static pages (N/N)` figure | 3013 | **3035** | **+22** |
+| **Next build static-route count** *(authoritative)* | the `Generating static pages (N/N)` figure | 3013 | **3035** | **+22** |
 | **Sitemap URLs** | `<loc>` entries in the deployed `sitemap.xml` | 3001 | **3023** | **+22** |
+| Prerendered `.html` files *(older, non-equivalent metric)* | prerendered `.html` files under `.next/server/app` | 3005 | 3027 | +22 |
 
-The historical **3005** row was re-measured by rebuilding pre-Wave-1 `main` and reproduces exactly, so
-the metric is continuous. **3027 and 3035 are two different metrics, not one number measured twice.**
+⚠️ **`3027` is NOT the Next static-route count** and must never be quoted as one. It belongs to the
+older "Prerendered pages" convention, which was re-measured for continuity (pre-Wave-1 rebuild returns
+exactly 3005) but measures a different thing. **The authoritative route metric is 3013 → 3035.** All
+three move +22 because the same 22 URLs are involved — not because they measure the same thing.
 
 *(The previous **2026-09-01 pre-Wave-1** line — `56ca0c97…`, 27 works, 3005 prerendered pages, 3001
 sitemap URLs, Drama 1 — is **superseded** and kept only as history.)*
@@ -89,6 +91,17 @@ authorize publication.
 
 Full detail is in `HANDOVER.md`.
 
+### ⚠️ Exact-head review is MANDATORY before any merge
+
+Wave 1's PR #64 was **merged before its final repaired head received independent ChatGPT exact-head
+approval**; ChatGPT then performed an independent read-only **post-merge** review of the exact
+merged implementation and accepted it. **That is not the
+workflow and is not a precedent.**
+
+**The standing rule:** Claude opens the PR → ChatGPT reviews the **exact current head** → ChatGPT
+gives **APPROVED FOR MERGE** → only then does Claude merge. **If the head changes after approval, STOP
+and re-review.** Bulk onboarding does not relax this gate.
+
 ### ⚙️ Bulk onboarding is the STANDING DEFAULT workflow
 
 **Owner decision, recorded 2026-09-01.** This supersedes the older one-work-per-benchmark default and
@@ -104,8 +117,13 @@ the "no bulk import, no mass ingestion" constraint repeated in the historical li
 8. preserve per-work provenance, rights and structural distinctions;
 9. publish the coherent batch in one implementation PR where architecture allows;
 10. use one independent ChatGPT review gate for the batch;
-11. close the completed batch in the control documents;
-12. **do not flatten source differences merely because the work is batched.**
+11. **exact-head independent ChatGPT review, and merge only after APPROVED FOR MERGE**;
+12. production verification, then one batch control close-out;
+13. **do not flatten source differences merely because the work is batched.**
+
+**A batch validator must report per work and fail the whole batch on any one work's failure.**
+Source-tree drift guards are **per work**, and a source repository pinned at multiple historical
+commits needs **separate CI checkout directories**.
 
 **Bulk is the default, not permission to mix.** It never authorizes combining incompatible or
 incomplete sources, and it is not a claim that every future work must be bulked regardless of source

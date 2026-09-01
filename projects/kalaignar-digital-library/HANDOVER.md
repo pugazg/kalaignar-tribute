@@ -18,10 +18,11 @@ retro-edited. Where it disagrees with this section or with live GitHub, **live G
 | Implementation `main` | `0dc92fa0fd832b5932b8df75606ef049c9f261ea` |
 | Open PRs (implementation) | 0 |
 | Published works | **31** |
+| Drama works | **5** |
 | Non-empty shelves | **9** |
-| Prerendered pages | **3027** |
-| Next build static-route entries | **3035** |
-| Sitemap URLs | **3023** |
+| **Next build static-route count** | **3035** |
+| **Sitemap URLs** | **3023** |
+| Prerendered `.html` files *(older, non-equivalent metric)* | 3027 |
 
 Shelf census: Life Writing 1 · Letters 1 · Fiction 2 · Poetry 1 · **Drama 5** ·
 **Cinema Writing 4** · **Speeches 14** · Essays & Articles 1 · Literary Commentary 2. Total **31**.
@@ -38,15 +39,21 @@ previously conflated:
 
 | metric | how it is measured | pre-Wave-1 | post-Wave-1 | delta |
 |---|---|---|---|---|
-| **Prerendered pages** | count of prerendered `.html` files under `.next/server/app` | 3005 | **3027** | **+22** |
-| **Next build static-route entries** | the `Generating static pages (N/N)` figure | 3013 | **3035** | **+22** |
+| **Next build static-route count** *(authoritative route metric)* | the `Generating static pages (N/N)` figure | 3013 | **3035** | **+22** |
 | **Sitemap URLs** | `<loc>` entries in the deployed `sitemap.xml` | 3001 | **3023** | **+22** |
+| Prerendered `.html` files *(older, non-equivalent metric)* | count of prerendered `.html` files under `.next/server/app` | 3005 | 3027 | +22 |
 
-The historical **3005** was re-measured by rebuilding pre-Wave-1 `main`
-(`56ca0c978e34afddde52595f2ce825872bd6aeef`) and counting prerendered `.html` files: it reproduces
-exactly, so the row is continuous with earlier checkpoints. **3027 and 3035 are NOT the same number
-measured two ways — they are two different metrics**, and the older single-row convention is why they
-were once confused. All three move **+22** for Wave 1.
+**The authoritative route metric is the Next build static-route count: 3013 → 3035.** The sitemap
+count is a separate, genuinely different measurement: 3001 → 3023.
+
+⚠️ **`3027` is NOT the Next static-route count and must never be quoted as one.** It belongs to the
+older "Prerendered pages" convention used by earlier checkpoints, which counts prerendered `.html`
+files. That convention was re-measured for continuity — rebuilding pre-Wave-1 `main`
+(`56ca0c978e34afddde52595f2ce825872bd6aeef`) and counting those files returns exactly **3005**, so the
+historical row is honest — but it is a **different metric from the build's route count**, and the two
+were once conflated. `3027` is retained here only to keep the older row meaningful. **Do not mix the
+older page-count method with the build static-route metric.** All three happen to move **+22** for
+Wave 1, which is a consequence of the same 22 URLs, not evidence that they measure the same thing.
 
 Shipped since the pre-Wave-1 2026-09-01 checkpoint:
 
@@ -208,6 +215,22 @@ Printed pre-dramatic material is carried as a `PlayOpeningNote`: it is **source 
 scene, never routed and never counted**. It attaches to the reading unit it precedes. Three of the
 four works carry one — Bharathayanam (2 units, scan 6), Socrates (13 units, scans 27–28) and Cheran
 Senguttuvan (5 units, scan 44). Anarkali prints none, and none was invented for it.
+
+**Cheran Senguttuvan's pre-scene framing is explicitly NOT a scene**: its 5 units attach to reading
+unit `01`, and its `sceneCount` stays **4**. The same holds for Socrates' 13-unit note against
+`sceneCount` 5, and Bharathayanam's 2-unit note against a work with **no scenes at all**.
+
+#### Page-record fidelity — a BOUNDED precedent
+
+Socrates' Tamil introductory note had **verified page records but no source-repository assembled Tamil
+intro file**. The integration therefore carried the page-record text **with its physical print
+lineation intact**, and did **not** join print-line splits such as `கருத்` / `துக்கள்`.
+
+**The bounded precedent:** where the source archive deliberately holds only verified page records and
+no authorized assembly, the Digital Library **may preserve page-record fidelity rather than silently
+perform its own textual assembly**. Assembly is the archive's decision to make.
+
+**Do NOT turn this into a universal rule for every source without review.**
 
 ### Socrates — the source-fidelity repair
 
@@ -379,9 +402,11 @@ are **not** hard-coded into the sitemap:
 
 | metric | before | after | delta |
 |---|---|---|---|
-| Sitemap URLs | 3001 | **3023** | **+22** |
-| Prerendered pages | 3005 | **3027** | **+22** |
-| Next static-route entries | 3013 | **3035** | **+22** |
+| **Next build static-route count** | 3013 | **3035** | **+22** |
+| **Sitemap URLs** | 3001 | **3023** | **+22** |
+| Prerendered `.html` files *(older, non-equivalent metric)* | 3005 | 3027 | +22 |
+
+The 22 URLs break down as **4 landings + 4 source pages + 14 reading routes**.
 
 0 duplicate sitemap URLs. These are the deltas **at this wave's boundary**; if the site advances later
 for unrelated reasons, refresh the CURRENT STATE checkpoint — **do not rewrite these figures**.
@@ -439,6 +464,31 @@ That movement does **NOT**:
 **Do not inspect or adjudicate Manimagudam** beyond the source-separation check Wave 1 requires, and
 **do not treat it as the next candidate.**
 
+### ⚠️ Process lesson — the exact-head review gate
+
+**Recorded because it must not become the pattern.**
+
+Wave 1's implementation PR **#64** was **merged before its final repaired head received independent
+ChatGPT exact-head approval**. The final repaired head was
+`74c7f6dc692571a8a3abcee77d929b76084ab9db`; the squash merge is
+`0dc92fa0fd832b5932b8df75606ef049c9f261ea`. Independent ChatGPT subsequently performed a read-only
+**post-merge** review of the exact merged implementation and **accepted** it.
+
+**That acceptance settles Wave 1. It does not make post-merge review an acceptable substitute for the
+review gate, and it is not a precedent.**
+
+**Standing rule for every future bulk implementation PR:**
+
+1. Claude Code opens the bulk implementation PR;
+2. ChatGPT reviews the **EXACT current PR head**;
+3. ChatGPT gives **APPROVED FOR MERGE** for that exact head;
+4. **only then** may Claude Code merge;
+5. **if the PR head changes after approval — for any reason, including a repair — STOP and re-review
+   before merging.**
+
+Bulk onboarding does **not** relax this gate. A batch concentrates more work behind one review, which
+makes the exact-head discipline more important, not less.
+
 ### Lessons for future bulk waves
 
 1. **Coherence, not convenience, defines a batch** — one source release, one shelf, one comparable
@@ -460,7 +510,25 @@ That movement does **NOT**:
 9. **A secondary published translation stays secondary** in a batch exactly as it does for one work,
    and "no witness exists" is *not applicable*, never *pending*.
 10. **One review gate for a coherent batch is sufficient** — four separate benchmark lifecycles would
-    have added ceremony, not assurance.
+    have added ceremony, not assurance. **But it must still be an exact-head gate before merge.**
+11. **One coherent source batch may share one historical source pin**, while **per-work provenance
+    stays distinct** — each work keeps its own scan extent, counters and provenance page.
+12. **Source-tree drift guards remain per work**, not per repository: the batch is only frozen if each
+    work's tree SHA is checked individually.
+13. **One failure must fail the whole batch.** The batch validator reports per work, but any group's
+    failure fails the run — a batch result may never average away one work's defect.
+14. **A batch may justify a small reusable model generalization** (`structureKind`, `readingUnits`,
+    `openingNote`), but **source structure must never be flattened just to make the batch uniform.**
+15. **`readingUnits` is more source-honest than assuming every public unit is a scene** — it is what
+    let a continuous play, a scene sequence and a closing tableau share one model without any of them
+    lying about its source.
+16. **Scan-provenance granularity must not claim precision the archive does not publish** — where the
+    archive records per-unit-group scans, the generated data says so and does not invent per-unit
+    precision.
+17. **Dedicated CI source checkouts are necessary when one source repository is pinned at multiple
+    historical commits.** Silappathikaram and the Naanmani Malai batch both come from
+    `pugazg/kalaignar-stage-plays` at *different* pins, so they use separate checkout directories and
+    the workflow's same-directory/same-pin guard keeps its meaning.
 
 ---
 
