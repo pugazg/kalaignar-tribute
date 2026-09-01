@@ -1361,7 +1361,7 @@ release output, on the same source-faithful terms.
 
 ## Phase 3 — Speeches — 🚧 ACTIVE (benchmarks 1, 2, 3 and 4 COMPLETE / MERGED / PRODUCTION-VERIFIED)
 
-**Phase 3 is ACTIVE and NOT complete.** Three benchmarks are done — one assembly speech and two
+**Phase 3 is ACTIVE and NOT complete.** Four benchmarks are done — one assembly speech and three
 public speeches — and the shared speech architecture is proven end-to-end across **both**
 `assembly-speech` and `public-speech`, on one shelf, one reader and one provenance page, now
 including a source that establishes **no** date, venue or event. Many more released speeches remain.
@@ -1541,10 +1541,11 @@ no event** — proving the model can represent source absence honestly.
 > speech work is started, selected or authorized; each new work still requires explicit owner
 > authorization.
 
-When it is reactivated, the guidance stands: integrate additional released speeches one at a time
-under the same **Speeches** shelf (both Legislative Assembly and Public speeches are subtypes of it,
-not separate shelves), reusing this reader/importer pattern. Prefer machine-readable indexes where
-present, but verify every reader-facing work against source-repository release state.
+For any future owner-authorized speech expansion, the guidance stands: integrate additional released
+speeches one at a time under the same **Speeches** shelf (both Legislative Assembly and Public
+speeches are subtypes of it, not separate shelves), reusing this reader/importer pattern. Prefer
+machine-readable indexes where present, but verify every reader-facing work against
+source-repository release state.
 
 Do not collapse public speeches and Assembly proceedings into one reader model if that loses parliamentary structure.
 
