@@ -1,6 +1,6 @@
 # Kalaignar Digital Library / Reading Room — Master Handover
 
-**Last updated:** 2026-08-30
+**Last updated:** 2026-09-01
 
 ---
 
@@ -11,7 +11,36 @@ Several phases have shipped since it was written, and its work counts, shelf cou
 "last production application-code checkpoint" are stale. It is kept as history and has **not** been
 retro-edited. Where it disagrees with this section or with live GitHub, **live GitHub wins**.
 
-### Verified live state — 2026-08-30
+### Verified live state — 2026-09-01 ✅ CURRENT
+
+| | |
+|---|---|
+| Implementation `main` | `56ca0c978e34afddde52595f2ce825872bd6aeef` |
+| Open PRs (implementation) | 0 |
+| Published works | **27** |
+| Non-empty shelves | **9** |
+| Prerendered pages | **3005** |
+| Sitemap URLs | **3001** |
+
+Shelf census: Life Writing 1 · Letters 1 · Fiction 2 · Poetry 1 · Drama 1 ·
+**Cinema Writing 4** · **Speeches 14** · Essays & Articles 1 · Literary Commentary 2. Total **27**.
+
+**Measured now**, not copied from the previous checkpoint: the SHA and open-PR count from live
+GitHub; the work/shelf census from `data/library.ts` at that SHA; the page count from a production
+build of it; and the sitemap count from the deployed site. `https://nenjukkuneethi.org/read`,
+`/speeches/kalaivanar-nsk-memorial-day` and `/speeches/kalaivanar-nsk-memorial-day/source` all
+return 200 in production.
+
+Shipped since the 2026-08-30 checkpoint:
+
+- **கலைஞர் திரை இசைப் பாடல்கள் / Kalaignar Film Songs** — implementation and publication are **live**
+  in Cinema Writing, which is why that shelf is now 4 rather than 3. Its **separate formal
+  control-document close-out remains pending** and is deliberately not performed here.
+- **Speech Benchmark #4 — கலைவாணர் என். எஸ். கிருஷ்ணன் நினைவு நாள் விழாவில் கலைஞர் உரை** — the first
+  audio-sourced speech, taking Speeches to 14 and the catalogue to 27. **Closed by this document**;
+  see its section below.
+
+### Verified live state — 2026-08-30 ⚠️ SUPERSEDED (kept as history)
 
 | | |
 |---|---|
@@ -27,7 +56,8 @@ Shelf census: Life Writing 1 · Letters 1 · Fiction 2 · Poetry 1 · Drama 1 ·
 
 Verified against live production on 2026-08-30, not carried over from the previous checkpoint. The
 previous 2026-08-26 line — `15405c7f…`, 24 works, 2853 pages, 2849 sitemap URLs, Cinema Writing 2 —
-was the pre-Tirumbippaar state and is superseded.
+was the pre-Tirumbippaar state and is superseded. **This 2026-08-30 line is itself now superseded by
+the 2026-09-01 checkpoint above** and is retained only as history.
 
 ### Phases shipped after this document's Phase-7 narrative
 
@@ -39,6 +69,265 @@ merged PRs, not in this file:
 - **Phase B — கிழவன் கனவு** (Fiction short story), taking Fiction to 2.
 - **Phase C — பராசக்தி** (Cinema Writing), taking Cinema Writing to 2.
 - **Phase D — திரும்பிப்பார்** (Cinema Writing), taking Cinema Writing to 3 and the catalogue to 25.
+- **கலைஞர் திரை இசைப் பாடல்கள் / Kalaignar Film Songs** (Cinema Writing), taking Cinema Writing to 4
+  and the catalogue to 26. Implementation live; **formal control close-out still pending**.
+- **Speech Benchmark #4 — the first audio-sourced speech**, taking Speeches to 14 and the catalogue
+  to 27. **Closed by this document.**
+
+---
+
+## Speech Benchmark #4 — கலைவாணர் என். எஸ். கிருஷ்ணன் நினைவு நாள் விழாவில் கலைஞர் உரை — ✅ COMPLETE and CLOSED
+
+**Kalaivanar N. S. Krishnan Memorial-Day Speech.** Slug `kalaivanar-nsk-memorial-day`. Merged and
+verified in two independently reviewed stages, A1 and A2. Final benchmark implementation boundary:
+**`56ca0c978e34afddde52595f2ce825872bd6aeef`**. Verified in production on 2026-09-01.
+
+**Do NOT reopen this benchmark.**
+
+### Selection / architectural purpose
+
+This work was selected because it was the first opportunity to prove that the existing **Speech
+reader could support a second controlling-source form** — an audio recording rather than a printed
+booklet or scan — **without** creating a separate public `audio-speech` subtype and **without**
+building a generalized media framework.
+
+The architectural result: **`public-speech` remains the content subtype**, and **`sourceForm`
+distinguishes print from audio only where the reader and provenance layer actually need it**. Source
+form is orthogonal to content subtype; splitting the public speech category along the media axis
+would have been the wrong cut.
+
+This is the result *for this work*. It is a precedent to weigh, not a rule: **do not assume every
+future audio work must use exactly this model without its own review.**
+
+### Source boundary
+
+| | |
+|---|---|
+| Source repository | `pugazg/kalaignar-public-speeches` |
+| Source path | `speeches/kalaivanar-nsk-memorial-day` |
+| Release pin | `1ef73a709a343390befe55dcdfb029427f527bf4` |
+| Target tree SHA | `256cbe2adc8dbc9c245be57196652ed79da48eeb` |
+
+The pin is a **historical immutable release state**, not source `main`. Live public-speeches `main`
+has advanced repeatedly since the pin, and the target archive's tree SHA was re-confirmed identical
+at every check, including immediately before this close-out. **A released work stays pinned to the
+state that was reviewed; source `main` moving is not drift.**
+
+Controlling source — an audio recording, **not** a publication:
+
+| | |
+|---|---|
+| Filename | `05.Kalaivanar N.S.Krishnan Ninnaivu Naal Vizha vil Kalaigar Speech.mp3` |
+| SHA-256 | `7457004d3c3ee87722edfe6814e830d3521b834dcf29b4de45bb7174a2278148` |
+| Size | 7,087,106 bytes |
+| Decoded duration | 443.559 s — `00:07:23.559` |
+
+Archive-recorded verification state, carried from the source archive and not re-adjudicated here:
+
+- Tamil transcription **verified-complete**
+- strict direct-listening audit **12 / 12 segments passed**
+- open Tamil uncertainties **0**
+- **recording NOT truncated** — an earlier incomplete reading of the ending was withdrawn upstream
+  after a direct tail re-audit restored the closing passage through `07:23.559`
+- English translation **verified-complete** (E2 fidelity review and E3 final verification passed)
+- **12 timestamp markers**
+
+### A1 — audio-source model, data, reader, provenance, routes, CI
+
+Implementation PR **#62**, squash **`492b26ddd5681f085726ac802681c3fcbc7162f0`** (11 files).
+
+A1 delivered the first audio-sourced Digital Library speech by extending the existing `speech`
+reader architecture by **source form**:
+
+- work remains `public-speech`; **no `audio-speech` subtype was created**;
+- `sourceForm: "audio"` in the speech data — absent means print, so **no released print speech was
+  rewritten**;
+- deterministic importer, fail-closed on source-HEAD mismatch, on timestamp divergence, and on any
+  source layer the archive had not released; it **never opens, probes or fetches the MP3**;
+- deterministic source-linked validator;
+- audio-specific reader copy; audio-specific provenance/source page;
+- reader route and source route;
+- automatic sitemap exposure through the existing `SPEECH_SLUGS` registry;
+- Library CI integration under the named step **Kalaivanar NSK Memorial Speech**;
+- **no audio binary, no audio player, no runtime media fetch**;
+- **no catalogue card at the A1 boundary** — `/read` discovery was deliberately deferred to A2.
+
+A1 also fixed a latent metadata-grammar defect that this candidate was the first released speech to
+expose: a speech with a venue and no date produced `Kalaignar M. Karunanidhi's at <venue>`, because
+the date clause was what supplied the noun. Zero description drift for every already-released speech.
+
+### A2 — Reading Room catalogue onboarding
+
+Implementation PR **#63**, squash **`56ca0c978e34afddde52595f2ce825872bd6aeef`** (2 files).
+
+A2 delivered exactly one `LibraryWork`, appended as the **14th Speech catalogue work** after
+`2006-08-23-industries-debate`, giving the already-live reader its `/read` discovery. It retained the
+historical source pin and added **no `edition`, no `unitCount`, and no catalogue-level `sourceForm`**.
+
+**A2 added no routes and no sitemap URLs.** Both speech URLs were already live from A1 through
+`SPEECH_SLUGS`.
+
+A2 also carried one authorized validator change: **assertion 64 was transitioned** from the temporary
+A1 statement *"the catalogue is absent"* — which A2 deliberately makes false — to a **durable
+catalogue-present contract** that isolates this one `LibraryWork` and proves its identity, historical
+pin, coverage, provenance route, rights scope and the three deliberate absences. The validator
+**remains 102 assertions**; assertions 1–63 were untouched and no source-fidelity check was removed
+or weakened.
+
+### Public footprint
+
+| | |
+|---|---|
+| Reader | `/speeches/kalaivanar-nsk-memorial-day` |
+| Source / provenance | `/speeches/kalaivanar-nsk-memorial-day/source` |
+| Catalogue | one Reading Room card on the **Speeches** shelf |
+| Sitemap contribution | **2 URLs** |
+
+Those 2 sitemap URLs were introduced **in A1** through `SPEECH_SLUGS`. **Do not double-count them
+against A2**, whose sitemap delta and route delta were both **0**.
+
+### Stage deltas — benchmark-stage facts, not to be rewritten later
+
+**A1:** Speech registry 13 → 14 · application pages 3003 → 3005 · sitemap 2999 → 3001 · catalogue
+**unchanged** at the A1 boundary.
+
+**A2:** published works 26 → 27 · Speech catalogue works 13 → 14 · `/read` card 0 → 1 ·
+application pages 3005 → **3005** · sitemap 3001 → **3001**.
+
+These are the deltas **at each stage**. If the live site advances later for unrelated reasons, refresh
+the CURRENT STATE checkpoint — **do not rewrite these historical stage figures**.
+
+### Date / venue / event boundary
+
+- **Exact speech date: NOT ESTABLISHED.** The recording states none, so `date` is `null`.
+- **Year: NOT INFERRED.** `year` is `null`.
+- **Venue:** `கலைவாணர் அரங்கம், சென்னை`
+- **Event:** `கலைவாணர் நினைவு நாள் விழா`
+
+Venue and event are carried exactly as the source archive establishes them from direct listening,
+with no expansion from outside historical knowledge. The archive separately records secondary
+chronology as context and expressly forbids substituting it for the speech date; that reasoning is
+**deliberately not imported** into public data, and neither are the file's embedded timestamps.
+**Secondary chronology is not the controlling source for the date. Do not introduce 1974 — or any
+other historical date — as the speech date.**
+
+### Audio-source model
+
+- The **12 timestamps are APPROXIMATE NAVIGATION MARKERS**. They are **not** source-authored
+  chapters, sections, speech units, or exact word-level timing. They are imported as their own block
+  kind and rendered as subdued navigation separators — never as headings — and the Tamil list, the
+  English list and the archive's own time map must be identical in order or the import fails closed.
+- **No fabricated page provenance.** A recording is not paginated: there is no `edition`, no scan
+  filename, no scan or printed page range, no front/back matter, no source-page mapping and no
+  page-boundary adjudication. Every occurrence of "printed", "scan" or "page" on the provenance page
+  is a negation.
+- **No media redistribution.** The MP3 is not committed upstream and is not vendored, streamed,
+  proxied or played here. Its identity travels as URL + filename + SHA-256 + size + decoded duration
+  + stream properties. The original URL appears on the provenance page as an ordinary external link
+  only.
+- **No audio player was necessary to publish the verified transcript.**
+- English is a **project-created** layer made from the frozen verified Tamil — not translated
+  independently from the recording. Tamil remains the authoritative transcription layer, and the
+  recording remains the controlling witness for the spoken Tamil.
+
+### Rights boundary
+
+The project's nationalisation position applies to **Kalaignar's underlying authored Tamil speech**.
+
+It does **NOT** establish rights over:
+
+- the **source audio recording**;
+- the **recording master**;
+- **third-party recording production**;
+- the **project-created English translation**.
+
+The catalogue entry and the provenance page both carry that exclusion explicitly, so a nationalisation
+badge on an audio-sourced work can never be read as a claim over the media file. **Do not say the MP3
+is nationalised. Do not say the recording is Government of Tamil Nadu property.** GO number and formal
+issue date remain `null`; `2024-12-22` is the public handover date only.
+
+**No new rights model was created.** A scoped **`WorkAttribution`** model remains future work.
+
+### Validator / CI
+
+- Work-specific validator: `scripts/validate-kalaivanar-nsk-memorial-day.mjs`
+- Final assertion count: **102**
+- Main-branch result: **102 passed / 0 failed**
+- Source checkout: `1ef73a709a343390befe55dcdfb029427f527bf4`
+- Named CI step: **Kalaivanar NSK Memorial Speech**
+- A1 main-branch CI run: **33491297938** (`492b26dd…`) — both `typecheck • build` and
+  `archival validators` success
+- A2 main-branch CI run: **33506276740** (`56ca0c97…`) — both success
+
+Regression evidence at both merges: **Poonthottam PASS**, **Arappor PASS**.
+
+The validator shares the public-speeches CI checkout with Poonthottam and Arappor — all three pin the
+same commit, so the workflow's same-directory/same-pin guard keeps its meaning.
+
+**Validator-contract migration remains PAUSED**, recorded at the A2 merge as **3 registered /
+9 pending**. This validator is deliberately **not** registered in the migrated contract. Do not resume
+the migration.
+
+### Production verification — 2026-09-01
+
+Measured against `https://nenjukkuneethi.org`:
+
+- `/speeches/kalaivanar-nsk-memorial-day` → **200**; public-speech label, audio-source indicator,
+  **12** navigation markers, **no date chip**, no printed-source claim, no `<audio>` element
+- `/speeches/kalaivanar-nsk-memorial-day/source` → **200**; audio-specific source facts with the
+  exact SHA-256 and `00:07:23.559`, a 12-entry time map, the recording-rights exclusion, and **no
+  rendered print/scan provenance section**
+- `/read` → **200**; **exactly one** catalogue card, linking to the reader route, with **no inferred
+  date, no year and no unit-count badge** in either Tamil or English
+
+### Lessons / future reuse
+
+1. **Source form is orthogonal to content subtype.** Add a discriminator where the render layer needs
+   it; do not split the public category along the media axis.
+2. **An audio speech has no printed-page provenance** — do not fabricate PDF/scan/page apparatus for
+   a source that has none.
+3. **Timestamp markers are navigation aids, not source-authored structure**, and must never become a
+   catalogue unit count.
+4. **An exact speech date must stay `null`** when the recording does not establish one.
+5. **Technical recording provenance can be preserved without redistributing the binary.**
+6. **No audio player was necessary** to publish the verified transcript.
+7. **Underlying authored-work rights and recording rights are separate questions.**
+8. **English remains a project-created layer** derived from the frozen verified Tamil.
+9. **A source repository's `main` may advance while a released work remains pinned** to a historical
+   immutable release state.
+10. **Sibling source archives with similar names must never be conflated** — see the warning below.
+
+### ⚠️ `kalaivanar-nsk-memorial-day-audio-06` is a SEPARATE archive
+
+`pugazg/kalaignar-public-speeches` also contains a sibling archive
+`speeches/kalaivanar-nsk-memorial-day-audio-06/`, which is a **different recording** and a **separate
+source work**. It is under active upstream development and accounts for essentially all
+public-speeches `main` movement since this benchmark's pin.
+
+It is **NOT**:
+
+- a revision of the published Benchmark #4 archive;
+- a new pin for Benchmark #4;
+- automatically selected for the Digital Library;
+- automatically ready for publication.
+
+Changes under that directory are **not** benchmark drift. Do not inspect or adjudicate Audio 06
+beyond establishing that it is separate, and **do not treat it as the next candidate**.
+
+### Standing follow-ups — separate future work, NOT Benchmark #4 blockers
+
+None of these were fixed in A1 or A2, and none may be folded into another change automatically:
+
+1. the generic print-centric top-level comment in `data/speeches.ts`;
+2. the nearby `SpeechReader` internal comment that still describes block streams in print terms;
+3. **validator-contract migration — PAUSED**;
+4. **mobile — ON HOLD**;
+5. **Manohara source-drift audit** — future;
+6. **`WorkAttribution`** — future scoped rights model for composite works;
+7. Film Songs nullable-label type mismatch;
+8. stale `/read` metadata description;
+9. Film Songs E3 catalogue-comment wording precision;
+10. **Film Songs formal control close-out — still pending.**
 
 ---
 
@@ -337,6 +626,10 @@ source routes · #55 — D2.3 catalogue entry · #56 — D2.4 sitemap publicatio
 
 ### Final public state — verified live on 2026-08-30
 
+⚠️ The **site-wide** totals in this paragraph are the 2026-08-30 state and are **superseded** — see
+the CURRENT STATE checkpoint at the top. The **Tirumbippaar-specific** figures below remain the
+durable record of this benchmark.
+
 25 catalogue works · 3 Cinema Writing works (`manohara → parasakthi → tirumbippaar`, onboarding
 order, not year) · 2944 sitemap URLs · **95** of them Tirumbippaar · 2948 clean-build pages.
 
@@ -447,6 +740,12 @@ QA language throughout is **archive-recorded**, **automated QA** and **scan-adju
 
 ---
 
+> ⚠️ **SUPERSEDED (2026-09-01) — kept as the status snapshot it was.** Two lines below are no longer
+> current: **Phase 3 is ACTIVE, not paused** (the owner-directed pause was lifted), and **Speech
+> Benchmark #4 is COMPLETE and CLOSED**, not "NOT STARTED and NOT SELECTED". See the CURRENT STATE
+> checkpoint and the Speech Benchmark #4 close-out near the top of this document. Everything else in
+> this snapshot stands as written.
+>
 > **Status:** **Phase 1 COMPLETE** · **Phase 2 (Cinema / Manohara) COMPLETE** · **Phase 3 — Speeches
 > is ACTIVE but PAUSED by owner direction (not complete)** · **Phase 4 — Poetry is ACTIVE** ·
 > **Phase 5 — Essays & Articles is ACTIVE** · **Phase 6 — Fiction COMPLETE** · **Phase 7 — Drama /
@@ -474,7 +773,9 @@ QA language throughout is **archive-recorded**, **automated QA** and **scan-adju
 >   `06b42db399e1e97762ff9a9d522b63a83995bc03`, squash
 >   `ecf73cc8146cd9a9578c4aeaf73518b122ce569c` (2026-08-19T11:51:46Z), production Vercel **success**
 >   on that exact squash SHA.
-> - **Speech Benchmark #4: NOT STARTED** and **NOT SELECTED**.
+> - **Speech Benchmark #4: NOT STARTED** and **NOT SELECTED**. — ⚠️ **SUPERSEDED (2026-09-01):**
+>   Benchmark #4 is now **COMPLETE and CLOSED** (A1 PR #62 `492b26dd…`, A2 PR #63 `56ca0c97…`).
+>   **Benchmark #5** is what is now NOT STARTED / NOT SELECTED / NOT AUTHORIZED.
 >
 > **Phase 4 — Poetry (ACTIVE):**
 >
@@ -1058,13 +1359,20 @@ changes**. No generalized ingestion framework.
 cinema work — each future cinema work is integrated one at a time from its source-repository
 release output, on the same source-faithful terms.
 
-## Phase 3 — Speeches — ⏸️ ACTIVE but PAUSED by owner direction (benchmarks 1, 2 and 3 COMPLETE / MERGED / PRODUCTION-VERIFIED)
+## Phase 3 — Speeches — 🚧 ACTIVE (benchmarks 1, 2, 3 and 4 COMPLETE / MERGED / PRODUCTION-VERIFIED)
 
-**Phase 3 is ACTIVE and NOT complete.** Three benchmarks are done — one assembly speech and two
+**Phase 3 is ACTIVE and NOT complete.** Four benchmarks are done — one assembly speech and three
 public speeches — and the shared speech architecture is proven end-to-end across **both**
 `assembly-speech` and `public-speech`, on one shelf, one reader and one provenance page, now
 including a source that establishes **no** date, venue or event. Many more released speeches remain.
-**Benchmark #4 has NOT been started and is NOT selected by this handover.**
+
+> ⚠️ **SUPERSEDED (2026-09-01).** This paragraph previously read *"Benchmark #4 has NOT been started
+> and is NOT selected by this handover"*, and the phase was carried as **PAUSED by owner direction**.
+> Both statements are **historical**. **Speech Benchmark #4 is COMPLETE and CLOSED** — see
+> _Speech Benchmark #4 — கலைவாணர் என். எஸ். கிருஷ்ணன் நினைவு நாள் விழாவில் கலைஞர் உரை_ near the top of
+> this document. The pause was lifted before that benchmark ran. **No Benchmark #5 is started,
+> selected or authorized**, and no further speech work may begin without explicit owner
+> authorization.
 
 Implementation began from the post-mobile-merge `main`
 (`36d1325e9dc04084ed84cb50a2d0c3f6a665b795`) and was merged back on **2026-08-18**.
@@ -1223,15 +1531,21 @@ no event** — proving the model can represent source absence honestly.
   with their `speech.json` **and** `provenance.json` byte-identical across the benchmark; `tsc` clean;
   build success (**1262** static pages); `git diff --check` clean.
 
-**Remaining Phase-3 direction — PAUSED.** Phase 3 is not complete, but it is **paused by owner
-direction**: the owner asked for the next work to come from a category other than speeches, which
-produced Phase 4 — Poetry. **Speech Benchmark #4 is NOT STARTED and NOT SELECTED**, and speech
-expansion must not resume unless the owner explicitly reactivates it.
+**Remaining Phase-3 direction.** Phase 3 is still not complete — many released speeches remain.
 
-When it is reactivated, the guidance stands: integrate additional released speeches one at a time
-under the same **Speeches** shelf (both Legislative Assembly and Public speeches are subtypes of it,
-not separate shelves), reusing this reader/importer pattern. Prefer machine-readable indexes where
-present, but verify every reader-facing work against source-repository release state.
+> ⚠️ **SUPERSEDED (2026-09-01).** This paragraph previously read: *"Remaining Phase-3 direction —
+> PAUSED. … **Speech Benchmark #4 is NOT STARTED and NOT SELECTED**, and speech expansion must not
+> resume unless the owner explicitly reactivates it."* That is **historical**: the owner-directed
+> pause (which produced Phase 4 — Poetry) was lifted, and **Benchmark #4 has since been completed and
+> closed** — the first audio-sourced speech. **Nothing here authorizes a Benchmark #5.** No further
+> speech work is started, selected or authorized; each new work still requires explicit owner
+> authorization.
+
+For any future owner-authorized speech expansion, the guidance stands: integrate additional released
+speeches one at a time under the same **Speeches** shelf (both Legislative Assembly and Public
+speeches are subtypes of it, not separate shelves), reusing this reader/importer pattern. Prefer
+machine-readable indexes where present, but verify every reader-facing work against
+source-repository release state.
 
 Do not collapse public speeches and Assembly proceedings into one reader model if that loses parliamentary structure.
 
@@ -1676,6 +1990,14 @@ When Claude returns a report, independently verify:
 
 # 15. Immediate next activity
 
+> ⚠️ **SUPERSEDED IN PART (2026-09-01).** The paragraph below was written at the Drama Benchmark #1
+> synchronization. Two of its statements are no longer current: **Phase 3 is ACTIVE, not paused**,
+> and **Speech Benchmark #4 is COMPLETE and CLOSED** rather than not started. The current
+> immediate-next-activity position is: **Speech Benchmark #4 is closed; no next benchmark is started,
+> selected or authorized; the Kalaignar Film Songs formal control close-out remains pending
+> housekeeping; and `kalaivanar-nsk-memorial-day-audio-06` is a SEPARATE source archive that is NOT
+> selected.** Owner authorization is required before any new implementation.
+
 **Phase 1 and Phase 2 are COMPLETE. Phase-3 Speech Benchmarks #1–#3 are complete, merged and
 production-verified, and Phase 3 is PAUSED by owner direction. Phase-4 Poetry Benchmark #1,
 Phase-5 Essays & Articles Benchmark #1, Phase-6 Fiction Benchmark #1 and Phase-7 Drama Benchmark #1
@@ -1690,7 +2012,11 @@ no next candidate or category has been selected.**
 
 Current standing state:
 
-- **Speech Benchmark #4:** NOT STARTED / NOT SELECTED / **PAUSED** by owner direction.
+- **Speech Benchmark #4:** ⚠️ **SUPERSEDED** — previously "NOT STARTED / NOT SELECTED / **PAUSED** by
+  owner direction". Now **COMPLETE / MERGED / PRODUCTION-VERIFIED and CLOSED**: the first
+  audio-sourced speech, A1 PR #62 squash `492b26ddd5681f085726ac802681c3fcbc7162f0`, A2 PR #63 squash
+  `56ca0c978e34afddde52595f2ce825872bd6aeef`.
+- **Speech Benchmark #5:** NOT STARTED / NOT SELECTED / NOT AUTHORIZED.
 - **Poetry Benchmark #2:** NOT STARTED / NOT SELECTED / **NOT APPROVED FOR IMPLEMENTATION** — a
   second work now exists at live `kalaignar-poems` `2230a8d`, but `anaiya-vilakku-anna` (அணையா விளக்கு அண்ணா) is **NOT READY**: of 19 source pages only **1** page record exists, Tamil assembly is **pending**, English translation is **pending**, and the work records **no SHA-256 and no byte size**. A candidate source exists, but it is **not approved for implementation**.
 - **Phase-5 Benchmark #2 (a second Essays work):** NOT STARTED / NOT SELECTED.
