@@ -24,44 +24,72 @@ Then inspect the live implementation repository:
 
 **Treat current GitHub `main`, open PRs and deployed site state as authoritative** over any SHA, count or status paragraph written in a handover, including this file.
 
-## ⚠️ CURRENT STATE — 2026-09-01, post-Wave-1 (supersedes the phase list below)
+## ⚠️ CURRENT STATE — 2026-09-02, post-Wave-2 (supersedes the phase list below)
 
 **The "Where the project actually stands" list below stops at Phase 7 and is HISTORICAL.** Its work
 and shelf counts are stale. It is kept for the completed-phase detail it records, and has not been
 retro-edited. **Live GitHub wins over anything in it.**
 
-Measured live 2026-09-01: implementation `main` **`0dc92fa0fd832b5932b8df75606ef049c9f261ea`**,
-**0 open PRs**, **31 published works**, **5 Drama works**, **9 non-empty shelves**,
-**3035 Next build static-route count**, **3023 sitemap URLs**.
+Measured live 2026-09-02: implementation `main` **`4fd45a92663abbe70ff0c0a605168314cd36e44c`**,
+**0 open PRs**, **68 published works**, **39 Fiction works**, **9 non-empty shelves**,
+**3109 Next build static-route count**, **3097 sitemap URLs**.
 
-Shelf census: Life Writing 1 · Letters 1 · Fiction 2 · Poetry 1 · **Drama 5** · **Cinema Writing 4** ·
-**Speeches 14** · Essays & Articles 1 · Literary Commentary 2. Total **31**.
+Shelf census: Life Writing 1 · Letters 1 · **Fiction 39** · Poetry 1 · Drama 5 · Cinema Writing 4 ·
+Speeches 14 · Essays & Articles 1 · Literary Commentary 2. Total **68**.
 
 These were measured now — SHA and open PRs from live GitHub, the census from `data/library.ts` at
-that SHA, pages and static routes from a production build, sitemap from the deployed site — not copied
+that SHA, static routes from a production build, sitemap from the deployed site — not copied
 forward.
 
 ### ⚠️ Three different page metrics — never use them interchangeably
 
-**A site-wide TOTAL is not a wave's DELTA.** Wave 1's public contribution is **+22 URLs**
-(4 landings + 4 source pages + 14 reading routes). The build's static-route count is a *site-wide
-census* of every prerendered route in the whole library. Never present the two as the same kind of
-number.
+**A site-wide TOTAL is not a wave's DELTA.** Wave 2's public contribution is **+74 URLs**
+(37 reader routes + 37 `/source` routes). The build's static-route count is a *site-wide census* of
+every prerendered route in the whole library. Never present the two as the same kind of number.
 
-| metric | how it is measured | pre-Wave-1 | post-Wave-1 | delta |
+| metric | how it is measured | pre-Wave-2 | post-Wave-2 | delta |
 |---|---|---|---|---|
-| **Next build static-route count** | the `Generating static pages (N/N)` figure | 3013 | **3035** | **+22** |
-| **Sitemap URLs** | `<loc>` entries in the deployed `sitemap.xml` | 3001 | **3023** | **+22** |
+| **Next build static-route count** | the `Generating static pages (N/N)` figure | 3035 | **3109** | **+74** |
+| **Sitemap URLs** | `<loc>` entries in the deployed `sitemap.xml` | 3023 | **3097** | **+74** |
 
 The two differ because the build count includes non-HTML route outputs and four non-indexed pages
 (`/_not-found`, `/about`, `/privacy`, `/support`).
 
-⚠️ **`3027` is NOT the Next static-route count** and must never be quoted as one. It is the older
-"Prerendered pages" convention, re-measured for continuity (a pre-Wave-1 rebuild returns exactly
-3005) but measuring a different thing, and it is **deliberately not carried as a current metric**.
+⚠️ **The prerendered `.html` file count is NOT the Next static-route count** and must never be quoted
+as one. Post-Wave-2 those are **3101** and **3109** respectively; at the Wave-1 boundary they were
+3027 and 3035. The `.html` count is the older "Prerendered pages" convention, re-measured for
+continuity (a pre-Wave-1 rebuild returns exactly 3005) but measuring a different thing, and it is
+**deliberately not carried as a current metric**.
 
-*(The previous **2026-09-01 pre-Wave-1** line — `56ca0c97…`, 27 works, 3005 prerendered pages, 3001
-sitemap URLs, Drama 1 — is **superseded** and kept only as history.)*
+*(The previous **2026-09-01 post-Wave-1** line — `0dc92fa0…`, 31 works, Fiction 2, Drama 5, 3035
+static routes, 3023 sitemap URLs — is **superseded** and kept only as history, as is the pre-Wave-1
+line before it: `56ca0c97…`, 27 works, 3005 prerendered pages, 3001 sitemap URLs, Drama 1.)*
+
+### Bulk Onboarding Wave 2 — Fiction — ✅ COMPLETE and CLOSED
+
+**The 37 short stories of the 1977 anthology கலைஞர் கருணாநிதியின் சிறுகதைகள்**, published together on
+the Fiction shelf. PR **#65**, exact reviewed head **`2ba1ee3aaa5078ddc60463e45cb00bca36ae4f8d`**,
+squash **`4fd45a92663abbe70ff0c0a605168314cd36e44c`**, merged tree `0a502927…`, 83 files, merged
+2026-09-02T03:28:20Z; post-merge Library CI run `33587162687` success. Source pin
+`pugazg/kalaignar-short-stories` @ **`76135e1b5d504128c15be6bf59937716e5517d78`**, collection tree
+`d45434d46b1e779a880fff3d774d0fcb5833e477`, all 37 work trees frozen and guarded individually.
+
+**`கிழவன் கனவு` was excluded** — a separate, earlier source, already published, and the short-story
+regression benchmark. **It is not the 38th anthology story.**
+
+**Wave 2 ran the exact-head sequence correctly end to end**: PR opened → exact head reviewed →
+APPROVED FOR MERGE for `2ba1ee3a…` → head unchanged → merge → production verification → control
+close-out. That is the standing process.
+
+**The Story-29 lesson:** the first candidate pin `a9b333f1…` carried a real source defect — Story 29's
+English page markers were shifted from scan 200 onward with scan 204 empty. Implementation **stopped
+and reported it** rather than repairing downstream or dropping the story; the archive was corrected,
+and the whole 37-tree freeze was recomputed against `76135e1b…` (only Story 29's tree changed, to
+`e6eea7e2…`). **A source release gate is not permission to work around a source defect.**
+
+Validator: **2522 assertions, 42 groups, 0 failures**; **17/17 negative tests proven**, including a
+reconstruction of the old shifted anchoring. `கிழவன் கனவு` regression byte-equivalent. Full detail is
+in `HANDOVER.md`.
 
 ### Bulk Onboarding Wave 1 — Drama — ✅ COMPLETE and CLOSED
 
@@ -93,7 +121,7 @@ Final batch validator: **385 assertions, 7 groups, 0 failed, BATCH RESULT: ALL P
 
 **மணிமகுடம் / Manimagudam was excluded** because its source processing was incomplete at the freeze.
 Its upstream movement does **not** add it to Wave 1, repin Wave 1, make it *automatically* eligible
-for Wave 2, or authorize publication. **It is not permanently ineligible** — it remains source-active
+for Wave 3, or authorize publication. **It is not permanently ineligible** — it remains source-active
 and may become a legitimate candidate once it passes its own release/readiness gate and the owner
 authorizes a wave including it.
 
@@ -499,7 +527,7 @@ error from expected Tamil or punctuation convention.
 - **Phase 7 — Drama / Stage Plays: ACTIVE.**
   - **Benchmark #1 — சிலப்பதிகாரம் நாடகக் காப்பியம்** (stage play): **COMPLETE, merged, production-verified** (PR #29, squash `9aade1d4…`, verified 2026-08-21). Source pin `pugazg/kalaignar-stage-plays @ a66e62bbecaf63825b3db09a1d421401e1ab2e8e`. 38 numbered scenes plus a separate unnumbered closing tableau; that tableau is never Scene 39.
   - **Bulk Onboarding Wave 1 — Drama:** ✅ **COMPLETE, merged, production-verified and CLOSED** — பரதாயணம், அனார்கலி, சாக்ரடீஸ் and சேரன் செங்குட்டுவன், PR #64, squash `0dc92fa0…`, source pin `pugazg/kalaignar-stage-plays @ 145e52e88dbd009286f749a7f0e3520386e63244`. Drama 1 → **5**. *(This line replaces the earlier "Drama Benchmark #2: NOT STARTED / NOT SELECTED — `Anarkali`, `Cheran Senguttuvan` and `Socrates` have no controlling Tamil source", which is **historical**: controlling Tamil sources were released and those works are published. The 2009 published English witness remains **secondary comparison evidence only** and must never be reverse-translated into Tamil — that constraint is unchanged.)*
-  - **Any further Drama work / Bulk Wave 2: NOT STARTED / NOT SELECTED / NOT AUTHORIZED.** **மணிமகுடம் / Manimagudam is NOT published** and is **not** automatically eligible.
+  - **Any further Drama work / a future Drama batch: NOT STARTED / NOT SELECTED / NOT AUTHORIZED.** **மணிமகுடம் / Manimagudam is NOT published** and is **not** automatically eligible.
 
 **Last production application-code checkpoint at this handover:**
 
@@ -594,11 +622,12 @@ recorded in `HANDOVER.md`), and **Speech Benchmark #4 is CLOSED** (A1 #62 / `492
 A2 #63 / `56ca0c97…`). **No next implementation activity has been started, and no next work, batch or
 category has been selected.**
 
-**Bulk onboarding is now the default workflow. Before starting Wave 2, fetch live state and perform a
+**Bulk onboarding is now the default workflow. Before starting Wave 3, fetch live state and perform a
 read-only readiness census for a coherent candidate batch. Eligibility is not authorization. Do not
-begin implementation until the owner authorizes the selected Wave 2 batch.**
+begin implementation until the owner authorizes the selected Wave 3 batch.**
 
-**Wave 2 is NOT SELECTED.** Do not automatically choose மணிமகுடம் / Manimagudam,
+**Wave 3 is NOT SELECTED, NOT AUTHORIZED and has had no readiness census.** Closing Wave 2 selects
+nothing. Do not automatically choose மணிமகுடம் / Manimagudam,
 `kalaivanar-nsk-memorial-day-audio-06`, the Film Songs close-out, any speech batch or any poem batch.
 
 Before any new implementation, fetch live state and **obtain owner authorization for the next bounded
@@ -772,6 +801,6 @@ Read the current Digital Library handover completely, inspect the live implement
 
 **Do not resume Tirumbippaar** — Phase D is closed through D2.5.
 
-When I ask for it, inspect the **live source repositories** and perform a read-only readiness census for a **coherent candidate batch** — naming the source release, the shelf, the works that qualify and the works that must be excluded and why — together with a complete ready-to-paste Claude prompt. Bulk onboarding is the default; recommend a single work only where it meets the one-work exception. **Do not select or begin Wave 2 yourself.** Do not implement the work yourself and do not assume a category: speech and non-speech candidates are both eligible for comparison, and none is authorized until I say so. Validator migration stays **PAUSED** and mobile stays **ON HOLD** unless I explicitly resume them.
+When I ask for it, inspect the **live source repositories** and perform a read-only readiness census for a **coherent candidate batch** — naming the source release, the shelf, the works that qualify and the works that must be excluded and why — together with a complete ready-to-paste Claude prompt. Bulk onboarding is the default; recommend a single work only where it meets the one-work exception. **Do not select or begin Wave 3 yourself.** Do not implement the work yourself and do not assume a category: speech and non-speech candidates are both eligible for comparison, and none is authorized until I say so. Validator migration stays **PAUSED** and mobile stays **ON HOLD** unless I explicitly resume them.
 
 ---
