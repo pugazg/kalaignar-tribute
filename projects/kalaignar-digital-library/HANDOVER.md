@@ -1,6 +1,6 @@
 # Kalaignar Digital Library / Reading Room — Master Handover
 
-**Last updated:** 2026-09-01
+**Last updated:** 2026-09-02
 
 ---
 
@@ -11,7 +11,34 @@ Several phases have shipped since it was written, and its work counts, shelf cou
 "last production application-code checkpoint" are stale. It is kept as history and has **not** been
 retro-edited. Where it disagrees with this section or with live GitHub, **live GitHub wins**.
 
-### Verified live state — 2026-09-01, post-Wave-1 ✅ CURRENT
+### Verified live state — 2026-09-02, post-Wave-2 ✅ CURRENT
+
+| | |
+|---|---|
+| Implementation `main` | `4fd45a92663abbe70ff0c0a605168314cd36e44c` |
+| Open PRs (implementation) | 0 |
+| Published works | **68** |
+| Fiction works | **39** |
+| Non-empty shelves | **9** |
+| **Next build static-route count** | **3109** |
+| **Sitemap URLs** | **3097** |
+
+Shelf census: Life Writing 1 · Letters 1 · **Fiction 39** · Poetry 1 · Drama 5 ·
+Cinema Writing 4 · Speeches 14 · Essays & Articles 1 · Literary Commentary 2. Total **68**.
+
+**Measured now**, not copied forward: the SHA and open-PR count from live GitHub; the work/shelf
+census from `data/library.ts` at that SHA; the static-route count from a production build of it; the
+sitemap count from the deployed site. All 74 Wave-2 URLs return 200 in production.
+
+Shipped since the post-Wave-1 checkpoint:
+
+- **Bulk Onboarding Wave 2 — Fiction / 1977 short-story anthology** — the 37 stories of
+  கலைஞர் கருணாநிதியின் சிறுகதைகள் published together from one frozen source release, taking Fiction
+  from 2 to 39 and the catalogue from 31 to 68. **The second bulk-onboarding activity, and the first
+  to run the exact-head sequence correctly end to end.** **Closed by this document**; see its section
+  below.
+
+### Verified live state — 2026-09-01, post-Wave-1 ⚠️ SUPERSEDED (kept as history)
 
 | | |
 |---|---|
@@ -20,55 +47,60 @@ retro-edited. Where it disagrees with this section or with live GitHub, **live G
 | Published works | **31** |
 | Drama works | **5** |
 | Non-empty shelves | **9** |
-| **Next build static-route count** | **3035** |
-| **Sitemap URLs** | **3023** |
+| Next build static-route count | **3035** |
+| Sitemap URLs | **3023** |
 
 Shelf census: Life Writing 1 · Letters 1 · Fiction 2 · Poetry 1 · **Drama 5** ·
 **Cinema Writing 4** · **Speeches 14** · Essays & Articles 1 · Literary Commentary 2. Total **31**.
 
-**Measured now**, not copied forward: the SHA and open-PR count from live GitHub; the work/shelf
-census from `data/library.ts` at that SHA; the page and static-route counts from a production build of
-it; the sitemap count from the deployed site. All 22 Wave-1 URLs return 200 in production.
+**This line is superseded by the post-Wave-2 checkpoint above** and is retained only as history.
+Measured at that checkpoint: the SHA and open-PR count from live GitHub; the work/shelf census from
+`data/library.ts` at that SHA; the page and static-route counts from a production build of it; the
+sitemap count from the deployed site. All 22 Wave-1 URLs returned 200 in production.
 
 #### ⚠️ Site-wide TOTALS vs a wave's DELTA — never mix them
 
 Two independent mistakes are possible here, and earlier checkpoints made both.
 
-**First: a total is not a delta.** Wave 1's public contribution is **+22 URLs**. The build's
-static-route count (**3035**) is a *site-wide total* covering every prerendered route in the whole
-Digital Library — 391 memoir chapters, 1330 Kurals, every speech, every play, and so on. The 22 is a
-*change*; 3035 is a *census*. They answer different questions and must never be presented as the same
-kind of number.
+**First: a total is not a delta.** Wave 2's public contribution is **+74 URLs** (37 reader routes +
+37 `/source` routes). The build's static-route count (**3109**) is a *site-wide total* covering every
+prerendered route in the whole Digital Library — 391 memoir chapters, 1330 Kurals, every speech, every
+play, every story. The 74 is a *change*; 3109 is a *census*. They answer different questions and must
+never be presented as the same kind of number.
 
 **Second: the totals themselves are three different measurements**, nested rather than equal, as
-measured at the Wave-1 merge boundary:
+measured at the Wave-2 merge boundary:
 
 | measurement | value | what it counts |
 |---|---|---|
-| **Next build static-route count** | **3035** | every route the build prerenders, including route outputs that are not HTML pages |
-| Prerendered `.html` files | 3027 | the subset written as actual HTML pages |
-| **Sitemap URLs** | **3023** | the public, indexable subset — the 4 HTML pages excluded are `/_not-found`, `/about`, `/privacy` and `/support` |
+| **Next build static-route count** | **3109** | every route the build prerenders, including route outputs that are not HTML pages |
+| Prerendered `.html` files | 3101 | the subset written as actual HTML pages |
+| **Sitemap URLs** | **3097** | the public, indexable subset — the 4 HTML pages excluded are `/_not-found`, `/about`, `/privacy` and `/support` |
 
 **The two metrics this document uses going forward are the Next build static-route count and the
 sitemap URL count:**
 
-| metric | pre-Wave-1 | post-Wave-1 | delta |
+| metric | pre-Wave-2 | post-Wave-2 | delta |
 |---|---|---|---|
-| **Next build static-route count** | 3013 | **3035** | **+22** |
-| **Sitemap URLs** | 3001 | **3023** | **+22** |
+| **Next build static-route count** | 3035 | **3109** | **+74** |
+| **Sitemap URLs** | 3023 | **3097** | **+74** |
 
-⚠️ **`3027` is NOT the Next static-route count and must never be quoted as one.** It is the older
-"Prerendered pages" convention used by checkpoints up to and including the pre-Wave-1 one. That
-convention was re-measured for continuity — rebuilding pre-Wave-1 `main`
-(`56ca0c978e34afddde52595f2ce825872bd6aeef`) and counting prerendered `.html` files returns exactly
-**3005**, so the historical rows are honest — but it is **not** the build's route count, and it is
-**deliberately no longer carried in the CURRENT STATE table**. Historical checkpoints keep their own
+For the wave before it, the same two metrics moved 3013 → 3035 and 3001 → 3023, both **+22**.
+
+⚠️ **The `.html` file count is NOT the Next static-route count and must never be quoted as one.**
+`3101` is the post-Wave-2 `.html` figure and `3109` is the static-route count; likewise `3027` and
+`3035` at the Wave-1 boundary. The `.html` count is the older "Prerendered pages" convention used by
+checkpoints up to and including the pre-Wave-1 one. That convention was re-measured for continuity —
+rebuilding pre-Wave-1 `main` (`56ca0c978e34afddde52595f2ce825872bd6aeef`) and counting prerendered
+`.html` files returns exactly **3005**, so the historical rows are honest — but it is **not** the
+build's route count, and it is **deliberately not carried in the CURRENT STATE table**. It is retained
+here, in the explanatory table above, only for continuity. Historical checkpoints keep their own
 `3005` / `3001` rows unchanged.
 
-All three totals happen to move **+22** for Wave 1 because the same 22 URLs are involved. That is a
+All three totals happen to move **+74** for Wave 2 because the same 74 URLs are involved. That is a
 consequence, not evidence that they measure the same thing.
 
-Shipped since the pre-Wave-1 2026-09-01 checkpoint:
+The Wave-1 boundary shipped:
 
 - **Bulk Onboarding Wave 1 — Drama / கலைஞரின் நான்மணி மாலை four-play batch** — பரதாயணம், அனார்கலி,
   சாக்ரடீஸ் and சேரன் செங்குட்டுவன் published together from one frozen source release, taking Drama
@@ -141,6 +173,319 @@ merged PRs, not in this file:
   to 27. **Closed by this document.**
 - **Bulk Onboarding Wave 1 — Drama**, taking Drama to 5 and the catalogue to 31. The first
   bulk-onboarding activity. **Closed by this document.**
+- **Bulk Onboarding Wave 2 — Fiction / the 1977 short-story anthology**, taking Fiction to 39 and the
+  catalogue to 68. **Closed by this document.**
+
+---
+
+## Bulk Onboarding Wave 2 — Fiction / 1977 short-story anthology — ✅ COMPLETE and CLOSED
+
+**The second bulk-onboarding activity, and the first to run the exact-head sequence correctly from
+end to end.** 37 short stories published together on the Fiction shelf from one frozen source release.
+Implementation PR [#65](https://github.com/pugazg/kalaignar-autobiography/pull/65), squash merge
+**`4fd45a92663abbe70ff0c0a605168314cd36e44c`**, merged tree
+**`0a5029273e018482176502791ab440563e52e6a2`**, merged **2026-09-02T03:28:20Z**, 83 files. Verified in
+production on 2026-09-02.
+
+**Do NOT reopen this wave** merely because source `main` later moves.
+
+### The batch
+
+37 stories from **கலைஞர் கருணாநிதியின் சிறுகதைகள்** (1977) — shelf **Fiction**, reader family
+**story**.
+
+The batch is coherent because all 37 share **one anthology, one source release, one shelf, one reader
+family, and the same completed upstream release state.**
+
+**கிழவன் கனவு was explicitly excluded**: it is a separate, earlier source, it was already published,
+and it is this wave's regression benchmark. **It is not the 38th anthology story** and must never be
+described as one.
+
+### Implementation identity
+
+| | |
+|---|---|
+| Implementation PR | `pugazg/kalaignar-autobiography#65` |
+| Exact independently reviewed head | **`2ba1ee3aaa5078ddc60463e45cb00bca36ae4f8d`** |
+| Squash merge | **`4fd45a92663abbe70ff0c0a605168314cd36e44c`** |
+| Merged tree | **`0a5029273e018482176502791ab440563e52e6a2`** |
+| Merged | 2026-09-02T03:28:20Z |
+| Changed files | **83** — 74 generated (37 × `story.json` + 37 × `provenance.json`) and 9 implementation/CI files |
+| Post-merge Library CI | run **`33587162687`** — success |
+
+**Wave 2 followed the intended exact-head sequence in full:** the implementation PR was opened → the
+exact current head was independently reviewed → ChatGPT gave APPROVED FOR MERGE for `2ba1ee3a…` → the
+head did not change → merge → production verification → and only then this control close-out. The
+merged tree was confirmed byte-identical to the approved head's tree.
+
+**This is the standing process, and it is the deliberate contrast with Wave 1's historical process
+defect**, where a PR was merged before its final repaired head had been approved. See the Wave-1
+process-lesson section below; that remains recorded, and remains not a precedent.
+
+### Source freeze
+
+| | |
+|---|---|
+| Source repository | `pugazg/kalaignar-short-stories` |
+| **Frozen pin** | **`76135e1b5d504128c15be6bf59937716e5517d78`** |
+| Controlling source | `TVA_BOK_0064142_கலைஞர்_கருணாநிதியின்_சிறுகதைகள்.pdf` |
+| SHA-256 | `853032661482eaccb26c083a38d7aa75c081362d33c963c63e37d088bf20acb3` |
+| Physical scans | **260** |
+| Story block | scans **10–259**, printed story pages **1–250** |
+| Scan **260** | **back cover — excluded from story text** |
+| Collection tree | **`d45434d46b1e779a880fff3d774d0fcb5833e477`** |
+
+**All 37 work trees were frozen and guarded individually.** A shared repository pin does not collapse
+37 works into one provenance identity: each tree was checked on its own, by both the importer and the
+validator, and per-work drift guards are enforced on every run.
+
+| # | slug | title | English | printed | scans | frozen tree |
+|---:|---|---|---|---:|---:|---|
+| 1 | `pugazhendhi` | புகழேந்தி | Pugazhendhi | 1–6 | 10–15 | `7489e5ddb8b35d8a2ef41600bccfc9b291332845` |
+| 2 | `nalayini` | நளாயினி | Nalayini | 7–14 | 16–23 | `784d833f69f2ff741d9874ae864555366ccb3e21` |
+| 3 | `sabalam` | சபலம் | Sabalam | 15–21 | 24–30 | `fc02d6b8c288bbdd5f03fe3fe51622a383228a60` |
+| 4 | `aattakkavadi` | ஆட்டக்காவடி | Aattakkavadi | 22–29 | 31–38 | `f54a7197c661ad91b631ec0cba52d8b8747a9ba1` |
+| 5 | `kuppai-thotti` | குப்பைத்தொட்டி | Kuppai Thotti | 30–37 | 39–46 | `e8d5cf43fb200e95b85a637a4d49bd263f2ef5cc` |
+| 6 | `santhana-kinnam` | சந்தனக்கிண்ணம் | Santhana Kinnam | 38–47 | 47–56 | `d154416ac269678f5984ff665dc2e97b106abb69` |
+| 7 | `sangilichami` | சங்கிலிச்சாமி | Sangilichami | 48–59 | 57–68 | `3b2f3c02d19757d956649e4eedf75ca33cd76f6f` |
+| 8 | `gangaiyin-kadhal` | கங்கையின் காதல் | Gangaiyin Kadhal | 60–63 | 69–72 | `c25e85fcfff59e93e911a34ac1817fd24e7f81c3` |
+| 9 | `thaaymai` | தாய்மை | Thaaymai | 64–74 | 73–83 | `bcd5bf6b06c9b564864abe25e75c70599fe0e9e6` |
+| 10 | `thappivittargal` | தப்பிவிட்டார்கள் | Thappivittargal | 75–82 | 84–91 | `bd0b1c983be714c5997894f0b53a5a9c895e07ee` |
+| 11 | `thappavillai` | தப்பவில்லை | Thappavillai | 83–92 | 92–101 | `ce80ac8bb1e8fe89d09952a2dbe7d20f43abf371` |
+| 12 | `aatharikkirar` | ஆதரிக்கிறார் | Aatharikkirar | 93–98 | 102–107 | `fe4fabd9ca0a76a84ca9724cd162b136e1017c84` |
+| 13 | `iragasiyam` | இரகசியம்! | Iragasiyam! | 99–102 | 108–111 | `0baab51100f49e438e5d6a3464328b626a34f6f7` |
+| 14 | `munnuru-rupai` | முந்நூறு ரூபாய் | Munnuru Rupai | 103–105 | 112–114 | `64d6d69ca597efca0a60bd60d1bfc8254b717042` |
+| 15 | `ezhai` | ஏழை | Ezhai | 106–109 | 115–118 | `35e0f00154c5536cf60bc561d77b298d993ab1da` |
+| 16 | `originalil-ullapadi` | ஒரிஜினலில் உள்ளபடி | Originalil Ullapadi | 110–116 | 119–125 | `6596ce8d2c660d04f1f1d9b771399efc0be7c60a` |
+| 17 | `panangulai` | பனங்குலை | Panangulai | 117–121 | 126–130 | `38335b1d9f11a1191f0864e84c19ab20d4564481` |
+| 18 | `seththaval-kathai` | செத்தவள் கதை | Seththaval Kathai | 122–130 | 131–139 | `9a70ee7fe99326260a5bc775b02c351c4fd5744f` |
+| 19 | `pretha-visaranai` | பிரேத விசாரணை | Pretha Visaranai | 131–136 | 140–145 | `d1bbb45d3462de55047f9f26e1e705cafc32693b` |
+| 20 | `kandathum-kadhal-ozhiga` | கண்டதும் காதல் ஒழிக! | Kandathum Kadhal Ozhiga! | 137–141 | 146–150 | `1903720fecd0b53c009da637f023a7914d76b5a9` |
+| 21 | `aalamarathup-puraakkal` | ஆலமரத்துப் புறாக்கள் | Aalamarathup Puraakkal | 142–146 | 151–155 | `d09e93781afa679d35349e93555a4c110664fbe7` |
+| 22 | `thothukkili` | தொத்துக்கிளி | Thothukkili | 147–151 | 156–160 | `71f04f3621f4c40e8b6ca8216dd9910b07d1fddd` |
+| 23 | `kadhal-kaditham` | காதல் கடிதம் | Kadhal Kaditham | 152–156 | 161–165 | `0beca693da89e23a456f11cfd1f2a7e21e0e8b45` |
+| 24 | `kannadakkam` | கண்ணடக்கம் | Kannadakkam | 157–163 | 166–172 | `e14d7afb2675cffe463f834eae616667894701de` |
+| 25 | `vazha-mudiyathavargal` | வாழ முடியாதவர்கள் | Vazha Mudiyathavargal | 164–171 | 173–180 | `b03f83a712a6fcbfb98451ecc73afd23cf402bb9` |
+| 26 | `abagya-chinthamani` | அபாக்ய சிந்தாமணி | Abagya Chinthamani | 172–179 | 181–188 | `ba2ac25f5e45629ac02d43e13625e51b50353de2` |
+| 27 | `palaivana-roja` | பாலைவன ரோஜா | Palaivana Roja | 180–184 | 189–193 | `82be76bbc27a860681597b440f3f0d33581a6001` |
+| 28 | `puratchip-padam` | புரட்சிப் படம் | Puratchip Padam | 185–189 | 194–198 | `78fcda9d34ca9a36fd280e7a65d7c31aa3f903da` |
+| 29 | `thidukkidum-kathai` | திடுக்கிடும் கதை | Thidukkidum Kathai | 190–195 | 199–204 | `e6eea7e253f33f029f1c64958ea184dbd07423e0` |
+| 30 | `kadaisi-kattam` | கடைசிக் கட்டம் | Kadaisi Kattam | 196–201 | 205–210 | `4176f3cc1e2797938a4a26d8acb11cc816105261` |
+| 31 | `ayyo-raja` | அய்யோ ராஜா! | Ayyo Raja! | 202–208 | 211–217 | `9bdc09d0a9f09ffddad6e651d6846ca5014690c9` |
+| 32 | `visham-inidhu` | விஷம் இனிது | Visham Inidhu | 209–215 | 218–224 | `1e0a876ad13c6fb48c91ff7f14d51be9318bafb9` |
+| 33 | `veniyin-kadhalan` | வேணியின் காதலன் | Veniyin Kadhalan | 216–221 | 225–230 | `49ea97a0025eca96ae6895764df86188480933e0` |
+| 34 | `amirthamathi` | அமிர்தமதி | Amirthamathi | 222–229 | 231–238 | `6392d447a9fbd0822452f5040f6a524d48128222` |
+| 35 | `sumanthaval` | சுமந்தவள் | Sumanthaval | 230–240 | 239–249 | `e84057745986e7e6712e4342f12a149c7d113c77` |
+| 36 | `siddharthan-silai` | சித்தார்த்தன் சிலை | Siddharthan Silai | 241–243 | 250–252 | `c82f565ccdae0a7882e5b3942ba28bae38ac8792` |
+| 37 | `nunikkarumbu` | நுனிக்கரும்பு | Nunikkarumbu | 244–250 | 253–259 | `5a20d7cfcdef25999ca74d17e110679176d76ef7` |
+
+Story 29's tree is the **corrected** one, `e6eea7e253f33f029f1c64958ea184dbd07423e0` — see below.
+
+### ⚠️ The Story-29 source defect — stop, repair upstream, re-freeze
+
+**The most important lesson of Wave 2.**
+
+The initial Wave-2 source candidate was **`a9b333f12128686785ee981f97313a64af12e29b`**. During
+implementation preparation the fail-closed importer found a genuine **source-provenance defect** in
+`stories/thidukkidum-kathai`: the English translation's **prose was complete**, but its source-page
+markers were **shifted by one page from scan 200 onward**, leaving scan 204's marker section empty.
+Tamil scan 200's opening (`"அன்புள்ள நண்பர்களே!"` → *"Dear friends!"*) sat inside the English
+**scan-199** section.
+
+The implementation activity **stopped and reported it**. It did **not** silently repair the
+translation downstream, did **not** drop the affected story, and did **not** weaken the validator to
+get past it. An earlier revision of the importer had carried a re-attribution workaround; that
+workaround was **deliberately removed** once the source was fixed, so an empty English marker section
+now fails closed.
+
+The archive was corrected first, and the batch was then re-frozen against the corrected release:
+
+| | |
+|---|---|
+| Corrected pin | **`76135e1b5d504128c15be6bf59937716e5517d78`** — `Fix Thidukkidum Kathai English scan anchoring` |
+| Story 29 — old tree | `a0f871a59b90782de7ff6dd7fc3f07c9c62ff830` |
+| Story 29 — corrected tree | **`e6eea7e253f33f029f1c64958ea184dbd07423e0`** |
+| Other 36 target trees | **unchanged** |
+| Collection tree | **unchanged** |
+| English prose | **unchanged** |
+| Tamil | **unchanged** |
+
+Only provenance / page-marker anchoring changed. The whole 37-tree freeze was **recomputed**, not
+patched by substituting one SHA.
+
+**Standing lessons:**
+
+> A source release gate is not permission to work around a source defect downstream. If ingestion
+> reveals a genuine source defect, **stop, repair and re-verify upstream, then establish a new source
+> freeze.**
+
+> **Marker presence and order alone do not prove source-page attribution.** Provenance anchors must
+> correspond to actual content boundaries.
+
+The second lesson generalises: a future source needs boundary evidence, not Story-29-specific
+machinery.
+
+### Source-format heterogeneity — normalise ingestion, not the source
+
+All 37 workspaces were complete, but their **assembled Tamil files did not share one scan-marker
+convention.** Observed across the batch: leading markers, trailing markers, incomplete marker
+coverage, and **some works with no assembly markers at all.**
+
+The importer therefore used the **uniform verified `pages/` records as the page-level source
+authority**, rather than assuming assembly-comment syntax was canonical. Three further apparatus
+findings:
+
+- **`# அச்சு உரை`** appears as archival Markdown apparatus in some page records and is **not** printed
+  story text — the archive's own visual-fidelity pass documents it as not occurring in the source;
+- **`## Source review note` / `## Source-review note`** are archival apparatus;
+- the genuine printed sub-headings inside **திடுக்கிடும் கதை** (`## காதல் கதை`, `## வீரக்கதை`) **are**
+  story text and had to survive.
+
+> **Bulk onboarding must normalise ingestion mechanics, not normalise away real source
+> heterogeneity.** Choose the strongest uniform source layer, and explicitly exclude archival
+> apparatus from reader text.
+
+### Story model generalization — optionality as honest absence
+
+The pre-Wave-2 `Story` model carried fields derived from the standalone `கிழவன் கனவு` booklet as
+**required**. The anthology prints none of them. Wave 2 introduced source-form and provenance
+distinctions — `StorySourceForm`, `StoryAnthologyPlacement`, `StoryAnthologyProvenance`,
+`StoryTitleWitness`, `StoryVisualFidelity` — and made the booklet-specific fields optional:
+`formLabel`, `printedAuthorshipLineTa`, `physicalPublication`, `printedPageUncertainty`, `errata`.
+
+> A model generalization may make a previously required field **optional** when that field was
+> actually **source-form-specific**. Optionality must represent **honest absence**, not weakened
+> validation.
+
+The validator proves each absence rather than merely tolerating it. **`கிழவன் கனவு` remained
+byte-equivalent** in its generated reading and provenance data and retained every booklet-specific
+fact.
+
+### Title witnesses
+
+| story | contents witness | opening witness |
+|---|---|---|
+| 28 | `புரட்சிப்படம்` | `புரட்சிப் படம்` |
+| 36 | `சித்தார்த்தன்` | `சித்தார்த்தன் சிலை` |
+
+The public canonical title follows the **story-opening** witness; provenance preserves **both**.
+
+> Conflicting source title witnesses should be **represented, not silently normalized** into one
+> invented form.
+
+### English / Tamil authority
+
+**Tamil remains authoritative.** All 37 English layers are **project-created** translations carried
+from the source archive: 37/37 story-local translation reviews **PASS**, and the anthology-wide
+English structural/control QA is **PASS**. **No retranslation occurred** during Digital Library
+onboarding, and no external published English witness was used.
+
+### Rights / edition — deliberate absences
+
+No anthology story received an invented standalone `edition`, standalone publication claim, catalogue
+`unitCount`, rights block, `WorkAttribution`, form label, individual printed authorship line,
+publisher errata or printed-page uncertainty.
+
+**`முதல் பதிப்பு: 1977` is a property of the anthology**, recorded on each provenance page. It was
+**not** promoted into a fictional standalone first edition for 37 separate stories.
+
+### Importer and validator
+
+One deterministic batch importer, `scripts/import-1977-short-stories.mjs`, and one **independent**
+source-linked validator, `scripts/validate-1977-short-stories.mjs`.
+
+**Final validator: 2522 assertions · 42 groups · 0 failures · `BATCH RESULT: ALL PASS`.**
+
+**Negative tests: 17 / 17 proven**, each failing through the intended contract rather than crashing —
+source pin mismatch · per-work tree drift · missing/empty Tamil · missing/empty English · incomplete
+review state · page-range errors · scan 260 entering story text · collapsed title witnesses · invented
+booklet fields · the obsolete source pin appearing in output · and **a reconstruction of the original
+Story-29 shifted page anchoring**.
+
+Carried forward from Wave 1 and re-proved here:
+
+- **one story failure fails the whole batch**, while the report still names the story;
+- importer and validator **do not share extraction logic** in a way that would let one defect certify
+  itself;
+- **presence → structure → equality** remains mandatory; `empty == empty` may never certify;
+- **failure paths report rather than crash** — three negative tests initially crashed on undefined
+  data and the validator was made defensive;
+- **`process.exitCode`** preserves the full report through a CI pipe;
+- the importer **reruns byte-identical** from a clean state, with no clock values.
+
+### CI
+
+The anthology source is checked out at the **corrected historical pin** in a **dedicated CI
+directory**, which preserves the same-repository/different-pin safety rule — `கிழவன் கனவு` uses its
+own older pin.
+
+Two CI mistakes occurred while the PR was still under development and were corrected **before**
+exact-head approval: an apostrophe inside a bash single-quoted `node -e` block broke parsing, and the
+new validator step initially lacked the per-step source-directory environment and fetch-success guard
+its siblings carry. **Neither was a source defect.** The durable engineering lesson:
+
+> **CI wiring is part of the review surface.** Validate embedded shell quoting, and require every
+> archival-validator step to carry the same explicit source-directory environment and fetch-success
+> guard.
+
+**Validator-contract migration remains PAUSED.** Wave 2 did **not** resume it; the batch validator is
+deliberately unregistered and counted as pending.
+
+### Catalogue and public footprint
+
+| | before | after |
+|---|---|---|
+| Published works | 31 | **68** |
+| Fiction | 2 | **39** |
+| Non-empty shelves | 9 | **9** |
+
+**Wave-2 public contribution: 37 reader routes + 37 `/source` routes = +74 public URLs.** Contributed
+through the existing `STORY_SLUGS`-driven route family; no slug is hard-coded into the sitemap.
+
+| metric | pre-Wave-2 | post-Wave-2 | delta |
+|---|---|---|---|
+| **Next build static-route count** | 3035 | **3109** | **+74** |
+| **Sitemap URLs** | 3023 | **3097** | **+74** |
+| Prerendered `.html` files *(older, non-equivalent metric)* | 3027 | 3101 | +74 |
+
+0 duplicate sitemap URLs. All three move +74 because the same 74 URLs are involved — **not** because
+they measure the same thing. **3109 is the static-route count; 3101 is the `.html` file count; 3097 is
+the sitemap URL count**, and none of those numbers may be substituted for another.
+
+### Production verification — 2026-09-02
+
+Post-merge **production** verification against `https://nenjukkuneethi.org` — not a preview.
+
+Catalogue: **68** published works, **Fiction 39**, **9** non-empty shelves, no duplicate ids or slug
+collisions, all 37 new cards rendering on `/read`. **All 74 Wave-2 routes returned 200**, sitemap
+served 3097 URLs with 0 duplicates, and `/plays/`, `/speeches/`, `/cinema/` and `/read` were
+undisturbed.
+
+Representative checks: `pugazhendhi` · `thidukkidum-kathai` · `puratchip-padam` · `siddharthan-silai`
+· `nunikkarumbu`, plus the `kizhavan-kanavu` regression — reader and `/source` 200 for each.
+
+**Story 29 in production:** corrected pin visible, obsolete pin absent, the repaired boundary consumed
+correctly (scan-199's tail precedes scan-200's opening, so the English is not shifted), the scan-204
+ending present, the printed sub-headings retained, and archival apparatus absent from reader text.
+
+**Title witnesses in production:** story 28 displays `புரட்சிப் படம்` with both witnesses in
+provenance; story 36 displays `சித்தார்த்தன் சிலை` with both witnesses in provenance.
+
+**Kizhavan regression PASS:** form label, printed authorship line, standalone physical-publication
+section, printed-page uncertainty and the separate erratum witness all retained; its own historical
+pin shown and the anthology pin absent; no anthology placement or title-witness section attached.
+
+### Lessons for future bulk waves
+
+1. **A source release gate is not permission to work around a source defect.** Stop, fix upstream,
+   re-freeze — and recompute the whole freeze rather than substituting one SHA.
+2. **Provenance anchors must match content boundaries**, not merely exist in the right order.
+3. **Normalise ingestion mechanics, not the source.** Pick the strongest uniform source layer.
+4. **Archival apparatus is not reader text** — and genuine printed headings are.
+5. **Optionality must mean honest absence**, proved by the validator, never weakened validation.
+6. **CI wiring is part of the review surface.**
+7. **The exact-head sequence works.** Wave 2 ran it end to end and is the reference for how a wave
+   should be shipped.
 
 ---
 
@@ -2582,7 +2927,7 @@ When Claude returns a report, independently verify:
 
 # 15. Immediate next activity
 
-> ⚠️ **SUPERSEDED IN PART (2026-09-01, post-Wave-1).** The paragraphs below were written at the Drama
+> ⚠️ **SUPERSEDED IN PART (2026-09-02, post-Wave-2).** The paragraphs below were written at the Drama
 > Benchmark #1 synchronization. Three of their statements are no longer current: **Phase 3 is ACTIVE,
 > not paused**; **Speech Benchmark #4 is COMPLETE and CLOSED** rather than not started; and **Drama
 > Benchmark #2's "no controlling Tamil source" blocker is gone** — those plays were published by Bulk
@@ -2591,16 +2936,21 @@ When Claude returns a report, independently verify:
 > **The current immediate-next-activity position is:**
 >
 > - **Bulk Onboarding Wave 1 — Drama is COMPLETE and CLOSED** (PR #64, squash `0dc92fa0…`).
+> - **Bulk Onboarding Wave 2 — Fiction is COMPLETE and CLOSED** (PR #65, reviewed head `2ba1ee3a…`,
+>   squash `4fd45a92663abbe70ff0c0a605168314cd36e44c`) — the 37 stories of the 1977 anthology.
 > - **Bulk onboarding is now the STANDING DEFAULT workflow** — see the standing-policy section near
 >   the top of this document. The per-benchmark "integrate exactly one work / no bulk import"
 >   constraint lists that appear below and in §10 are **historical**, not the current default.
-> - **Wave 2 is NOT SELECTED and NOT AUTHORIZED.** Before any Wave 2, fetch live state and perform a
->   read-only readiness census for a coherent candidate batch. **Eligibility is not authorization.**
-> - **மணிமகுடம் / Manimagudam is NOT selected** merely because its upstream source is advancing.
-> - The **Kalaignar Film Songs formal control close-out remains pending** housekeeping and was
->   deliberately not performed by this close-out.
+> - **Wave 3 is NOT SELECTED and NOT AUTHORIZED.** Before any Wave 3, fetch live state and perform a
+>   read-only readiness census for a coherent candidate batch. **Eligibility is not authorization**,
+>   and no candidate becomes selected merely because Wave 2 closed.
+> - **மணிமகுடம் / Manimagudam is NOT selected** merely because its upstream source is advancing, and
+>   is **not** automatically the next batch.
 > - `kalaivanar-nsk-memorial-day-audio-06` remains a **SEPARATE** source archive that is **NOT**
 >   selected.
+> - The **Kalaignar Film Songs formal control close-out remains pending** housekeeping and was
+>   deliberately not performed by this close-out either.
+> - **Validator-contract migration remains PAUSED** and **native mobile remains ON HOLD.**
 >
 > Owner authorization is required before any new implementation.
 
@@ -2639,6 +2989,15 @@ Current standing state:
   URLs. *(This line replaces the earlier "Phase-7 Drama Benchmark #2: NOT STARTED / NOT SELECTED —
   `Anarkali`, `Cheran Senguttuvan` and `Socrates` have no controlling Tamil source", which is
   historical: controlling Tamil sources were released and those works are now published.)*
+- **Bulk Onboarding Wave 2 — Fiction / the 1977 short-story anthology:** ✅ **COMPLETE / MERGED /
+  PRODUCTION-VERIFIED and CLOSED** — 37 short stories, PR
+  [#65](https://github.com/pugazg/kalaignar-autobiography/pull/65), reviewed head `2ba1ee3a…`, squash
+  `4fd45a92663abbe70ff0c0a605168314cd36e44c`, source pin
+  `76135e1b5d504128c15be6bf59937716e5517d78`. Fiction 2 → **39**, catalogue 31 → **68**, **+74** public
+  URLs. `கிழவன் கனவு` was excluded as a separate earlier source and remains the short-story regression
+  benchmark.
+- **Bulk Onboarding Wave 3 / any further batch:** NOT STARTED / NOT SELECTED / NOT AUTHORIZED. No
+  readiness census has been run for it and no candidate has been chosen.
 - **Drama Bulk Wave 2 / any further Drama work:** NOT STARTED / NOT SELECTED / NOT AUTHORIZED.
   **மணிமகுடம் / Manimagudam is NOT published and NOT automatically eligible** — its exclusion from
   Wave 1 was deliberate and its upstream movement does not change that.
@@ -2704,10 +3063,11 @@ near the top of this document. Everything else in this list still applies to a b
 - **stop after that one benchmark.**
 
 Last production application-code checkpoint at this handover:
-**`0dc92fa0fd832b5932b8df75606ef049c9f261ea`** (the Bulk Onboarding Wave 1 / PR #64 squash merge).
-*(It supersedes `9aade1d441bb314b5ab62f97b87b373d33db08c5`, the Phase-7 Drama Benchmark #1 / PR #29
-squash merge, and `56ca0c978e34afddde52595f2ce825872bd6aeef`, the Speech Benchmark #4 A2 merge — both
-now historical.)* Live GitHub `main` is authoritative and overrides this SHA if it later moves;
+**`4fd45a92663abbe70ff0c0a605168314cd36e44c`** (the Bulk Onboarding Wave 2 / PR #65 squash merge).
+*(It supersedes `0dc92fa0fd832b5932b8df75606ef049c9f261ea`, the Bulk Onboarding Wave 1 / PR #64 squash
+merge; `9aade1d441bb314b5ab62f97b87b373d33db08c5`, the Phase-7 Drama Benchmark #1 / PR #29 squash
+merge; and `56ca0c978e34afddde52595f2ce825872bd6aeef`, the Speech Benchmark #4 A2 merge — all now
+historical.)* Live GitHub `main` is authoritative and overrides this SHA if it later moves;
 documentation-only commits may advance `main` past it without changing the deployed application, and
 such a docs-only SHA must never be recorded as a newer application-code checkpoint. The earlier
 `992fd8d6cd7bfd89a2689574d0e2ef2728774a1a` (Phase 6), `bcb11396b2215bc2cc1e81873c0ce278ef98598a`
