@@ -55,11 +55,14 @@ Four numbers now describe `/read` and they are not interchangeable:
 **Fiction holds 39 works and renders 3 discovery entries.** Never write "35 works", and never call
 Fiction a 3-work shelf.
 
-### Reading Room Wayfinding — Phase 0 + Phase 1 — ✅ COMPLETE; control closure PROPOSED
+### Reading Room Wayfinding — Phase 0 + Phase 1 — ✅ COMPLETE and CLOSED
 
-**This control record is not yet closed.** The Wayfinding close-out PR against `pugazg/kalaignar-tribute`
-**proposes** durable closure and is awaiting independent exact-head review and merge. Until that PR is
-merged, treat Wayfinding as implementation-complete and production-verified but **control-open**.
+The durable control close-out is the checkpoint established by control PR **#21**.
+
+**Resolve this against live control `main`, as always.** If you are reading this file from the
+close-out branch before #21 has merged, the closure is still only proposed and live `main` remains
+authoritative. Once #21 is on `main` — which is where a fresh chat reads this file — Wayfinding is
+durably closed and needs no further control action.
 
 Two phases, both merged and production-verified:
 
