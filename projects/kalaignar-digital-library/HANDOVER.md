@@ -143,7 +143,7 @@ Shelf census: Life Writing 1 · Letters 1 · Fiction 2 · Poetry 1 · **Drama 5*
 **This line is superseded by the post-Wave-2 checkpoint above** and is retained only as history.
 Measured at that checkpoint: the SHA and open-PR count from live GitHub; the work/shelf census from
 `data/library.ts` at that SHA; the page and static-route counts from a production build of it; the
-sitemap count from the deployed site. All 22 Wave-1 URLs returned 200 in production.
+sitemap count from the deployed site. All 22 Wave-1 URLs return 200 in production.
 
 #### ⚠️ Site-wide TOTALS vs a wave's DELTA — never mix them
 
@@ -1145,7 +1145,7 @@ its siblings carry. **Neither was a source defect.** The durable engineering les
 
 > **CI wiring is part of the review surface.** Validate embedded shell quoting, and require every
 > archival-validator step to carry the same explicit source-directory environment and fetch-success
-> guard.
+guard.
 
 **Validator-contract migration remains PAUSED.** Wave 2 did **not** resume it; the batch validator is
 deliberately unregistered and counted as pending.
@@ -1787,7 +1787,7 @@ the date clause was what supplied the noun. Zero description drift for every alr
 
 ### A2 — Reading Room catalogue onboarding
 
-Implementation PR **#63**, squash **`56ca0c978e34afdd8e70b9f057ad577dc6a76cc7`** (2 files).
+Implementation PR **#63**, squash **`56ca0c978e34afddde52595f2ce825872bd6aeef`** (2 files).
 
 A2 delivered exactly one `LibraryWork`, appended as the **14th Speech catalogue work** after
 `2006-08-23-industries-debate`, giving the already-live reader its `/read` discovery. It retained the
@@ -2394,7 +2394,7 @@ QA language throughout is **archive-recorded**, **automated QA** and **scan-adju
 > - **Benchmark #1 — உதயக் கதிர் / Udhaya Kathir** (assembly speech): **COMPLETE / MERGED /
 >   PRODUCTION-VERIFIED** — PR #18, squash `13ddf04f01b6a75024985b6df172deace9d26e80`, verified live
 >   2026-08-18.
-> - **Benchmark #2 — பூந்தோட்டம் / Poonthottam** (public speech): **COMPLETE / MERGED /
+> - **Benchmark #2 — பூந்தோட்டம் / Poonthottam** (the first **public** speech): **COMPLETE / MERGED /
 >   PRODUCTION-VERIFIED** — PR #20, reviewed head `0906919e21066ab9e917985d51f60086823ad8ce`, squash
 >   `2777064490910c02f5aa6938b9b6872b15e21e7c`, verified live 2026-08-19. A follow-up
 >   presentation/provenance hotfix (PR #21, squash `acb9721127de72c7575c035ccccf877deeb6421e`) is part
