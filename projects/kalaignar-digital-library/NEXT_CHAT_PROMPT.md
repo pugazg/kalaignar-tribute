@@ -22,15 +22,96 @@ Then inspect the live implementation repository:
 
 — its current `main`, its open PRs, and the deployed production site.
 
+In order, every time: fetch live control `main` → read `HANDOVER.md` completely → fetch implementation
+`main` → inspect open PRs in both repositories → check the deployed production site.
+
 **Treat current GitHub `main`, open PRs and deployed site state as authoritative** over any SHA, count or status paragraph written in a handover, including this file.
 
-## ⚠️ CURRENT STATE — 2026-09-02, post-Wave-3 (supersedes the phase list below)
+## ⚠️ CURRENT STATE — 2026-09-03, post-Reading-Room-Wayfinding (supersedes everything below)
 
-**The "Where the project actually stands" list below stops at Phase 7 and is HISTORICAL.** Its work
-and shelf counts are stale. It is kept for completed-phase detail and has not been retro-edited.
-**Live GitHub wins over anything in it.**
+**The "Where the project actually stands" list further below stops at Phase 7 and is HISTORICAL.** Its
+work and shelf counts are stale. **Live GitHub wins over anything in it.**
 
-Measured at the Wave-3 production boundary: implementation `main`
+Measured at the Wayfinding production boundary: implementation `main`
+**`1c6dcd81f0aa143a8e9b3162976c74dd18791058`**, **0 open implementation PRs**, **71 published works**,
+**1 collection**, **9 non-empty shelves**, **35 fully-expanded `/read` discovery entries**, **27
+initially visible discovery entries**, **3129 Next build static-route count**, **3117 sitemap URLs**,
+**0 sitemap duplicates**. The continuity-only prerendered `.html` figure is **3121** and is **not** the
+static-route count.
+
+Shelf census, unchanged by Wayfinding: Life Writing 1 · Letters 1 · **Fiction 39** · Poetry 1 · Drama 5 ·
+Cinema Writing 4 · Speeches 14 · Essays & Articles 4 · Literary Commentary 2. Total **71**.
+
+### ⚠️ Works are not discovery entries
+
+Four numbers now describe `/read` and they are not interchangeable:
+
+- **71 published works** — the archival catalogue;
+- **35 discovery entries** — what `/read` renders fully expanded, because one collection entry stands
+  in for 37 works;
+- **27 initially visible entries** — of those 35, before any disclosure is opened;
+- **3129 static routes / 3121 `.html` / 3117 sitemap URLs** — three separate build and delivery metrics.
+
+**Fiction holds 39 works and renders 3 discovery entries.** Never write "35 works", and never call
+Fiction a 3-work shelf.
+
+### Reading Room Wayfinding — Phase 0 + Phase 1 — ✅ COMPLETE and CLOSED
+
+The durable control close-out is the checkpoint established by control PR **#21**.
+
+**Resolve this against live control `main`, as always.** If you are reading this file from the
+close-out branch before #21 has merged, the closure is still only proposed and live `main` remains
+authoritative. Once #21 is on `main` — which is where a fresh chat reads this file — Wayfinding is
+durably closed and needs no further control action.
+
+Two phases, both merged and production-verified:
+
+- **Phase 0 — shelf progressive disclosure.** PR **#67**, approved head `13f313b0…`, squash merge
+  **`1bc1123ecfcbdd181221cf34f558d3f7129d17e0`**, CI `33647284338`. A six-entry cap per shelf behind a
+  native `<details>`/`<summary>`; no model change, no route, no data claim. Initially visible cards
+  71 → 30 at that boundary; works unchanged.
+- **Phase 1 — the 1977 anthology collection.** PR **#68**, approved head `ca217592…`, squash merge
+  **`1c6dcd81f0aa143a8e9b3162976c74dd18791058`**, CI `33706978869`. The first collection layer:
+  `1977-kalaignar-karunanidhiyin-sirukathaigal`, 37 members, ordinals 1–37, at
+  `/collections/1977-kalaignar-karunanidhiyin-sirukathaigal`, frozen at source commit `76135e1b…` and
+  collection tree `d45434d4…`. **The 37 stories remain 37 independent works** with their own routes.
+
+Architectural rules that now bind: membership is canonical in `LibraryCollection.members` only;
+reverse membership is **plural** — `collectionsForWork()`, never the stale singular `collectionForWork()`;
+`memberCount` (works in a collection) is not `unitCount` (reading units in one work); and member
+resolution **fails closed** rather than silently dropping an unresolved member.
+
+Two review lessons worth carrying: a pre-existing shared token does **not** exempt a new interactive
+control from accessibility review; and where theme or state variants coexist, proving a bad class is
+**absent** is not enough — the test must positively prove the required good state is **present**.
+
+### NEXT ACTIVITY AFTER THIS CONTROL CLOSE-OUT
+
+**Do not select anything automatically.** Closing Wayfinding selects nothing. The two known owner
+decision points remain, and the owner chooses between them:
+
+1. **Film Songs formal control close-out** — separate and still pending;
+2. **Wave 4 readiness census / selection** — **NOT SELECTED, NOT AUTHORIZED**, no census has started.
+
+Also NOT started and NOT authorized: **Phase 2 discovery search** (Phase 1 left the registries clean
+enough for it — that is preparation, not permission), **chronology**, **Tamil-first sorting**,
+**`/read/browse`**, and **any second collection**. Naanmani Maalai is explicitly not modelled — its four
+plays share only a scan SHA-256 and a prose note, which is not enough to declare membership; Essays
+publications are works with reading units, not collections; Murasoli's hierarchy has not had its design
+pass.
+
+Standing exclusions unchanged: validator migration **PAUSED** (3 registered / 13 pending / 16 total —
+the new collection validator being pending is not a resumption); native mobile **ON HOLD**; Manimagudam
+never auto-selected; `kalaivanar-nsk-memorial-day-audio-06` never auto-selected.
+
+Two known follow-up candidates are **recorded, not authorized**: the Digital Library theme bootstrap
+(a direct `/read` or `/collections` load does not mount the component that activates the site's `.dark`
+class), and pre-existing work-card contrast. Neither is a Wayfinding defect.
+
+## ⚠️ CURRENT STATE — 2026-09-02, post-Wave-3 ⚠️ SUPERSEDED (kept as history)
+
+**Superseded by the Wayfinding checkpoint above** and kept only as history; its route and sitemap
+counts predate the collection route. Measured at the Wave-3 production boundary: implementation `main`
 **`c4660c49edb20895d11751e4454942e46e8b0951`**, **0 open implementation PRs**, **71 published works**,
 **Essays & Articles 4**, **9 non-empty shelves**, **3128 Next build static-route count**, **3116 sitemap
 URLs**. The continuity-only prerendered `.html` figure is **3120** and is not the static-route count.
