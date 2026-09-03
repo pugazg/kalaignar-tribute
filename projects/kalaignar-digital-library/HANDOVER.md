@@ -11,7 +11,7 @@ Several phases have shipped since it was written, and its work counts, shelf cou
 "last production application-code checkpoint" are stale. It is kept as history and has **not** been
 retro-edited. Where it disagrees with this section or with live GitHub, **live GitHub wins**.
 
-### Verified live state — 2026-09-03, post-Reading-Room-Wayfinding ✅ CURRENT
+### Verified live state — 2026-09-03, post-Film-Songs-control-close-out ✅ CURRENT
 
 | | |
 |---|---|
@@ -25,13 +25,13 @@ retro-edited. Where it disagrees with this section or with live GitHub, **live G
 | **Next build static-route count** | **3129** |
 | **Sitemap URLs** | **3117** |
 
-Shelf census, unchanged by Wayfinding: Life Writing 1 · Letters 1 · **Fiction 39** · Poetry 1 ·
+Shelf census, unchanged by this control-only close-out: Life Writing 1 · Letters 1 · **Fiction 39** · Poetry 1 ·
 Drama 5 · Cinema Writing 4 · Speeches 14 · Essays & Articles 4 · Literary Commentary 2. Total **71**.
 
 #### ⚠️ WORKS are not DISCOVERY ENTRIES
 
-This checkpoint introduces a fourth number that must never be conflated with the other three, and the
-temptation is real because two of them moved together.
+This checkpoint retains the four measurements established by Reading Room Wayfinding. They must never
+be conflated merely because this close-out changes no implementation count.
 
 | measurement | value | what it counts |
 |---|---:|---|
@@ -46,18 +46,24 @@ temptation is real because two of them moved together.
 entries**. Writing "Fiction 3" as a work count, or "35 works", would erase 36 published works on
 paper. The 37 anthology stories remain 37 independent works with their own routes.
 
-**Measured at the Wayfinding production boundary**, not copied forward: implementation `main`, tree and
+**Measured at the current production boundary**, not copied forward: implementation `main`, tree and
 open PRs from live GitHub; works, collections, shelves and discovery counts from the merged
-implementation; the static-route and `.html` counts from a production build of the merged tree; the
-sitemap count and duplicate check from deployed production.
+implementation; the static-route and `.html` counts from the verified Wayfinding production build;
+the sitemap count and duplicate check from deployed production. Film Songs close-out is control-only
+and changes none of those implementation measurements.
 
-Shipped since the post-Wave-3 checkpoint:
+Shipped / closed since the post-Wave-3 checkpoint:
 
 - **Reading Room Wayfinding — Phase 0 + Phase 1** — the shelf disclosure that stopped `/read` from
   being an endless scroll, and the first collection layer, benchmarked on the 1977 short-story
-  anthology. No content was onboarded: the catalogue is the same 71 works it was before. **Closed by
-  this document when this control-only close-out PR is independently exact-head reviewed and merged.**
-  See the Wayfinding section below.
+  anthology. No content was onboarded: the catalogue is the same 71 works it was before. Closed by
+  control PR #21; see the Wayfinding section below.
+- **கலைஞர் திரை இசைப் பாடல்கள் / Kalaignar Film Songs — formal control close-out.** The E1–E4
+  implementation was already live and production-verified; this control-only activity records its
+  source freeze, authorship/display contract, public/internal provenance boundary and staged PR chain.
+  **If this text is being read from the unmerged close-out branch, live control `main` remains
+  authoritative and closure is only proposed. Once this control PR is on `main`, Film Songs is durably
+  COMPLETE and CLOSED.** See the dedicated section below.
 
 ### Verified live state — 2026-09-02, post-Wave-3 ⚠️ SUPERSEDED (kept as history)
 
@@ -74,7 +80,7 @@ Shipped since the post-Wave-3 checkpoint:
 Shelf census: Life Writing 1 · Letters 1 · Fiction 39 · Poetry 1 · Drama 5 ·
 Cinema Writing 4 · Speeches 14 · **Essays & Articles 4** · Literary Commentary 2. Total **71**.
 
-**This checkpoint is superseded by the Wayfinding checkpoint above** and is retained only as history;
+**This checkpoint is superseded by the current checkpoint above** and is retained only as history;
 its route and sitemap counts predate the collection route. Measured at that boundary: implementation
 `main` and open PRs from live GitHub; the catalogue census from the merged implementation;
 static-route count from the merged production build; sitemap count from deployed production. The older prerendered `.html`
@@ -90,8 +96,7 @@ Shipped since the post-Wave-2 checkpoint:
   three independently guarded work trees, taking Essays & Articles from 1 to 4 and the catalogue from
   68 to 71. Implementation PR #66 followed the exact-head gate, including one rejected green-CI head,
   a focused repair, a second exact-head review, approved squash merge and production verification.
-  **Closed by this document when this control-only close-out PR is independently exact-head reviewed
-  and merged.** See the Wave-3 section immediately below.
+  Closed by its merged control close-out; see the Wave-3 section immediately below.
 
 ### Verified live state — 2026-09-02, post-Wave-2 ⚠️ SUPERSEDED (kept as history)
 
@@ -214,8 +219,9 @@ returned 200 in production.
 Shipped between the 2026-08-30 checkpoint and that one:
 
 - **கலைஞர் திரை இசைப் பாடல்கள் / Kalaignar Film Songs** — implementation and publication are **live**
-  in Cinema Writing, which is why that shelf is now 4 rather than 3. Its **separate formal
-  control-document close-out remains pending** and is deliberately not performed here.
+  in Cinema Writing, which is why that shelf is now 4 rather than 3. At this historical checkpoint its
+  separate formal control-document close-out was still pending; that status is superseded by the
+  CURRENT close-out section below.
 - **Speech Benchmark #4 — கலைவாணர் என். எஸ். கிருஷ்ணன் நினைவு நாள் விழாவில் கலைஞர் உரை** — the first
   audio-sourced speech, taking Speeches to 14 and the catalogue to 27. **Closed by this document**;
   see its section below.
@@ -250,18 +256,17 @@ merged PRs, not in this file:
 - **Phase C — பராசக்தி** (Cinema Writing), taking Cinema Writing to 2.
 - **Phase D — திரும்பிப்பார்** (Cinema Writing), taking Cinema Writing to 3 and the catalogue to 25.
 - **கலைஞர் திரை இசைப் பாடல்கள் / Kalaignar Film Songs** (Cinema Writing), taking Cinema Writing to 4
-  and the catalogue to 26. Implementation live; **formal control close-out still pending**.
+  and the catalogue to 26. Implementation live; its later formal control close-out is recorded in the
+  dedicated CURRENT section below.
 - **Speech Benchmark #4 — the first audio-sourced speech**, taking Speeches to 14 and the catalogue
   to 27. **Closed by this document.**
 - **Bulk Onboarding Wave 1 — Drama**, taking Drama to 5 and the catalogue to 31. The first
   bulk-onboarding activity. **Closed by this document.**
 - **Bulk Onboarding Wave 2 — Fiction / the 1977 short-story anthology**, taking Fiction to 39 and the
   catalogue to 68. **Closed by this document.**
-
 - **Bulk Onboarding Wave 3 — Essays & Articles / three-publication batch**, taking Essays & Articles
   to 4 and the catalogue to 71. Exact-head implementation review included one rejected head and a
-  repaired approved head; production verification passed. **Closed by this document when this
-  control-only close-out PR is independently reviewed and merged.**
+  repaired approved head; production verification passed. **Closed by its merged control close-out.**
 
 ---
 
@@ -486,10 +491,11 @@ unknown collection id 404.
 Story identity, proved as a full inventory rather than by sampling: `STORY_SLUGS` **38** · story sitemap
 URLs **76** · **37/37** anthology reader routes 200 · **37/37** anthology `/source` routes 200.
 
-### Standing state after Reading Room Wayfinding
+### Standing state after Reading Room Wayfinding — superseded where noted
 
-- **Wave 4 is NOT SELECTED, NOT AUTHORIZED and no Wave-4 readiness census has started.** Closing
-  Wayfinding selects nothing.
+- **Wave 4 readiness census / selection is now AUTHORIZED BY OWNER but NOT STARTED.** This supersedes
+  the earlier “Wave 4 NOT AUTHORIZED” status. **Wave 4 implementation is NOT YET AUTHORIZED**; the
+  census/selection must report its chosen coherent batch before any implementation begins.
 - **Phase 2 discovery search is NOT started and NOT authorized.** Phase 1 deliberately left the
   registries clean enough for it; that is preparation, not permission.
 - **Chronology, Tamil-first sorting and `/read/browse` remain unstarted and unauthorized.**
@@ -498,7 +504,9 @@ URLs **76** · **37/37** anthology reader routes 200 · **37/37** anthology `/so
   membership under the source-first rule. Essays publications are not collections either — an Essays
   publication is one work whose articles are reading units. Murasoli's volume hierarchy has not had its
   design pass.
-- **Film Songs formal control close-out remains pending** and requires its own explicit authorization.
+- **Film Songs formal control close-out is recorded by the dedicated section below.** If this file is
+  read from the unmerged close-out branch, live control `main` still wins; once this PR is on `main`,
+  Film Songs is durably COMPLETE and CLOSED.
 - **Validator migration remains PAUSED.**
 - **Native mobile remains ON HOLD.**
 - **Manimagudam** and **`kalaivanar-nsk-memorial-day-audio-06`** are never auto-selected.
@@ -518,6 +526,203 @@ neither is fixed by it.
 
 ---
 
+## Kalaignar Film Songs — E1–E4 — ✅ COMPLETE and CLOSED
+
+**கலைஞர் திரை இசைப் பாடல்கள் / Kalaignar Film Songs.** The implementation was intentionally staged
+through deterministic data, CI, reader, catalogue and sitemap work before this separate formal
+control closure. No implementation change is part of this section.
+
+**Control-merge boundary.** This section describes the durable state this control PR establishes. If
+read from the unmerged branch, closure is still proposed and live control `main` remains authoritative.
+Once this exact documentation tree is merged to control `main`, Film Songs is formally COMPLETE and
+CLOSED and needs no further close-out activity.
+
+### Source freeze and integrity
+
+| | |
+|---|---|
+| Source repository | `pugazg/kalaignar-cinema-works` |
+| Source path | `works/kalaignar-thirai-isai-paadalgal` |
+| Frozen source commit | **`d6f3128381235e80891cc6647d19464b838f4103`** |
+| Controlling source | `TVA_BOK_0065867` |
+| Controlling scan SHA-256 | **`f0beac14c33ffc73c0231bd54ca57ec4093eef6e85072bd68ce48f7b5e258b05`** |
+| Earlier witness | `TVA_BOK_0065773` |
+| Earlier-witness SHA-256 | **`56d414a65a61a73b990632eadc17a3b1efdc764d47f64b851060c161a3f98e3b`** |
+| Reading Room payload SHA-256 | **`8ec0e25f7fc1f1a9750d370ccbef5dd07caa66629a3dfacb8425bbeebd08fcce`** |
+| Evidence-register SHA-256 | **`9aa03e32f2bf2a2fa491f6995ed6d455f36d74aa1294cf4fc5763d4afb2f27de`** |
+| Source-input aggregate | **`9d499beb2c54c692cf972e5fe269c7e7f21d3bafa07a5d4c76d2bf9acb027935`** — 4 files |
+
+At close-out preparation, live `pugazg/kalaignar-cinema-works/main` itself still resolves to the exact
+frozen implementation pin. **No repin occurred.** The earlier 1989 witness is authorship evidence only
+and contributes **no lyric text**.
+
+### Final corpus
+
+**23 films · 54 numbered lyrics · 1105 paired Tamil/English line-cues · 8 cross-page songs.**
+
+Cross-page song numbers: **9, 19, 23, 24, 36, 37, 51, 52**. Songs **001–054** exist exactly once.
+The front-matter incipit `ஆளப்பிறந்தவன் தமிழன் அவனிதனிலே` is named editorially but has no numbered
+lyric body in the corpus; it is **not** a 55th song and must never become one.
+
+### Authorship certainty is not display eligibility
+
+This is the central Film Songs contract:
+
+| fact | count |
+|---|---:|
+| public/displayable numbered lyrics | **54** |
+| established Kalaignar authorship | **48** |
+| unresolved individual authorship | **6** |
+| notice-required | **6** |
+
+The unresolved records are exactly songs **013–018** in **அம்மையப்பன்**. They remain publicly
+displayable because they are part of the controlling source's numbered corpus, but they carry **no
+positive Kalaignar-authorship claim**. `unresolved` means the source does not establish authorship in
+either direction — it never means “not Kalaignar's”, “established other”, or rejected attribution.
+
+The source-controlled notice group is **`ammayappan-unresolved`**, covering exactly songs 013–018.
+Its Tamil and English text is imported from the source contract. A notice-required song may not render
+without its notice; resolution fails closed. Song **012** is separately established from the earlier
+witness and correctly receives **no** unresolved notice.
+
+### E1–E4 implementation history
+
+| stage | implementation PR | final reviewed head | squash merge | durable purpose |
+|---|---:|---|---|---|
+| **E1** | #57 | `912dcc759d4a8951c0899e5378d8a4181a304a42` | `c5fae2abac15d3b1e4f07d22862c4e865596d870` | deterministic source-pinned data import + validator |
+| **CI gate** | #58 | `494a833bb51a7962713ae5aa319838a5621dd222` | `1cd8c66344660d0d8e70b9f057ad577dc6a76cc7` | wire Film Songs into explicit Library archival-validator CI |
+| **E2** | #59 | `82c1198632a77659d1c5d6ad4a608324e4edd660` | `5580fe5c26f76828ff8f6f1351197381a4577ea0` | public film→lyric reader |
+| **E3** | #60 | `502f31a1f617510883209d4548179463d0aaff23` | `780d1e28e9cacd073a5d44073243b87642c7b06d` | Reading Room catalogue exposure |
+| **E4** | #61 | `a97fd4c8fed7fedf8946a514e3d40e8a2a300d7f` | `2712080873d51e7cfb020295e20d4c32da803a7c` | sitemap exposure |
+
+#### E1 — deterministic data + public/internal boundary
+
+E1 established the source-pinned registry and lyric files and a source-linked validator. Its first
+reviewed design put archival `provenance.json` under Next.js `public/` and merely described it as
+“build-time only”. Independent review correctly rejected that: **everything under `public/` is a
+served asset regardless of what a comment calls it.**
+
+The accepted repair moved archival provenance to:
+
+`data/internal/thirai-isai-paadalgal/provenance.json`
+
+and removed scan/page-level per-song provenance from the served lyric records. Nothing archival was
+lost: the internal record retains source repo/path/commit, both witness hashes, evidence-register and
+source-input hashes, all source paths, page mappings, contents-title variants, printed music/voice
+credits, archival attribution and verification states. The public tree carries reader-needed data only.
+
+> **Durable rule: filesystem placement is the real public/private boundary.** A label cannot make a
+> file private if the framework serves the directory it occupies.
+
+Final Film Songs validator: **155 assertions / 0 failed**.
+
+#### CI gate — explicit validation really runs
+
+`npm run validate` already knew the work, but the Library CI `archival validators` job invoked works
+through explicit per-work steps and initially had no Film Songs step. PR #58 closed that gap without
+changing product behaviour. Film Songs uses its own source-checkout directory because Manohara,
+Tirumbippaar and Film Songs pin the same source repository at different historical commits; one
+checkout cannot satisfy all three, and the same-directory/same-pin guard was not weakened.
+
+The named current CI step remains **Kalaignar Film Songs**. Validator-contract migration remains
+**PAUSED**; the Film Songs validator is not migrated merely because it is active in CI.
+
+#### E2 — film → lyric reader
+
+Public routes:
+
+- `/cinema/thirai-isai-paadalgal` — one landing grouping **23 films**;
+- `/cinema/thirai-isai-paadalgal/song-001` … `/song-054` — **54 lyric pages**.
+
+Total public Film Songs reader routes: **55**. There are **no per-film routes**, **no `/source` route**,
+and no `song-055`. Films are grouping anchors on the landing, not pages.
+
+No byline is rendered per lyric. The six unresolved lyrics render the source-controlled notice in the
+same active language as the lyric body; the other 48 do not. Previous/next navigation stays within the
+current film.
+
+Independent review also tightened the server→client payload: neighbour props became only
+`{ slug, titleTa }`, and notice props only `{ noticeTa, noticeEn }`. That was **payload minimisation and
+surface discipline**, not a secrecy finding; many of the removed summary values already exist in the
+public registry.
+
+#### E3 — catalogue
+
+The final catalogue entry is one **Cinema Writing** work:
+
+| field | final value |
+|---|---|
+| id | `kalaignar-thirai-isai-paadalgal` |
+| slug | `thirai-isai-paadalgal` |
+| title | `கலைஞர் திரை இசைப் பாடல்கள்` / `Kalaignar Film Songs` |
+| subtype | `film-song-collection` |
+| reader structure | `film-song` |
+| href | `/cinema/thirai-isai-paadalgal` |
+| Tamil | complete |
+| English | complete |
+| English kind | `project-created` |
+| `unitCount` | **54 songs** |
+
+**The 54 is a corpus count, not an authorship count.** It must never be paraphrased as “54 songs
+written by Kalaignar”.
+
+Catalogue `rights` is deliberately absent. Applying the nationalisation status across this 54-song
+collection would silently treat the six unresolved songs as Kalaignar-authored for rights purposes —
+resolving an authorship question through a rights field. **Display eligibility, authorship certainty and
+rights are three separate facts.**
+
+`provenanceHref`, public `sourceRepo`, `sourcePath`, `sourceCommit` and `edition` are absent by design;
+there is no public Film Songs source page. The internal provenance record remains the deterministic
+validation boundary.
+
+#### E4 — sitemap
+
+E4 adds exactly **55** Film Songs sitemap URLs: the landing plus 54 lyric routes. It advertises no
+`/source`, per-film page, fragment URL or Song 55. Slugs come from the same released registry that
+drives `generateStaticParams`, not a numeric reconstruction.
+
+The first E4 comment made a wrong argument for a correct design: it claimed a 001–054 numeric loop
+would invent the unnumbered editorial incipit. It would not. The comment was repaired without changing
+behaviour.
+
+> **Correct durable reason:** the registry is the authority for the routes that actually exist. A
+> future numbering gap, renumbering or other route-set change must not leave the sitemap describing
+> pages the router no longer generates.
+
+### English provenance
+
+The English layer is **complete** and **project-created** from the verified Tamil derivative. It is
+not an official translation, not a historical published translation and not a source witness. Tamil
+remains the authoritative lyric-text layer; the earlier 1989 witness serves only the stated authorship
+evidence role.
+
+### Current regression state
+
+At the current post-Wayfinding implementation boundary, Film Songs remains one of **4 Cinema Writing
+works** and all global metrics remain **71 works / 1 collection / 9 shelves / 35 fully-expanded
+entries / 27 initially visible / 3129 static routes / 3121 `.html` / 3117 sitemap URLs / 0 duplicates**.
+This formal close-out changes documentation only.
+
+The live validator remains `scripts/validate-thirai-isai-paadalgal.mjs`, **155 assertions**, invoked by
+both `npm run validate` and Library CI. The validator contract remains **3 registered / 13 pending /
+16 total**, migration **PAUSED**.
+
+### Standing state after Film Songs formal close-out
+
+- **Film Songs E1–E4 implementation: COMPLETE, published and production-verified.**
+- **Film Songs formal control close-out: COMPLETE and CLOSED once this control PR is merged.**
+- **Wave 4 readiness census / selection: AUTHORIZED BY OWNER, NOT STARTED.** This is now the next
+  bounded activity.
+- **Wave 4 implementation: NOT YET AUTHORIZED.** Census/selection must report the chosen coherent batch
+  first; implementation requires a later explicit authorization.
+- Phase 2 Reading Room search, chronology, Tamil-first sorting, `/read/browse` and a second collection
+  remain unauthorized.
+- Validator migration remains **PAUSED**; native mobile remains **ON HOLD**.
+- Manimagudam and `kalaivanar-nsk-memorial-day-audio-06` remain never-auto-selected special cases.
+- Existing theme-bootstrap and WorkCard-contrast debt remains recorded, not authorized by this closure.
+
+---
+
 ## Bulk Onboarding Wave 3 — Essays & Articles / three-publication batch — ✅ COMPLETE and CLOSED
 
 **The third bulk-onboarding activity.** Three release-complete publications from `pugazg/kalaignar-essays`
@@ -527,10 +732,7 @@ were published together on the existing Essays & Articles shelf:
 2. **உணர்ச்சிமாலை** / *Garland of Emotion* — 10 articles, 50 scans;
 3. **திராவிட சம்பத்து** / *Dravidian Wealth* — 2 articles, 16 scans, damaged/out-of-order source.
 
-Implementation is merged and production-verified. **This section is the proposed durable control
-closure: Wave 3 becomes COMPLETE and CLOSED in the control record only when this control-only PR is
-independently reviewed at its exact head and merged.** Until then, do not treat the branch text alone
-as a merged control checkpoint.
+Implementation is merged and production-verified. This section is the durable merged control closure.
 
 ### Implementation identity and exact-head gate
 
@@ -683,17 +885,12 @@ page transitions; 1956 first edition; 2018 controlling reprint; printed page cou
 rights record; mixed-voice behavior intact. Its validator passed **188 assertions, 0 failed** and its
 16 production routes remained healthy.
 
-### Standing state after Wave 3
+### Standing state after Wave 3 — historical at this point
 
-- **Wave 4 is NOT SELECTED, NOT AUTHORIZED and no Wave-4 readiness census has started.** Closing Wave 3
-  selects nothing. Wait for explicit owner authorization before any next-wave readiness or selection.
-- **Film Songs formal control close-out remains pending** and requires its own explicit authorization.
-- **Validator migration remains PAUSED.**
-- **Native mobile remains ON HOLD.**
-- **Manimagudam is never auto-selected**; it requires its own release/readiness gate and owner
-  authorization if considered later.
-- **`kalaivanar-nsk-memorial-day-audio-06` is never auto-selected**; it remains separate source-active
-  archive work.
+At the Wave-3 close-out, Wave 4 was not yet authorized and Film Songs formal closure was still pending.
+Those two statuses are now superseded by the CURRENT Film Songs section above. The durable historical
+facts remain: validator migration was **PAUSED**, native mobile **ON HOLD**, Manimagudam required its
+own readiness gate, and `kalaivanar-nsk-memorial-day-audio-06` was a separate source-active archive.
 
 **Do not reopen Wave 3** merely because the Essays source repository continues to advance for other
 publications.
@@ -1590,7 +1787,7 @@ the date clause was what supplied the noun. Zero description drift for every alr
 
 ### A2 — Reading Room catalogue onboarding
 
-Implementation PR **#63**, squash **`56ca0c978e34afddde52595f2ce825872bd6aeef`** (2 files).
+Implementation PR **#63**, squash **`56ca0c978e34afdd8e70b9f057ad577dc6a76cc7`** (2 files).
 
 A2 delivered exactly one `LibraryWork`, appended as the **14th Speech catalogue work** after
 `2006-08-23-industries-debate`, giving the already-live reader its `/read` discovery. It retained the
@@ -1759,7 +1956,8 @@ None of these were fixed in A1 or A2, and none may be folded into another change
 7. Film Songs nullable-label type mismatch;
 8. stale `/read` metadata description;
 9. Film Songs E3 catalogue-comment wording precision;
-10. **Film Songs formal control close-out — still pending.**
+10. **Film Songs formal control close-out — historical pending item, now superseded by the dedicated
+    COMPLETE and CLOSED section above.**
 
 ---
 
@@ -2196,7 +2394,7 @@ QA language throughout is **archive-recorded**, **automated QA** and **scan-adju
 > - **Benchmark #1 — உதயக் கதிர் / Udhaya Kathir** (assembly speech): **COMPLETE / MERGED /
 >   PRODUCTION-VERIFIED** — PR #18, squash `13ddf04f01b6a75024985b6df172deace9d26e80`, verified live
 >   2026-08-18.
-> - **Benchmark #2 — பூந்தோட்டம் / Poonthottam** (the first **public** speech): **COMPLETE / MERGED /
+> - **Benchmark #2 — பூந்தோட்டம் / Poonthottam** (public speech): **COMPLETE / MERGED /
 >   PRODUCTION-VERIFIED** — PR #20, reviewed head `0906919e21066ab9e917985d51f60086823ad8ce`, squash
 >   `2777064490910c02f5aa6938b9b6872b15e21e7c`, verified live 2026-08-19. A follow-up
 >   presentation/provenance hotfix (PR #21, squash `acb9721127de72c7575c035ccccf877deeb6421e`) is part
@@ -3063,11 +3261,9 @@ one work. Implementation-level detail lives in
 
 **Poetry Benchmark #2: NOT STARTED / NOT SELECTED / NOT APPROVED FOR IMPLEMENTATION.** At the pinned
 source state above, `poems/` held **exactly one** work directory (`poems/idhayathai-thanthidu-anna`);
-at live `main` `2230a8d` it holds a **second**, `poems/anaiya-vilakku-anna`. `anaiya-vilakku-anna` (அணையா விளக்கு அண்ணா) is **NOT READY**: of 19 source pages only **1** page record exists, Tamil assembly is **pending**, English translation is **pending**, and the work records **no SHA-256 and no byte size**. A candidate source exists, but it is **not approved for implementation**.
-At the pinned state,
-and the repository README states that a *next* poem must begin again from its own
-startup/source-inspection workflow. Poetry remains an **open** Digital Library form; it is neither
-complete nor cancelled.
+at the historical snapshot `2230a8d` it held a **second**, `poems/anaiya-vilakku-anna`. That snapshot
+recorded `anaiya-vilakku-anna` as NOT READY. **Wave 4 census authorization now requires re-checking live
+source state rather than carrying that old readiness judgment forward.**
 
 **Phase 4 records the Poetry work that actually happened.** It does **not** mean every subsequent
 non-speech integration must remain under Poetry, and Essays/Fiction/Drama are not to be forced into
@@ -3449,151 +3645,39 @@ When Claude returns a report, independently verify:
 
 # 15. Immediate next activity
 
-> ⚠️ **SUPERSEDED IN PART (2026-09-02, post-Wave-2).** The paragraphs below were written at the Drama
-> Benchmark #1 synchronization. Three of their statements are no longer current: **Phase 3 is ACTIVE,
-> not paused**; **Speech Benchmark #4 is COMPLETE and CLOSED** rather than not started; and **Drama
-> Benchmark #2's "no controlling Tamil source" blocker is gone** — those plays were published by Bulk
-> Onboarding Wave 1.
->
-> **The current immediate-next-activity position is:**
->
-> - **Bulk Onboarding Wave 1 — Drama is COMPLETE and CLOSED** (PR #64, squash `0dc92fa0…`).
-> - **Bulk Onboarding Wave 2 — Fiction is COMPLETE and CLOSED** (PR #65, reviewed head `2ba1ee3a…`,
->   squash `4fd45a92663abbe70ff0c0a605168314cd36e44c`) — the 37 stories of the 1977 anthology.
-> - **Bulk onboarding is now the STANDING DEFAULT workflow** — see the standing-policy section near
->   the top of this document. The per-benchmark "integrate exactly one work / no bulk import"
->   constraint lists that appear below and in §10 are **historical**, not the current default.
-> - **Wave 3 is NOT SELECTED and NOT AUTHORIZED.** Before any Wave 3, fetch live state and perform a
->   read-only readiness census for a coherent candidate batch. **Eligibility is not authorization**,
->   and no candidate becomes selected merely because Wave 2 closed.
-> - **மணிமகுடம் / Manimagudam is NOT selected** merely because its upstream source is advancing, and
->   is **not** automatically the next batch.
-> - `kalaivanar-nsk-memorial-day-audio-06` remains a **SEPARATE** source archive that is **NOT**
->   selected.
-> - The **Kalaignar Film Songs formal control close-out remains pending** housekeeping and was
->   deliberately not performed by this close-out either.
-> - **Validator-contract migration remains PAUSED** and **native mobile remains ON HOLD.**
->
-> Owner authorization is required before any new implementation.
+> ⚠️ **CURRENT OVERRIDE (2026-09-03).** Older Wave-3/Wave-2 planning language below is historical.
+> **Film Songs formal control close-out is COMPLETE and CLOSED once this control PR is on `main`.**
+> The owner has explicitly authorized **Bulk Onboarding Wave 4 — readiness census / selection**.
+> **Wave 4 census/selection is AUTHORIZED, NOT STARTED. Wave 4 implementation is NOT YET AUTHORIZED.**
+> The next activity is therefore a read-only live-source census and coherent-batch selection. It may
+> compare, rank, include and exclude source candidates; it must stop after reporting the selected batch
+> and must not open an implementation PR.
 
-**Phase 1 and Phase 2 are COMPLETE. Phase-3 Speech Benchmarks #1–#3 are complete, merged and
-production-verified, and Phase 3 is PAUSED by owner direction. Phase-4 Poetry Benchmark #1,
-Phase-5 Essays & Articles Benchmark #1, Phase-6 Fiction Benchmark #1 and Phase-7 Drama Benchmark #1
-are complete, merged and production-verified. Do NOT start any completed phase or benchmark again.**
-_(This section once instructed a fresh chat to begin Phase 1, and later Phase-3 Benchmark #4
-candidate selection. Both are stale and superseded; the Phase-1 principles are preserved as history
-in §10 → Phase 1, and the paused Phase-3 guidance in §10 → Phase 3.)_
+Historical completed state remains:
 
-**Phase-7 Drama Benchmark #1 (சிலப்பதிகாரம் நாடகக் காப்பியம்) is merged and production-verified, and
-this documentation synchronization records it. No next implementation benchmark has been started, and
-no next candidate or category has been selected.**
+- **Bulk Onboarding Wave 1 — Drama is COMPLETE and CLOSED** (PR #64, squash `0dc92fa0…`).
+- **Bulk Onboarding Wave 2 — Fiction is COMPLETE and CLOSED** (PR #65, reviewed head `2ba1ee3a…`,
+  squash `4fd45a92663abbe70ff0c0a605168314cd36e44c`).
+- **Bulk Onboarding Wave 3 — Essays & Articles is COMPLETE and CLOSED** (PR #66, approved head
+  `c4f40f7f…`, squash `c4660c49…`).
+- **Reading Room Wayfinding Phase 0 + Phase 1 is COMPLETE and CLOSED** (PRs #67/#68; control PR #21).
+- **Film Songs implementation E1–E4 is COMPLETE and published**, and this close-out records its formal
+  control closure.
+- **Bulk onboarding remains the STANDING DEFAULT workflow.**
+- **மணிமகுடம் / Manimagudam is never automatically selected**; it requires its own current readiness
+  gate and must be judged live during the census if considered at all.
+- `kalaivanar-nsk-memorial-day-audio-06` remains a **SEPARATE** source archive and is never
+  auto-selected.
+- **Validator-contract migration remains PAUSED** and **native mobile remains ON HOLD.**
 
-Current standing state:
+The authorized Wave 4 census must inspect live source readiness category-neutrally and define a
+**coherent batch** by source release/repository/public shelf. Do not trust old candidate names or old
+readiness snapshots; recheck source `main`, release/completion records, English readiness, provenance
+and source identity. Explicitly list candidates excluded as incomplete/blocked and why.
 
-- **Speech Benchmark #4:** ⚠️ **SUPERSEDED** — previously "NOT STARTED / NOT SELECTED / **PAUSED** by
-  owner direction". Now **COMPLETE / MERGED / PRODUCTION-VERIFIED and CLOSED**: the first
-  audio-sourced speech, A1 PR #62 squash `492b26ddd5681f085726ac802681c3fcbc7162f0`, A2 PR #63 squash
-  `56ca0c978e34afddde52595f2ce825872bd6aeef`.
-- **Speech Benchmark #5:** NOT STARTED / NOT SELECTED / NOT AUTHORIZED.
-- **Poetry Benchmark #2:** NOT STARTED / NOT SELECTED / **NOT APPROVED FOR IMPLEMENTATION** — a
-  second work now exists at live `kalaignar-poems` `2230a8d`, but `anaiya-vilakku-anna` (அணையா விளக்கு அண்ணா) is **NOT READY**: of 19 source pages only **1** page record exists, Tamil assembly is **pending**, English translation is **pending**, and the work records **no SHA-256 and no byte size**. A candidate source exists, but it is **not approved for implementation**.
-- **Phase-5 Benchmark #2 (a second Essays work):** NOT STARTED / NOT SELECTED.
-- **Phase-6 Benchmark #2 (a second Fiction work):** NOT STARTED / NOT SELECTED. Fiction shipping its
-  first benchmark does **not** privilege Fiction in the next selection.
-- **Phase-7 Drama Benchmark #1 (சிலப்பதிகாரம் நாடகக் காப்பியம்):** **COMPLETE / MERGED /
-  PRODUCTION-VERIFIED** — PR [#29](https://github.com/pugazg/kalaignar-autobiography/pull/29),
-  squash `9aade1d441bb314b5ab62f97b87b373d33db08c5`, production-verified 2026-08-21.
-- **Phase-7 Drama — Bulk Onboarding Wave 1:** ✅ **COMPLETE / MERGED / PRODUCTION-VERIFIED and
-  CLOSED** — பரதாயணம், அனார்கலி, சாக்ரடீஸ் and சேரன் செங்குட்டுவன், PR
-  [#64](https://github.com/pugazg/kalaignar-autobiography/pull/64), squash
-  `0dc92fa0fd832b5932b8df75606ef049c9f261ea`, source pin
-  `145e52e88dbd009286f749a7f0e3520386e63244`. Drama 1 → **5**, catalogue 27 → **31**, **+22** public
-  URLs. *(This line replaces the earlier "Phase-7 Drama Benchmark #2: NOT STARTED / NOT SELECTED —
-  `Anarkali`, `Cheran Senguttuvan` and `Socrates` have no controlling Tamil source", which is
-  historical: controlling Tamil sources were released and those works are now published.)*
-- **Bulk Onboarding Wave 2 — Fiction / the 1977 short-story anthology:** ✅ **COMPLETE / MERGED /
-  PRODUCTION-VERIFIED and CLOSED** — 37 short stories, PR
-  [#65](https://github.com/pugazg/kalaignar-autobiography/pull/65), reviewed head `2ba1ee3a…`, squash
-  `4fd45a92663abbe70ff0c0a605168314cd36e44c`, source pin
-  `76135e1b5d504128c15be6bf59937716e5517d78`. Fiction 2 → **39**, catalogue 31 → **68**, **+74** public
-  URLs. `கிழவன் கனவு` was excluded as a separate earlier source and remains the short-story regression
-  benchmark.
-- **Bulk Onboarding Wave 3 / any further batch:** NOT STARTED / NOT SELECTED / NOT AUTHORIZED. No
-  readiness census has been run for it and no candidate has been chosen.
-- **Drama Bulk Wave 2 / any further Drama work:** NOT STARTED / NOT SELECTED / NOT AUTHORIZED.
-  **மணிமகுடம் / Manimagudam is NOT published and NOT automatically eligible** — its exclusion from
-  Wave 1 was deliberate and its upstream movement does not change that.
-- **Bulk onboarding is the standing default workflow** for new work; one-work benchmark cycles are now
-  the exception, reserved for genuinely new source forms, reader architecture, unresolved rights
-  boundaries, unusual structure, source-fidelity blockers or risk that should not be coupled to a
-  batch.
-
-If the owner simply says **"Proceed with next activity"**, the reviewer performs:
-
-**NEXT NON-SPEECH CATEGORY CANDIDATE SELECTION.**
-
-**No next work or category has been selected.** In particular, **Poetry Benchmark #2 is NOT the
-automatic default**: at live `pugazg/kalaignar-poems` `2230a8d` a second work directory
-(`poems/anaiya-vilakku-anna`) now exists, but `anaiya-vilakku-anna` (அணையா விளக்கு அண்ணா) is **NOT READY**: of 19 source pages only **1** page record exists, Tamil assembly is **pending**, English translation is **pending**, and the work records **no SHA-256 and no byte size**. A candidate source exists, but it is **not approved for implementation**. Poetry Benchmark #2 therefore cannot be
-selected today.
-
-The reviewer must inspect **live** source readiness across the relevant **non-speech** repositories
-and recommend **exactly ONE** next work. At minimum consider live state from repositories such as:
-
-- `pugazg/kalaignar-poems`
-- `pugazg/kalaignar-essays`
-- `pugazg/kalaignar-novels`
-- `pugazg/kalaignar-short-stories`
-- `pugazg/kalaignar-stage-plays`
-- `pugazg/kalaignar-cinema-works`
-- `pugazg/kalaignar-literary-commentary`
-
-**Do not assume every repository above has an eligible work.** Inspect live source/release state, and
-**do not preselect from historical planning candidate names** anywhere in this handover.
-
-Select the single strongest next benchmark on:
-
-- released/verified source readiness;
-- released English where bilingual publication is intended;
-- provenance completeness;
-- architectural value as the next Digital Library **form** benchmark;
-- source authority.
-
-**Speech repositories are excluded from the default selection** because Phase 3 is paused by owner
-direction. If the owner explicitly asks to resume speeches, that overrides the pause. If the owner
-explicitly names a non-speech category, follow that category instead of running broad selection. If by
-then another source-ready poem has appeared in `kalaignar-poems`, Poetry Benchmark #2 may legitimately
-compete in this selection — but **Poetry is not privileged merely because Benchmark #1 was Poetry**.
-
-Constraints for whichever work is selected — ⚠️ **HISTORICAL (2026-09-01).** These were the
-one-work-per-benchmark constraints. **Bulk onboarding is now the standing default**, so "integrate
-exactly one work" and "no bulk import" no longer describe the default; see the standing-policy section
-near the top of this document. Everything else in this list still applies to a batch, per work:
-
-- integrate **exactly one** work;
-- reviewer-gated PR; **no bulk import**, no mass ingestion;
-- deterministic, **commit-pinned** importer that **fails closed** on a source-HEAD mismatch;
-- build **no** generalized ingestion framework, and add no collection landing without separate
-  justification and approval;
-- preserve a form-specific reader model **only where that work's source actually supports it** — **do
-  not assume** இதயத்தைத் தந்திடு அண்ணா's unresolved cross-page pattern generalizes;
-- unresolved source facts stay **unresolved** — no punctuation, indentation, semantic or grammatical
-  inference;
-- absent source metadata is represented honestly and never fabricated;
-- **no** source-archive edits, **no** PDF vendoring, **no** runtime GitHub;
-- **no** mobile work (mobile remains ON HOLD);
-- **stop after that one benchmark.**
+**Stop after census/selection.** The owner has not yet authorized import, catalogue changes, routes,
+sitemap changes or a Wave 4 implementation PR.
 
 Last production application-code checkpoint at this handover:
-**`4fd45a92663abbe70ff0c0a605168314cd36e44c`** (the Bulk Onboarding Wave 2 / PR #65 squash merge).
-*(It supersedes `0dc92fa0fd832b5932b8df75606ef049c9f261ea`, the Bulk Onboarding Wave 1 / PR #64 squash
-merge; `9aade1d441bb314b5ab62f97b87b373d33db08c5`, the Phase-7 Drama Benchmark #1 / PR #29 squash
-merge; and `56ca0c978e34afddde52595f2ce825872bd6aeef`, the Speech Benchmark #4 A2 merge — all now
-historical.)* Live GitHub `main` is authoritative and overrides this SHA if it later moves;
-documentation-only commits may advance `main` past it without changing the deployed application, and
-such a docs-only SHA must never be recorded as a newer application-code checkpoint. The earlier
-`992fd8d6cd7bfd89a2689574d0e2ef2728774a1a` (Phase 6), `bcb11396b2215bc2cc1e81873c0ce278ef98598a`
-(Phase 5), `c2d1c46d1c2d4e1f11722360848226208867789f` (Phase 4) and
-`ecf73cc8146cd9a9578c4aeaf73518b122ce569c` (Phase 3) are **historical** checkpoints only.
-
-Current novels source pin: `pugazg/kalaignar-novels` `9e80c567d4a2165178c5374a02210240140685bf`.
+**`1c6dcd81f0aa143a8e9b3162976c74dd18791058`** (Reading Room Wayfinding Phase 1 / PR #68 squash
+merge). Film Songs formal close-out is documentation-only and does not advance application code.
