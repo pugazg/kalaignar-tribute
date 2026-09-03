@@ -1,6 +1,6 @@
 # Kalaignar Digital Library / Reading Room — Master Handover
 
-**Last updated:** 2026-09-02
+**Last updated:** 2026-09-03
 
 ---
 
@@ -11,7 +11,55 @@ Several phases have shipped since it was written, and its work counts, shelf cou
 "last production application-code checkpoint" are stale. It is kept as history and has **not** been
 retro-edited. Where it disagrees with this section or with live GitHub, **live GitHub wins**.
 
-### Verified live state — 2026-09-02, post-Wave-3 ✅ CURRENT
+### Verified live state — 2026-09-03, post-Reading-Room-Wayfinding ✅ CURRENT
+
+| | |
+|---|---|
+| Implementation `main` | `1c6dcd81f0aa143a8e9b3162976c74dd18791058` |
+| Open PRs (implementation) | 0 |
+| Published **works** | **71** |
+| **Collections** | **1** |
+| Non-empty shelves | **9** |
+| **Fully-expanded `/read` discovery entries** | **35** |
+| **Initially visible discovery entries** | **27** |
+| **Next build static-route count** | **3129** |
+| **Sitemap URLs** | **3117** |
+
+Shelf census, unchanged by Wayfinding: Life Writing 1 · Letters 1 · **Fiction 39** · Poetry 1 ·
+Drama 5 · Cinema Writing 4 · Speeches 14 · Essays & Articles 4 · Literary Commentary 2. Total **71**.
+
+#### ⚠️ WORKS are not DISCOVERY ENTRIES
+
+This checkpoint introduces a fourth number that must never be conflated with the other three, and the
+temptation is real because two of them moved together.
+
+| measurement | value | what it counts |
+|---|---:|---|
+| **published works** | **71** | the archival catalogue — what the library holds |
+| **discovery entries** | **35** | what `/read` renders when every shelf is expanded; one collection entry stands in for 37 works |
+| initially visible entries | 27 | of those 35, what renders before any disclosure is opened |
+| **Next build static-route count** | **3129** | every route the build prerenders |
+| prerendered `.html` | 3121 | the subset written as HTML pages — an explanatory continuity metric, **not** the static-route count |
+| **sitemap URLs** | **3117** | what the deployed sitemap lists, 0 duplicates |
+
+**Fiction is the whole point of the distinction:** it holds **39 works** and renders **3 discovery
+entries**. Writing "Fiction 3" as a work count, or "35 works", would erase 36 published works on
+paper. The 37 anthology stories remain 37 independent works with their own routes.
+
+**Measured at the Wayfinding production boundary**, not copied forward: implementation `main`, tree and
+open PRs from live GitHub; works, collections, shelves and discovery counts from the merged
+implementation; the static-route and `.html` counts from a production build of the merged tree; the
+sitemap count and duplicate check from deployed production.
+
+Shipped since the post-Wave-3 checkpoint:
+
+- **Reading Room Wayfinding — Phase 0 + Phase 1** — the shelf disclosure that stopped `/read` from
+  being an endless scroll, and the first collection layer, benchmarked on the 1977 short-story
+  anthology. No content was onboarded: the catalogue is the same 71 works it was before. **Closed by
+  this document when this control-only close-out PR is independently exact-head reviewed and merged.**
+  See the Wayfinding section below.
+
+### Verified live state — 2026-09-02, post-Wave-3 ⚠️ SUPERSEDED (kept as history)
 
 | | |
 |---|---|
@@ -26,9 +74,10 @@ retro-edited. Where it disagrees with this section or with live GitHub, **live G
 Shelf census: Life Writing 1 · Letters 1 · Fiction 39 · Poetry 1 · Drama 5 ·
 Cinema Writing 4 · Speeches 14 · **Essays & Articles 4** · Literary Commentary 2. Total **71**.
 
-**Measured at the Wave-3 production boundary**, not copied forward: implementation `main` and open
-PRs from live GitHub; the catalogue census from the merged implementation; static-route count from
-the merged production build; sitemap count from deployed production. The older prerendered `.html`
+**This checkpoint is superseded by the Wayfinding checkpoint above** and is retained only as history;
+its route and sitemap counts predate the collection route. Measured at that boundary: implementation
+`main` and open PRs from live GitHub; the catalogue census from the merged implementation;
+static-route count from the merged production build; sitemap count from deployed production. The older prerendered `.html`
 measurement is **3120** and remains an explanatory continuity metric only — it is not the Next static-route
 count. Wave 3 contributes **+19 public URLs**: கயிற்றில் தொங்கிய கணபதி 3 · உணர்ச்சிமாலை 12 ·
 திராவிட சம்பத்து 4. All **19/19** Wave-3 routes returned 200 in production, and all **16**
@@ -213,6 +262,259 @@ merged PRs, not in this file:
   to 4 and the catalogue to 71. Exact-head implementation review included one rejected head and a
   repaired approved head; production verification passed. **Closed by this document when this
   control-only close-out PR is independently reviewed and merged.**
+
+---
+
+## Reading Room Wayfinding — Phase 0 + Phase 1 — ✅ COMPLETE and CLOSED
+
+**The first architectural activity that onboarded no content.** Every number in the catalogue is the
+same before and after: 71 works, 9 shelves, 39 Fiction works. What changed is how `/read` presents
+them, and — in Phase 1 — that the archive can now say that thirty-seven of those works were published
+together in one book.
+
+### The problem
+
+`/read` rendered every published work as its own card. At 71 works that was already a long scroll, and
+the shape of the problem was worse than the size: **37 of the 39 Fiction cards were the 1977 anthology's
+stories**, sitting as siblings of the standalone works with no way to see that they belonged to one
+publication. The catalogue had no concept of a collection, so it had no way to say so.
+
+Two phases, deliberately separated: relief first, architecture second.
+
+---
+
+### Phase 0 — shelf progressive disclosure
+
+**Purpose:** immediate scroll relief with **no change to the archive ontology**. No model change, no
+route, no data claim — a presentation cap only, and revertible in one commit.
+
+| | |
+|---|---|
+| PR | **#67** `feat(reading-room): add shelf progressive disclosure` |
+| Approved exact head | `13f313b04e4dcc89eb8130427d34b299b57d3be0` |
+| Approved tree | `dc35249b6413b5fd6cf98521e11a54c2f62df8ff` |
+| Squash merge | `1bc1123ecfcbdd181221cf34f558d3f7129d17e0` |
+| Merged tree | `dc35249b6413b5fd6cf98521e11a54c2f62df8ff` — identical to the approved tree |
+| Merged | 2026-09-02T15:14:40Z |
+| Post-merge CI | `33647284338` — success |
+| Production | deployment success, verified live |
+
+**What it does.** Each shelf shows its first six entries; the rest move behind a native
+`<details>`/`<summary>`. The shelf heading states the shelf's **full work count**, not the visible
+count. Declaration order is preserved across the split.
+
+**Native disclosure, deliberately.** `<details>` works with JavaScript unavailable, carries its own
+keyboard and expanded-state semantics without a hand-written `aria-expanded` to fall out of sync, and
+— unlike a `hidden` div — keeps the closed cards out of the tab order for free. A `hidden` attribute
+would have stayed hidden without JavaScript, which is the opposite of progressive enhancement.
+
+**Print.** A closed `<details>` would have dropped 41 of 71 works from a printed catalogue, which reads
+as a shorter archive rather than a collapsed control. A narrow print rule keeps the whole catalogue on
+paper and drops only the summary control, using both the modern `::details-content` mechanism and the
+older slotted-children one so it does not depend on which the engine uses.
+
+**Measured effect at that boundary:** initially visible cards **71 → 30**; works **71 → 71**;
+fully-expanded cards **71 → 71**. Only Fiction and Speeches were over the cap.
+
+#### The exact-head repair sequence — a durable lesson
+
+Two heads were rejected before approval, and both rejections were correct:
+
+| head | outcome |
+|---|---|
+| `6e1a626d3d69149c5f8cb5a51620797739790379` | **NOT approved** — the new 12px dark disclosure text measured ~**4.00:1**, under the 4.5:1 AA floor |
+| `dfc0491da405b62c9f55cbc2a84ee858e5e10a54` | **NOT approved** — text fixed, but the authored dark focus ring still measured ~**2.5:1**, under the 3:1 WCAG 1.4.11 asks of a non-text indicator |
+| `13f313b04e4dcc89eb8130427d34b299b57d3be0` | **APPROVED** — local accessible dark text and focus-ring treatments |
+
+Both defects came from the control reusing tokens that are correct elsewhere in the app on other
+backgrounds. The rule this establishes:
+
+> **A pre-existing shared token does not exempt a NEW interactive control from accessibility review.**
+> The control is new; where it sits is new; the measurement has to be taken there.
+
+Both repairs were **local to the new control**. The shared `.focus-ring` utility, the Tailwind tokens
+and every existing control were left untouched. This is a rule about new controls, **not** a claim that
+the Reading Room as a whole is WCAG-clean — see the deferred issues below.
+
+---
+
+### Phase 1 — the 1977 anthology collection
+
+**Purpose:** introduce the collection layer **without demoting member stories from independent works**.
+
+```text
+Collection / Publication
+        │
+        ├── Work        ← keeps its own id, route, provenance, citation identity, searchability
+        ├── Work
+        └── Work
+              └── reading units, if that work has any
+```
+
+and emphatically **not**:
+
+```text
+one Work
+  └── 37 reading units
+```
+
+The 37 stories remain **37 independent `LibraryWork` records** with their own `/stories/<slug>` and
+`/stories/<slug>/source` routes. Belonging to a collection changes discovery density and nothing else.
+
+| | |
+|---|---|
+| PR | **#68** `feat(reading-room): add 1977 anthology collection` |
+| Final approved exact head | `ca217592cd2f8bd8c1eda51ef42524c8d16e3ea5` |
+| Approved tree | `9d78706d263e5375638dd5e353f8fbc783a82020` |
+| Squash merge | `1c6dcd81f0aa143a8e9b3162976c74dd18791058` |
+| Merged tree | `9d78706d263e5375638dd5e353f8fbc783a82020` — identical to the approved tree |
+| Merged | 2026-09-03T02:15:54Z |
+| Post-merge CI | `33706978869` — success |
+| Production | deployment success, verified live |
+
+#### The benchmark collection
+
+| | |
+|---|---|
+| id | `1977-kalaignar-karunanidhiyin-sirukathaigal` |
+| Tamil title | `கலைஞர் கருணாநிதியின் சிறுகதைகள்` |
+| kind | `anthology` — the only kind the model admits |
+| shelf | Fiction |
+| members | **37**, ordinals **1–37** |
+| edition | `முதல் பதிப்பு: 1977` |
+| publisher | `தமிழ்க்கனி பதிப்பகம், சென்னை-28` |
+| route | `/collections/1977-kalaignar-karunanidhiyin-sirukathaigal` |
+
+The collection page is an **archival navigation surface, not another story reader**: it duplicates no
+story text and every row links to the member's own existing route.
+
+**Route family.** `/collections/<id>`, statically enumerated from the declarations, unknown id 404s.
+Deliberately **not** `/read/<collection>`: `/read/[id]` is the memoir's 391-chapter namespace, and a
+collection segment would have shared it.
+
+#### Source freeze
+
+| | |
+|---|---|
+| source repository | `pugazg/kalaignar-short-stories` |
+| frozen commit | `76135e1b5d504128c15be6bf59937716e5517d78` |
+| collection tree | `d45434d46b1e779a880fff3d774d0fcb5833e477` |
+| scan SHA-256 | `853032661482eaccb26c083a38d7aa75c081362d33c963c63e37d088bf20acb3` |
+
+The commit alone is a weak guard — that repository advances for unrelated stories — so the
+per-collection tree carries the freeze, the same way the Wave-3 essays' per-work trees do. **No repin.**
+
+The archive registers the collection itself, in `collections/<id>/metadata/source.md` and
+`indexes/story-inventory.md`: identity, edition, publisher, size, and a printed contents table giving
+each story's ordinal, printed-page range and directory. Membership is validated from that structured
+registration and is **never inferred** from `descEn`, `descTa`, title patterns, slug prefixes or shared
+scan names.
+
+#### Architectural rules established
+
+**A. Membership is canonical in one place.** It lives in `LibraryCollection.members`. No `collectionId`
+is added to `LibraryWork`: two stores of one fact can disagree, and the failure would be silent.
+
+**B. Reverse membership is PLURAL.** The helper is `collectionsForWork(workId)` and returns a list —
+**not** the stale singular `collectionForWork()`. A `Map<string, Collection>` would encode "at most one
+collection per work", which the archive does not promise: a canonical work later found in another
+publication is registered there as a further witness rather than duplicated, and a singular map would
+silently drop one relationship. One collection exists today; the shape simply cannot lose data tomorrow.
+
+**C. `memberCount` is not `unitCount`.** `memberCount` counts independent works in a collection;
+`unitCount` counts reading units inside a single work (14 articles, 1,330 குறள், 391 chapters).
+**37 stories are not 37 units of one work**, and no member gained a `unitCount` by joining.
+
+**D. Member resolution fails closed.** `collectionMemberWorks()` does not filter unresolved members
+away — it throws, naming the collection and the work id. Silent filtering would turn a declaration of
+37 works into a clean-looking 36-row page, which is the worst kind of wrong because nothing on screen
+says anything is missing.
+
+#### The collection validator
+
+`scripts/validate-collections.mjs` — **71 assertions, 8 groups, 0 failures**.
+
+It is **distinct from** `scripts/validate-1977-short-stories.mjs`. That validator proves the 37 released
+stories are faithful to the frozen source. This one proves what it cannot: that the **catalogue-facing
+collection declaration equals the collection the source archive registers**. It re-derives its
+expectation from the source's own registration and never reads `data/collections.ts` for it — a
+validator and a declaration that read the same file would agree about a lie.
+
+Negative-test history, recorded as it actually happened rather than as a combined total: the initial
+collection validator had **15 mutations proven**; the review repairs added guards for reverse-membership
+plurality and fail-closed resolution, and the implementation tests added accessibility and interaction
+guards, each negative-tested when introduced.
+
+**Validator contract after Phase 1: 3 registered · 13 pending · 16 total.** Migration remains
+**PAUSED** — the new pending validator is not a resumption of it.
+
+#### Exact-head review history — the second durable lesson
+
+| head | outcome |
+|---|---|
+| `b48213de65b987bf8202f858969bbf07862f98d4` | **NOT approved.** Architecture and source declaration accepted in principle; six defects found: dark focus indicators below the non-text floor; inaccessible new dark hover text; newly introduced normal-text contrast failures; singular reverse membership encoding one collection per work; member resolution silently filtering unresolved works; and a printed collection page losing its own identity because the global print rule hid `<header>`. |
+| `36720ce81b3de8675c9e3f76f20ab7fbe0a0bcf2` | **NOT approved.** All six repaired, but the new title hover kept `group-hover:text-marina` with no dark counterpart. That class is not light-mode-only — it applies in dark too, so Marina still won there. |
+| `ca217592cd2f8bd8c1eda51ef42524c8d16e3ea5` | **APPROVED FOR MERGE.** Both titles state `group-hover:text-marina dark:group-hover:text-night-text`. |
+
+The second rejection is the one worth keeping:
+
+> **Where state or theme variants coexist, proving a bad class is ABSENT is not enough.** The first
+> repair removed `dark:group-hover:text-marina-light` and the guard passed — while an unqualified
+> `group-hover:text-marina` quietly took its place in dark mode. Where correctness depends on an
+> override, the test must positively prove the required good state is **PRESENT**.
+
+#### Print and no-JS
+
+The collection's identity header is archival content, not chrome, so it is exempted from the generic
+rule that hides page headers — placed after that rule and more specific. Printing the collection page
+keeps the title, edition, publisher, count and all 37 member rows; the Back link is hidden through the
+existing `data-print="hide"` convention. The 37-row inventory is server-delivered and depends on no
+search or filter JavaScript.
+
+#### Production verification
+
+`/read`: works **71** · shelves **9** · collections **1** · fully-expanded entries **35** · initially
+visible **27**. Fiction: **39 works**, **3 discovery entries** (1 collection + 2 standalone works), no
+disclosure — the disclosure disappears because 3 < 6, not because anything tests for the Fiction shelf.
+The three entries are `கலைஞர் கருணாநிதியின் சிறுகதைகள்`, `பலிபீடம் நோக்கி`, `கிழவன் கனவு`. Speeches keeps
+its Phase-0 disclosure: 14 entries, 6 visible, 8 deferred.
+
+Collection page: 37 unique members, ordinals 1–37 in source order, first `புகழேந்தி`, last
+`நுனிக்கரும்பு`, `கிழவன் கனவு` correctly excluded, 37 printed-page ranges, no duplicated story body,
+unknown collection id 404.
+
+Story identity, proved as a full inventory rather than by sampling: `STORY_SLUGS` **38** · story sitemap
+URLs **76** · **37/37** anthology reader routes 200 · **37/37** anthology `/source` routes 200.
+
+### Standing state after Reading Room Wayfinding
+
+- **Wave 4 is NOT SELECTED, NOT AUTHORIZED and no Wave-4 readiness census has started.** Closing
+  Wayfinding selects nothing.
+- **Phase 2 discovery search is NOT started and NOT authorized.** Phase 1 deliberately left the
+  registries clean enough for it; that is preparation, not permission.
+- **Chronology, Tamil-first sorting and `/read/browse` remain unstarted and unauthorized.**
+- **No second collection is authorized.** Drama's Naanmani Maalai is explicitly *not* modelled: its four
+  plays share a scan SHA-256 and a prose note and nothing structural, which is not enough to declare
+  membership under the source-first rule. Essays publications are not collections either — an Essays
+  publication is one work whose articles are reading units. Murasoli's volume hierarchy has not had its
+  design pass.
+- **Film Songs formal control close-out remains pending** and requires its own explicit authorization.
+- **Validator migration remains PAUSED.**
+- **Native mobile remains ON HOLD.**
+- **Manimagudam** and **`kalaivanar-nsk-memorial-day-audio-06`** are never auto-selected.
+
+### Known follow-up debt — recorded, not fixed here
+
+Two pre-existing issues were found while measuring Wayfinding. Neither is a Wayfinding defect and
+neither is fixed by it.
+
+- **Digital Library theme bootstrap.** `/read` and `/collections` carry dark-mode classes, but a direct
+  load of a Digital Library route does not mount the component that activates the site's `.dark` class —
+  that component is mounted on `/` alone. Phase-1 dark states were verified by forcing the project's
+  actual dark class. Pre-existing and site-level.
+- **Pre-existing work-card contrast.** The existing work cards' secondary text still carries older
+  low-contrast tokens. The Phase-1 collection card and page were fixed locally; **no claim is made that
+  the existing Reading Room is WCAG-clean**, and no work-card restyle is authorized.
 
 ---
 
