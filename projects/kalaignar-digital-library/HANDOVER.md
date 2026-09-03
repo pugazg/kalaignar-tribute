@@ -143,7 +143,7 @@ Shelf census: Life Writing 1 · Letters 1 · Fiction 2 · Poetry 1 · **Drama 5*
 **This line is superseded by the post-Wave-2 checkpoint above** and is retained only as history.
 Measured at that checkpoint: the SHA and open-PR count from live GitHub; the work/shelf census from
 `data/library.ts` at that SHA; the page and static-route counts from a production build of it; the
-sitemap count from the deployed site. All 22 Wave-1 URLs return 200 in production.
+sitemap count from the deployed site. All 22 Wave-1 URLs returned 200 in production.
 
 #### ⚠️ Site-wide TOTALS vs a wave's DELTA — never mix them
 
@@ -1145,7 +1145,7 @@ its siblings carry. **Neither was a source defect.** The durable engineering les
 
 > **CI wiring is part of the review surface.** Validate embedded shell quoting, and require every
 > archival-validator step to carry the same explicit source-directory environment and fetch-success
-guard.
+> guard.
 
 **Validator-contract migration remains PAUSED.** Wave 2 did **not** resume it; the batch validator is
 deliberately unregistered and counted as pending.
