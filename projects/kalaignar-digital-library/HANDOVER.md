@@ -11,7 +11,41 @@ Several phases have shipped since it was written, and its work counts, shelf cou
 "last production application-code checkpoint" are stale. It is kept as history and has **not** been
 retro-edited. Where it disagrees with this section or with live GitHub, **live GitHub wins**.
 
-### Verified live state — 2026-09-04, post-Wave-4-Poetry ✅ CURRENT
+### Verified live state — 2026-09-04, post-Poetry-landing-copy-regression-repair ✅ CURRENT
+
+| | |
+|---|---|
+| Implementation `main` | `946dc8a510ef5f836eab2af15d3b2d69ee9360c2` |
+| Implementation `main` tree | `3ccdeb53f69db8fdcdbaf61a6c80bc4622d2e1b9` |
+| Open PRs (implementation) | 0 |
+| Published **works** | **76** |
+| **Poetry works** (top-level) | **6** |
+| **Collections** | **1** |
+| Non-empty shelves | **9** |
+| **Fully-expanded `/read` discovery entries** | **40** |
+| **Initially visible discovery entries** | **32** |
+| **Prerender-manifest routes** | **3271** |
+| Prerendered `.html` files | 3266 |
+| **Sitemap URLs** | **3262** |
+| Sitemap duplicates | **0** |
+| `/poems/` URLs | **147** |
+
+Shelf census: Life Writing 1 · Letters 1 · **Fiction 39** · **Poetry 6** ·
+Drama 5 · Cinema Writing 4 · Speeches 14 · Essays & Articles 4 · Literary Commentary 2. Total **76**.
+
+Implementation `main` advanced from the post-Wave-4 close `ad998113…` to `946dc8a510ef5f836eab2af15d3b2d69ee9360c2`
+(tree `3ccdeb53…`) by a single **post-Wave-4 production regression repair** — implementation PR #74, a
+publication-landing copy fix. **This is NOT Wave 5 and NOT a reopening of Wave 4**, which remains
+COMPLETE and CLOSED. Every public inventory and route metric is unchanged from the Wave-4 close (works
+76 · Poetry 6 · collections 1 · shelves 9 · discovery 40 · visible 32 · prerender-manifest 3271 · `.html`
+3266 · sitemap 3262 / 0 dup · `/poems/` 147); the repair changed only the shared landing description
+copy, a new focused regression test, and its CI wiring — no data, payload, witness, route, or catalogue
+change. Measured at the current production boundary: implementation `main`/tree and open PRs from live
+GitHub; work/shelf/discovery census from the merged implementation; the prerender-manifest, `.html` and
+sitemap figures from a production build of `946dc8a5…`; the sitemap duplicate check from deployed
+production. The implementation backlog is back to **0**. See the post-Wave-4 repair section below.
+
+### Verified live state — 2026-09-04, post-Wave-4-Poetry ⚠️ SUPERSEDED (kept as history)
 
 | | |
 |---|---|
@@ -29,6 +63,9 @@ retro-edited. Where it disagrees with this section or with live GitHub, **live G
 | **Sitemap URLs** | **3262** |
 | Sitemap duplicates | **0** |
 | `/poems/` URLs | **147** |
+
+**This checkpoint is superseded by the post-repair checkpoint above** (same public metrics; implementation
+`main` has since advanced by the PR #74 landing-copy repair) and is retained only as history.
 
 Shelf census: Life Writing 1 · Letters 1 · **Fiction 39** · **Poetry 6** ·
 Drama 5 · Cinema Writing 4 · Speeches 14 · Essays & Articles 4 · Literary Commentary 2. Total **76**.
@@ -331,6 +368,65 @@ merged PRs, not in this file:
 - **Bulk Onboarding Wave 3 — Essays & Articles / three-publication batch**, taking Essays & Articles
   to 4 and the catalogue to 71. Exact-head implementation review included one rejected head and a
   repaired approved head; production verification passed. **Closed by its merged control close-out.**
+
+---
+
+## Post-Wave-4 Poetry publication landing copy regression repair — ✅ COMPLETE and CLOSED
+
+**A single post-Wave-4 production regression repair — NOT Wave 5, NOT a reopening of Wave 4.** Wave 4
+Poetry remains COMPLETE and CLOSED; this repair only corrected one shared UI copy defect discovered in
+production after the Wave-4 close.
+
+**Defect.** The shared `components/PublicationLanding.tsx` description paragraph hard-coded "58 poems …
+numbered first part" (`…முதல் பாகத்தில் உள்ள 58 கவிதைகள்`). That is source-true for
+**காலப் பேழையும் கவிதைச் சாவியும்** (58 poems, the book's numbered first part, no groups) but wrong for
+**கலைஞரின் கவிதைகள்** (77 poems across 5 source-established groups): its landing rendered a contradictory
+**58** and a false "numbered first part" structure, even though its badge and `<meta>` description
+already used `pub.itemCount` (77).
+
+**Repair.** The description is now derived from each publication's own already-approved structure via
+`describePublication(pub, ta)` — the count is always `pub.itemCount`, and a publication with
+source-established groups (>1) reports its section count while a flat publication does not. No mechanical
+58→77 substitution (that would have preserved the false "numbered first part" claim for the grouped
+anthology), no per-title hard-coding, and **no new data field or payload edit** — the twelve pinned
+Wave-4 payloads are untouched. Final rendered copy:
+
+- காலப் பேழை… (flat): TA `இந்த நூலில் உள்ள 58 கவிதைகள். …` · EN "The 58 poems of this book. …"
+- கலைஞரின் கவிதைகள் (grouped): TA `…5 பிரிவுகளாக அமைந்த 77 கவிதைகள். …` · EN "The 77 poems of this
+  book, arranged in its 5 source-established sections. …"
+
+**Regression coverage.** New `scripts/test-publication-landing-copy.ts` (19 positive checks) proves
+Kaalap 58 and கலைஞரின் கவிதைகள் 77 in **both** Tamil and English, proves the grouped "sections"/
+"பிரிவுகள்" wording renders for the grouped publication only, and proves neither publication inherits the
+other's count or structural wording. It fails against the old hard-coded copy and passes with the fix.
+Registered as an npm script and a named CI step.
+
+**Implementation identity.**
+
+| | |
+|---|---|
+| Implementation PR | `pugazg/kalaignar-autobiography#74` |
+| Base | `ad998113c365f48aabf944b29d4b19b8679a14fc` |
+| Independently approved head | **`afd4c1c3c039505b67f259826a8e21556d896f40`** |
+| Approved head tree | **`3ccdeb53f69db8fdcdbaf61a6c80bc4622d2e1b9`** |
+| Squash merge / implementation `main` | **`946dc8a510ef5f836eab2af15d3b2d69ee9360c2`** |
+| Merged tree | **`3ccdeb53f69db8fdcdbaf61a6c80bc4622d2e1b9`** (== approved head tree) |
+| Changed files | **4** — `components/PublicationLanding.tsx`, `scripts/test-publication-landing-copy.ts`, `package.json`, `.github/workflows/library-ci.yml` |
+| Library CI | archival validators + typecheck·build green (incl. the new named landing-copy step) |
+| Production | Vercel success for `946dc8a5…` |
+
+**Production verification (all four combinations, live):** காலப் பேழை… TA **58** / EN **58** (flat, no
+grouped-section wording); கலைஞரின் கவிதைகள் TA **77 + 5 பிரிவுகள்** / EN **77 + 5 source-established
+sections** — with the incorrect **58** and any "numbered first part" / `முதல் பாக…` wording absent from
+the 77-poem publication in both languages. Item lists still render, கலைஞரின் கவிதைகள் keeps its group
+dividers, காலப் பேழை stays flat, and both `/source` links work.
+
+**Scope.** Zero route/sitemap delta (prerender-manifest 3271 · `.html` 3266 · sitemap 3262 / 0 dup ·
+`/poems/` 147); inventory unchanged (76 · Poetry 6 · collections 1 · shelves 9 · discovery 40 / visible
+32 · 58 + 77 = 135 internal units · exactly two witness relations); twelve P4 payload pins green; no
+source repo, payload, witness, route, or catalogue change. **Implementation backlog: 0.** No new
+onboarding wave is authorized; Reading Room Phase 2 is not authorized; validator-contract migration
+remains PAUSED; native mobile remains ON HOLD; no further Poetry onboarding is authorized.
 
 ---
 
@@ -3926,7 +4022,15 @@ Poetry works, alter Poetry content/relations/routes, or rewrite the 12 pinned pa
 discovered, source-backed regression. A future wave, if authorized, must run its own read-only live
 source-readiness census before any implementation PR.
 
+One such newly-discovered, source-backed regression has since been repaired and closed: the **post-Wave-4
+Poetry publication landing copy regression repair** (implementation PR #74, squash
+`946dc8a510ef5f836eab2af15d3b2d69ee9360c2`), which corrected a shared landing paragraph that hard-coded
+"58 … numbered first part" onto the 77-poem கலைஞரின் கவிதைகள். It changed no data, payloads, routes or
+catalogue counts, and the implementation backlog is again **0**. It did **not** authorize any new
+activity — the "no authorized next implementation activity" rule above is unchanged.
+
 Last production application-code checkpoint at this handover:
-**`ad998113c365f48aabf944b29d4b19b8679a14fc`** (Wave 4 P4 / PR #73 squash merge), tree
-**`e6a8c2920bc90f8cca73ea7de4049f32ac38d712`**. The P5 control close-out is documentation-only and does
-not advance application code.
+**`946dc8a510ef5f836eab2af15d3b2d69ee9360c2`** (post-Wave-4 landing-copy regression repair / PR #74
+squash merge), tree **`3ccdeb53f69db8fdcdbaf61a6c80bc4622d2e1b9`**. It advanced application code from the
+Wave-4 P4 close `ad998113…` by a copy-only fix with zero inventory/route delta; the P5 control close-out
+that preceded it was documentation-only.

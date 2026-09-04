@@ -27,14 +27,14 @@ In order, every time: fetch live control `main` → read `HANDOVER.md` completel
 
 **Treat current GitHub `main`, open PRs and deployed site state as authoritative** over any SHA, count or status paragraph written in a handover, including this file.
 
-## ⚠️ CURRENT STATE — 2026-09-04, post-Wave-4-Poetry (supersedes everything below)
+## ⚠️ CURRENT STATE — 2026-09-04, post-Poetry-landing-copy-regression-repair (supersedes everything below)
 
 **The "Where the project actually stands" list further below stops at Phase 7 and is HISTORICAL.** Its
 work and shelf counts are stale. **Live GitHub wins over anything in it.**
 
 Measured at the current production boundary: implementation `main`
-**`ad998113c365f48aabf944b29d4b19b8679a14fc`**, tree
-**`e6a8c2920bc90f8cca73ea7de4049f32ac38d712`**, **0 open implementation PRs**, **76 published works**
+**`946dc8a510ef5f836eab2af15d3b2d69ee9360c2`**, tree
+**`3ccdeb53f69db8fdcdbaf61a6c80bc4622d2e1b9`**, **0 open implementation PRs**, **76 published works**
 (**Poetry 6**), **1 collection**, **9 non-empty shelves**, **40 fully-expanded `/read` discovery
 entries**, **32 initially visible discovery entries**, **3271 prerender-manifest routes**, **3262
 sitemap URLs**, **0 sitemap duplicates**, **147 `/poems/` URLs**. The continuity-only prerendered
@@ -51,6 +51,14 @@ LibraryWorks and **not** collection members, and the publications are **not** co
 collections stay **1**. Exactly **two** cross-witness relations link the same canonical poem across a
 standalone witness and a publication-item witness. See the Wave-4 section in `HANDOVER.md` for the full
 durable contract.
+
+Since the Wave-4 close, one **post-Wave-4 production regression repair** merged (implementation PR #74,
+squash `946dc8a510ef5f836eab2af15d3b2d69ee9360c2`): the shared publication landing paragraph hard-coded
+"58 … numbered first part" onto the 77-poem கலைஞரின் கவிதைகள்; its description now derives count and
+grouping from each publication's own approved structure, with regression tests for both publications in
+both languages. It is **NOT Wave 5 and NOT a reopening of Wave 4** — no data, payload, witness, route or
+catalogue change, zero inventory/route delta, implementation backlog back to **0**. It authorized no new
+activity.
 
 ### ⚠️ Works are not discovery entries — and publication units are neither
 
