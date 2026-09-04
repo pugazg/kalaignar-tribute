@@ -27,33 +27,45 @@ In order, every time: fetch live control `main` → read `HANDOVER.md` completel
 
 **Treat current GitHub `main`, open PRs and deployed site state as authoritative** over any SHA, count or status paragraph written in a handover, including this file.
 
-## ⚠️ CURRENT STATE — 2026-09-03, post-Film-Songs-control-close-out (supersedes everything below)
+## ⚠️ CURRENT STATE — 2026-09-04, post-Wave-4-Poetry (supersedes everything below)
 
 **The "Where the project actually stands" list further below stops at Phase 7 and is HISTORICAL.** Its
 work and shelf counts are stale. **Live GitHub wins over anything in it.**
 
 Measured at the current production boundary: implementation `main`
-**`1c6dcd81f0aa143a8e9b3162976c74dd18791058`**, **0 open implementation PRs**, **71 published works**,
-**1 collection**, **9 non-empty shelves**, **35 fully-expanded `/read` discovery entries**, **27
-initially visible discovery entries**, **3129 Next build static-route count**, **3117 sitemap URLs**,
-**0 sitemap duplicates**. The continuity-only prerendered `.html` figure is **3121** and is **not** the
-static-route count.
+**`ad998113c365f48aabf944b29d4b19b8679a14fc`**, tree
+**`e6a8c2920bc90f8cca73ea7de4049f32ac38d712`**, **0 open implementation PRs**, **76 published works**
+(**Poetry 6**), **1 collection**, **9 non-empty shelves**, **40 fully-expanded `/read` discovery
+entries**, **32 initially visible discovery entries**, **3271 Next build static-route count**, **3262
+sitemap URLs**, **0 sitemap duplicates**, **147 `/poems/` URLs**. The continuity-only prerendered
+`.html` figure is **3266** and is **not** the static-route count.
 
-Shelf census: Life Writing 1 · Letters 1 · **Fiction 39** · Poetry 1 · Drama 5 ·
-Cinema Writing 4 · Speeches 14 · Essays & Articles 4 · Literary Commentary 2. Total **71**.
+Shelf census: Life Writing 1 · Letters 1 · **Fiction 39** · **Poetry 6** · Drama 5 ·
+Cinema Writing 4 · Speeches 14 · Essays & Articles 4 · Literary Commentary 2. Total **76**.
 
-### ⚠️ Works are not discovery entries
+**Bulk Onboarding Wave 4 — Poetry is COMPLETE and CLOSED** (PRs #69–#73, durable close `ad998113…`).
+All six frozen Poetry source workspaces are publicly represented; Poetry went 1 → 6 and the catalogue
+71 → 76. The two Poetry **publications** — காலப் பேழையும் கவிதைச் சாவியும் (58 units) and கலைஞரின்
+கவிதைகள் (77 units) — hold **135 internal reading units** between them; those units are **not**
+LibraryWorks and **not** collection members, and the publications are **not** collections, so
+collections stay **1**. Exactly **two** cross-witness relations link the same canonical poem across a
+standalone witness and a publication-item witness. See the Wave-4 section in `HANDOVER.md` for the full
+durable contract.
 
-Four numbers now describe `/read` and they are not interchangeable:
+### ⚠️ Works are not discovery entries — and publication units are neither
 
-- **71 published works** — the archival catalogue;
-- **35 discovery entries** — what `/read` renders fully expanded, because one collection entry stands
-  in for 37 works;
-- **27 initially visible entries** — of those 35, before any disclosure is opened;
-- **3129 static routes / 3121 `.html` / 3117 sitemap URLs** — three separate build and delivery metrics.
+Five numbers now describe this state and they are not interchangeable:
 
-**Fiction holds 39 works and renders 3 discovery entries.** Never write "35 works", and never call
-Fiction a 3-work shelf.
+- **76 published works** — the archival catalogue (Poetry contributes 6);
+- **40 discovery entries** — what `/read` renders fully expanded, because one collection entry stands
+  in for 37 Fiction works;
+- **32 initially visible entries** — of those 40, before any disclosure is opened;
+- **135 internal Poetry publication units** — reading units inside the two publications; **not** works,
+  **not** collection members;
+- **3271 static routes / 3266 `.html` / 3262 sitemap URLs** — three separate build and delivery metrics.
+
+**Fiction holds 39 works and renders 3 discovery entries.** Never write "40 works", never call Fiction a
+3-work shelf, and never call a Poetry publication a collection.
 
 ### Reading Room Wayfinding — Phase 0 + Phase 1 — ✅ COMPLETE and CLOSED
 
@@ -154,19 +166,23 @@ comment gave a false reason — a numeric 001–054 loop would not invent an unn
 reason is that the released registry is the route-set authority and remains correct if numbering later
 has gaps or changes.
 
-### NEXT ACTIVITY — Wave 4 readiness census / selection
+### NEXT ACTIVITY — none authorized
 
-The owner has explicitly authorized **Bulk Onboarding Wave 4 — readiness census / selection**.
+**Bulk Onboarding Wave 4 — Poetry is COMPLETE and CLOSED.** All six frozen Poetry source workspaces are
+publicly represented; the Wave-4 implementation backlog is **0**.
 
 Status:
 
-- **Wave 4 readiness census / selection — AUTHORIZED, NOT STARTED.**
-- **Wave 4 implementation — NOT YET AUTHORIZED.**
+- **Wave 4 Poetry onboarding — COMPLETE and CLOSED** (P0–P4 merged; durable close `ad998113…`).
+- **No next implementation activity is authorized.**
 
-The next bounded activity is a **read-only live-source readiness census and coherent-batch selection**.
-It may rank, include and exclude candidates and recommend/select the strongest coherent Wave 4 batch.
-It must **not** import, publish, open an implementation PR or modify any source repository. Report the
-selection first; implementation requires a later explicit authorization.
+There is **no authorized next implementation activity**. Do **not** reopen the six Wave-4 Poetry works,
+add Poetry works, alter Poetry content, change the two witness relations or the Poetry routes, or
+rewrite the 12 pinned Poetry payloads — unless a **newly discovered, source-backed regression** is found
+and separately reported. The next major activity — a new onboarding wave, Reading Room Phase 2, native
+mobile, or resuming validator migration — requires a **new explicit owner authorization** and must not
+be started implicitly. If a future wave is authorized, it must run its own read-only live source
+readiness census before any implementation PR.
 
 Standing exclusions unchanged: validator migration **PAUSED**; native mobile **ON HOLD**; Manimagudam
 is never auto-selected and requires its own readiness gate; `kalaivanar-nsk-memorial-day-audio-06`
