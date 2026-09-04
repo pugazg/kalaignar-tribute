@@ -192,7 +192,7 @@ Status:
 - **Wave 5 P0 census — COMPLETE.**
 - **Wave 5 P1 source freeze + data foundation — COMPLETE** (hidden; zero public delta; generated data
   under `public/data/cinema/{manthiri-kumari,raja-rani}/`, not in `data/library.ts`).
-- **Wave 5 P2 (public readers/routes/`/source` pages) — AUTHORIZED WORK REMAINS, NOT YET AUTHORIZED to
+- **Wave 5 P2 (public readers/routes/`/source` pages) — PLANNED NEXT STAGE, NOT YET AUTHORIZED to
   start.** P2 needs a separate explicit owner authorization; then P3 (catalogue/discovery/sitemap
   exposure — this is where Cinema Writing becomes 6 and works 78), P4 (regression hardening), P5
   (production verification + Wave-5 control close-out).

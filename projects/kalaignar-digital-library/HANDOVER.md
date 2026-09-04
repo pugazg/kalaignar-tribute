@@ -4163,7 +4163,7 @@ Historical completed state remains:
 
 **Bulk Onboarding Wave 5 — Cinema Writing is IN PROGRESS and owner-authorized.** P0 (census) and P1
 (source freeze + hidden data foundation, implementation PR #75, squash `7cc0546f…`) are **COMPLETE**.
-The next authorized-but-not-yet-authorized activity is **Wave 5 P2** (public readers/routes/`/source`
+The next planned-but-not-yet-authorized activity is **Wave 5 P2** (public readers/routes/`/source`
 pages); **P2 requires a separate explicit owner authorization and has NOT started.** Do not add
 Manthiri Kumari or Raja Rani to `data/library.ts`, create their public routes, change Cinema Writing
 4 → 6 or works 76 → 78, or modify the sitemap until P3. The prior Wave-4 items remain closed: do not
