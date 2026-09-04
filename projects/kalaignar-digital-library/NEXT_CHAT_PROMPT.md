@@ -81,7 +81,7 @@ Five numbers now describe this state and they are not interchangeable:
 - **32 initially visible entries** — of those 40, before any disclosure is opened;
 - **135 internal Poetry publication units** — reading units inside the two publications; **not** works,
   **not** collection members;
-- **3271 prerender-manifest routes / 3266 `.html` / 3262 sitemap URLs** — three separate build and delivery metrics.
+- **3360 prerender-manifest routes / 3355 `.html` / 3262 sitemap URLs** — three separate build and delivery metrics.
 
 **Fiction holds 39 works and renders 3 discovery entries.** Never write "40 works", never call Fiction a
 3-work shelf, and never call a Poetry publication a collection.
