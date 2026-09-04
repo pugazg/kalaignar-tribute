@@ -27,29 +27,32 @@ In order, every time: fetch live control `main` → read `HANDOVER.md` completel
 
 **Treat current GitHub `main`, open PRs and deployed site state as authoritative** over any SHA, count or status paragraph written in a handover, including this file.
 
-## ⚠️ CURRENT STATE — 2026-09-04, post-Wave-5-P1 (cinema data foundation, hidden) (supersedes everything below)
+## ⚠️ CURRENT STATE — 2026-09-04, post-Wave-5-P2 (cinema public readers; catalogue deferred) (supersedes everything below)
 
 **The "Where the project actually stands" list further below stops at Phase 7 and is HISTORICAL.** Its
 work and shelf counts are stale. **Live GitHub wins over anything in it.**
 
 Measured at the current production boundary: implementation `main`
-**`7cc0546fc311aabae2a67ef3d7f8c5fd2390b7d5`**, tree
-**`41fb1a5431195d6796e7d8bd4181ffa883bb29b0`**, **0 open implementation PRs**, **76 published works**
+**`cf6a952ca9f0edea254d9c72b48ef333523bfd51`**, tree
+**`9bf711784a86458f95a333c6f4c1768cbe65f690`**, **0 open implementation PRs**, **76 published works**
 (**Cinema Writing 4** · **Poetry 6**), **1 collection**, **9 non-empty shelves**, **40 fully-expanded
-`/read` discovery entries**, **32 initially visible discovery entries**, **3271 prerender-manifest
+`/read` discovery entries**, **32 initially visible discovery entries**, **3360 prerender-manifest
 routes**, **3262 sitemap URLs**, **0 sitemap duplicates**, **147 `/poems/` URLs**. The continuity-only
-prerendered `.html` figure is **3266** and is **not** the prerender-manifest route count.
+prerendered `.html` figure is **3355** and is **not** the prerender-manifest route count.
 
 Shelf census: Life Writing 1 · Letters 1 · **Fiction 39** · **Poetry 6** · Drama 5 ·
 **Cinema Writing 4** · Speeches 14 · Essays & Articles 4 · Literary Commentary 2. Total **76**.
 
-**Bulk Onboarding Wave 5 — Cinema Writing is IN PROGRESS** (Manthiri Kumari + Raja Rani). **P0 census
-and P1 source-freeze/data-foundation are COMPLETE** (implementation PR #75, squash `7cc0546f…`); P1 is
-a **hidden** data foundation that publishes nothing, so every public metric above is unchanged. Neither
-work is in `data/library.ts` or the sitemap; `/cinema/manthiri-kumari` and `/cinema/raja-rani` return
-404. **Wave 5 is NOT closed** — P2 (public readers/routes) requires a separate owner authorization and
-has not started; the public site stays 76 works / Cinema Writing 4 until P3. See the Wave-5 section in
-`HANDOVER.md` for the frozen source pins, generated-artifact hashes and durable source semantics.
+**Bulk Onboarding Wave 5 — Cinema Writing is IN PROGRESS** (Manthiri Kumari + Raja Rani). **P0 census,
+P1 source-freeze/data-foundation and P2 public readers are COMPLETE** (P1 PR #75 squash `7cc0546f…`;
+P2 PR #76 squash `cf6a952c…`). P2 made both works directly readable — `/cinema/manthiri-kumari` (18
+routes) and `/cinema/raja-rani` (71 routes), **+89 direct public routes**, all 200 with invalid children
+404 — but kept them **out of the catalogue**: neither is in `data/library.ts`, `/read` discovery or the
+sitemap, so works/discovery/sitemap are unchanged (only the build route count moved to prerender 3360 /
+`.html` 3355). **Wave 5 is NOT closed** — **P3 (catalogue/discovery/sitemap exposure: works 76 → 78,
+Cinema Writing 4 → 6) is the planned next stage but requires a separate owner authorization and has not
+started.** See the Wave-5 section in `HANDOVER.md` for the frozen source pins, artifact hashes, route
+contract and durable source semantics.
 
 **Bulk Onboarding Wave 4 — Poetry is COMPLETE and CLOSED** (PRs #69–#73, durable close `ad998113…`).
 All six frozen Poetry source workspaces are publicly represented; Poetry went 1 → 6 and the catalogue
@@ -78,7 +81,7 @@ Five numbers now describe this state and they are not interchangeable:
 - **32 initially visible entries** — of those 40, before any disclosure is opened;
 - **135 internal Poetry publication units** — reading units inside the two publications; **not** works,
   **not** collection members;
-- **3271 prerender-manifest routes / 3266 `.html` / 3262 sitemap URLs** — three separate build and delivery metrics.
+- **3360 prerender-manifest routes / 3355 `.html` / 3262 sitemap URLs** — three separate build and delivery metrics.
 
 **Fiction holds 39 works and renders 3 discovery entries.** Never write "40 works", never call Fiction a
 3-work shelf, and never call a Poetry publication a collection.
@@ -182,26 +185,30 @@ comment gave a false reason — a numeric 001–054 loop would not invent an unn
 reason is that the released registry is the route-set authority and remains correct if numbering later
 has gaps or changes.
 
-### NEXT ACTIVITY — Wave 5 P2, pending separate owner authorization
+### NEXT ACTIVITY — Wave 5 P3, pending separate owner authorization
 
-**Bulk Onboarding Wave 5 — Cinema Writing (Manthiri Kumari + Raja Rani) is IN PROGRESS.** P0 (census)
-and P1 (source freeze + hidden data foundation, PR #75, squash `7cc0546f…`) are **COMPLETE**.
+**Bulk Onboarding Wave 5 — Cinema Writing (Manthiri Kumari + Raja Rani) is IN PROGRESS.** P0 (census),
+P1 (source freeze / hidden data foundation, PR #75 squash `7cc0546f…`) and P2 (public readers/routes/
+`/source` pages, PR #76 squash `cf6a952c…`) are **COMPLETE**.
 
 Status:
 
 - **Wave 5 P0 census — COMPLETE.**
-- **Wave 5 P1 source freeze + data foundation — COMPLETE** (hidden; zero public delta; generated data
-  under `public/data/cinema/{manthiri-kumari,raja-rani}/`, not in `data/library.ts`).
-- **Wave 5 P2 (public readers/routes/`/source` pages) — PLANNED NEXT STAGE, NOT YET AUTHORIZED to
-  start.** P2 needs a separate explicit owner authorization; then P3 (catalogue/discovery/sitemap
-  exposure — this is where Cinema Writing becomes 6 and works 78), P4 (regression hardening), P5
-  (production verification + Wave-5 control close-out).
+- **Wave 5 P1 source freeze + data foundation — COMPLETE** (hidden; generated data under
+  `public/data/cinema/{manthiri-kumari,raja-rani}/`, not in `data/library.ts`).
+- **Wave 5 P2 public readers/routes/`/source` pages — COMPLETE** (+89 direct public routes; Manthiri 18,
+  Raja Rani 71; all 200, invalid children 404; catalogue/discovery/sitemap unchanged, so the two works
+  are directly readable but undiscoverable from `/read`).
+- **Wave 5 P3 (catalogue/discovery/sitemap exposure — add both works to `data/library.ts`, works
+  76 → 78, Cinema Writing 4 → 6, sitemap exposure) — PLANNED NEXT STAGE, NOT YET AUTHORIZED to start.**
+  P3 needs a separate explicit owner authorization; then P4 (regression hardening), P5 (production
+  verification + Wave-5 control close-out).
 - Wave 4 — Poetry and its post-Wave-4 regression repair remain COMPLETE and CLOSED.
 
-Do **not** begin P2 implicitly, add either cinema work to `data/library.ts`, create their public
-routes/`/source` pages, change Cinema Writing 4 → 6 or works 76 → 78, or modify the sitemap for them
-until P3. Do not repin the Wave-5 freeze `75b22046…` merely because the cinema source `main` advances
-for unrelated work — both selected work trees (`225662fc…` / `abbc5cb8…`) remain unchanged. Do not
+Do **not** begin P3 implicitly, add either cinema work to `data/library.ts`, expose them in `/read`,
+change Cinema Writing 4 → 6 or works 76 → 78, or modify the sitemap for them. Do not repin the Wave-5
+freeze `75b22046…` merely because the cinema source `main` advances for unrelated work — both selected
+work trees (`225662fc…` / `abbc5cb8…`) remain unchanged. Do not
 reopen closed Wave-4 Poetry works or rewrite the 12 pinned Poetry payloads without a newly discovered,
 source-backed regression. Any new wave, if authorized, must run its own read-only source census first.
 
