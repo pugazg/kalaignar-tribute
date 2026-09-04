@@ -24,7 +24,7 @@ retro-edited. Where it disagrees with this section or with live GitHub, **live G
 | Non-empty shelves | **9** |
 | **Fully-expanded `/read` discovery entries** | **40** |
 | **Initially visible discovery entries** | **32** |
-| **Next build static-route count** | **3271** |
+| **Prerender-manifest routes** | **3271** |
 | Prerendered `.html` files | 3266 |
 | **Sitemap URLs** | **3262** |
 | Sitemap duplicates | **0** |
@@ -33,16 +33,16 @@ retro-edited. Where it disagrees with this section or with live GitHub, **live G
 Shelf census: Life Writing 1 · Letters 1 · **Fiction 39** · **Poetry 6** ·
 Drama 5 · Cinema Writing 4 · Speeches 14 · Essays & Articles 4 · Literary Commentary 2. Total **76**.
 
-Wave 4 Poetry onboarding took Poetry from **1 → 6** and the catalogue from **71 → 76**, adding five
-top-level Poetry works (four standalone poems + two publications, one of which — Idhayathai — was the
-pre-existing single Poetry work; the net addition is Anaiya, Marathi, Thennan, காலப் பேழை, கலைஞரின்
-கவிதைகள்). The two Poetry publications carry **135** internal reading units between them (58 + 77);
-those units are **not** LibraryWorks and **not** collection members, so the collection count stays **1**.
-Measured at the current production boundary: implementation `main`/tree and open PRs from live GitHub;
-work/shelf/discovery census from the merged implementation; the static-route, `.html` and sitemap
-figures from a production build of `ad998113…` with all pinned source clones present; the sitemap
-duplicate check from deployed production. Wave 4 P0–P4 are merged; P5 is the control close-out that
-records this state and adds no implementation change.
+Wave 4 Poetry onboarding took Poetry from **1 → 6** and the catalogue from **71 → 76**. Wave 4 left
+Poetry with **six** top-level works: four standalone poems and two publications. Idhayathai was the
+pre-existing Poetry work, so the **five** net additions were Anaiya, Marathi, Thennan, காலப் பேழை and
+கலைஞரின் கவிதைகள். The two Poetry publications carry **135** internal reading units between them
+(58 + 77); those units are **not** LibraryWorks and **not** collection members, so the collection count
+stays **1**. Measured at the current production boundary: implementation `main`/tree and open PRs from
+live GitHub; work/shelf/discovery census from the merged implementation; the prerender-manifest, `.html`
+and sitemap figures from a production build of `ad998113…` with all pinned source clones present; the
+sitemap duplicate check from deployed production. Wave 4 P0–P4 are merged; P5 is the control close-out
+that records this state and adds no implementation change.
 
 #### ⚠️ WORKS are not DISCOVERY ENTRIES — and publication UNITS are neither
 
@@ -53,7 +53,7 @@ Five distinct measurements describe this state and must never be conflated:
 | **published works** | **76** | the archival catalogue — what the library holds (Poetry contributes 6) |
 | **discovery entries** | **40** | what `/read` renders fully expanded; one collection entry stands in for 37 Fiction works |
 | initially visible entries | 32 | of those 40, before any disclosure is opened |
-| **Next build static-route count** | **3271** | every route the build prerenders (`.html` subset **3266**) |
+| **prerender-manifest routes** | **3271** | the routes represented by the build's prerender manifest (`.html` subset **3266**) |
 | **sitemap URLs** | **3262** | what the deployed sitemap lists, **0** duplicates |
 
 **Fiction holds 39 works and renders 3 discovery entries** — never write "Fiction 3" as a work count.
@@ -491,13 +491,18 @@ Wave 4 moved the public census as follows:
 | Collections | 1 | **1** | 0 |
 | Fully-expanded discovery entries | 35 | **40** | +5 |
 | Initially visible discovery entries | 27 | **32** | +5 |
-| **Next build static-route count** | 3129 | **3271** | +142 |
+| **Prerender-manifest routes** | 3126 | **3271** | +145 |
 | Prerendered `.html` files | 3121 | **3266** | +145 |
 | **Sitemap URLs** | 3117 | **3262** | +145 |
 | `/poems/` URLs | — | **147** | — |
 
-Sitemap duplicates: **0**. The `.html`, static-route and sitemap figures are three distinct
-measurements. All six top-level Poetry works, both publication landing and `/source` pages, and
+The prerender-manifest baseline is the independently measured **P1-before-Wave-4** count **3126**; the
+coherent Wave-4 lineage is **3126 → 3132 → 3192 → 3271** across P1/P2/P3 (**+6 / +60 / +79 = +145**),
+matching the public route additions **6 + 60 + 79 = 145** and the identical `.html` and sitemap deltas.
+This is a different metric from the SUPERSEDED Film-Songs-era "Next build static-route count" (**3129**),
+which stays recorded, unchanged, in its own historical checkpoint. Sitemap duplicates: **0**. The
+`.html`, prerender-manifest and sitemap figures are three distinct measurements. All six top-level
+Poetry works, both publication landing and `/source` pages, and
 spot-checked items (a Kaalap item, an ordinary கலைஞரின் கவிதைகள் item, and both witness items 01/02)
 returned 200 in production; two nonexistent publication children returned 404 (fail-closed); all four
 witness-link directions resolved with the approved EN/TA note and no Kaalap relation; the Thennan

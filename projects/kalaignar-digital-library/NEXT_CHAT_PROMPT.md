@@ -36,9 +36,9 @@ Measured at the current production boundary: implementation `main`
 **`ad998113c365f48aabf944b29d4b19b8679a14fc`**, tree
 **`e6a8c2920bc90f8cca73ea7de4049f32ac38d712`**, **0 open implementation PRs**, **76 published works**
 (**Poetry 6**), **1 collection**, **9 non-empty shelves**, **40 fully-expanded `/read` discovery
-entries**, **32 initially visible discovery entries**, **3271 Next build static-route count**, **3262
+entries**, **32 initially visible discovery entries**, **3271 prerender-manifest routes**, **3262
 sitemap URLs**, **0 sitemap duplicates**, **147 `/poems/` URLs**. The continuity-only prerendered
-`.html` figure is **3266** and is **not** the static-route count.
+`.html` figure is **3266** and is **not** the prerender-manifest route count.
 
 Shelf census: Life Writing 1 · Letters 1 · **Fiction 39** · **Poetry 6** · Drama 5 ·
 Cinema Writing 4 · Speeches 14 · Essays & Articles 4 · Literary Commentary 2. Total **76**.
@@ -62,7 +62,7 @@ Five numbers now describe this state and they are not interchangeable:
 - **32 initially visible entries** — of those 40, before any disclosure is opened;
 - **135 internal Poetry publication units** — reading units inside the two publications; **not** works,
   **not** collection members;
-- **3271 static routes / 3266 `.html` / 3262 sitemap URLs** — three separate build and delivery metrics.
+- **3271 prerender-manifest routes / 3266 `.html` / 3262 sitemap URLs** — three separate build and delivery metrics.
 
 **Fiction holds 39 works and renders 3 discovery entries.** Never write "40 works", never call Fiction a
 3-work shelf, and never call a Poetry publication a collection.
