@@ -11,7 +11,45 @@ Several phases have shipped since it was written, and its work counts, shelf cou
 "last production application-code checkpoint" are stale. It is kept as history and has **not** been
 retro-edited. Where it disagrees with this section or with live GitHub, **live GitHub wins**.
 
-### Verified live state — 2026-09-04, post-Poetry-landing-copy-regression-repair ✅ CURRENT
+### Verified live state — 2026-09-04, post-Wave-5-P1 (cinema data foundation, hidden) ✅ CURRENT
+
+| | |
+|---|---|
+| Implementation `main` | `7cc0546fc311aabae2a67ef3d7f8c5fd2390b7d5` |
+| Implementation `main` tree | `41fb1a5431195d6796e7d8bd4181ffa883bb29b0` |
+| Open PRs (implementation) | 0 |
+| Published **works** | **76** |
+| **Cinema Writing works** (public) | **4** |
+| **Poetry works** (top-level) | **6** |
+| **Collections** | **1** |
+| Non-empty shelves | **9** |
+| **Fully-expanded `/read` discovery entries** | **40** |
+| **Initially visible discovery entries** | **32** |
+| **Prerender-manifest routes** | **3271** |
+| Prerendered `.html` files | 3266 |
+| **Sitemap URLs** | **3262** |
+| Sitemap duplicates | **0** |
+| `/poems/` URLs | **147** |
+
+Shelf census: Life Writing 1 · Letters 1 · **Fiction 39** · **Poetry 6** ·
+Drama 5 · **Cinema Writing 4** · Speeches 14 · Essays & Articles 4 · Literary Commentary 2. Total **76**.
+
+Implementation `main` advanced from the post-Wave-4-repair close `946dc8a5…` to
+`7cc0546fc311aabae2a67ef3d7f8c5fd2390b7d5` (tree `41fb1a54…`) by **Wave 5 P1** — implementation PR #75,
+the Manthiri Kumari + Raja Rani cinema **source freeze and deterministic data foundation**. **P1 is a
+HIDDEN data foundation: it adds NO public route, no catalogue entry, no `/source` page and no sitemap
+URL.** Every public inventory and route metric is therefore unchanged from the Wave-4 baseline (works
+**76** · Cinema Writing **4** · Poetry 6 · collections 1 · shelves 9 · discovery 40 · visible 32 ·
+prerender-manifest **3271** · `.html` **3266** · sitemap **3262** / 0 dup · `/poems/` 147); the merge
+added only generated data under `public/data/cinema/{manthiri-kumari,raja-rani}/`, two importers, two
+validators, two type modules, and CI/validate wiring. Neither work is in `data/library.ts`; production
+`/cinema/manthiri-kumari` and `/cinema/raja-rani` return **404** (correctly not exposed). Measured at the
+current production boundary: implementation `main`/tree and open PRs from live GitHub; the census and
+route metrics from a production build of `7cc0546f…` (zero delta vs the previous checkpoint). **Wave 5 is
+NOT closed** — only P0 and P1 are complete; the public site stays 76 works / Cinema Writing 4 until P3.
+See the Wave-5 section below.
+
+### Verified live state — 2026-09-04, post-Poetry-landing-copy-regression-repair ⚠️ SUPERSEDED (kept as history)
 
 | | |
 |---|---|
@@ -32,6 +70,9 @@ retro-edited. Where it disagrees with this section or with live GitHub, **live G
 
 Shelf census: Life Writing 1 · Letters 1 · **Fiction 39** · **Poetry 6** ·
 Drama 5 · Cinema Writing 4 · Speeches 14 · Essays & Articles 4 · Literary Commentary 2. Total **76**.
+**This checkpoint is superseded by the post-Wave-5-P1 checkpoint above** (same public metrics; the
+implementation `main` has since advanced by the hidden Wave-5 P1 data foundation) and is retained only
+as history.
 
 Implementation `main` advanced from the post-Wave-4 close `ad998113…` to `946dc8a510ef5f836eab2af15d3b2d69ee9360c2`
 (tree `3ccdeb53…`) by a single **post-Wave-4 production regression repair** — implementation PR #74, a
@@ -368,6 +409,108 @@ merged PRs, not in this file:
 - **Bulk Onboarding Wave 3 — Essays & Articles / three-publication batch**, taking Essays & Articles
   to 4 and the catalogue to 71. Exact-head implementation review included one rejected head and a
   repaired approved head; production verification passed. **Closed by its merged control close-out.**
+
+---
+
+## Bulk Onboarding Wave 5 — Cinema Writing / Manthiri Kumari + Raja Rani — 🚧 IN PROGRESS (P0 ✅ · P1 ✅ · P2–P5 not started)
+
+**The fifth bulk-onboarding wave, and the first Cinema Writing wave.** Owner-authorized; the selected
+batch is **மந்திரி குமாரி / Manthiri Kumari** and **ராஜா ராணி / Raja Rani**, both from
+`pugazg/kalaignar-cinema-works`, on the Cinema Writing shelf. **Wave 5 is NOT closed** — only P0
+(census) and P1 (source freeze + data foundation) are complete. The public site remains **76 works /
+Cinema Writing 4** until P3.
+
+Planned staging: **P0** census ✅ · **P1** source freeze + deterministic data foundation ✅ · **P2**
+public readers/routes/`/source` pages · **P3** catalogue/discovery/sitemap exposure · **P4**
+cross-work regression/integrity hardening · **P5** production verification + Wave-5 control close-out.
+Each later stage requires its own explicit owner authorization; P2 has not started.
+
+### P0 — source-readiness census ✅ COMPLETE
+
+A read-only census across all source repositories selected the two release-complete Cinema Writing
+works as the strongest coherent, source-ready batch (one repo, one shelf, Tamil + English + bilingual
+QA closed). Runners-up recorded but not selected: `kudumbaththin-nalvilakku` (Essays, fully frozen,
+single work) and `pudhaiyal` (novel, release-ready with two physical-loss `needs-review` scans).
+`kolaikkalam` was NEAR (English mid-translation); `ina-muzhakkam` / `kuraloviyam` / `sangatamil` /
+short-stories 38+ NOT ready. Manimagudam and `kalaivanar-nsk-memorial-day-audio-06` remain excluded.
+
+### P1 — source freeze + deterministic data foundation ✅ COMPLETE
+
+Implementation PR **#75** merged. This is a hidden data foundation; it published nothing.
+
+| | |
+|---|---|
+| Implementation PR | `pugazg/kalaignar-autobiography#75` |
+| First reviewed head — NOT APPROVED | `2bef0a7c686d164c5aeee57800d7c3477c195753` (validator-trust finding) |
+| Exact approved head | **`b1f67597ddb3519c46cf5f41aabb6c078e6619f5`** |
+| Approved head tree | **`41fb1a5431195d6796e7d8bd4181ffa883bb29b0`** |
+| Squash merge / implementation `main` | **`7cc0546fc311aabae2a67ef3d7f8c5fd2390b7d5`** |
+| Merged tree | **`41fb1a5431195d6796e7d8bd4181ffa883bb29b0`** (== approved head tree) |
+| Base | `946dc8a510ef5f836eab2af15d3b2d69ee9360c2` |
+| Library CI | archival validators + typecheck·build green (named steps Manthiri Kumari / Raja Rani Wave 5 P1) |
+| Production | Vercel success; `/cinema/manthiri-kumari` and `/cinema/raja-rani` return 404 (not exposed) |
+
+The approved PR-head tree and the squash-merged `main` tree are the **same tree SHA** — no drift.
+
+**Source freeze.** `pugazg/kalaignar-cinema-works` @ **`75b22046490f92df3bbf641a69a59fcad7b91bde`**
+(repo tree `43d28d85587294279e4d7fe901b143f5ec469194`). Per-work tree pins (mandatory — this repo holds
+many unrelated works): Manthiri Kumari **`225662fc8f93d91daff0005b348948da6372840b`** · Raja Rani
+**`abbc5cb8890e67ad2b18e0ab50e5af6f678bbd06`**. Source `main` has since advanced for unrelated work
+(e.g. `388517aa…`), but **both selected work trees are unchanged, so the historical freeze remains
+valid and no repin was required.** No source PDFs are vendored (identity = filename + SHA-256 + pages:
+Manthiri `TVA_BOK_0026144` `a64ac0b5…` 14pp; Raja Rani `TVA_BOK_0017188` `26ecc026…` 80pp / 79 canonical).
+
+**Generated frozen artifacts (P1 checkpoint bytes).**
+
+| artifact | SHA-256 |
+|---|---|
+| `public/data/cinema/manthiri-kumari/reader.json` | `ebdbf54fde3031a5027eb0bd61874c2c606a4c765676d2b2f2802082c965bffe` |
+| `public/data/cinema/manthiri-kumari/provenance.json` | `1355625046f020110e815c12b5aa16e006afa9dd9deb375aea44838c646a67b2` |
+| `public/data/cinema/raja-rani/reader.json` | `f1c28efe2a3be14a7a4e379ac7f7ebd41d080ebd59566074854fffe12e7c4acf` |
+| `public/data/cinema/raja-rani/provenance.json` | `2dbcbd4786672dfcce6b9d97a9c0ca90bf3b990fbafe4a08d8e1bdc37097ec1b` |
+
+**Importer / validator architecture.** Deterministic importers (`scripts/import-<slug>.mjs`) consume
+the pinned QA-PASS `integrations/reading-room/reading-room.json` payloads plus referenced records and
+emit the artifacts above (byte-identical reruns). Validators (`scripts/validate-<slug>.mjs`) use an
+INDEPENDENT evidence path — the raw layer indexes (`scenes/index.json`, `dialogues/index.json`,
+`songs/index.json`, `metadata.yaml`, `editions/en/manifest.json`) — and, after the review, pin the
+approved freeze as **independent constants** (source commit, repo/work trees, PDF SHA, reading-room SHA,
+reader SHA, provenance SHA) proving *constant → provenance* AND *constant → artifact* separately, so a
+coordinated `reader.json + provenance.json` mutation cannot redefine the expected truth. Registered in
+`npm run validate` and the CI archival job. Final results: **Manthiri Kumari 90 / 0**, **Raja Rani
+75 / 0**. Fourteen adversarial mutations (7 per work) each fail — the coordinated hash mutations on the
+independent hash pin, every semantic mutation on its specific assertion.
+
+**Durable source semantics — must survive P2+.**
+
+- **Manthiri Kumari** — a *film story-song booklet, NOT a screenplay*: 1 story summary (13 logical
+  units, 1 cross-page) + **15 performance blocks** (52 sections, **234/234** Tamil/English line-cues,
+  7 cross-page). Performance ordinals 1–15 are **archival source-order navigation, not printed
+  numbering**; **0 source-numbered scenes**. Item-level lyricists **0 verified / 15 unresolved** — the
+  cover's story/dialogue credit is not a lyric credit, and later anthology text must not repair the
+  booklet. **Block 11 alone** is a confirmed existing-anthology witness of **`kalaignar-song-001`**; the
+  other 14 are source-only. **Performance 13** keeps its printed heading `பார்த்திபன்—மந்திரிகுமாரி`
+  distinct from its internal turn labels `பார்த்திபன்` / `அமுதவல்லி` — never collapse them.
+- **Raja Rani** — a dialogue screenplay with numbered songs: **58 archival/editorial scene segments**
+  that are **NOT source-printed scene numbers** (songs 1–11 ARE genuine source numbering). **1,236**
+  English screenplay units (1,090 dialogue / 137 stage-direction / 4 performance-cue / 5 written-text),
+  **1,071** immutable dialogue links, **19** source-unlabelled spoken units. Songs: 67 sections,
+  **181/181** line-cues, authorship **5 anthology-attributed / 6 unresolved** (never upgraded). The sole
+  review-level relation is **`raja-rani-song-011` ↔ scene 58** (occurrence `raja-rani-song-perf-004`);
+  the three verified relations are songs 003@4 / 005@16 / 008@40. Deleted duplicate ids
+  `s055-d026`–`s055-d030` must never return; the PDF-74 `K. N. சங்கரன்` ownership stamp stays excluded
+  from canonical text.
+
+Authorship certainty stays separate from display eligibility; no rights/year/edition inferred (all
+null). No cross-witness UI/relation is created in P1.
+
+### Standing state after Wave 5 P1
+
+P0 and P1 are COMPLETE; Wave 5 is otherwise open. Do not add either work to `data/library.ts`, create
+public routes/`/source` pages, change Cinema Writing 4 → 6 or works 76 → 78, modify the sitemap, expose
+a cross-witness UI, or begin P2 without a new explicit owner authorization. Validator-contract migration
+remains PAUSED; native mobile ON HOLD; Reading Room Phase 2 unauthorized; Wave 4 and the Poetry
+regression repair remain closed.
 
 ---
 
@@ -3990,13 +4133,14 @@ When Claude returns a report, independently verify:
 
 # 15. Immediate next activity
 
-> ⚠️ **CURRENT OVERRIDE (2026-09-04).** Older Wave-3/Wave-2/census planning language below is historical.
-> **Bulk Onboarding Wave 4 — Poetry is COMPLETE and CLOSED** (P0–P4 merged; durable close
-> `ad998113…`; P5 control close-out records it — once the P5 control PR is on `main`, Wave 4 is durably
-> closed). **All six frozen Poetry source workspaces are publicly represented and the Wave-4
-> implementation backlog is 0.** **No implementation activity is pending or authorized.** The next major
-> activity — a new onboarding wave, Reading Room Phase 2, native mobile, or resuming validator migration
-> — requires a **new explicit owner authorization** and must not be started implicitly.
+> ⚠️ **CURRENT OVERRIDE (2026-09-04).** Older Wave-4/census planning language below is historical.
+> **Bulk Onboarding Wave 5 — Cinema Writing is IN PROGRESS and owner-authorized**: batch Manthiri Kumari
+> + Raja Rani. **P0 (census) and P1 (source freeze + hidden data foundation, PR #75 squash `7cc0546f…`)
+> are COMPLETE**; P2–P5 have not started. **Wave 5 P2 (public readers/routes) requires a separate
+> explicit owner authorization.** Wave 4 — Poetry and its post-Wave-4 landing-copy regression repair
+> remain COMPLETE and CLOSED. The public site stays at **76 works / Cinema Writing 4** until Wave 5 P3.
+> No implementation activity beyond the completed P1 is authorized; the next stage or any new wave
+> requires a **new explicit owner authorization** and must not be started implicitly.
 
 Historical completed state remains:
 
@@ -4017,20 +4161,20 @@ Historical completed state remains:
   auto-selected.
 - **Validator-contract migration remains PAUSED** and **native mobile remains ON HOLD.**
 
-There is **no authorized next implementation activity**. Do not reopen the six Wave-4 Poetry works, add
-Poetry works, alter Poetry content/relations/routes, or rewrite the 12 pinned payloads without a newly
-discovered, source-backed regression. A future wave, if authorized, must run its own read-only live
-source-readiness census before any implementation PR.
-
-One such newly-discovered, source-backed regression has since been repaired and closed: the **post-Wave-4
-Poetry publication landing copy regression repair** (implementation PR #74, squash
-`946dc8a510ef5f836eab2af15d3b2d69ee9360c2`), which corrected a shared landing paragraph that hard-coded
-"58 … numbered first part" onto the 77-poem கலைஞரின் கவிதைகள். It changed no data, payloads, routes or
-catalogue counts, and the implementation backlog is again **0**. It did **not** authorize any new
-activity — the "no authorized next implementation activity" rule above is unchanged.
+**Bulk Onboarding Wave 5 — Cinema Writing is IN PROGRESS and owner-authorized.** P0 (census) and P1
+(source freeze + hidden data foundation, implementation PR #75, squash `7cc0546f…`) are **COMPLETE**.
+The next authorized-but-not-yet-authorized activity is **Wave 5 P2** (public readers/routes/`/source`
+pages); **P2 requires a separate explicit owner authorization and has NOT started.** Do not add
+Manthiri Kumari or Raja Rani to `data/library.ts`, create their public routes, change Cinema Writing
+4 → 6 or works 76 → 78, or modify the sitemap until P3. The prior Wave-4 items remain closed: do not
+reopen the six Wave-4 Poetry works or rewrite the 12 pinned payloads without a newly discovered,
+source-backed regression. A future *new* wave, if authorized, must run its own read-only source census
+before any implementation PR.
 
 Last production application-code checkpoint at this handover:
-**`946dc8a510ef5f836eab2af15d3b2d69ee9360c2`** (post-Wave-4 landing-copy regression repair / PR #74
-squash merge), tree **`3ccdeb53f69db8fdcdbaf61a6c80bc4622d2e1b9`**. It advanced application code from the
-Wave-4 P4 close `ad998113…` by a copy-only fix with zero inventory/route delta; the P5 control close-out
-that preceded it was documentation-only.
+**`7cc0546fc311aabae2a67ef3d7f8c5fd2390b7d5`** (Wave 5 P1 / PR #75 squash merge), tree
+**`41fb1a5431195d6796e7d8bd4181ffa883bb29b0`**. It advanced application code from the post-Wave-4
+landing-copy repair `946dc8a5…` by the **hidden** cinema data foundation — generated
+`public/data/cinema/{manthiri-kumari,raja-rani}/` plus importers/validators/CI — with **zero public
+inventory/route delta** (works 76 · Cinema Writing 4 · prerender 3271 · `.html` 3266 · sitemap 3262 /
+0 dup · `/poems/` 147). Neither work is in `data/library.ts` or the sitemap.
