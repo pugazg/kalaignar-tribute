@@ -1,6 +1,6 @@
 # Kalaignar Digital Library / Reading Room — Master Handover
 
-**Last updated:** 2026-09-03
+**Last updated:** 2026-09-04
 
 ---
 
@@ -11,7 +11,69 @@ Several phases have shipped since it was written, and its work counts, shelf cou
 "last production application-code checkpoint" are stale. It is kept as history and has **not** been
 retro-edited. Where it disagrees with this section or with live GitHub, **live GitHub wins**.
 
-### Verified live state — 2026-09-03, post-Film-Songs-control-close-out ✅ CURRENT
+### Verified live state — 2026-09-04, post-Wave-4-Poetry ✅ CURRENT
+
+| | |
+|---|---|
+| Implementation `main` | `ad998113c365f48aabf944b29d4b19b8679a14fc` |
+| Implementation `main` tree | `e6a8c2920bc90f8cca73ea7de4049f32ac38d712` |
+| Open PRs (implementation) | 0 |
+| Published **works** | **76** |
+| **Poetry works** (top-level) | **6** |
+| **Collections** | **1** |
+| Non-empty shelves | **9** |
+| **Fully-expanded `/read` discovery entries** | **40** |
+| **Initially visible discovery entries** | **32** |
+| **Prerender-manifest routes** | **3271** |
+| Prerendered `.html` files | 3266 |
+| **Sitemap URLs** | **3262** |
+| Sitemap duplicates | **0** |
+| `/poems/` URLs | **147** |
+
+Shelf census: Life Writing 1 · Letters 1 · **Fiction 39** · **Poetry 6** ·
+Drama 5 · Cinema Writing 4 · Speeches 14 · Essays & Articles 4 · Literary Commentary 2. Total **76**.
+
+Wave 4 Poetry onboarding took Poetry from **1 → 6** and the catalogue from **71 → 76**. Wave 4 left
+Poetry with **six** top-level works: four standalone poems and two publications. Idhayathai was the
+pre-existing Poetry work, so the **five** net additions were Anaiya, Marathi, Thennan, காலப் பேழை and
+கலைஞரின் கவிதைகள். The two Poetry publications carry **135** internal reading units between them
+(58 + 77); those units are **not** LibraryWorks and **not** collection members, so the collection count
+stays **1**. Measured at the current production boundary: implementation `main`/tree and open PRs from
+live GitHub; work/shelf/discovery census from the merged implementation; the prerender-manifest, `.html`
+and sitemap figures from a production build of `ad998113…` with all pinned source clones present; the
+sitemap duplicate check from deployed production. Wave 4 P0–P4 are merged; P5 is the control close-out
+that records this state and adds no implementation change.
+
+#### ⚠️ WORKS are not DISCOVERY ENTRIES — and publication UNITS are neither
+
+Five distinct measurements describe this state and must never be conflated:
+
+| measurement | value | what it counts |
+|---|---:|---|
+| **published works** | **76** | the archival catalogue — what the library holds (Poetry contributes 6) |
+| **discovery entries** | **40** | what `/read` renders fully expanded; one collection entry stands in for 37 Fiction works |
+| initially visible entries | 32 | of those 40, before any disclosure is opened |
+| **prerender-manifest routes** | **3271** | the routes represented by the build's prerender manifest (`.html` subset **3266**) |
+| **sitemap URLs** | **3262** | what the deployed sitemap lists, **0** duplicates |
+
+**Fiction holds 39 works and renders 3 discovery entries** — never write "Fiction 3" as a work count.
+**Poetry is now 6 works and 6 discovery entries.** The two Poetry publications together hold **135
+internal reading units** (58 + 77); a reading unit is **not** a LibraryWork and **not** a collection
+member. The two publications are **publications, not Reading Room collections** — collections remain
+**1** (the 1977 short-story anthology).
+
+Shipped / closed since the post-Film-Songs checkpoint:
+
+- **Bulk Onboarding Wave 4 — Poetry** — the six-workspace Poetry onboarding: standalone Anaiya, Marathi
+  and Thennan beside the pre-existing Idhayathai, plus the two publications காலப் பேழையும் கவிதைச்
+  சாவியும் (58 units) and கலைஞரின் கவிதைகள் (77 units), and exactly two cross-witness relations linking
+  the same canonical poem across a standalone witness and a publication-item witness. Implementation
+  PRs #69–#73 all merged under the exact-head gate; production-verified; the durable P4 close is
+  `ad998113…`. **If this text is being read from the unmerged P5 close-out branch, live control `main`
+  remains authoritative and closure is only proposed. Once this control PR is on `main`, Wave 4 Poetry
+  is durably COMPLETE and CLOSED.** See the dedicated Wave-4 section below.
+
+### Verified live state — 2026-09-03, post-Film-Songs-control-close-out ⚠️ SUPERSEDED (kept as history)
 
 | | |
 |---|---|
@@ -25,8 +87,10 @@ retro-edited. Where it disagrees with this section or with live GitHub, **live G
 | **Next build static-route count** | **3129** |
 | **Sitemap URLs** | **3117** |
 
-Shelf census, unchanged by this control-only close-out: Life Writing 1 · Letters 1 · **Fiction 39** · Poetry 1 ·
+Shelf census, unchanged by that control-only close-out: Life Writing 1 · Letters 1 · **Fiction 39** · Poetry 1 ·
 Drama 5 · Cinema Writing 4 · Speeches 14 · Essays & Articles 4 · Literary Commentary 2. Total **71**.
+**This checkpoint is superseded by the post-Wave-4 checkpoint above** and is retained only as history;
+its counts predate the five Wave-4 Poetry works.
 
 #### ⚠️ WORKS are not DISCOVERY ENTRIES
 
@@ -267,6 +331,191 @@ merged PRs, not in this file:
 - **Bulk Onboarding Wave 3 — Essays & Articles / three-publication batch**, taking Essays & Articles
   to 4 and the catalogue to 71. Exact-head implementation review included one rejected head and a
   repaired approved head; production verification passed. **Closed by its merged control close-out.**
+
+---
+
+## Bulk Onboarding Wave 4 — Poetry / six-workspace onboarding + cross-witness model — ✅ COMPLETE and CLOSED
+
+**The fourth bulk-onboarding activity, and the first to ship a cross-witness relation model.** All six
+frozen Poetry source workspaces are now publicly represented, taking the Poetry shelf from 1 to 6 and
+the catalogue from 71 to 76. Implementation is merged and production-verified across five staged PRs
+(#69–#73); this section is the durable merged control closure. P5 is documentation-only and changes no
+implementation code, content, route, relation, catalogue entry or payload.
+
+### Implementation identity and durable checkpoint chain
+
+Wave 4 shipped as five exact-head-gated phases. Each phase opened one bounded PR from verified live
+`main`, was independently reviewed at its exact head, squash-merged only at the approved SHA, and
+production-verified. The durable merged checkpoints are the important history; rejected/replaced review
+heads are not preserved here.
+
+| phase | PR | purpose | squash merge / durable `main` |
+|---|---:|---|---|
+| P0 | #69 | Poetry **publication architecture** foundation | `69aa7653bccd9ca8cec75ace9c0f2ead3903a919` |
+| P1 | #70 | standalone onboarding — Anaiya, Marathi, Thennan (beside existing Idhayathai) | `f9cd1ccd58c2df40927f20f153a95eafab8d69fa` |
+| P2 | #71 | **காலப் பேழையும் கவிதைச் சாவியும்** — 58 internal units | `b480d53f8ba1bb3658cdad8efd8ca1152bc58fa6` |
+| P3 | #72 | **கலைஞரின் கவிதைகள்** — 77 internal units + exactly two witness relations | `364d64d16d2c6bbe1f130a17935c5f3a3a73c3a1` |
+| P4 | #73 | cross-witness **regression / public-semantics hardening** | **`ad998113c365f48aabf944b29d4b19b8679a14fc`** |
+
+The durable Wave-4 implementation close is P4 squash-merge
+**`ad998113c365f48aabf944b29d4b19b8679a14fc`**, tree
+**`e6a8c2920bc90f8cca73ea7de4049f32ac38d712`**. The independently approved P4 PR-head tree and the
+squash-merged `main` tree are the **same tree SHA** — the squash introduced no drift. Post-merge Library
+CI run **`33838803531`** succeeded (both jobs), production Vercel succeeded for the merge commit, and a
+four-direction witness production smoke-check passed.
+
+### Source freeze — final record
+
+| | |
+|---|---|
+| Source repository | `pugazg/kalaignar-poems` (READ ONLY) |
+| **Frozen Wave-4 source pin** | **`969823195ea8943a67fad4286ab1bc7f1c876d56`** |
+| **Frozen source tree** | **`e382ee02c8f333da9ddfd61f3c9858b97c65cf3b`** |
+
+All six frozen top-level Poetry work trees (subtrees under `poems/` at the frozen pin), re-verified at
+close-out:
+
+| work | source work tree |
+|---|---|
+| `anaiya-vilakku-anna` | `bddc54f0493dbc38e53f9ec9fe5162e0c4e49464` |
+| `idhayathai-thanthidu-anna` | `a92fb5ff742aa1c5ae11039fc55a9ffa4bdafc63` |
+| `kaalap-pezhaiyum-kavithai-saaviyum` | `07a2d3cba65a1eb10b887dac3c83ce993f94a710` |
+| `kalaignarin-kavithaigal` | `6489ab3d4fdf21a1442aa46d7a7aa1a08071be7e` |
+| `marathi` | `fda18674b928f7934f66c695ba494208344a6814` |
+| `thennan-kathai` | `a63a171ffee75d12e6ef612c41b36262e5562a78` |
+
+**All six source workspaces are now publicly represented. Source processing is not reopened** by
+unrelated future movement of the poems source repository. No source PDFs are vendored; source identity
+is filename + SHA-256 + size + scan count, held in the deterministic importer's provenance.
+
+### Public ontology — the durable Poetry shape
+
+Exactly **6** top-level Poetry LibraryWorks:
+
+1. `idhayathai-thanthidu-anna` — standalone poem
+2. `anaiya-vilakku-anna` — standalone poem
+3. `marathi` — standalone poem
+4. `thennan-kathai` — standalone poem
+5. `kaalap-pezhaiyum-kavithai-saaviyum` — poetry **publication**, **58** internal reading units
+6. `kalaignarin-kavithaigal` — poetry **publication**, **77** internal reading units
+
+Four are standalone poems; two are poetry publications. Total internal Poetry publication units:
+**135** (58 + 77). **These 135 units are NOT LibraryWorks and NOT collection members.** Collections
+remain **1**; shelves remain **9**. **Do not describe the two Poetry publications as Reading Room
+collections** — a publication is a single work whose reader exposes internal item routes; a collection
+is a discovery layer over independent works (only the 1977 anthology is a collection).
+
+### Route contract — durable
+
+- Standalone poem: `/poems/<standalone-slug>` and `/poems/<standalone-slug>/source`.
+- Publication: `/poems/<publication-slug>` and `/poems/<publication-slug>/source`.
+- Direct publication item: `/poems/<publication-slug>/<item-slug>` — **not** `/items/<item-slug>`.
+- Unknown publication children **fail closed** (404). No numeric aliases, no ordinal routes, no
+  title-derived runtime slugging — item slugs come from the released registry.
+
+### Cross-witness contract — durable
+
+Exactly **TWO** witness relations exist. A witness relation states only that *another source
+witness/version of the same canonical poem is available*; it is symmetric and endpoint-identity-driven.
+
+| relation id | endpoints |
+|---|---|
+| `idhayathai-thanthidu-anna--kalaignarin-kavithaigal--item-01` | `/poems/idhayathai-thanthidu-anna` ↔ `/poems/kalaignarin-kavithaigal/give-me-your-heart-anna` |
+| `thennan-kathai--kalaignarin-kavithaigal--item-02` | `/poems/thennan-kathai` ↔ `/poems/kalaignarin-kavithaigal/the-tale-of-the-southerner` |
+
+The durable semantic rule is:
+
+> **canonical poem identity != source-witness identity != publication membership.**
+
+Neither relation claims identical text, byte equality, supersession, a corrected version, an
+original/derivative hierarchy, or a preferred witness. Approved public wording, unchanged:
+
+- **English:** `Another source witness of this same poem is available.`
+- **Tamil:** `இதே கவிதையின் மற்றொரு மூல ஆதாரப் பதிப்பும் கிடைக்கிறது.`
+
+The **Thennan** standalone witness retains its owner-directed, witness-local scan-151 editorial
+exception (one omitted source term, recorded as **not reproduced**). **The anthology witness does NOT
+inherit it**, and the omitted source word is never reproduced anywhere in code, tests, comments or
+these control documents.
+
+### P3 source-provenance state — கலைஞரின் கவிதைகள் Gate-3 title-witness accounting
+
+Durable Gate-3 accounting, exposed on the publication `/source` page:
+
+- **81** total title/group/item witnesses inventoried;
+- **51** exact;
+- **30** source-valid variants;
+- **0** unresolved;
+- **29** item-level variants + **1** group-only variant (group 1 counted once, not double-counted).
+
+The one group-only variant is group 4: contents witness **கண்ணீர்க் கவிதை** vs canonical group title
+**கண்ணீர்த் துளிகள்** — both witnesses retained. The five source-established anthology groups remain
+provenance/structure, **not** five separate works. The eight pure structural scans remain
+**32, 33, 70, 71, 372, 373, 392, 393**; group 1 retains shared scans **18–19** inside item 01.
+
+### P4 payload regression contract — twelve exact SHA-256 pins
+
+P4 froze every already-approved Poetry payload against accidental content or cross-witness mutation.
+The P4 integrity validator hard-pins the SHA-256 of all **12** approved artifacts with exact equality
+(not presence/length). These are the durable pins; **P5 does not rewrite these payloads**:
+
+| artifact | SHA-256 |
+|---|---|
+| `anaiya-vilakku-anna/poem.json` | `22b26e59323a7ea1b6ca78b866178da76246e4ea3fc00423224ef9fa04f47fee` |
+| `anaiya-vilakku-anna/provenance.json` | `8501373910610499fac48822c922e8e941461403863b7dd6444eedf8f50299e7` |
+| `idhayathai-thanthidu-anna/poem.json` | `6833738340243833b712479e017f25294bb0e45b701d66d060a77f634c3e64f7` |
+| `idhayathai-thanthidu-anna/provenance.json` | `d06a664052178762372d42727c95620a3c3a88159f85b56e43a095e8a401e930` |
+| `marathi/poem.json` | `bd2f1f48e76b4a419dd0d86859b2c6dd8e43bb0ba3949242817d206b3eb3c0ed` |
+| `marathi/provenance.json` | `e18bdbda5919bf8839581a0216cf6fafb797565f48ec769ac83e7777522eb3a7` |
+| `thennan-kathai/poem.json` | `9d26512203004d794d9a859fc22905601714b6f84094d763294054c4dd8fb53b` |
+| `thennan-kathai/provenance.json` | `2add1819a2309bbdb7a482f3ff8cff0150978e9e9ce11bdf58409edb34b13bf7` |
+| `kaalap-pezhaiyum-kavithai-saaviyum/publication.json` | `d013e047922d9840a226eb1f2d08c7898758dea811bb9f9cac2f314fa3fb0b78` |
+| `kaalap-pezhaiyum-kavithai-saaviyum/provenance.json` | `6a655ee198269d27ffcb90f0c4d9784d4d4180bf61a64569643dd7bbc821710c` |
+| `kalaignarin-kavithaigal/publication.json` | `5b2a8fba7cd80e9082f51fd78459a8008dcb18232ddd4046435d1ffa74e95418` |
+| `kalaignarin-kavithaigal/provenance.json` | `3321205441bdd2d6b5a86ffda2409dd5b74bc54ac14bea4fc7cd33f386a33dfa` |
+
+The P4 layer is registered in Library CI as the named steps **Poetry witness relations — integrity
+(Wave 4 P4)** and **Poetry witness relations — UI regression (Wave 4 P4)**, and the P4 **integrity**
+validator is the final validator in the canonical `npm run validate` chain. Final P4 validator:
+**131 assertions / 0 failed**; P4 witness UI regression: **60 checks / 0 failed**.
+
+### Production boundary
+
+Wave 4 moved the public census as follows:
+
+| metric | pre-Wave-4 (Film-Songs close) | post-Wave-4 | delta |
+|---|---:|---:|---:|
+| Published works | 71 | **76** | +5 |
+| Poetry works | 1 | **6** | +5 |
+| Non-empty shelves | 9 | **9** | 0 |
+| Collections | 1 | **1** | 0 |
+| Fully-expanded discovery entries | 35 | **40** | +5 |
+| Initially visible discovery entries | 27 | **32** | +5 |
+| **Prerender-manifest routes** | 3126 | **3271** | +145 |
+| Prerendered `.html` files | 3121 | **3266** | +145 |
+| **Sitemap URLs** | 3117 | **3262** | +145 |
+| `/poems/` URLs | — | **147** | — |
+
+The prerender-manifest baseline is the independently measured **P1-before-Wave-4** count **3126**; the
+coherent Wave-4 lineage is **3126 → 3132 → 3192 → 3271** across P1/P2/P3 (**+6 / +60 / +79 = +145**),
+matching the public route additions **6 + 60 + 79 = 145** and the identical `.html` and sitemap deltas.
+This is a different metric from the SUPERSEDED Film-Songs-era "Next build static-route count" (**3129**),
+which stays recorded, unchanged, in its own historical checkpoint. Sitemap duplicates: **0**. The
+`.html`, prerender-manifest and sitemap figures are three distinct measurements. All six top-level
+Poetry works, both publication landing and `/source` pages, and
+spot-checked items (a Kaalap item, an ordinary கலைஞரின் கவிதைகள் item, and both witness items 01/02)
+returned 200 in production; two nonexistent publication children returned 404 (fail-closed); all four
+witness-link directions resolved with the approved EN/TA note and no Kaalap relation; the Thennan
+editorial exception is served on the standalone only and absent from the anthology item.
+
+### Standing state after Wave 4
+
+Wave 4 Poetry onboarding is **COMPLETE and CLOSED**. All six frozen Poetry workspaces are publicly
+represented; the Wave-4 implementation backlog is **0**. Do not reopen the six Wave-4 Poetry works, add
+Poetry works, alter Poetry content, change the witness relations or routes, or rewrite the 12 pinned
+payloads without a newly discovered, source-backed regression. Validator-contract migration remains
+**PAUSED**; native mobile remains **ON HOLD**; Reading Room Phase 2 is not authorized; no further
+Poetry onboarding is authorized. The next major activity requires a new explicit owner authorization.
 
 ---
 
@@ -3645,13 +3894,13 @@ When Claude returns a report, independently verify:
 
 # 15. Immediate next activity
 
-> ⚠️ **CURRENT OVERRIDE (2026-09-03).** Older Wave-3/Wave-2 planning language below is historical.
-> **Film Songs formal control close-out is COMPLETE and CLOSED once this control PR is on `main`.**
-> The owner has explicitly authorized **Bulk Onboarding Wave 4 — readiness census / selection**.
-> **Wave 4 census/selection is AUTHORIZED, NOT STARTED. Wave 4 implementation is NOT YET AUTHORIZED.**
-> The next activity is therefore a read-only live-source census and coherent-batch selection. It may
-> compare, rank, include and exclude source candidates; it must stop after reporting the selected batch
-> and must not open an implementation PR.
+> ⚠️ **CURRENT OVERRIDE (2026-09-04).** Older Wave-3/Wave-2/census planning language below is historical.
+> **Bulk Onboarding Wave 4 — Poetry is COMPLETE and CLOSED** (P0–P4 merged; durable close
+> `ad998113…`; P5 control close-out records it — once the P5 control PR is on `main`, Wave 4 is durably
+> closed). **All six frozen Poetry source workspaces are publicly represented and the Wave-4
+> implementation backlog is 0.** **No implementation activity is pending or authorized.** The next major
+> activity — a new onboarding wave, Reading Room Phase 2, native mobile, or resuming validator migration
+> — requires a **new explicit owner authorization** and must not be started implicitly.
 
 Historical completed state remains:
 
@@ -3661,23 +3910,23 @@ Historical completed state remains:
 - **Bulk Onboarding Wave 3 — Essays & Articles is COMPLETE and CLOSED** (PR #66, approved head
   `c4f40f7f…`, squash `c4660c49…`).
 - **Reading Room Wayfinding Phase 0 + Phase 1 is COMPLETE and CLOSED** (PRs #67/#68; control PR #21).
-- **Film Songs implementation E1–E4 is COMPLETE and published**, and this close-out records its formal
-  control closure.
-- **Bulk onboarding remains the STANDING DEFAULT workflow.**
+- **Film Songs implementation E1–E4 is COMPLETE and CLOSED** (control close-out merged).
+- **Bulk Onboarding Wave 4 — Poetry is COMPLETE and CLOSED** (PRs #69–#73; durable close `ad998113…`,
+  tree `e6a8c29…`). Six Poetry workspaces represented; two publications (58 + 77 = 135 internal units);
+  exactly two cross-witness relations; 12 payload SHA-256 pins; collections still 1.
+- **Bulk onboarding remains the STANDING DEFAULT workflow** for any *future, separately authorized* wave.
 - **மணிமகுடம் / Manimagudam is never automatically selected**; it requires its own current readiness
-  gate and must be judged live during the census if considered at all.
+  gate and must be judged live during a census if considered at all.
 - `kalaivanar-nsk-memorial-day-audio-06` remains a **SEPARATE** source archive and is never
   auto-selected.
 - **Validator-contract migration remains PAUSED** and **native mobile remains ON HOLD.**
 
-The authorized Wave 4 census must inspect live source readiness category-neutrally and define a
-**coherent batch** by source release/repository/public shelf. Do not trust old candidate names or old
-readiness snapshots; recheck source `main`, release/completion records, English readiness, provenance
-and source identity. Explicitly list candidates excluded as incomplete/blocked and why.
-
-**Stop after census/selection.** The owner has not yet authorized import, catalogue changes, routes,
-sitemap changes or a Wave 4 implementation PR.
+There is **no authorized next implementation activity**. Do not reopen the six Wave-4 Poetry works, add
+Poetry works, alter Poetry content/relations/routes, or rewrite the 12 pinned payloads without a newly
+discovered, source-backed regression. A future wave, if authorized, must run its own read-only live
+source-readiness census before any implementation PR.
 
 Last production application-code checkpoint at this handover:
-**`1c6dcd81f0aa143a8e9b3162976c74dd18791058`** (Reading Room Wayfinding Phase 1 / PR #68 squash
-merge). Film Songs formal close-out is documentation-only and does not advance application code.
+**`ad998113c365f48aabf944b29d4b19b8679a14fc`** (Wave 4 P4 / PR #73 squash merge), tree
+**`e6a8c2920bc90f8cca73ea7de4049f32ac38d712`**. The P5 control close-out is documentation-only and does
+not advance application code.
