@@ -27,14 +27,14 @@ In order, every time: fetch live control `main` → read `HANDOVER.md` completel
 
 **Treat current GitHub `main`, open PRs and deployed site state as authoritative** over any SHA, count or status paragraph written in a handover, including this file.
 
-## ⚠️ CURRENT STATE — 2026-09-04, post-Wave-5-P3 (cinema catalogue/discovery/sitemap exposure) (supersedes everything below)
+## ⚠️ CURRENT STATE — 2026-09-08, post-Wave-5-P4 (cinema cross-work integrity hardening) (supersedes everything below)
 
 **The "Where the project actually stands" list further below stops at Phase 7 and is HISTORICAL.** Its
 work and shelf counts are stale. **Live GitHub wins over anything in it.**
 
 Measured at the current production boundary: implementation `main`
-**`c6ac8b6cde867c865c5358e252828fbf0b4f8524`**, tree
-**`270d66492ec70fbd7c24a9e05f044a454b533b9a`**, **0 open implementation PRs**, **78 published works**
+**`632476baa40ebbe94083ec41a6c8f4a26dfec77c`**, tree
+**`6a4b2cd6bdcdada399cdb27247e485527813a7b2`**, **0 open implementation PRs**, **78 published works**
 (**Cinema Writing 6** · **Poetry 6**), **1 collection**, **9 non-empty shelves**, **42 fully-expanded
 `/read` discovery entries**, **34 initially visible discovery entries**, **3360 prerender-manifest
 routes**, **3351 sitemap URLs**, **0 sitemap duplicates**, **147 `/poems/` URLs**. The continuity-only
@@ -44,22 +44,22 @@ Shelf census: Life Writing 1 · Letters 1 · **Fiction 39** · **Poetry 6** · D
 **Cinema Writing 6** · Speeches 14 · Essays & Articles 4 · Literary Commentary 2. Total **78**.
 
 **Bulk Onboarding Wave 5 — Cinema Writing is IN PROGRESS** (Manthiri Kumari + Raja Rani). **P0 census,
-P1 source-freeze/data-foundation, P2 public readers and P3 catalogue/discovery/sitemap exposure are
-COMPLETE** (P1 PR #75 squash `7cc0546f…`; P2 PR #76 squash `cf6a952c…`; P3 PR #77 squash `c6ac8b6c…`).
-P3 turned the two already-live P2 readers into normal Reading Room catalogue members **without adding
-any new page route**: two new `data/library.ts` records on Cinema Writing in onboarding order (Manohara ·
-Parasakthi · Tirumbippaar · Kalaignar Film Songs · Manthiri Kumari · Raja Rani), taking works **76 → 78**,
-Cinema Writing **4 → 6**, discovery **40 → 42**, initially-visible **32 → 34**, and the sitemap
-**3262 → 3351** (**+89**: Manthiri **18** + Raja **71**, registry-derived via `lib/cinema-wave5-routes.ts`,
-0 duplicates). Cinema Writing is now exactly at the six-entry cap (all six cards visible, **no**
-disclosure); **Speeches (14 entries) remains the sole over-cap shelf**; **Fiction renders 3 discovery
-entries despite 39 works**. Prerender-manifest **3360** and `.html` **3355** are unchanged from P2.
-Production-verified: `/read` shows six Cinema cards in order, all routes 200, invalid children 404,
-sitemap 3351 / 0 dup with the exact 18 + 71 = 89 Wave-5 set. Manthiri keeps its source-backed
-story/dialogue credit; Raja's card is neutral (no role-specific credit). **Wave 5 is NOT closed** —
-**P4 (cross-work regression / integrity hardening) is the planned next stage but requires a separate
-owner authorization and has NOT started.** See the Wave-5 section in `HANDOVER.md` for the frozen source
-pins, artifact hashes, route contract and durable source semantics.
+P1 source-freeze/data-foundation, P2 public readers, P3 catalogue/discovery/sitemap exposure and P4
+cross-work integrity hardening are COMPLETE** (P1 PR #75 squash `7cc0546f…`; P2 PR #76 squash `cf6a952c…`;
+P3 PR #77 squash `c6ac8b6c…`; P4 PR #78 squash `632476ba…`). **P4 is a test/CI/package-only hardening
+layer** — a durable cross-work regression contract over the six Cinema works — that changes **no** product
+behaviour, catalogue, route, sitemap, reader data or source, so every public count above is **identical**
+to the P3 close. Its integrity gate (**475/0**) proves the four Wave-5 payloads byte-pinned, the six-work
+census/onboarding order, each work's distinct source semantics, **exact registry-derived route membership
+for all six Cinema families** (Manohara 59 · Parasakthi 48 · Tirumbippaar 95 · Film Songs 55 · Manthiri 18
+· Raja 71 = **346**, Wave-5 89 = 18+71), the global invariants, and a build-vs-sitemap exact-set equality;
+its UI gate (**33/0**) proves the six cards' rendered semantics. Cinema Writing sits exactly at the
+six-entry cap (all six cards visible, **no** disclosure); **Speeches (14 entries) remains the sole over-cap
+shelf**; **Fiction renders 3 discovery entries despite 39 works**. Production re-verified after merge:
+`/read` shows the six Cinema cards in order; sitemap 3351 / 0 dup with 346 Cinema URLs. **Wave 5 is NOT
+closed** — **P5 (production verification + Wave-5 control close-out) is the planned next stage but requires
+a separate owner authorization and has NOT started; do not reopen or re-run P4.** See the Wave-5 section
+in `HANDOVER.md` for the frozen source pins, artifact hashes, route contract and durable source semantics.
 
 **Bulk Onboarding Wave 4 — Poetry is COMPLETE and CLOSED** (PRs #69–#73, durable close `ad998113…`).
 All six frozen Poetry source workspaces are publicly represented; Poetry went 1 → 6 and the catalogue
@@ -192,12 +192,13 @@ comment gave a false reason — a numeric 001–054 loop would not invent an unn
 reason is that the released registry is the route-set authority and remains correct if numbering later
 has gaps or changes.
 
-### NEXT ACTIVITY — Wave 5 P4, pending separate owner authorization
+### NEXT ACTIVITY — Wave 5 P5, pending separate owner authorization
 
 **Bulk Onboarding Wave 5 — Cinema Writing (Manthiri Kumari + Raja Rani) is IN PROGRESS.** P0 (census),
 P1 (source freeze / hidden data foundation, PR #75 squash `7cc0546f…`), P2 (public readers/routes/
-`/source` pages, PR #76 squash `cf6a952c…`) and P3 (catalogue/discovery/sitemap exposure, PR #77 squash
-`c6ac8b6c…`) are **COMPLETE**.
+`/source` pages, PR #76 squash `cf6a952c…`), P3 (catalogue/discovery/sitemap exposure, PR #77 squash
+`c6ac8b6c…`) and P4 (cross-work integrity/regression hardening, PR #78 squash `632476ba…`) are
+**COMPLETE**.
 
 Status:
 
@@ -206,25 +207,26 @@ Status:
   `public/data/cinema/{manthiri-kumari,raja-rani}/`, not in `data/library.ts`).
 - **Wave 5 P2 public readers/routes/`/source` pages — COMPLETE** (+89 direct public routes; Manthiri 18,
   Raja Rani 71; all 200, invalid children 404).
-- **Wave 5 P3 catalogue/discovery/sitemap exposure — COMPLETE** (PR #77, approved head `6aa7a25c…`, tree
-  `270d6649…`, squash `c6ac8b6c…`; merged tree == approved tree). Both works are now in `data/library.ts`
-  on Cinema Writing, works **76 → 78**, Cinema Writing **4 → 6**, discovery **40 → 42**, visible
-  **32 → 34**, sitemap **3262 → 3351** (+89, registry-derived, 0 dup). No new page route; prerender 3360
-  / `.html` 3355 unchanged. Cinema at the six-entry cap (no disclosure); Speeches sole over-cap shelf.
-  Production-verified. Manthiri keeps its source-backed story/dialogue credit; Raja neutral (no
-  role-specific credit).
-- **Wave 5 P4 (cross-work regression / integrity hardening) — PLANNED NEXT STAGE, NOT YET AUTHORIZED to
-  start.** P4 needs a separate explicit owner authorization; then P5 (production verification + Wave-5
-  control close-out).
+- **Wave 5 P3 catalogue/discovery/sitemap exposure — COMPLETE** (PR #77, squash `c6ac8b6c…`, merged tree
+  `270d6649…`). Both works are in `data/library.ts` on Cinema Writing; works **78**, Cinema Writing **6**,
+  discovery **42**, visible **34**, sitemap **3351** (+89, registry-derived, 0 dup). Manthiri keeps its
+  source-backed story/dialogue credit; Raja neutral.
+- **Wave 5 P4 cross-work integrity/regression hardening — COMPLETE** (PR #78, approved head `92367e2e…`,
+  tree `6a4b2cd6…`, squash `632476ba…`; merged tree == approved tree). **Test/CI/package-only**, zero
+  product/content/route/data delta. Integrity **475/0**, UI **33/0**; exact registry-derived route
+  membership for all six Cinema families (59/48/95/55/18/71 = 346, Wave-5 89 = 18+71) plus a
+  build-vs-sitemap exact-set equality; four P1 payload hashes unchanged; source freeze unchanged.
+- **Wave 5 P5 (production verification + Wave-5 control close-out) — PLANNED NEXT STAGE, NOT YET
+  AUTHORIZED to start.** P5 needs a separate explicit owner authorization.
 - Wave 4 — Poetry and its post-Wave-4 regression repair remain COMPLETE and CLOSED.
 
-Do **not** begin P4 implicitly. Both cinema works are now normal catalogue members (works **78**, Cinema
-Writing **6**); do not add further Cinema Writing works, change those counts, alter the Manthiri/Raja
-catalogue cards or their neutral/attributed wording, or modify the +89 sitemap set. Do not repin the
-Wave-5 freeze `75b22046…` merely because the cinema source `main` advances for unrelated work — both
-selected work trees (`225662fc…` / `abbc5cb8…`) remain unchanged. Do not reopen closed Wave-4 Poetry
-works or rewrite the 12 pinned Poetry payloads without a newly discovered, source-backed regression. Any
-new wave, if authorized, must run its own read-only source census first.
+Do **not** begin P5 implicitly, and do **not** reopen, re-run or weaken P4. Both cinema works are normal
+catalogue members (works **78**, Cinema Writing **6**); do not add further Cinema Writing works, change
+those counts, alter the Manthiri/Raja catalogue cards or their neutral/attributed wording, or modify the
++89 sitemap set. Do not repin the Wave-5 freeze `75b22046…` merely because the cinema source `main`
+advances for unrelated work — both selected work trees (`225662fc…` / `abbc5cb8…`) remain unchanged. Do
+not reopen closed Wave-4 Poetry works or rewrite the 12 pinned Poetry payloads without a newly discovered,
+source-backed regression. Any new wave, if authorized, must run its own read-only source census first.
 
 Standing exclusions unchanged: validator migration **PAUSED**; native mobile **ON HOLD**; Manimagudam
 is never auto-selected and requires its own readiness gate; `kalaivanar-nsk-memorial-day-audio-06`
