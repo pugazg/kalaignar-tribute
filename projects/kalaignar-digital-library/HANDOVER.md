@@ -70,9 +70,10 @@ verified); 3 Speeches (`namathu-nilai`, `idhaya-perikai`, `palli-vazhkkai`); and
 works** across the 2008 (40), 2004 (34), 1987 (**23 distinct**, +2 witness relations), 2009 (5 new) and
 1997 (`நண்பனா?`, 1) sources. **HOLD:** stage-play `ore-mutham` (`SOURCE_VERIFICATION` — ~21% terminal
 documented physical-source loss, owner decision) and the `chinna-chinna-malargal` quote collection
-(`PUBLICATION_MODEL` — no Quotes shelf/reader model yet). **NOT COMPLETE:** naam, vellikkizhamai,
-meesai-mulaiththa-vayathil, 1982 முடியாத தொடர்கதை, நடுத்தெரு நாராயணி, sangatamil, kuraloviyam,
-iratha-kanneer. Onboarding all READY would take the catalogue **78 → 203 works** (Fiction 39 → 144),
+(`PUBLICATION_MODEL` — no Quotes shelf/reader model yet). **NOT COMPLETE (12 candidate works):** naam, vellikkizhamai,
+meesai-mulaiththa-vayathil, நடுத்தெரு நாராயணி (counted once), sangatamil, kuraloviyam, iratha-kanneer,
+and the **five separate 1982 முடியாத தொடர்கதை stories** (the anthology is a source container, not one
+work). Total not-yet-onboarded candidate works = 125 READY + 2 HOLD + 12 NOT COMPLETE = **139**. Onboarding all READY would take the catalogue **78 → 203 works** (Fiction 39 → 144),
 collections **1 → 5** (`நண்பனா?` standalone; 1997 is not a public collection). Feasibility recommendation:
 **B — one Wave-6 governance programme implemented as deterministic per-shelf/family batches** (the
 103-story fiction partition and its duplicate-identity clearance are the main risk). **Wave 6 P1 is NOT

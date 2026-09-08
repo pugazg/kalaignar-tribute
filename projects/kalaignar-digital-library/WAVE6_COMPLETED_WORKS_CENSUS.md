@@ -27,10 +27,12 @@ per-work documents, not only the repo root handovers.
 
 ## Repositories inspected
 
-13 Kalaignar source repositories: `kalaignar-autobiography` (implementation), `nenjukku-needhi-archive`,
+**13 Kalaignar archival/source repositories** inspected: `nenjukku-needhi-archive`,
 `kalaignar-murasoli-letters`, `kalaignar-poems`, `kalaignar-stage-plays`, `kalaignar-cinema-works`,
 `kalaignar-short-stories`, `kalaignar-novels`, `kalaignar-essays`, `kalaignar-literary-commentary`,
-`tolkappiyap-poonga`, `kalaignar-assembly-speeches`, `kalaignar-public-speeches`, `kalaignar-quotes`.
+`tolkappiyap-poonga`, `kalaignar-assembly-speeches`, `kalaignar-public-speeches`, `kalaignar-quotes` —
+**plus the implementation repository `pugazg/kalaignar-autobiography`** (the Digital Library itself, used
+to establish the already-onboarded set; it is not one of the source repositories).
 Excluded (not Kalaignar-authored publishable works): DMK, DMK-achievements-2021-2026, Dravidian-Method,
 Kalaignar-Legacy, Minequest, Silpathikaram, ab-2, anna-corpus (Annadurai), aytham, classical-tamil,
 kalaignar-bio-documentary (video), manimekalai-cinematic-adaptation (scholarly adaptation),
@@ -118,8 +120,27 @@ rechecked at activation; witness-only entries map to an existing controlling can
 | `1987-kalaignar-sonna-kuttik-kathaigal` | 25 | **23** | READY | 25/25 identity-routing COMPLETE; **23 distinct + 2 witness-only**: Story 2 `அராபியக் கதை` = witness of canonical `ஜாடி குட்டி போடுமா?`; Story 11 `குருவி ராமேஸ்வரம்` = witness of an existing 2004 canonical story. Record the 2 as witness relations, not works. |
 | `2009-16-kathaiyinile` | 16 | **5** | READY | 5 new canonical stories CLOSED; the other 11 are existing-canonical witnesses (comparison 11/11 CLOSED), not new works. |
 | `1997-dravida-iyakka-ezhuthalar-sirukathaigal` | 10 | **1** | READY | Only **`நண்பனா?`** (`stories/nanbana/`) is new canonical — Tamil PASS, visual PASS, English PASS/complete, 0 unresolved; confirmed absent from implementation. 8 entries are pre-existing witnesses; `நடுத்தெரு நாராயணி` is deferred to short-novel handling. |
-| `1982-mudiyatha-thodarkathai` | 5 | 0 | **NOT COMPLETE** | Tamil 1/5 closed; English not started. |
-| `நடுத்தெரு நாராயணி` (in 1997) | — | 0 | **NOT COMPLETE** | Deferred/blocked (waits on novels `வெள்ளிக்கிழமை`). |
+| `1982-mudiyatha-thodarkathai` | 5 | 0 | **NOT COMPLETE** | Source container of **5 separate story targets**, not one work — counted as **5 distinct NOT-COMPLETE candidate works** (see the per-story preflight below). Only Story 1 has closed Tamil; English not released; Stories 2–5 not transcribed. |
+| `நடுத்தெரு நாராயணி` (in 1997) | — | 0 | **NOT COMPLETE** | Deferred/blocked (waits on novels `வெள்ளிக்கிழமை`); counted once. |
+
+#### 1982 `முடியாத தொடர்கதை` per-story identity preflight (read-only)
+
+The anthology is a **source container, not a canonical work**. A fresh read-only live-`main` duplicate/
+canonical search (repository routing note: "GitHub searches on live `main` for all five exact headings and
+distinctive fragments returned no existing canonical story match") plus a check against the 78 onboarded
+works found **no existing canonical match** for any of the five. Each is a distinct future short-story
+candidate; none is a duplicate.
+
+| # | Title | Existing canonical workspace | Unique-identity status | Archival phase | English | Class |
+|---:|---|---|---|---|---|---|
+| 1 | `பெற்ற பிள்ளையை விற்ற தாய்` | `stories/petra-pillaiyai-vitra-thaai/` (new canonical) | unique; no existing match | Tamil/source PASS/CLOSED (22/22) | not released (collection-wide Tamil phase unfinished) | **NOT COMPLETE** |
+| 2 | `காசா லேசா` | none | unique; no existing match (recheck on activation) | not transcribed (NEXT) | not started | **NOT COMPLETE** |
+| 3 | `சீமான் வீட்டு சீக்காளி` | none | unique; no existing match (recheck on activation) | not transcribed | not started | **NOT COMPLETE** |
+| 4 | `நந்தியூர் நரியப்பன்` | none | unique; no existing match (recheck on activation) | not transcribed | not started | **NOT COMPLETE** |
+| 5 | `முடியாத தொடர்கதை` (≠ the collection title) | none | unique; no existing match (recheck on activation) | not transcribed | not started | **NOT COMPLETE** |
+
+So the 1982 source contributes **5 NOT-COMPLETE candidate works**, not one. It is **not** a projected
+Wave-6 public collection (it is incomplete).
 
 **Unique new short-story works = 40 + 34 + 23 + 5 + 1 = 103.** Mandatory P1 duplicate-identity clearance
 across all collections and against the 1977 anthology + `kizhavan-kanavu` (the archive already routes
@@ -169,18 +190,35 @@ poetry-publication, novel-sections, essay-publication, speech, short-story, fict
 | stage-plays `ore-mutham` | `SOURCE_VERIFICATION` | Owner decision to accept ~21% terminal documented physical-source loss (27 scene-relevant blocked scans) for public onboarding, or improved source condition. Workflow is already exhausted/closed. |
 | quotes `chinna-chinna-malargal` | `PUBLICATION_MODEL` | Owner decision + design of a Quotes shelf and a quote-collection reader/route model, then a payload. Archival work is already complete. |
 
-## NOT-COMPLETE LIST
+## NOT-COMPLETE LIST — 12 candidate works (counted by individual work identity)
 
 | Work | Repo | Phase | Likely soon? |
 |---|---|---|---|
 | நாம் | cinema | dual-gate 13/67; English blocked | No |
 | வெள்ளிக்கிழமை | novels | canonical 118/179; assembly/English not started | Mid |
-| மீசை முளைத்த வயதில் | essays Pub 10 | P2 30/146; English blocked | Early |
-| முடியாத தொடர்கதை (1982) | short-stories | Tamil 1/5; English not started | Early |
-| நடுத்தெரு நாராயணி | short-stories/novels | deferred (waits on வெள்ளிக்கிழமை) | No |
+| மீசை முளைத்த வயதில் (essays Pub 10) | essays | P2 30/146; English blocked | Early |
+| நடுத்தெரு நாராயணி | short-stories → short-novel | deferred (waits on வெள்ளிக்கிழமை); counted once | No |
 | சங்கத் தமிழ் | literary-commentary | active transcription-correction | Unclear |
 | குறளோவியம் | literary-commentary | Part 001 Pass 1 through scan 111 | Early |
 | இரத்தக் கண்ணீர் | stage-plays | pages 20/188; assembly/English not started | Early |
+| 1982 Story 1 `பெற்ற பிள்ளையை விற்ற தாய்` | short-stories | Tamil CLOSED; English not released | Mid |
+| 1982 Story 2 `காசா லேசா` | short-stories | not transcribed (NEXT) | Early |
+| 1982 Story 3 `சீமான் வீட்டு சீக்காளி` | short-stories | not transcribed | Early |
+| 1982 Story 4 `நந்தியூர் நரியப்பன்` | short-stories | not transcribed | Early |
+| 1982 Story 5 `முடியாத தொடர்கதை` | short-stories | not transcribed | Early |
+
+**NOT COMPLETE = 12** (7 single works + the 5 individual 1982 stories). `நடுத்தெரு நாராயணி` is counted
+exactly once despite living in the short-story archive with intended short-novel handling.
+
+## Candidate totals (from individual work identities)
+
+| Class | Works |
+|---|---:|
+| READY | **125** |
+| HOLD | **2** |
+| NOT COMPLETE | **12** |
+| **Total not-yet-onboarded candidate works** | **139** |
+| ALREADY ONBOARDED | 78 |
 
 ---
 
@@ -232,8 +270,11 @@ prerender/`.html` increase — the largest single build expansion in the project
 
 ## FEASIBILITY ASSESSMENT
 
-- READY = **125 works** (22 standalone/publication + 103 short-story members) across **6 source repos**
-  and **5 shelves**; all reader models already exist.
+- READY = **125 works** (22 standalone/publication + 103 short-story members) across **8 source
+  repositories** (`kalaignar-cinema-works`, `kalaignar-stage-plays`, `kalaignar-poems`,
+  `kalaignar-novels`, `kalaignar-essays`, `kalaignar-assembly-speeches`, `kalaignar-public-speeches`,
+  `kalaignar-short-stories`) and **6 Digital Library shelves** (Cinema Writing, Drama, Poetry, Fiction,
+  Essays & Articles, Speeches); all reader models already exist.
 - The corrected population does not change the shape of the conclusion: the dominant risk remains the
   **103-work short-story partition** and its cross-collection + 1977 duplicate-identity clearance, now
   spread over four new collections.
