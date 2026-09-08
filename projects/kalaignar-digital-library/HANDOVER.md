@@ -11,7 +11,7 @@ Several phases have shipped since it was written, and its work counts, shelf cou
 "last production application-code checkpoint" are stale. It is kept as history and has **not** been
 retro-edited. Where it disagrees with this section or with live GitHub, **live GitHub wins**.
 
-### Verified live state — 2026-09-08, post-Wave-5-P5 (Wave 5 COMPLETE / CLOSED — production-accepted) ✅ CURRENT
+### Verified live state — 2026-09-08, post-Wave-6-P0 (P0 census COMPLETE; P1 NOT AUTHORIZED — implementation/production boundary unchanged from Wave-5-P5) ✅ CURRENT
 
 | | |
 |---|---|
@@ -53,8 +53,31 @@ P2 **443/0**, P3 **66/0**, collections **258/0**, poetry-architecture **118/0**,
 Manthiri P1 **90/0**, Raja P1 **75/0**, `npm run validate` exit 0, typecheck clean, clean production build
 (prerender **3360** / `.html` **3355**), `git diff --check` clean. Source freeze `75b22046…` and the four
 P1 payload hashes are unchanged. **Wave 5 must not be reopened from stale prompts; P0–P5 are frozen
-historical stages unless a newly discovered source-backed regression requires repair. No Wave 6 is
-authorized and no next onboarding wave is selected.** See the Wave-5 section below.
+historical stages unless a newly discovered source-backed regression requires repair.** See the Wave-5
+section below.
+
+### Wave 6 — P0 completed-works census ✅ COMPLETE (assessment only; P1 NOT AUTHORIZED)
+
+Owner-authorized **Wave 6 P0 only** — a read-only global census of completed archival works and their
+Digital-Library readiness. **No onboarding is authorized; no implementation/source/route/catalogue/
+sitemap/production change was made.** Full findings: `projects/kalaignar-digital-library/WAVE6_COMPLETED_WORKS_CENSUS.md`.
+
+Result (counts derived from unique canonical work identities): **125 READY works** not yet onboarded —
+1 Cinema (`ammaiyappan`, Reading Room payload QA PASS); 3 Drama (`kagithapoo`, `manimagudam`,
+`thiruvalar-desiyampillai` with documented physical-loss qualification); 8 Poetry (release-cleared);
+2 Novels (`periya-idathup-pen`, `pudhaiyal`); 5 Essays (frozen Publications 1–9, English release
+verified); 3 Speeches (`namathu-nilai`, `idhaya-perikai`, `palli-vazhkkai`); and **103 unique short-story
+works** across the 2008 (40), 2004 (34), 1987 (**23 distinct**, +2 witness relations), 2009 (5 new) and
+1997 (`நண்பனா?`, 1) sources. **HOLD:** stage-play `ore-mutham` (`SOURCE_VERIFICATION` — ~21% terminal
+documented physical-source loss, owner decision) and the `chinna-chinna-malargal` quote collection
+(`PUBLICATION_MODEL` — no Quotes shelf/reader model yet). **NOT COMPLETE (12 candidate works):** naam, vellikkizhamai,
+meesai-mulaiththa-vayathil, நடுத்தெரு நாராயணி (counted once), sangatamil, kuraloviyam, iratha-kanneer,
+and the **five separate 1982 முடியாத தொடர்கதை stories** (the anthology is a source container, not one
+work). Total not-yet-onboarded candidate works = 125 READY + 2 HOLD + 12 NOT COMPLETE = **139**. Onboarding all READY would take the catalogue **78 → 203 works** (Fiction 39 → 144),
+collections **1 → 5** (`நண்பனா?` standalone; 1997 is not a public collection). Feasibility recommendation:
+**B — one Wave-6 governance programme implemented as deterministic per-shelf/family batches** (the
+103-story fiction partition and its duplicate-identity clearance are the main risk). **Wave 6 P1 is NOT
+authorized and has NOT started** — P0 is assessment only.
 
 ### Verified live state — 2026-09-04, post-Wave-5-P3 (cinema catalogue/discovery/sitemap exposure) ⚠️ SUPERSEDED (kept as history)
 
@@ -557,8 +580,9 @@ batch is **மந்திரி குமாரி / Manthiri Kumari** and **�
 (census), P1 (source freeze + data foundation), P2 (public readers/routes), P3 (catalogue/discovery/
 sitemap exposure), P4 (cross-work regression/integrity hardening) and P5 (production acceptance + durable
 control closure) are all complete. The public site is **78 works / Cinema Writing 6**. Manthiri Kumari +
-Raja Rani onboarding is fully complete. **No Wave 6 is authorized and no next onboarding wave is
-selected.**
+Raja Rani onboarding is fully complete. **Since this close, Wave 6 P0 (completed-works census) is COMPLETE
+(assessment only — see the Wave-6 P0 subsection in the CURRENT block above); Wave 6 P1 is NOT authorized
+and has NOT started.**
 
 Staging, all complete: **P0** census ✅ · **P1** source freeze + deterministic data foundation ✅ · **P2**
 public readers/routes/`/source` pages ✅ · **P3** catalogue/discovery/sitemap exposure ✅ · **P4**
