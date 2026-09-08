@@ -198,12 +198,15 @@ has gaps or changes.
 production-accepted).
 
 **Wave 6 P0 — global completed-works census is COMPLETE (assessment only).** See
-`projects/kalaignar-digital-library/WAVE6_COMPLETED_WORKS_CENSUS.md`. It found **123 READY works** not yet
-onboarded (1 Cinema, 8 Poetry, 2 Novels, 5 Essays, 3 Speeches, 104 short-story members across 4 closed
-collections), 1 HOLD requiring a new Quotes shelf/reader model (`chinna-chinna-malargal`), a few HOLD
-stage-plays pending per-work confirmation (`ore-mutham` likely-ready), and several NOT-COMPLETE works.
-Onboarding all READY would take the catalogue **78 → ~201 works**; the recommended model is **one Wave-6
-governance programme implemented as deterministic per-shelf/family batches**.
+`projects/kalaignar-digital-library/WAVE6_COMPLETED_WORKS_CENSUS.md`. Counts are from unique canonical
+work identities: **125 READY works** not yet onboarded — 1 Cinema, 3 Drama (kagithapoo, manimagudam,
+thiruvalar-desiyampillai w/ qualification), 8 Poetry, 2 Novels, 5 Essays (English release verified),
+3 Speeches, and **103 unique short-story works** (2008 40 + 2004 34 + 1987 **23 distinct** + 2009 5 +
+1997 `நண்பனா?` 1). **HOLD:** `ore-mutham` (SOURCE_VERIFICATION — ~21% terminal physical-source loss,
+owner decision) and `chinna-chinna-malargal` quotes (PUBLICATION_MODEL — needs a new Quotes shelf/reader
+model). Onboarding all READY would take the catalogue **78 → 203 works** (Fiction 39 → 144), collections
+**1 → 5**; recommended model **B — one Wave-6 governance programme implemented as deterministic per-shelf/
+family batches**.
 
 **No onboarding has started. Wave 6 P1 (exact source/work freeze + payload foundation) is NOT authorized
 and must not begin without explicit owner authorization.** Do not select works, freeze sources, generate

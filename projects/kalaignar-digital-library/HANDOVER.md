@@ -62,17 +62,21 @@ Owner-authorized **Wave 6 P0 only** — a read-only global census of completed a
 Digital-Library readiness. **No onboarding is authorized; no implementation/source/route/catalogue/
 sitemap/production change was made.** Full findings: `projects/kalaignar-digital-library/WAVE6_COMPLETED_WORKS_CENSUS.md`.
 
-Result: **123 READY works** not yet onboarded — 1 Cinema (`ammaiyappan`, Reading Room payload QA PASS),
-8 Poetry (release-cleared), 2 Novels (`periya-idathup-pen`, `pudhaiyal`), 5 Essays (frozen Publications
-1–9 not yet onboarded), 3 Speeches (`namathu-nilai`, `idhaya-perikai`, `palli-vazhkkai`), and **104
-short-story members across 4 closed collections** (2008/2004/1987/2009-new). HOLD: the `chinna-chinna-malargal`
-quote collection (archivally complete, but the library has no Quotes shelf/reader model — `PUBLICATION_MODEL`);
-stage-plays `ore-mutham` (likely-ready, pending per-work confirmation) and `thiruvalar-desiyampillai`/`kagithapoo`/`manimagudam`.
-NOT COMPLETE: naam, vellikkizhamai, meesai-mulaiththa-vayathil, 1982 முடியாத தொடர்கதை, நடுத்தெரு நாராயணி,
-sangatamil, kuraloviyam, iratha-kanneer. Onboarding all READY would take the catalogue **78 → ~201 works**.
-Feasibility recommendation: **B — one Wave-6 governance programme implemented as deterministic per-shelf/
-family batches** (the 104-story fiction partition and its duplicate-identity clearance are the main risk).
-**Wave 6 P1 is NOT authorized and has NOT started** — P0 is assessment only.
+Result (counts derived from unique canonical work identities): **125 READY works** not yet onboarded —
+1 Cinema (`ammaiyappan`, Reading Room payload QA PASS); 3 Drama (`kagithapoo`, `manimagudam`,
+`thiruvalar-desiyampillai` with documented physical-loss qualification); 8 Poetry (release-cleared);
+2 Novels (`periya-idathup-pen`, `pudhaiyal`); 5 Essays (frozen Publications 1–9, English release
+verified); 3 Speeches (`namathu-nilai`, `idhaya-perikai`, `palli-vazhkkai`); and **103 unique short-story
+works** across the 2008 (40), 2004 (34), 1987 (**23 distinct**, +2 witness relations), 2009 (5 new) and
+1997 (`நண்பனா?`, 1) sources. **HOLD:** stage-play `ore-mutham` (`SOURCE_VERIFICATION` — ~21% terminal
+documented physical-source loss, owner decision) and the `chinna-chinna-malargal` quote collection
+(`PUBLICATION_MODEL` — no Quotes shelf/reader model yet). **NOT COMPLETE:** naam, vellikkizhamai,
+meesai-mulaiththa-vayathil, 1982 முடியாத தொடர்கதை, நடுத்தெரு நாராயணி, sangatamil, kuraloviyam,
+iratha-kanneer. Onboarding all READY would take the catalogue **78 → 203 works** (Fiction 39 → 144),
+collections **1 → 5** (`நண்பனா?` standalone; 1997 is not a public collection). Feasibility recommendation:
+**B — one Wave-6 governance programme implemented as deterministic per-shelf/family batches** (the
+103-story fiction partition and its duplicate-identity clearance are the main risk). **Wave 6 P1 is NOT
+authorized and has NOT started** — P0 is assessment only.
 
 ### Verified live state — 2026-09-04, post-Wave-5-P3 (cinema catalogue/discovery/sitemap exposure) ⚠️ SUPERSEDED (kept as history)
 
