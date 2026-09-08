@@ -192,11 +192,24 @@ comment gave a false reason — a numeric 001–054 loop would not invent an unn
 reason is that the released registry is the route-set authority and remains correct if numbering later
 has gaps or changes.
 
-### NEXT ACTIVITY — none authorized; Wave 5 is COMPLETE / CLOSED, await owner direction
+### NEXT ACTIVITY — Wave 6 P0 census COMPLETE (assessment only); Wave 6 P1 NOT authorized
 
-**Bulk Onboarding Wave 5 — Cinema Writing (Manthiri Kumari + Raja Rani) is COMPLETE and CLOSED.** All six
-stages P0–P5 are complete and production-accepted. There is **no authorized next activity**: no Wave 6,
-no next onboarding wave, no automatically selected Cinema work. **Await explicit owner direction.**
+**Bulk Onboarding Wave 5 — Cinema Writing (Manthiri Kumari + Raja Rani) is COMPLETE and CLOSED** (P0–P5,
+production-accepted).
+
+**Wave 6 P0 — global completed-works census is COMPLETE (assessment only).** See
+`projects/kalaignar-digital-library/WAVE6_COMPLETED_WORKS_CENSUS.md`. It found **123 READY works** not yet
+onboarded (1 Cinema, 8 Poetry, 2 Novels, 5 Essays, 3 Speeches, 104 short-story members across 4 closed
+collections), 1 HOLD requiring a new Quotes shelf/reader model (`chinna-chinna-malargal`), a few HOLD
+stage-plays pending per-work confirmation (`ore-mutham` likely-ready), and several NOT-COMPLETE works.
+Onboarding all READY would take the catalogue **78 → ~201 works**; the recommended model is **one Wave-6
+governance programme implemented as deterministic per-shelf/family batches**.
+
+**No onboarding has started. Wave 6 P1 (exact source/work freeze + payload foundation) is NOT authorized
+and must not begin without explicit owner authorization.** Do not select works, freeze sources, generate
+payloads, or touch the implementation. When authorized, P1 must reconfirm each READY work's English release
++ reader payload and clear short-story duplicate identity against the existing 1977 anthology. Await
+explicit owner direction to authorize P1 (and to decide the Quotes shelf question).
 
 Status:
 

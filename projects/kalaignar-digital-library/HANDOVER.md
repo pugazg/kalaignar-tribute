@@ -53,8 +53,26 @@ P2 **443/0**, P3 **66/0**, collections **258/0**, poetry-architecture **118/0**,
 Manthiri P1 **90/0**, Raja P1 **75/0**, `npm run validate` exit 0, typecheck clean, clean production build
 (prerender **3360** / `.html` **3355**), `git diff --check` clean. Source freeze `75b22046…` and the four
 P1 payload hashes are unchanged. **Wave 5 must not be reopened from stale prompts; P0–P5 are frozen
-historical stages unless a newly discovered source-backed regression requires repair. No Wave 6 is
-authorized and no next onboarding wave is selected.** See the Wave-5 section below.
+historical stages unless a newly discovered source-backed regression requires repair.** See the Wave-5
+section below.
+
+### Wave 6 — P0 completed-works census ✅ COMPLETE (assessment only; P1 NOT AUTHORIZED)
+
+Owner-authorized **Wave 6 P0 only** — a read-only global census of completed archival works and their
+Digital-Library readiness. **No onboarding is authorized; no implementation/source/route/catalogue/
+sitemap/production change was made.** Full findings: `projects/kalaignar-digital-library/WAVE6_COMPLETED_WORKS_CENSUS.md`.
+
+Result: **123 READY works** not yet onboarded — 1 Cinema (`ammaiyappan`, Reading Room payload QA PASS),
+8 Poetry (release-cleared), 2 Novels (`periya-idathup-pen`, `pudhaiyal`), 5 Essays (frozen Publications
+1–9 not yet onboarded), 3 Speeches (`namathu-nilai`, `idhaya-perikai`, `palli-vazhkkai`), and **104
+short-story members across 4 closed collections** (2008/2004/1987/2009-new). HOLD: the `chinna-chinna-malargal`
+quote collection (archivally complete, but the library has no Quotes shelf/reader model — `PUBLICATION_MODEL`);
+stage-plays `ore-mutham` (likely-ready, pending per-work confirmation) and `thiruvalar-desiyampillai`/`kagithapoo`/`manimagudam`.
+NOT COMPLETE: naam, vellikkizhamai, meesai-mulaiththa-vayathil, 1982 முடியாத தொடர்கதை, நடுத்தெரு நாராயணி,
+sangatamil, kuraloviyam, iratha-kanneer. Onboarding all READY would take the catalogue **78 → ~201 works**.
+Feasibility recommendation: **B — one Wave-6 governance programme implemented as deterministic per-shelf/
+family batches** (the 104-story fiction partition and its duplicate-identity clearance are the main risk).
+**Wave 6 P1 is NOT authorized and has NOT started** — P0 is assessment only.
 
 ### Verified live state — 2026-09-04, post-Wave-5-P3 (cinema catalogue/discovery/sitemap exposure) ⚠️ SUPERSEDED (kept as history)
 
