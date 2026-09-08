@@ -282,7 +282,7 @@ prerender/`.html` increase — the largest single build expansion in the project
 ### Recommendation: **B — ONE WAVE, PARTITIONED INTERNALLY** (unchanged)
 
 One Wave-6 governance programme, implemented P1–P6 as **deterministic per-shelf/family batches**, because
-the models exist (onboarding volume, not new architecture) yet 125 works across 6 repos are far too large
+the models exist (onboarding volume, not new architecture) yet 125 works across 8 source repositories are far too large
 for one reviewable PR and the short-story duplicate-identity risk must be cleared collection-by-collection.
 Fall back to **C — multiple waves** (short-stories as their own wave) if review/production-acceptance
 burden is too high. **A — one monolithic wave — is not recommended.**

@@ -11,7 +11,7 @@ Several phases have shipped since it was written, and its work counts, shelf cou
 "last production application-code checkpoint" are stale. It is kept as history and has **not** been
 retro-edited. Where it disagrees with this section or with live GitHub, **live GitHub wins**.
 
-### Verified live state — 2026-09-08, post-Wave-5-P5 (Wave 5 COMPLETE / CLOSED — production-accepted) ✅ CURRENT
+### Verified live state — 2026-09-08, post-Wave-6-P0 (P0 census COMPLETE; P1 NOT AUTHORIZED — implementation/production boundary unchanged from Wave-5-P5) ✅ CURRENT
 
 | | |
 |---|---|
@@ -580,8 +580,9 @@ batch is **மந்திரி குமாரி / Manthiri Kumari** and **�
 (census), P1 (source freeze + data foundation), P2 (public readers/routes), P3 (catalogue/discovery/
 sitemap exposure), P4 (cross-work regression/integrity hardening) and P5 (production acceptance + durable
 control closure) are all complete. The public site is **78 works / Cinema Writing 6**. Manthiri Kumari +
-Raja Rani onboarding is fully complete. **No Wave 6 is authorized and no next onboarding wave is
-selected.**
+Raja Rani onboarding is fully complete. **Since this close, Wave 6 P0 (completed-works census) is COMPLETE
+(assessment only — see the Wave-6 P0 subsection in the CURRENT block above); Wave 6 P1 is NOT authorized
+and has NOT started.**
 
 Staging, all complete: **P0** census ✅ · **P1** source freeze + deterministic data foundation ✅ · **P2**
 public readers/routes/`/source` pages ✅ · **P3** catalogue/discovery/sitemap exposure ✅ · **P4**

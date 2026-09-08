@@ -27,10 +27,21 @@ In order, every time: fetch live control `main` → read `HANDOVER.md` completel
 
 **Treat current GitHub `main`, open PRs and deployed site state as authoritative** over any SHA, count or status paragraph written in a handover, including this file.
 
-## ⚠️ CURRENT STATE — 2026-09-08, post-Wave-5-P5 (Wave 5 COMPLETE / CLOSED — production-accepted) (supersedes everything below)
+## ⚠️ CURRENT STATE — 2026-09-08, post-Wave-6-P0 (P0 census COMPLETE; P1 NOT AUTHORIZED) (supersedes everything below)
 
 **The "Where the project actually stands" list further below stops at Phase 7 and is HISTORICAL.** Its
 work and shelf counts are stale. **Live GitHub wins over anything in it.**
+
+**Highest-precedence governance state:** Wave 5 is **COMPLETE / CLOSED** (P0–P5, production-accepted).
+**Wave 6 has begun only as its completed P0 assessment — a read-only global completed-works census — which
+is COMPLETE.** No onboarding implementation has begun; the implementation/production boundary is unchanged
+at `632476baa40ebbe94083ec41a6c8f4a26dfec77c` (tree `6a4b2cd6bdcdada399cdb27247e485527813a7b2`) and the
+published catalogue remains **78 works**. The P0 census (control PR #29,
+`projects/kalaignar-digital-library/WAVE6_COMPLETED_WORKS_CENSUS.md`) found **READY 125 / HOLD 2 /
+NOT COMPLETE 12 / 139 not-yet-onboarded candidates**; onboarding all READY would project the catalogue to
+**203 works**. **No source / implementation / route / catalogue / sitemap / production change occurred in
+P0.** **Wave 6 P0 is COMPLETE. Wave 6 P1 is NOT authorized and has NOT started — await owner authorization
+for P1** (P1 is not automatically next and no work is selected for execution).
 
 Measured at the current production boundary: implementation `main`
 **`632476baa40ebbe94083ec41a6c8f4a26dfec77c`**, tree
@@ -57,9 +68,11 @@ acceptance: `/read` shows the six Cinema cards in onboarding order, Cinema at th
 disclosure (Speeches sole over-cap); all Manthiri/Raja routes 200, invalid children 404; sitemap **3351 / 0
 dup** with **346** Cinema URLs and per-family **59/48/95/55/18/71** (Wave-5 **89 = 18+71**); Manthiri keeps
 its source-backed story/dialogue credit, Raja stays neutral. Source freeze and the four P1 hashes unchanged.
-**Wave 5 must not be reopened from stale prompts; P0–P5 are frozen historical stages. No Wave 6 is
-authorized and no next onboarding wave is selected — await owner direction.** See the Wave-5 section in
-`HANDOVER.md` for the frozen source pins, artifact hashes, route contract and durable source semantics.
+**Wave 5 must not be reopened from stale prompts; P0–P5 are frozen historical stages.** Since the Wave-5
+close, **Wave 6 P0 (completed-works census) is COMPLETE and Wave 6 P1 is NOT authorized and has NOT
+started — await owner authorization for P1** (see the Wave-6 P0 governance state at the top of this
+section and the NEXT ACTIVITY section below). See the Wave-5 section in `HANDOVER.md` for the frozen
+source pins, artifact hashes, route contract and durable source semantics.
 
 **Bulk Onboarding Wave 4 — Poetry is COMPLETE and CLOSED** (PRs #69–#73, durable close `ad998113…`).
 All six frozen Poetry source workspaces are publicly represented; Poetry went 1 → 6 and the catalogue
