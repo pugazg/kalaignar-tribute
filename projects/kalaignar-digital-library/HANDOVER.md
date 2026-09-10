@@ -1,6 +1,6 @@
 # Kalaignar Digital Library / Reading Room — Master Handover
 
-**Last updated:** 2026-09-08
+**Last updated:** 2026-09-10
 
 ---
 
@@ -11,7 +11,94 @@ Several phases have shipped since it was written, and its work counts, shelf cou
 "last production application-code checkpoint" are stale. It is kept as history and has **not** been
 retro-edited. Where it disagrees with this section or with live GitHub, **live GitHub wins**.
 
-### Verified live state — 2026-09-08, post-Wave-6-P0 (P0 census COMPLETE; P1 NOT AUTHORIZED — implementation/production boundary unchanged from Wave-5-P5) ✅ CURRENT
+### Verified live state — 2026-09-10, Wave-6 Batch-5 Novels MERGED / CLOSED ✅ CURRENT
+
+**This checkpoint has highest precedence over every lower `CURRENT` label retained as history. Live GitHub wins.**
+
+Wave 5 remains **COMPLETE / CLOSED**. Wave 6 P0 remains **COMPLETE / FROZEN**. The owner authorized
+**Wave-6 P1 → P2 → P3 for all 125 READY works** using the established **11 deterministic batches**.
+**Wave-6 P4 remains NOT AUTHORIZED.** **Batch 6 has NOT started.**
+
+### Merged implementation boundary through Batch 5
+
+| Item | Durable merged state |
+|---|---|
+| Implementation repo | `pugazg/kalaignar-autobiography` |
+| Implementation `main` (Batch-5 merge commit) | `bb0beaa0a18f97336b52319c1e7b15e62d81d1ed` |
+| Implementation `main` tree | `2fdc92b40d66c60caf4042b327babed97e53ae94` |
+| READY works merged through P3 | **17 / 125** |
+| Cumulative Wave-6 direct routes | **247** |
+| Prerender routes | **3607** = frozen 3360 baseline + 247 |
+| Prerendered `.html` | **3602** = frozen 3355 baseline + 247 |
+
+Wave-6 batch progress on merged `main`:
+
+| Batch | Family | Works | State | Route delta | Cumulative |
+|---:|---|---:|---|---:|---:|
+| 1 | Cinema / `ammaiyappan` | 1 | MERGED | +65 | 65 |
+| 2 | Drama / `kagithapoo`, `manimagudam`, `thiruvalar-desiyampillai` | 3 | MERGED | +83 | 148 |
+| 3 | Speeches / `namathu-nilai`, `idhaya-perikai`, `palli-vazhkkai` | 3 | MERGED | +6 | 154 |
+| 4 | Poetry / 8 READY works | 8 | MERGED | +30 | 184 |
+| 5 | Novels / `periya-idathup-pen`, `pudhaiyal` | 2 | **MERGED / CLOSED** | +63 | **247** |
+
+The public P4 boundary is unchanged: **catalogue 78 · public collections 1 · sitemap 3351 / 0
+duplicates · Poetry discovery 6 · Fiction discovery 3 · `/read` does not expose the Wave-6 P1–P3
+works.** Batch-5 catalogue / discovery / sitemap exposure is **0**. Do not infer public exposure from
+direct-reader route availability.
+
+### Batch 5 — PR #83 MERGED (source drift adjudicated, corrected, independently reviewed, merged)
+
+Implementation PR **#83**, `Wave 6 P1–P3 — Novels batch: Periya Idathup Pen and Pudhaiyal`, is
+**MERGED / CLOSED**. The Batch-5 Periya source-freeze drift was **independently adjudicated as
+literary-harmless but provenance-material**: the Periya subtree moved only because
+`works/periya-idathup-pen/metadata/source.md` was updated and
+`works/periya-idathup-pen/metadata/witness-arumbu-1978.md` was added (an additional, **non-controlling**
+1978 `அரும்பு` witness); the assembled reading layer stayed byte-identical. A **revised source anchor**
+was established, a narrow provenance-only correction was made on the **same PR #83** (the two
+`novel.json` literary payloads stayed byte-identical; only `provenance.json` changed), the corrected
+exact head passed a **fresh immutable-head independent review**, and it was merged and independently
+post-merge verified:
+
+- base: `5c6b5ef8901044660e607d4649238d7c66cb648d`;
+- approved PR head: `5226f10e265bff981692b9b70f834230de94a200`;
+- approved PR-head tree: `2fdc92b40d66c60caf4042b327babed97e53ae94`;
+- merge commit / current implementation `main`: `bb0beaa0a18f97336b52319c1e7b15e62d81d1ed`;
+- post-merge implementation `main` tree: `2fdc92b40d66c60caf4042b327babed97e53ae94`.
+
+**Critical post-merge integrity result: `post-merge main tree == approved PR-head tree` — PASS.** This
+exact tree equality is the durable Batch-5 close evidence.
+
+Durable literary / routing model (do **not** revive the disproved Periya 18-section assumption):
+
+- `periya-idathup-pen` — one continuous work; **7** canonical archive reading sections; landing +
+  `/source` + 7 literary sections = **9 direct routes**.
+- `pudhaiyal` — exactly **52 literary `[section]` units**: `00-arimugam` / `00-introduction` plus
+  Chapters 01–51. `front-matter.md`, `99-printer-colophon.md`, `sections/checkpoints/**`, and English
+  release/audit/workflow files are provenance/paratext, **not** literary `[section]` routes. Landing +
+  `/source` + 52 sections = **54 direct routes**.
+- Batch-5 arithmetic = **9 + 54 = 63 direct routes**; cumulative Wave-6 routes = **184 → 247** (merged).
+
+### Batch-5 source boundary — durable
+
+- source repo: `pugazg/kalaignar-novels`;
+- reviewed/adjudicated active provenance anchor: commit `d6679e46051ab93de8da6361413c39e7db468cfe`,
+  tree `e4ea40ffd495fe084221541f9ca5fd48742dee3e`;
+- target subtree pins: `works/periya-idathup-pen` `47168b63142012ade56ec832e8977c494d0027a6`,
+  `works/pudhaiyal` `450d7da31a0f2eed5c12d43e4082edb758134618`;
+- literary snapshot/freeze retained inside the byte-stable `novel.json` payloads:
+  `a99f135467dd38e294faff31088a937994790a47`.
+
+At this control-sync check, novels live `main` was `14167ec9e23f7c8e93eb899746196461dcc303d2` / tree
+`700c78475da4e081290d49bd22b7e259e3f4ffd0`, and **both target subtrees still equal the reviewed pins
+above**. Live novels `main` may advance for unrelated works; that volatile SHA/tree is context only —
+the immutable Batch-5 provenance anchor remains `d6679e46…`. Do not treat unrelated source-main
+movement as Batch-5 drift while the two target subtree pins remain equal.
+
+**Next action:** none authorized by this checkpoint. Batch 5 P1–P3 is MERGED / CLOSED. A fresh chat must
+first fetch live state and await explicit owner direction for the next execution activity. **Do not
+start Batch 6. Do not start or authorize Wave-6 P4.**
+
+### Verified live state — 2026-09-08, post-Wave-6-P0 (P0 census COMPLETE; P1 NOT AUTHORIZED — implementation/production boundary unchanged from Wave-5-P5) ⚠️ SUPERSEDED (kept as history)
 
 | | |
 |---|---|
@@ -56,7 +143,7 @@ P1 payload hashes are unchanged. **Wave 5 must not be reopened from stale prompt
 historical stages unless a newly discovered source-backed regression requires repair.** See the Wave-5
 section below.
 
-### Wave 6 — P0 completed-works census ✅ COMPLETE (assessment only; P1 NOT AUTHORIZED)
+### Wave 6 — P0 completed-works census ✅ COMPLETE — HISTORICAL / SUPERSEDED (assessment-only checkpoint)
 
 Owner-authorized **Wave 6 P0 only** — a read-only global census of completed archival works and their
 Digital-Library readiness. **No onboarding is authorized; no implementation/source/route/catalogue/
