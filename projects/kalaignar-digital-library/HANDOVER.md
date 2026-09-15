@@ -1,6 +1,6 @@
 # Kalaignar Digital Library / Reading Room — Master Handover
 
-**Last updated:** 2026-09-10
+**Last updated:** 2026-09-15
 
 ---
 
@@ -11,9 +11,123 @@ Several phases have shipped since it was written, and its work counts, shelf cou
 "last production application-code checkpoint" are stale. It is kept as history and has **not** been
 retro-edited. Where it disagrees with this section or with live GitHub, **live GitHub wins**.
 
-### Verified live state — 2026-09-10, Wave-6 Batch-5 Novels MERGED / CLOSED ✅ CURRENT
+### Verified live state — 2026-09-15, Wave-6 Batch-6 P1–P3 + P4 Batches 1–6 MERGED / CLOSED ✅ CURRENT
 
-**This checkpoint has highest precedence over every lower `CURRENT` label retained as history. Live GitHub wins.**
+**This checkpoint has highest precedence over every lower `CURRENT`/`SUPERSEDED` label retained as history. Live GitHub wins.**
+
+Wave 5 remains **COMPLETE / CLOSED**. Wave 6 P0 remains **COMPLETE / FROZEN**. Since the Batch-5 checkpoint below, **Wave-6 Batch 6 (Essays & Articles) P1–P3 merged (PR #84)** and **Wave-6 P4 for the completed Batches 1–6 merged (PR #85)**. **Wave-6 P5 is NOT authorized. Wave-6 P6 is NOT authorized. Batch 7 has NOT started.** No new source ingestion is authorized. Live GitHub is authoritative.
+
+#### Merged implementation boundary (authoritative)
+
+| Item | Durable merged state |
+|---|---|
+| Implementation repo | `pugazg/kalaignar-autobiography` |
+| Implementation `main` (post-P4 squash merge) | `2ca4d19830755864acec153f99f2659f413802cb` |
+| Implementation `main` tree | `837c92893ab248f6185a36dc3b13f353495f5c9d` |
+| READY works merged through P3 | **22 / 125** |
+| Cumulative Wave-6 direct routes | **321** |
+| Prerender routes | **3681** = frozen 3360 baseline + 321 |
+| Prerendered `.html` | **3676** = frozen 3355 baseline + 321 |
+
+Wave-6 batch progress on merged `main` (P1–P3 direct-reader routes):
+
+| Batch | Family | Works | State | Route delta | Cumulative |
+|---:|---|---:|---|---:|---:|
+| 1 | Cinema / `ammaiyappan` | 1 | MERGED | +65 | 65 |
+| 2 | Drama / `kagithapoo`, `manimagudam`, `thiruvalar-desiyampillai` | 3 | MERGED | +83 | 148 |
+| 3 | Speeches / `namathu-nilai`, `idhaya-perikai`, `palli-vazhkkai` | 3 | MERGED | +6 | 154 |
+| 4 | Poetry / 8 READY works | 8 | MERGED | +30 | 184 |
+| 5 | Novels / `periya-idathup-pen`, `pudhaiyal` | 2 | MERGED | +63 | 247 |
+| 6 | Essays & Articles / 5 READY works | 5 | **MERGED / CLOSED** | +74 | **321** |
+
+#### Wave-6 Batch 6 — Essays & Articles P1–P3 MERGED / CLOSED (PR #84)
+
+Implementation PR **#84** merged Batch 6. Merge commit / prior implementation `main`:
+`d6621b71256ae99b1c89b4f2091513dcc5f96626`; merged tree `55823ff9742969e6868741312740aec06ebfd4ff`.
+
+| Work | Literary articles |
+|---|---:|
+| `ina-muzhakkam` | 6 |
+| `kolaikkalam` | 6 |
+| `kudumbaththin-nalvilakku` | 1 |
+| `sinthanaiyum-seyalum` | 50 |
+| `vedhanai-ch-siraiyinindrum-viduthalai-pera` | 1 (government message / `செய்தி`) |
+
+Batch-6 totals: **5 works · 64 literary articles · 74 direct routes**; cumulative Wave-6 P3 **247 → 321**.
+
+Batch-6 source boundary (durable):
+- source repo: `pugazg/kalaignar-essays`;
+- frozen source anchor: commit `564add708b8bd942fa9d5f505b083955248873d0`, tree `14a4a6cd81dbd13145f289734812583cac9b1403`;
+- target subtree pins:
+  - `ina-muzhakkam` `4e6a28cb93a1eb2b8f376a1abebc938a1d7f8ef9`
+  - `kolaikkalam` `e1eff4df14bd56e37575f15651e400f87b332ff0`
+  - `kudumbaththin-nalvilakku` `1d1001992ff376056da5cba8d54f7dd79901566b`
+  - `sinthanaiyum-seyalum` `488cd61fa8df5aafa5a9a505001ce417b2892e90`
+  - `vedhanai-ch-siraiyinindrum-viduthalai-pera` `f3c43511240df098b175b9d39cdcc6f4318f2230`
+
+Batch-6 durable semantic restraints:
+- `kudumbaththin-nalvilakku`: no established edition; no invented publication year; `controllingIsFirstEdition: null`; `editionStatus: "not-established"`; printed-page evidence remains **2–9** (do not invent printed pages 1 or 10).
+- `vedhanai-ch-siraiyinindrum-viduthalai-pera`: a government `செய்தி` / message, **NOT a speech**; no fabricated date or venue; no established edition; `controllingIsFirstEdition: null`; `editionStatus: "not-established"`.
+- `sinthanaiyum-seyalum`: exactly **50 articles**; 2010 third edition; five transfer PDFs.
+
+#### Wave-6 P4 for Batches 1–6 — MERGED / CLOSED (PR #85)
+
+Implementation PR **#85**, `Wave 6 P4 — Publish completed Batches 1–6 to catalogue, discovery and sitemap`, is **MERGED / CLOSED**:
+- reviewed/final head: `c65070845e75337ea65989bc83f792739983f795`;
+- approved head tree: `837c92893ab248f6185a36dc3b13f353495f5c9d`;
+- squash merge commit / current implementation `main`: `2ca4d19830755864acec153f99f2659f413802cb`;
+- merged `main` tree: `837c92893ab248f6185a36dc3b13f353495f5c9d`.
+
+**Critical post-merge integrity result: `post-merge main tree == approved PR-head tree` — PASS.** This exact tree equality is the durable Wave-6 P4 close evidence.
+
+Exact-head Library CI before merge — run `34964450981`: `typecheck • build` SUCCESS · `archival validators` SUCCESS · Vercel SUCCESS.
+
+P4 covered **Batches 1–6 only (22 works)** and created **ZERO new reader routes** — it exposed exactly the existing cumulative **321** P3 direct routes.
+
+Public inventory after P4 (this supersedes the Batch-5 boundary of catalogue 78 / sitemap 3351 / 247 routes below):
+
+| Surface | Before (P3) | After (P4) |
+|---|---:|---:|
+| Catalogue works | 78 | **100** |
+| Public collections | 1 | **1** |
+| `/read` discovery entries | 42 | **64** |
+| Initially visible (cap 6) | 34 | **39** |
+| Sitemap URLs | 3351 | **3672** |
+| Sitemap duplicates | 0 | **0** |
+| Prerender routes | 3681 | **3681** |
+| Prerendered `.html` | 3676 | **3676** |
+
+Exact catalogue shelf census (9 non-empty shelves, total **100**): Life Writing 1 · Letters 1 · **Fiction 41** · **Poetry 14** · **Drama 8** · **Cinema Writing 7** · **Speeches 17** · **Essays & Articles 9** · Literary Commentary 2.
+
+Per-shelf `/read` discovery (total **64**): Life Writing 1 · Letters 1 · **Fiction 5** · **Poetry 14** · **Drama 8** · **Cinema Writing 7** · **Speeches 17** · **Essays & Articles 9** · Literary Commentary 2. Over-cap shelves (each rendering one disclosure): Poetry, Drama, Cinema Writing, Speeches, Essays & Articles. **Fiction discovery remains 5 despite 41 Fiction works** because the existing 1977 short-story anthology collection collapses its 37 members into one discovery entry.
+
+Sitemap: the exposed Wave-6 route set is exactly set-equal to `data/internal/wave6/p3-routes.json.cumulativeRoutes` (**missing 0 · extra 0 · duplicate 0**); the Wave-6 sitemap delta is **321**.
+
+Build boundary derivation: frozen baseline 3360 / 3355 + Wave-6 existing P3 routes 321 = **3681 / 3676**. P4 created no routes.
+
+Durable P4 record: implementation contains `data/internal/wave6/p4-integration.json`. The historical P3 manifest `data/internal/wave6/p3-routes.json` was intentionally **not rewritten** — its `discoverable=false` / `sitemapExposed=false` values are retained as **P3-phase historical evidence**, not current P4 public state.
+
+#### P4 semantic restraint (independently corrected before merge)
+
+P4 passed an independent semantic correction before merge. `oruthalaik-kathal` remains one **verse-novel / poetry publication** of **11 source sections — NOT 11 independent poems**. Final public metadata is **data-driven from `readingUnitKind` / `workForm`**: the landing says **11 source sections**, the child route says **section N of 11**, and normal poetry publications retain poem/poems wording. **Do not regress this into "11 poems."**
+
+Other durable P4 restraints:
+- Ammaiyappan archival segments are not claimed as source-numbered scenes.
+- Kagithapoo has no invented Scenes 22/23.
+- Thiruvalar has no invented numbered scene/act system and retains its source-condition qualification.
+- Namathu Nilai has no fabricated single date.
+- Idhaya Perikai / Palli Vazhkkai have no invented date or venue.
+- 1975 Kaviyaranga publication keeps item ordinals 01 / 02 / 04; excluded ordinal 03 remains absent.
+- Periya Idathup Pen = **7 archive reading sections**, never 18.
+- Pudhaiyal = **52 literary units / 54 total direct routes**, never "54 literary sections."
+- Kudumbaththin has no invented edition/year.
+- Vedhanai remains a government message, not a speech.
+
+**Next action:** none authorized by this checkpoint. Wave-6 Batch-6 P1–P3 and Wave-6 P4 for Batches 1–6 are MERGED / CLOSED. **P5 is NOT authorized. P6 is NOT authorized. Batch 7 has NOT started. No new source ingestion is authorized.** A fresh chat must first fetch live GitHub state (authoritative) and await explicit owner direction before any next execution activity. Do not imply P5 automatically follows P4.
+
+### Verified live state — 2026-09-10, Wave-6 Batch-5 Novels MERGED / CLOSED ⚠️ SUPERSEDED (kept as history)
+
+**Superseded by the 2026-09-15 checkpoint above; retained as history. Live GitHub wins.**
 
 Wave 5 remains **COMPLETE / CLOSED**. Wave 6 P0 remains **COMPLETE / FROZEN**. The owner authorized
 **Wave-6 P1 → P2 → P3 for all 125 READY works** using the established **11 deterministic batches**.
