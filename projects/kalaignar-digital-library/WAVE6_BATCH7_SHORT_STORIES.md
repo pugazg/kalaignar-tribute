@@ -33,7 +33,7 @@ Cross-checked three independent ways, all = 116:
 |---:|---|---|---|---:|---|
 | 1 | 2008 `கலைஞர் சொன்ன கதைகள்` | `TVA_BOK_0065857` | `8e1d32ca52140bd4eed7bb5efc97b2c1e7eebac5` | **40** | 40/40 PASS · 40/40 PASS — CLOSED |
 | 2 | 2004 `கலைஞரின் குட்டிக் கதைகள்` | `TVA_BOK_0065567` | `a5d4a2005fb15b585023923bfa0f552c3e286bff` | **34** | 34/34 PASS · 34/34 PASS — CLOSED |
-| 3 | 1987 `கலைஞர் சொன்ன குட்டிக் கதைகள்` (2nd ed.) | `TVA_BOK_0065566` | `c5ad6dc4caf787d79175f7a83ef3fef1c9d74fde` | **23** | Tamil/source CLOSED (23 distinct + 2 witness). English from 1987 source not authorized; English exists via the canonicals' own homes. |
+| 3 | 1987 `கலைஞர் சொன்ன குட்டிக் கதைகள்` (2nd ed.) | `TVA_BOK_0065566` | `c5ad6dc4caf787d79175f7a83ef3fef1c9d74fde` | **23** | Tamil/source PASS / CLOSED — 25/25 identities resolved as 23 distinct canonicals + 2 witness-only. English 25/25 PASS / CLOSED; the 2 witness-only entries use 1987 witness-local English and do not overwrite controlling canonical English. |
 | 4 | 2009 `16 கதையினிலே` | `TVA_BOK_0065745` | `4cd568ad0cdb58698dae5671936d184cec35b807` | **5** | 5/5 PASS · 5/5 PASS — CLOSED (11 existing-canonical witnesses separate) |
 | 5 | 1982 `முடியாத தொடர்கதை` | `TVA_BOK_0065572` | `126630867369f525934092b40dda20e667b49ffa` | **6** | Tamil/source CLOSED · English CLOSED |
 | 6 | Periodical canonicals (3 magazines) | — | (story-local, under `stories/`) | **3** | Each Tamil/source CLOSED · English CLOSED |
