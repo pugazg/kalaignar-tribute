@@ -2,6 +2,31 @@
 
 **Wave 6 P0 COMPLETE — census only. P1 NOT STARTED / NOT AUTHORIZED.**
 
+---
+
+> ## 🔄 SHORT-STORY CENSUS REFRESH — 2026-09-16 (supersedes the short-story counts below)
+>
+> Batches **1–6 are implemented** (Wave-6 P1–P3 through Batch 6, and P4 for Batches 1–6, MERGED / CLOSED;
+> implementation `main` `2ca4d19830755864acec153f99f2659f413802cb`, tree `837c92893ab248f6185a36dc3b13f353495f5c9d`;
+> catalogue 100, collections 1, `/read` 64 / 39 visible, sitemap 3672 / 0 dup, build 3681 / 3676).
+>
+> The short-story population was **re-verified from live `pugazg/kalaignar-short-stories`**
+> (`main` `7205a10892d0b208df2617766844f480b6a2c798`, tree `1be34cc368fbc96ff72933a004a074ef840168ee`)
+> and is now **116 canonical short-story works**, consolidated into **one combined future Batch 7**
+> (internal source/provenance groups are validation partitions only — the old B7–B11 split is superseded).
+> This refreshes the stale **103** figure in the P0 body below (which remains as the 2026-09-08 P0 assessment).
+>
+> - **Batch 7 = 116 canonical short stories** — deterministic enumeration + source pins + witness and
+>   cross-repository exclusions + collection-model audit live in
+>   [`WAVE6_BATCH7_SHORT_STORIES.md`](./WAVE6_BATCH7_SHORT_STORIES.md).
+> - Derivation: `2008 40 + 2004 34 + 1987 23 + 2009 5 + 1982 6 + periodical 3 + 1976 2 + 1969 1 + 1953-thappivittargal 1 + 1997 1 = 116`
+>   (`154 stories/ dirs − 37 1977-anthology members − 1 kizhavan-kanavu = 116`).
+> - Newly completed since the old 103: **+13** = 1982 (6), 1976 (2), periodical (3), 1969 (1), 1953 `தப்பிவிட்டார்கள்` (1). **1982 is a 6-story anthology, not 5.**
+> - **Refreshed Wave-6 completed/READY population = 138** = 22 already-implemented non-short-story Wave-6 works + 116 Batch-7 short stories. (Old total 125 = 22 + 103.)
+> - **Intentional exclusions (do NOT count as Batch-7 short stories):** `தேனலைகள்` (1958) — already represented in the essays workstream under `மீசை முளைத்த வயதில்` (cross-repository overlap; its 12 headings are NOT Batch-7 candidates); `நடுத்தெரு நாராயணி` — handled via the separate `அரும்பு` / short-novel path.
+> - **Projections (future state only, nothing implemented):** if Batch 7 onboards all 116, catalogue `100 + 116 = 216`, Fiction shelf `41 + 116 = 157`.
+> - **Batch-7 P1 has NOT started. Wave-6 P5 / P6 have NOT started.** No implementation/public/source change.
+
 Read-only assessment of which completed archival works across the `pugazg` Kalaignar source
 repositories are ready for Digital Library onboarding. Authorizes **no** onboarding and **no**
 implementation/source change. Classifications: **READY / HOLD / ALREADY ONBOARDED / NOT COMPLETE**.

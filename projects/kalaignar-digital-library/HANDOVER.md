@@ -1,6 +1,6 @@
 # Kalaignar Digital Library / Reading Room — Master Handover
 
-**Last updated:** 2026-09-15
+**Last updated:** 2026-09-16
 
 ---
 
@@ -11,9 +11,25 @@ Several phases have shipped since it was written, and its work counts, shelf cou
 "last production application-code checkpoint" are stale. It is kept as history and has **not** been
 retro-edited. Where it disagrees with this section or with live GitHub, **live GitHub wins**.
 
-### Verified live state — 2026-09-15, Wave-6 Batch-6 P1–P3 + P4 Batches 1–6 MERGED / CLOSED ✅ CURRENT
+### Verified live state — 2026-09-16, Wave-6 short-story census refreshed → combined Batch 7 (116 works) ✅ CURRENT
 
-**This checkpoint has highest precedence over every lower `CURRENT`/`SUPERSEDED` label retained as history. Live GitHub wins.**
+**This checkpoint has highest precedence over every lower `CURRENT`/`SUPERSEDED` label retained as history. Live GitHub wins. This is a CONTROL-ONLY census refresh — no implementation, payload, route, catalogue, discovery, sitemap, or source change was made.**
+
+Wave 5 remains **COMPLETE / CLOSED**. Wave 6 P0 remains **COMPLETE / FROZEN**. Implementation remains closed through **Batches 1–6 (Wave-6 P1–P3 through Batch 6 + P4 for Batches 1–6, MERGED / CLOSED)** — unchanged: implementation `main` `2ca4d19830755864acec153f99f2659f413802cb`, tree `837c92893ab248f6185a36dc3b13f353495f5c9d`; catalogue **100**, collections **1**, `/read` **64 / 39 visible**, sitemap **3672 / 0 dup**, build **3681 / 3676**; post-merge tree equality PASS (see the 2026-09-15 checkpoint below).
+
+The short-story programme was **re-verified from live `pugazg/kalaignar-short-stories`** (`main` `7205a10892d0b208df2617766844f480b6a2c798`, tree `1be34cc368fbc96ff72933a004a074ef840168ee`). The old census figure of **103** short stories is superseded: all currently completed canonical short stories are consolidated into **one combined future Batch 7 = 116 canonical works**. Internal source/provenance groups are **validation partitions only** (the old B7–B11 split is superseded — Batch 7 is a single implementation batch).
+
+- **Batch 7 = 116 canonical short stories.** Deterministic enumeration, source pins, witness/cross-repository exclusions and the collection-model audit are in [`WAVE6_BATCH7_SHORT_STORIES.md`](./WAVE6_BATCH7_SHORT_STORIES.md); the master census carries the refresh banner.
+- Derivation: `2008 40 + 2004 34 + 1987 23 + 2009 5 + 1982 6 + periodical 3 + 1976 2 + 1969 1 + 1953-thappivittargal 1 + 1997 1 = 116` (and `154 stories/ dirs − 37 1977-anthology members − 1 kizhavan-kanavu = 116`). **+13 since the old 103** = 1982 (6), 1976 (2), periodical (3), 1969 (1), 1953 `தப்பிவிட்டார்கள்` (1). **1982 is a 6-story anthology, not 5** (`நந்தியூர் நரியப்பன்` and `நரியூர் நந்தியப்பன்` are separate canonical stories).
+- **Refreshed Wave-6 completed/READY population = 138** = 22 already-implemented non-short-story Wave-6 works + 116 Batch-7 short stories (old total was 125 = 22 + 103).
+- **Intentional exclusions (not short-story backlog):** `தேனலைகள்` (1958) — already represented in the essays / கட்டுரைகள் workstream under `மீசை முளைத்த வயதில்` (cross-repository overlap; its 12 mapped headings are NOT Batch-7 candidates; do not silently reopen); `நடுத்தெரு நாராயணி` — intentionally excluded, handled via the separate `அரும்பு` / short-novel source path.
+- Witness-only source entries (1950, 1953-naadum, 1956, 1979, and the per-collection witnesses of 1976/1997/1969/1953/1987/2009/periodical) do **not** become duplicate LibraryWorks.
+- **Projections (future state only — nothing implemented):** onboarding all 116 later would give catalogue `100 + 116 = 216`, Fiction shelf `41 + 116 = 157`.
+- **Batch-7 P1 has NOT started. Wave-6 P5 / P6 have NOT started.** No implementation/public/source/control-programme change; await explicit owner authorization.
+
+### Verified live state — 2026-09-15, Wave-6 Batch-6 P1–P3 + P4 Batches 1–6 MERGED / CLOSED ⚠️ SUPERSEDED (kept as history)
+
+**Superseded by the 2026-09-16 census-refresh checkpoint above (which changed control docs only; this checkpoint's implementation boundary remains current). Live GitHub wins.**
 
 Wave 5 remains **COMPLETE / CLOSED**. Wave 6 P0 remains **COMPLETE / FROZEN**. Since the Batch-5 checkpoint below, **Wave-6 Batch 6 (Essays & Articles) P1–P3 merged (PR #84)** and **Wave-6 P4 for the completed Batches 1–6 merged (PR #85)**. **Wave-6 P5 is NOT authorized. Wave-6 P6 is NOT authorized. Batch 7 has NOT started.** No new source ingestion is authorized. Live GitHub is authoritative.
 
