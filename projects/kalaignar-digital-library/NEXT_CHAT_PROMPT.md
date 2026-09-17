@@ -8,7 +8,7 @@ bodies or this bootstrap if live state differs.**
 
 1. Fetch live `pugazg/kalaignar-tribute` `main`.
 2. Read `projects/kalaignar-digital-library/HANDOVER.md` **completely** (highest-precedence CURRENT
-   checkpoint is **2026-09-17 — Batch-7 P2–P4 merged (PR #87) + P5 production acceptance PASS**).
+   checkpoint is **2026-09-17 — Batch-7 P2–P4 merged (PR #87) + P5 production acceptance PASS + Wave 6 COMPLETE / CLOSED / FROZEN at P5**).
 3. Read `projects/kalaignar-digital-library/WAVE6_P5_PRODUCTION_ACCEPTANCE.md` (the durable acceptance
    record), plus the top banners of `WAVE6_COMPLETED_WORKS_CENSUS.md` and `WAVE6_BATCH7_SHORT_STORIES.md`.
 4. Inspect all open control PRs.
@@ -78,7 +78,8 @@ Batches 1–6 = 321 ; Batch-7 stories = 232 ; Batch-7 collections = 5 ; total = 
 - **The reviewer independently reviews exact live state and supplies prompts.**
 - **Live GitHub and production beat copied prompts/reports.**
 - P5 was closed by control-only PR **#33** (`Wave 6 P5 — production acceptance and durable control
-  close-out`), **MERGED**. This final-closure declaration is a separate control-only PR awaiting
-  independent immutable-head review. There is **no** open implementation PR.
+  close-out`). Wave-6 final closure at P5 is recorded by control-only PR **#34** (`Wave 6 — declare
+  final closure at P5`). Both are control-only; **no** implementation change belongs to this closure.
+  Live GitHub remains authoritative for current PR state.
 
 **STOP. Wave 6 is COMPLETE / CLOSED / FROZEN at P5; there is no pending P6. Fetch live GitHub and await explicit owner authorization for a new wave or a specifically scoped maintenance/repair activity before any further execution.**
