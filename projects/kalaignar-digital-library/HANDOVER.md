@@ -11,9 +11,25 @@ Several phases have shipped since it was written, and its work counts, shelf cou
 "last production application-code checkpoint" are stale. It is kept as history and has **not** been
 retro-edited. Where it disagrees with this section or with live GitHub, **live GitHub wins**.
 
-### Verified live state — 2026-09-17, Wave-6 Batch 7 P2–P4 MERGED (PR #87) + P5 PRODUCTION ACCEPTANCE PASS — WAVE 6 COMPLETE / CLOSED / FROZEN at P5 ✅ CURRENT
+### Verified live state — 2026-09-17, WAVE 7 P0 — CENSUS / READINESS COMPLETE / REVIEWED / FROZEN ✅ CURRENT
 
-**This checkpoint has highest precedence over every lower `CURRENT`/`SUPERSEDED` label retained as history. Live GitHub and production win. This is a CONTROL-ONLY close-out — P5 made no implementation, payload, route, catalogue, discovery, sitemap, or source change (implementation delta = 0, source delta = 0).**
+**Highest-precedence checkpoint. Live GitHub wins. CONTROL DOCUMENTATION ONLY — no implementation, payload, catalogue, discovery, route, sitemap, reader, source, or production change (implementation delta = 0, source delta = 0, production delta = 0). WAVE 7 P1 — NOT STARTED / NOT AUTHORIZED.**
+
+Wave 6 remains **COMPLETE / CLOSED / FROZEN at P5** (retained below; not reopened). The first authorized activity after Wave-6 closure was the **read-only Wave-7 P0 completed-works census + Digital-Library readiness audit**, now reviewed and frozen. The durable authority is [`WAVE7_COMPLETED_WORKS_CENSUS.md`](./WAVE7_COMPLETED_WORKS_CENSUS.md).
+
+- **ALREADY_ONBOARDED baseline (live impl `2a1029482f…` / tree `06c7ae86…`):** 216 works (Fiction 157, Speeches 17, Poetry 14, Essays 9, Drama 8, Cinema 7, Lit-commentary 2, Life-writing 1, Letters 1) · 6 collections · `STORY_SLUGS` 154 · `/read` 77/40.
+- **Frozen Wave-7 P0 candidate census:** `READY 115 · READY_WITH_QUALIFICATION 2 · HOLD_PUBLICATION_MODEL 1 · HOLD_OWNER_DECISION 1 · NOT_COMPLETE 9 = 128 unique not-yet-onboarded candidates` (no range remains).
+  - READY 115 = Cinema 3 + Drama 1 + Novels 5 + Essays 6 + **Public speeches 97** (முத்துக் குளியல் Part I 61 + Part II 36, intersection 0) + Assembly 3.
+  - READY WITH QUALIFICATION = `nachuk-koppai` (1 scan-22 hold), `kuraloviyam` (6 Parts closed; Part-001 scans 13/14/15/19 permanently source-limited).
+  - HOLD = `chinna-chinna-malargal` (PUBLICATION_MODEL — no Quotes shelf), `ore-mutham` (OWNER_DECISION — 28/131 terminal holds).
+  - NOT COMPLETE = `sangatamil`, `payumpuli-pandaraka-vanniyan`, `kalaivanar-nsk-memorial-day-audio-06`, + 6 assembly 2007 financial-statement Part-1 units.
+- **Identity safeguards:** `arumbu` & `nadutheru-narayani` = two separate READY works (shared 1978 அரும்பு provenance; not merged); C37 `pazhaiya-varala*` counted once (duplicate slug-variant recorded); Audio-06 is a distinct 00:26:22.080 recording (≠ onboarded 00:07:23.559), NOT COMPLETE. Containers முத்துக் குளியல் I/II, இருளும் ஒளியும், arumbu-1978, 2007 anthologies are not extra catalogue works.
+- **Source drift during P0:** `kalaignar-novels` advanced to `9f9c187feb…` (payumpuli Part-001 readiness); the 5 closed novels unchanged, payumpuli remains NOT COMPLETE, classifications unaffected. All 13 source pins are recorded in the census.
+- **Projection (NOT implementation state):** READY-only `216 + 115 = 331`; with both qualified `216 + 117 = 333`. **Wave 7 P1 is NOT authorized by this record.** Future work requires explicit owner authorization.
+
+### Verified live state — 2026-09-17, Wave-6 Batch 7 P2–P4 MERGED (PR #87) + P5 PRODUCTION ACCEPTANCE PASS — WAVE 6 COMPLETE / CLOSED / FROZEN at P5 ✅ WAVE-6 CLOSURE (retained; latest activity is the Wave-7 P0 checkpoint above)
+
+**Wave-6 closure record — still valid, retained as history; superseded only as "latest activity" by the Wave-7 P0 checkpoint above. Live GitHub and production win. This was a CONTROL-ONLY close-out — P5 made no implementation, payload, route, catalogue, discovery, sitemap, or source change (implementation delta = 0, source delta = 0).**
 
 Wave 5 remains **COMPLETE / CLOSED**. Wave 6 P0 remains **COMPLETE / FROZEN**. **Batch 7 is now fully implemented and published:** Batch-7 **P1 merged (PR #86)**, and **P2–P4 merged (PR #87)** — the 116 canonical short stories are published as independent Fiction works and grouped into 5 new public collections. **Wave-6 P5 production acceptance = PASS, and Wave 6 is now COMPLETE / CLOSED / FROZEN at P5.**
 

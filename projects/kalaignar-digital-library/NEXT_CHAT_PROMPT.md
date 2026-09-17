@@ -1,4 +1,4 @@
-# New Chat Bootstrap Prompt — Kalaignar Digital Library / Wave 6 COMPLETE · CLOSED · FROZEN at P5
+# New Chat Bootstrap Prompt — Kalaignar Digital Library / Wave 7 P0 census FROZEN (Wave 6 CLOSED at P5)
 
 Continue as my **independent reviewer and prompt-provider for Claude Code** for the Kalaignar Digital
 Library / Reading Room. **Live GitHub and production are authoritative. Do not trust copied SHAs, PR
@@ -18,6 +18,10 @@ bodies or this bootstrap if live state differs.**
 ## CURRENT state
 
 - **Live GitHub / production are authoritative.**
+- **WAVE 7 P0 — CENSUS / READINESS COMPLETE / REVIEWED / FROZEN. WAVE 7 P1 — NOT STARTED / NOT AUTHORIZED.** The read-only Wave-7 P0 completed-works census + Digital-Library readiness audit is the current highest-precedence activity; durable authority is [`WAVE7_COMPLETED_WORKS_CENSUS.md`](./WAVE7_COMPLETED_WORKS_CENSUS.md). It made **no** implementation/source/production change (all deltas 0).
+  - Frozen candidate census: `READY 115 · READY_WITH_QUALIFICATION 2 · HOLD_PUBLICATION_MODEL 1 · HOLD_OWNER_DECISION 1 · NOT_COMPLETE 9 = 128` unique not-yet-onboarded candidates (READY 115 = Cinema 3 + Drama 1 + Novels 5 + Essays 6 + Public speeches 97 + Assembly 3).
+  - `ALREADY_ONBOARDED` = the 216 live works below; existing-work maintenance, witness-only, duplicate workspaces, and publication/collection containers are outside the 128.
+  - **Wave 7 P1 is NOT authorized.** Do not begin implementation, payloads, routes, catalogue, discovery, sitemap or a new census; the next execution activity requires explicit owner authorization.
 - **Wave 5: COMPLETE / CLOSED.** **Wave 6: COMPLETE / CLOSED / FROZEN at P5** — the established lifecycle is P0 → P1 → P2 → P3 → P4 → P5; P0–P5 are frozen; **there is no Wave-6 P6.**
 - **Wave 6 P1–P5 (the full lifecycle) are merged/accepted:**
   - Batches 1–6 (22 works) merged (P1–P3 + P4 for Batches 1–6).
@@ -67,8 +71,7 @@ Batches 1–6 = 321 ; Batch-7 stories = 232 ; Batch-7 collections = 5 ; total = 
   likewise ran P0–P5 and closed at P5). The owner reviewed the read-only P6 definition audit and accepted
   the determination that no P6 is required. **Do not invent a P6, and do not read the historical
   `P6 NOT STARTED / NOT AUTHORIZED` guard (retained inside superseded checkpoints) as pending Wave-6 work.**
-- Do **not** automatically start Wave 7, **do not** automatically run a fresh census, and **do not** ingest
-  new source material.
+- Wave 7 has since begun: **Wave 7 P0 (census/readiness) was owner-authorized, completed READ-ONLY, and is now FROZEN** (see the CURRENT state above). **Wave 7 P1 is NOT STARTED / NOT AUTHORIZED** — do not begin implementation, run a fresh census, or ingest new source material without explicit owner authorization.
 - The next activity requires **explicit owner authorization** for either (a) a **new wave**, or (b) a
   **specifically scoped maintenance/repair activity** on already-published works — never framed as "P6".
 
@@ -82,4 +85,4 @@ Batches 1–6 = 321 ; Batch-7 stories = 232 ; Batch-7 collections = 5 ; total = 
   final closure at P5`). Both are control-only; **no** implementation change belongs to this closure.
   Live GitHub remains authoritative for current PR state.
 
-**STOP. Wave 6 is COMPLETE / CLOSED / FROZEN at P5; there is no pending P6. Fetch live GitHub and await explicit owner authorization for a new wave or a specifically scoped maintenance/repair activity before any further execution.**
+**STOP. Wave 6 is COMPLETE / CLOSED / FROZEN at P5; Wave 7 P0 census/readiness is COMPLETE / REVIEWED / FROZEN; Wave 7 P1 is NOT STARTED / NOT AUTHORIZED. Fetch live GitHub and await explicit owner authorization (Wave-7 P1, another wave, or a specifically scoped maintenance/repair activity) before any further execution.**
