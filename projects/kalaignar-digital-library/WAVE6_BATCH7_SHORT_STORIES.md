@@ -2,6 +2,16 @@
 
 **Created:** 2026-09-16 · **Control-only census refresh. No implementation, payload, route, catalogue, source, or control-programme change is authorized by this document.**
 
+> ## ✅ CLOSURE STATUS — 2026-09-17: Batch 7 IMPLEMENTED, PUBLISHED and PRODUCTION-ACCEPTED
+>
+> **Highest-precedence banner (live GitHub/production win). The deterministic 116-work population and all source decisions below are UNCHANGED; this only records that the batch has shipped.** The body's "Batch-7 P1 has NOT started" line is now historical.
+> - **P1 merged via PR #86**; **P2–P4 merged via PR #87** (implementation `main` `2a1029482f95fbc8cae6417e3a88dcbb1c8e1c3e`, tree `06c7ae8646ba85e61c973fecb5945ffbec256c39`).
+> - **116 / 116 published** as independent Fiction works (catalogue 100→216, Fiction 41→157, `STORY_SLUGS` 38→154).
+> - **5 public collections created**, membership + ordinals taken from each publication's own printed source order: `2008` 40, `2004` 34, `1987` 25, `1982` 6, `2009` 16 (plus the existing 1977 anthology = 6 total). Plural membership is live: `jaadi-kutti-poduma` (2008 + 1987, ordinal 2), `kuruvi-rameswaram` (2004 + 1987, ordinal 11), and the eleven 1977 canonicals reprinted in 2009 (1977 + 2009) — each still a single canonical work; the 2009 collection-local page/scan extents do not overwrite 1977 provenance.
+> - **Source freeze unchanged:** `pugazg/kalaignar-short-stories` `main` `7205a10892d0b208df2617766844f480b6a2c798`, tree `1be34cc368fbc96ff72933a004a074ef840168ee`.
+> - **Witness-only entries were NOT promoted to canonicals; intentional exclusions unchanged:** `தேனலைகள்` and `நடுத்தெரு நாராயணி` remain excluded; `நந்தியூர் நரியப்பன்` and `நரியூர் நந்தியப்பன்` remain distinct works; 1982 remains a 6-story anthology.
+> - **Wave-6 P5 production acceptance = PASS** (2026-09-17). See [`WAVE6_P5_PRODUCTION_ACCEPTANCE.md`](./WAVE6_P5_PRODUCTION_ACCEPTANCE.md). **P6 NOT STARTED / NOT AUTHORIZED.**
+
 Batch 7 is **one combined implementation batch** = **all currently completed canonical short-story works** in `pugazg/kalaignar-short-stories` that are **not yet implemented**. The internal source/provenance groups below are **validation partitions only**, not separate implementation batches (the old B7–B11 split is superseded). **Batch-7 P1 has NOT started.**
 
 ## Source freeze (live re-verified 2026-09-16)
