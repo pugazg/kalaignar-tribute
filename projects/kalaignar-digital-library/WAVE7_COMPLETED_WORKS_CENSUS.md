@@ -25,19 +25,19 @@ Open control PRs at census = 0; open implementation PRs = 0.
 
 | # | Repo | main | tree |
 |---:|---|---|---|
-| 1 | nenjukku-needhi-archive | `0508dde6d9` | `32698ceb92` |
-| 2 | kalaignar-murasoli-letters | `6270f4dd16` | `2b19633aeb` |
-| 3 | kalaignar-poems | `188d49cd4d` | `fb35686d83` |
-| 4 | kalaignar-stage-plays | `e3b2ea8879` | `80febe1e06` |
-| 5 | kalaignar-cinema-works | `8c1fc37a08` | `8009cdfa17` |
-| 6 | kalaignar-short-stories | `7205a10892` | `1be34cc368` |
-| 7 | kalaignar-novels | `9f9c187feb` | `8ba79e6e62` |
-| 8 | kalaignar-essays | `b5fd292289` | `9fbb5bfb1c` |
-| 9 | kalaignar-literary-commentary | `d542b4cc37` | `f5a663672e` |
-| 10 | tolkappiyap-poonga | `42d13d78b8` | `7140241401` |
-| 11 | kalaignar-assembly-speeches | `7a7fed1d0e` | `b08fc42e5a` |
-| 12 | kalaignar-public-speeches | `6ca57fe207` | `23306338a5` |
-| 13 | kalaignar-quotes | `f7e0983ff7` | `3077342f17` |
+| 1 | nenjukku-needhi-archive | `0508dde6d96119deeab4155bfe0191128a420ad9` | `32698ceb9225554d1edbb7b2e30561e0e37eefae` |
+| 2 | kalaignar-murasoli-letters | `6270f4dd161f29548d1c9a121454648af995cf42` | `2b19633aeb2cccf24051a86b82050b5197ad8443` |
+| 3 | kalaignar-poems | `188d49cd4dcf2c6bbe2e9633841ff402b9959d08` | `fb35686d8313db5e99ff49e7c28cb4decfc1c429` |
+| 4 | kalaignar-stage-plays | `e3b2ea8879964ab8f5b6cfffad79aeab9a7ca26b` | `80febe1e06e4cb3060f8b8bc403bffa7298ad115` |
+| 5 | kalaignar-cinema-works | `8c1fc37a089cb23173e6b8725f7d31200ea83d7b` | `8009cdfa17637e722ee10b5c9f8910211f915af3` |
+| 6 | kalaignar-short-stories | `7205a10892d0b208df2617766844f480b6a2c798` | `1be34cc368fbc96ff72933a004a074ef840168ee` |
+| 7 | kalaignar-novels | `9f9c187feb16dcc2a9afa7b7fa622db78738e4fc` | `8ba79e6e62925c076374d2a5506a86d7a7303838` |
+| 8 | kalaignar-essays | `b5fd2922898a56a8b6a75bf564bdfa91cd22869a` | `9fbb5bfb1c3aa4e42046807669ed6929da8a9797` |
+| 9 | kalaignar-literary-commentary | `d542b4cc3749bf1966e3537d1eb34d421344faf5` | `f5a663672e3184cf435cbf7603cca7e6248c0049` |
+| 10 | tolkappiyap-poonga | `42d13d78b8bd21a5459de9bd3ad28dd45c993e7c` | `71402414018f66675691e90c368b5bd5333ea9bf` |
+| 11 | kalaignar-assembly-speeches | `7a7fed1d0e3eb24a396effc10854b178f32bd0cf` | `b08fc42e5a7e17b08c8dfcfee7cefb987e45b09c` |
+| 12 | kalaignar-public-speeches | `6ca57fe20706ebcb59f3432e8067fd11a1565b54` | `23306338a527a62cd8100b56f6bc99ca09772098` |
+| 13 | kalaignar-quotes | `f7e0983ff7c16949da78c48e860c8519b85e1eef` | `3077342f177f48a95667e5a61327dcdff2d08642` |
 
 ## 2. ALREADY_ONBOARDED baseline (live implementation)
 
