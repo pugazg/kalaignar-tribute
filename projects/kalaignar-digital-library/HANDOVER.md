@@ -1,6 +1,6 @@
 # Kalaignar Digital Library / Reading Room — Master Handover
 
-**Last updated:** 2026-09-16
+**Last updated:** 2026-09-17
 
 ---
 
@@ -11,9 +11,42 @@ Several phases have shipped since it was written, and its work counts, shelf cou
 "last production application-code checkpoint" are stale. It is kept as history and has **not** been
 retro-edited. Where it disagrees with this section or with live GitHub, **live GitHub wins**.
 
-### Verified live state — 2026-09-16, Wave-6 short-story census refreshed → combined Batch 7 (116 works) ✅ CURRENT
+### Verified live state — 2026-09-17, Wave-6 Batch 7 P2–P4 MERGED (PR #87) + P5 PRODUCTION ACCEPTANCE PASS ✅ CURRENT
 
-**This checkpoint has highest precedence over every lower `CURRENT`/`SUPERSEDED` label retained as history. Live GitHub wins. This is a CONTROL-ONLY census refresh — no implementation, payload, route, catalogue, discovery, sitemap, or source change was made.**
+**This checkpoint has highest precedence over every lower `CURRENT`/`SUPERSEDED` label retained as history. Live GitHub and production win. This is a CONTROL-ONLY close-out — P5 made no implementation, payload, route, catalogue, discovery, sitemap, or source change (implementation delta = 0, source delta = 0).**
+
+Wave 5 remains **COMPLETE / CLOSED**. Wave 6 P0 remains **COMPLETE / FROZEN**. **Batch 7 is now fully implemented and published:** Batch-7 **P1 merged (PR #86)**, and **P2–P4 merged (PR #87)** — the 116 canonical short stories are published as independent Fiction works and grouped into 5 new public collections. **Wave-6 P5 production acceptance = PASS. Wave-6 P6 is NOT STARTED / NOT AUTHORIZED.**
+
+The old projection "onboarding all 116 later would give catalogue 216 / Fiction 157" (2026-09-16 checkpoint) is now **realized live state**, not a projection.
+
+#### Merged + accepted implementation boundary (authoritative)
+
+| Item | Durable state |
+|---|---|
+| Implementation repo | `pugazg/kalaignar-autobiography` |
+| Implementation `main` (P2–P4 squash merge of PR #87) | `2a1029482f95fbc8cae6417e3a88dcbb1c8e1c3e` |
+| Implementation `main` tree | `06c7ae8646ba85e61c973fecb5945ffbec256c39` |
+| PR #87 | MERGED / CLOSED, `mergedAt` `2026-09-17T01:28:47Z`; approved head `b34e05dcc27ba809e8f7c3743d2f4570614457eb`; approved head tree == merged main tree (`06c7ae86…`) PASS; single squash parent `171d7b37…` |
+| PR #86 (Batch-7 P1) | MERGED / CLOSED |
+| Batch-7 source (frozen, unchanged) | `pugazg/kalaignar-short-stories` `main` `7205a10892d0b208df2617766844f480b6a2c798`, tree `1be34cc368fbc96ff72933a004a074ef840168ee` |
+| Wave-6 implemented works | **138** = 22 (Batches 1–6) + 116 (Batch 7) |
+| Catalogue | **216** works (Fiction **157**) |
+| Public collections | **6** (1977 + 2008/40, 2004/34, 1987/25, 1982/6, 2009/16) |
+| `STORY_SLUGS` | **154** unique |
+| `/read` discovery | **77** entries / **40** visible (Fiction discovery **18**, over-cap) |
+| Sitemap | **3909** URLs / **0** dup |
+| Build | **3918** prerender / **3913** `.html` |
+| Wave-6 route delta | **558** = 321 (Batches 1–6) + 232 (Batch-7 stories) + 5 (Batch-7 collections); `3360+558=3918`, `3355+558=3913`, `3351+558=3909` |
+
+- **Plural membership is live production data:** `jaadi-kutti-poduma` (one work; 2008 + 1987, 1987 ordinal 2) and `kuruvi-rameswaram` (one work; 2004 + 1987, 1987 ordinal 11); the eleven 1977 canonicals reprinted in 2009 are members of 1977 + 2009 while remaining single works textually controlled by their 1977 payload (the 2009 collection-local page/scan extents do not overwrite 1977 provenance). Plural membership inflated neither catalogue works (216) nor discovery entries (77).
+- **Eight Batch-7 works are non-collection standalone Fiction** discovery entries: `seerazhitha-sirippu`, `madurai-selavu`, `kondru-varuga`, `naattiya-kalarani`, `maanam`, `neruppu`, `vilaiyal-vangalaiyo`, `nanbana`.
+- **P2 corrections durable:** the nine corrected stories render apparatus-clean; `madurai-selavu` Tamil excludes the scan-25 `intervening-non-story` interleaf with its English scan-25 continuation preserved; `நந்தியூர் நரியப்பன்` / `நரியூர் நந்தியப்பன்` remain distinct; `தேனலைகள்` and `நடுத்தெரு நாராயணி` remain excluded.
+- **P5 production acceptance (2026-09-17) against `https://nenjukkuneethi.org`:** 558/558 Wave-6 routes HTTP 200; representative invalid routes 404 (fail-closed); `/read`, all 6 collection pages, plural membership, apparatus/interleaf and semantic-restraint checks accepted; sitemap 3909/0 with Batch-7 set 237/237 present; full merged-main regression green; exact-head CI `35170239750` SUCCESS; Vercel + Preview Comments SUCCESS. Full evidence: [`WAVE6_P5_PRODUCTION_ACCEPTANCE.md`](./WAVE6_P5_PRODUCTION_ACCEPTANCE.md).
+- **P6:** current control material does not establish that P6 automatically follows P5. **P6 is NOT STARTED / NOT AUTHORIZED**; the next execution activity requires explicit owner direction.
+
+### Verified live state — 2026-09-16, Wave-6 short-story census refreshed → combined Batch 7 (116 works) ⚠️ SUPERSEDED as current state (kept as history)
+
+**Superseded by the 2026-09-17 P5 checkpoint above: Batch 7 has since been implemented and published (PR #86 P1, PR #87 P2–P4) and production-accepted, so this checkpoint's "Batch-7 P1 has NOT started" / "catalogue 100 / collections 1" / "216 & 157 are projections" statements are now historical. Retained as the census-refresh evidence. Live GitHub wins.** This was a CONTROL-ONLY census refresh — no implementation, payload, route, catalogue, discovery, sitemap, or source change was made by it.
 
 Wave 5 remains **COMPLETE / CLOSED**. Wave 6 P0 remains **COMPLETE / FROZEN**. Implementation remains closed through **Batches 1–6 (Wave-6 P1–P3 through Batch 6 + P4 for Batches 1–6, MERGED / CLOSED)** — unchanged: implementation `main` `2ca4d19830755864acec153f99f2659f413802cb`, tree `837c92893ab248f6185a36dc3b13f353495f5c9d`; catalogue **100**, collections **1**, `/read` **64 / 39 visible**, sitemap **3672 / 0 dup**, build **3681 / 3676**; post-merge tree equality PASS (see the 2026-09-15 checkpoint below).
 

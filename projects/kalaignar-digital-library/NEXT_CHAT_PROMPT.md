@@ -1,80 +1,81 @@
-# New Chat Bootstrap Prompt — Kalaignar Digital Library / after Wave-6 short-story census refresh (combined Batch 7)
+# New Chat Bootstrap Prompt — Kalaignar Digital Library / after Wave-6 Batch-7 P2–P4 merge + P5 production acceptance
 
 Continue as my **independent reviewer and prompt-provider for Claude Code** for the Kalaignar Digital
-Library / Reading Room. **Live GitHub is authoritative. Do not trust copied SHAs, PR bodies or this
-bootstrap if live state differs.**
+Library / Reading Room. **Live GitHub and production are authoritative. Do not trust copied SHAs, PR
+bodies or this bootstrap if live state differs.**
 
 ## Mandatory startup order
 
 1. Fetch live `pugazg/kalaignar-tribute` `main`.
 2. Read `projects/kalaignar-digital-library/HANDOVER.md` **completely** (highest-precedence CURRENT
-   checkpoint is the 2026-09-16 short-story census refresh; the 2026-09-15 checkpoint carries the still-current
-   implementation boundary).
-3. Read `projects/kalaignar-digital-library/WAVE6_COMPLETED_WORKS_CENSUS.md` (top refresh banner) and
-   `projects/kalaignar-digital-library/WAVE6_BATCH7_SHORT_STORIES.md` (the deterministic Batch-7 manifest).
+   checkpoint is **2026-09-17 — Batch-7 P2–P4 merged (PR #87) + P5 production acceptance PASS**).
+3. Read `projects/kalaignar-digital-library/WAVE6_P5_PRODUCTION_ACCEPTANCE.md` (the durable acceptance
+   record), plus the top banners of `WAVE6_COMPLETED_WORKS_CENSUS.md` and `WAVE6_BATCH7_SHORT_STORIES.md`.
 4. Inspect all open control PRs.
 5. Fetch live `pugazg/kalaignar-autobiography` `main` and inspect all open implementation PRs.
-6. Treat live GitHub as authoritative — any newer legitimate live state supersedes this bootstrap.
+6. Treat live GitHub and production as authoritative — any newer legitimate live state supersedes this bootstrap.
 
 ## CURRENT state
 
-- **Live GitHub is authoritative.**
+- **Live GitHub / production are authoritative.**
 - **Wave 5: COMPLETE / CLOSED.** **Wave 6 P0: COMPLETE / FROZEN.**
-- **Implementation is closed through Batches 1–6** (Wave-6 P1–P3 through Batch 6 + P4 for Batches 1–6,
-  MERGED / CLOSED). This is unchanged by the census refresh:
-  - implementation `main`: `2ca4d19830755864acec153f99f2659f413802cb`
-  - implementation tree: `837c92893ab248f6185a36dc3b13f353495f5c9d`
-  - catalogue **100** · collections **1** · `/read` discovery **64** / visible **39** · sitemap **3672 / 0 dup** · build **3681 / 3676**.
-- **Short-story census refreshed (2026-09-16) from live `pugazg/kalaignar-short-stories`**
-  (`main` `7205a10892d0b208df2617766844f480b6a2c798`, tree `1be34cc368fbc96ff72933a004a074ef840168ee`).
+- **Wave 6 P1–P5 are complete/accepted to the extent defined by the current programme:**
+  - Batches 1–6 (22 works) merged (P1–P3 + P4 for Batches 1–6).
+  - Batch 7 (116 short stories) merged: **P1 via PR #86**, **P2–P4 via PR #87**.
+  - **P5 production acceptance = PASS** (2026-09-17); implementation delta = 0, source delta = 0.
+- **Accepted implementation boundary:**
+  - implementation `main`: `2a1029482f95fbc8cae6417e3a88dcbb1c8e1c3e`
+  - implementation tree: `06c7ae8646ba85e61c973fecb5945ffbec256c39`
+  - approved-head-tree == merged-main-tree PASS (approved head `b34e05dcc27ba809e8f7c3743d2f4570614457eb`).
+- **Realized public surface:**
+  - catalogue **216** · Fiction **157** · non-empty shelves **9**
+  - public collections **6** (1977 + 2008/40, 2004/34, 1987/25, 1982/6, 2009/16)
+  - `STORY_SLUGS` **154** unique
+  - `/read` discovery **77** / visible **40** (Fiction discovery **18**, over-cap → disclosure)
+  - sitemap **3909 / 0 dup** · build **3918 / 3913**.
+- **All 138 Wave-6 selected works are implemented** (22 + 116).
+- **No implementation or source change occurred in P5** (control-only close-out).
 
-## Refreshed Wave-6 completed population = 138
+## Wave-6 route arithmetic (durable)
 
-- **22** already-implemented non-short-story Wave-6 works (Batches 1–6).
-- **116** completed canonical short stories = **combined future Batch 7**.
-- `22 + 116 = 138` (old total was 125 = 22 + 103; **+13** short stories completed since the old census).
+```
+Batches 1–6 = 321 ; Batch-7 stories = 232 ; Batch-7 collections = 5 ; total = 558
+3360 + 558 = 3918 (prerender) ; 3355 + 558 = 3913 (html) ; 3351 + 558 = 3909 (sitemap)
+```
 
-## Batch 7 — all completed short stories (single implementation batch)
+## Frozen source (unchanged)
 
-- **116 canonical short-story works**, enumerated deterministically in `WAVE6_BATCH7_SHORT_STORIES.md`.
-- Internal source/provenance groups are **validation partitions only**, NOT separate implementation
-  batches: `2008 40 + 2004 34 + 1987 23 + 2009 5 + 1982 6 + periodical 3 + 1976 2 + 1969 1 + 1953-thappivittargal 1 + 1997 1 = 116`.
-  The old conceptual B7–B11 split is **superseded** — Batch 7 is one combined batch.
-- Derivation cross-check: `154 stories/ dirs − 37 (1977 anthology members) − 1 (kizhavan-kanavu, already implemented) = 116`.
-- **1982 is a 6-story anthology** (`நந்தியூர் நரியப்பன்` and `நரியூர் நந்தியப்பன்` are separate canonical stories — never collapse).
-- **Witness-only** source entries (1950, 1953-naadum, 1956, 1979, and the per-collection witnesses of
-  1976/1997/1969/1953/1987/2009/periodical) do **not** become new LibraryWorks.
+- Batch-7 source `pugazg/kalaignar-short-stories` `main` `7205a10892d0b208df2617766844f480b6a2c798`,
+  tree `1be34cc368fbc96ff72933a004a074ef840168ee`. P5 repinned nothing.
 
-## Intentional exclusions — NOT automatic future short-story work
+## Durable semantic facts (do not regress)
 
-- **`தேனலைகள்` (1958):** already represented in the essays / கட்டுரைகள் workstream under `மீசை முளைத்த வயதில்`
-  (cross-repository overlap). Its 12 mapped headings are **NOT** Batch-7 short-story candidates. Do not silently reopen.
-- **`நடுத்தெரு நாராயணி`:** intentionally excluded from the short-story programme because it is handled
-  through the separate `அரும்பு` / short-novel source path. Not in Batch 7.
+- Plural membership is live: `jaadi-kutti-poduma` (one work; 2008 + 1987, 1987 ordinal 2),
+  `kuruvi-rameswaram` (one work; 2004 + 1987, 1987 ordinal 11), and the eleven 1977 canonicals reprinted
+  in 2009 (1977 + 2009) — each a single canonical work; the 2009 collection-local page/scan extents do not
+  overwrite 1977 provenance.
+- Eight Batch-7 works are non-collection standalone Fiction discovery entries: `seerazhitha-sirippu`,
+  `madurai-selavu`, `kondru-varuga`, `naattiya-kalarani`, `maanam`, `neruppu`, `vilaiyal-vangalaiyo`, `nanbana`.
+- `நந்தியூர் நரியப்பன்` and `நரியூர் நந்தியப்பன்` are distinct works. `தேனலைகள்` and `நடுத்தெரு நாராயணி` remain excluded.
+- P2 corrections durable (nine stories apparatus-clean; `madurai-selavu` excludes the scan-25
+  `intervening-non-story` interleaf, English scan-25 continuation preserved).
 
-## Collection model — Batch-7 P1 decisions (not decided yet)
+## P6 — NOT authorized
 
-Do not auto-create a public collection per source. Candidates: 2008 / 2004 / 1987 / 1982. **Open owner
-question:** for the 2009 source, whether collection membership should include its 11 existing-canonical
-witnesses via the plural collection-membership model. 1997 / 1969 / periodical / single-new-canonical
-containers are not public collections on their own. See the manifest's collection-model audit.
-
-## Projections (future state only — nothing implemented)
-
-If Batch 7 later onboards all 116: catalogue `100 + 116 = 216`; Fiction shelf `41 + 116 = 157`.
-
-## Next execution activity — await explicit owner direction
-
-**Batch-7 P1 has NOT started. Wave-6 P5 is NOT authorized. Wave-6 P6 is NOT authorized. No new source
-ingestion is authorized.** Do not begin Batch-7 implementation, generate payloads, create routes, or
-modify catalogue/discovery/sitemap on the strength of this bootstrap. The next chat must fetch live
-GitHub state and await explicit owner authorization.
+- **P6 is NOT STARTED.**
+- **P6 is NOT AUTHORIZED.**
+- Current control material does **not** establish that P6 automatically follows P5, and does not define P6's
+  purpose. Do not invent it.
+- Do **not** automatically start P6 or any new wave, and do **not** ingest new source material.
+- The next execution activity requires **explicit owner direction**.
 
 ## Workflow contract
 
 - **Claude Code performs GitHub writes, branches, commits, PR corrections and merges.**
-- **ChatGPT independently reviews exact live state and supplies prompts.**
+- **The reviewer independently reviews exact live state and supplies prompts.**
 - **Live GitHub and production beat copied prompts/reports.**
+- The control PR opened for P5 (`Wave 6 P5 — production acceptance and durable control close-out`) is
+  **control-only** and awaits independent immutable-head review before merge; there is **no** open
+  implementation PR.
 
-**STOP. Batch-7 P1 is NOT started; P5 / P6 remain NOT authorized. The census refresh changed control
-documents only — no implementation, public, or source state changed.**
+**STOP. Wave-6 P5 is accepted (control-only). P6 is NOT started / NOT authorized. Fetch live GitHub and await explicit owner direction before any further execution.**

@@ -1,6 +1,17 @@
 # Wave 6 P0 — Global Completed-Works Census
 
-**Wave 6 P0 COMPLETE — census only. P1 NOT STARTED / NOT AUTHORIZED.**
+> ## ✅ CURRENT STATUS — 2026-09-17: the 138 READY works are IMPLEMENTED, PUBLISHED (P4) and PRODUCTION-ACCEPTED (P5)
+>
+> **Highest-precedence banner. Live GitHub and production win.** This census's READY selection has been fully executed:
+> - Wave-6 **Batches 1–6 (22 works)** merged (P1–P3 + P4 for Batches 1–6); **Batch 7 (116 short stories)** merged via **PR #86 (P1)** and **PR #87 (P2–P4)**.
+> - Implementation `main` `2a1029482f95fbc8cae6417e3a88dcbb1c8e1c3e`, tree `06c7ae8646ba85e61c973fecb5945ffbec256c39`.
+> - Realized public surface: catalogue **216**, Fiction **157**, public collections **6**, `STORY_SLUGS` **154**, `/read` **77 / 40 visible** (Fiction 18), sitemap **3909 / 0**, build **3918 / 3913**.
+> - **Wave-6 P5 production acceptance = PASS** (2026-09-17, `https://nenjukkuneethi.org`); implementation delta = 0, source delta = 0. Evidence: [`WAVE6_P5_PRODUCTION_ACCEPTANCE.md`](./WAVE6_P5_PRODUCTION_ACCEPTANCE.md).
+> - **P6 is NOT STARTED / NOT AUTHORIZED.**
+>
+> The banner and body below (2026-09-08 P0 assessment; 2026-09-16 short-story refresh) are retained as the **historical census derivation** — their "READY / not-yet-implemented / P1 NOT STARTED / projections 216 & 157" language is now realized, not pending. Do not read them as current state.
+
+**[HISTORICAL — 2026-09-08] Wave 6 P0 COMPLETE — census only. P1 was NOT STARTED at the time of this assessment (now realized; see the CURRENT banner above).**
 
 ---
 
