@@ -10,7 +10,7 @@
 > - **5 public collections created**, membership + ordinals taken from each publication's own printed source order: `2008` 40, `2004` 34, `1987` 25, `1982` 6, `2009` 16 (plus the existing 1977 anthology = 6 total). Plural membership is live: `jaadi-kutti-poduma` (2008 + 1987, ordinal 2), `kuruvi-rameswaram` (2004 + 1987, ordinal 11), and the eleven 1977 canonicals reprinted in 2009 (1977 + 2009) — each still a single canonical work; the 2009 collection-local page/scan extents do not overwrite 1977 provenance.
 > - **Source freeze unchanged:** `pugazg/kalaignar-short-stories` `main` `7205a10892d0b208df2617766844f480b6a2c798`, tree `1be34cc368fbc96ff72933a004a074ef840168ee`.
 > - **Witness-only entries were NOT promoted to canonicals; intentional exclusions unchanged:** `தேனலைகள்` and `நடுத்தெரு நாராயணி` remain excluded; `நந்தியூர் நரியப்பன்` and `நரியூர் நந்தியப்பன்` remain distinct works; 1982 remains a 6-story anthology.
-> - **Wave-6 P5 production acceptance = PASS** (2026-09-17). See [`WAVE6_P5_PRODUCTION_ACCEPTANCE.md`](./WAVE6_P5_PRODUCTION_ACCEPTANCE.md). **P6 NOT STARTED / NOT AUTHORIZED.**
+> - **Wave-6 P5 production acceptance = PASS** (2026-09-17). See [`WAVE6_P5_PRODUCTION_ACCEPTANCE.md`](./WAVE6_P5_PRODUCTION_ACCEPTANCE.md). **Wave 6 is COMPLETE / CLOSED / FROZEN at P5; there is no Wave-6 P6.**
 
 Batch 7 is **one combined implementation batch** = **all currently completed canonical short-story works** in `pugazg/kalaignar-short-stories` that are **not yet implemented**. The internal source/provenance groups below are **validation partitions only**, not separate implementation batches (the old B7–B11 split is superseded). **Batch-7 P1 has NOT started.**
 
