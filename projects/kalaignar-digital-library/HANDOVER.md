@@ -1,6 +1,6 @@
 # Kalaignar Digital Library / Reading Room — Master Handover
 
-**Last updated:** 2026-09-17
+**Last updated:** 2026-09-23
 
 ---
 
@@ -11,9 +11,25 @@ Several phases have shipped since it was written, and its work counts, shelf cou
 "last production application-code checkpoint" are stale. It is kept as history and has **not** been
 retro-edited. Where it disagrees with this section or with live GitHub, **live GitHub wins**.
 
-### Verified live state — 2026-09-17, WAVE 7 P0 — CENSUS / READINESS COMPLETE / REVIEWED / FROZEN ✅ CURRENT
+### Verified live state — 2026-09-23, WAVE 7 P5 PRODUCTION ACCEPTANCE — PASS · WAVE 7 COMPLETE / CLOSED / FROZEN AT P5 ✅ CURRENT
 
-**Highest-precedence checkpoint. Live GitHub wins. CONTROL DOCUMENTATION ONLY — no implementation, payload, catalogue, discovery, route, sitemap, reader, source, or production change (implementation delta = 0, source delta = 0, production delta = 0). WAVE 7 P1 — NOT STARTED / NOT AUTHORIZED.**
+**Highest-precedence checkpoint. Live GitHub and production win. CONTROL-ONLY close-out — P5 made no implementation, payload, catalogue, collection, route, sitemap, discovery, source or production change (implementation delta = 0, source delta = 0, production mutation = 0).** Durable evidence: [`WAVE7_P5_PRODUCTION_ACCEPTANCE.md`](./WAVE7_P5_PRODUCTION_ACCEPTANCE.md).
+
+- **Wave 7 P0–P5 complete. WAVE 7 COMPLETE / CLOSED / FROZEN AT P5. There is no Wave-7 P6.** The lifecycle P0 (census) → P1 (hidden data foundation) → P2 (fidelity/readers) → P3 (direct routes) → P4 (publication) → P5 (independent production acceptance + durable control close-out) ran to completion, exactly as Wave 6 closed.
+- **Accepted implementation boundary:** `pugazg/kalaignar-autobiography` `main` **`cf769d06c1bdb4abc58b5ef2c26e609a777b4923`**, tree **`35d64fb97f7bed1e26c3bb09fea5649db9d1e348`** (merge of PR #96). Wave-7 PRs: #88/#89 (B1), #90/#91 (B2–B4), #92 (B4 correction), #93 (essay public-provenance boundary), #94 (B5a/B5b/B6/Kuraloviyam), plus pre-P5 maintenance #95 (Drama `/source` public-provenance projection) and #96 (Wave-3 essay public notes) — both integrated into the accepted boundary, neither a Wave-7 work.
+- **Wave-7 population = 117** = READY 115 (B1 Cinema 3 · B2 Drama `iratha-kanneer` 1 · B3 Novels 5 · B4 Essays 6 · B5a 61 · B5b 36 · B6 3) + READY WITH QUALIFICATION 2 (`nachuk-koppai`, `kuraloviyam`). Collections/containers are not works.
+- **Final public surface (re-derived from live `main` and production):** catalogue **333** (216 + 117) — Life Writing 1 · Letters 1 · Poetry 14 · Cinema Writing **10** · Drama **10** · Fiction **162** · Essays & Articles **15** · Speeches **117** · Literary Commentary **3**; collections **9** (6 + `arumbu-1978` 4 + `muthukkuliyal-part-1` 61 + `muthukkuliyal-part-2` 36; Part I ∩ Part II = 0; C37 counted once); `/read` discovery **96** / **41** visible (Fiction discovery **20**; Speeches 22 = 2 முத்துக் குளியல் cards + 20 standalone); sitemap **4779 / 0 dup**; build **4788 / 4783**.
+- **Wave-7 route delta = 870** = B1 133 + B2–B4 225 (224 direct + `/collections/arumbu-1978`) + B5/B6/K 512 (200 speech + 310 Kuraloviyam + 2 collections), reconstructed from committed registries; `3909 + 870 = 4779`, `3918 + 870 = 4788`, `3913 + 870 = 4783`. Production: 870/870 in the sitemap and HTTP 200 (no redirects); 37 fabricated routes across every Wave-7 family → 404.
+- **Qualified works (published, qualification visible):** `nachuk-koppai` — 63 scans; exactly one terminal textual source-condition hold at **scan 22 / Scene 5 (unit 05)**, never reconstructed; READY WITH QUALIFICATION (internal frozen P1 record retained, not serialized). `kuraloviyam` — ONE work; visual 666/666 · Tamil 662/666 · English 662/666 · scans 13, 14, 15, 19 permanently source-limited (not pending work) · `blocked: 0`; six intake PDFs are transfer splits, not works.
+- **Condensed English:** 45 of the 100 Wave-7 speeches (all முத்துக் குளியல் Part I) carry an honestly labelled *condensed English rendering — not a full translation* (catalogue `english: partial`; e.g. `tamilin-solvalam` ratio 0.13); 55 are full translations with no condensed label. Tamil remains authoritative.
+- **Public serialization:** production HTML + RSC carry no internal workflow state (`hidden` / `wave` / `batch` / `readiness` / `sourceTree` / `archiveVerification` / `sourceAuthority` / "hidden foundation" / "Bulk Onboarding" — 0 hits across 554 payloads, positive controls pass); Drama `/source` pages no longer embed reading text.
+- **Regression / CI:** clean checkout of `cf769d06…` — tsc clean, build 4788/4783, both Library CI jobs re-run locally at exact source pins (all steps pass), full `test:*` sweep 49/49; merged-main Library CI `35880810427` SUCCESS (both jobs); Vercel Production for `cf769d06…` success.
+- **Outside Wave 7 (unchanged, not decided):** HOLD `chinna-chinna-malargal` (no Quotes shelf), `ore-mutham`; P0 NOT_COMPLETE items (`sangatamil`, `payumpuli-pandaraka-vanniyan`, Audio-06, 2007 assembly Part-1 units). No new census was run.
+- **Next activity requires explicit owner authorization** of either (a) a **separately authorized new wave** (with its own census), or (b) **explicitly scoped maintenance** of already-published works — never "Wave-7 P6".
+
+### Verified live state — 2026-09-17, WAVE 7 P0 — CENSUS / READINESS COMPLETE / REVIEWED / FROZEN ⚠️ SUPERSEDED as current state (kept as history)
+
+**Superseded by the 2026-09-23 Wave-7 P5 checkpoint above: Wave 7 P1–P5 have since been authorized, implemented, merged, production-accepted and closed, so this checkpoint's "WAVE 7 P1 — NOT STARTED / NOT AUTHORIZED" and "Projection (NOT implementation state)" statements are historical. The frozen census remains the historical selection authority.** Highest-precedence checkpoint at the time. Live GitHub wins. CONTROL DOCUMENTATION ONLY — no implementation, payload, catalogue, discovery, route, sitemap, reader, source, or production change (implementation delta = 0, source delta = 0, production delta = 0). WAVE 7 P1 — NOT STARTED / NOT AUTHORIZED.**
 
 Wave 6 remains **COMPLETE / CLOSED / FROZEN at P5** (retained below; not reopened). The first authorized activity after Wave-6 closure was the **read-only Wave-7 P0 completed-works census + Digital-Library readiness audit**, now reviewed and frozen. The durable authority is [`WAVE7_COMPLETED_WORKS_CENSUS.md`](./WAVE7_COMPLETED_WORKS_CENSUS.md).
 
