@@ -11,7 +11,68 @@ Several phases have shipped since it was written, and its work counts, shelf cou
 "last production application-code checkpoint" are stale. It is kept as history and has **not** been
 retro-edited. Where it disagrees with this section or with live GitHub, **live GitHub wins**.
 
-### Verified live state — 2026-09-24, WAVE 8 P5 PRODUCTION ACCEPTANCE — PASS · WAVE 8 COMPLETE / CLOSED / FROZEN AT P5 ✅ CURRENT
+### Verified live state — 2026-09-24, READING ROOM IA v2 R0 — CLASSIFICATION CENSUS COMPLETE / REVIEW-READY ✅ CURRENT
+
+**Highest-precedence checkpoint. Live GitHub and production win.**
+
+This checkpoint is **control-only and assessment-only**:
+- implementation delta = 0, source delta = 0, production mutation = 0;
+- no catalogue, route, sitemap, reader or collection-behaviour change.
+
+Durable record: [`READING_ROOM_IA_V2_R0_CENSUS.md`](./READING_ROOM_IA_V2_R0_CENSUS.md).
+
+**What it is.** Reading Room IA v2 is a **newly owner-authorized initiative, separate from the onboarding
+waves**. Waves 6, 7 and 8 remain **COMPLETE / CLOSED / FROZEN at P5** and are not reopened or renamed. The Wave-8
+P5 checkpoint directly below remains the latest closed onboarding-wave checkpoint.
+
+**Live pins.**
+- Control base: `78888627be63b9b3d4e04afd8908cb4d17d82d59` / tree `af291166…`.
+- Implementation `main`: `f991043c3353abe9f2b334f7c8d57e433184d126` / tree `87ca371b…` (unchanged since the Wave-8
+  boundary; 0 open PRs).
+- Production: Vercel deployment `6638432286`.
+
+**Owner-authorized direction (recorded only; no implementation has changed).**
+- The target hierarchy is `Reading Room → Category → Individual canonical work → reading units`.
+- Collections and publications become secondary provenance / "Published in" / edition-browsing views. They
+  must not substitute for their independently readable member works.
+- Existing URLs and citation identities are preservation constraints; later design prefers additive category
+  routes plus redirects or aliases.
+- The proposed public Tamil label for `life-writing` is **`சுயசரிதை`** (the internal id is not renamed).
+
+**Re-derived baseline.**
+- Catalogue **335** = Life Writing 1 + Letters 1 + Fiction 162 + Poetry 14 + Drama 11 + Cinema Writing 10 +
+  Speeches 117 + Essays & Articles 15 + Literary Commentary 4.
+- Collections **9**, all `kind: "anthology"`: Fiction 7 (1977 · 1982 · 1987 · 2004 · 2008 · 2009 ·
+  `arumbu-1978`) and Speeches 2 (முத்துக் குளியல் I / II).
+- `/read` shows **98** discovery entries and **42** visible.
+
+**Collection substitution.**
+- `discoveryShelves()` puts collections first and drops every work in one or more collections.
+- **246** unique member works are hidden from `/read`: Fiction **149** (145 stories + 4 novels) and Speeches
+  **97**.
+- `335 − 246 + 9 = 98`.
+- 13 works have plural membership, and each remains one work.
+- The hidden works are published canonical LibraryWorks; they are not missing from the catalogue.
+- **R0 conclusion:** none of the 9 collections establishes a dependency that warrants suppressing its members.
+
+**Classification highlights.**
+- **Keep one work:** `nenjukku-neethi`, `murasoli-letters` (no explosion of the 688 letters),
+  `1971-namathu-vilakkam` (one continuous two-House booklet, no printed divider), `udhaya-kathir`,
+  `oruthalaik-kathal` (verse novel, 11 sections), `pesum-kalai-valarppom` (19 untitled sections), and the
+  single-article Essays works.
+- **All independent works:** Drama 11, Literary Commentary 4 and Fiction 162.
+- **Poetry promotion candidates:** Kaalap 58 · Kavithaigal 77 · 1975 items 01/02/04. At least 2 declared
+  cross-witness overlaps exist.
+- **Essays promotion candidates:** 9 titled-unit containers (104 units).
+- **Mixed:** `ina-muzhakkam` (5 prose units + 11 poems).
+- **Genre undecided:** `meesai-mulaiththa-vayathil` (26 units, with a recorded 1958 `தேனலைகள்` witness overlap).
+- **Cinema** song identity is deferred and outside R1.
+- **No post-migration Poetry or Essays count is frozen.**
+
+**Status.** **R1 — NOT STARTED / NOT AUTHORIZED BY THIS R0.** The next activity requires independent review of
+this census and explicit owner authorization of R1.
+
+### Verified live state — 2026-09-24, WAVE 8 P5 PRODUCTION ACCEPTANCE — PASS · WAVE 8 COMPLETE / CLOSED / FROZEN AT P5 ✅ LATEST CLOSED ONBOARDING-WAVE CHECKPOINT (retained; the latest activity is the Reading Room IA v2 R0 checkpoint above)
 
 **Highest-precedence checkpoint. Live GitHub and production win.**
 
