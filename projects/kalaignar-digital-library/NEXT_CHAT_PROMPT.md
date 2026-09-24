@@ -1,4 +1,4 @@
-# New Chat Bootstrap Prompt — Kalaignar Digital Library / READING ROOM IA v2 R0 — COMPLETE / REVIEWED / FROZEN (Waves 6, 7 and 8 closed at P5)
+# New Chat Bootstrap Prompt — Kalaignar Digital Library / READING ROOM IA v2 R1 — IDENTITY RECONCILIATION REVIEW-READY (R0 frozen; Waves 6, 7 and 8 closed at P5)
 
 Continue as my **independent reviewer and prompt-provider for Claude Code** for the Kalaignar Digital
 Library / Reading Room. **Live GitHub and production are authoritative. Do not trust copied SHAs, PR
@@ -8,9 +8,11 @@ bodies or this bootstrap if live state differs.**
 
 1. Fetch live `pugazg/kalaignar-tribute` `main`, and inspect all open control PRs.
 2. Read `projects/kalaignar-digital-library/HANDOVER.md` **completely**.
-   - Its highest-precedence CURRENT checkpoint is **2026-09-24 — READING ROOM IA v2 R0 — CLASSIFICATION CENSUS
-     COMPLETE / REVIEWED / FROZEN**.
-   - Directly below it, **2026-09-24 — WAVE 8 P5 PRODUCTION ACCEPTANCE — PASS · WAVE 8 COMPLETE / CLOSED / FROZEN
+   - Its highest-precedence CURRENT checkpoint is **2026-09-24 — READING ROOM IA v2 R1 — IDENTITY RECONCILIATION
+     COMPLETE / REVIEW-READY**.
+   - Directly below it is the frozen R0 checkpoint (**READING ROOM IA v2 R0 — CLASSIFICATION CENSUS COMPLETE /
+     REVIEWED / FROZEN**). Its "R1 NOT STARTED" status is historical.
+   - Below that, **2026-09-24 — WAVE 8 P5 PRODUCTION ACCEPTANCE — PASS · WAVE 8 COMPLETE / CLOSED / FROZEN
      AT P5** remains the latest closed onboarding-wave checkpoint.
    - The Wave-8 P0 checkpoint below that is the historical selection authority. Its "P1 NOT STARTED" status is
      superseded.
@@ -18,6 +20,9 @@ bodies or this bootstrap if live state differs.**
    the owner-authorized Reading Room IA v2 initiative (control-only). It is frozen historical authority: merged in
    `pugazg/kalaignar-tribute#40` (normal merge `399319ea7995c24a06da6866babefe086751afe6`, approved head
    `200d00b2…`, 0 content delta). Verify this against live GitHub.
+   - Then read `READING_ROOM_IA_V2_R1_IDENTITY_RECONCILIATION.md`, the R1 identity authority, with its machine-readable
+     `READING_ROOM_IA_V2_R1_MANIFEST.json` and `READING_ROOM_IA_V2_R1_TEXT_OVERLAP_EVIDENCE.json`.
+   - Check whether the R1 control PR has been independently reviewed and merged.
 4. Read `projects/kalaignar-digital-library/WAVE8_P5_PRODUCTION_ACCEPTANCE.md`, the durable Wave-8 acceptance and
    close-out record.
 5. Read `projects/kalaignar-digital-library/WAVE8_COMPLETED_WORKS_CENSUS.md` as the **historical P0 selection and
@@ -34,9 +39,34 @@ bodies or this bootstrap if live state differs.**
 
 ## CURRENT state
 
-**Reading Room IA v2 — R0 (newly owner-authorized initiative; separate from the onboarding waves).**
+**Reading Room IA v2 — R1 (owner-authorized; canonical identity + cross-witness reconciliation; control-only).**
+- **READING ROOM IA v2 R1 — IDENTITY RECONCILIATION COMPLETE / REVIEW-READY (2026-09-24). R2 — NOT STARTED / NOT
+  AUTHORIZED.**
+- R1 is control-only: implementation delta 0, source delta 0, production mutation 0, and no LibraryWork created.
+- **Results:** 315 manifest entries.
+
+| Workstream | Result |
+|---|---|
+| Poetry (148) | CREATE 132 · ADD_WITNESS 5 · KEEP 8 · HOLD 3 |
+| Essays (104) | CREATE 79 · ADD_WITNESS 3 · DO_NOT_PROMOTE 19 · HOLD 3 |
+| `ina-muzhakkam` | CREATE 7 · ADD_WITNESS 6 · HOLD 3 |
+| Meesai (26) | all HOLD |
+
+- **Projection (not implemented):** `335 + 218 = 553` floor, up to 588 if HOLDs resolve to works. Poetry would
+  become 149 and Essays 98.
+- **35 HOLD items** have explicit owner questions (R1 §11):
+  - cross-shelf Meesai/ina ↔ 2004-anthology Fiction works;
+  - the 1958 `தேனலைகள்` (untranscribed; SOURCE_LIMITED);
+  - the prose-poem shelf;
+  - Kaalap 37 ↔ ஒருதலைக் காதல் §1;
+  - Kavithaigal 52 ↔ ina 6.5/6.6;
+  - letter-form and speech-form units in essay books.
+- **Next:** independent exact-head review of the R1 control PR. Owner decisions on the HOLD questions and explicit R2
+  authorization come before any implementation.
+
+**Reading Room IA v2 — R0 (frozen authority).**
 - **READING ROOM IA v2 R0 — CLASSIFICATION CENSUS COMPLETE / REVIEWED / FROZEN (2026-09-24; merged via PR #40,
-  `399319ea…`). R1 — NOT STARTED / NOT AUTHORIZED.**
+  `399319ea…`).**
 - R0 is control-only: implementation delta 0, source delta 0, production mutation 0. Its record is
   [`READING_ROOM_IA_V2_R0_CENSUS.md`](./READING_ROOM_IA_V2_R0_CENSUS.md).
 - **Direction (recorded, not implemented):** `Reading Room → Category → Individual canonical work → reading
@@ -58,8 +88,7 @@ bodies or this bootstrap if live state differs.**
     `nenjukku-neethi`, `murasoli-letters`.
   - Cinema song identity is deferred.
   - No post-migration Poetry or Essays count is frozen.
-- **Next:** nothing is pending. Any R1 activity requires separate explicit owner authorization, working from the
-  frozen R0 census.
+- R0 was consumed by R1 without reopening.
 
 **Wave 8 status (latest closed onboarding wave).**
 - **WAVE 8 P5 PRODUCTION ACCEPTANCE — PASS (2026-09-24). WAVE 8 COMPLETE / CLOSED / FROZEN AT P5. There is no
@@ -168,8 +197,14 @@ Any of these requires a separately authorized new wave with its own census.
   - No implementation or source change belongs to it.
   - It was merged as `pugazg/kalaignar-tribute#40` (merge `399319ea7995c24a06da6866babefe086751afe6`). The
     control-only PR `Reading Room IA v2 — R0 lifecycle close-out` moves its lifecycle wording to COMPLETE /
-    REVIEWED / FROZEN. It changes no finding.
+    REVIEWED / FROZEN. It changes no finding. It was merged as `pugazg/kalaignar-tribute#41` (merge
+    `99ce1dbcc724b5daaa1716bd9a9ea90452fc32e0`).
+- Reading Room IA v2 R1 is recorded by the control-only PR `Reading Room IA v2 — R1 canonical identity and
+  cross-witness reconciliation`.
+  - It adds the R1 record, manifest and evidence, and updates `HANDOVER.md` and this file.
+  - No implementation or source change belongs to it.
+  - Until that PR is merged, live control `main` remains authoritative.
 
 **STOP. Wave 6, Wave 7 and Wave 8 are COMPLETE / CLOSED / FROZEN at P5. There is no Wave-8 P6. Reading Room IA v2
-R0 is COMPLETE / REVIEWED / FROZEN; R1 is NOT STARTED / NOT AUTHORIZED. Do not begin R1, a new wave or any
-maintenance activity without explicit owner authorization.**
+R0 is COMPLETE / REVIEWED / FROZEN; R1 is COMPLETE / REVIEW-READY; R2 is NOT STARTED / NOT AUTHORIZED. Do not begin
+R2, a new wave or any maintenance activity without explicit owner authorization.**

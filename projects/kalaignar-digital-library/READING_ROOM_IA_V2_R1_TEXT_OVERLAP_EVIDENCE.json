@@ -1,0 +1,1117 @@
+{
+ "title": "Reading Room IA v2 R1 — deterministic body-text overlap evidence",
+ "inputs": {
+  "implementation": "pugazg/kalaignar-autobiography@f991043c3353abe9f2b334f7c8d57e433184d126 public payloads + data/internal/wave8/murasoli",
+  "candidates": 328,
+  "referenceCorpora": {
+   "stories": 154,
+   "speeches": 117,
+   "novels": 8,
+   "murasoliLetters": 688
+  }
+ },
+ "method": {
+  "normalisation": "Tamil letters only (U+0B80–U+0BFF); comparison aid only, never authority",
+  "shingle": {
+   "k": 8,
+   "measure": "containment both directions + longest contiguous shared run (normalised chars)",
+   "significance": "run >= 150 (noise ceiling measured 149 over 1054 overlapping pairs)",
+   "shortText": "run >= 60 and >= 35% of shorter text and max coverage >= 0.5"
+  },
+  "bigram": {
+   "measure": "word-bigram coverage both directions",
+   "threshold": 0.25,
+   "minShared": 12
+  }
+ },
+ "significantShinglePairs": [
+  {
+   "A": "essays:ina-muzhakkam/kavithaigal#6 «கவிதைகள்»",
+   "B": "ina-poem:ina-muzhakkam/kavithaigal#8#6.8 «வாளிங்கே!»",
+   "covAinB": 0.416,
+   "covBinA": 1,
+   "longestSharedRun": 2005,
+   "aLen": 4811,
+   "bLen": 2005,
+   "samePublication": true
+  },
+  {
+   "A": "poetry:idhayathai-thanthidu-anna/idhayathai-thanthidu-anna «இதயத்தைத் தந்திடு அண்ணா»",
+   "B": "poetry:kalaignarin-kavithaigal/give-me-your-heart-anna#1 «இதயத்தைத் தந்திடு அண்ணா»",
+   "covAinB": 0.954,
+   "covBinA": 0.939,
+   "longestSharedRun": 1192,
+   "aLen": 9574,
+   "bLen": 9741,
+   "samePublication": false
+  },
+  {
+   "A": "essays:thudikkum-ilamai/poompuhar#3 «பூம்புகார்»",
+   "B": "ref:speeches/idhaya-perikai «இதய பேரிகை»",
+   "covAinB": 0.971,
+   "covBinA": 0.151,
+   "longestSharedRun": 976,
+   "aLen": 4098,
+   "bLen": 28004,
+   "samePublication": false
+  },
+  {
+   "A": "poetry:kalaignarin-kavithaigal/the-tale-of-the-southerner#2 «தென்னவன் காதை»",
+   "B": "poetry:thennan-kathai/thennan-kathai «தென்னவன் காதை»",
+   "covAinB": 0.95,
+   "covBinA": 0.951,
+   "longestSharedRun": 880,
+   "aLen": 8019,
+   "bLen": 8003,
+   "samePublication": false
+  },
+  {
+   "A": "poetry:kalaignarin-kavithaigal/today-is-your-birthday#45 «இன்றைக்கு உன்றன் பிறந்த நாள்»",
+   "B": "ref:murasoli/m49-l3775 «பெருந்தலைவர் காமராஜர் புகழ் வாழ்க!»",
+   "covAinB": 0.936,
+   "covBinA": 0.183,
+   "longestSharedRun": 691,
+   "aLen": 1256,
+   "bLen": 6754,
+   "samePublication": false
+  },
+  {
+   "A": "essays:pesum-kalai-valarppom/section-06#6 «»",
+   "B": "ref:stories/nadakkuma-nadakkatha «நடக்குமா நடக்காதா?»",
+   "covAinB": 0.646,
+   "covBinA": 0.957,
+   "longestSharedRun": 673,
+   "aLen": 3848,
+   "bLen": 2671,
+   "samePublication": false
+  },
+  {
+   "A": "essays:sinthanaiyum-seyalum/magalir-ida-othukkeedu#26 «மகளிர் இட ஒதுக்கீடு!»",
+   "B": "ref:murasoli/m43-l3464 «பொதுக்கருத்து பற்றி பேரறிஞன் ரூசோவின் கர»",
+   "covAinB": 0.504,
+   "covBinA": 0.434,
+   "longestSharedRun": 656,
+   "aLen": 5172,
+   "bLen": 6429,
+   "samePublication": false
+  },
+  {
+   "A": "poetry:gunanayagar-nehru/gunanayagar-nehru «குணநாயகர் நேரு»",
+   "B": "poetry:kalaignarin-kavithaigal/democracy-as-nehru-saw-it#19 «நேரு கண்ட ஜனநாயகம்»",
+   "covAinB": 0.935,
+   "covBinA": 0.628,
+   "longestSharedRun": 602,
+   "aLen": 4930,
+   "bLen": 7689,
+   "samePublication": false
+  },
+  {
+   "A": "essays:sinthanaiyum-seyalum/magalir-ida-othukkeedu#26 «மகளிர் இட ஒதுக்கீடு!»",
+   "B": "ref:murasoli/m49-l3785 «நிறைவேறட்டும் மகளிர் இட ஒதுக்கீடு மசோதா!»",
+   "covAinB": 0.398,
+   "covBinA": 0.251,
+   "longestSharedRun": 588,
+   "aLen": 5172,
+   "bLen": 9515,
+   "samePublication": false
+  },
+  {
+   "A": "essays:sinthanaiyum-seyalum/magalir-ida-othukkeedu#26 «மகளிர் இட ஒதுக்கீடு!»",
+   "B": "ref:murasoli/m52-l3941 «நல்ல சமயம் இது; நழுவ விடலாமா?»",
+   "covAinB": 0.31,
+   "covBinA": 0.18,
+   "longestSharedRun": 557,
+   "aLen": 5172,
+   "bLen": 10229,
+   "samePublication": false
+  },
+  {
+   "A": "poetry:anna-kaviyarangam/anna-kaviyarangam «அண்ணா கவியரங்கம்»",
+   "B": "poetry:idhayathai-thanthidu-anna/idhayathai-thanthidu-anna «இதயத்தைத் தந்திடு அண்ணா»",
+   "covAinB": 0.291,
+   "covBinA": 0.317,
+   "longestSharedRun": 517,
+   "aLen": 10552,
+   "bLen": 9574,
+   "samePublication": false
+  },
+  {
+   "A": "poetry:anna-kaviyarangam/anna-kaviyarangam «அண்ணா கவியரங்கம்»",
+   "B": "poetry:kalaignarin-kavithaigal/give-me-your-heart-anna#1 «இதயத்தைத் தந்திடு அண்ணா»",
+   "covAinB": 0.294,
+   "covBinA": 0.315,
+   "longestSharedRun": 517,
+   "aLen": 10552,
+   "bLen": 9741,
+   "samePublication": false
+  },
+  {
+   "A": "poetry:kalaignarin-kavithaigal/green-parrot#56 «பச்சைக் கிளி»",
+   "B": "essays:meesai-mulaiththa-vayathil/pachchaikkili#14 «பச்சைக்கிளி»",
+   "covAinB": 0.966,
+   "covBinA": 0.963,
+   "longestSharedRun": 515,
+   "aLen": 1117,
+   "bLen": 1119,
+   "samePublication": false
+  },
+  {
+   "A": "poetry:anna-kaviyarangam/anna-kaviyarangam «அண்ணா கவியரங்கம்»",
+   "B": "poetry:poomudi/poomudi «பூமுடி»",
+   "covAinB": 0.055,
+   "covBinA": 0.877,
+   "longestSharedRun": 471,
+   "aLen": 10552,
+   "bLen": 622,
+   "samePublication": false
+  },
+  {
+   "A": "essays:ina-muzhakkam/kavithaigal#6 «கவிதைகள்»",
+   "B": "ina-poem:ina-muzhakkam/kavithaigal#2#6.2 «ஏற்பரோ!»",
+   "covAinB": 0.098,
+   "covBinA": 1,
+   "longestSharedRun": 463,
+   "aLen": 4811,
+   "bLen": 463,
+   "samePublication": true
+  },
+  {
+   "A": "poetry:kalaignarin-kavithaigal/give-me-your-heart-anna#1 «இதயத்தைத் தந்திடு அண்ணா»",
+   "B": "poetry:poomudi/poomudi «பூமுடி»",
+   "covAinB": 0.056,
+   "covBinA": 0.845,
+   "longestSharedRun": 449,
+   "aLen": 9741,
+   "bLen": 622,
+   "samePublication": false
+  },
+  {
+   "A": "poetry:idhayathai-thanthidu-anna/idhayathai-thanthidu-anna «இதயத்தைத் தந்திடு அண்ணா»",
+   "B": "poetry:poomudi/poomudi «பூமுடி»",
+   "covAinB": 0.056,
+   "covBinA": 0.835,
+   "longestSharedRun": 449,
+   "aLen": 9574,
+   "bLen": 622,
+   "samePublication": false
+  },
+  {
+   "A": "essays:thudikkum-ilamai/vetri-vilakku#4 «வெற்றி விளக்கு!»",
+   "B": "ref:speeches/idhaya-perikai «இதய பேரிகை»",
+   "covAinB": 0.81,
+   "covBinA": 0.114,
+   "longestSharedRun": 426,
+   "aLen": 3619,
+   "bLen": 28004,
+   "samePublication": false
+  },
+  {
+   "A": "poetry:kalaignarin-kavithaigal/bharathidasan#14 «பாரதிதாசன்»",
+   "B": "poetry:kalaignarin-kaviyaranga-kavithaigal-1975/at-the-revolutionary-poets-poetry-gathering#1 «புரட்சிக் கவிஞர் பாட்டரங்கில் / முதல்வர்»",
+   "covAinB": 0.516,
+   "covBinA": 0.689,
+   "longestSharedRun": 420,
+   "aLen": 12026,
+   "bLen": 8733,
+   "samePublication": false
+  },
+  {
+   "A": "poetry:kaalap-pezhaiyum-kavithai-saaviyum/can-he-be-bought-with-love#37 «அன்பால் அவனை விலைகொள்ள முடியுமோ?»",
+   "B": "poetry:oruthalaik-kathal/section-1#1 «ஒருதலைக் காதல் — 1»",
+   "covAinB": 0.881,
+   "covBinA": 0.885,
+   "longestSharedRun": 396,
+   "aLen": 5491,
+   "bLen": 5482,
+   "samePublication": false
+  },
+  {
+   "A": "poetry:kalaignarin-kavithaigal/anna-a-poetry-assembly#23 «அண்ணன் ஒரு கவியரங்கம்»",
+   "B": "poetry:kalaignarin-kavithaigal/presiding-poem-three-great-celebrations#32 «முப்பெரும் விழாக் கவியரங்கம் தலைமைக் கவி»",
+   "covAinB": 0.163,
+   "covBinA": 0.088,
+   "longestSharedRun": 360,
+   "aLen": 6349,
+   "bLen": 11960,
+   "samePublication": true
+  },
+  {
+   "A": "poetry:kalaignarin-kavithaigal/pongal-festival#28 «பொங்கல் விழா»",
+   "B": "poetry:kalaignarin-kavithaigal/kalaivanar-arangam-poetry-assembly#35 «கலைவாணர் அரங்கக் கவியரங்கம்»",
+   "covAinB": 0.133,
+   "covBinA": 0.192,
+   "longestSharedRun": 357,
+   "aLen": 4033,
+   "bLen": 2693,
+   "samePublication": true
+  },
+  {
+   "A": "essays:ina-muzhakkam/sorgga-logaththil#2 «சொர்க்க லோகத்தில்»",
+   "B": "ref:stories/sorgaththirku-vandhathu-eppadi «சொர்க்கத்திற்கு வந்தது எப்படி?»",
+   "covAinB": 0.548,
+   "covBinA": 0.904,
+   "longestSharedRun": 342,
+   "aLen": 6154,
+   "bLen": 3667,
+   "samePublication": false
+  },
+  {
+   "A": "essays:ina-muzhakkam/kavithaigal#6 «கவிதைகள்»",
+   "B": "ina-poem:ina-muzhakkam/kavithaigal#7#6.7 «மாணவர் எழுச்சி.»",
+   "covAinB": 0.069,
+   "covBinA": 1,
+   "longestSharedRun": 336,
+   "aLen": 4811,
+   "bLen": 336,
+   "samePublication": true
+  },
+  {
+   "A": "poetry:kalaignarin-kavithaigal/still-this-clamour#55 «இன்றுமா கூச்சல்?»",
+   "B": "essays:ina-muzhakkam/kavithaigal#6 «கவிதைகள்»",
+   "covAinB": 0.987,
+   "covBinA": 0.066,
+   "longestSharedRun": 324,
+   "aLen": 324,
+   "bLen": 4811,
+   "samePublication": false
+  },
+  {
+   "A": "essays:ina-muzhakkam/kavithaigal#6 «கவிதைகள்»",
+   "B": "ina-poem:ina-muzhakkam/kavithaigal#3#6.3 «சைவரே!»",
+   "covAinB": 0.068,
+   "covBinA": 1,
+   "longestSharedRun": 322,
+   "aLen": 4811,
+   "bLen": 322,
+   "samePublication": true
+  },
+  {
+   "A": "poetry:kalaignarin-kavithaigal/still-this-clamour#55 «இன்றுமா கூச்சல்?»",
+   "B": "ina-poem:ina-muzhakkam/kavithaigal#10#6.10 «இன்னுமா கூச்சல்?»",
+   "covAinB": 0.965,
+   "covBinA": 1,
+   "longestSharedRun": 310,
+   "aLen": 324,
+   "bLen": 310,
+   "samePublication": false
+  },
+  {
+   "A": "essays:ina-muzhakkam/kavithaigal#6 «கவிதைகள்»",
+   "B": "ina-poem:ina-muzhakkam/kavithaigal#10#6.10 «இன்னுமா கூச்சல்?»",
+   "covAinB": 0.064,
+   "covBinA": 1,
+   "longestSharedRun": 310,
+   "aLen": 4811,
+   "bLen": 310,
+   "samePublication": true
+  },
+  {
+   "A": "essays:sinthanaiyum-seyalum/vali-arivikkum-vaayillaa-mozhi#41 «வலி அறிவிக்கும் வாயில்லா மொழி!»",
+   "B": "essays:sinthanaiyum-seyalum/varumun-kaappathaa-vanthapin-kaappathaa#42 «வருமுன் காப்பதா? வந்தபின் காப்பதா?»",
+   "covAinB": 0.146,
+   "covBinA": 0.083,
+   "longestSharedRun": 310,
+   "aLen": 3462,
+   "bLen": 6249,
+   "samePublication": true
+  },
+  {
+   "A": "essays:ina-muzhakkam/kavithaigal#6 «கவிதைகள்»",
+   "B": "ina-poem:ina-muzhakkam/kavithaigal#9#6.9 «தோல்வி எப்பொழுது?»",
+   "covAinB": 0.065,
+   "covBinA": 1,
+   "longestSharedRun": 309,
+   "aLen": 4811,
+   "bLen": 309,
+   "samePublication": true
+  },
+  {
+   "A": "essays:meesai-mulaiththa-vayathil/pugazh#13 «புகழ்»",
+   "B": "ref:stories/pugazhe-nee-oru-pudhir «புகழே நீ ஒரு புதிர்»",
+   "covAinB": 0.555,
+   "covBinA": 0.977,
+   "longestSharedRun": 285,
+   "aLen": 512,
+   "bLen": 300,
+   "samePublication": false
+  },
+  {
+   "A": "poetry:poomudi/poomudi «பூமுடி»",
+   "B": "ref:murasoli/m49-l3807 «அறப்போர் வாளேந்தி, அய்யா; அண்ணா வழியில் »",
+   "covAinB": 0.532,
+   "covBinA": 0.05,
+   "longestSharedRun": 275,
+   "aLen": 622,
+   "bLen": 7600,
+   "samePublication": false
+  },
+  {
+   "A": "essays:ina-muzhakkam/kavithaigal#6 «கவிதைகள்»",
+   "B": "ina-poem:ina-muzhakkam/kavithaigal#4#6.4 «வா!»",
+   "covAinB": 0.054,
+   "covBinA": 1,
+   "longestSharedRun": 265,
+   "aLen": 4811,
+   "bLen": 265,
+   "samePublication": true
+  },
+  {
+   "A": "essays:meesai-mulaiththa-vayathil/adikkaatru#2 «ஆடிக்காற்று»",
+   "B": "ref:stories/aadik-kaatre «ஆடிக் காற்றே!»",
+   "covAinB": 0.57,
+   "covBinA": 0.932,
+   "longestSharedRun": 254,
+   "aLen": 1416,
+   "bLen": 888,
+   "samePublication": false
+  },
+  {
+   "A": "poetry:kalaignarin-kavithaigal/on-annas-path#30 «அண்ணா வழியில்»",
+   "B": "poetry:kalaignarin-kavithaigal/presiding-poem-three-great-celebrations#32 «முப்பெரும் விழாக் கவியரங்கம் தலைமைக் கவி»",
+   "covAinB": 0.197,
+   "covBinA": 0.087,
+   "longestSharedRun": 228,
+   "aLen": 5201,
+   "bLen": 11960,
+   "samePublication": true
+  },
+  {
+   "A": "poetry:anaiya-vilakku-anna/anaiya-vilakku-anna «அணையா விளக்கு அண்ணா»",
+   "B": "poetry:kalaignarin-kavithaigal/a-walking-journey-for-tamil-to-flourish#24 «தமிழ் வளர வழிநடைப் பயணம்»",
+   "covAinB": 0.071,
+   "covBinA": 0.2,
+   "longestSharedRun": 227,
+   "aLen": 10956,
+   "bLen": 4049,
+   "samePublication": false
+  },
+  {
+   "A": "essays:ina-muzhakkam/kavithaigal#6 «கவிதைகள்»",
+   "B": "ina-poem:ina-muzhakkam/kavithaigal#1#6.1 «நியாயத் திராசு!»",
+   "covAinB": 0.045,
+   "covBinA": 1,
+   "longestSharedRun": 220,
+   "aLen": 4811,
+   "bLen": 220,
+   "samePublication": true
+  },
+  {
+   "A": "poetry:kalaignarin-kavithaigal/know-it-as-a-storm#51 «புயல் என அறிக!»",
+   "B": "ina-poem:ina-muzhakkam/kavithaigal#3#6.3 «சைவரே!»",
+   "covAinB": 0.916,
+   "covBinA": 0.933,
+   "longestSharedRun": 220,
+   "aLen": 328,
+   "bLen": 322,
+   "samePublication": false
+  },
+  {
+   "A": "poetry:kalaignarin-kavithaigal/know-it-as-a-storm#51 «புயல் என அறிக!»",
+   "B": "essays:ina-muzhakkam/kavithaigal#6 «கவிதைகள்»",
+   "covAinB": 0.922,
+   "covBinA": 0.063,
+   "longestSharedRun": 220,
+   "aLen": 328,
+   "bLen": 4811,
+   "samePublication": false
+  },
+  {
+   "A": "poetry:kalaignarin-kavithaigal/father-periyar#26 «தந்தை பெரியார்»",
+   "B": "poetry:kalaignarin-kavithaigal/presiding-poem-three-great-celebrations#32 «முப்பெரும் விழாக் கவியரங்கம் தலைமைக் கவி»",
+   "covAinB": 0.291,
+   "covBinA": 0.134,
+   "longestSharedRun": 199,
+   "aLen": 5475,
+   "bLen": 11960,
+   "samePublication": true
+  },
+  {
+   "A": "essays:meesai-mulaiththa-vayathil/piraiye#1 «பிறையே»",
+   "B": "ref:stories/neeyum-kaithi-naanum-kaithi «நீயும் கைதி - நானும் கைதி»",
+   "covAinB": 0.43,
+   "covBinA": 0.911,
+   "longestSharedRun": 195,
+   "aLen": 1080,
+   "bLen": 487,
+   "samePublication": false
+  },
+  {
+   "A": "ina-poem:ina-muzhakkam/kavithaigal#8#6.8 «வாளிங்கே!»",
+   "B": "ref:stories/santhana-kinnam «சந்தனக்கிண்ணம்»",
+   "covAinB": 0.851,
+   "covBinA": 0.146,
+   "longestSharedRun": 179,
+   "aLen": 2005,
+   "bLen": 12578,
+   "samePublication": false
+  },
+  {
+   "A": "essays:ina-muzhakkam/kavithaigal#6 «கவிதைகள்»",
+   "B": "ref:stories/santhana-kinnam «சந்தனக்கிண்ணம்»",
+   "covAinB": 0.366,
+   "covBinA": 0.151,
+   "longestSharedRun": 179,
+   "aLen": 4811,
+   "bLen": 12578,
+   "samePublication": false
+  },
+  {
+   "A": "poetry:kalaignarin-kavithaigal/varna-or-death#53 «வருணமா? மரணமா?»",
+   "B": "essays:ina-muzhakkam/kavithaigal#6 «கவிதைகள்»",
+   "covAinB": 1,
+   "covBinA": 0.037,
+   "longestSharedRun": 178,
+   "aLen": 178,
+   "bLen": 4811,
+   "samePublication": false
+  },
+  {
+   "A": "poetry:kalaignarin-kavithaigal/varna-or-death#53 «வருணமா? மரணமா?»",
+   "B": "ina-poem:ina-muzhakkam/kavithaigal#11#6.11 «வருணமா? மரணமா?»",
+   "covAinB": 1,
+   "covBinA": 1,
+   "longestSharedRun": 178,
+   "aLen": 178,
+   "bLen": 178,
+   "samePublication": false
+  },
+  {
+   "A": "essays:ina-muzhakkam/kavithaigal#6 «கவிதைகள்»",
+   "B": "ina-poem:ina-muzhakkam/kavithaigal#11#6.11 «வருணமா? மரணமா?»",
+   "covAinB": 0.037,
+   "covBinA": 1,
+   "longestSharedRun": 178,
+   "aLen": 4811,
+   "bLen": 178,
+   "samePublication": true
+  },
+  {
+   "A": "essays:ina-muzhakkam/kavithaigal#6 «கவிதைகள்»",
+   "B": "ina-poem:ina-muzhakkam/kavithaigal#5#6.5 «பொதுவுடைமையே!»",
+   "covAinB": 0.036,
+   "covBinA": 1,
+   "longestSharedRun": 176,
+   "aLen": 4811,
+   "bLen": 176,
+   "samePublication": true
+  },
+  {
+   "A": "poetry:kalaignarin-kavithaigal/panneerselvam#39 «பன்னீர்ச்செல்வமே!»",
+   "B": "essays:unarchchimaalai/kavithaiyalla-kannirkkadal#10 «கவிதையல்ல - கண்ணீர்க்கடல் !»",
+   "covAinB": 0.71,
+   "covBinA": 0.758,
+   "longestSharedRun": 176,
+   "aLen": 1490,
+   "bLen": 1364,
+   "samePublication": false
+  },
+  {
+   "A": "poetry:anaiya-vilakku-anna/anaiya-vilakku-anna «அணையா விளக்கு அண்ணா»",
+   "B": "poetry:kalaignarin-kavithaigal/we-move-as-your-shadow#41 «உன் நிழலாக அசைகின்றோம்!»",
+   "covAinB": 0.084,
+   "covBinA": 0.726,
+   "longestSharedRun": 163,
+   "aLen": 10956,
+   "bLen": 1458,
+   "samePublication": false
+  },
+  {
+   "A": "poetry:kalaignarin-kavithaigal/scales-of-justice#49 «நியாயத் தராசு»",
+   "B": "essays:ina-muzhakkam/kavithaigal#6 «கவிதைகள்»",
+   "covAinB": 0.966,
+   "covBinA": 0.043,
+   "longestSharedRun": 160,
+   "aLen": 218,
+   "bLen": 4811,
+   "samePublication": false
+  },
+  {
+   "A": "poetry:kalaignarin-kavithaigal/scales-of-justice#49 «நியாயத் தராசு»",
+   "B": "ina-poem:ina-muzhakkam/kavithaigal#1#6.1 «நியாயத் திராசு!»",
+   "covAinB": 0.966,
+   "covBinA": 0.957,
+   "longestSharedRun": 160,
+   "aLen": 218,
+   "bLen": 220,
+   "samePublication": false
+  },
+  {
+   "A": "poetry:kalaignarin-kavithaigal/would-they-accept#50 «ஏற்பாரோ?»",
+   "B": "essays:ina-muzhakkam/kavithaigal#6 «கவிதைகள்»",
+   "covAinB": 0.85,
+   "covBinA": 0.08,
+   "longestSharedRun": 154,
+   "aLen": 446,
+   "bLen": 4811,
+   "samePublication": false
+  },
+  {
+   "A": "poetry:kalaignarin-kavithaigal/would-they-accept#50 «ஏற்பாரோ?»",
+   "B": "ina-poem:ina-muzhakkam/kavithaigal#2#6.2 «ஏற்பரோ!»",
+   "covAinB": 0.845,
+   "covBinA": 0.814,
+   "longestSharedRun": 154,
+   "aLen": 446,
+   "bLen": 463,
+   "samePublication": false
+  }
+ ],
+ "shortTextPairs": [
+  {
+   "A": "poetry:kalaignarin-kavithaigal/have-you-heard#52 «கேட்டுண்டோ?»",
+   "B": "ina-poem:ina-muzhakkam/kavithaigal#6#6.6 «யோசித்துப் பார்!»",
+   "covAinB": 0.348,
+   "covBinA": 1,
+   "longestSharedRun": 114,
+   "aLen": 313,
+   "bLen": 114,
+   "samePublication": false
+  },
+  {
+   "A": "essays:ina-muzhakkam/kavithaigal#6 «கவிதைகள்»",
+   "B": "ina-poem:ina-muzhakkam/kavithaigal#6#6.6 «யோசித்துப் பார்!»",
+   "covAinB": 0.023,
+   "covBinA": 1,
+   "longestSharedRun": 114,
+   "aLen": 4811,
+   "bLen": 114,
+   "samePublication": true
+  },
+  {
+   "A": "poetry:kalaignarin-kavithaigal/when-does-defeat-come#54 «தோல்வி எப்பொழுது?»",
+   "B": "ina-poem:ina-muzhakkam/kavithaigal#9#6.9 «தோல்வி எப்பொழுது?»",
+   "covAinB": 0.941,
+   "covBinA": 0.954,
+   "longestSharedRun": 149,
+   "aLen": 313,
+   "bLen": 309,
+   "samePublication": false
+  },
+  {
+   "A": "poetry:kalaignarin-kavithaigal/when-does-defeat-come#54 «தோல்வி எப்பொழுது?»",
+   "B": "essays:ina-muzhakkam/kavithaigal#6 «கவிதைகள்»",
+   "covAinB": 0.941,
+   "covBinA": 0.062,
+   "longestSharedRun": 149,
+   "aLen": 313,
+   "bLen": 4811,
+   "samePublication": false
+  },
+  {
+   "A": "poetry:kalaignarin-kavithaigal/varna-or-death#53 «வருணமா? மரணமா?»",
+   "B": "ref:murasoli/m51-l3912 «இந்த நாளில் அன்பு வேண்டுகோள்!»",
+   "covAinB": 0.871,
+   "covBinA": 0.023,
+   "longestSharedRun": 93,
+   "aLen": 178,
+   "bLen": 7189,
+   "samePublication": false
+  },
+  {
+   "A": "ina-poem:ina-muzhakkam/kavithaigal#11#6.11 «வருணமா? மரணமா?»",
+   "B": "ref:murasoli/m51-l3912 «இந்த நாளில் அன்பு வேண்டுகோள்!»",
+   "covAinB": 0.871,
+   "covBinA": 0.023,
+   "longestSharedRun": 93,
+   "aLen": 178,
+   "bLen": 7189,
+   "samePublication": false
+  },
+  {
+   "A": "poetry:kalaignarin-kavithaigal/freedom-fighters#6 «விடுதலை வீரர்கள்»",
+   "B": "ina-poem:ina-muzhakkam/kavithaigal#7#6.7 «மாணவர் எழுச்சி.»",
+   "covAinB": 0.057,
+   "covBinA": 0.827,
+   "longestSharedRun": 134,
+   "aLen": 5111,
+   "bLen": 336,
+   "samePublication": false
+  },
+  {
+   "A": "poetry:kalaignarin-kavithaigal/have-you-heard#52 «கேட்டுண்டோ?»",
+   "B": "ina-poem:ina-muzhakkam/kavithaigal#5#6.5 «பொதுவுடைமையே!»",
+   "covAinB": 0.456,
+   "covBinA": 0.822,
+   "longestSharedRun": 92,
+   "aLen": 313,
+   "bLen": 176,
+   "samePublication": false
+  },
+  {
+   "A": "poetry:kalaignarin-kavithaigal/have-you-heard#52 «கேட்டுண்டோ?»",
+   "B": "essays:ina-muzhakkam/kavithaigal#6 «கவிதைகள்»",
+   "covAinB": 0.807,
+   "covBinA": 0.053,
+   "longestSharedRun": 115,
+   "aLen": 313,
+   "bLen": 4811,
+   "samePublication": false
+  }
+ ],
+ "bigramPairs": [
+  {
+   "max": 1,
+   "AinB": 0.36585365853658536,
+   "BinA": 1,
+   "n": 15,
+   "A": "kalaignarin-kavithaigal/have-you-heard#52 «கேட்டுண்டோ?»",
+   "B": "ina-muzhakkam/kavithaigal#6#6.6 «யோசித்துப் பார்!»"
+  },
+  {
+   "max": 1,
+   "AinB": 1,
+   "BinA": 0.045234248788368334,
+   "n": 28,
+   "A": "ina-muzhakkam/kavithaigal#1#6.1 «நியாயத் திராசு!»",
+   "B": "ina-muzhakkam/kavithaigal#6 «கவிதைகள்»"
+  },
+  {
+   "max": 1,
+   "AinB": 1,
+   "BinA": 0.0888529886914378,
+   "n": 55,
+   "A": "ina-muzhakkam/kavithaigal#2#6.2 «ஏற்பரோ!»",
+   "B": "ina-muzhakkam/kavithaigal#6 «கவிதைகள்»"
+  },
+  {
+   "max": 1,
+   "AinB": 1,
+   "BinA": 0.05815831987075929,
+   "n": 36,
+   "A": "ina-muzhakkam/kavithaigal#3#6.3 «சைவரே!»",
+   "B": "ina-muzhakkam/kavithaigal#6 «கவிதைகள்»"
+  },
+  {
+   "max": 1,
+   "AinB": 1,
+   "BinA": 0.050080775444264945,
+   "n": 31,
+   "A": "ina-muzhakkam/kavithaigal#4#6.4 «வா!»",
+   "B": "ina-muzhakkam/kavithaigal#6 «கவிதைகள்»"
+  },
+  {
+   "max": 1,
+   "AinB": 1,
+   "BinA": 0.03877221324717286,
+   "n": 24,
+   "A": "ina-muzhakkam/kavithaigal#5#6.5 «பொதுவுடைமையே!»",
+   "B": "ina-muzhakkam/kavithaigal#6 «கவிதைகள்»"
+  },
+  {
+   "max": 1,
+   "AinB": 1,
+   "BinA": 0.024232633279483037,
+   "n": 15,
+   "A": "ina-muzhakkam/kavithaigal#6#6.6 «யோசித்துப் பார்!»",
+   "B": "ina-muzhakkam/kavithaigal#6 «கவிதைகள்»"
+  },
+  {
+   "max": 1,
+   "AinB": 1,
+   "BinA": 0.06623586429725363,
+   "n": 41,
+   "A": "ina-muzhakkam/kavithaigal#7#6.7 «மாணவர் எழுச்சி.»",
+   "B": "ina-muzhakkam/kavithaigal#6 «கவிதைகள்»"
+  },
+  {
+   "max": 1,
+   "AinB": 1,
+   "BinA": 0.05654281098546042,
+   "n": 35,
+   "A": "ina-muzhakkam/kavithaigal#9#6.9 «தோல்வி எப்பொழுது?»",
+   "B": "ina-muzhakkam/kavithaigal#6 «கவிதைகள்»"
+  },
+  {
+   "max": 1,
+   "AinB": 1,
+   "BinA": 0.061389337641357025,
+   "n": 38,
+   "A": "ina-muzhakkam/kavithaigal#10#6.10 «இன்னுமா கூச்சல்?»",
+   "B": "ina-muzhakkam/kavithaigal#6 «கவிதைகள்»"
+  },
+  {
+   "max": 1,
+   "AinB": 1,
+   "BinA": 0.03877221324717286,
+   "n": 24,
+   "A": "ina-muzhakkam/kavithaigal#11#6.11 «வருணமா? மரணமா?»",
+   "B": "ina-muzhakkam/kavithaigal#6 «கவிதைகள்»"
+  },
+  {
+   "max": 0.9962406015037594,
+   "AinB": 0.9962406015037594,
+   "BinA": 0.4281098546042003,
+   "n": 265,
+   "A": "ina-muzhakkam/kavithaigal#8#6.8 «வாளிங்கே!»",
+   "B": "ina-muzhakkam/kavithaigal#6 «கவிதைகள்»"
+  },
+  {
+   "max": 0.910174880763116,
+   "AinB": 0.910174880763116,
+   "BinA": 0.8973354231974922,
+   "n": 1145,
+   "A": "idhayathai-thanthidu-anna/idhayathai-thanthidu-anna «இதயத்தைத் தந்திடு அண்ணா»",
+   "B": "kalaignarin-kavithaigal/give-me-your-heart-anna#1 «இதயத்தைத் தந்திடு அண்ணா»"
+  },
+  {
+   "max": 0.8823529411764706,
+   "AinB": 0.46875,
+   "BinA": 0.8823529411764706,
+   "n": 30,
+   "A": "meesai-mulaiththa-vayathil/pugazh#13 «புகழ்»",
+   "B": "REF:stories/pugazhe-nee-oru-pudhir «புகழே நீ ஒரு புதிர்»"
+  },
+  {
+   "max": 0.8571428571428571,
+   "AinB": 0.8275862068965517,
+   "BinA": 0.8571428571428571,
+   "n": 24,
+   "A": "kalaignarin-kavithaigal/scales-of-justice#49 «நியாயத் தராசு»",
+   "B": "ina-muzhakkam/kavithaigal#1#6.1 «நியாயத் திராசு!»"
+  },
+  {
+   "max": 0.84472049689441,
+   "AinB": 0.84472049689441,
+   "BinA": 0.16094674556213018,
+   "n": 136,
+   "A": "kalaignarin-kavithaigal/today-is-your-birthday#45 «இன்றைக்கு உன்றன் பிறந்த நாள்»",
+   "B": "REF:murasoli/m49-l3775 «பெருந்தலைவர் காமராஜர் புகழ் வாழ்க!»"
+  },
+  {
+   "max": 0.831858407079646,
+   "AinB": 0.831858407079646,
+   "BinA": 0.5529411764705883,
+   "n": 564,
+   "A": "gunanayagar-nehru/gunanayagar-nehru «குணநாயகர் நேரு»",
+   "B": "kalaignarin-kavithaigal/democracy-as-nehru-saw-it#19 «நேரு கண்ட ஜனநாயகம்»"
+  },
+  {
+   "max": 0.8275862068965517,
+   "AinB": 0.8275862068965517,
+   "BinA": 0.03877221324717286,
+   "n": 24,
+   "A": "kalaignarin-kavithaigal/scales-of-justice#49 «நியாயத் தராசு»",
+   "B": "ina-muzhakkam/kavithaigal#6 «கவிதைகள்»"
+  },
+  {
+   "max": 0.821917808219178,
+   "AinB": 0.8163265306122449,
+   "BinA": 0.821917808219178,
+   "n": 120,
+   "A": "kalaignarin-kavithaigal/green-parrot#56 «பச்சைக் கிளி»",
+   "B": "meesai-mulaiththa-vayathil/pachchaikkili#14 «பச்சைக்கிளி»"
+  },
+  {
+   "max": 0.8181818181818182,
+   "AinB": 0.8181818181818182,
+   "BinA": 0.029079159935379646,
+   "n": 18,
+   "A": "kalaignarin-kavithaigal/varna-or-death#53 «வருணமா? மரணமா?»",
+   "B": "ina-muzhakkam/kavithaigal#6 «கவிதைகள்»"
+  },
+  {
+   "max": 0.8181818181818182,
+   "AinB": 0.8181818181818182,
+   "BinA": 0.75,
+   "n": 18,
+   "A": "kalaignarin-kavithaigal/varna-or-death#53 «வருணமா? மரணமா?»",
+   "B": "ina-muzhakkam/kavithaigal#11#6.11 «வருணமா? மரணமா?»"
+  },
+  {
+   "max": 0.8157894736842105,
+   "AinB": 0.7560975609756098,
+   "BinA": 0.8157894736842105,
+   "n": 31,
+   "A": "kalaignarin-kavithaigal/still-this-clamour#55 «இன்றுமா கூச்சல்?»",
+   "B": "ina-muzhakkam/kavithaigal#10#6.10 «இன்னுமா கூச்சல்?»"
+  },
+  {
+   "max": 0.8,
+   "AinB": 0.8,
+   "BinA": 0.045234248788368334,
+   "n": 28,
+   "A": "kalaignarin-kavithaigal/know-it-as-a-storm#51 «புயல் என அறிக!»",
+   "B": "ina-muzhakkam/kavithaigal#6 «கவிதைகள்»"
+  },
+  {
+   "max": 0.8,
+   "AinB": 0.8,
+   "BinA": 0.7777777777777778,
+   "n": 28,
+   "A": "kalaignarin-kavithaigal/know-it-as-a-storm#51 «புயல் என அறிக!»",
+   "B": "ina-muzhakkam/kavithaigal#3#6.3 «சைவரே!»"
+  },
+  {
+   "max": 0.793743890518084,
+   "AinB": 0.793743890518084,
+   "BinA": 0.7733333333333333,
+   "n": 812,
+   "A": "kalaignarin-kavithaigal/the-tale-of-the-southerner#2 «தென்னவன் காதை»",
+   "B": "thennan-kathai/thennan-kathai «தென்னவன் காதை»"
+  },
+  {
+   "max": 0.782608695652174,
+   "AinB": 0.4712041884816754,
+   "BinA": 0.782608695652174,
+   "n": 90,
+   "A": "meesai-mulaiththa-vayathil/adikkaatru#2 «ஆடிக்காற்று»",
+   "B": "REF:stories/aadik-kaatre «ஆடிக் காற்றே!»"
+  },
+  {
+   "max": 0.7804878048780488,
+   "AinB": 0.7804878048780488,
+   "BinA": 0.051696284329563816,
+   "n": 32,
+   "A": "kalaignarin-kavithaigal/still-this-clamour#55 «இன்றுமா கூச்சல்?»",
+   "B": "ina-muzhakkam/kavithaigal#6 «கவிதைகள்»"
+  },
+  {
+   "max": 0.7754491017964071,
+   "AinB": 0.5498938428874734,
+   "BinA": 0.7754491017964071,
+   "n": 259,
+   "A": "pesum-kalai-valarppom/section-06#6 «»",
+   "B": "REF:stories/nadakkuma-nadakkatha «நடக்குமா நடக்காதா?»"
+  },
+  {
+   "max": 0.7714285714285715,
+   "AinB": 0.7714285714285715,
+   "BinA": 0.04361873990306947,
+   "n": 27,
+   "A": "kalaignarin-kavithaigal/when-does-defeat-come#54 «தோல்வி எப்பொழுது?»",
+   "B": "ina-muzhakkam/kavithaigal#6 «கவிதைகள்»"
+  },
+  {
+   "max": 0.7714285714285715,
+   "AinB": 0.7714285714285715,
+   "BinA": 0.7714285714285715,
+   "n": 27,
+   "A": "kalaignarin-kavithaigal/when-does-defeat-come#54 «தோல்வி எப்பொழுது?»",
+   "B": "ina-muzhakkam/kavithaigal#9#6.9 «தோல்வி எப்பொழுது?»"
+  },
+  {
+   "max": 0.75,
+   "AinB": 0.75,
+   "BinA": 0.0630048465266559,
+   "n": 39,
+   "A": "kalaignarin-kavithaigal/would-they-accept#50 «ஏற்பாரோ?»",
+   "B": "ina-muzhakkam/kavithaigal#6 «கவிதைகள்»"
+  },
+  {
+   "max": 0.75,
+   "AinB": 0.75,
+   "BinA": 0.7090909090909091,
+   "n": 39,
+   "A": "kalaignarin-kavithaigal/would-they-accept#50 «ஏற்பாரோ?»",
+   "B": "ina-muzhakkam/kavithaigal#2#6.2 «ஏற்பரோ!»"
+  },
+  {
+   "max": 0.729490022172949,
+   "AinB": 0.729490022172949,
+   "BinA": 0.10783349721402818,
+   "n": 329,
+   "A": "thudikkum-ilamai/poompuhar#3 «பூம்புகார்»",
+   "B": "REF:speeches/idhaya-perikai «இதய பேரிகை»"
+  },
+  {
+   "max": 0.7172995780590717,
+   "AinB": 0.4409857328145266,
+   "BinA": 0.7172995780590717,
+   "n": 340,
+   "A": "ina-muzhakkam/sorgga-logaththil#2 «சொர்க்க லோகத்தில்»",
+   "B": "REF:stories/sorgaththirku-vandhathu-eppadi «சொர்க்கத்திற்கு வந்தது எப்படி?»"
+  },
+  {
+   "max": 0.6800595238095238,
+   "AinB": 0.6356050069541029,
+   "BinA": 0.6800595238095238,
+   "n": 457,
+   "A": "kaalap-pezhaiyum-kavithai-saaviyum/can-he-be-bought-with-love#37 «அன்பால் அவனை விலைகொள்ள முடியுமோ?»",
+   "B": "oruthalaik-kathal/section-1#1 «ஒருதலைக் காதல் — 1»"
+  },
+  {
+   "max": 0.6787878787878788,
+   "AinB": 0.07826694619147449,
+   "BinA": 0.6787878787878788,
+   "n": 112,
+   "A": "anaiya-vilakku-anna/anaiya-vilakku-anna «அணையா விளக்கு அண்ணா»",
+   "B": "kalaignarin-kavithaigal/we-move-as-your-shadow#41 «உன் நிழலாக அசைகின்றோம்!»"
+  },
+  {
+   "max": 0.6666666666666666,
+   "AinB": 0.3262411347517731,
+   "BinA": 0.6666666666666666,
+   "n": 46,
+   "A": "meesai-mulaiththa-vayathil/piraiye#1 «பிறையே»",
+   "B": "REF:stories/neeyum-kaithi-naanum-kaithi «நீயும் கைதி - நானும் கைதி»"
+  },
+  {
+   "max": 0.6585365853658537,
+   "AinB": 0.6585365853658537,
+   "BinA": 0.04361873990306947,
+   "n": 27,
+   "A": "kalaignarin-kavithaigal/have-you-heard#52 «கேட்டுண்டோ?»",
+   "B": "ina-muzhakkam/kavithaigal#6 «கவிதைகள்»"
+  },
+  {
+   "max": 0.6363636363636364,
+   "AinB": 0.6363636363636364,
+   "BinA": 0.015086206896551725,
+   "n": 14,
+   "A": "kalaignarin-kavithaigal/varna-or-death#53 «வருணமா? மரணமா?»",
+   "B": "REF:murasoli/m51-l3912 «இந்த நாளில் அன்பு வேண்டுகோள்!»"
+  },
+  {
+   "max": 0.6341463414634146,
+   "AinB": 0.03561643835616438,
+   "BinA": 0.6341463414634146,
+   "n": 52,
+   "A": "anna-kaviyarangam/anna-kaviyarangam «அண்ணா கவியரங்கம்»",
+   "B": "poomudi/poomudi «பூமுடி»"
+  },
+  {
+   "max": 0.6341463414634146,
+   "AinB": 0.04133545310015898,
+   "BinA": 0.6341463414634146,
+   "n": 52,
+   "A": "idhayathai-thanthidu-anna/idhayathai-thanthidu-anna «இதயத்தைத் தந்திடு அண்ணா»",
+   "B": "poomudi/poomudi «பூமுடி»"
+  },
+  {
+   "max": 0.6341463414634146,
+   "AinB": 0.0395738203957382,
+   "BinA": 0.6341463414634146,
+   "n": 26,
+   "A": "kalaignarin-kavithaigal/freedom-fighters#6 «விடுதலை வீரர்கள்»",
+   "B": "ina-muzhakkam/kavithaigal#7#6.7 «மாணவர் எழுச்சி.»"
+  },
+  {
+   "max": 0.6127819548872181,
+   "AinB": 0.6127819548872181,
+   "BinA": 0.1040868454661558,
+   "n": 163,
+   "A": "ina-muzhakkam/kavithaigal#8#6.8 «வாளிங்கே!»",
+   "B": "REF:stories/santhana-kinnam «சந்தனக்கிண்ணம்»"
+  },
+  {
+   "max": 0.5975609756097561,
+   "AinB": 0.0384012539184953,
+   "BinA": 0.5975609756097561,
+   "n": 49,
+   "A": "kalaignarin-kavithaigal/give-me-your-heart-anna#1 «இதயத்தைத் தந்திடு அண்ணா»",
+   "B": "poomudi/poomudi «பூமுடி»"
+  },
+  {
+   "max": 0.5607476635514018,
+   "AinB": 0.5607476635514018,
+   "BinA": 0.07866273352999016,
+   "n": 240,
+   "A": "thudikkum-ilamai/vetri-vilakku#4 «வெற்றி விளக்கு!»",
+   "B": "REF:speeches/idhaya-perikai «இதய பேரிகை»"
+  },
+  {
+   "max": 0.5,
+   "AinB": 0.2926829268292683,
+   "BinA": 0.5,
+   "n": 12,
+   "A": "kalaignarin-kavithaigal/have-you-heard#52 «கேட்டுண்டோ?»",
+   "B": "ina-muzhakkam/kavithaigal#5#6.5 «பொதுவுடைமையே!»"
+  },
+  {
+   "max": 0.5,
+   "AinB": 0.5,
+   "BinA": 0.01293103448275862,
+   "n": 12,
+   "A": "ina-muzhakkam/kavithaigal#11#6.11 «வருணமா? மரணமா?»",
+   "B": "REF:murasoli/m51-l3912 «இந்த நாளில் அன்பு வேண்டுகோள்!»"
+  },
+  {
+   "max": 0.4967741935483871,
+   "AinB": 0.39690721649484534,
+   "BinA": 0.4967741935483871,
+   "n": 77,
+   "A": "kalaignarin-kavithaigal/panneerselvam#39 «பன்னீர்ச்செல்வமே!»",
+   "B": "unarchchimaalai/kavithaiyalla-kannirkkadal#10 «கவிதையல்ல - கண்ணீர்க்கடல் !»"
+  },
+  {
+   "max": 0.48333333333333334,
+   "AinB": 0.19863013698630136,
+   "BinA": 0.48333333333333334,
+   "n": 29,
+   "A": "meesai-mulaiththa-vayathil/pachchaikkili#14 «பச்சைக்கிளி»",
+   "B": "REF:stories/sirai-kodiyathu «சிறை கொடியது»"
+  },
+  {
+   "max": 0.45901639344262296,
+   "AinB": 0.027450980392156862,
+   "BinA": 0.45901639344262296,
+   "n": 28,
+   "A": "kalaignarin-kavithaigal/pongal-festival-day#16 «பொங்கல் திருநாள்»",
+   "B": "kalaignarin-kavithaigal/let-it-sprout-as-seed-and-put-forth-roots#64 «விதையாய் முளைத்து விழுதுகள் விடட்ட»"
+  },
+  {
+   "max": 0.45,
+   "AinB": 0.1836734693877551,
+   "BinA": 0.45,
+   "n": 27,
+   "A": "kalaignarin-kavithaigal/green-parrot#56 «பச்சைக் கிளி»",
+   "B": "REF:stories/sirai-kodiyathu «சிறை கொடியது»"
+  },
+  {
+   "max": 0.44313395113732096,
+   "AinB": 0.34628044766293614,
+   "BinA": 0.44313395113732096,
+   "n": 526,
+   "A": "kalaignarin-kavithaigal/bharathidasan#14 «பாரதிதாசன்»",
+   "B": "kalaignarin-kaviyaranga-kavithaigal-1975/at-the-revolutionary-poets-poetry-gathering#1 «புரட்சிக் கவிஞர் பாட்டரங்கில் / மு»"
+  },
+  {
+   "max": 0.37815126050420167,
+   "AinB": 0.37815126050420167,
+   "BinA": 0.30529172320217096,
+   "n": 225,
+   "A": "sinthanaiyum-seyalum/magalir-ida-othukkeedu#26 «மகளிர் இட ஒதுக்கீடு!»",
+   "B": "REF:murasoli/m43-l3464 «பொதுக்கருத்து பற்றி பேரறிஞன் ரூசோவ»"
+  },
+  {
+   "max": 0.3780487804878049,
+   "AinB": 0.3780487804878049,
+   "BinA": 0.03384279475982533,
+   "n": 31,
+   "A": "poomudi/poomudi «பூமுடி»",
+   "B": "REF:murasoli/m49-l3807 «அறப்போர் வாளேந்தி, அய்யா; அண்ணா வழ»"
+  },
+  {
+   "max": 0.36585365853658536,
+   "AinB": 0.02654867256637168,
+   "BinA": 0.36585365853658536,
+   "n": 15,
+   "A": "kaalap-pezhaiyum-kavithai-saaviyum/a-culture-that-announces-an-invasion-in-advance#52 «படையெடுப்பை முன்கூட்டியே அறிவிக்கு»",
+   "B": "ina-muzhakkam/kavithaigal#7#6.7 «மாணவர் எழுச்சி.»"
+  },
+  {
+   "max": 0.3157894736842105,
+   "AinB": 0.021238938053097345,
+   "BinA": 0.3157894736842105,
+   "n": 12,
+   "A": "kaalap-pezhaiyum-kavithai-saaviyum/a-culture-that-announces-an-invasion-in-advance#52 «படையெடுப்பை முன்கூட்டியே அறிவிக்கு»",
+   "B": "ina-muzhakkam/kavithaigal#10#6.10 «இன்னுமா கூச்சல்?»"
+  },
+  {
+   "max": 0.2926829268292683,
+   "AinB": 0.021238938053097345,
+   "BinA": 0.2926829268292683,
+   "n": 12,
+   "A": "kaalap-pezhaiyum-kavithai-saaviyum/a-culture-that-announces-an-invasion-in-advance#52 «படையெடுப்பை முன்கூட்டியே அறிவிக்கு»",
+   "B": "kalaignarin-kavithaigal/still-this-clamour#55 «இன்றுமா கூச்சல்?»"
+  },
+  {
+   "max": 0.2722689075630252,
+   "AinB": 0.2722689075630252,
+   "BinA": 0.15561959654178675,
+   "n": 162,
+   "A": "sinthanaiyum-seyalum/magalir-ida-othukkeedu#26 «மகளிர் இட ஒதுக்கீடு!»",
+   "B": "REF:murasoli/m49-l3785 «நிறைவேறட்டும் மகளிர் இட ஒதுக்கீடு »"
+  }
+ ]
+}
