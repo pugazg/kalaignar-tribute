@@ -1,6 +1,6 @@
 # Wave 8 P0 — Owner-Selected Scope & Digital-Library Readiness
 
-**WAVE 8 P0 — COMPLETE / REVIEW-READY, NOT YET FROZEN BY MERGE.**
+**WAVE 8 P0 — COMPLETE / REVIEWED / FROZEN.**
 **WAVE 8 P1 — NOT STARTED / NOT AUTHORIZED.**
 
 **Created:** 2026-09-24 · **Control documentation only.** Implementation delta = **0**, source delta = **0**,
@@ -296,7 +296,7 @@ publication → P5 independent production acceptance and durable close-out. Ther
 
 ## 15. Conclusion
 
-**WAVE 8 P0 — COMPLETE / REVIEW-READY, NOT YET FROZEN BY MERGE.**
+**WAVE 8 P0 — COMPLETE / REVIEWED / FROZEN.**
 
 - **B1** — Murasoli Volumes 42–47: six-volume expansion of the existing `murasoli-letters` LibraryWork; Volumes
   42–46 READY, Volume 47 READY WITH QUALIFICATION.

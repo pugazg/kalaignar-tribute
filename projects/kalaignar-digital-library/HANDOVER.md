@@ -11,9 +11,9 @@ Several phases have shipped since it was written, and its work counts, shelf cou
 "last production application-code checkpoint" are stale. It is kept as history and has **not** been
 retro-edited. Where it disagrees with this section or with live GitHub, **live GitHub wins**.
 
-### Verified live state — 2026-09-24, WAVE 8 P0 — OWNER-SELECTED SCOPE / READINESS COMPLETE / REVIEW-READY ✅ CURRENT
+### Verified live state — 2026-09-24, WAVE 8 P0 — OWNER-SELECTED SCOPE / READINESS — COMPLETE / REVIEWED / FROZEN ✅ CURRENT
 
-**Highest-precedence checkpoint. Live GitHub wins. CONTROL DOCUMENTATION ONLY — no implementation, payload, catalogue, discovery, route, sitemap, reader, source or production change (implementation delta = 0, source delta = 0, production delta = 0). WAVE 8 P1 — NOT STARTED / NOT AUTHORIZED.** Durable authority: [`WAVE8_COMPLETED_WORKS_CENSUS.md`](./WAVE8_COMPLETED_WORKS_CENSUS.md) (P0 is frozen only once its control PR merges).
+**Highest-precedence checkpoint. Live GitHub wins. CONTROL DOCUMENTATION ONLY — no implementation, payload, catalogue, discovery, route, sitemap, reader, source or production change (implementation delta = 0, source delta = 0, production delta = 0). WAVE 8 P1 — NOT STARTED / NOT AUTHORIZED.** Durable authority: [`WAVE8_COMPLETED_WORKS_CENSUS.md`](./WAVE8_COMPLETED_WORKS_CENSUS.md) (P0 was frozen by merged control PR `pugazg/kalaignar-tribute#37`, merge commit `cc99ebb6a2c35130a6b42ac2051f7907fbc9129c`).
 
 - **Baseline (unchanged, Wave 7 closed at P5):** implementation `main` `cf769d06c1bdb4abc58b5ef2c26e609a777b4923` / tree `35d64fb97f7bed1e26c3bb09fea5649db9d1e348`; catalogue **333**; collections **9**; `/read` 96 / 41; sitemap 4779.
 - **Owner-selected, closed Wave-8 scope = 8 source publication inputs, but only 2 new canonical LibraryWorks** — never "8 new works":
