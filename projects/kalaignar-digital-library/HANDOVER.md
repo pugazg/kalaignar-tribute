@@ -11,7 +11,103 @@ Several phases have shipped since it was written, and its work counts, shelf cou
 "last production application-code checkpoint" are stale. It is kept as history and has **not** been
 retro-edited. Where it disagrees with this section or with live GitHub, **live GitHub wins**.
 
-### Verified live state — 2026-09-24, WAVE 8 P0 — OWNER-SELECTED SCOPE / READINESS — COMPLETE / REVIEWED / FROZEN ✅ CURRENT
+### Verified live state — 2026-09-24, WAVE 8 P5 PRODUCTION ACCEPTANCE — PASS · WAVE 8 COMPLETE / CLOSED / FROZEN AT P5 ✅ CURRENT
+
+**Highest-precedence checkpoint. Live GitHub and production win.**
+
+This is a **control-only close-out.** P5 made no change to implementation, payloads, catalogue, collections,
+routes, sitemap, discovery, source or production: implementation delta = 0, source delta = 0, production
+mutation = 0. Durable evidence is in
+[`WAVE8_P5_PRODUCTION_ACCEPTANCE.md`](./WAVE8_P5_PRODUCTION_ACCEPTANCE.md).
+
+**Lifecycle.**
+- **Wave 8 P0–P5 are complete. WAVE 8 COMPLETE / CLOSED / FROZEN AT P5. There is no Wave-8 P6.**
+- The stages ran in order, exactly as Wave 6 and Wave 7 closed:
+  - P0 — census / owner-selected scope;
+  - P1 — hidden data foundation (#97, plus the #98 correction);
+  - P2 — fidelity / reader layer (#99);
+  - P3 — direct routes while undiscovered (#100);
+  - P4 — publication (#101);
+  - P5 — independent production acceptance + control close-out.
+
+**Accepted implementation boundary.**
+- `pugazg/kalaignar-autobiography` `main` **`f991043c3353abe9f2b334f7c8d57e433184d126`**, tree
+  **`87ca371b084c337ba2163caa6c336615174074e9`** (merge of PR #101, approved head `42cfdf79…`).
+- 0 open implementation PRs, and no commit after #101.
+
+**Frozen source pins (not repinned).**
+- Murasoli `bd0bb7904c85bdbfe05aa4970ac098d701a6967f` (tree `ff604c58…`; Vol 42–47 subtrees unchanged).
+- Stage plays `521fe5452e3e9ed54baa81e672325ce6ba501c5e` (tree `cea50efb…`).
+- Literary commentary `e23548b09547a2308407e60e5e67c1a03fee5354` (tree `2302d1fc…`).
+- Murasoli source `main` has moved to `d16db3e4…` (Vol-41 work only). That is expected and does not reopen Wave 8.
+
+**Population.** 8 source publication inputs produced only **+2 canonical LibraryWorks**:
+- Murasoli Vols 42–47 expand the existing `murasoli-letters` work (342 letters);
+- `ore-mutham` is +1 Drama work;
+- `sangatamil` is +1 Literary Commentary work.
+
+**Final public surface** (re-derived from merged `main` and production):
+
+| Measure | Value |
+|---|---|
+| Catalogue | **335** — Life Writing 1 · Letters 1 · Fiction 162 · Poetry 14 · Drama **11** · Cinema Writing 10 · Speeches 117 · Essays & Articles 15 · Literary Commentary **4** |
+| Collections | **9** (unchanged) |
+| `/read` | discovery **98** / **42** visible |
+| Sitemap | **5262 / 0 dup** |
+| Build | **5271** prerender / **5266** HTML / **5274** generated static pages |
+
+**Wave-8 route delta = 483** (Murasoli 342 + Ore Mutham 35 + Sangatamil 106), taken from the frozen P3 manifest:
+- `4779 + 483 = 5262` · `4788 + 483 = 5271` · `4783 + 483 = 5266`;
+- P3 created the 483 routes; P4 published the same routes and added 0 build routes.
+
+**Murasoli.**
+- **42–54 / 688 letters (342 + 346) / 5141 physical pages (2409 + 2732)**, in 42→54 order with 688 unique route ids.
+- Legacy 48–54 index entries are unchanged.
+- Numbering anomalies are preserved:
+  - 3154 sits between 3376 and 3378, with no 3377;
+  - Vol 46 has two distinct 3637 records;
+  - there is no 3636 and no 3644–3646;
+  - 3647–3649 appear in both Vols 46 and 47.
+- The route id is identity; the printed number is not.
+- `m47-l3705 ↔ m48-l3706` navigation works in both directions.
+
+**Qualified source conditions** (visible, permanent, never reconstructed; not pending work):
+- Murasoli **3681** is source-incomplete: printed p. 252 is absent and the source-condition notice is shown.
+- Sangatamil **scan 8** is a handwritten foreword that is permanently source-limited, and the page does not say
+  "pending". Catalogue coverage is Tamil partial / English partial.
+
+**Ore Mutham.** Main scenes **1–30**, then the separate `நகைச் சுவைப் பகுதி.` with scenes numbered **1–3** afresh —
+never 31–33. `main-30` links to `nagai-suvai-01`, which renders as scene 1 / 3.
+
+**Production acceptance (2026-09-24).**
+- **483 / 483** Wave-8 routes returned HTTP 200 with redirects not followed. HTML and RSC both passed positive
+  controls.
+- **10 / 10** invalid routes returned genuine 404s.
+- The sitemap has 483 / 483 Wave-8 routes, family sets are equal, and 4779 pre-Wave-8 URLs remain.
+- There were 0 serialization leaks across 968 payloads.
+- The site is served by Vercel Production deployment `6638432286` for `f991043c…`.
+
+**Regression / CI.**
+- A clean detached checkout of `f991043c…` passed both Library CI jobs locally: 50 / 50 and 37 / 37 steps.
+- Wave 8 results: P1 106 · P2 render 12,183 · P2 fidelity 71,000 · P3 914 · P4 121 · P4 UI 40 · Drama provenance
+  172 ("11 Drama /source pages").
+- `import-wave8 --verify` reproduced 8 artifacts + manifest byte-identically.
+- Merged-main Library CI run `36002868420` passed both jobs, and Vercel reported success.
+
+**P5 is control-only.** It added this checkpoint, `WAVE8_P5_PRODUCTION_ACCEPTANCE.md` and the
+`NEXT_CHAT_PROMPT.md` bootstrap. It did not edit the frozen `WAVE8_COMPLETED_WORKS_CENSUS.md`.
+
+**Next activity requires explicit owner authorization** of either:
+- (a) a **separately authorized new wave**, with its own census; or
+- (b) **specifically scoped, evidence-backed maintenance** of already-published works.
+
+Neither is ever called "Wave-8 P6". Wave 6, Wave 7 and Wave 8 are all COMPLETE / CLOSED / FROZEN at P5.
+
+### Verified live state — 2026-09-24, WAVE 8 P0 — OWNER-SELECTED SCOPE / READINESS — COMPLETE / REVIEWED / FROZEN ⚠️ SUPERSEDED as current state (retained as the historical Wave-8 selection authority; Wave 8 closed at P5 — see the checkpoint above)
+
+**Historical note, added at P5:** the status line below, "WAVE 8 P1 — NOT STARTED / NOT AUTHORIZED", and the
+closing "next activity" line were true when P0 froze. They are **historical and superseded as current state**:
+Wave 8 P1–P5 have since completed. The frozen P0 facts below are unchanged.
 
 **Highest-precedence checkpoint. Live GitHub wins. CONTROL DOCUMENTATION ONLY — no implementation, payload, catalogue, discovery, route, sitemap, reader, source or production change (implementation delta = 0, source delta = 0, production delta = 0). WAVE 8 P1 — NOT STARTED / NOT AUTHORIZED.** Durable authority: [`WAVE8_COMPLETED_WORKS_CENSUS.md`](./WAVE8_COMPLETED_WORKS_CENSUS.md) (P0 was frozen by merged control PR `pugazg/kalaignar-tribute#37`, merge commit `cc99ebb6a2c35130a6b42ac2051f7907fbc9129c`).
 
@@ -25,7 +121,7 @@ retro-edited. Where it disagrees with this section or with live GitHub, **live G
 - **Excluded:** `chinna-chinna-malargal` / Quotes; Murasoli Vol 1, Vol 41, Vols 48–54 (regression only); all other speeches, novels, stories, essays, cinema, poetry.
 - **Next activity requires explicit owner authorization of Wave 8 P1.** Wave 6 and Wave 7 remain COMPLETE / CLOSED / FROZEN at P5 (no Wave-7 P6).
 
-### Verified live state — 2026-09-23, WAVE 7 P5 PRODUCTION ACCEPTANCE — PASS · WAVE 7 COMPLETE / CLOSED / FROZEN AT P5 ✅ WAVE-7 CLOSURE (retained; latest activity is the Wave-8 P0 checkpoint above)
+### Verified live state — 2026-09-23, WAVE 7 P5 PRODUCTION ACCEPTANCE — PASS · WAVE 7 COMPLETE / CLOSED / FROZEN AT P5 ✅ WAVE-7 CLOSURE (retained; latest activity is the Wave-8 P5 closure checkpoint above)
 
 **Highest-precedence checkpoint. Live GitHub and production win. CONTROL-ONLY close-out — P5 made no implementation, payload, catalogue, collection, route, sitemap, discovery, source or production change (implementation delta = 0, source delta = 0, production mutation = 0).** Durable evidence: [`WAVE7_P5_PRODUCTION_ACCEPTANCE.md`](./WAVE7_P5_PRODUCTION_ACCEPTANCE.md).
 
