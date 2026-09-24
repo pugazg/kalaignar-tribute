@@ -65,7 +65,7 @@ P5 checkpoint directly below remains the latest closed onboarding-wave checkpoin
   cross-witness overlaps exist.
 - **Essays promotion candidates:** 9 titled-unit containers (104 units).
 - **Mixed:** `ina-muzhakkam` (5 prose units + 11 poems).
-- **Genre undecided:** `meesai-mulaiththa-vayathil` (26 units, with a recorded 1958 `தேனலைகள்` witness overlap).
+- **Genre undecided:** `meesai-mulaiththa-vayathil` (26 units, with a recorded 1958 `தேனலைகள்` overlap whose exact relationship is unresolved).
 - **Cinema** song identity is deferred and outside R1.
 - **No post-migration Poetry or Essays count is frozen.**
 

@@ -358,8 +358,13 @@ authorship checks before R1 creates any canonical work identity.
 - The source stores them under the essays repository's `publications/meesai-mulaiththa-vayathil/articles/`, a
   frozen tree of 26 files at `b5fd2922`.
 - Sample bodies have a lyrical, prose-poetic form (for example, unit 1 opens *"பிறையே! வானக் கடலலையின் நுரையே!"*).
-- Per the frozen Wave-6 records, the 1958 book `தேனலைகள்` (12 headings) is already represented under this
-  publication, so it is a second source witness for some of these units (§8, item 4).
+- Meesai unit 16 is titled `தேனலைகள்`.
+- The frozen Wave-6 records establish a cross-repository representation/overlap between the 1958 book
+  `தேனலைகள்` (12 mapped headings) and `மீசை முளைத்த வயதில்`.
+- R0 does **not** establish:
+  - which of the 12 headings correspond to which of the 26 Meesai units;
+  - whether the relationship is one-to-one, partial, or at publication level.
+- No identity is inferred from the shared title alone (§8, item 4).
 - **R0: 26 INDEPENDENTLY TITLED UNITS — CANONICAL-IDENTITY CANDIDATES; FINAL SHELF/GENRE NOT YET DECIDED.** They
   are not relabelled as poems or essays at R0. R1 requires an explicit source/genre assessment before assigning a
   shelf.
@@ -393,15 +398,21 @@ compare titles, source witnesses, authorship and reprint relationships before cr
    establish which canonical works or witnesses represent them. R1 must map them before promoting items 01, 02
    and 04, so that nothing is duplicated.
 3. **`ina-muzhakkam`**: essay identity for units 1–5, and Poetry identity for the 11 poems in unit 6.
-4. **`meesai-mulaiththa-vayathil`**: shelf/genre of 26 units, plus a recorded cross-repository witness overlap.
+4. **`meesai-mulaiththa-vayathil`**: shelf/genre of 26 units, plus a recorded cross-repository overlap whose
+   exact relationship is unresolved.
    - The frozen Wave-6 records (`WAVE6_COMPLETED_WORKS_CENSUS.md`, `WAVE6_BATCH7_SHORT_STORIES.md`, `HANDOVER.md`)
      say the 1958 book **`தேனலைகள்`** (`TVA_BOK_0064030`, short-stories `collections/1958-thenalaigal`, 12 mapped
      headings, transcription deferred) is "already represented in the essays / கட்டுரைகள் workstream under
      `மீசை முளைத்த வயதில்`". It was therefore excluded from the short-story backlog.
    - Meesai unit 16 is itself titled `தேனலைகள்`.
-   - R1 must map the 1958 book's 12 headings onto Meesai's 26 units as **alternate publication witnesses** before
-     promoting any Meesai unit, so that no duplicate LibraryWork is created. The shelf decision (Poetry, Essays or
-     otherwise) must take that witness into account.
+   - R1 must compare the 1958 source's 12 mapped headings against the 26 Meesai units and determine the exact
+     relationship before promoting any affected unit.
+     - Possible outcomes include one-to-one alternate witnesses, partial overlap, publication/container-level
+       overlap, or another source-supported relationship.
+     - R0 does not decide among them, and no identity is inferred from the shared title of unit 16 alone.
+   - **Do not label the 1958 headings as alternate witnesses until that identity reconciliation has established
+     it.**
+   - The shelf decision (Poetry, Essays or otherwise) must take the established relationship into account.
 5. **Publication-titled first units** (§6.9): the promoted unit identity must be kept distinct from the
    container publication identity.
 6. **Essay authorship and reprints.** All units need authorship confirmation (Kalaignar-authored vs. quoted or
