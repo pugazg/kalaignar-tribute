@@ -2,8 +2,16 @@
 
 **Created:** 2026-09-24.
 
-**Status: READING ROOM IA v2 R0 — CLASSIFICATION CENSUS COMPLETE / REVIEW-READY.**
-**R1 — NOT STARTED / NOT AUTHORIZED BY THIS R0.**
+**Status: READING ROOM IA v2 R0 — CLASSIFICATION CENSUS COMPLETE / REVIEWED / FROZEN.**
+**R1 — NOT STARTED / NOT AUTHORIZED.**
+
+**Lifecycle note.** The substantive R0 record was merged in control PR `pugazg/kalaignar-tribute#40`:
+- it was independently reviewed at exact head `200d00b24a81983b7bd68916a422c31ebf1ab024`;
+- it was merged as normal merge `399319ea7995c24a06da6866babefe086751afe6`;
+- the content delta from the approved head to the merge is 0 files.
+
+R0 is therefore frozen historical authority for the Reading Room IA v2 classification/design baseline. This
+lifecycle close-out changed only status wording; no classification, count or finding changed.
 
 This record is **control-only and assessment-only**:
 - implementation delta = **0**;
@@ -477,8 +485,8 @@ Only this record, plus the `HANDOVER.md` checkpoint and `NEXT_CHAT_PROMPT.md` up
 
 ## 12. Status
 
-**READING ROOM IA v2 R0 — CLASSIFICATION CENSUS COMPLETE / REVIEW-READY.**
+**READING ROOM IA v2 R0 — CLASSIFICATION CENSUS COMPLETE / REVIEWED / FROZEN.** It was merged in PR #40 as
+`399319ea…`, with approved head `200d00b2…` and 0 content delta.
 
-**R1 — NOT STARTED / NOT AUTHORIZED BY THIS R0.** R1 (implementation) requires separate explicit owner
-authorization after independent review of this census. Waves 6, 7 and 8 remain COMPLETE / CLOSED / FROZEN at
-P5; this initiative is not a wave and is never "P6".
+**R1 — NOT STARTED / NOT AUTHORIZED.** R1 (implementation) requires separate explicit owner authorization.
+Waves 6, 7 and 8 remain COMPLETE / CLOSED / FROZEN at P5; this initiative is not a wave and is never "P6".

@@ -11,7 +11,7 @@ Several phases have shipped since it was written, and its work counts, shelf cou
 "last production application-code checkpoint" are stale. It is kept as history and has **not** been
 retro-edited. Where it disagrees with this section or with live GitHub, **live GitHub wins**.
 
-### Verified live state — 2026-09-24, READING ROOM IA v2 R0 — CLASSIFICATION CENSUS COMPLETE / REVIEW-READY ✅ CURRENT
+### Verified live state — 2026-09-24, READING ROOM IA v2 R0 — CLASSIFICATION CENSUS COMPLETE / REVIEWED / FROZEN ✅ CURRENT
 
 **Highest-precedence checkpoint. Live GitHub and production win.**
 
@@ -69,8 +69,13 @@ P5 checkpoint directly below remains the latest closed onboarding-wave checkpoin
 - **Cinema** song identity is deferred and outside R1.
 - **No post-migration Poetry or Essays count is frozen.**
 
-**Status.** **R1 — NOT STARTED / NOT AUTHORIZED BY THIS R0.** The next activity requires independent review of
-this census and explicit owner authorization of R1.
+**Status.**
+- **R0 is COMPLETE / REVIEWED / FROZEN.**
+  - It was merged in control PR #40: approved head `200d00b24a81983b7bd68916a422c31ebf1ab024`, normal merge
+    `399319ea7995c24a06da6866babefe086751afe6`, approved-head → merge delta 0 files.
+  - It is now the frozen historical authority for the IA v2 classification/design baseline.
+- Waves 6–8 remain COMPLETE / CLOSED / FROZEN at P5.
+- **R1 is NOT STARTED / NOT AUTHORIZED.** Any R1 activity requires separate explicit owner authorization.
 
 ### Verified live state — 2026-09-24, WAVE 8 P5 PRODUCTION ACCEPTANCE — PASS · WAVE 8 COMPLETE / CLOSED / FROZEN AT P5 ✅ LATEST CLOSED ONBOARDING-WAVE CHECKPOINT (retained; the latest activity is the Reading Room IA v2 R0 checkpoint above)
 
