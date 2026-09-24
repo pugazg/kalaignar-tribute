@@ -1,4 +1,4 @@
-# New Chat Bootstrap Prompt — Kalaignar Digital Library / Wave 7 COMPLETE / CLOSED / FROZEN at P5
+# New Chat Bootstrap Prompt — Kalaignar Digital Library / Wave 8 P0 REVIEW-READY (Wave 7 CLOSED at P5)
 
 Continue as my **independent reviewer and prompt-provider for Claude Code** for the Kalaignar Digital
 Library / Reading Room. **Live GitHub and production are authoritative. Do not trust copied SHAs, PR
@@ -8,8 +8,10 @@ bodies or this bootstrap if live state differs.**
 
 1. Fetch live `pugazg/kalaignar-tribute` `main`.
 2. Read `projects/kalaignar-digital-library/HANDOVER.md` **completely** (highest-precedence CURRENT
-   checkpoint is **2026-09-23 — WAVE 7 P5 PRODUCTION ACCEPTANCE — PASS · WAVE 7 COMPLETE / CLOSED / FROZEN AT P5**).
-3. Read `projects/kalaignar-digital-library/WAVE7_P5_PRODUCTION_ACCEPTANCE.md` (the durable Wave-7 acceptance
+   checkpoint is **2026-09-24 — WAVE 8 P0 — OWNER-SELECTED SCOPE / READINESS COMPLETE / REVIEW-READY**; the
+   2026-09-23 Wave-7 P5 closure checkpoint below it remains the frozen Wave-7 closure record).
+3. Read `projects/kalaignar-digital-library/WAVE8_COMPLETED_WORKS_CENSUS.md` (the Wave-8 P0 scope/readiness record —
+   frozen only once its control PR merges), then `WAVE7_P5_PRODUCTION_ACCEPTANCE.md` (the durable Wave-7 acceptance
    record) and `WAVE7_COMPLETED_WORKS_CENSUS.md` (the frozen P0 selection authority — its "P1 NOT STARTED"
    banner is historical, superseded by the P5 record); `WAVE6_P5_PRODUCTION_ACCEPTANCE.md` remains the Wave-6 record.
 4. Inspect all open control PRs.
@@ -19,6 +21,12 @@ bodies or this bootstrap if live state differs.**
 ## CURRENT state
 
 - **Live GitHub / production are authoritative.**
+- **WAVE 8 P0 — COMPLETE / REVIEW-READY (2026-09-24). WAVE 8 P1 — NOT STARTED / NOT AUTHORIZED.** Owner-selected, closed scope; authority [`WAVE8_COMPLETED_WORKS_CENSUS.md`](./WAVE8_COMPLETED_WORKS_CENSUS.md). **8 source publication inputs, 2 new canonical LibraryWorks — never "8 new works":**
+  - B1 — Murasoli Letters **Volumes 42–47**: expansion of the **existing** `murasoli-letters` LibraryWork (catalogue delta 0); 342 records; Vols 42–46 READY, Vol 47 READY WITH QUALIFICATION (Letter 3681, printed p. 252 absent).
+  - B2 — `ore-mutham` (ஒரே முத்தம்): READY; +1 Drama LibraryWork (30 main + 3 separately numbered supplementary scenes).
+  - B3 — `sangatamil` (சங்கத் தமிழ்): READY WITH QUALIFICATION (scan 8 permanent source-limited); +1 Literary Commentary LibraryWork.
+  - Projection only: catalogue 333 → **335**; Letters 1 → 1; Drama 10 → 11; Literary Commentary 3 → 4; collections 9. Not current state.
+  - P0 was control-only (implementation / source / production delta 0).
 - **WAVE 7 P5 PRODUCTION ACCEPTANCE — PASS (2026-09-23). WAVE 7 COMPLETE / CLOSED / FROZEN AT P5. There is no Wave-7 P6.** Wave 7 P0–P5 are complete and frozen; durable evidence: [`WAVE7_P5_PRODUCTION_ACCEPTANCE.md`](./WAVE7_P5_PRODUCTION_ACCEPTANCE.md). P5 was control-only (implementation delta 0, source delta 0, production mutation 0).
 - **Accepted implementation boundary:** `pugazg/kalaignar-autobiography` `main` `cf769d06c1bdb4abc58b5ef2c26e609a777b4923`, tree `35d64fb97f7bed1e26c3bb09fea5649db9d1e348`. Wave-7 PRs #88–#94; pre-P5 maintenance #95 (Drama `/source` public-provenance projection) and #96 (Wave-3 essay public notes) are integrated into this boundary.
 - **Wave-7 population = 117** = READY 115 (Cinema 3 · Drama `iratha-kanneer` 1 · Novels 5 · Essays 6 · முத்துக் குளியல் Part I 61 · Part II 36 · Assembly 3) + READY WITH QUALIFICATION 2 (`nachuk-koppai`, `kuraloviyam`).
@@ -89,4 +97,4 @@ Batches 1–6 = 321 ; Batch-7 stories = 232 ; Batch-7 collections = 5 ; total = 
   or source change belongs to it. Until that PR is merged, live control `main` remains authoritative and closure
   is only proposed.
 
-**STOP. Wave 6 and Wave 7 are COMPLETE / CLOSED / FROZEN at P5; there is no Wave-7 P6. Fetch live GitHub and await explicit owner authorization — a separately authorized new wave (with its own census) or a specifically scoped maintenance/repair activity — before any further execution.**
+**STOP. Wave 6 and Wave 7 are COMPLETE / CLOSED / FROZEN at P5 (there is no Wave-7 P6). Wave 8 P0 (owner-selected scope: Murasoli Vols 42–47 as an expansion of one existing work, `ore-mutham`, `sangatamil`) is complete and review-ready; Wave 8 P1 is NOT STARTED / NOT AUTHORIZED. Fetch live GitHub and await explicit owner authorization before any implementation.**

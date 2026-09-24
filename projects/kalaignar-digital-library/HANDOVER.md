@@ -1,6 +1,6 @@
 # Kalaignar Digital Library / Reading Room — Master Handover
 
-**Last updated:** 2026-09-23
+**Last updated:** 2026-09-24
 
 ---
 
@@ -11,7 +11,21 @@ Several phases have shipped since it was written, and its work counts, shelf cou
 "last production application-code checkpoint" are stale. It is kept as history and has **not** been
 retro-edited. Where it disagrees with this section or with live GitHub, **live GitHub wins**.
 
-### Verified live state — 2026-09-23, WAVE 7 P5 PRODUCTION ACCEPTANCE — PASS · WAVE 7 COMPLETE / CLOSED / FROZEN AT P5 ✅ CURRENT
+### Verified live state — 2026-09-24, WAVE 8 P0 — OWNER-SELECTED SCOPE / READINESS COMPLETE / REVIEW-READY ✅ CURRENT
+
+**Highest-precedence checkpoint. Live GitHub wins. CONTROL DOCUMENTATION ONLY — no implementation, payload, catalogue, discovery, route, sitemap, reader, source or production change (implementation delta = 0, source delta = 0, production delta = 0). WAVE 8 P1 — NOT STARTED / NOT AUTHORIZED.** Durable authority: [`WAVE8_COMPLETED_WORKS_CENSUS.md`](./WAVE8_COMPLETED_WORKS_CENSUS.md) (P0 is frozen only once its control PR merges).
+
+- **Baseline (unchanged, Wave 7 closed at P5):** implementation `main` `cf769d06c1bdb4abc58b5ef2c26e609a777b4923` / tree `35d64fb97f7bed1e26c3bb09fea5649db9d1e348`; catalogue **333**; collections **9**; `/read` 96 / 41; sitemap 4779.
+- **Owner-selected, closed Wave-8 scope = 8 source publication inputs, but only 2 new canonical LibraryWorks** — never "8 new works":
+  - **B1 — Murasoli Letters Volumes 42–47** (`pugazg/kalaignar-murasoli-letters` @ `bd0bb7904c85bdbfe05aa4970ac098d701a6967f`): **coverage expansion of the existing `murasoli-letters` LibraryWork** (catalogue delta 0). **342** new source records (64 + 56 + 53 + 55 + 55 + 59), English 342. Vols 42–46 **READY**; Vol 47 **READY WITH QUALIFICATION** — Letter **3681** source-incomplete (printed p. 252 absent; never reconstructed). Preserved numbering anomalies: Vol 42 prints **3154** between 3376 and 3378 (no 3377); Vol 46 prints **3637 twice** and has no 3636 / 3644–3646; **3647–3649** occur in both Vols 46 and 47 as different letters.
+  - **B2 — ஒரே முத்தம் / `ore-mutham`** (`pugazg/kalaignar-stage-plays` @ `521fe5452e3e9ed54baa81e672325ce6ba501c5e`, tree `0839c6ef…`): **READY** — 131 / 131 pages verified, 0 blocked, 30 main + 3 supplementary (`நகைச் சுவைப் பகுதி.`, source-numbered 1–3) scenes, English 33 / 33 PASS. **+1 Drama LibraryWork.** The Wave-7 `HOLD / OWNER_DECISION` is historical and superseded by the closed source state.
+  - **B3 — சங்கத் தமிழ் / `sangatamil`** (`pugazg/kalaignar-literary-commentary` @ `e23548b09547a2308407e60e5e67c1a03fee5354`, tree `25231d62…`): **READY WITH QUALIFICATION** — Tamil 496 verified + scan **8** permanent source-limited partial; English 496 release-ready + scan 8 source-limited; 0 blocked; WFV-002…056 55 / 55 closed. **+1 Literary Commentary LibraryWork.**
+- **Projection only (NOT current state):** if all Wave-8 scope later publishes — catalogue **333 → 335**; Letters 1 → 1 (Murasoli 48–54 → 42–54, 13 volumes, 688 letter records); Drama 10 → 11; Literary Commentary 3 → 4; collections 9.
+- **P1 architecture needs recorded:** a new source-pinned Murasoli import adapter (two header dialects, per-volume provenance, id disambiguation for duplicate printed numbers, Vol-45 hash not recorded by the archive); a minimal additive *part* attribute in the stage-play model for ஒரே முத்தம்'s separately numbered supplementary scenes; a `commentary-unit`-family decision for சங்கத் தமிழ் (not `kural-commentary`) proven against its verse lineation, illustrations and printed Sangam source citations.
+- **Excluded:** `chinna-chinna-malargal` / Quotes; Murasoli Vol 1, Vol 41, Vols 48–54 (regression only); all other speeches, novels, stories, essays, cinema, poetry.
+- **Next activity requires explicit owner authorization of Wave 8 P1.** Wave 6 and Wave 7 remain COMPLETE / CLOSED / FROZEN at P5 (no Wave-7 P6).
+
+### Verified live state — 2026-09-23, WAVE 7 P5 PRODUCTION ACCEPTANCE — PASS · WAVE 7 COMPLETE / CLOSED / FROZEN AT P5 ✅ WAVE-7 CLOSURE (retained; latest activity is the Wave-8 P0 checkpoint above)
 
 **Highest-precedence checkpoint. Live GitHub and production win. CONTROL-ONLY close-out — P5 made no implementation, payload, catalogue, collection, route, sitemap, discovery, source or production change (implementation delta = 0, source delta = 0, production mutation = 0).** Durable evidence: [`WAVE7_P5_PRODUCTION_ACCEPTANCE.md`](./WAVE7_P5_PRODUCTION_ACCEPTANCE.md).
 
