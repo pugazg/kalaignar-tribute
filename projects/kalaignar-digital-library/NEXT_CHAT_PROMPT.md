@@ -1,4 +1,4 @@
-# New Chat Bootstrap Prompt — Kalaignar Digital Library / READING ROOM IA v2 OWNER HOLD ADJUDICATION — COMPLETE / REVIEWED / FROZEN (R0 and R1 frozen; Waves 6, 7 and 8 closed at P5)
+# New Chat Bootstrap Prompt — Kalaignar Digital Library / READING ROOM IA v2 R2 — AUTHORIZED · R2 PLAN REVIEW-READY · IMPLEMENTATION NOT STARTED (R0, R1 and adjudication frozen; Waves 6, 7 and 8 closed at P5)
 
 Continue as my **independent reviewer and prompt-provider for Claude Code** for the Kalaignar Digital
 Library / Reading Room. **Live GitHub and production are authoritative. Do not trust copied SHAs, PR
@@ -8,8 +8,10 @@ bodies or this bootstrap if live state differs.**
 
 1. Fetch live `pugazg/kalaignar-tribute` `main`, and inspect all open control PRs.
 2. Read `projects/kalaignar-digital-library/HANDOVER.md` **completely**.
-   - Its highest-precedence CURRENT checkpoint is **2026-09-25 — READING ROOM IA v2 OWNER HOLD ADJUDICATION —
-     COMPLETE / REVIEWED / FROZEN**.
+   - Its highest-precedence CURRENT checkpoint is **2026-09-25 — READING ROOM IA v2 R2 — AUTHORIZED · R2 PLAN —
+     COMPLETE / REVIEW-READY · R2 IMPLEMENTATION — NOT STARTED**.
+   - Directly below it is the frozen owner-adjudication checkpoint (COMPLETE / REVIEWED / FROZEN). Its
+     "R2 NOT STARTED / NOT AUTHORIZED" status is historical.
    - Directly below it is the frozen R1 checkpoint (**READING ROOM IA v2 R1 — IDENTITY RECONCILIATION COMPLETE /
      REVIEWED / FROZEN**). Its "34 HOLD items remain unresolved" status is historical.
    - Directly below it is the frozen R0 checkpoint (**READING ROOM IA v2 R0 — CLASSIFICATION CENSUS COMPLETE /
@@ -32,6 +34,8 @@ bodies or this bootstrap if live state differs.**
      owner decisions for all 34 R1 HOLD rows (an overlay; R1 unchanged). These are frozen historical authority:
      merged in `pugazg/kalaignar-tribute#44` (normal merge `cc131a26501e714664ec80c011522cf0155dccb0`, approved head
      `87d4294e…`, 0 content delta). Verify this against live GitHub.
+   - Then read `READING_ROOM_IA_V2_R2_PLAN.md`, the authorized R2 plan (category-first `/read` over the existing 335
+     works). Check whether that control PR has been independently reviewed and merged.
 4. Read `projects/kalaignar-digital-library/WAVE8_P5_PRODUCTION_ACCEPTANCE.md`, the durable Wave-8 acceptance and
    close-out record.
 5. Read `projects/kalaignar-digital-library/WAVE8_COMPLETED_WORKS_CENSUS.md` as the **historical P0 selection and
@@ -48,9 +52,31 @@ bodies or this bootstrap if live state differs.**
 
 ## CURRENT state
 
-**Reading Room IA v2 — owner HOLD adjudication (post-R1 overlay; control-only).**
+**Reading Room IA v2 — R2 (owner-authorized; category-first information architecture).**
+- **R2 — AUTHORIZED. R2 PLAN — COMPLETE / REVIEW-READY (2026-09-25). R2 IMPLEMENTATION — NOT STARTED.**
+- The plan is `READING_ROOM_IA_V2_R2_PLAN.md`. It is control-only (implementation, source and production deltas 0).
+- **Target:** `/read` shows exactly 9 category cards (no work cards, collection cards or Daily Kural). There are 9
+  static category routes (`/read/autobiography`, `/read/letters`, `/read/fiction`, `/read/poetry`, `/read/drama`,
+  `/read/cinema`, `/read/speeches`, `/read/essays`, `/read/literary-commentary`; 0 collisions with the 391 memoir
+  chapter ids).
+  - Every published work appears on exactly one category page (335). Collections are secondary only.
+  - **Letters special case (frozen R0 §6.2):** `/read/letters` shows exactly one canonical work, `murasoli-letters`,
+    plus a corpus summary (13 volumes · 688 letters · Volumes 42–54, derived from the Murasoli data) and a "Browse by
+    volume & sequence" link to the existing `/murasoli` browser.
+    - Never build a flat or exploded Letters model: no letter or volume LibraryWorks and no new volume routes.
+    - `/murasoli/<id>` is unchanged.
+  - The `life-writing` public Tamil label becomes `சுயசரிதை`.
+  - Sitemap +9 (projected 5271).
+- **R2 / R3 boundary:** R2 does not create the 249 CREATE works or perform the 5 canonical merges. The catalogue stays
+  335 and collections 9; that work is R3. Where frozen records say "future R2" merge actions, they mean R3 under the
+  plan.
+- **Staging:** R2-A (category model and routes) → R2-B (category-only `/read`) → R2-C (provenance, sitemap and full
+  regression), each gated by exact-head review.
+- **Next:** independent review and merge of the R2 plan PR, then **R2-A** only.
+
+**Reading Room IA v2 — owner HOLD adjudication (frozen authority; post-R1 overlay; control-only).**
 - **READING ROOM IA v2 OWNER HOLD ADJUDICATION — COMPLETE / REVIEWED / FROZEN (2026-09-25; merged via PR #44,
-  `cc131a26…`). R2 — NOT STARTED / NOT AUTHORIZED.**
+  `cc131a26…`).** At freeze R2 was not yet authorized; see the R2 block above.
 - Records: `READING_ROOM_IA_V2_OWNER_HOLD_ADJUDICATION.md` and `READING_ROOM_IA_V2_RESOLVED_MANIFEST.json` (the frozen
   R1 315 rows copied verbatim, plus an owner overlay). R1 is not reopened.
 - All 34 original HOLD rows have owner decisions (OD1–OD9), so the **resolved HOLD = 0**. Resolved totals:
@@ -60,12 +86,12 @@ bodies or this bootstrap if live state differs.**
   R2 merge/witness targets, giving a **provisional** net of 579. That figure is not the final website count.
 - All 34 owner decisions are closed and frozen. Reopen only for a genuine source-backed defect or an explicit later
   owner correction.
-- **Next:** the next stage may be **R2 planning/authorization**, but R2 is **NOT STARTED / NOT AUTHORIZED**. It does
-  not begin automatically because HOLD = 0; it requires separate explicit owner authorization.
+- The owner has since authorized R2 (see the R2 block above). The adjudication's "future R2" merge actions are R3 under
+  the R2 plan.
 
 **Reading Room IA v2 — R1 (frozen authority; canonical identity + cross-witness reconciliation; control-only).**
-- **READING ROOM IA v2 R1 — COMPLETE / REVIEWED / FROZEN (2026-09-24; merged via PR #42, `1d12bd6d…`). R2 — NOT
-  STARTED / NOT AUTHORIZED.**
+- **READING ROOM IA v2 R1 — COMPLETE / REVIEWED / FROZEN (2026-09-24; merged via PR #42, `1d12bd6d…`).** R2 was not
+  yet authorized at R1 freeze; see the R2 block above.
 - R1 is control-only: implementation delta 0, source delta 0, production mutation 0, and no LibraryWork created.
 - **Results:** 315 manifest entries.
 
@@ -236,11 +262,18 @@ Any of these requires a separately authorized new wave with its own census.
 - The owner HOLD adjudication is recorded by the control-only PR `Reading Room IA v2 — owner HOLD adjudication`.
   - It adds the adjudication record and the resolved manifest, and updates `HANDOVER.md` and this file.
   - Frozen R0 and R1 files are untouched.
+  - The control-only PR `Reading Room IA v2 — owner HOLD adjudication lifecycle close-out` was merged as
+    `pugazg/kalaignar-tribute#45` (merge `d66db0e05aef1f7691fbcabd502e4a7953028c24`).
+- The R2 plan is recorded by the control-only PR `Reading Room IA v2 — R2 plan`.
+  - It adds `READING_ROOM_IA_V2_R2_PLAN.md` and updates `HANDOVER.md` and this file.
+  - No implementation or source change belongs to it.
+  - Until that PR is merged, live control `main` remains authoritative.
   - It was merged as `pugazg/kalaignar-tribute#44` (merge `cc131a26501e714664ec80c011522cf0155dccb0`). The
     control-only PR `Reading Room IA v2 — owner HOLD adjudication lifecycle close-out` moves its lifecycle wording to
     COMPLETE / REVIEWED / FROZEN. It changes no decision.
 
 **STOP. Wave 6, Wave 7 and Wave 8 are COMPLETE / CLOSED / FROZEN at P5. There is no Wave-8 P6. Reading Room IA v2
-R0, R1 and owner HOLD adjudication are COMPLETE / REVIEWED / FROZEN. Resolved manifest HOLD = 0. R2 is NOT STARTED /
-NOT AUTHORIZED and requires separate explicit owner authorization. Do not begin R2, start a new wave or start any
-maintenance activity without it.**
+R0, R1 and owner HOLD adjudication are COMPLETE / REVIEWED / FROZEN. Resolved manifest HOLD = 0. R2 is AUTHORIZED; the
+R2 PLAN is COMPLETE / REVIEW-READY; R2 IMPLEMENTATION is NOT STARTED. Begin R2-A only after the R2 plan PR is
+independently reviewed and merged. Do not begin R3 (catalogue expansion / canonical merges), a new wave or any
+maintenance activity without explicit owner authorization.**
