@@ -11,7 +11,60 @@ Several phases have shipped since it was written, and its work counts, shelf cou
 "last production application-code checkpoint" are stale. It is kept as history and has **not** been
 retro-edited. Where it disagrees with this section or with live GitHub, **live GitHub wins**.
 
-### Verified live state — 2026-09-24, READING ROOM IA v2 R1 — IDENTITY RECONCILIATION COMPLETE / REVIEWED / FROZEN ✅ CURRENT
+### Verified live state — 2026-09-25, READING ROOM IA v2 OWNER HOLD ADJUDICATION — COMPLETE / REVIEW-READY ✅ CURRENT
+
+**Highest-precedence checkpoint. Live GitHub and production win.**
+
+This checkpoint is **control-only**:
+- implementation delta = 0, source delta = 0, production mutation = 0;
+- no LibraryWork created, merged, deleted or redirected, and no catalogue, route, reader, sitemap or `/read` change.
+
+**Records:**
+- [`READING_ROOM_IA_V2_OWNER_HOLD_ADJUDICATION.md`](./READING_ROOM_IA_V2_OWNER_HOLD_ADJUDICATION.md);
+- [`READING_ROOM_IA_V2_RESOLVED_MANIFEST.json`](./READING_ROOM_IA_V2_RESOLVED_MANIFEST.json): the frozen R1
+  315 rows copied verbatim, plus an owner-decision overlay.
+
+**Lifecycle:**
+- **R0 — COMPLETE / REVIEWED / FROZEN.**
+- **R1 — COMPLETE / REVIEWED / FROZEN.** Its record, manifest and evidence are byte-identical, and it is not reopened.
+- **Owner HOLD adjudication — COMPLETE / REVIEW-READY.**
+- Waves 6–8 remain COMPLETE / CLOSED / FROZEN at P5.
+
+**What was decided.** All 34 original R1 HOLD rows now have explicit owner decisions (OD1–OD9). The resolved manifest
+has **HOLD = 0**.
+- **OD1.** Kaalap 37 is a reprinted witness of the existing `oruthalaik-kathal`.
+  - Also verified: Sangatamil sections 092–102 are the same 11-section text in the same order (diagonal
+    0.922–0.985).
+  - Sangatamil stays one Literary Commentary work.
+- **OD2.** `கேட்டுண்டோ?` is CREATE, with ina 6.5 and 6.6 as its witnesses.
+- **OD3.** `பச்சைக் கிளி` (`green-parrot`) is CREATE on Poetry; `sirai-kodiyathu` becomes a witness in R2.
+- **OD4.** Meesai 1, 2 and 13 are CREATE; `neeyum-kaithi-naanum-kaithi`, `aadik-kaatre` and `pugazhe-nee-oru-pudhir`
+  become witnesses in R2.
+- **OD5.** `சொர்க்க லோகத்தில்` is CREATE on Essays; `sorgaththirku-vandhathu-eppadi` becomes a witness in R2.
+- **OD6.** The 1958 `தேனலைகள்` and Meesai 16–26 are one book with the chapter order changed. Those 11 units are CREATE.
+  - 10 have chapter-level links.
+  - Meesai 16 is linked at publication level only.
+  - அலை 3 `முத்துமாலை` has no counterpart.
+- **OD7.** The 11 Meesai `எழுத்தோவியங்கள்` are CREATE on Poetry, subtype `ezhuthoviyam`.
+- **OD8.** The two letter-form pieces are CREATE on Letters (not the Murasoli corpus).
+- **OD9.** `துடிக்கும் இளமை` is CREATE on Speeches, as `thudikkum-ilamai-urai`.
+
+**Resolved arithmetic.**
+- 315 = CREATE 249 · KEEP_EXISTING 27 · ADD_WITNESS 19 · DO_NOT_PROMOTE 20 · HOLD 0.
+- Raw add-only projection: `335 + 249 = 584`.
+- Five existing Fiction works are future R2 merge/witness targets, giving a **provisional** net of `584 − 5 = 579`. That
+  figure is pre-R2 and not the final website count.
+
+**Next and R2.**
+- **Next:** independent review and merge of the owner-adjudication control PR, not R2 implementation.
+- **R2 — NOT STARTED / NOT AUTHORIZED.** HOLD = 0 does not authorize R2; R2 requires separate explicit owner
+  authorization.
+
+### Verified live state — 2026-09-24, READING ROOM IA v2 R1 — IDENTITY RECONCILIATION COMPLETE / REVIEWED / FROZEN ✅ R1 FROZEN AUTHORITY (retained; the latest activity is the owner-adjudication checkpoint above)
+
+**Historical note (added at owner adjudication):** the "34 HOLD items remain unresolved" status below was true when R1
+froze. The owner has since decided all 34 in the owner-adjudication overlay above. The frozen R1 facts below are
+unchanged.
 
 **Highest-precedence checkpoint. Live GitHub and production win.**
 
