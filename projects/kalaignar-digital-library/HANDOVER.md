@@ -39,6 +39,10 @@ Plan: [`READING_ROOM_IA_V2_R2_PLAN.md`](./READING_ROOM_IA_V2_R2_PLAN.md).
   chapter ids.
 - **Category pages:** every published work appears on exactly one page (1 / 1 / 162 / 14 / 11 / 10 / 117 / 15 / 4 =
   335). Collections are secondary context only and never substitute for member works.
+- **Letters is the one explicit special category** (frozen R0 §6.2).
+  - `murasoli-letters` stays one LibraryWork.
+  - `/read/letters` provides corpus-level volume/sequence wayfinding into the existing `/murasoli` browser.
+  - Its 13 volumes and 688 letters are **not** promoted to LibraryWorks.
 - **Projections:** sitemap 5262 → 5271 (+9, 0 duplicates); the build gains 9 static pages. Both are to be derived
   during implementation.
 - **Staging:** R2-A (category model and routes) → R2-B (category-only `/read`) → R2-C (provenance, sitemap and full

@@ -172,6 +172,33 @@ frozen resolved manifest.
 - **Expected counts:** autobiography 1 · letters 1 · fiction 162 · poetry 14 · drama 11 · cinema 10 · speeches 117 ·
   essays 15 · literary-commentary 4 = **335**. Every work appears on exactly one category page.
 - Every category page links back to `/read`.
+
+**Letters special case** (frozen R0 §6.2: *"Corpus navigation by volume and sequence is legitimate here. It should be
+handled specially on the Letters category page."*)
+- `/read/letters` has exactly **one** canonical LibraryWork, `murasoli-letters`, displayed once.
+- Because this work is a corpus — currently **13 volumes and 688 letters, Volumes 42–54** — the category page also
+  provides corpus-level volume/sequence wayfinding into the existing `/murasoli` browser, with a clear "Browse by
+  volume & sequence" affordance.
+- The existing `/murasoli` surface remains the authoritative detailed volume/sequence browser. The category page does
+  **not** duplicate the full 688-letter navigation. A small derived summary (for example the volume range and counts)
+  is allowed, and a fuller embedded summary only if later implementation evidence shows it is beneficial.
+- Volume-range and corpus-count metadata shown on the page is derived from the same authoritative Murasoli data
+  (`public/data/murasoli/index.json`: `volumeCount`, `volumes[].volume`; `letters-index.json`: letter count). It is not
+  a duplicated hand-typed catalogue fact.
+- **Volumes and individual letters remain dependent corpus navigation, not LibraryWorks.**
+  - No volume or letter becomes a canonical identity.
+  - No new volume routes are invented.
+  - `/murasoli/<letter-id>` is unchanged; the route id stays the identity, and the printed letter number is never the
+    route identity.
+  - The `murasoli-letters` canonical identity and the 335-work catalogue are unchanged.
+
+```text
+/read/letters
+  → canonical work: murasoli-letters (1)
+  → corpus summary · Browse by volume & sequence
+  → /murasoli  (existing volume-grouped navigation)
+      → /murasoli/<letter-id>  (existing, unchanged)
+```
 - Metadata per category identifies the Kalaignar Digital Library, the category and canonical-work browsing. No
   historical or source claims are fabricated.
 
@@ -201,7 +228,8 @@ frozen resolved manifest.
 | File | Purpose |
 |---|---|
 | `data/read-categories.ts` | the **single category registry**: `ShelfId` → `{ slug, route, metaTitle, metaDescription }` for all 9 shelves; helpers `categoryForShelf(id)`, `worksInCategory(id)` (from `publishedWorks()`), `collectionsInCategory(id)` (from `LIBRARY_COLLECTIONS`). It stores no work membership. |
-| `components/LibraryCategoryPage.tsx` | one shared category page: header, work list (`WorkCard`), secondary collections (`CollectionCard`), back-link |
+| `components/LibraryCategoryPage.tsx` | one shared category page: header, work list (`WorkCard`), secondary collections (`CollectionCard`), back-link, plus one small optional corpus slot used only by Letters |
+| Letters corpus treatment (inside `LibraryCategoryPage`, or a small `components/LettersCorpusSummary.tsx`) | shows the corpus summary (13 volumes · 688 letters · Volumes 42–54) derived from the existing `public/data/murasoli/index.json` and `letters-index.json`, plus a "Browse by volume & sequence" link to `/murasoli`. No new data model, route or identity; `/murasoli` and `MurasoliLibrary` are reused, not rebuilt |
 | `components/CategoryCard.tsx` (or a section inside `LibraryHome`) | the `/read` category card |
 | `app/read/{autobiography,letters,fiction,poetry,drama,cinema,speeches,essays,literary-commentary}/page.tsx` | 9 thin static route files, each `generateMetadata` + `<LibraryCategoryPage shelf="…"/>` |
 | `lib/read-ia-r2-contribution.ts` | derived reconciliation (`sitemap` / `build` = number of registry routes, i.e. 9), following the established `lib/wave8-contribution.ts` pattern |
@@ -271,25 +299,35 @@ existing CI also runs, in full.
      (total 335).
    - The union of work entries is all 335 published ids, each appearing exactly once across all category pages.
    - Every anthology member (149 Fiction works, 97 Speeches) is present individually.
-3. **Collections**
+3. **Letters corpus (special case)**
+   - `/read/letters` returns 200.
+   - The canonical LibraryWork count on the page is 1.
+   - `murasoli-letters` appears exactly once as a canonical work.
+   - The corpus treatment identifies **13 volumes / 688 letters** (Volumes 42–54). The values either match this
+     accepted baseline or are derived equivalently from live `public/data/murasoli/index.json` and
+     `letters-index.json`.
+   - A clear link to `/murasoli` is present.
+   - No individual letter and no volume is rendered as a LibraryWork.
+   - `/murasoli` and representative `/murasoli/<id>` routes (for example `m42-l3364` and `m48-l3706`) remain valid.
+4. **Collections**
    - The Fiction page exposes 7 secondary collection links, the Speeches page 2, and the others 0.
    - Collection entries never replace work entries.
    - All 9 `/collections/<id>` routes are unchanged.
-4. **Route preservation**
+5. **Route preservation**
    - `/read/nenjukku-neethi` and all 391 `/read/{chapter}` routes return 200.
    - A representative work route, child route and `/source` route in every reader family (stories, novels, poems,
      plays, cinema, speeches, essays, murasoli, thirukkural, tholkappiyam, kuraloviyam, sangatamil) keeps its behaviour.
    - Invalid routes still 404 (for example `/read/v9-ch99` and `/read/not-a-category`).
-5. **Sitemap**
+6. **Sitemap**
    - All 9 category URLs appear exactly once, with 0 duplicates.
    - The pre-R2 URL set is a subset of the post-R2 set, so no URL disappears.
    - Total = pre-R2 + 9, derived rather than typed.
-6. **Catalogue invariance**
+7. **Catalogue invariance**
    - 335 works; the shelf counts above; 9 collections.
    - The resolved-manifest blob is unchanged.
    - None of the 249 CREATE ids exists as a LibraryWork.
    - The 5 R3 merge sources are still separate Fiction works.
-7. **Regression**
+8. **Regression**
    - Run `npm run typecheck`, `npm run lint`, `npm run build` and `npm run validate`.
    - Run `test:collections`, `test:shelf-disclosure` (rescoped), `test:daily-kural` (component still passes) and the
      full CI (`library-ci.yml` build and archival jobs).
@@ -302,9 +340,14 @@ Each stage is one implementation PR, gated by exact-head review.
 
 | Stage | Contents | `/read` landing |
 |---|---|---|
-| **R2-A — Category model + routes** | `data/read-categories.ts`; `LibraryCategoryPage`; 9 static category routes plus metadata; `test-read-categories` (coverage and invariance); reuse exports from `LibraryHome` | unchanged (still the discovery view) |
+| **R2-A — Category model + routes** | `data/read-categories.ts`; `LibraryCategoryPage`; 9 static category routes plus metadata; **the Letters corpus treatment (§9)**; `test-read-categories` (coverage, invariance and the Letters tests in §16.3); reuse exports from `LibraryHome` | unchanged (still the discovery view) |
 | **R2-B — Category-only `/read`** | landing → 9 category cards; `சுயசரிதை`; `DailyKural` removed from `/read`; primary work / collection discovery removed from `/read`; the 7 rendered-`/read` tests re-scoped | switched |
 | **R2-C — Provenance, sitemap and full regression** | secondary collection sections; sitemap +9; `lib/read-ia-r2-contribution.ts` reconciliation of pinned validators; full route-preservation, accessibility and CI; implementation close-out candidate | final |
+
+The Letters corpus treatment belongs to R2-A because it is part of the frozen category contract.
+- If implementation convenience requires its visual enhancement to land in R2-C, R2-A must at minimum establish the
+  contract and the Letters tests.
+- The final R2 completion gate (§20) requires it in every case.
 
 If the live architecture makes the sitemap reconciliation smaller when it lands together with the new routes, R2-C's
 sitemap part may move into R2-A. The semantic boundaries stay the same either way.
@@ -341,6 +384,8 @@ R2 is complete when:
 - remote CI (typecheck • build, archival validators) and Vercel succeed;
 - production verification confirms `/read` shows 9 category cards, the 9 category pages show 335 works in total, and
   the sitemap equals the pre-R2 set plus 9 with 0 duplicates;
+- `/read/letters` provides the Letters corpus treatment (§9): 1 canonical work, 13 volumes / 688 letters as corpus
+  navigation only, and a link into `/murasoli`;
 - a control close-out records R2 COMPLETE with implementation, source and catalogue invariance.
 
 Catalogue expansion then proceeds only in a separately authorized **R3**.

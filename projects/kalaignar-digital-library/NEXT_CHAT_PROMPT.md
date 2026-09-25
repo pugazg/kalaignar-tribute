@@ -60,6 +60,11 @@ bodies or this bootstrap if live state differs.**
   `/read/cinema`, `/read/speeches`, `/read/essays`, `/read/literary-commentary`; 0 collisions with the 391 memoir
   chapter ids).
   - Every published work appears on exactly one category page (335). Collections are secondary only.
+  - **Letters special case (frozen R0 §6.2):** `/read/letters` shows exactly one canonical work, `murasoli-letters`,
+    plus a corpus summary (13 volumes · 688 letters · Volumes 42–54, derived from the Murasoli data) and a "Browse by
+    volume & sequence" link to the existing `/murasoli` browser.
+    - Never build a flat or exploded Letters model: no letter or volume LibraryWorks and no new volume routes.
+    - `/murasoli/<id>` is unchanged.
   - The `life-writing` public Tamil label becomes `சுயசரிதை`.
   - Sitemap +9 (projected 5271).
 - **R2 / R3 boundary:** R2 does not create the 249 CREATE works or perform the 5 canonical merges. The catalogue stays
