@@ -11,7 +11,7 @@ Several phases have shipped since it was written, and its work counts, shelf cou
 "last production application-code checkpoint" are stale. It is kept as history and has **not** been
 retro-edited. Where it disagrees with this section or with live GitHub, **live GitHub wins**.
 
-### Verified live state — 2026-09-24, READING ROOM IA v2 R1 — IDENTITY RECONCILIATION COMPLETE / REVIEW-READY ✅ CURRENT
+### Verified live state — 2026-09-24, READING ROOM IA v2 R1 — IDENTITY RECONCILIATION COMPLETE / REVIEWED / FROZEN ✅ CURRENT
 
 **Highest-precedence checkpoint. Live GitHub and production win.**
 
@@ -27,8 +27,12 @@ This checkpoint is **control-only and assessment-only**:
   [`READING_ROOM_IA_V2_R1_TEXT_OVERLAP_EVIDENCE.json`](./READING_ROOM_IA_V2_R1_TEXT_OVERLAP_EVIDENCE.json).
 
 **Status.**
-- R0 (below) remains COMPLETE / REVIEWED / FROZEN and was consumed without reopening.
-- Waves 6–8 remain COMPLETE / CLOSED / FROZEN at P5.
+- **R1 — COMPLETE / REVIEWED / FROZEN.**
+  - It was merged in control PR #42: approved head `531bec4fd8f6789db2b7e88615330d473b9f6cea`, normal merge
+    `1d12bd6dbf262d570c3199b3eb6d681cef62f0dc`, approved-head → merge delta 0 files.
+  - The R1 record and manifest are frozen historical authority for later implementation work.
+- **R0 — COMPLETE / REVIEWED / FROZEN** (below). It was consumed without reopening.
+- **Waves 6–8 — COMPLETE / CLOSED / FROZEN at P5.**
 - R1 was owner-authorized as canonical identity plus cross-witness reconciliation. It is not catalogue implementation.
 
 **Live pins.**
@@ -87,8 +91,8 @@ This checkpoint is **control-only and assessment-only**:
 - Shelf result: Poetry 149 · Essays 98 · others unchanged.
 
 **R2 — NOT STARTED / NOT AUTHORIZED.**
-- Implementation requires independent review of this R1 record plus explicit owner authorization.
-- HOLD items need owner decisions first.
+- The 34 HOLD items remain unresolved. HOLD resolution requires separate owner decisions.
+- R2 requires separate explicit owner authorization after those decisions are handled as appropriate.
 - No wave is reopened, and nothing is "P6".
 
 ### Verified live state — 2026-09-24, READING ROOM IA v2 R0 — CLASSIFICATION CENSUS COMPLETE / REVIEWED / FROZEN ✅ R0 FROZEN AUTHORITY (retained; the latest activity is the R1 checkpoint above)

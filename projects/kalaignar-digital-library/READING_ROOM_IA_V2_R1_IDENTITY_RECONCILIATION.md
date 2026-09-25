@@ -2,8 +2,16 @@
 
 **Created:** 2026-09-24.
 
-**Status: READING ROOM IA v2 R1 — IDENTITY RECONCILIATION COMPLETE / REVIEW-READY.**
+**Status: READING ROOM IA v2 R1 — IDENTITY RECONCILIATION COMPLETE / REVIEWED / FROZEN.**
 **R2 — NOT STARTED / NOT AUTHORIZED.**
+
+**Lifecycle note.** The substantive R1 record was merged in control PR `pugazg/kalaignar-tribute#42`:
+- it was independently approved at exact head `531bec4fd8f6789db2b7e88615330d473b9f6cea`;
+- it was merged as normal merge `1d12bd6dbf262d570c3199b3eb6d681cef62f0dc`;
+- the content delta from the approved head to the merge is 0 files.
+
+This R1 identity reconciliation and its manifest are therefore frozen historical authority for later implementation
+work. This lifecycle close-out changes only status wording; no decision, id, witness relation, shelf or count changed.
 
 This record is the durable R1 authority. It is **control-only and assessment-only**:
 - implementation delta = **0**;
@@ -915,8 +923,8 @@ this, and no existing LibraryWork is proposed for removal.
 
 ## Status
 
-**READING ROOM IA v2 R1 — IDENTITY RECONCILIATION COMPLETE / REVIEW-READY.** Implementation, source and production
-deltas are all 0.
+**READING ROOM IA v2 R1 — IDENTITY RECONCILIATION COMPLETE / REVIEWED / FROZEN.** It was merged in PR #42 as
+`1d12bd6d…`, with approved head `531bec4f…` and 0 content delta. Implementation, source and production deltas are all 0.
 
-**R2 — NOT STARTED / NOT AUTHORIZED.** R2 (implementation) requires independent review of this record and explicit owner
-authorization. HOLD items require owner decisions (§11) before they can enter R2.
+**R2 — NOT STARTED / NOT AUTHORIZED.** The 34 HOLD items (§11) remain unresolved and require separate owner decisions.
+R2 (implementation) requires separate explicit owner authorization after those decisions are handled as appropriate.
