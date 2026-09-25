@@ -50,12 +50,14 @@ bodies or this bootstrap if live state differs.**
 | Poetry (148) | CREATE 132 · ADD_WITNESS 5 · KEEP 8 · HOLD 3 |
 | Essays (104) | CREATE 79 · ADD_WITNESS 3 · DO_NOT_PROMOTE 19 · HOLD 3 |
 | `ina-muzhakkam` | CREATE 7 · ADD_WITNESS 6 · HOLD 3 |
-| Meesai (26) | all HOLD |
+| Meesai (26) | ADD_WITNESS 1 · HOLD 25 |
 
-- **Projection (not implemented):** `335 + 218 = 553` floor, up to 588 if HOLDs resolve to works. Poetry would
-  become 149 and Essays 98.
-- **35 HOLD items** have explicit owner questions (R1 §11):
-  - cross-shelf Meesai/ina ↔ 2004-anthology Fiction works;
+- **Projection (not implemented):** `335 + 218 = 553` floor. `553 + 34 = 587` is a raw upper bound only (every
+  remaining HOLD resolving as a new work) and is not a frozen count. Poetry would become 149 and Essays 98.
+- **34 HOLD items** have explicit owner questions (R1 §11):
+  - the canonical poem `green-parrot` (Kavithaigal 56 + Meesai 14, settled as one poem) ↔ the Fiction work
+    `சிறை கொடியது`, and its shelf;
+  - cross-shelf Meesai 1/2/13 and ina 2 ↔ 2004-anthology Fiction works;
   - the 1958 `தேனலைகள்` (untranscribed; SOURCE_LIMITED);
   - the prose-poem shelf;
   - Kaalap 37 ↔ ஒருதலைக் காதல் §1;

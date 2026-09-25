@@ -152,7 +152,14 @@ Notes:
 - **Kaalap 37 `அன்பால் அவனை விலைகொள்ள முடியுமோ?` (2006).** It reprints about 60% of *ஒருதலைக் காதல்* section 1
   (1998 verse novel): 100 of 167 lines verbatim, overlap 0.88/0.89.
 - **Kavithaigal 52 `கேட்டுண்டோ?`.** It equals ina 6.5 and 6.6 combined.
-- **Kavithaigal 56 `பச்சைக் கிளி`.** It equals Meesai 14 and is also the existing Fiction work *சிறை கொடியது*.
+- **Kavithaigal 56 `பச்சைக் கிளி` (canonical cluster anchor, proposed key `green-parrot`).**
+  - Settled in R1: K56 and Meesai 14 `பச்சைக்கிளி` are **one canonical poem with two source witnesses**. Compare
+    `kalaignar-poems@96982319` `poems/kalaignarin-kavithaigal/sections/56.md` with `kalaignar-essays@b5fd2922`
+    `publications/meesai-mulaiththa-vayathil/articles/14-pachchaikkili.md`: same printed title, poem sequence and
+    ending, with only witness-level textual and orthographic variants (overlap 0.966 / 0.963). Meesai 14 is therefore
+    ADD_WITNESS to `green-parrot`.
+  - The only open question: how this canonical poem relates to the later, prose-formatted existing Fiction work
+    *சிறை கொடியது* (2004 anthology), and which shelf owns the canonical identity.
 
 **Authorship.** Every Poetry candidate belongs to a Kalaignar-authored publication. The only non-Kalaignar material in
 scope is 1975 ordinal 03 (Rajaji, scan 66) and scans 69–70 (Bharathidasan). Both are already excluded, and neither is
@@ -306,7 +313,7 @@ The narrow-column lineation of 11–26 is typesetting: lines break mid-sentence.
 | 1 `பிறையே` | `நீயும் கைதி - நானும் கைதி` | 91–93% |
 | 2 `ஆடிக்காற்று` | `ஆடிக் காற்றே!` | 93–95% |
 | 13 `புகழ்` | `புகழே நீ ஒரு புதிர்` | 98% |
-| 14 `பச்சைக்கிளி` | `சிறை கொடியது` (and = Kavithaigal 56) | 72–78% |
+| 14 `பச்சைக்கிளி` | `சிறை கொடியது` — handled through the settled K56 canonical anchor `green-parrot` (§4) | 72–78% |
 
 **1958 `தேனலைகள்`.** The source is `TVA_BOK_0064030`: December 1958, 12 `அலை` pieces, image-only and **untranscribed**.
 
@@ -324,11 +331,12 @@ The narrow-column lineation of 11–26 is typesetting: lines break mid-sentence.
   is probable one-to-one for 10 headings, indicated for முத்தாரம், and unproven for முத்துமாலை.
 - The short-story repository's classification of the 1958 pieces is not controlling.
 
-**Meesai decisions: all 26 HOLD.**
+**Meesai decisions: 25 HOLD + 1 ADD_WITNESS.**
 
-| Units | Blocker |
+| Units | Decision / blocker |
 |---|---|
-| 1, 2, 13, 14 | cross-shelf identity with existing Fiction works (and Kavithaigal 56) |
+| 14 | **ADD_WITNESS** to the Kavithaigal 56 canonical anchor `green-parrot` (same canonical poem; settled). Not created; the anchor itself is HOLD |
+| 1, 2, 13 | HOLD — cross-shelf identity with existing Fiction works |
 | 16–26 | 1958 relationship SOURCE_LIMITED; shelf also undecided |
 | 3–12, 15 | identity cleared (no duplicate anywhere in the library); **shelf decision pending** |
 
@@ -348,21 +356,34 @@ they can be created. **Promotable now: 0. Shelf distribution: undecided.**
 ## 10. Duplicate / reprint / witness findings (R1-E)
 
 **Cross-shelf findings that do not change any R0-preserved work:**
-- *பேசும் கலை வளர்ப்போம்* section 6 contains 96% of the existing Fiction work *நடக்குமா நடக்காதா?* (2008
-  anthology). This is an EXCERPT relation; pesum stays one work and no action is taken.
-- The four Meesai ↔ 2004-anthology relations and ina 2 ↔ 2004-anthology are HOLD.
+- ***பேசும் கலை வளர்ப்போம்* section 6 and *நடக்குமா நடக்காதா?* — no HOLD, no count change.**
+  - The source is `kalaignar-essays@b5fd2922` `publications/pesum-kalai-valarppom/articles/06-section-06.md`.
+  - Section 6 introduces a foreign short story Kalaignar used to tell when speaking at weddings
+    (`வெளிநாட்டுச் சிறுகதையொன்றை … மணவிழா நிகழ்ச்சியில் சொல்லுவதுண்டு`).
+  - It presents the story as a bounded example, then resumes the larger discussion of speechcraft, and later names it
+    `கலைஞர் சொன்ன கதையை`.
+  - The short-story source independently prints the story as `நடக்குமா நடக்காதா?`: story 19 of 40 in the 2008 second
+    edition of `கலைஞர் சொன்ன கதைகள்`.
+  - Relation: the existing Fiction LibraryWork `nadakkuma-nadakkatha` is an independently identified
+    **embedded/nested short story** reused inside the dependent section 6 (96% of the story is inside it). Section 6
+    itself is **not** the same canonical work as the story.
+  - `pesum-kalai-valarppom` remains one coherent work, and `nadakkuma-nadakkatha` remains the existing independent
+    Fiction work.
+- Meesai 1, 2 and 13 ↔ 2004-anthology stories, and ina 2 ↔ 2004-anthology, are HOLD.
+- Meesai 14's relation to `சிறை கொடியது` is carried by its settled canonical anchor `green-parrot` (Kavithaigal 56,
+  HOLD).
 - *துடிக்கும் இளமை* 3 and 4 ↔ *இதய பேரிகை* sections are ADD_WITNESS.
 
 **Within and across publications:** see §4. There is no duplicate among the 57 Kaalap CREATE items, the 72 Kavithaigal
 CREATE items, the 79 Essays CREATE units, or the 7 ina CREATE units.
 
-## 11. Unresolved HOLD items (35)
+## 11. Unresolved HOLD items (34)
 
 | # | Item(s) | Question for the owner |
 |---:|---|---|
 | 1 | Kaalap 37 ↔ ஒருதலைக் காதல் §1 | Is a verse-novel section reprinted standalone under its own title a separate canonical poem, or a witness of the verse novel? |
 | 2 | Kavithaigal 52 + ina 6.5 + ina 6.6 | One poem (1995) or two poems (1951)? |
-| 3 | Kavithaigal 56 + Meesai 14 + Fiction `சிறை கொடியது` | One canonical work across Poetry and Fiction? Which shelf? |
+| 3 | Canonical poem `green-parrot` (Kavithaigal 56; Meesai 14 is its settled second witness) + Fiction `சிறை கொடியது` | K56 / Meesai 14 are one established canonical poem with two source witnesses. How does that poem relate to the later, prose-formatted Fiction work `சிறை கொடியது`, and which shelf should own the canonical identity? |
 | 4 | Meesai 1, 2, 13 + Fiction `நீயும் கைதி…`, `ஆடிக் காற்றே!`, `புகழே நீ ஒரு புதிர்` | Is the 2004 story a witness of the Meesai piece (merge), or a separate work? |
 | 5 | ina 2 + Fiction `சொர்க்கத்திற்கு வந்தது எப்படி?` | same question as 4 |
 | 6 | Meesai 16–26 (11) + 1958 தேனலைகள் | Needs 1958 transcription or visual comparison, plus a shelf decision |
@@ -370,7 +391,8 @@ CREATE items, the 79 Essays CREATE units, or the 7 ina CREATE units.
 | 8 | sinthanaiyum 1, 2 | Letter-form pieces in an essay book: Essays or Letters? |
 | 9 | thudikkum 1 | A delivered speech in an essay booklet: Essays or Speeches? |
 
-That is 35 HOLD units in total: 3 Poetry, 2 ina poems, 1 ina prose, 3 Essays and 26 Meesai.
+That is 34 HOLD units in total: 3 Poetry (including the K56 anchor), 2 ina poems, 1 ina prose, 3 Essays and 25
+Meesai. Meesai 14 is not a HOLD: it is the settled second witness of the K56 anchor.
 
 ## 12. Reusable canonical-identity rules
 
@@ -408,7 +430,9 @@ Every row below is also in `READING_ROOM_IA_V2_R1_MANIFEST.json`.
 - Proposed ids for CREATE are the unit's existing public slug, with the collision rule in §12 applied. Exactly 4
   collisions were resolved: `ina-muzhakkam-katturai`, `kolaikkalam-katturai`, `perumoochu-katturai`,
   `thiraavida-sampaththu-katturai`.
-- All 218 proposed ids are unique.
+- All 218 CREATE ids are unique and collision-free against the live catalogue.
+- One further id, `green-parrot`, is **reserved** (collision-checked) for the HOLD canonical anchor Kavithaigal 56, so
+  that its settled witness (Meesai 14) can reference it. It is not created in R1.
 - English titles are the existing project-created titles.
 
 #### Poetry — 10 existing standalone poems
@@ -548,7 +572,7 @@ Every row below is also in `READING_ROOM_IA_V2_R1_MANIFEST.json`.
 | 53 | **CREATE** | `varna-or-death` | வருணமா? மரணமா? | Varna or Death? | poetry / poem | kalaignarin-kavithaigal item 53 (1995 4th ed.) (407–407) | UNIQUE_CANONICAL_POEM | ina-muzhakkam 6.11 வருணமா? மரணமா? (1951) [NEW] | 1995 anthology item file (one canonical file per indexed poem); R1 body-text sweep: no identity overlap with any library unit |
 | 54 | **CREATE** | `when-does-defeat-come` | தோல்வி எப்பொழுது? | When Does Defeat Come? | poetry / poem | kalaignarin-kavithaigal item 54 (1995 4th ed.) (408–408) | UNIQUE_CANONICAL_POEM | ina-muzhakkam 6.9 தோல்வி எப்பொழுது? (1951) [NEW] | 1995 anthology item file (one canonical file per indexed poem); R1 body-text sweep: no identity overlap with any library unit |
 | 55 | **CREATE** | `still-this-clamour` | இன்றுமா கூச்சல்? | Still This Clamour? | poetry / poem | kalaignarin-kavithaigal item 55 (1995 4th ed.) (409–409) | UNIQUE_CANONICAL_POEM | ina-muzhakkam 6.10 இன்னுமா கூச்சல்? (1951) [NEW] | 1995 anthology item file (one canonical file per indexed poem); R1 body-text sweep: no identity overlap with any library unit |
-| 56 | **HOLD** | — | பச்சைக் கிளி | Green Parrot | poetry / poem | kalaignarin-kavithaigal item 56 (1995 4th ed.) (410–412) | POSSIBLE_OVERLAP_NEEDS_REVIEW |  | HOLD: same text as மீசை முளைத்த வயதில் unit 14 பச்சைக்கிளி (33/40 lines verbatim, overlap 0.97) AND prose-formatted inside existing Fiction LibraryWork சிறை கொடியது (2004 anthology; 72–78% of the story); cross-shelf identity decision required |
+| 56 | **HOLD** | `green-parrot` | பச்சைக் கிளி | Green Parrot | poetry / poem | kalaignarin-kavithaigal item 56 (1995 4th ed.) (410–412) | POSSIBLE_OVERLAP_NEEDS_REVIEW | meesai-mulaiththa-vayathil unit 14 பச்சைக்கிளி (2002) [NEW (settled)] | HOLD (canonical cluster anchor, proposed key green-parrot): K56 and Meesai 14 are SETTLED as one canonical poem with two source witnesses (kalaignar-poems@96982319 poems/kalaignarin-kavithaigal/sections/56.md ↔ kalaignar-essays@b5fd2922 publications/meesai-mulaiththa-vayathil/articles/14-pachchaikkili.md; same title, sequence and ending; overlap 0.966/0.963). Remaining owner question ONLY: how this canonical poem relates to the later prose-formatted existing Fiction LibraryWork சிறை கொடியது (2004 anthology; 72–78% of the story inside the poem), and which shelf owns the canonical identity |
 | 57 | **CREATE** | `fountain-of-imagination` | கற்பனை ஊற்று | Fountain of Imagination | poetry / poem | kalaignarin-kavithaigal item 57 (1995 4th ed.) (413–414) | UNIQUE_CANONICAL_POEM |  | 1995 anthology item file (one canonical file per indexed poem); R1 body-text sweep: no identity overlap with any library unit |
 | 58 | **CREATE** | `o-sky-pour-down` | வானமே பொழிக நீ! | O Sky, Pour Down! | poetry / poem | kalaignarin-kavithaigal item 58 (1995 4th ed.) (415–416) | UNIQUE_CANONICAL_POEM |  | 1995 anthology item file (one canonical file per indexed poem); R1 body-text sweep: no identity overlap with any library unit |
 | 59 | **CREATE** | `a-letter-in-verse` | கவிதையில் ஒரு மடல்! | A Letter in Verse! | poetry / poem | kalaignarin-kavithaigal item 59 (1995 4th ed.) (417–417) | UNIQUE_CANONICAL_POEM |  | 1995 anthology item file (one canonical file per indexed poem); R1 body-text sweep: no identity overlap with any library unit |
@@ -772,7 +796,7 @@ Every row below is also in `READING_ROOM_IA_V2_R1_MANIFEST.json`.
 | 11 | **HOLD** | — | தனிமை | Solitude | UNDECIDED / dialogue prose-poem | meesai-mulaiththa-vayathil unit 11 (2002 1st ed.; 2006 2nd ed.) (49–54) | MIXED_OR_GENRE_UNRESOLVED |  | no duplicate anywhere in the library (poems, essays, stories, speeches, novels, Murasoli letters); identity cleared; shelf/genre decision pending (author calls the book's pieces 'எழுத்தோவியங்கள்' in the 2002 preface; not essays in form) |
 | 12 | **HOLD** | — | நாடக மேடை | The Stage | UNDECIDED / rhapsodic prose-poem (narrow-column rhythmic prose) | meesai-mulaiththa-vayathil unit 12 (2002 1st ed.; 2006 2nd ed.) (55–56) | MIXED_OR_GENRE_UNRESOLVED |  | no duplicate anywhere in the library (poems, essays, stories, speeches, novels, Murasoli letters); identity cleared; shelf/genre decision pending (author calls the book's pieces 'எழுத்தோவியங்கள்' in the 2002 preface; not essays in form) |
 | 13 | **HOLD** | — | புகழ் | Fame | UNDECIDED / aphoristic prose-poem | meesai-mulaiththa-vayathil unit 13 (2002 1st ed.; 2006 2nd ed.) (57–58) | POSSIBLE_OVERLAP_NEEDS_REVIEW |  | existing Fiction LibraryWork புகழே நீ ஒரு புதிர் (2004 anthology) is a shorter re-edited text contained in this unit (story 98% inside) — cross-shelf identity decision required |
-| 14 | **HOLD** | — | பச்சைக்கிளி | Green Parrot | UNDECIDED / verse poem | meesai-mulaiththa-vayathil unit 14 (2002 1st ed.; 2006 2nd ed.) (59–61) | POSSIBLE_OVERLAP_NEEDS_REVIEW |  | existing Fiction LibraryWork சிறை கொடியது (2004 anthology) is a shorter re-edited text contained in this unit (story 72–78% inside); also = Kavithaigal item 56 (verse) — cross-shelf identity decision required |
+| 14 | **ADD_WITNESS** | — | பச்சைக்கிளி | Green Parrot | UNDECIDED (follows canonical green-parrot) / verse poem | meesai-mulaiththa-vayathil unit 14 (2002 1st ed.; 2006 2nd ed.) (59–61) | SAME_CANONICAL_POEM_ALTERNATE_WITNESS | → witness of proposed `green-parrot` | alternate source witness of Kavithaigal item 56 பச்சைக் கிளி (canonical anchor green-parrot, itself HOLD): kalaignar-essays@b5fd2922 publications/meesai-mulaiththa-vayathil/articles/14-pachchaikkili.md ↔ kalaignar-poems@96982319 poems/kalaignarin-kavithaigal/sections/56.md — same title, sequence and ending; overlap 0.963/0.966; witness-level variants only. Not created in R1; the anchor's relation to the Fiction work சிறை கொடியது is the only open question |
 | 15 | **HOLD** | — | தமிழே | O Tamil! | UNDECIDED / rhapsodic prose-poem (narrow-column rhythmic prose) | meesai-mulaiththa-vayathil unit 15 (2002 1st ed.; 2006 2nd ed.) (62–62) | MIXED_OR_GENRE_UNRESOLVED |  | no duplicate anywhere in the library (poems, essays, stories, speeches, novels, Murasoli letters); identity cleared; shelf/genre decision pending (author calls the book's pieces 'எழுத்தோவியங்கள்' in the 2002 preface; not essays in form) |
 | 16 | **HOLD** | — | தேனலைகள் | Honey Waves | UNDECIDED / narrative rhythmic-prose piece with dialogue (1958 'அலை' cycle) | meesai-mulaiththa-vayathil unit 16 (2002 1st ed.; 2006 2nd ed.) (63–71) | SOURCE_LIMITED_UNRESOLVED |  | probable counterpart of 1958 தேனலைகள் அலை 1 முத்தாரம் (indicated: unit closes 'முத்தாரம் தொடுத்தார்'; extent fits) by title + sequence (Meesai 17–23 = அலை 5–11 in order) + proportional extent (~556–776 Meesai chars per 1958 printed page); 1958 source is image-only and untranscribed, so body identity is NOT established — SOURCE_LIMITED; do not label as alternate witness |
 | 17 | **HOLD** | — | தோழி | Friend | UNDECIDED / narrative rhythmic-prose piece with dialogue (1958 'அலை' cycle) | meesai-mulaiththa-vayathil unit 17 (2002 1st ed.; 2006 2nd ed.) (72–77) | SOURCE_LIMITED_UNRESOLVED |  | probable counterpart of 1958 தேனலைகள் அலை 5 தோழி by title + sequence (Meesai 17–23 = அலை 5–11 in order) + proportional extent (~556–776 Meesai chars per 1958 printed page); 1958 source is image-only and untranscribed, so body identity is NOT established — SOURCE_LIMITED; do not label as alternate witness |
@@ -805,7 +829,7 @@ Every row below is also in `READING_ROOM_IA_V2_R1_MANIFEST.json`.
 |  | **KEEP_EXISTING** | existing `sakkaravarththiyin-thirumagan` | சக்கரவர்த்தியின் திருமகன் | Chakravarthi's Son | essays-articles / (existing) | sakkaravarththiyin-thirumagan | EXISTING_LIBRARY_WORK |  | ONE serialized work (14 dependent installments) |
 |  | **KEEP_EXISTING** | existing `aaru-maatha-kadungkaaval` | ஆறுமாதக் கடுங்காவல் | Six Months of Rigorous Imprisonment | essays-articles / (existing) | aaru-maatha-kadungkaaval | EXISTING_LIBRARY_WORK |  | ONE continuous prison narrative (3 dependent parts) |
 |  | **KEEP_EXISTING** | existing `viduthalai-kilarcci` | விடுதலைக் கிளர்ச்சி | The Freedom Uprising | essays-articles / (existing) | viduthalai-kilarcci | EXISTING_LIBRARY_WORK |  | ONE work (prologue + main body) |
-|  | **KEEP_EXISTING** | existing `pesum-kalai-valarppom` | பேசும் கலை வளர்ப்போம் | Let Us Cultivate the Art of Speaking | essays-articles / (existing) | pesum-kalai-valarppom | EXISTING_LIBRARY_WORK |  | ONE work, 19 dependent numbered sections (R0); note: its section 6 contains 96% of the existing Fiction work நடக்குமா நடக்காதா? (2008 anthology) — EXCERPT relation recorded, no action |
+|  | **KEEP_EXISTING** | existing `pesum-kalai-valarppom` | பேசும் கலை வளர்ப்போம் | Let Us Cultivate the Art of Speaking | essays-articles / (existing) | pesum-kalai-valarppom | EXISTING_LIBRARY_WORK |  | ONE work, 19 dependent numbered sections (R0). Section 6 (kalaignar-essays@b5fd2922 publications/pesum-kalai-valarppom/articles/06-section-06.md) introduces a foreign short story Kalaignar used to tell when speaking at weddings ('வெளிநாட்டுச் சிறுகதையொன்றை … மணவிழா நிகழ்ச்சியில் சொல்லுவதுண்டு'), presents it as a bounded example, then resumes the discussion of speechcraft and later names it 'கலைஞர் சொன்ன கதையை'. The short-story source independently prints it as நடக்குமா நடக்காதா? (story 19/40, 2008 2nd ed. கலைஞர் சொன்ன கதைகள்). Relation: the existing independent Fiction LibraryWork nadakkuma-nadakkatha is an EMBEDDED/NESTED story reused inside dependent section 6 (96% of the story inside it); section 6 is NOT the same canonical work as the story. pesum-kalai-valarppom remains one coherent work; nadakkuma-nadakkatha remains the existing independent Fiction work; no HOLD, no count change |
 |  | **KEEP_EXISTING** | existing `kayittril-thongiya-kanapathi` | கயிற்றில் தொங்கிய கணபதி | Ganapathi Who Hung from the Rope | essays-articles / (existing) | kayittril-thongiya-kanapathi | EXISTING_LIBRARY_WORK |  | single article (R0) |
 |  | **KEEP_EXISTING** | existing `kudumbaththin-nalvilakku` | குடும்பத்தின் நல்விளக்கு | The Good Lamp of the Family | essays-articles / (existing) | kudumbaththin-nalvilakku | EXISTING_LIBRARY_WORK |  | single-article pamphlet (R0) |
 |  | **KEEP_EXISTING** | existing `vedhanai-ch-siraiyinindrum-viduthalai-pera` | வேதனைச் சிறையினின்றும் விடுதலை பெற | To Win Release from the Prison of Suffering | essays-articles / (existing) | vedhanai-ch-siraiyinindrum-viduthalai-pera | EXISTING_LIBRARY_WORK |  | single message (R0) |
@@ -821,8 +845,9 @@ New Poetry works      = Kaalap 57 + Kavithaigal 72 + 1975 3 + ina poems 3      =
 New Essays works      = unarchchimaalai 9 + thiraavida 2 + kolaikkalam 6
                         + sinthanaiyum 48 + perumoochu 13 + thudikkum 1 + ina essays 4 = 83
 New works from ina    = 4 essays + 3 poems                                     =   7 (included above)
-Promotable Meesai     = 0 now (11 identity-cleared pending one shelf decision; 15 blocked)
-HOLD                  = 35
+Promotable Meesai     = 0 now (unit 14 is a settled witness of the K56 anchor; 11 identity-cleared
+                        pending one shelf decision; 14 blocked)
+HOLD                  = 34
 Total CREATE          = 135 + 83                                               = 218
 
 Projected catalogue   = 335 + 218 = 553
@@ -840,8 +865,13 @@ Projected catalogue   = 335 + 218 = 553
 
 **New works created with witnesses attached:** 10 (Kavithaigal 06, 17, 26, 39, 49, 50, 51, 53, 54, 55).
 
-**The HOLD range is not frozen.** Resolving the 35 HOLD units could add between 0 and 35 works, depending on the owner
-decisions in §11 (several resolve to witnesses rather than works). The projection is therefore **553 (floor), up to 588**.
+**The HOLD range is not frozen.**
+- The projection is **553 as a floor**, with no HOLD created.
+- **587 is a raw upper bound**, under the raw assumption that every one of the 34 remaining HOLD units resolves as its
+  own new work: `553 + 34 = 587`.
+- The raw upper bound is **not** a frozen or expected final catalogue count. Several HOLDs are likely to resolve to
+  witnesses rather than works.
+- The final count stays unresolved until the owner decides the HOLDs in §11.
 
 **Modelling note (R2's decision, not R1's).** R2 might instead turn a fully decomposed container publication into a
 publication view rather than a LibraryWork. That would reduce the total by the number so converted. R1 does not decide

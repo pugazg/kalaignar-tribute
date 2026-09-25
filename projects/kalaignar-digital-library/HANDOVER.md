@@ -55,7 +55,7 @@ This checkpoint is **control-only and assessment-only**:
 | Poetry (148) | CREATE 132 · ADD_WITNESS 5 · KEEP 8 · HOLD 3 |
 | Essays (104) | CREATE 79 · ADD_WITNESS 3 · DO_NOT_PROMOTE 19 · HOLD 3 |
 | `ina-muzhakkam` (6 + 11 poems) | CREATE 7 (4 essays + 3 poems) · ADD_WITNESS 6 · HOLD 3 · not promotable 1 |
-| Meesai (26) | all HOLD |
+| Meesai (26) | ADD_WITNESS 1 · HOLD 25 |
 
 - **Poetry.** New same-canonical witnesses:
   - Kavithaigal 19 → `gunanayagar-nehru` (same 14.11.1970 occasion);
@@ -68,16 +68,22 @@ This checkpoint is **control-only and assessment-only**:
     are single works.
   - துடிக்கும் இளமை 3 and 4 are section witnesses of the existing speech *இதய பேரிகை*.
 - **Meesai.**
-  - 4 units contain existing 2004-anthology Fiction works (1, 2, 13, 14; 14 is also Kavithaigal 56).
+  - Unit 14 `பச்சைக்கிளி` and Kavithaigal 56 `பச்சைக் கிளி` are **settled** as one canonical poem with two source
+    witnesses. Meesai 14 is ADD_WITNESS to the canonical anchor `green-parrot` (K56). The anchor stays HOLD only
+    for its relation to the Fiction work `சிறை கொடியது` and for its shelf.
+  - Units 1, 2 and 13 contain existing 2004-anthology Fiction works (HOLD).
   - 11 units probably correspond to the 1958 `தேனலைகள்` by title, sequence and extent, but the 1958 book is
     untranscribed (SOURCE_LIMITED), so no witness label is given.
   - 11 units are identity-cleared but await a shelf decision for lyrical prose-poems.
-- **HOLD (35):** each has an explicit owner question (R1 §11).
+- **HOLD (34):** each has an explicit owner question (R1 §11).
+- **பேசும் கலை வளர்ப்போம் §6** embeds the existing Fiction story `நடக்குமா நடக்காதா?` as a bounded example (which
+  Kalaignar used to tell at weddings). The story remains its own work, pesum remains one work, and no HOLD arises.
 
 **Projection (calculated, not implemented).**
 - 218 CREATE (Poetry +135, Essays +83).
-- `335 + 218 = 553` (floor, with all existing works retained and no HOLD created). The ceiling is 588 if HOLDs resolve
-  to works.
+- `335 + 218 = 553` (floor, with all existing works retained and no HOLD created).
+- `553 + 34 = 587` is a **raw upper bound only**: it assumes every remaining HOLD resolves as its own new work. It is
+  not a frozen final count.
 - Shelf result: Poetry 149 · Essays 98 · others unchanged.
 
 **R2 — NOT STARTED / NOT AUTHORIZED.**

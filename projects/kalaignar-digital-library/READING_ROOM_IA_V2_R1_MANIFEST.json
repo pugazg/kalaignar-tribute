@@ -64,7 +64,8 @@
     "DO_NOT_PROMOTE": 2
    },
    "meesai": {
-    "HOLD": 26
+    "ADD_WITNESS": 1,
+    "HOLD": 25
    },
    "existing-publication-or-work": {
     "KEEP_EXISTING": 19,
@@ -74,7 +75,7 @@
   "createPoetry": 135,
   "createEssays": 83,
   "createIna": 7,
-  "hold": 35,
+  "hold": 34,
   "existingWorksGainingNewWitnesses": [
    "gunanayagar-nehru",
    "idhayathai-thanthidu-anna",
@@ -93,7 +94,16 @@
    "still-this-clamour"
   ],
   "createTotal": 218,
-  "projected": 553
+  "projected": 553,
+  "byDecision": {
+   "CREATE": 218,
+   "KEEP_EXISTING": 27,
+   "ADD_WITNESS": 16,
+   "DO_NOT_PROMOTE": 20,
+   "HOLD": 34
+  },
+  "rawUpperBound": 587,
+  "entries": 315
  },
  "entries": [
   {
@@ -3602,7 +3612,14 @@
   },
   {
    "decision": "HOLD",
-   "witnesses": [],
+   "witnesses": [
+    {
+     "witness": "meesai-mulaiththa-vayathil unit 14 பச்சைக்கிளி (2002)",
+     "relation": "SAME_CANONICAL_POEM_ALTERNATE_WITNESS",
+     "status": "NEW (settled)",
+     "evidence": "direct source comparison kalaignar-poems@96982319 poems/kalaignarin-kavithaigal/sections/56.md ↔ kalaignar-essays@b5fd2922 publications/meesai-mulaiththa-vayathil/articles/14-pachchaikkili.md; same printed title, poem sequence and ending; overlap 0.966 (K56 in Meesai 14) / 0.963 (Meesai 14 in K56); witness-level textual/orthographic variants only"
+    }
+   ],
    "key": "green-parrot",
    "family": "poetry-kavithaigal",
    "titleTa": "பச்சைக் கிளி",
@@ -3626,7 +3643,8 @@
    },
    "currentRoute": "/poems/kalaignarin-kavithaigal/green-parrot",
    "classification": "POSSIBLE_OVERLAP_NEEDS_REVIEW",
-   "evidence": "HOLD: same text as மீசை முளைத்த வயதில் unit 14 பச்சைக்கிளி (33/40 lines verbatim, overlap 0.97) AND prose-formatted inside existing Fiction LibraryWork சிறை கொடியது (2004 anthology; 72–78% of the story); cross-shelf identity decision required"
+   "evidence": "HOLD (canonical cluster anchor, proposed key green-parrot): K56 and Meesai 14 are SETTLED as one canonical poem with two source witnesses (kalaignar-poems@96982319 poems/kalaignarin-kavithaigal/sections/56.md ↔ kalaignar-essays@b5fd2922 publications/meesai-mulaiththa-vayathil/articles/14-pachchaikkili.md; same title, sequence and ending; overlap 0.966/0.963). Remaining owner question ONLY: how this canonical poem relates to the later prose-formatted existing Fiction LibraryWork சிறை கொடியது (2004 anthology; 72–78% of the story inside the poem), and which shelf owns the canonical identity",
+   "proposedId": "green-parrot"
   },
   {
    "decision": "CREATE",
@@ -8021,13 +8039,13 @@
    "evidence": "existing Fiction LibraryWork புகழே நீ ஒரு புதிர் (2004 anthology) is a shorter re-edited text contained in this unit (story 98% inside) — cross-shelf identity decision required"
   },
   {
-   "decision": "HOLD",
+   "decision": "ADD_WITNESS",
    "witnesses": [],
    "key": "pachchaikkili",
    "family": "meesai",
    "titleTa": "பச்சைக்கிளி",
    "titleEn": "Green Parrot",
-   "shelf": "UNDECIDED",
+   "shelf": "UNDECIDED (follows canonical green-parrot)",
    "subtype": "verse poem",
    "sources": [
     "meesai-mulaiththa-vayathil unit 14 (2002 1st ed.; 2006 2nd ed.)"
@@ -8044,8 +8062,10 @@
     ]
    },
    "currentRoute": "/essays/meesai-mulaiththa-vayathil/articles/pachchaikkili",
-   "classification": "POSSIBLE_OVERLAP_NEEDS_REVIEW",
-   "evidence": "existing Fiction LibraryWork சிறை கொடியது (2004 anthology) is a shorter re-edited text contained in this unit (story 72–78% inside); also = Kavithaigal item 56 (verse) — cross-shelf identity decision required"
+   "classification": "SAME_CANONICAL_POEM_ALTERNATE_WITNESS",
+   "evidence": "alternate source witness of Kavithaigal item 56 பச்சைக் கிளி (canonical anchor green-parrot, itself HOLD): kalaignar-essays@b5fd2922 publications/meesai-mulaiththa-vayathil/articles/14-pachchaikkili.md ↔ kalaignar-poems@96982319 poems/kalaignarin-kavithaigal/sections/56.md — same title, sequence and ending; overlap 0.963/0.966; witness-level variants only. Not created in R1; the anchor's relation to the Fiction work சிறை கொடியது is the only open question",
+   "witnessOfProposed": "green-parrot",
+   "witnessOfProposedId": "green-parrot"
   },
   {
    "decision": "HOLD",
@@ -8641,7 +8661,7 @@
    "existingWorkId": "pesum-kalai-valarppom",
    "currentRoute": "/essays/pesum-kalai-valarppom",
    "classification": "EXISTING_LIBRARY_WORK",
-   "evidence": "ONE work, 19 dependent numbered sections (R0); note: its section 6 contains 96% of the existing Fiction work நடக்குமா நடக்காதா? (2008 anthology) — EXCERPT relation recorded, no action"
+   "evidence": "ONE work, 19 dependent numbered sections (R0). Section 6 (kalaignar-essays@b5fd2922 publications/pesum-kalai-valarppom/articles/06-section-06.md) introduces a foreign short story Kalaignar used to tell when speaking at weddings ('வெளிநாட்டுச் சிறுகதையொன்றை … மணவிழா நிகழ்ச்சியில் சொல்லுவதுண்டு'), presents it as a bounded example, then resumes the discussion of speechcraft and later names it 'கலைஞர் சொன்ன கதையை'. The short-story source independently prints it as நடக்குமா நடக்காதா? (story 19/40, 2008 2nd ed. கலைஞர் சொன்ன கதைகள்). Relation: the existing independent Fiction LibraryWork nadakkuma-nadakkatha is an EMBEDDED/NESTED story reused inside dependent section 6 (96% of the story inside it); section 6 is NOT the same canonical work as the story. pesum-kalai-valarppom remains one coherent work; nadakkuma-nadakkatha remains the existing independent Fiction work; no HOLD, no count change"
   },
   {
    "decision": "KEEP_EXISTING",
