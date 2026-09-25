@@ -11,7 +11,91 @@ Several phases have shipped since it was written, and its work counts, shelf cou
 "last production application-code checkpoint" are stale. It is kept as history and has **not** been
 retro-edited. Where it disagrees with this section or with live GitHub, **live GitHub wins**.
 
-### Verified live state — 2026-09-24, READING ROOM IA v2 R0 — CLASSIFICATION CENSUS COMPLETE / REVIEWED / FROZEN ✅ CURRENT
+### Verified live state — 2026-09-24, READING ROOM IA v2 R1 — IDENTITY RECONCILIATION COMPLETE / REVIEW-READY ✅ CURRENT
+
+**Highest-precedence checkpoint. Live GitHub and production win.**
+
+This checkpoint is **control-only and assessment-only**:
+- implementation delta = 0, source delta = 0, production mutation = 0;
+- no LibraryWork created, and no catalogue, route, reader, sitemap, collection or `/read` change.
+
+**Durable R1 authority:**
+- [`READING_ROOM_IA_V2_R1_IDENTITY_RECONCILIATION.md`](./READING_ROOM_IA_V2_R1_IDENTITY_RECONCILIATION.md);
+- the machine-readable manifest [`READING_ROOM_IA_V2_R1_MANIFEST.json`](./READING_ROOM_IA_V2_R1_MANIFEST.json)
+  (315 entries);
+- the deterministic body-text evidence
+  [`READING_ROOM_IA_V2_R1_TEXT_OVERLAP_EVIDENCE.json`](./READING_ROOM_IA_V2_R1_TEXT_OVERLAP_EVIDENCE.json).
+
+**Status.**
+- R0 (below) remains COMPLETE / REVIEWED / FROZEN and was consumed without reopening.
+- Waves 6–8 remain COMPLETE / CLOSED / FROZEN at P5.
+- R1 was owner-authorized as canonical identity plus cross-witness reconciliation. It is not catalogue implementation.
+
+**Live pins.**
+- Control base: `99ce1dbcc724b5daaa1716bd9a9ea90452fc32e0`.
+- Implementation: `f991043c3353abe9f2b334f7c8d57e433184d126` (unchanged; 0 open PRs).
+- Sources read at recorded pins:
+  - poems `96982319…` / `188d49cd…`;
+  - essays `bff35320…` / `6814e979…` / `564add70…` / `b5fd2922…`;
+  - short-stories `7205a108…`.
+
+**Method.**
+- Every candidate text (328) was compared with every unit, plus 154 stories, 117 speeches, 8 novels and 688 Murasoli
+  letters.
+- Two independent methods were used (8-char shingle runs; word-bigram coverage), and they produced the same
+  relationship set.
+- Identity was then settled from source records: the Wave-4 and 1968 cross-witness audits, the 1975 page-map, the
+  குணநாயகர் நேரு performance note, the Meesai author preface and the 1958 intake.
+- No identity is taken from titles alone, and no genre from repository placement.
+
+**Results.**
+
+| Workstream | Result |
+|---|---|
+| Poetry (148) | CREATE 132 · ADD_WITNESS 5 · KEEP 8 · HOLD 3 |
+| Essays (104) | CREATE 79 · ADD_WITNESS 3 · DO_NOT_PROMOTE 19 · HOLD 3 |
+| `ina-muzhakkam` (6 + 11 poems) | CREATE 7 (4 essays + 3 poems) · ADD_WITNESS 6 · HOLD 3 · not promotable 1 |
+| Meesai (26) | ADD_WITNESS 1 · HOLD 25 |
+
+- **Poetry.** New same-canonical witnesses:
+  - Kavithaigal 19 → `gunanayagar-nehru` (same 14.11.1970 occasion);
+  - 1975 scans 9–20 → `idhayathai-thanthidu-anna`, and 21–32 → `gunanayagar-nehru`;
+  - 1975 33–45 / 71–77 / 78–84 → Kavithaigal 17 / 06 / 26;
+  - இன முழக்கம் (1951) poems → Kavithaigal 49–55;
+  - உணர்ச்சிமாலை 10 → Kavithaigal 39.
+- **Essays.**
+  - சக்கரவர்த்தியின் திருமகன் is a serial of dependent installments; ஆறுமாதக் கடுங்காவல் and விடுதலைக் கிளர்ச்சி
+    are single works.
+  - துடிக்கும் இளமை 3 and 4 are section witnesses of the existing speech *இதய பேரிகை*.
+- **Meesai.**
+  - Unit 14 `பச்சைக்கிளி` and Kavithaigal 56 `பச்சைக் கிளி` are **settled** as one canonical poem with two source
+    witnesses. Meesai 14 is ADD_WITNESS to the canonical anchor `green-parrot` (K56). The anchor stays HOLD only
+    for its relation to the Fiction work `சிறை கொடியது` and for its shelf.
+  - Units 1, 2 and 13 contain existing 2004-anthology Fiction works (HOLD).
+  - 11 units probably correspond to the 1958 `தேனலைகள்` by title, sequence and extent, but the 1958 book is
+    untranscribed (SOURCE_LIMITED), so no witness label is given.
+  - 11 units are identity-cleared but await a shelf decision for lyrical prose-poems.
+- **HOLD (34):** each has an explicit owner question (R1 §11).
+- **பேசும் கலை வளர்ப்போம் §6** embeds the existing Fiction story `நடக்குமா நடக்காதா?` as a bounded example (which
+  Kalaignar used to tell at weddings). The story remains its own work, pesum remains one work, and no HOLD arises.
+
+**Projection (calculated, not implemented).**
+- 218 CREATE (Poetry +135, Essays +83).
+- `335 + 218 = 553` (floor, with all existing works retained and no HOLD created).
+- `553 + 34 = 587` is a **raw upper bound only**: it assumes every remaining HOLD resolves as its own new work. It is
+  not a frozen final count.
+- Shelf result: Poetry 149 · Essays 98 · others unchanged.
+
+**R2 — NOT STARTED / NOT AUTHORIZED.**
+- Implementation requires independent review of this R1 record plus explicit owner authorization.
+- HOLD items need owner decisions first.
+- No wave is reopened, and nothing is "P6".
+
+### Verified live state — 2026-09-24, READING ROOM IA v2 R0 — CLASSIFICATION CENSUS COMPLETE / REVIEWED / FROZEN ✅ R0 FROZEN AUTHORITY (retained; the latest activity is the R1 checkpoint above)
+
+**Historical note (added at R1):** the "R1 is NOT STARTED / NOT AUTHORIZED" status below was true when R0 froze. R1
+has since been owner-authorized, and its reconciliation is recorded in the checkpoint above. The frozen R0 facts below
+are unchanged.
 
 **Highest-precedence checkpoint. Live GitHub and production win.**
 
