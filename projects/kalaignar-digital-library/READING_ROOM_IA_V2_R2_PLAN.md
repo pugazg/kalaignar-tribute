@@ -112,7 +112,12 @@ R2 implements the category-first hierarchy over the **existing live catalogue of
 - expand the catalogue towards 579.
 
 All of that belongs to the later **R3 — canonical-work promotion / catalogue reconciliation** stage, which consumes the
-frozen resolved manifest. The five R3 merges are:
+frozen resolved manifest.
+
+**Terminology note.** The frozen owner-adjudication record and the resolved manifest call these merge/witness actions
+"future R2" (field `futureR2Actions`), because they were written before the owner split the work into R2 and R3.
+- Those frozen files are **not edited**.
+- Under this plan, every action they label "future R2" is scheduled for **R3**, and R2 performs none of them. The five R3 merges are:
 - `sirai-kodiyathu` → `green-parrot`
 - `neeyum-kaithi-naanum-kaithi` → `piraiye`
 - `aadik-kaatre` → `adikkaatru`

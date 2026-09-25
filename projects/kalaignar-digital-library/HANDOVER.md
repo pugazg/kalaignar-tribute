@@ -11,7 +11,51 @@ Several phases have shipped since it was written, and its work counts, shelf cou
 "last production application-code checkpoint" are stale. It is kept as history and has **not** been
 retro-edited. Where it disagrees with this section or with live GitHub, **live GitHub wins**.
 
-### Verified live state — 2026-09-25, READING ROOM IA v2 OWNER HOLD ADJUDICATION — COMPLETE / REVIEWED / FROZEN ✅ CURRENT
+### Verified live state — 2026-09-25, READING ROOM IA v2 R2 — AUTHORIZED · R2 PLAN — COMPLETE / REVIEW-READY · R2 IMPLEMENTATION — NOT STARTED ✅ CURRENT
+
+**Highest-precedence checkpoint. Live GitHub and production win.**
+
+This checkpoint is **control-only planning**:
+- implementation delta = 0, source delta = 0, production mutation = 0;
+- no R2 implementation branch exists.
+
+Plan: [`READING_ROOM_IA_V2_R2_PLAN.md`](./READING_ROOM_IA_V2_R2_PLAN.md).
+
+**Lifecycle:**
+- R0 — COMPLETE / REVIEWED / FROZEN.
+- R1 — COMPLETE / REVIEWED / FROZEN.
+- Owner HOLD adjudication — COMPLETE / REVIEWED / FROZEN (resolved manifest `b7b3530d…`, HOLD 0).
+- **R2 — AUTHORIZED** (owner: "Authorize R2 and proceed with R2 planning.").
+- **R2 PLAN — COMPLETE / REVIEW-READY.**
+- **R2 IMPLEMENTATION — NOT STARTED.**
+- Waves 6–8 remain COMPLETE / CLOSED / FROZEN at P5.
+
+**R2 scope: information architecture over the existing 335 works.**
+- The target hierarchy is `/read` → 9 category pages → canonical LibraryWork → existing reader.
+- **`/read`:** exactly 9 category cards, with no work, collection or Daily Kural panel. The `life-writing` public Tamil
+  label becomes `சுயசரிதை`; the internal id is unchanged.
+- **Category routes:** `/read/autobiography`, `/read/letters`, `/read/fiction`, `/read/poetry`, `/read/drama`,
+  `/read/cinema`, `/read/speeches`, `/read/essays`, `/read/literary-commentary`. They collide with 0 of the 391 memoir
+  chapter ids.
+- **Category pages:** every published work appears on exactly one page (1 / 1 / 162 / 14 / 11 / 10 / 117 / 15 / 4 =
+  335). Collections are secondary context only and never substitute for member works.
+- **Projections:** sitemap 5262 → 5271 (+9, 0 duplicates); the build gains 9 static pages. Both are to be derived
+  during implementation.
+- **Staging:** R2-A (category model and routes) → R2-B (category-only `/read`) → R2-C (provenance, sitemap and full
+  regression).
+
+**R2 / R3 boundary.** R2 creates none of the 249 resolved-manifest CREATE works and performs none of the five canonical
+merges. The catalogue stays at 335 and collections at 9. All of that is **R3**.
+- The frozen adjudication record and resolved manifest label those merges "future R2" (`futureR2Actions`), written
+  before the R2/R3 split. They are not edited; under the R2 plan those actions are R3.
+
+**Next:** independent review and merge of the R2 plan PR. Then begin **R2-A** only.
+
+### Verified live state — 2026-09-25, READING ROOM IA v2 OWNER HOLD ADJUDICATION — COMPLETE / REVIEWED / FROZEN ✅ ADJUDICATION FROZEN AUTHORITY (retained; the latest activity is the R2 plan checkpoint above)
+
+**Historical note (added at R2 planning):** the "R2 — NOT STARTED / NOT AUTHORIZED" status below was true at
+adjudication freeze. The owner has since authorized R2. Its "future R2" merge/witness actions are scheduled for R3
+under the R2 plan. The frozen adjudication facts below are unchanged.
 
 **Highest-precedence checkpoint. Live GitHub and production win.**
 
