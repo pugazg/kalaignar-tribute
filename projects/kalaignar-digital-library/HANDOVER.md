@@ -11,7 +11,7 @@ Several phases have shipped since it was written, and its work counts, shelf cou
 "last production application-code checkpoint" are stale. It is kept as history and has **not** been
 retro-edited. Where it disagrees with this section or with live GitHub, **live GitHub wins**.
 
-### Verified live state — 2026-09-25, READING ROOM IA v2 OWNER HOLD ADJUDICATION — COMPLETE / REVIEW-READY ✅ CURRENT
+### Verified live state — 2026-09-25, READING ROOM IA v2 OWNER HOLD ADJUDICATION — COMPLETE / REVIEWED / FROZEN ✅ CURRENT
 
 **Highest-precedence checkpoint. Live GitHub and production win.**
 
@@ -27,7 +27,12 @@ This checkpoint is **control-only**:
 **Lifecycle:**
 - **R0 — COMPLETE / REVIEWED / FROZEN.**
 - **R1 — COMPLETE / REVIEWED / FROZEN.** Its record, manifest and evidence are byte-identical, and it is not reopened.
-- **Owner HOLD adjudication — COMPLETE / REVIEW-READY.**
+- **Owner HOLD adjudication — COMPLETE / REVIEWED / FROZEN.**
+  - It was merged in control PR #44: approved head `87d4294ebbad8c60ec497727607b7e1cbe770d1e`, normal merge
+    `cc131a26501e714664ec80c011522cf0155dccb0`, approved-head → merge delta 0 files.
+  - Final owner authorization confirmed Meesai 1, 2, 13 and 16–26 as Poetry / `ezhuthoviyam`.
+  - The resolved manifest has **HOLD 0**, and all 34 owner decisions are closed and frozen. Reopen only for a
+    genuine source-backed defect or an explicit later owner correction.
 - Waves 6–8 remain COMPLETE / CLOSED / FROZEN at P5.
 
 **What was decided.** All 34 original R1 HOLD rows now have explicit owner decisions (OD1–OD9). The resolved manifest
@@ -56,9 +61,9 @@ has **HOLD = 0**.
   figure is pre-R2 and not the final website count.
 
 **Next and R2.**
-- **Next:** independent review and merge of the owner-adjudication control PR, not R2 implementation.
+- Implementation remains unchanged (`f991043c…`). None of the five future R2 merge/witness actions has been performed.
 - **R2 — NOT STARTED / NOT AUTHORIZED.** HOLD = 0 does not authorize R2; R2 requires separate explicit owner
-  authorization.
+  authorization. Any next stage (for example R2 planning) starts only on that authorization.
 
 ### Verified live state — 2026-09-24, READING ROOM IA v2 R1 — IDENTITY RECONCILIATION COMPLETE / REVIEWED / FROZEN ✅ R1 FROZEN AUTHORITY (retained; the latest activity is the owner-adjudication checkpoint above)
 

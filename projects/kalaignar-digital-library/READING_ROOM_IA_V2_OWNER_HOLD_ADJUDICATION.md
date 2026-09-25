@@ -2,8 +2,19 @@
 
 **Created:** 2026-09-25.
 
-**Status: READING ROOM IA v2 OWNER HOLD ADJUDICATION — COMPLETE / REVIEW-READY.**
+**Status: READING ROOM IA v2 OWNER HOLD ADJUDICATION — COMPLETE / REVIEWED / FROZEN.**
 **R2 — NOT STARTED / NOT AUTHORIZED.**
+
+**Lifecycle note.** This adjudication was independently reviewed at exact head
+`87d4294ebbad8c60ec497727607b7e1cbe770d1e`, with final owner authorization confirming Meesai 1, 2, 13 and 16–26 as
+Poetry / `ezhuthoviyam`. It was merged in control PR `pugazg/kalaignar-tribute#44` as normal merge
+`cc131a26501e714664ec80c011522cf0155dccb0`, with 0 files changed between the approved head and the merge.
+- All 34 original R1 HOLD rows have owner decisions, and the resolved manifest has **HOLD = 0**: 31 resolved to
+  CREATE and 3 to ADD_WITNESS.
+- All owner decisions are **frozen**. No further stylistic or classification polishing may reopen them. Reopen only
+  for a genuine source-backed defect or an explicit later owner correction.
+- This lifecycle close-out changes only status wording. The resolved manifest (blob
+  `b7b3530d54ba9c354b43313eecd69e78e76a92b5`) is unchanged.
 
 This is a **post-R1, control-only owner-adjudication stage**:
 - implementation delta = **0**;
@@ -303,10 +314,11 @@ Net view (579): the five merges reduce Fiction from 162 to 157.
 
 ## 16. Status
 
-**READING ROOM IA v2 OWNER HOLD ADJUDICATION — COMPLETE / REVIEW-READY.**
+**READING ROOM IA v2 OWNER HOLD ADJUDICATION — COMPLETE / REVIEWED / FROZEN.** It was merged in PR #44 as
+`cc131a26…`, with approved head `87d4294e…` and 0 content delta. All 34 owner decisions are frozen.
 - R0 — COMPLETE / REVIEWED / FROZEN.
 - R1 — COMPLETE / REVIEWED / FROZEN.
 - Waves 6–8 — COMPLETE / CLOSED / FROZEN at P5.
 
-**R2 — NOT STARTED / NOT AUTHORIZED.** HOLD = 0 does **not** authorize R2. R2 requires independent review and merge of
-this adjudication plus separate explicit owner authorization.
+**R2 — NOT STARTED / NOT AUTHORIZED.** HOLD = 0 does **not** authorize R2. R2 requires separate explicit owner
+authorization.

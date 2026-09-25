@@ -1,4 +1,4 @@
-# New Chat Bootstrap Prompt — Kalaignar Digital Library / READING ROOM IA v2 OWNER HOLD ADJUDICATION — REVIEW-READY (R0 and R1 frozen; Waves 6, 7 and 8 closed at P5)
+# New Chat Bootstrap Prompt — Kalaignar Digital Library / READING ROOM IA v2 OWNER HOLD ADJUDICATION — COMPLETE / REVIEWED / FROZEN (R0 and R1 frozen; Waves 6, 7 and 8 closed at P5)
 
 Continue as my **independent reviewer and prompt-provider for Claude Code** for the Kalaignar Digital
 Library / Reading Room. **Live GitHub and production are authoritative. Do not trust copied SHAs, PR
@@ -9,7 +9,7 @@ bodies or this bootstrap if live state differs.**
 1. Fetch live `pugazg/kalaignar-tribute` `main`, and inspect all open control PRs.
 2. Read `projects/kalaignar-digital-library/HANDOVER.md` **completely**.
    - Its highest-precedence CURRENT checkpoint is **2026-09-25 — READING ROOM IA v2 OWNER HOLD ADJUDICATION —
-     COMPLETE / REVIEW-READY**.
+     COMPLETE / REVIEWED / FROZEN**.
    - Directly below it is the frozen R1 checkpoint (**READING ROOM IA v2 R1 — IDENTITY RECONCILIATION COMPLETE /
      REVIEWED / FROZEN**). Its "34 HOLD items remain unresolved" status is historical.
    - Directly below it is the frozen R0 checkpoint (**READING ROOM IA v2 R0 — CLASSIFICATION CENSUS COMPLETE /
@@ -29,8 +29,9 @@ bodies or this bootstrap if live state differs.**
      #43 → `62739aac…`). Verify this against
      live GitHub.
    - Then read `READING_ROOM_IA_V2_OWNER_HOLD_ADJUDICATION.md` and `READING_ROOM_IA_V2_RESOLVED_MANIFEST.json`, the
-     owner decisions for all 34 R1 HOLD rows (an overlay; R1 unchanged). Check whether that control PR has been
-     independently reviewed and merged.
+     owner decisions for all 34 R1 HOLD rows (an overlay; R1 unchanged). These are frozen historical authority:
+     merged in `pugazg/kalaignar-tribute#44` (normal merge `cc131a26501e714664ec80c011522cf0155dccb0`, approved head
+     `87d4294e…`, 0 content delta). Verify this against live GitHub.
 4. Read `projects/kalaignar-digital-library/WAVE8_P5_PRODUCTION_ACCEPTANCE.md`, the durable Wave-8 acceptance and
    close-out record.
 5. Read `projects/kalaignar-digital-library/WAVE8_COMPLETED_WORKS_CENSUS.md` as the **historical P0 selection and
@@ -48,8 +49,8 @@ bodies or this bootstrap if live state differs.**
 ## CURRENT state
 
 **Reading Room IA v2 — owner HOLD adjudication (post-R1 overlay; control-only).**
-- **READING ROOM IA v2 OWNER HOLD ADJUDICATION — COMPLETE / REVIEW-READY (2026-09-25). R2 — NOT STARTED / NOT
-  AUTHORIZED.**
+- **READING ROOM IA v2 OWNER HOLD ADJUDICATION — COMPLETE / REVIEWED / FROZEN (2026-09-25; merged via PR #44,
+  `cc131a26…`). R2 — NOT STARTED / NOT AUTHORIZED.**
 - Records: `READING_ROOM_IA_V2_OWNER_HOLD_ADJUDICATION.md` and `READING_ROOM_IA_V2_RESOLVED_MANIFEST.json` (the frozen
   R1 315 rows copied verbatim, plus an owner overlay). R1 is not reopened.
 - All 34 original HOLD rows have owner decisions (OD1–OD9), so the **resolved HOLD = 0**. Resolved totals:
@@ -57,8 +58,10 @@ bodies or this bootstrap if live state differs.**
 - **Projection:** raw add-only `335 + 249 = 584`. Five existing Fiction works (`sirai-kodiyathu`,
   `neeyum-kaithi-naanum-kaithi`, `aadik-kaatre`, `pugazhe-nee-oru-pudhir`, `sorgaththirku-vandhathu-eppadi`) are future
   R2 merge/witness targets, giving a **provisional** net of 579. That figure is not the final website count.
-- **Next:** independent review and merge of the owner-adjudication control PR, not R2 implementation. HOLD = 0 does not
-  authorize R2.
+- All 34 owner decisions are closed and frozen. Reopen only for a genuine source-backed defect or an explicit later
+  owner correction.
+- **Next:** the next stage may be **R2 planning/authorization**, but R2 is **NOT STARTED / NOT AUTHORIZED**. It does
+  not begin automatically because HOLD = 0; it requires separate explicit owner authorization.
 
 **Reading Room IA v2 — R1 (frozen authority; canonical identity + cross-witness reconciliation; control-only).**
 - **READING ROOM IA v2 R1 — COMPLETE / REVIEWED / FROZEN (2026-09-24; merged via PR #42, `1d12bd6d…`). R2 — NOT
@@ -233,9 +236,11 @@ Any of these requires a separately authorized new wave with its own census.
 - The owner HOLD adjudication is recorded by the control-only PR `Reading Room IA v2 — owner HOLD adjudication`.
   - It adds the adjudication record and the resolved manifest, and updates `HANDOVER.md` and this file.
   - Frozen R0 and R1 files are untouched.
-  - Until that PR is merged, live control `main` remains authoritative.
+  - It was merged as `pugazg/kalaignar-tribute#44` (merge `cc131a26501e714664ec80c011522cf0155dccb0`). The
+    control-only PR `Reading Room IA v2 — owner HOLD adjudication lifecycle close-out` moves its lifecycle wording to
+    COMPLETE / REVIEWED / FROZEN. It changes no decision.
 
 **STOP. Wave 6, Wave 7 and Wave 8 are COMPLETE / CLOSED / FROZEN at P5. There is no Wave-8 P6. Reading Room IA v2
-R0 and R1 are COMPLETE / REVIEWED / FROZEN; the owner HOLD adjudication is COMPLETE / REVIEW-READY (resolved HOLD = 0);
-R2 is NOT STARTED / NOT AUTHORIZED. Do not begin R2, start a new wave or start any maintenance activity without
-explicit owner authorization.**
+R0, R1 and owner HOLD adjudication are COMPLETE / REVIEWED / FROZEN. Resolved manifest HOLD = 0. R2 is NOT STARTED /
+NOT AUTHORIZED and requires separate explicit owner authorization. Do not begin R2, start a new wave or start any
+maintenance activity without it.**
