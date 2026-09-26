@@ -2,8 +2,8 @@
 
 **Created:** 2026-09-25.
 
-**Status: R2 — AUTHORIZED. R2 PLAN — COMPLETE / REVIEWED / FROZEN. R2-A — COMPLETE / REVIEWED / MERGED. R2-B — NOT
-STARTED / NOT AUTHORIZED. R2-C — NOT STARTED.**
+**Status: R2 — AUTHORIZED. R2 PLAN — COMPLETE / REVIEWED / FROZEN. R2-A — COMPLETE / REVIEWED / MERGED. R2-B —
+COMPLETE / REVIEWED / MERGED. R2-C — NOT STARTED / NOT AUTHORIZED.**
 
 **Lifecycle note (added 2026-09-26; lifecycle wording only — §§1–20 are unchanged).**
 - This plan passed independent exact-head review (PASS). It was merged as `pugazg/kalaignar-tribute#46` by a normal
@@ -11,7 +11,10 @@ STARTED / NOT AUTHORIZED. R2-C — NOT STARTED.**
   `df99c0ea9bc3f0dfaadde9417be762ec9fb6a6c1` (0 content delta). It is now frozen.
 - R2-A was implemented, reviewed and merged as `pugazg/kalaignar-autobiography#102` (merge `19c0ee15…`). See
   [`READING_ROOM_IA_V2_R2A_CHECKPOINT.md`](./READING_ROOM_IA_V2_R2A_CHECKPOINT.md).
-- R2-B requires a separate owner authorization; this plan does not by itself authorize it.
+- R2-B was separately owner-authorized, then implemented, reviewed and merged as `pugazg/kalaignar-autobiography#103`
+  (merge `89c68255…`). See [`READING_ROOM_IA_V2_R2B_CHECKPOINT.md`](./READING_ROOM_IA_V2_R2B_CHECKPOINT.md) (lifecycle
+  note updated 2026-09-26).
+- R2-C requires a separate owner authorization; this plan does not by itself authorize it.
 - The header text below, including "No R2 implementation branch exists", describes this plan as written at its creation.
 
 This is a **control-only planning record**:
