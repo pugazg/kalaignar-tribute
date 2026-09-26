@@ -11,7 +11,65 @@ Several phases have shipped since it was written, and its work counts, shelf cou
 "last production application-code checkpoint" are stale. It is kept as history and has **not** been
 retro-edited. Where it disagrees with this section or with live GitHub, **live GitHub wins**.
 
-### Verified live state — 2026-09-26, READING ROOM IA v2 R2 — IMPLEMENTATION COMPLETE / REVIEWED / MERGED / PRODUCTION-ACCEPTED · R2 CLOSE-OUT REVIEW-READY · R3 NOT AUTHORIZED ✅ CURRENT
+### Verified live state — 2026-09-26, READING ROOM IA v2 — R2 COMPLETE / REVIEWED / MERGED / PRODUCTION-ACCEPTED / CLOSED · R3 OWNER-AUTHORIZED — PLANNING IN PROGRESS · R3 IMPLEMENTATION NOT STARTED ✅ CURRENT
+
+**Highest-precedence checkpoint. Live GitHub and production win.**
+
+This checkpoint is **control-only planning**:
+- implementation delta = 0;
+- source delta = 0;
+- production mutation = 0.
+
+Plan: [`READING_ROOM_IA_V2_R3_PLAN.md`](./READING_ROOM_IA_V2_R3_PLAN.md), **awaiting independent exact-head review**.
+
+**Lifecycle:**
+- R0, R1 and the owner HOLD adjudication — COMPLETE / REVIEWED / FROZEN (resolved manifest `b7b3530d…`, HOLD 0).
+- **R2 — COMPLETE / REVIEWED / MERGED / PRODUCTION-ACCEPTED / CLOSED.**
+  - Plan `#46`; R2-A `#102`, R2-B `#103`, R2-C `#104` (implementation `main` `597e65fd…`, Production `6674301852`).
+  - Close-out `pugazg/kalaignar-tribute#49` → `c4c3ccd4…`. Its file still reads "REVIEW-READY": that is the reviewed
+    text, superseded by the merge.
+- **R3 — OWNER-AUTHORIZED: "let's start R3".**
+- **R3 PLAN — REVIEW-READY.**
+- **R3 IMPLEMENTATION — NOT STARTED.**
+- Waves 6–8 remain COMPLETE / CLOSED / FROZEN at P5.
+
+**R3 plan summary (proposed; frozen only on merge):**
+- **Input:** the frozen resolved manifest. 315 = CREATE 249 · KEEP 27 · WITNESS 19 · DO_NOT_PROMOTE 20 · HOLD 0.
+  - CREATE by shelf: Poetry 162 · Essays 84 · Letters 2 · Speeches 1.
+  - 249 unique ids; 0 collisions and 0 leakage in implementation.
+- **Routes:** 246 CREATE works reuse a one-to-one existing child route. The 3 `இன முழக்கம்` poems (`வா!`,
+  `மாணவர் எழுச்சி.`, `வாளிங்கே!`) have none; the plan proposes **stable fragment identities** on
+  `/essays/ina-muzhakkam/articles/kavithaigal` (#poem-6-N), because 6 of that unit's 9 printed pages are shared
+  between poems.
+- **Publication containers:** all **11** contributing publications are fully decomposed (every unit is a CREATE work,
+  a witness or a heading). They become **publication records**: not canonical works, with every URL, reader and
+  `/source` kept.
+- **Final canonical count 568** (supersedes the provisional 579): `335 + 249 − 11 demotions − 5 merges`.
+  - Per shelf: Life Writing 1 · Letters 3 · Fiction 157 · Poetry 173 · Drama 11 · Cinema 10 · Speeches 118 · Essays 91
+    · Literary Commentary 4.
+  - Collections stay 9.
+- **Build and sitemap: +0** (R3 adds no page).
+- **Relations:** one generated relation registry, 49 records:
+  - 22 source-publication witnesses;
+  - 5 merged-witness records;
+  - 11 Sangatamil section links;
+  - 10 chapter-level + 1 publication-level 1958 `தேனலைகள்` links (அலை 3 unmapped).
+- **The five merges** keep their story URLs and 2004-anthology entries (the collection data is not edited; resolution
+  learns `merged-witness`).
+- **Staging:**
+  - R3-A: foundation; no public change.
+  - R3-B: Poetry, +162 − 4 → 493.
+  - R3-C: Essays / Letters / Speech, +87 − 7 → 573.
+  - R3-D: merges, Sangatamil and 1958 → 568.
+
+**Next:** independent exact-head review and merge of the R3 plan. Then **R3-A only**. Do not start any R3
+implementation before the plan is merged.
+
+### Verified live state — 2026-09-26, READING ROOM IA v2 R2 — IMPLEMENTATION COMPLETE / REVIEWED / MERGED / PRODUCTION-ACCEPTED · R2 CLOSE-OUT REVIEW-READY · R3 NOT AUTHORIZED ✅ R2 CLOSE-OUT (retained; the latest activity is the R3 planning checkpoint above)
+
+**Historical note (added at R3 planning):** the R2 close-out was merged as `pugazg/kalaignar-tribute#49` (merge
+`c4c3ccd4…`), which supersedes its "REVIEW-READY" wording. The "R3 NOT AUTHORIZED" status below was true at that merge;
+the owner has since authorized R3 ("let's start R3"). The R2 facts below are unchanged.
 
 **Highest-precedence checkpoint. Live GitHub and production win.**
 
