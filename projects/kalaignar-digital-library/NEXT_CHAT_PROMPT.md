@@ -1,4 +1,4 @@
-# New Chat Bootstrap Prompt — Kalaignar Digital Library / READING ROOM IA v2 R2 — AUTHORIZED · R2 PLAN REVIEW-READY · IMPLEMENTATION NOT STARTED (R0, R1 and adjudication frozen; Waves 6, 7 and 8 closed at P5)
+# New Chat Bootstrap Prompt — Kalaignar Digital Library / READING ROOM IA v2 R2 — PLAN FROZEN · R2-A COMPLETE / REVIEWED / MERGED · R2-B NOT STARTED / NOT AUTHORIZED (R0, R1 and adjudication frozen; Waves 6, 7 and 8 closed at P5)
 
 Continue as my **independent reviewer and prompt-provider for Claude Code** for the Kalaignar Digital
 Library / Reading Room. **Live GitHub and production are authoritative. Do not trust copied SHAs, PR
@@ -8,9 +8,11 @@ bodies or this bootstrap if live state differs.**
 
 1. Fetch live `pugazg/kalaignar-tribute` `main`, and inspect all open control PRs.
 2. Read `projects/kalaignar-digital-library/HANDOVER.md` **completely**.
-   - Its highest-precedence CURRENT checkpoint is **2026-09-25 — READING ROOM IA v2 R2 — AUTHORIZED · R2 PLAN —
-     COMPLETE / REVIEW-READY · R2 IMPLEMENTATION — NOT STARTED**.
-   - Directly below it is the frozen owner-adjudication checkpoint (COMPLETE / REVIEWED / FROZEN). Its
+   - Its highest-precedence CURRENT checkpoint is **2026-09-26 — READING ROOM IA v2 R2 — PLAN COMPLETE / REVIEWED /
+     FROZEN · R2-A COMPLETE / REVIEWED / MERGED · R2-B NOT STARTED / NOT AUTHORIZED**.
+   - Directly below it is the R2 plan checkpoint (2026-09-25). Its "REVIEW-READY / R2 IMPLEMENTATION — NOT STARTED"
+     status is historical.
+   - Below that is the frozen owner-adjudication checkpoint (COMPLETE / REVIEWED / FROZEN). Its
      "R2 NOT STARTED / NOT AUTHORIZED" status is historical.
    - Directly below it is the frozen R1 checkpoint (**READING ROOM IA v2 R1 — IDENTITY RECONCILIATION COMPLETE /
      REVIEWED / FROZEN**). Its "34 HOLD items remain unresolved" status is historical.
@@ -34,8 +36,12 @@ bodies or this bootstrap if live state differs.**
      owner decisions for all 34 R1 HOLD rows (an overlay; R1 unchanged). These are frozen historical authority:
      merged in `pugazg/kalaignar-tribute#44` (normal merge `cc131a26501e714664ec80c011522cf0155dccb0`, approved head
      `87d4294e…`, 0 content delta). Verify this against live GitHub.
-   - Then read `READING_ROOM_IA_V2_R2_PLAN.md`, the authorized R2 plan (category-first `/read` over the existing 335
-     works). Check whether that control PR has been independently reviewed and merged.
+   - Then read `READING_ROOM_IA_V2_R2_PLAN.md`, the R2 plan (category-first `/read` over the existing 335 works). It
+     is COMPLETE / REVIEWED / FROZEN: merged in `pugazg/kalaignar-tribute#46` (normal merge
+     `811fdc214f5e290cca5d18b660a29d27b4d43b37`, approved head `df99c0ea…`, 0 content delta). Never edit §§1–20.
+   - Then read `READING_ROOM_IA_V2_R2A_CHECKPOINT.md`, the R2-A lifecycle record (implementation
+     `pugazg/kalaignar-autobiography#102` → `19c0ee15…`). Check whether its control PR has been independently reviewed
+     and merged.
 4. Read `projects/kalaignar-digital-library/WAVE8_P5_PRODUCTION_ACCEPTANCE.md`, the durable Wave-8 acceptance and
    close-out record.
 5. Read `projects/kalaignar-digital-library/WAVE8_COMPLETED_WORKS_CENSUS.md` as the **historical P0 selection and
@@ -53,26 +59,42 @@ bodies or this bootstrap if live state differs.**
 ## CURRENT state
 
 **Reading Room IA v2 — R2 (owner-authorized; category-first information architecture).**
-- **R2 — AUTHORIZED. R2 PLAN — COMPLETE / REVIEW-READY (2026-09-25). R2 IMPLEMENTATION — NOT STARTED.**
-- The plan is `READING_ROOM_IA_V2_R2_PLAN.md`. It is control-only (implementation, source and production deltas 0).
-- **Target:** `/read` shows exactly 9 category cards (no work cards, collection cards or Daily Kural). There are 9
-  static category routes (`/read/autobiography`, `/read/letters`, `/read/fiction`, `/read/poetry`, `/read/drama`,
-  `/read/cinema`, `/read/speeches`, `/read/essays`, `/read/literary-commentary`; 0 collisions with the 391 memoir
-  chapter ids).
-  - Every published work appears on exactly one category page (335). Collections are secondary only.
-  - **Letters special case (frozen R0 §6.2):** `/read/letters` shows exactly one canonical work, `murasoli-letters`,
-    plus a corpus summary (13 volumes · 688 letters · Volumes 42–54, derived from the Murasoli data) and a "Browse by
-    volume & sequence" link to the existing `/murasoli` browser.
-    - Never build a flat or exploded Letters model: no letter or volume LibraryWorks and no new volume routes.
-    - `/murasoli/<id>` is unchanged.
-  - The `life-writing` public Tamil label becomes `சுயசரிதை`.
-  - Sitemap +9 (projected 5271).
-- **R2 / R3 boundary:** R2 does not create the 249 CREATE works or perform the 5 canonical merges. The catalogue stays
-  335 and collections 9; that work is R3. Where frozen records say "future R2" merge actions, they mean R3 under the
-  plan.
-- **Staging:** R2-A (category model and routes) → R2-B (category-only `/read`) → R2-C (provenance, sitemap and full
-  regression), each gated by exact-head review.
-- **Next:** independent review and merge of the R2 plan PR, then **R2-A** only.
+- **Lifecycle:**
+  - R0 — COMPLETE / REVIEWED / FROZEN.
+  - R1 — COMPLETE / REVIEWED / FROZEN.
+  - Owner HOLD adjudication — COMPLETE / REVIEWED / FROZEN.
+  - **R2 PLAN — COMPLETE / REVIEWED / FROZEN** (#46 → `811fdc21…`).
+  - **R2-A — COMPLETE / REVIEWED / MERGED** (implementation #102 → `19c0ee15…`).
+  - **R2-B — NOT STARTED / NOT AUTHORIZED.**
+  - **R2-C — NOT STARTED.**
+  - **R3 — NOT AUTHORIZED.**
+- R2-B needs a **separate** owner authorization. Do not infer it from the R2 plan.
+- **Durable R2-A facts (implementation `main` `19c0ee15a5a78d04852be2144a72a0328d307400`, tree `d899d04f…`):**
+  - **9 category routes exist:** `/read/autobiography`, `/read/letters`, `/read/fiction`, `/read/poetry`,
+    `/read/drama`, `/read/cinema`, `/read/speeches`, `/read/essays`, `/read/literary-commentary`. They collide with 0
+    of the 391 memoir chapter ids.
+    - They are built from the registry `data/read-categories.ts` and the shared `components/LibraryCategoryPage.tsx`.
+    - The validator is `scripts/test-read-categories.ts` (`test:read-categories`).
+  - **Catalogue 335** (1 / 1 / 162 / 14 / 11 / 10 / 117 / 15 / 4), with each work on exactly one category page.
+    **Collections 9.**
+  - **Letters:** one canonical work, `murasoli-letters`, plus 13-volume / 688-letter corpus navigation (Volumes
+    42–54). It is derived from the Murasoli data and links to the existing `/murasoli`.
+    - No letter or volume is a LibraryWork, and there are no volume routes.
+  - **`/read` has NOT switched yet.** It is still the old discovery landing, and **Daily Kural remains on `/read`**.
+    The shared Tamil `life-writing` label remains **`வாழ்க்கை எழுத்து`**.
+  - **Sitemap unchanged at 5262** (no category URLs; `app/sitemap.ts` untouched).
+    - The build gained exactly 9 pages: prerender 5280, HTML 5275.
+    - Historical build validators add the derived `READ_IA_R2_CONTRIBUTION.build`.
+  - The merge auto-deployed to Production via the Vercel Git integration (deployment `6673494910`); no manual
+    deployment was made.
+- **Remaining R2 stages (each gated by exact-head review, each separately authorized):**
+  - **R2-B:** `/read` → exactly 9 category cards; `சுயசரிதை`; Daily Kural removed from `/read`; re-scope the 7
+    rendered-`/read` tests.
+  - **R2-C:** secondary collection sections; sitemap +9 (projected 5271); `lib/read-ia-r2-contribution.ts`; full
+    regression.
+- **R2 / R3 boundary:** R2 does not create the 249 CREATE works or perform the 5 canonical merges. R3 delta = 0.
+  Where frozen records say "future R2" merge actions, they mean R3.
+- **Next:** independent review and merge of the R2-A control checkpoint, then a separate authorization for R2-B.
 
 **Reading Room IA v2 — owner HOLD adjudication (frozen authority; post-R1 overlay; control-only).**
 - **READING ROOM IA v2 OWNER HOLD ADJUDICATION — COMPLETE / REVIEWED / FROZEN (2026-09-25; merged via PR #44,
@@ -205,6 +227,8 @@ served by Vercel Production deployment `6638432286` for that commit.
 ## Route arithmetic (durable)
 
 ```
+R2-A   : 9 static category pages (build only; sitemap unchanged)
+         5262 (sitemap) ; 5271 + 9 = 5280 (prerender) ; 5266 + 9 = 5275 (html)
 Wave 8 : Murasoli 342 + Ore Mutham 35 + Sangatamil 106 = 483
          4779 + 483 = 5262 (sitemap) ; 4788 + 483 = 5271 (prerender) ; 4783 + 483 = 5266 (html) ; 4791 + 483 = 5274 (static pages)
 Wave 7 : B1 133 + B2–B4 225 + B5/B6/K 512 = 870
@@ -262,18 +286,25 @@ Any of these requires a separately authorized new wave with its own census.
 - The owner HOLD adjudication is recorded by the control-only PR `Reading Room IA v2 — owner HOLD adjudication`.
   - It adds the adjudication record and the resolved manifest, and updates `HANDOVER.md` and this file.
   - Frozen R0 and R1 files are untouched.
-  - The control-only PR `Reading Room IA v2 — owner HOLD adjudication lifecycle close-out` was merged as
-    `pugazg/kalaignar-tribute#45` (merge `d66db0e05aef1f7691fbcabd502e4a7953028c24`).
+  - It was merged as `pugazg/kalaignar-tribute#44` (merge `cc131a26501e714664ec80c011522cf0155dccb0`).
+  - The control-only PR `Reading Room IA v2 — owner HOLD adjudication lifecycle close-out` moves its lifecycle wording
+    to COMPLETE / REVIEWED / FROZEN and changes no decision. It was merged as `pugazg/kalaignar-tribute#45` (merge
+    `d66db0e05aef1f7691fbcabd502e4a7953028c24`).
 - The R2 plan is recorded by the control-only PR `Reading Room IA v2 — R2 plan`.
   - It adds `READING_ROOM_IA_V2_R2_PLAN.md` and updates `HANDOVER.md` and this file.
   - No implementation or source change belongs to it.
+  - It was merged as `pugazg/kalaignar-tribute#46` (merge `811fdc214f5e290cca5d18b660a29d27b4d43b37`, approved head
+    `df99c0ea…`).
+- R2-A was implemented by `pugazg/kalaignar-autobiography#102` (approved head `1607b892…`, 2 commits; merge
+  `19c0ee15a5a78d04852be2144a72a0328d307400`, tree `d899d04f…`).
+  - Its lifecycle is recorded by the control-only PR `Reading Room IA v2 — R2-A checkpoint`.
+  - That PR adds `READING_ROOM_IA_V2_R2A_CHECKPOINT.md`, makes a lifecycle-only header update to
+    `READING_ROOM_IA_V2_R2_PLAN.md`, and updates `HANDOVER.md` and this file.
   - Until that PR is merged, live control `main` remains authoritative.
-  - It was merged as `pugazg/kalaignar-tribute#44` (merge `cc131a26501e714664ec80c011522cf0155dccb0`). The
-    control-only PR `Reading Room IA v2 — owner HOLD adjudication lifecycle close-out` moves its lifecycle wording to
-    COMPLETE / REVIEWED / FROZEN. It changes no decision.
 
 **STOP. Wave 6, Wave 7 and Wave 8 are COMPLETE / CLOSED / FROZEN at P5. There is no Wave-8 P6. Reading Room IA v2
-R0, R1 and owner HOLD adjudication are COMPLETE / REVIEWED / FROZEN. Resolved manifest HOLD = 0. R2 is AUTHORIZED; the
-R2 PLAN is COMPLETE / REVIEW-READY; R2 IMPLEMENTATION is NOT STARTED. Begin R2-A only after the R2 plan PR is
-independently reviewed and merged. Do not begin R3 (catalogue expansion / canonical merges), a new wave or any
-maintenance activity without explicit owner authorization.**
+R0, R1 and owner HOLD adjudication are COMPLETE / REVIEWED / FROZEN. Resolved manifest HOLD = 0. The R2 PLAN is
+COMPLETE / REVIEWED / FROZEN. R2-A is COMPLETE / REVIEWED / MERGED. R2-B is NOT STARTED / NOT AUTHORIZED; R2-C is NOT
+STARTED. Do not begin R2-B without a separate explicit owner authorization given after the R2-A checkpoint is reviewed.
+Do not begin R3 (catalogue expansion / canonical merges), a new wave or any maintenance activity without explicit owner
+authorization.**

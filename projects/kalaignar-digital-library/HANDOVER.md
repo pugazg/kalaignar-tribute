@@ -1,6 +1,6 @@
 # Kalaignar Digital Library / Reading Room — Master Handover
 
-**Last updated:** 2026-09-24
+**Last updated:** 2026-09-26
 
 ---
 
@@ -11,7 +11,69 @@ Several phases have shipped since it was written, and its work counts, shelf cou
 "last production application-code checkpoint" are stale. It is kept as history and has **not** been
 retro-edited. Where it disagrees with this section or with live GitHub, **live GitHub wins**.
 
-### Verified live state — 2026-09-25, READING ROOM IA v2 R2 — AUTHORIZED · R2 PLAN — COMPLETE / REVIEW-READY · R2 IMPLEMENTATION — NOT STARTED ✅ CURRENT
+### Verified live state — 2026-09-26, READING ROOM IA v2 R2 — PLAN COMPLETE / REVIEWED / FROZEN · R2-A COMPLETE / REVIEWED / MERGED · R2-B NOT STARTED / NOT AUTHORIZED ✅ CURRENT
+
+**Highest-precedence checkpoint. Live GitHub and production win.**
+
+This checkpoint is **control-only**: implementation delta from this activity = 0, source delta = 0, manual production
+mutation = 0. Record: [`READING_ROOM_IA_V2_R2A_CHECKPOINT.md`](./READING_ROOM_IA_V2_R2A_CHECKPOINT.md).
+
+**Lifecycle:**
+- R0 — COMPLETE / REVIEWED / FROZEN.
+- R1 — COMPLETE / REVIEWED / FROZEN.
+- Owner HOLD adjudication — COMPLETE / REVIEWED / FROZEN (resolved manifest `b7b3530d…`, HOLD 0).
+- **R2 PLAN — COMPLETE / REVIEWED / FROZEN** (`pugazg/kalaignar-tribute#46`, approved head `df99c0ea…`, merge
+  `811fdc21…`).
+- **R2-A — COMPLETE / REVIEWED / MERGED** (`pugazg/kalaignar-autobiography#102`, exact-head review PASS).
+- **R2-B — NOT STARTED / NOT AUTHORIZED.** It needs a separate owner authorization; the R2 plan does not grant it.
+- **R2-C — NOT STARTED.**
+- **R3 — NOT AUTHORIZED.**
+- Waves 6–8 remain COMPLETE / CLOSED / FROZEN at P5.
+
+**Implementation `main`: `19c0ee15a5a78d04852be2144a72a0328d307400`** (tree `d899d04f…`).
+- It is a normal merge of the approved head `1607b892…` onto `f991043c…`. Approved head → merge = 0 files.
+- **CI:** `Library CI` run `36210629536` on the merge is COMPLETED / SUCCESS (`typecheck • build` and
+  `archival validators` both SUCCESS).
+- **Deployment:** the merge **auto-deployed to Production** through the existing Vercel Git integration.
+  - The new Production deployment is `6673494910` at `19c0ee15…` (vercel[bot], success, 2026-09-26T02:11Z); the
+    previous one was `6638432286` at `f991043c…`.
+  - No manual deployment was performed.
+  - Live production serves the nine category routes. `/read` is still the old landing there.
+
+**R2-A facts (durable):**
+- **Nine static category routes:** `/read/autobiography`, `/read/letters`, `/read/fiction`, `/read/poetry`,
+  `/read/drama`, `/read/cinema`, `/read/speeches`, `/read/essays`, `/read/literary-commentary`. They collide with 0 of
+  the 391 memoir chapter ids.
+- **Code:**
+  - registry `data/read-categories.ts`;
+  - shared UI `components/LibraryCategoryPage.tsx`;
+  - Letters: `components/LettersCorpusSummary.tsx` and `lib/murasoli-corpus.ts`;
+  - validator `scripts/test-read-categories.ts`.
+- **Catalogue 335** (1 / 1 / 162 / 14 / 11 / 10 / 117 / 15 / 4), with each work on exactly one category page.
+  **Collections 9.** Catalogue delta 0.
+- **Letters:** one canonical work, `murasoli-letters`, plus a derived corpus summary: Volumes 42–54 · **13 volumes ·
+  688 letters**. It links to `/murasoli`. No letter or volume is a LibraryWork, and no volume route exists.
+- **`/read` is still the old discovery landing.**
+  - Daily Kural is still on it, and `revalidate = 900` remains.
+  - The shared `life-writing` Tamil label is still `வாழ்க்கை எழுத்து`.
+  - Proof: `app/read/page.tsx` `76b2e52a…` and `data/library.ts` `aea4d042…` are unchanged.
+- **Build:** prerender 5271 → **5280** and HTML 5266 → **5275** (+9, exactly the category pages).
+  - The historical build validators add the derived `READ_IA_R2_CONTRIBUTION.build`. None was removed or weakened.
+- **Sitemap is still 5262 URLs, with 0 category URLs.** `app/sitemap.ts` `99f60752…` is unchanged; sitemap
+  integration is R2-C.
+- **Unchanged blobs:** `data/collections.ts` `b7e8f4ce…`, `app/read/[id]/page.tsx` `ee47680c…`,
+  `app/read/nenjukku-neethi/page.tsx` `8412efab…`.
+- **R3 delta 0.** None of the 249 CREATE works exists, the five canonical merges are not performed, and no Sangatamil
+  or 1958 `தேனலைகள்` witness relation was implemented.
+
+**Next:** independent review and merge of this R2-A control checkpoint. Then a **separate** owner authorization for
+R2-B: the category-only `/read`, `சுயசரிதை`, Daily Kural off `/read`, and re-scoping the 7 rendered-`/read` tests.
+
+### Verified live state — 2026-09-25, READING ROOM IA v2 R2 — AUTHORIZED · R2 PLAN — COMPLETE / REVIEW-READY · R2 IMPLEMENTATION — NOT STARTED ✅ R2 PLAN CHECKPOINT (retained; the latest activity is the R2-A checkpoint above)
+
+**Historical note (added at the R2-A checkpoint):** the "REVIEW-READY / R2 IMPLEMENTATION — NOT STARTED" status below
+was true when the plan was written. The plan has since been reviewed and merged (`pugazg/kalaignar-tribute#46` →
+`811fdc21…`; now COMPLETE / REVIEWED / FROZEN), and R2-A has been merged. The plan facts below are unchanged.
 
 **Highest-precedence checkpoint. Live GitHub and production win.**
 
