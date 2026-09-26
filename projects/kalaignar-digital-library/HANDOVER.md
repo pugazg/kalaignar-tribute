@@ -11,7 +11,75 @@ Several phases have shipped since it was written, and its work counts, shelf cou
 "last production application-code checkpoint" are stale. It is kept as history and has **not** been
 retro-edited. Where it disagrees with this section or with live GitHub, **live GitHub wins**.
 
-### Verified live state — 2026-09-26, READING ROOM IA v2 R2 — PLAN COMPLETE / REVIEWED / FROZEN · R2-A COMPLETE / REVIEWED / MERGED · R2-B COMPLETE / REVIEWED / MERGED · R2-C NOT STARTED / NOT AUTHORIZED ✅ CURRENT
+### Verified live state — 2026-09-26, READING ROOM IA v2 R2 — IMPLEMENTATION COMPLETE / REVIEWED / MERGED / PRODUCTION-ACCEPTED · R2 CLOSE-OUT REVIEW-READY · R3 NOT AUTHORIZED ✅ CURRENT
+
+**Highest-precedence checkpoint. Live GitHub and production win.**
+
+This checkpoint is **control-only**: implementation delta from this activity = 0, source delta = 0, manual production
+mutation = 0. Record: [`READING_ROOM_IA_V2_R2_CLOSEOUT.md`](./READING_ROOM_IA_V2_R2_CLOSEOUT.md). This close-out is
+**awaiting independent exact-head review**.
+
+**Lifecycle:**
+- R0 — COMPLETE / REVIEWED / FROZEN.
+- R1 — COMPLETE / REVIEWED / FROZEN.
+- Owner HOLD adjudication — COMPLETE / REVIEWED / FROZEN (resolved manifest `b7b3530d…`, HOLD 0).
+- **R2 PLAN — COMPLETE / REVIEWED / FROZEN** (`pugazg/kalaignar-tribute#46` → `811fdc21…`).
+- **R2-A — COMPLETE / REVIEWED / MERGED** (`pugazg/kalaignar-autobiography#102` → `19c0ee15…`; checkpoint
+  `pugazg/kalaignar-tribute#47` → `a9600327…`).
+- **R2-B — COMPLETE / REVIEWED / MERGED** (`#103` → `89c68255…`; checkpoint `pugazg/kalaignar-tribute#48` → `4156aa09…`).
+- **R2-C — COMPLETE / REVIEWED / MERGED** (`#104`, exact-head review PASS; owner: "Authorize R2-C and proceed with R2-C.").
+- **R2 IMPLEMENTATION — COMPLETE / PRODUCTION-ACCEPTED.**
+- **R2 close-out record — REVIEW-READY.**
+- **R3 — NOT AUTHORIZED.** It is not implied by the completion of R2.
+- Waves 6–8 remain COMPLETE / CLOSED / FROZEN at P5.
+
+**Implementation `main`: `597e65fde3266baffda98351de716507368b5ebc`** (tree `da22e2f4…`).
+- It is a normal merge of the approved head `3b3b8868…` (1 commit, 23 files, +197 / −58) onto `89c68255…`.
+- Approved head → merge = 0 files. Base → merge is only the approved commit plus the merge.
+- **CI:** at the approved head, run `36214650585` SUCCESS; at the merge, run `36215615102` COMPLETED / SUCCESS
+  (`typecheck • build` and `archival validators` both SUCCESS).
+- **Deployment:** the merge **auto-deployed to Production** through the existing Vercel Git integration.
+  - The new deployment is `6674301852` at `597e65fd…` (vercel[bot], success, 2026-09-26T03:46Z).
+  - No manual deployment was performed.
+
+**Final production acceptance (read-only, `nenjukkuneethi.org`):**
+- `/read` shows 9 category cards in shelf order, with no work/collection card, disclosure or Daily Kural.
+  `சுயசரிதை` is first, and the counts are 1/1/162 · 7 collections/14/11/10/117 · 2 collections/15/4.
+- The 9 category pages return 200 and list **335** distinct works.
+- `/read/fiction` shows 162 works then **7** secondary collection cards; `/read/speeches` shows 117 then **2**. The
+  other seven have no Collections section.
+- The 9 collection links point to the existing `/collections/<id>`, all 200.
+- Letters is 1 work plus Volumes 42–54 · 13 volumes · 688 letters, linking to `/murasoli`.
+- **All 5271 sitemap URLs return 200.** The invalid examples return 404.
+- `/speeches` and `/essays` have never existed as index pages (only `[slug]` routes); their 404 is pre-existing, not a
+  regression.
+
+**Final R2 arithmetic:**
+- Catalogue **335** (1/1/162/14/11/10/117/15/4); collections **9** (Fiction 7, Speeches 2); category routes **9**.
+- Build **5280 / 5275** (prerender / HTML, unchanged since R2-A).
+- **Sitemap 5262 → 5271** (+9, 0 duplicates). The sitemap minus the 9 category URLs equals the frozen pre-R2 set
+  exactly (sha256 `5e017f02…`).
+- `READ_IA_R2_CONTRIBUTION` (`lib/read-ia-r2-contribution.ts`): **build 9 · sitemap 9**, both derived from
+  `READ_CATEGORY_ROUTES.length`.
+  - The historical build/sitemap validators add this derived term. None was weakened.
+  - The frozen Wave-8 P4 record `0cbec7a2…` is unchanged.
+
+**Invariance:**
+- `data/library.ts` `d2d9922a…`, `data/collections.ts` `b7e8f4ce…`, `components/LibraryHome.tsx` `244eed97…`,
+  `app/read/page.tsx` `3bdd0369…`, `/read/[id]` `ee47680c…` and `/read/nenjukku-neethi` `8412efab…` are unchanged by
+  R2-C.
+- No existing URL was removed, renamed, redirected or repurposed. Source delta 0.
+- **R3 delta 0:** no CREATE work, no canonical merge, and no Sangatamil or 1958 `தேனலைகள்` witness change.
+
+**Next:** independent exact-head review and merge of this R2 close-out. Then STOP. **R3 requires a separate explicit
+owner authorization** after that merge.
+
+### Verified live state — 2026-09-26, READING ROOM IA v2 R2 — PLAN COMPLETE / REVIEWED / FROZEN · R2-A COMPLETE / REVIEWED / MERGED · R2-B COMPLETE / REVIEWED / MERGED · R2-C NOT STARTED / NOT AUTHORIZED ✅ R2-B CHECKPOINT (retained; the latest activity is the R2 close-out above)
+
+**Historical note (added at the R2 close-out):** the "R2-C NOT STARTED / NOT AUTHORIZED" status and the "sitemap 5262 / 0
+category URLs" facts below were true at the R2-B checkpoint. R2-C has since been authorized, merged
+(`pugazg/kalaignar-autobiography#104` → `597e65fd…`) and accepted on production. The R2-B facts below are otherwise
+unchanged.
 
 **Highest-precedence checkpoint. Live GitHub and production win.**
 
