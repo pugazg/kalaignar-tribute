@@ -1,4 +1,4 @@
-# New Chat Bootstrap Prompt — Kalaignar Digital Library / READING ROOM IA v2 — R2 COMPLETE / CLOSED · R3 OWNER-AUTHORIZED — PLAN REVIEW-READY · R3 IMPLEMENTATION NOT STARTED (R0, R1 and adjudication frozen; Waves 6, 7 and 8 closed at P5)
+# New Chat Bootstrap Prompt — Kalaignar Digital Library / READING ROOM IA v2 R3 — PLAN FROZEN · R3-A COMPLETE / MERGED / PRODUCTION-ACCEPTED · R3-B / C / D NOT STARTED (R0, R1 and adjudication frozen; Waves 6, 7 and 8 closed at P5)
 
 Continue as my **independent reviewer and prompt-provider for Claude Code** for the Kalaignar Digital
 Library / Reading Room. **Live GitHub and production are authoritative. Do not trust copied SHAs, PR
@@ -8,9 +8,11 @@ bodies or this bootstrap if live state differs.**
 
 1. Fetch live `pugazg/kalaignar-tribute` `main`, and inspect all open control PRs.
 2. Read `projects/kalaignar-digital-library/HANDOVER.md` **completely**.
-   - Its highest-precedence CURRENT checkpoint is **2026-09-26 — READING ROOM IA v2 — R2 COMPLETE / REVIEWED / MERGED
-     / PRODUCTION-ACCEPTED / CLOSED · R3 OWNER-AUTHORIZED — PLANNING IN PROGRESS · R3 IMPLEMENTATION NOT STARTED**.
-   - Directly below it is the R2 close-out checkpoint (2026-09-26). It was merged as `#49` → `c4c3ccd4…`, which
+   - Its highest-precedence CURRENT checkpoint is **2026-09-26 — READING ROOM IA v2 R3 — PLAN COMPLETE / REVIEWED /
+     FROZEN · R3-A COMPLETE / REVIEWED / MERGED / PRODUCTION-ACCEPTED · R3-B / C / D NOT STARTED**.
+   - Directly below it is the R3 planning checkpoint (2026-09-26). Its "planning in progress / implementation not
+     started" statements are historical.
+   - Below that is the R2 close-out checkpoint (2026-09-26). It was merged as `#49` → `c4c3ccd4…`, which
      supersedes its "REVIEW-READY" wording; its "R3 NOT AUTHORIZED" status is historical.
    - Below that is the R2-B checkpoint (2026-09-26). Its "R2-C NOT STARTED" and "sitemap 5262" statements are
      historical.
@@ -53,8 +55,11 @@ bodies or this bootstrap if live state differs.**
      → `4156aa09…`).
    - Then read `READING_ROOM_IA_V2_R2_CLOSEOUT.md`, the final R2 record: R2-C (`#104` → `597e65fd…`), production
      acceptance and the final arithmetic. It was merged as control `pugazg/kalaignar-tribute#49` → `c4c3ccd4…`.
-   - Then read `READING_ROOM_IA_V2_R3_PLAN.md`, the R3 plan (owner: "let's start R3"). Check whether its control PR has
-     been independently reviewed and merged. **No R3 implementation may begin before it is merged.**
+   - Then read `READING_ROOM_IA_V2_R3_PLAN.md`, the R3 plan (owner: "let's start R3"). It is COMPLETE / REVIEWED /
+     FROZEN, merged as `pugazg/kalaignar-tribute#50` → `bab2fd4d…`. Its file keeps the reviewed "REVIEW-READY" wording,
+     which the merge supersedes. Never edit it.
+   - Then read `READING_ROOM_IA_V2_R3A_CHECKPOINT.md`, the R3-A record (implementation `#105` → `06731e0e…`, production
+     invariance). Check whether its control PR has been independently reviewed and merged.
 4. Read `projects/kalaignar-digital-library/WAVE8_P5_PRODUCTION_ACCEPTANCE.md`, the durable Wave-8 acceptance and
    close-out record.
 5. Read `projects/kalaignar-digital-library/WAVE8_COMPLETED_WORKS_CENSUS.md` as the **historical P0 selection and
@@ -72,20 +77,30 @@ bodies or this bootstrap if live state differs.**
 ## CURRENT state
 
 **Reading Room IA v2 — R3 (owner-authorized: "let's start R3"; canonical-work promotion and catalogue reconciliation).**
-- **R3 — OWNER-AUTHORIZED. R3 PLAN — REVIEW-READY** (`READING_ROOM_IA_V2_R3_PLAN.md`). **R3 IMPLEMENTATION — NOT
-  STARTED.**
-- **Input:** the frozen resolved manifest (`b7b3530d…`): 315 = CREATE 249 · KEEP 27 · WITNESS 19 · DO_NOT_PROMOTE 20
-  · HOLD 0. It is never edited, and its `futureR2Actions` field means R3.
-- **Proposed (frozen only on plan merge):**
-  - 246 promotions reuse existing child routes; the 3 `இன முழக்கம்` poems get fragment identities.
+- **Lifecycle:** R3 OWNER-AUTHORIZED · **R3 PLAN — COMPLETE / REVIEWED / FROZEN** (#50 → `bab2fd4d…`) · **R3-A —
+  COMPLETE / REVIEWED / MERGED / PRODUCTION-ACCEPTED** (implementation #105 → `06731e0e…`) · R3-A checkpoint —
+  REVIEW-READY · **R3-B / R3-C / R3-D — NOT STARTED**.
+- **Input:** the frozen resolved manifest (`b7b3530d…`), vendored byte-for-byte in the implementation at
+  `data/internal/r3/`: 315 = CREATE 249 · KEEP 27 · WITNESS 19 · DO_NOT_PROMOTE 20 · HOLD 0. It is never edited, and
+  its `futureR2Actions` field means R3.
+- **Frozen plan decisions (owner-approved):**
+  - 246 promotions reuse existing child routes; the 3 `இன முழக்கம்` poems get fragment identities (`#poem-6-N`).
   - The 11 fully decomposed publications become publication records (not canonical works; every URL kept).
   - **Final 568 canonical works** (1/3/157/173/11/10/118/91/4); collections 9; build and sitemap +0.
-  - One generated relation registry of 49 records (witnesses, the 5 merges, Sangatamil, 1958).
-  - Stages: R3-A foundation (no public change) → R3-B Poetry (493) → R3-C Essays/Letters/Speech (573) → R3-D
-    merges and provenance (568).
-- Each stage is one implementation PR with exact-head review, full CI, Vercel and read-only production acceptance,
-  followed by a control checkpoint.
-- **Next:** independent exact-head review and merge of the R3 plan, then **R3-A only**.
+- **R3-A foundation (live, no public change):**
+  - Generator `scripts/build-r3-identity.ts` (`--verify`) produces `identity-manifest.json` (249 identities, 0
+    published) and the one relation registry `relations.json`: 49 records (22 / 5 / 11 / 11), **2 active (Anna,
+    Thennan), 47 dormant**.
+  - The pre-R3 boundary is frozen (`pre-r3-boundary.json`: catalogue 335, collections 9, sitemap 5271 set hash
+    `c65c6377…`, build 5280 / 5275).
+  - `LIBRARY_PUBLICATIONS` is empty; the merged-witness resolver is dormant; `READ_IA_R3_CONTRIBUTION` is all 0.
+  - **The stage switch** is `PUBLISHED_STAGES` in the generator.
+- **Remaining stages** (each is one implementation PR with exact-head review, full CI, Vercel and read-only production
+  acceptance, then a control checkpoint):
+  - **R3-B:** Poetry +162, demote 4 → 493; 18 relations; Ina anchors.
+  - **R3-C:** Essays / Letters / Speech +87, demote 7 → 573; 2 relations.
+  - **R3-D:** 5 merges, Sangatamil, 1958 → 568.
+- **Next:** independent exact-head review and merge of the R3-A checkpoint. Then **R3-B only**.
 
 **Reading Room IA v2 — R2 (owner-authorized; category-first information architecture).**
 - **Lifecycle:**
@@ -99,7 +114,7 @@ bodies or this bootstrap if live state differs.**
     with R2-C.").
   - **R2 IMPLEMENTATION — COMPLETE / PRODUCTION-ACCEPTED.**
   - **R2 close-out — MERGED** (`pugazg/kalaignar-tribute#49` → `c4c3ccd4…`).
-  - **R3 — OWNER-AUTHORIZED; planning in progress** (see the R3 block above).
+  - **R3 — OWNER-AUTHORIZED** (see the R3 block above for its current stage).
 - **Durable R2 facts (implementation `main` `597e65fde3266baffda98351de716507368b5ebc`, tree `da22e2f4…`):**
   - **`/read` is the category-first landing:** exactly **9 category cards** linking the nine category routes.
     - It shows no work card, collection card, disclosure or Daily Kural.
@@ -350,11 +365,18 @@ Any of these requires a separately authorized new wave with its own census.
 - R3 planning is recorded by the control-only PR `Reading Room IA v2 — R3 plan`.
   - It adds `READING_ROOM_IA_V2_R3_PLAN.md` and updates `HANDOVER.md` and this file.
   - No implementation, source or production change belongs to it.
+  - It was merged as `pugazg/kalaignar-tribute#50` (merge `bab2fd4d2008fc57f527b3627087f38755a16a64`, approved head
+    `650ed021…`).
+- R3-A was implemented by `pugazg/kalaignar-autobiography#105` (approved head `be1d6d4f…`, 2 commits; merge
+  `06731e0eaaa6f1228388add726204a2df694c649`, tree `5c2bf2c9…`).
+  - Its lifecycle and production invariance are recorded by the control-only PR `Reading Room IA v2 — R3-A checkpoint`,
+    which adds `READING_ROOM_IA_V2_R3A_CHECKPOINT.md` and updates `HANDOVER.md` and this file.
   - Until that PR is merged, live control `main` remains authoritative.
 
 **STOP. Wave 6, Wave 7 and Wave 8 are COMPLETE / CLOSED / FROZEN at P5. There is no Wave-8 P6. Reading Room IA v2
 R0, R1 and owner HOLD adjudication are COMPLETE / REVIEWED / FROZEN. Resolved manifest HOLD = 0. R2 is COMPLETE /
-REVIEWED / MERGED / PRODUCTION-ACCEPTED / CLOSED. R3 is OWNER-AUTHORIZED ("let's start R3"), the R3 PLAN is REVIEW-READY,
-and R3 IMPLEMENTATION is NOT STARTED. Do not create an R3 implementation branch, LibraryWork, merge or witness data until
-the R3 plan is independently reviewed and merged, and then begin with R3-A only. Do not begin a new wave or any
-maintenance activity without explicit owner authorization.**
+REVIEWED / MERGED / PRODUCTION-ACCEPTED / CLOSED. R3 is OWNER-AUTHORIZED ("let's start R3"); the R3 PLAN is COMPLETE /
+REVIEWED / FROZEN; R3-A is COMPLETE / REVIEWED / MERGED / PRODUCTION-ACCEPTED; R3-B, R3-C and R3-D are NOT STARTED. Do
+not begin R3-B until the R3-A checkpoint is independently reviewed and merged, and then take the stages strictly in order
+(B → C → D), each gated by exact-head review. Do not begin a new wave or any maintenance activity without explicit owner
+authorization.**

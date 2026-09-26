@@ -11,7 +11,54 @@ Several phases have shipped since it was written, and its work counts, shelf cou
 "last production application-code checkpoint" are stale. It is kept as history and has **not** been
 retro-edited. Where it disagrees with this section or with live GitHub, **live GitHub wins**.
 
-### Verified live state — 2026-09-26, READING ROOM IA v2 — R2 COMPLETE / REVIEWED / MERGED / PRODUCTION-ACCEPTED / CLOSED · R3 OWNER-AUTHORIZED — PLANNING IN PROGRESS · R3 IMPLEMENTATION NOT STARTED ✅ CURRENT
+### Verified live state — 2026-09-26, READING ROOM IA v2 R3 — PLAN COMPLETE / REVIEWED / FROZEN · R3-A COMPLETE / REVIEWED / MERGED / PRODUCTION-ACCEPTED · R3-B / C / D NOT STARTED ✅ CURRENT
+
+**Highest-precedence checkpoint. Live GitHub and production win.**
+
+This checkpoint is **control-only**: implementation delta from this activity = 0, source delta = 0, manual production
+mutation = 0. Record: [`READING_ROOM_IA_V2_R3A_CHECKPOINT.md`](./READING_ROOM_IA_V2_R3A_CHECKPOINT.md), **REVIEW-READY**.
+
+**Lifecycle:**
+- R0, R1 and the owner adjudication — COMPLETE / REVIEWED / FROZEN.
+- R2 — COMPLETE / REVIEWED / MERGED / PRODUCTION-ACCEPTED / CLOSED.
+- **R3 — OWNER-AUTHORIZED ("let's start R3").**
+- **R3 PLAN — COMPLETE / REVIEWED / FROZEN** (`pugazg/kalaignar-tribute#50` → `bab2fd4d…`). Owner-approved: Ina fragment
+  identities; 11 publications → publication records (final 568); stages A → B → C → D.
+- **R3-A IMPLEMENTATION — COMPLETE / REVIEWED / MERGED / PRODUCTION-ACCEPTED.**
+- **R3-A CHECKPOINT — REVIEW-READY.**
+- **R3-B / R3-C / R3-D — NOT STARTED.**
+
+**Implementation `main`: `06731e0eaaa6f1228388add726204a2df694c649`** (tree `5c2bf2c9…`).
+- It is a normal merge of approved head `be1d6d4f…` (2 commits, 13 files, +35,730 / −0) onto `597e65fd…`.
+- Approved head → merge = 0 files.
+- **CI:** at the head, run `36232814181`; at the merge, run `36234184588`. Both are SUCCESS on both jobs.
+- **Production:** Vercel deployment `6677444493` (automatic; no manual deploy).
+
+**R3-A facts (foundation; no public change):**
+- The frozen resolved manifest is vendored as `data/internal/r3/*.frozen.json` (git blob `b7b3530d…`); the frozen pre-R3
+  boundary is `pre-r3-boundary.json` (sha256 `d2975f49…`).
+- The generator is `scripts/build-r3-identity.ts` (`--verify`), producing `identity-manifest.json` (249 identities, 0
+  published) and `relations.json`.
+  - **49 relations:** 22 source-publication · 5 merged-witness · 11 Sangatamil · 11 1958.
+  - By stage: live 2 · R3-B 18 · R3-C 2 · R3-D 27.
+  - **2 active (Anna, Thennan), 47 dormant.**
+- `POETRY_WITNESS_RELATIONS` is now a generated view (byte-identical literal).
+- `LIBRARY_PUBLICATIONS` is **empty**; the merged-witness collection resolver is **dormant**; `READ_IA_R3_CONTRIBUTION`
+  is **all 0**. `test:r3-identity` has 746 checks.
+- **Production invariance:** all **5271** sitemap pages' HTML is identical to the pre-R3 base, after normalizing only
+  script and asset references. Catalogue 335 (1/1/162/14/11/10/117/15/4) · collections 9 · sitemap 5271 (set hash
+  `c65c6377…`) · build 5280 / 5275.
+  - There is no new witness, Sangatamil or 1958 UI, no merged-story notice, and no Ina anchors.
+  - The five future merge sources are still ordinary Fiction works.
+
+**Next:** independent exact-head review and merge of the R3-A checkpoint. Then **R3-B** (Poetry: +162 − 4 → 493) under
+the standing R3 authorization, with its own exact-head review.
+
+### Verified live state — 2026-09-26, READING ROOM IA v2 — R2 COMPLETE / REVIEWED / MERGED / PRODUCTION-ACCEPTED / CLOSED · R3 OWNER-AUTHORIZED — PLANNING IN PROGRESS · R3 IMPLEMENTATION NOT STARTED ✅ R3 PLANNING CHECKPOINT (retained; the latest activity is the R3-A checkpoint above)
+
+**Historical note (added at the R3-A checkpoint):** the R3 plan was merged as `pugazg/kalaignar-tribute#50` → `bab2fd4d…`
+(COMPLETE / REVIEWED / FROZEN; its file keeps the reviewed "REVIEW-READY" wording). R3-A has since been merged and
+production-accepted. The "planning in progress / implementation not started" statements below are historical.
 
 **Highest-precedence checkpoint. Live GitHub and production win.**
 
