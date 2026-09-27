@@ -1,6 +1,6 @@
 # Kalaignar Digital Library / Reading Room — Master Handover
 
-**Last updated:** 2026-09-26
+**Last updated:** 2026-09-27
 
 ---
 
@@ -11,7 +11,53 @@ Several phases have shipped since it was written, and its work counts, shelf cou
 "last production application-code checkpoint" are stale. It is kept as history and has **not** been
 retro-edited. Where it disagrees with this section or with live GitHub, **live GitHub wins**.
 
-### Verified live state — 2026-09-26, READING ROOM IA v2 R3 — PLAN COMPLETE / REVIEWED / FROZEN · R3-A COMPLETE / REVIEWED / MERGED / PRODUCTION-ACCEPTED · R3-B / C / D NOT STARTED ✅ CURRENT
+### Verified live state — 2026-09-27, READING ROOM IA v2 R3 — R3-B COMPLETE / REVIEWED / MERGED / PRODUCTION-ACCEPTED · R3-C / D NOT STARTED ✅ CURRENT
+
+**Highest-precedence checkpoint. Live GitHub and production win.**
+
+This checkpoint is **control-only**: implementation delta from this activity = 0, source delta = 0, manual production
+mutation = 0. Record: [`READING_ROOM_IA_V2_R3B_CHECKPOINT.md`](./READING_ROOM_IA_V2_R3B_CHECKPOINT.md), **REVIEW-READY**.
+
+**Lifecycle:**
+- R0, R1 and the owner adjudication — COMPLETE / REVIEWED / FROZEN.
+- R2 — COMPLETE / REVIEWED / MERGED / PRODUCTION-ACCEPTED / CLOSED.
+- **R3 — OWNER-AUTHORIZED ("let's start R3").** The standing authorization covers every R3 stage.
+- **R3 PLAN — COMPLETE / REVIEWED / FROZEN** (`pugazg/kalaignar-tribute#50` → `bab2fd4d…`).
+- **R3-A — COMPLETE / REVIEWED / MERGED / PRODUCTION-ACCEPTED** (`#105` → `06731e0e…`).
+- **R3-A CHECKPOINT — COMPLETE / REVIEWED / MERGED** (`pugazg/kalaignar-tribute#51` → `c2a17f0a…`).
+- **R3-B IMPLEMENTATION — COMPLETE / REVIEWED / MERGED / PRODUCTION-ACCEPTED.**
+- **R3-B CHECKPOINT — REVIEW-READY.**
+- **R3-C — NOT STARTED. R3-D — NOT STARTED** (the five merges remain dormant R3-D records).
+
+**Implementation `main`: `109e4bfdc1dcff2a26c51a0cd566ca7799e14aeb`** (tree `b65c5417…`).
+- It is a normal merge of approved head `1826e546…` (4 commits, 47 files, +6466 / −338) onto `06731e0e…`; parents
+  `06731e0e…`, `1826e546…`. Approved head → merge = 0 files.
+- The fourth commit is the review correction: the historical Wave-8 `நகைச் சுவைப் பகுதி.` guard now asserts the probe's
+  only catalogue match is exactly `it-is-over-a-comedy-drama`.
+- **CI:** at the head, run `36257100065` (build job re-run once after a transient `next/font` fetch error); at the merge,
+  run `36288951207`. Both are SUCCESS on both jobs. Exact-head protected Vercel Preview accepted read-only.
+- **Production:** Vercel deployment `6687152070` (automatic; no manual deploy).
+
+**R3-B facts (live):**
+- Stage state `[R3-A, R3-B]`. **162** R3 identities are canonical works (Kaalap 57 · Kavithaigal 74 · 1975 3 · Ina 3 ·
+  Meesai 25), generated into `data/r3-catalogue.ts` at their existing routes; **87** remain dormant (R3-C).
+- **Catalogue 493** (1/1/162/**173**/11/10/117/**14**/4). `READ_IA_R3_CONTRIBUTION`: works +158, Poetry +159, Essays −1,
+  collections / build / sitemap 0.
+- **`LIBRARY_PUBLICATIONS` = 4** (former records verbatim minus `state`): Kaalap, Kavithaigal, 1975 (Poetry) and Meesai
+  (Essays). Category pages list them in a **நூல்கள் / Publications** section; every route is kept.
+- **Ina:** `#poem-6-4` / `#poem-6-7` / `#poem-6-8` are canonical; anchors `poem-6-1` … `poem-6-11` are emitted.
+- **Relations 49: 20 active / 29 dormant** (R3-C 2 · R3-D 27). No R3-C, merged-story, Sangatamil or 1958 UI.
+- **Collections 9** (byte-identical to the boundary) · **sitemap 5271** (set hash `c65c6377…`, unchanged) · **build
+  5280 / 5275**. Source delta 0.
+
+**Next:** independent exact-head review and merge of the R3-B checkpoint. Then **R3-C** (Essays / Letters / Speech:
++87 − 7 → 573; 2 relations) under the standing R3 authorization, with its own exact-head review. Then R3-D.
+
+### Verified live state — 2026-09-26, READING ROOM IA v2 R3 — PLAN COMPLETE / REVIEWED / FROZEN · R3-A COMPLETE / REVIEWED / MERGED / PRODUCTION-ACCEPTED · R3-B / C / D NOT STARTED ✅ R3-A CHECKPOINT (retained; the latest activity is the R3-B checkpoint above)
+
+**Historical note (added at the R3-B checkpoint):** this R3-A checkpoint was merged as `pugazg/kalaignar-tribute#51` →
+`c2a17f0a…`, which supersedes its "REVIEW-READY" wording. R3-B has since been merged and production-accepted; the
+"R3-B / C / D NOT STARTED" statements below are historical for R3-B.
 
 **Highest-precedence checkpoint. Live GitHub and production win.**
 
