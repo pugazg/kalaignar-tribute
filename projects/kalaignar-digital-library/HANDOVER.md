@@ -11,7 +11,47 @@ Several phases have shipped since it was written, and its work counts, shelf cou
 "last production application-code checkpoint" are stale. It is kept as history and has **not** been
 retro-edited. Where it disagrees with this section or with live GitHub, **live GitHub wins**.
 
-### Verified live state — 2026-09-27, READING ROOM IA v2 R3 — R3-D COMPLETE / REVIEWED / MERGED / PRODUCTION-ACCEPTED · R3 IMPLEMENTATION COMPLETE · R3 CLOSE-OUT NOT YET FROZEN ✅ CURRENT
+### Verified live state — 2026-09-27, READING ROOM IA v2 R3 — R3 IMPLEMENTATION COMPLETE · ALL FOUR R3 CHECKPOINTS MERGED · R3 CLOSE-OUT REVIEW-READY ✅ CURRENT
+
+**Highest-precedence checkpoint. Live GitHub and production win.**
+
+This is the **control-only R3 close-out**: implementation delta = 0, source delta = 0, manual production mutation = 0.
+Record: [`READING_ROOM_IA_V2_R3_CLOSEOUT.md`](./READING_ROOM_IA_V2_R3_CLOSEOUT.md), **REVIEW-READY**.
+
+**Lifecycle:**
+- R0, R1 and the owner adjudication — COMPLETE / REVIEWED / FROZEN.
+- R2 — COMPLETE / REVIEWED / MERGED / PRODUCTION-ACCEPTED / CLOSED.
+- **R3 — OWNER-AUTHORIZED ("let's start R3").**
+- **R3 PLAN — COMPLETE / REVIEWED / FROZEN** (`pugazg/kalaignar-tribute#50` → `bab2fd4d…`).
+- **R3-A / R3-B / R3-C / R3-D — COMPLETE / REVIEWED / MERGED / PRODUCTION-ACCEPTED** (`#105` → `06731e0e…`, `#106` →
+  `109e4bfd…`, `#107` → `afef75f9…`, `#108` → `7fe9a4f0…`).
+- **All four R3 checkpoints — COMPLETE / REVIEWED / MERGED** (`#51` → `c2a17f0a…`, `#52` → `41f7e0cb…`, `#53` →
+  `39ada6b2…`, `#54` → `8c451053…`).
+- **R3 IMPLEMENTATION — COMPLETE.**
+- **R3 CLOSE-OUT — REVIEW-READY.**
+- **R3 is not yet declared CLOSED** — only when this close-out is independently reviewed and merged.
+- **No R4, new wave or maintenance activity is authorized.**
+
+**Final R3 state (implementation `main` `7fe9a4f0b8a7b543efd1cf0b533d80b0e65ab853`, tree `cd1f1367…`; Production deployment
+`6688540026`):**
+- Resolved manifest 315 = CREATE 249 · KEEP 27 · WITNESS 19 · DO_NOT_PROMOTE 20 · HOLD 0. All 249 CREATE canonical (0
+  dormant); all 20 DO_NOT_PROMOTE non-canonical.
+- **Catalogue 568** (1/3/157/173/11/10/118/91/4) · publications 11 · collections 9 (byte-identical).
+- **Five merges** frozen (`neeyum-kaithi-naanum-kaithi` → `piraiye`, `sorgaththirku-vandhathu-eppadi` → `sorgga-logaththil`,
+  `aadik-kaatre` → `adikkaatru`, `sirai-kodiyathu` → `green-parrot`, `pugazhe-nee-oru-pudhir` → `pugazh`); story routes and
+  `/source` kept, no redirect; the 2004 anthology keeps 34 members and ordinals.
+- **Relations 49 / 49 active / 0 dormant.** Sangatamil canonical side only; 1958 தேனலைகள் 10 chapter + 1 publication-level,
+  அலை 3 unmapped, no route.
+- Build 5280 / 5275 · sitemap 5271 (`c65c6377…`) · no route added, removed or redirected · source delta 0.
+
+**Next:** independent exact-head review and merge of the R3 close-out. After that, R3 is CLOSED; any further work needs
+explicit new owner authorization.
+
+### Verified live state — 2026-09-27, READING ROOM IA v2 R3 — R3-D COMPLETE / REVIEWED / MERGED / PRODUCTION-ACCEPTED · R3 IMPLEMENTATION COMPLETE · R3 CLOSE-OUT NOT YET FROZEN ✅ R3-D CHECKPOINT (retained; the latest activity is the R3 close-out above)
+
+**Historical note (added at the R3 close-out):** this R3-D checkpoint was merged as `pugazg/kalaignar-tribute#54` →
+`8c451053…`, which supersedes its "REVIEW-READY" wording. Its "R3 CLOSE-OUT NOT YET FROZEN" status is superseded by the
+R3 close-out above.
 
 **Highest-precedence checkpoint. Live GitHub and production win.**
 
