@@ -1,4 +1,4 @@
-# New Chat Bootstrap Prompt — Kalaignar Digital Library / READING ROOM IA v2 R3 — IMPLEMENTATION COMPLETE · ALL FOUR R3 CHECKPOINTS MERGED · R3 CLOSE-OUT REVIEW-READY (R3 NOT YET DECLARED CLOSED) (R0, R1 and adjudication frozen; Waves 6, 7 and 8 closed at P5)
+# New Chat Bootstrap Prompt — Kalaignar Digital Library / WAVE 9 — OWNER-AUTHORIZED · P0 COMPLETED-WORKS / READINESS CENSUS — REVIEW-READY · P1 NOT STARTED / NOT AUTHORIZED (R0–R3 frozen, R3 CLOSED; Waves 6, 7 and 8 closed at P5)
 
 Continue as my **independent reviewer and prompt-provider for Claude Code** for the Kalaignar Digital
 Library / Reading Room. **Live GitHub and production are authoritative. Do not trust copied SHAs, PR
@@ -8,8 +8,10 @@ bodies or this bootstrap if live state differs.**
 
 1. Fetch live `pugazg/kalaignar-tribute` `main`, and inspect all open control PRs.
 2. Read `projects/kalaignar-digital-library/HANDOVER.md` **completely**.
-   - Its highest-precedence CURRENT checkpoint is **2026-09-27 — READING ROOM IA v2 R3 — R3 IMPLEMENTATION COMPLETE · ALL
-     FOUR R3 CHECKPOINTS MERGED · R3 CLOSE-OUT REVIEW-READY**.
+   - Its highest-precedence CURRENT checkpoint is **2026-09-28 — WAVE 9 — OWNER-AUTHORIZED · P0 COMPLETED-WORKS /
+     READINESS CENSUS — REVIEW-READY**.
+   - Directly below it is the R3 close-out checkpoint (2026-09-27). It was merged as `#55` → `8d409ad8…`, which
+     supersedes its "REVIEW-READY" and "R3 not yet declared CLOSED" wording: R3 is CLOSED / FROZEN.
    - Directly below it is the R3-D checkpoint (2026-09-27). It was merged as `#54` → `8c451053…`, which supersedes its
      "REVIEW-READY" wording; its "R3 CLOSE-OUT NOT YET FROZEN" status is superseded by the close-out record.
    - Directly below it is the R3-C checkpoint (2026-09-27). It was merged as `#53` → `39ada6b2…`, which supersedes its
@@ -77,25 +79,48 @@ bodies or this bootstrap if live state differs.**
      Sangatamil, 1958, final production acceptance). It was merged as control `pugazg/kalaignar-tribute#54` →
      `8c451053…`.
    - Then read `READING_ROOM_IA_V2_R3_CLOSEOUT.md`, the final R3 record (all four stages, final arithmetic 568, relation
-     census 49/49/0, Sangatamil, 1958, route/source boundary). **Review this close-out at its exact head before declaring
-     R3 closed**: check whether its control PR has been independently reviewed and merged. Until it is, R3 is NOT closed.
-4. Read `projects/kalaignar-digital-library/WAVE8_P5_PRODUCTION_ACCEPTANCE.md`, the durable Wave-8 acceptance and
+     census 49/49/0, Sangatamil, 1958, route/source boundary). It was merged as control `pugazg/kalaignar-tribute#55` →
+     `8d409ad8…`; **R3 is CLOSED / FROZEN**. Never edit it.
+4. Read `projects/kalaignar-digital-library/WAVE9_COMPLETED_WORKS_CENSUS.md`, the Wave-9 P0 completed-works / readiness
+   census (control-only; 47 candidates: READY_NEW_CANONICAL 26 · READY_COLLECTION 1 · READY_COVERAGE_EXPANSION 1 ·
+   READY_WITNESS_OR_RELATION 2 · HOLD_OWNER_DECISION 7 · NOT_COMPLETE 10). **Review it at its exact head**: check whether
+   its control PR has been independently reviewed and merged. Its §14 lists the owner questions that gate P1.
+5. Read `projects/kalaignar-digital-library/WAVE8_P5_PRODUCTION_ACCEPTANCE.md`, the durable Wave-8 acceptance and
    close-out record.
-5. Read `projects/kalaignar-digital-library/WAVE8_COMPLETED_WORKS_CENSUS.md` as the **historical P0 selection and
+6. Read `projects/kalaignar-digital-library/WAVE8_COMPLETED_WORKS_CENSUS.md` as the **historical P0 selection and
    readiness authority**.
    - It was frozen by control PR `pugazg/kalaignar-tribute#37`, merge `cc99ebb6a2c35130a6b42ac2051f7907fbc9129c`.
    - Its "P1 NOT STARTED / NOT AUTHORIZED" banner and its 333 → 335 projection are historical. The P5 record
      supersedes the banner as current state and confirms the projection as realized.
    - Never edit it.
-6. Read the prior closure records as history:
+7. Read the prior closure records as history:
    - `WAVE7_P5_PRODUCTION_ACCEPTANCE.md` and `WAVE7_COMPLETED_WORKS_CENSUS.md`;
    - `WAVE6_P5_PRODUCTION_ACCEPTANCE.md`.
-7. Fetch live `pugazg/kalaignar-autobiography` `main`, and inspect all open implementation PRs.
-8. Treat live GitHub and production as authoritative. Any newer legitimate live state supersedes this bootstrap.
+8. Fetch live `pugazg/kalaignar-autobiography` `main`, and inspect all open implementation PRs.
+9. Treat live GitHub and production as authoritative. Any newer legitimate live state supersedes this bootstrap.
 
 ## CURRENT state
 
-**Reading Room IA v2 — R3 (owner-authorized: "let's start R3"; canonical-work promotion and catalogue reconciliation).**
+**WAVE 9 (owner-authorized: "then let us proceed with next wave.") — P0 completed-works / readiness census only.**
+- **Lifecycle:** **WAVE 9 — OWNER-AUTHORIZED. P0 COMPLETED-WORKS / READINESS CENSUS — REVIEW-READY. P1 NOT STARTED /
+  NOT AUTHORIZED.** Waves 6, 7 and 8 remain COMPLETE / CLOSED / FROZEN AT P5; R0–R3 remain frozen (R3 CLOSED, #55 →
+  `8d409ad8…`) and are not reopened.
+- **Record:** `WAVE9_COMPLETED_WORKS_CENSUS.md` (control-only PR `Wave 9 P0 — completed-works and readiness census`;
+  implementation / source / production delta 0).
+- **Boundary (unchanged):** control `8d409ad8…`; implementation `7fe9a4f0…` (tree `cd1f1367…`); catalogue 568
+  (1/3/157/173/11/10/118/91/4) · publications 11 · collections 9 · sitemap 5271 · Murasoli Volumes 42–54.
+- **Census (47 candidates; a candidate is not a work):**
+  - READY_NEW_CANONICAL 26: பாயும்புலி பண்டாரக வன்னியன்; 2007 financial-statement Part-1 உரை 1–8, 11, 13–19 (உரை 17
+    multi-date, no single date); புராணப்போதை 1958 constituents ×6; காஞ்சிபுரம் வீர உரை; களத்தில் கருணாநிதி;
+    வரலாற்றுச் சுவடு.
+  - READY_COLLECTION 1 (புராணப்போதை) · READY_COVERAGE_EXPANSION 1 (Murasoli Volume 1) · READY_WITNESS_OR_RELATION 2
+    (உரை 12 ↔ `1973-03-07-financial-statement-reply`; காஞ்சிபுரம் booklet ↔ `m46-l3606`).
+  - HOLD_OWNER_DECISION 7 · NOT_COMPLETE 10 (see census §§8–9).
+  - P0 projection only: catalogue 568 → 594; collections 9 → 10; ≈ +257 routes (sitemap ≈ 5528).
+- **Not authorized:** P1 implementation, ingestion, catalogue changes, route creation, source copying, deployment, R4
+  work, maintenance (including the C37 source-path re-pin).
+
+**Reading Room IA v2 — R3 (CLOSED / FROZEN; historical below) (owner-authorized: "let's start R3"; canonical-work promotion and catalogue reconciliation).**
 - **Lifecycle:** R3 OWNER-AUTHORIZED · **R3 PLAN — COMPLETE / REVIEWED / FROZEN** (#50 → `bab2fd4d…`) · **R3-A —
   COMPLETE / REVIEWED / MERGED / PRODUCTION-ACCEPTED** (implementation #105 → `06731e0e…`) · R3-A checkpoint —
   COMPLETE / REVIEWED / MERGED (#51 → `c2a17f0a…`) · **R3-B — COMPLETE / REVIEWED / MERGED / PRODUCTION-ACCEPTED**
@@ -453,11 +478,10 @@ Any of these requires a separately authorized new wave with its own census.
 - The final R3 record is the control-only PR `Reading Room IA v2 — R3 close-out`, which adds
   `READING_ROOM_IA_V2_R3_CLOSEOUT.md` and updates `HANDOVER.md` and this file (implementation / source / production delta 0).
   - Until that PR is independently reviewed and merged, R3 is not closed, and live control `main` remains authoritative.
+  - It was merged as `pugazg/kalaignar-tribute#55` → `8d409ad8…`: **R3 is CLOSED / FROZEN.**
 
-**STOP. Wave 6, Wave 7 and Wave 8 are COMPLETE / CLOSED / FROZEN at P5. There is no Wave-8 P6. Reading Room IA v2
-R0, R1 and owner HOLD adjudication are COMPLETE / REVIEWED / FROZEN. Resolved manifest HOLD = 0. R2 is COMPLETE /
-REVIEWED / MERGED / PRODUCTION-ACCEPTED / CLOSED. R3 is OWNER-AUTHORIZED ("let's start R3"); the R3 PLAN is COMPLETE /
-REVIEWED / FROZEN; R3-A, R3-B, R3-C and R3-D are COMPLETE / REVIEWED / MERGED / PRODUCTION-ACCEPTED; R3 IMPLEMENTATION is
-COMPLETE; all four R3 checkpoints are MERGED; the R3 CLOSE-OUT is REVIEW-READY and R3 is NOT YET DECLARED CLOSED — review
-the close-out at its exact head first. No R4, new wave or maintenance activity is authorized. Do not begin a new wave or any maintenance activity without explicit owner
-authorization.**
+**STOP. WAVE 9 — OWNER-AUTHORIZED. P0 COMPLETED-WORKS / READINESS CENSUS — REVIEW-READY. P1 NOT STARTED / NOT
+AUTHORIZED. Review the Wave 9 P0 census at its exact head first. Wave 6, Wave 7 and Wave 8 are COMPLETE / CLOSED / FROZEN
+at P5; there is no Wave-8 P6. Reading Room IA v2 R0, R1, the owner HOLD adjudication, R2 and R3 are COMPLETE / REVIEWED /
+FROZEN; R3 is CLOSED (#55 → `8d409ad8…`) and is not reopened. Do not begin Wave-9 P1, ingestion, catalogue changes,
+route creation, source copying, deployment, R4 or any maintenance activity without explicit owner authorization.**

@@ -1,6 +1,6 @@
 # Kalaignar Digital Library / Reading Room — Master Handover
 
-**Last updated:** 2026-09-27
+**Last updated:** 2026-09-28
 
 ---
 
@@ -11,7 +11,46 @@ Several phases have shipped since it was written, and its work counts, shelf cou
 "last production application-code checkpoint" are stale. It is kept as history and has **not** been
 retro-edited. Where it disagrees with this section or with live GitHub, **live GitHub wins**.
 
-### Verified live state — 2026-09-27, READING ROOM IA v2 R3 — R3 IMPLEMENTATION COMPLETE · ALL FOUR R3 CHECKPOINTS MERGED · R3 CLOSE-OUT REVIEW-READY ✅ CURRENT
+### Verified live state — 2026-09-28, WAVE 9 — OWNER-AUTHORIZED · P0 COMPLETED-WORKS / READINESS CENSUS — REVIEW-READY ✅ CURRENT
+
+**Highest-precedence checkpoint. Live GitHub and production win.**
+
+The owner authorized a new onboarding programme, designated **WAVE 9** ("then let us proceed with next wave."). This
+authorization covers **P0 — completed-works / digital-library readiness census only**. Record:
+[`WAVE9_COMPLETED_WORKS_CENSUS.md`](./WAVE9_COMPLETED_WORKS_CENSUS.md), **REVIEW-READY**. This P0 is **control-only**:
+implementation delta = 0, source delta = 0, production delta = 0.
+
+**Lifecycle:**
+- **WAVE 9 — OWNER-AUTHORIZED. P0 COMPLETED-WORKS / READINESS CENSUS — REVIEW-READY. P1 NOT STARTED / NOT AUTHORIZED.**
+- Waves 6, 7 and 8 remain **COMPLETE / CLOSED / FROZEN AT P5**.
+- Reading Room IA v2 R0–R3 remain **frozen**; R3 is **CLOSED** (close-out `pugazg/kalaignar-tribute#55` → `8d409ad8…`)
+  and is not reopened.
+- No P1 implementation, ingestion, catalogue change, route creation, source copying, deployment, R4 work or
+  maintenance is authorized.
+
+**Live boundary (unchanged by P0):** control `main` `8d409ad8164960ccb056b957926e9de53217cea8`; implementation `main`
+`7fe9a4f0b8a7b543efd1cf0b533d80b0e65ab853` (tree `cd1f1367…`); catalogue **568** (1/3/157/173/11/10/118/91/4) ·
+publications 11 · collections 9 · sitemap 5271 · Murasoli coverage Volumes 42–54.
+
+**Census result (47 candidates; a candidate is not a work):**
+- READY_NEW_CANONICAL **26**: பாயும்புலி பண்டாரக வன்னியன் (Fiction); 16 units of the 2007 financial-statement Part-1
+  anthology (உரை 1–8, 11, 13–19; உரை 17 multi-date); புராணப்போதை 1958 constituents ×6; காஞ்சிபுரம் வீர உரை;
+  களத்தில் கருணாநிதி; வரலாற்றுச் சுவடு.
+- READY_COLLECTION **1** (புராணப்போதை) · READY_COVERAGE_EXPANSION **1** (Murasoli Volume 1, 110 letters) ·
+  READY_WITNESS_OR_RELATION **2** (2007 உரை 12 ↔ `1973-03-07-financial-statement-reply`; காஞ்சிபுரம் booklet ↔ `m46-l3606`).
+- HOLD_OWNER_DECISION **7** (2007 உரை 9, 10; NSK Audio-06; சின்னச் சின்ன மலர்கள்; முல்லைக் கொல்லை constituents 1–2;
+  2007 anthology container).
+- NOT_COMPLETE **10** (ரோமாபுரிப் பாண்டியன், பொன்னர் சங்கர், தென்பாண்டிச் சிங்கம், ஒரே இரத்தம், Murasoli Volume 41,
+  தாய் காவியம், நம் மேடை, கைத்தறி வாங்கலையோ, இலட்சிய இதழ்கள், முல்லைக் கொல்லை container).
+- P0 projection only: catalogue 568 → 594 (Fiction 158, Speeches 143); collections 9 → 10; ≈ +257 routes.
+
+**Next:** independent exact-head review of the Wave 9 P0 PR. P1 requires explicit owner authorization and answers to the
+census §14 questions.
+
+### Verified live state — 2026-09-27, READING ROOM IA v2 R3 — R3 IMPLEMENTATION COMPLETE · ALL FOUR R3 CHECKPOINTS MERGED · R3 CLOSE-OUT REVIEW-READY ✅ R3 CLOSE-OUT (retained; the latest activity is Wave 9 P0 above)
+
+**Historical note (added at Wave 9 P0):** this R3 close-out was merged as `pugazg/kalaignar-tribute#55` → `8d409ad8…`,
+which supersedes its "REVIEW-READY" and "R3 is not yet declared CLOSED" wording: **R3 is CLOSED / FROZEN**.
 
 **Highest-precedence checkpoint. Live GitHub and production win.**
 
